@@ -1,0 +1,390 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\kenne\\Documents\\CRM_Definitivo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|c:\\users\\kenne\\documents\\crm_definitivo\\crm_definitivo\\forms\\proyectosform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\proyectosform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|C:\\Users\\kenne\\Documents\\CRM_Definitivo\\crm_definitivo\\forms\\editarusuarioform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\editarusuarioform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|C:\\Users\\kenne\\Documents\\CRM_Definitivo\\crm_definitivo\\forms\\menuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\menuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|c:\\users\\kenne\\documents\\crm_definitivo\\crm_definitivo\\forms\\menuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\menuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|c:\\users\\kenne\\documents\\crm_definitivo\\crm_definitivo\\forms\\usuariosform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\usuariosform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|c:\\users\\kenne\\documents\\crm_definitivo\\crm_definitivo\\forms\\proyectosform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\proyectosform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|c:\\users\\kenne\\documents\\crm_definitivo\\crm_definitivo\\forms\\a\u00F1adirusuariosform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\a\u00F1adirusuariosform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|C:\\Users\\kenne\\Documents\\CRM_Definitivo\\crm_definitivo\\forms\\a\u00F1adirusuariosform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\a\u00F1adirusuariosform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|C:\\Users\\kenne\\Documents\\CRM_Definitivo\\crm_definitivo\\forms\\usuariosform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\usuariosform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3F7CAD5-8046-41BF-8662-9FA4276D94E4}|DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\kenne\\documents\\crm_definitivo\\dataaccesslayer\\repositories\\usuariorepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3F7CAD5-8046-41BF-8662-9FA4276D94E4}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\repositories\\usuariorepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37613FE5-0BD6-40C6-B7C5-E7B4B65545CF}|BusinessLayer\\BusinessLayer.csproj|c:\\users\\kenne\\documents\\crm_definitivo\\businesslayer\\services\\usuariosservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{37613FE5-0BD6-40C6-B7C5-E7B4B65545CF}|BusinessLayer\\BusinessLayer.csproj|solutionrelative:businesslayer\\services\\usuariosservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|c:\\users\\kenne\\documents\\crm_definitivo\\crm_definitivo\\forms\\editarusuarioform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\editarusuarioform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F065F2AB-637A-42C7-B301-12F3257FE8A7}|CommonLayer\\CommonLayer.csproj|c:\\users\\kenne\\documents\\crm_definitivo\\commonlayer\\entities\\usuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F065F2AB-637A-42C7-B301-12F3257FE8A7}|CommonLayer\\CommonLayer.csproj|solutionrelative:commonlayer\\entities\\usuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|C:\\Users\\kenne\\Documents\\CRM_Definitivo\\crm_definitivo\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|c:\\users\\kenne\\documents\\crm_definitivo\\crm_definitivo\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3F7CAD5-8046-41BF-8662-9FA4276D94E4}|DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\kenne\\documents\\crm_definitivo\\dataaccesslayer\\repositories\\rolrepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3F7CAD5-8046-41BF-8662-9FA4276D94E4}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\repositories\\rolrepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F065F2AB-637A-42C7-B301-12F3257FE8A7}|CommonLayer\\CommonLayer.csproj|c:\\users\\kenne\\documents\\crm_definitivo\\commonlayer\\entities\\rol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F065F2AB-637A-42C7-B301-12F3257FE8A7}|CommonLayer\\CommonLayer.csproj|solutionrelative:commonlayer\\entities\\rol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|c:\\users\\kenne\\documents\\crm_definitivo\\crm_definitivo\\forms\\menuform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\menuform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37613FE5-0BD6-40C6-B7C5-E7B4B65545CF}|BusinessLayer\\BusinessLayer.csproj|c:\\users\\kenne\\documents\\crm_definitivo\\businesslayer\\services\\permisoservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{37613FE5-0BD6-40C6-B7C5-E7B4B65545CF}|BusinessLayer\\BusinessLayer.csproj|solutionrelative:businesslayer\\services\\permisoservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3F7CAD5-8046-41BF-8662-9FA4276D94E4}|DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\kenne\\documents\\crm_definitivo\\dataaccesslayer\\repositories\\permisosrepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3F7CAD5-8046-41BF-8662-9FA4276D94E4}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\repositories\\permisosrepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|c:\\users\\kenne\\documents\\crm_definitivo\\crm_definitivo\\forms\\loginform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\loginform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F065F2AB-637A-42C7-B301-12F3257FE8A7}|CommonLayer\\CommonLayer.csproj|c:\\users\\kenne\\documents\\crm_definitivo\\commonlayer\\entities\\permiso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F065F2AB-637A-42C7-B301-12F3257FE8A7}|CommonLayer\\CommonLayer.csproj|solutionrelative:commonlayer\\entities\\permiso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UsuariosForm.cs",
+              "DocumentMoniker": "C:\\Users\\kenne\\Documents\\CRM_Definitivo\\CRM_Definitivo\\Forms\\UsuariosForm.cs",
+              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\UsuariosForm.cs",
+              "ToolTip": "C:\\Users\\kenne\\Documents\\CRM_Definitivo\\CRM_Definitivo\\Forms\\UsuariosForm.cs",
+              "RelativeToolTip": "CRM_Definitivo\\Forms\\UsuariosForm.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAuwD0AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T16:31:19.433Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProyectosForm.cs",
+              "DocumentMoniker": "C:\\Users\\kenne\\Documents\\CRM_Definitivo\\CRM_Definitivo\\Forms\\ProyectosForm.cs",
+              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\ProyectosForm.cs",
+              "ToolTip": "C:\\Users\\kenne\\Documents\\CRM_Definitivo\\CRM_Definitivo\\Forms\\ProyectosForm.cs",
+              "RelativeToolTip": "CRM_Definitivo\\Forms\\ProyectosForm.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAADwvxUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T02:59:21.084Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProyectosForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\kenne\\Documents\\CRM_Definitivo\\CRM_Definitivo\\Forms\\ProyectosForm.cs",
+              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\ProyectosForm.cs",
+              "ToolTip": "C:\\Users\\kenne\\Documents\\CRM_Definitivo\\CRM_Definitivo\\Forms\\ProyectosForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "CRM_Definitivo\\Forms\\ProyectosForm.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T02:38:20.907Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EditarUsuarioForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\kenne\\Documents\\CRM_Definitivo\\CRM_Definitivo\\Forms\\EditarUsuarioForm.cs",
+              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\EditarUsuarioForm.cs",
+              "ToolTip": "C:\\Users\\kenne\\Documents\\CRM_Definitivo\\CRM_Definitivo\\Forms\\EditarUsuarioForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "CRM_Definitivo\\Forms\\EditarUsuarioForm.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T02:34:56.202Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MenuForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\kenne\\Documents\\CRM_Definitivo\\CRM_Definitivo\\Forms\\MenuForm.cs",
+              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\MenuForm.cs",
+              "ToolTip": "C:\\Users\\kenne\\Documents\\CRM_Definitivo\\CRM_Definitivo\\Forms\\MenuForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "CRM_Definitivo\\Forms\\MenuForm.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T02:23:27.48Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MenuForm.cs",
+              "DocumentMoniker": "C:\\Users\\kenne\\Documents\\CRM_Definitivo\\CRM_Definitivo\\Forms\\MenuForm.cs",
+              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\MenuForm.cs",
+              "ToolTip": "C:\\Users\\kenne\\Documents\\CRM_Definitivo\\CRM_Definitivo\\Forms\\MenuForm.cs",
+              "RelativeToolTip": "CRM_Definitivo\\Forms\\MenuForm.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAYwGkAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T01:41:14.961Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "A\u00F1adirUsuariosForm.cs",
+              "DocumentMoniker": "C:\\Users\\kenne\\Documents\\CRM_Definitivo\\CRM_Definitivo\\Forms\\A\u00F1adirUsuariosForm.cs",
+              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\A\u00F1adirUsuariosForm.cs",
+              "ToolTip": "C:\\Users\\kenne\\Documents\\CRM_Definitivo\\CRM_Definitivo\\Forms\\A\u00F1adirUsuariosForm.cs",
+              "RelativeToolTip": "CRM_Definitivo\\Forms\\A\u00F1adirUsuariosForm.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAnwD8AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T16:43:45.416Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "A\u00F1adirUsuariosForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\kenne\\Documents\\CRM_Definitivo\\CRM_Definitivo\\Forms\\A\u00F1adirUsuariosForm.cs",
+              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\A\u00F1adirUsuariosForm.cs",
+              "ToolTip": "C:\\Users\\fuent\\source\\repos\\CRM_Definitivo\\CRM_Definitivo\\Forms\\A\u00F1adirUsuariosForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "..\\..\\..\\fuent\\source\\repos\\CRM_Definitivo\\CRM_Definitivo\\Forms\\A\u00F1adirUsuariosForm.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T16:37:43.145Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UsuariosForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\kenne\\Documents\\CRM_Definitivo\\CRM_Definitivo\\Forms\\UsuariosForm.cs",
+              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\UsuariosForm.cs",
+              "ToolTip": "C:\\Users\\fuent\\source\\repos\\CRM_Definitivo\\CRM_Definitivo\\Forms\\UsuariosForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "..\\..\\..\\fuent\\source\\repos\\CRM_Definitivo\\CRM_Definitivo\\Forms\\UsuariosForm.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T04:19:07.184Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UsuarioRepositories.cs",
+              "DocumentMoniker": "C:\\Users\\kenne\\Documents\\CRM_Definitivo\\DataAccessLayer\\Repositories\\UsuarioRepositories.cs",
+              "RelativeDocumentMoniker": "DataAccessLayer\\Repositories\\UsuarioRepositories.cs",
+              "ToolTip": "C:\\Users\\kenne\\Documents\\CRM_Definitivo\\DataAccessLayer\\Repositories\\UsuarioRepositories.cs",
+              "RelativeToolTip": "DataAccessLayer\\Repositories\\UsuarioRepositories.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAgwEwAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T02:26:30.018Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "UsuariosServices.cs",
+              "DocumentMoniker": "C:\\Users\\kenne\\Documents\\CRM_Definitivo\\BusinessLayer\\Services\\UsuariosServices.cs",
+              "RelativeDocumentMoniker": "BusinessLayer\\Services\\UsuariosServices.cs",
+              "ToolTip": "C:\\Users\\kenne\\Documents\\CRM_Definitivo\\BusinessLayer\\Services\\UsuariosServices.cs",
+              "RelativeToolTip": "BusinessLayer\\Services\\UsuariosServices.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T02:26:26.809Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "EditarUsuarioForm.cs",
+              "DocumentMoniker": "C:\\Users\\kenne\\Documents\\CRM_Definitivo\\CRM_Definitivo\\Forms\\EditarUsuarioForm.cs",
+              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\EditarUsuarioForm.cs",
+              "ToolTip": "C:\\Users\\kenne\\Documents\\CRM_Definitivo\\CRM_Definitivo\\Forms\\EditarUsuarioForm.cs",
+              "RelativeToolTip": "CRM_Definitivo\\Forms\\EditarUsuarioForm.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T01:44:55.305Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Usuarios.cs",
+              "DocumentMoniker": "C:\\Users\\kenne\\Documents\\CRM_Definitivo\\CommonLayer\\Entities\\Usuarios.cs",
+              "RelativeDocumentMoniker": "CommonLayer\\Entities\\Usuarios.cs",
+              "ToolTip": "C:\\Users\\kenne\\Documents\\CRM_Definitivo\\CommonLayer\\Entities\\Usuarios.cs",
+              "RelativeToolTip": "CommonLayer\\Entities\\Usuarios.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T01:36:00.649Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "RolRepositories.cs",
+              "DocumentMoniker": "C:\\Users\\kenne\\Documents\\CRM_Definitivo\\DataAccessLayer\\Repositories\\RolRepositories.cs",
+              "RelativeDocumentMoniker": "DataAccessLayer\\Repositories\\RolRepositories.cs",
+              "ToolTip": "C:\\Users\\kenne\\Documents\\CRM_Definitivo\\DataAccessLayer\\Repositories\\RolRepositories.cs",
+              "RelativeToolTip": "DataAccessLayer\\Repositories\\RolRepositories.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAxwCYAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T01:20:13.461Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "LoginForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\kenne\\Documents\\CRM_Definitivo\\CRM_Definitivo\\Forms\\LoginForm.cs",
+              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\LoginForm.cs",
+              "ToolTip": "C:\\Users\\fuent\\source\\repos\\CRM_Definitivo\\CRM_Definitivo\\Forms\\LoginForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "..\\..\\..\\fuent\\source\\repos\\CRM_Definitivo\\CRM_Definitivo\\Forms\\LoginForm.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T01:51:12.962Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "LoginForm.cs",
+              "DocumentMoniker": "C:\\Users\\kenne\\Documents\\CRM_Definitivo\\CRM_Definitivo\\Forms\\LoginForm.cs",
+              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\LoginForm.cs",
+              "ToolTip": "C:\\Users\\kenne\\Documents\\CRM_Definitivo\\CRM_Definitivo\\Forms\\LoginForm.cs",
+              "RelativeToolTip": "CRM_Definitivo\\Forms\\LoginForm.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAADwvy8AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T20:43:37.516Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Rol.cs",
+              "DocumentMoniker": "C:\\Users\\kenne\\Documents\\CRM_Definitivo\\CommonLayer\\Entities\\Rol.cs",
+              "RelativeDocumentMoniker": "CommonLayer\\Entities\\Rol.cs",
+              "ToolTip": "C:\\Users\\kenne\\Documents\\CRM_Definitivo\\CommonLayer\\Entities\\Rol.cs",
+              "RelativeToolTip": "CommonLayer\\Entities\\Rol.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T01:12:21.422Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "MenuForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\kenne\\Documents\\CRM_Definitivo\\CRM_Definitivo\\Forms\\MenuForm.Designer.cs",
+              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\MenuForm.Designer.cs",
+              "ToolTip": "C:\\Users\\kenne\\Documents\\CRM_Definitivo\\CRM_Definitivo\\Forms\\MenuForm.Designer.cs",
+              "RelativeToolTip": "CRM_Definitivo\\Forms\\MenuForm.Designer.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAA6wAMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T14:00:53.72Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "PermisoServices.cs",
+              "DocumentMoniker": "C:\\Users\\kenne\\Documents\\CRM_Definitivo\\BusinessLayer\\Services\\PermisoServices.cs",
+              "RelativeDocumentMoniker": "BusinessLayer\\Services\\PermisoServices.cs",
+              "ToolTip": "C:\\Users\\kenne\\Documents\\CRM_Definitivo\\BusinessLayer\\Services\\PermisoServices.cs",
+              "RelativeToolTip": "BusinessLayer\\Services\\PermisoServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T01:45:37.154Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "PermisosRepositories.cs",
+              "DocumentMoniker": "C:\\Users\\kenne\\Documents\\CRM_Definitivo\\DataAccessLayer\\Repositories\\PermisosRepositories.cs",
+              "RelativeDocumentMoniker": "DataAccessLayer\\Repositories\\PermisosRepositories.cs",
+              "ToolTip": "C:\\Users\\kenne\\Documents\\CRM_Definitivo\\DataAccessLayer\\Repositories\\PermisosRepositories.cs",
+              "RelativeToolTip": "DataAccessLayer\\Repositories\\PermisosRepositories.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T01:40:30.734Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "LoginForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\kenne\\Documents\\CRM_Definitivo\\CRM_Definitivo\\Forms\\LoginForm.Designer.cs",
+              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\LoginForm.Designer.cs",
+              "ToolTip": "C:\\Users\\kenne\\Documents\\CRM_Definitivo\\CRM_Definitivo\\Forms\\LoginForm.Designer.cs",
+              "RelativeToolTip": "CRM_Definitivo\\Forms\\LoginForm.Designer.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAASwBYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T01:51:03.471Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Permiso.cs",
+              "DocumentMoniker": "C:\\Users\\kenne\\Documents\\CRM_Definitivo\\CommonLayer\\Entities\\Permiso.cs",
+              "RelativeDocumentMoniker": "CommonLayer\\Entities\\Permiso.cs",
+              "ToolTip": "C:\\Users\\kenne\\Documents\\CRM_Definitivo\\CommonLayer\\Entities\\Permiso.cs",
+              "RelativeToolTip": "CommonLayer\\Entities\\Permiso.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T01:09:17.127Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

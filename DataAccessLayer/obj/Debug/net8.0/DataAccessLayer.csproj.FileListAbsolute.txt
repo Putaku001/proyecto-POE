@@ -1,0 +1,15 @@
+C:\Users\fuent\source\repos\CRM_Definitivo\DataAccessLayer\bin\Debug\net8.0\DataAccessLayer.deps.json
+C:\Users\fuent\source\repos\CRM_Definitivo\DataAccessLayer\bin\Debug\net8.0\DataAccessLayer.dll
+C:\Users\fuent\source\repos\CRM_Definitivo\DataAccessLayer\bin\Debug\net8.0\DataAccessLayer.pdb
+C:\Users\fuent\source\repos\CRM_Definitivo\DataAccessLayer\bin\Debug\net8.0\CommonLayer.dll
+C:\Users\fuent\source\repos\CRM_Definitivo\DataAccessLayer\bin\Debug\net8.0\CommonLayer.pdb
+C:\Users\fuent\source\repos\CRM_Definitivo\DataAccessLayer\obj\Debug\net8.0\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\fuent\source\repos\CRM_Definitivo\DataAccessLayer\obj\Debug\net8.0\DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fuent\source\repos\CRM_Definitivo\DataAccessLayer\obj\Debug\net8.0\DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\fuent\source\repos\CRM_Definitivo\DataAccessLayer\obj\Debug\net8.0\DataAccessLayer.AssemblyInfo.cs
+C:\Users\fuent\source\repos\CRM_Definitivo\DataAccessLayer\obj\Debug\net8.0\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\fuent\source\repos\CRM_Definitivo\DataAccessLayer\obj\Debug\net8.0\DataAcce.E67BD773.Up2Date
+C:\Users\fuent\source\repos\CRM_Definitivo\DataAccessLayer\obj\Debug\net8.0\DataAccessLayer.dll
+C:\Users\fuent\source\repos\CRM_Definitivo\DataAccessLayer\obj\Debug\net8.0\refint\DataAccessLayer.dll
+C:\Users\fuent\source\repos\CRM_Definitivo\DataAccessLayer\obj\Debug\net8.0\DataAccessLayer.pdb
+C:\Users\fuent\source\repos\CRM_Definitivo\DataAccessLayer\obj\Debug\net8.0\ref\DataAccessLayer.dll
