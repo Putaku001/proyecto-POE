@@ -11,15 +11,17 @@ namespace CRM_Definitivo
 {
     public partial class LoginForm : Form
     {
+        private IListaProyectoServices proyectoServices;
         private IUsuarioRepositories usuarioRepositories;
         private IUsuarioServices usuarioServices;
         private IRolServices _rolServices;
-        public LoginForm(IUsuarioRepositories _usuarioRepositories, IUsuarioServices _usuarioServices, IRolServices rolServices)
+        public LoginForm(IUsuarioRepositories _usuarioRepositories, IUsuarioServices _usuarioServices, IRolServices rolServices, IListaProyectoServices _proyectoServices)
         {
             InitializeComponent();
             usuarioRepositories = _usuarioRepositories;
             usuarioServices = _usuarioServices;
             _rolServices = rolServices;
+            proyectoServices = _proyectoServices;
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
@@ -98,7 +100,7 @@ namespace CRM_Definitivo
                     Clave = ousariosRow.Field<string>("Clave"),
                 };
 
-                MenuForm form = new MenuForm(ousuario, usuarioServices, _rolServices);
+                MenuForm form = new MenuForm(ousuario, usuarioServices, _rolServices, proyectoServices);
                 form.Show();
                 this.Hide();
 

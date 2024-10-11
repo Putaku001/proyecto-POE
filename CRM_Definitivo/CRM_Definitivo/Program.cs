@@ -48,10 +48,12 @@ namespace CRM_Definitivo
                     //BUSISNESSLAYER
                     services.AddScoped<IUsuarioServices, UsuariosServices>();
                     services.AddScoped<IRolServices, RolServices>();
+                    services.AddScoped<IListaProyectoServices, ListaProyectosServices>();
 
                     //REPOR
                     services.AddScoped<IUsuarioRepositories, UsuarioRepositories>();
                     services.AddScoped<IRolRepositories,  RolRepositories>();
+                    services.AddScoped<IListaProyectosRepositories, ListaProyectosRepositories>();
 
                     //SQLDATA
                     services.AddSingleton<ISqlDataAccess, SqlDataAccess>();

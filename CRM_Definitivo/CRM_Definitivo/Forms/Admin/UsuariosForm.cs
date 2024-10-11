@@ -19,7 +19,6 @@ namespace PresentationLayer.Forms
 {
     public partial class UsuariosForm : Form
     {
-        //private AñadirUsuariosForm _añadirusuariosform;
         private IRolServices _rolservices;
         private IUsuarioServices _usuariosservices;
         public UsuariosForm(IUsuarioServices usuarioServices, IRolServices rolServices)
@@ -27,7 +26,6 @@ namespace PresentationLayer.Forms
             InitializeComponent();
             _usuariosservices = usuarioServices;
             _rolservices = rolServices;
-            //_añadirusuariosform = new AñadirUsuariosForm(formularioPrincipal);
             LoadData();
 
         }

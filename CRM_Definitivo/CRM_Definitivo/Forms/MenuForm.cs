@@ -21,16 +21,18 @@ namespace PresentationLayer.Forms
         private static IconMenuItem MenuActivo = null;
         private static Form FormularioActivo = null;
         private Usuarios usuarioactual;
+        private IListaProyectoServices proyectoServices;
         private IUsuarioServices usuarioServices;
         private IRolServices _rolServices;
         private System.Windows.Forms.Timer timer;
-        public MenuForm(Usuarios ousuarios, IUsuarioServices _usuarioServices, IRolServices rolServices)
+        public MenuForm(Usuarios ousuarios, IUsuarioServices _usuarioServices, IRolServices rolServices, IListaProyectoServices _proyectoServices)
         {
 
             InitializeComponent();
             this.usuarioactual = ousuarios;
             usuarioServices = _usuarioServices;
             _rolServices = rolServices;
+            proyectoServices = _proyectoServices;
             timer = new System.Windows.Forms.Timer();
             timer.Interval = 1000;
             timer.Tick += Timer_tick;
@@ -108,7 +110,7 @@ namespace PresentationLayer.Forms
 
         private void btnProyectosForm_Click(object sender, EventArgs e)
         {
-            ProyectosForm proyectosForm = new ProyectosForm();
+            ProyectosForm proyectosForm = new ProyectosForm(proyectoServices);
             AbrirFormulario(proyectosForm);
         }
     }

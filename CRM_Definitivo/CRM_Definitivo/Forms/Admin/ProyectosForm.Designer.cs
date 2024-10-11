@@ -51,7 +51,6 @@
             lblSeleccionProyectoCategoria = new Label();
             dgvCategorias = new DataGridView();
             tbAñadirProyectos = new TabPage();
-            panel2 = new Panel();
             gbAñadirNuevosProyectos = new GroupBox();
             btnEliminarNP = new FontAwesome.Sharp.IconButton();
             btnEditarNP = new FontAwesome.Sharp.IconButton();
@@ -66,24 +65,23 @@
             tpListaProyectos = new TabPage();
             dgvListaProyectos = new DataGridView();
             tpAsignarProyectos = new TabPage();
-            panel1 = new Panel();
             dataGridView1 = new DataGridView();
             gbListaProyecto = new GroupBox();
-            cboClientes = new ComboBox();
-            label1 = new Label();
-            cboEmpleados = new ComboBox();
-            cboCategorias = new ComboBox();
             btnEliminar = new FontAwesome.Sharp.IconButton();
-            btnEditar = new FontAwesome.Sharp.IconButton();
-            btnGuardar = new FontAwesome.Sharp.IconButton();
-            lblFechaFin = new Label();
-            dtpFechaEntrega = new DateTimePicker();
-            label5 = new Label();
             label4 = new Label();
-            cboTareas = new ComboBox();
+            btnEditar = new FontAwesome.Sharp.IconButton();
+            dtpFechaEntrega = new DateTimePicker();
+            btnGuardar = new FontAwesome.Sharp.IconButton();
+            cboCategorias = new ComboBox();
+            cboClientes = new ComboBox();
+            lblFechaFin = new Label();
             label3 = new Label();
+            cboTareas = new ComboBox();
+            label1 = new Label();
             label2 = new Label();
+            cboEmpleados = new ComboBox();
             cboProyectos = new ComboBox();
+            label5 = new Label();
             lblProyectos = new Label();
             txtCodigo = new TextBox();
             tbProyectos = new TabControl();
@@ -382,7 +380,6 @@
             // 
             // tbAñadirProyectos
             // 
-            tbAñadirProyectos.Controls.Add(panel2);
             tbAñadirProyectos.Controls.Add(gbAñadirNuevosProyectos);
             tbAñadirProyectos.Controls.Add(dgvAñadirProyectos);
             tbAñadirProyectos.Location = new Point(4, 4);
@@ -393,16 +390,9 @@
             tbAñadirProyectos.Text = "Añadir nuevos proyectos";
             tbAñadirProyectos.UseVisualStyleBackColor = true;
             // 
-            // panel2
-            // 
-            panel2.BackColor = Color.DimGray;
-            panel2.Location = new Point(561, 70);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(10, 545);
-            panel2.TabIndex = 7;
-            // 
             // gbAñadirNuevosProyectos
             // 
+            gbAñadirNuevosProyectos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             gbAñadirNuevosProyectos.Controls.Add(btnEliminarNP);
             gbAñadirNuevosProyectos.Controls.Add(btnEditarNP);
             gbAñadirNuevosProyectos.Controls.Add(btnGuardarNP);
@@ -527,6 +517,7 @@
             // dgvAñadirProyectos
             // 
             dgvAñadirProyectos.AllowUserToAddRows = false;
+            dgvAñadirProyectos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvAñadirProyectos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvAñadirProyectos.Location = new Point(609, 70);
             dgvAñadirProyectos.Name = "dgvAñadirProyectos";
@@ -550,6 +541,7 @@
             // dgvListaProyectos
             // 
             dgvListaProyectos.AllowUserToAddRows = false;
+            dgvListaProyectos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvListaProyectos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvListaProyectos.Location = new Point(28, 55);
             dgvListaProyectos.Name = "dgvListaProyectos";
@@ -560,7 +552,6 @@
             // 
             // tpAsignarProyectos
             // 
-            tpAsignarProyectos.Controls.Add(panel1);
             tpAsignarProyectos.Controls.Add(dataGridView1);
             tpAsignarProyectos.Controls.Add(gbListaProyecto);
             tpAsignarProyectos.Location = new Point(4, 4);
@@ -571,83 +562,45 @@
             tpAsignarProyectos.Text = "Asignar Proyectos";
             tpAsignarProyectos.UseVisualStyleBackColor = true;
             // 
-            // panel1
-            // 
-            panel1.BackColor = Color.DimGray;
-            panel1.Location = new Point(577, 88);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(10, 545);
-            panel1.TabIndex = 5;
-            // 
             // dataGridView1
             // 
             dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(632, 88);
+            dataGridView1.Location = new Point(29, 271);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(713, 545);
+            dataGridView1.Size = new Size(1298, 362);
             dataGridView1.TabIndex = 4;
             // 
             // gbListaProyecto
             // 
-            gbListaProyecto.Controls.Add(cboClientes);
-            gbListaProyecto.Controls.Add(label1);
-            gbListaProyecto.Controls.Add(cboEmpleados);
-            gbListaProyecto.Controls.Add(cboCategorias);
+            gbListaProyecto.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             gbListaProyecto.Controls.Add(btnEliminar);
-            gbListaProyecto.Controls.Add(btnEditar);
-            gbListaProyecto.Controls.Add(btnGuardar);
-            gbListaProyecto.Controls.Add(lblFechaFin);
-            gbListaProyecto.Controls.Add(dtpFechaEntrega);
-            gbListaProyecto.Controls.Add(label5);
             gbListaProyecto.Controls.Add(label4);
-            gbListaProyecto.Controls.Add(cboTareas);
+            gbListaProyecto.Controls.Add(btnEditar);
+            gbListaProyecto.Controls.Add(dtpFechaEntrega);
+            gbListaProyecto.Controls.Add(btnGuardar);
+            gbListaProyecto.Controls.Add(cboCategorias);
+            gbListaProyecto.Controls.Add(cboClientes);
+            gbListaProyecto.Controls.Add(lblFechaFin);
             gbListaProyecto.Controls.Add(label3);
+            gbListaProyecto.Controls.Add(cboTareas);
+            gbListaProyecto.Controls.Add(label1);
             gbListaProyecto.Controls.Add(label2);
+            gbListaProyecto.Controls.Add(cboEmpleados);
             gbListaProyecto.Controls.Add(cboProyectos);
+            gbListaProyecto.Controls.Add(label5);
             gbListaProyecto.Controls.Add(lblProyectos);
             gbListaProyecto.Controls.Add(txtCodigo);
-            gbListaProyecto.Location = new Point(29, 76);
+            gbListaProyecto.Location = new Point(29, 33);
             gbListaProyecto.Name = "gbListaProyecto";
-            gbListaProyecto.Size = new Size(507, 557);
+            gbListaProyecto.Size = new Size(1298, 232);
             gbListaProyecto.TabIndex = 3;
             gbListaProyecto.TabStop = false;
             gbListaProyecto.Text = "Asignar proyectos:";
-            // 
-            // cboClientes
-            // 
-            cboClientes.FormattingEnabled = true;
-            cboClientes.Location = new Point(32, 327);
-            cboClientes.Name = "cboClientes";
-            cboClientes.Size = new Size(319, 28);
-            cboClientes.TabIndex = 29;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(32, 250);
-            label1.Name = "label1";
-            label1.Size = new Size(80, 20);
-            label1.TabIndex = 28;
-            label1.Text = "Empleado:";
-            // 
-            // cboEmpleados
-            // 
-            cboEmpleados.FormattingEnabled = true;
-            cboEmpleados.Location = new Point(32, 273);
-            cboEmpleados.Name = "cboEmpleados";
-            cboEmpleados.Size = new Size(319, 28);
-            cboEmpleados.TabIndex = 27;
-            // 
-            // cboCategorias
-            // 
-            cboCategorias.FormattingEnabled = true;
-            cboCategorias.Location = new Point(32, 165);
-            cboCategorias.Name = "cboCategorias";
-            cboCategorias.Size = new Size(319, 28);
-            cboCategorias.TabIndex = 26;
             // 
             // btnEliminar
             // 
@@ -661,12 +614,21 @@
             btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnEliminar.IconSize = 22;
             btnEliminar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEliminar.Location = new Point(32, 513);
+            btnEliminar.Location = new Point(808, 180);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(319, 29);
             btnEliminar.TabIndex = 25;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = false;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(456, 36);
+            label4.Name = "label4";
+            label4.Size = new Size(53, 20);
+            label4.TabIndex = 7;
+            label4.Text = "Tareas:";
             // 
             // btnEditar
             // 
@@ -680,12 +642,19 @@
             btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnEditar.IconSize = 22;
             btnEditar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEditar.Location = new Point(32, 478);
+            btnEditar.Location = new Point(808, 145);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(319, 29);
             btnEditar.TabIndex = 24;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = false;
+            // 
+            // dtpFechaEntrega
+            // 
+            dtpFechaEntrega.Location = new Point(808, 59);
+            dtpFechaEntrega.Name = "dtpFechaEntrega";
+            dtpFechaEntrega.Size = new Size(319, 27);
+            dtpFechaEntrega.TabIndex = 10;
             // 
             // btnGuardar
             // 
@@ -699,54 +668,37 @@
             btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnGuardar.IconSize = 22;
             btnGuardar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnGuardar.Location = new Point(32, 443);
+            btnGuardar.Location = new Point(808, 110);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(319, 29);
             btnGuardar.TabIndex = 23;
             btnGuardar.Text = "Añadir";
             btnGuardar.UseVisualStyleBackColor = false;
             // 
+            // cboCategorias
+            // 
+            cboCategorias.FormattingEnabled = true;
+            cboCategorias.Location = new Point(32, 165);
+            cboCategorias.Name = "cboCategorias";
+            cboCategorias.Size = new Size(319, 28);
+            cboCategorias.TabIndex = 26;
+            // 
+            // cboClientes
+            // 
+            cboClientes.FormattingEnabled = true;
+            cboClientes.Location = new Point(456, 167);
+            cboClientes.Name = "cboClientes";
+            cboClientes.Size = new Size(319, 28);
+            cboClientes.TabIndex = 29;
+            // 
             // lblFechaFin
             // 
             lblFechaFin.AutoSize = true;
-            lblFechaFin.Location = new Point(32, 377);
+            lblFechaFin.Location = new Point(808, 36);
             lblFechaFin.Name = "lblFechaFin";
             lblFechaFin.Size = new Size(126, 20);
             lblFechaFin.TabIndex = 11;
             lblFechaFin.Text = "Fecha de entrega:";
-            // 
-            // dtpFechaEntrega
-            // 
-            dtpFechaEntrega.Location = new Point(32, 400);
-            dtpFechaEntrega.Name = "dtpFechaEntrega";
-            dtpFechaEntrega.Size = new Size(319, 27);
-            dtpFechaEntrega.TabIndex = 10;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(32, 304);
-            label5.Name = "label5";
-            label5.Size = new Size(55, 20);
-            label5.TabIndex = 8;
-            label5.Text = "Cliente";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(32, 196);
-            label4.Name = "label4";
-            label4.Size = new Size(53, 20);
-            label4.TabIndex = 7;
-            label4.Text = "Tareas:";
-            // 
-            // cboTareas
-            // 
-            cboTareas.FormattingEnabled = true;
-            cboTareas.Location = new Point(32, 219);
-            cboTareas.Name = "cboTareas";
-            cboTareas.Size = new Size(319, 28);
-            cboTareas.TabIndex = 6;
             // 
             // label3
             // 
@@ -757,6 +709,23 @@
             label3.TabIndex = 4;
             label3.Text = "Categoria:";
             // 
+            // cboTareas
+            // 
+            cboTareas.FormattingEnabled = true;
+            cboTareas.Location = new Point(456, 59);
+            cboTareas.Name = "cboTareas";
+            cboTareas.Size = new Size(319, 28);
+            cboTareas.TabIndex = 6;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(456, 90);
+            label1.Name = "label1";
+            label1.Size = new Size(80, 20);
+            label1.TabIndex = 28;
+            label1.Text = "Empleado:";
+            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -766,6 +735,14 @@
             label2.TabIndex = 3;
             label2.Text = "Proyecto:";
             // 
+            // cboEmpleados
+            // 
+            cboEmpleados.FormattingEnabled = true;
+            cboEmpleados.Location = new Point(456, 113);
+            cboEmpleados.Name = "cboEmpleados";
+            cboEmpleados.Size = new Size(319, 28);
+            cboEmpleados.TabIndex = 27;
+            // 
             // cboProyectos
             // 
             cboProyectos.FormattingEnabled = true;
@@ -773,6 +750,15 @@
             cboProyectos.Name = "cboProyectos";
             cboProyectos.Size = new Size(319, 28);
             cboProyectos.TabIndex = 2;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(456, 144);
+            label5.Name = "label5";
+            label5.Size = new Size(55, 20);
+            label5.TabIndex = 8;
+            label5.Text = "Cliente";
             // 
             // lblProyectos
             // 
@@ -842,7 +828,6 @@
         private TabPage tbAñadirProyectos;
         private TabPage tpListaProyectos;
         private TabPage tpAsignarProyectos;
-        private Panel panel1;
         private DataGridView dataGridView1;
         private GroupBox gbListaProyecto;
         private ComboBox cboProyectos;
@@ -860,7 +845,6 @@
         private FontAwesome.Sharp.IconButton btnEditar;
         private FontAwesome.Sharp.IconButton btnGuardar;
         private DataGridView dgvListaProyectos;
-        private Panel panel2;
         private GroupBox gbAñadirNuevosProyectos;
         private FontAwesome.Sharp.IconButton btnEliminarNP;
         private FontAwesome.Sharp.IconButton btnEditarNP;
