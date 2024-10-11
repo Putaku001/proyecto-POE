@@ -1,6 +1,7 @@
-﻿using CommonLayer.Entities;
+﻿using BusinessLayer.Services.Interfaces;
+using CommonLayer.Entities;
 using DataAccessLayer.DbSqlDataAccess;
-using DataAccessLayer.Repositories;
+using DataAccessLayer.Repositories.InterfacesRepositories;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -10,13 +11,13 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Services
 {
-    public class UsuariosServices
+    public class UsuariosServices : IUsuarioServices
     {
-        private UsuarioRepositories _usuariosrepositoriess;
+        private IUsuarioRepositories _usuariosrepositoriess;
 
-        public UsuariosServices()
+        public UsuariosServices(IUsuarioRepositories usuarioRepositories)
         {
-            _usuariosrepositoriess = new UsuarioRepositories();
+            _usuariosrepositoriess = usuarioRepositories;
         }
 
         public DataTable GetUsuarios()

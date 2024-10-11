@@ -1,4 +1,6 @@
-﻿using DataAccessLayer.DbSqlDataAccess;
+﻿using DataAccessLayer.DbConnection;
+using DataAccessLayer.DbSqlDataAccess;
+using DataAccessLayer.Repositories.InterfacesRepositories;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
@@ -9,13 +11,13 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Repositories
 {
-    public class PermisosRepositories
+    public class PermisosRepositories : IPermisosRepositories
     {
-        private SqlDataAccess _dbConnection;
+        private ISqlDataAccess _dbConnection;
 
-        public PermisosRepositories()
+        public PermisosRepositories(ISqlDataAccess dbConnection)
         {
-            _dbConnection = new SqlDataAccess();
+            _dbConnection = dbConnection;
         }
 
         public DataTable GetAllPermiso(int IdUsuario)

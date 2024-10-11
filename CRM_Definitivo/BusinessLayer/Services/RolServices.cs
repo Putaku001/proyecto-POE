@@ -1,4 +1,6 @@
-﻿using DataAccessLayer.Repositories;
+﻿using BusinessLayer.Services.InterfacesServices;
+using DataAccessLayer.Repositories;
+using DataAccessLayer.Repositories.InterfacesRepositories;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -8,13 +10,13 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Services
 {
-    public class RolServices
+    public class RolServices : IRolServices
     {
-        private RolRepositories _rolrepositories;
+        private IRolRepositories _rolrepositories;
 
-        public RolServices()
+        public RolServices(IRolRepositories rolRepositories)
         {
-            _rolrepositories = new RolRepositories();
+            _rolrepositories = rolRepositories;
         }
 
         public DataTable GetRolFiltro()

@@ -1,16 +1,25 @@
 using System.Data;
 using BusinessLayer;
 using BusinessLayer.Services;
+using BusinessLayer.Services.Interfaces;
+using BusinessLayer.Services.InterfacesServices;
 using CommonLayer.Entities;
+using DataAccessLayer.Repositories.InterfacesRepositories;
 using PresentationLayer.Forms;
 
 namespace CRM_Definitivo
 {
     public partial class LoginForm : Form
     {
-        public LoginForm()
+        private IUsuarioRepositories usuarioRepositories;
+        private IUsuarioServices usuarioServices;
+        private IRolServices _rolServices;
+        public LoginForm(IUsuarioRepositories _usuarioRepositories, IUsuarioServices _usuarioServices, IRolServices rolServices)
         {
             InitializeComponent();
+            usuarioRepositories = _usuarioRepositories;
+            usuarioServices = _usuarioServices;
+            _rolServices = rolServices;
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
@@ -72,7 +81,7 @@ namespace CRM_Definitivo
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            DataTable usuariosTable = new UsuariosServices().GetUsuarios();
+            DataTable usuariosTable = new UsuariosServices(usuarioRepositories).GetUsuarios();
 
             DataRow ousariosRow = usuariosTable
                 .AsEnumerable()
@@ -89,7 +98,7 @@ namespace CRM_Definitivo
                     Clave = ousariosRow.Field<string>("Clave"),
                 };
 
-                MenuForm form = new MenuForm(ousuario);
+                MenuForm form = new MenuForm(ousuario, usuarioServices, _rolServices);
                 form.Show();
                 this.Hide();
 

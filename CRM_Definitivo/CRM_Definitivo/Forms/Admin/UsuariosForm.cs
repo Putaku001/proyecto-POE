@@ -1,4 +1,6 @@
 ﻿using BusinessLayer.Services;
+using BusinessLayer.Services.Interfaces;
+using BusinessLayer.Services.InterfacesServices;
 using CommonLayer.Entities;
 using DataAccessLayer.Repositories;
 using System;
@@ -17,14 +19,14 @@ namespace PresentationLayer.Forms
 {
     public partial class UsuariosForm : Form
     {
-        private AñadirUsuariosForm _añadirusuariosform;
-        private RolServices _rolservices;
-        private UsuariosServices _usuariosservices;
-        public UsuariosForm()
+        //private AñadirUsuariosForm _añadirusuariosform;
+        private IRolServices _rolservices;
+        private IUsuarioServices _usuariosservices;
+        public UsuariosForm(IUsuarioServices usuarioServices, IRolServices rolServices)
         {
             InitializeComponent();
-            _usuariosservices = new UsuariosServices();
-            _rolservices = new RolServices();
+            _usuariosservices = usuarioServices;
+            _rolservices = rolServices;
             //_añadirusuariosform = new AñadirUsuariosForm(formularioPrincipal);
             LoadData();
 
@@ -52,7 +54,7 @@ namespace PresentationLayer.Forms
 
         private void pbAñadirUsuario_Click(object sender, EventArgs e)
         {
-            AñadirUsuariosForm formularioAñadir = new AñadirUsuariosForm(this);
+            AñadirUsuariosForm formularioAñadir = new AñadirUsuariosForm(_usuariosservices, _rolservices);
 
             // Suscribirse al evento que notifica cuando se agrega un nuevo usuario
             formularioAñadir.UsuarioAgregado += (s, args) =>

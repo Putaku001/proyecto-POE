@@ -1,4 +1,6 @@
-﻿using DataAccessLayer.Repositories;
+﻿using BusinessLayer.Services.InterfacesServices;
+using DataAccessLayer.Repositories;
+using DataAccessLayer.Repositories.InterfacesRepositories;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -8,13 +10,13 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Services
 {
-    public class PermisoServices
+    public class PermisoServices : IPermisoServices
     {
-        private PermisosRepositories _permisosrepositories;
+        private IPermisosRepositories _permisosrepositories;
 
-        public PermisoServices()
+        public PermisoServices(IPermisosRepositories permisosRepositories)
         {
-            _permisosrepositories = new PermisosRepositories();
+            _permisosrepositories = permisosRepositories;
         }
 
         public DataTable GetPermisos(int IdUsuario)

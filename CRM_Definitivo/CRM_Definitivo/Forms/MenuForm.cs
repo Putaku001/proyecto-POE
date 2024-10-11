@@ -1,4 +1,6 @@
-﻿using CommonLayer.Entities;
+﻿using BusinessLayer.Services.Interfaces;
+using BusinessLayer.Services.InterfacesServices;
+using CommonLayer.Entities;
 using FontAwesome.Sharp;
 using Microsoft.VisualBasic;
 using System;
@@ -19,12 +21,16 @@ namespace PresentationLayer.Forms
         private static IconMenuItem MenuActivo = null;
         private static Form FormularioActivo = null;
         private Usuarios usuarioactual;
+        private IUsuarioServices usuarioServices;
+        private IRolServices _rolServices;
         private System.Windows.Forms.Timer timer;
-        public MenuForm(Usuarios ousuarios)
+        public MenuForm(Usuarios ousuarios, IUsuarioServices _usuarioServices, IRolServices rolServices)
         {
 
             InitializeComponent();
             this.usuarioactual = ousuarios;
+            usuarioServices = _usuarioServices;
+            _rolServices = rolServices;
             timer = new System.Windows.Forms.Timer();
             timer.Interval = 1000;
             timer.Tick += Timer_tick;
@@ -76,7 +82,7 @@ namespace PresentationLayer.Forms
 
         private void btnUsuariosForm_Click(object sender, EventArgs e)
         {
-            UsuariosForm formulario = new UsuariosForm();  // Instancia de tu formulario hijo
+            UsuariosForm formulario = new UsuariosForm(usuarioServices, _rolServices);  // Instancia de tu formulario hijo
             AbrirFormulario(formulario);
         }
 

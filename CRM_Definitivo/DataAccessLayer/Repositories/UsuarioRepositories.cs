@@ -1,5 +1,7 @@
 ﻿using CommonLayer.Entities;
+using DataAccessLayer.DbConnection;
 using DataAccessLayer.DbSqlDataAccess;
+using DataAccessLayer.Repositories.InterfacesRepositories;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
@@ -10,13 +12,13 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Repositories
 {
-    public class UsuarioRepositories
+    public class UsuarioRepositories : IUsuarioRepositories
     {
-        private SqlDataAccess _dbConnection;
+        private ISqlDataAccess _dbConnection;
 
-        public UsuarioRepositories()
+        public UsuarioRepositories(ISqlDataAccess DbConnection)
         {
-            _dbConnection = new SqlDataAccess();
+            _dbConnection = DbConnection;
         }
 
         public DataTable GetAllUsuarios()

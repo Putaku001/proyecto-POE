@@ -1,4 +1,6 @@
 ﻿using BusinessLayer.Services;
+using BusinessLayer.Services.Interfaces;
+using BusinessLayer.Services.InterfacesServices;
 using CommonLayer.Entities;
 using System;
 using System.Collections.Generic;
@@ -14,17 +16,16 @@ namespace PresentationLayer.Forms
 {
     public partial class AñadirUsuariosForm : Form
     {
-        private UsuariosServices usuariosServices;
-        private RolServices rolServices;
+        private IUsuarioServices usuariosServices;
+        private IRolServices rolServices;
         private UsuariosForm _formularioPrincipal;
         bool isEditing = false;
-        public AñadirUsuariosForm(UsuariosForm formularioPrincipal)
+        public AñadirUsuariosForm(IUsuarioServices _usuarioServices, IRolServices _rolServices)
         {
             InitializeComponent();
-            usuariosServices = new UsuariosServices();
-            rolServices = new RolServices();
+            usuariosServices = _usuarioServices;
+            rolServices = _rolServices;
             LoadProvincias();
-            _formularioPrincipal = formularioPrincipal;
             //usuariosForm = usuariosform;
         }
 

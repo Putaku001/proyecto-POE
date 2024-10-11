@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataAccessLayer.DbConnection;
 using Microsoft.Data.SqlClient;
 
 
 namespace DataAccessLayer.DbSqlDataAccess
 {
-    public class SqlDataAccess
+    public class SqlDataAccess :ISqlDataAccess
     {
         private readonly string _connectionString;
 
