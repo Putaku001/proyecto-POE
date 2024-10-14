@@ -30,17 +30,17 @@
         {
             components = new System.ComponentModel.Container();
             panel1 = new Panel();
+            label2 = new Label();
             pbMinimizar = new PictureBox();
             pbEliminar = new PictureBox();
             pictureBox1 = new PictureBox();
             lblHoraUsuario = new Label();
             lblNombreUsuario = new Label();
-            label2 = new Label();
             btnUsuariosForm = new Button();
             panel2 = new Panel();
             panel4 = new Panel();
             panel3 = new Panel();
-            lblNombreUsuario2 = new Label();
+            lblNombreProyecto = new Label();
             pictureBox2 = new PictureBox();
             btnAcercaDe = new Button();
             btnAjustesForm = new Button();
@@ -60,6 +60,7 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.MenuHighlight;
+            panel1.Controls.Add(label2);
             panel1.Controls.Add(pbMinimizar);
             panel1.Controls.Add(pbEliminar);
             panel1.Controls.Add(pictureBox1);
@@ -70,6 +71,19 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1186, 96);
             panel1.TabIndex = 2;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Cursor = Cursors.Hand;
+            label2.Font = new Font("Century Gothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = SystemColors.InfoText;
+            label2.Location = new Point(69, 64);
+            label2.Name = "label2";
+            label2.Size = new Size(126, 22);
+            label2.TabIndex = 6;
+            label2.Text = "Cerrar sesion";
+            label2.Click += label2_Click;
             // 
             // pbMinimizar
             // 
@@ -101,10 +115,12 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.BackColor = Color.White;
-            pictureBox1.Location = new Point(5, 54);
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = Properties.Resources.user_icon_icons_com_57997;
+            pictureBox1.Location = new Point(5, 35);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(41, 32);
+            pictureBox1.Size = new Size(58, 51);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
             // 
@@ -125,24 +141,11 @@
             lblNombreUsuario.AutoSize = true;
             lblNombreUsuario.Font = new Font("Century Gothic", 12F);
             lblNombreUsuario.ForeColor = Color.White;
-            lblNombreUsuario.Location = new Point(52, 58);
+            lblNombreUsuario.Location = new Point(69, 35);
             lblNombreUsuario.Name = "lblNombreUsuario";
             lblNombreUsuario.Size = new Size(183, 23);
             lblNombreUsuario.TabIndex = 4;
             lblNombreUsuario.Text = "lblNombreUsuario";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Cursor = Cursors.Hand;
-            label2.Font = new Font("Century Gothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = SystemColors.InfoText;
-            label2.Location = new Point(53, 146);
-            label2.Name = "label2";
-            label2.Size = new Size(126, 22);
-            label2.TabIndex = 6;
-            label2.Text = "Cerrar sesion";
-            label2.Click += label2_Click;
             // 
             // btnUsuariosForm
             // 
@@ -154,7 +157,7 @@
             btnUsuariosForm.ImageAlign = ContentAlignment.MiddleLeft;
             btnUsuariosForm.Location = new Point(12, 187);
             btnUsuariosForm.Name = "btnUsuariosForm";
-            btnUsuariosForm.Size = new Size(238, 50);
+            btnUsuariosForm.Size = new Size(238, 36);
             btnUsuariosForm.TabIndex = 3;
             btnUsuariosForm.Text = "Usuarios";
             btnUsuariosForm.TextAlign = ContentAlignment.MiddleLeft;
@@ -165,10 +168,9 @@
             // panel2
             // 
             panel2.BackColor = Color.DodgerBlue;
-            panel2.Controls.Add(label2);
             panel2.Controls.Add(panel4);
             panel2.Controls.Add(panel3);
-            panel2.Controls.Add(lblNombreUsuario2);
+            panel2.Controls.Add(lblNombreProyecto);
             panel2.Controls.Add(pictureBox2);
             panel2.Controls.Add(btnAcercaDe);
             panel2.Controls.Add(btnAjustesForm);
@@ -198,23 +200,25 @@
             panel3.Size = new Size(247, 10);
             panel3.TabIndex = 0;
             // 
-            // lblNombreUsuario2
+            // lblNombreProyecto
             // 
-            lblNombreUsuario2.Font = new Font("Century Gothic", 12F);
-            lblNombreUsuario2.ForeColor = Color.White;
-            lblNombreUsuario2.Location = new Point(27, 110);
-            lblNombreUsuario2.Name = "lblNombreUsuario2";
-            lblNombreUsuario2.Size = new Size(183, 46);
-            lblNombreUsuario2.TabIndex = 7;
-            lblNombreUsuario2.Text = "lblNombreUsuario";
-            lblNombreUsuario2.TextAlign = ContentAlignment.MiddleCenter;
+            lblNombreProyecto.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblNombreProyecto.ForeColor = Color.White;
+            lblNombreProyecto.Location = new Point(12, 99);
+            lblNombreProyecto.Name = "lblNombreProyecto";
+            lblNombreProyecto.Size = new Size(215, 46);
+            lblNombreProyecto.TabIndex = 7;
+            lblNombreProyecto.Text = "Proyectos Los Tilines";
+            lblNombreProyecto.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pictureBox2
             // 
-            pictureBox2.BackColor = Color.White;
-            pictureBox2.Location = new Point(71, 24);
+            pictureBox2.BackColor = Color.Transparent;
+            pictureBox2.Image = Properties.Resources.projects_icon_142976;
+            pictureBox2.Location = new Point(60, 13);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(99, 83);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 8;
             pictureBox2.TabStop = false;
             // 
@@ -228,7 +232,7 @@
             btnAcercaDe.ImageAlign = ContentAlignment.MiddleLeft;
             btnAcercaDe.Location = new Point(12, 467);
             btnAcercaDe.Name = "btnAcercaDe";
-            btnAcercaDe.Size = new Size(238, 50);
+            btnAcercaDe.Size = new Size(238, 36);
             btnAcercaDe.TabIndex = 7;
             btnAcercaDe.Text = "Acerca de";
             btnAcercaDe.TextAlign = ContentAlignment.MiddleLeft;
@@ -245,7 +249,7 @@
             btnAjustesForm.ImageAlign = ContentAlignment.MiddleLeft;
             btnAjustesForm.Location = new Point(12, 401);
             btnAjustesForm.Name = "btnAjustesForm";
-            btnAjustesForm.Size = new Size(238, 50);
+            btnAjustesForm.Size = new Size(238, 36);
             btnAjustesForm.TabIndex = 6;
             btnAjustesForm.Text = "Ajustes";
             btnAjustesForm.TextAlign = ContentAlignment.MiddleLeft;
@@ -262,7 +266,7 @@
             btnHistorialForm.ImageAlign = ContentAlignment.MiddleLeft;
             btnHistorialForm.Location = new Point(12, 331);
             btnHistorialForm.Name = "btnHistorialForm";
-            btnHistorialForm.Size = new Size(238, 50);
+            btnHistorialForm.Size = new Size(238, 36);
             btnHistorialForm.TabIndex = 5;
             btnHistorialForm.Text = "Historial";
             btnHistorialForm.TextAlign = ContentAlignment.MiddleLeft;
@@ -279,7 +283,7 @@
             btnProyectosForm.ImageAlign = ContentAlignment.MiddleLeft;
             btnProyectosForm.Location = new Point(12, 260);
             btnProyectosForm.Name = "btnProyectosForm";
-            btnProyectosForm.Size = new Size(198, 50);
+            btnProyectosForm.Size = new Size(198, 36);
             btnProyectosForm.TabIndex = 4;
             btnProyectosForm.Text = "Proyectos";
             btnProyectosForm.TextAlign = ContentAlignment.MiddleLeft;
@@ -317,7 +321,6 @@
             ((System.ComponentModel.ISupportInitialize)pbEliminar).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
@@ -335,7 +338,7 @@
         private Label label2;
         private System.Windows.Forms.Timer timer1;
         private Panel contenedor;
-        private Label lblNombreUsuario2;
+        private Label lblNombreProyecto;
         private PictureBox pictureBox2;
         private Panel panel4;
         private Panel panel3;

@@ -19,14 +19,77 @@ namespace PresentationLayer.Forms
         private IUsuarioServices usuariosServices;
         private IRolServices rolServices;
         private UsuariosForm _formularioPrincipal;
-        bool isEditing = false;
-        public AñadirUsuariosForm(IUsuarioServices _usuarioServices, IRolServices _rolServices)
+        bool IsEditing = false;
+        private Usuarios _usuario;
+
+        public AñadirUsuariosForm(IUsuarioServices _usuarioServices, IRolServices _rolServices, Usuarios usuario = null)
         {
             InitializeComponent();
+
+            _usuario = usuario;
+            IsEditing = usuario != null; 
             usuariosServices = _usuarioServices;
             rolServices = _rolServices;
             LoadProvincias();
-            //usuariosForm = usuariosform;
+
+            ConfigurarFormulario();
+
+        }
+
+        private void ConfigurarFormulario()
+        {
+            if (IsEditing)
+            {
+                txtNombre.Text = _usuario.Nombre;
+                txtEdad.Text = _usuario.Edad.ToString();
+                txtCorreo.Text = _usuario.Correo;
+                txtUsuario.Text = _usuario.Usuario;
+                txtClave.Text = _usuario.Clave;
+                dtmFechaRegistro.Value = _usuario.FechaRegistro;
+                
+
+                if (cboListaPaises.Items.Count > 0)
+                {
+                    cboListaPaises.SelectedItem = _usuario.Pais; 
+                }
+
+                if (cboListaDepartamento.Items.Count > 0)
+                {
+                    cboListaDepartamento.SelectedItem = _usuario.Departamento;
+                }
+
+                if (cboListaCiudad.Items.Count > 0)
+                {
+                    cboListaCiudad.SelectedItem = _usuario.Ciudad;
+                }
+
+                cboEstado.SelectedItem = _usuario.Estado; 
+
+                btnGuardar.Visible = false; 
+                btnEditar.Visible = true;
+
+                lblAñadirUsuarios.Text = "Editar Usuarios";
+            }
+            else
+            {
+                btnGuardar.Visible = true;   
+                btnEditar.Visible = false;    
+            }
+        }
+
+        private void LimpiarCampos()
+        {
+            txtNombre.Clear();
+            txtEdad.Clear();
+            txtCorreo.Clear();
+            txtUsuario.Clear();
+            txtClave.Clear();
+
+            cboListaPaises.SelectedIndex = -1;
+            cboListaDepartamento.SelectedIndex = -1;
+            cboListaCiudad.SelectedIndex = -1;
+            cboEstado.SelectedIndex = -1;
+            cboRol.SelectedIndex = -1;
         }
 
 
@@ -95,11 +158,11 @@ namespace PresentationLayer.Forms
             cboRol.SelectedIndex = 0;
         }
 
-        public event EventHandler UsuarioAgregado; // Evento para notificar que se agregó un usuario
+        public event EventHandler UsuarioAgregado;
+        public event EventHandler EditarUsuariosHandler;
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            //DataGridView dgvUsuarios = usuariosForm.ObtenerDgvUsuarios();
 
             string Nombre = txtNombre.Text;
             int Edad = Convert.ToInt32(txtEdad.Text);
@@ -132,7 +195,30 @@ namespace PresentationLayer.Forms
 
             UsuarioAgregado?.Invoke(this, EventArgs.Empty);
 
-            this.Close(); // Cerrar el formulario después de guardar
+            LimpiarCampos();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            _usuario.Nombre = txtNombre.Text;
+            _usuario.Edad = Convert.ToInt32(txtEdad.Text);
+            _usuario.Correo = txtCorreo.Text;
+            _usuario.Usuario = txtUsuario.Text;
+            _usuario.Clave = txtClave.Text;
+            _usuario.Pais = (string)cboListaPaises.SelectedValue;
+            _usuario.Departamento = (string)cboListaDepartamento.SelectedValue;
+            _usuario.Ciudad = (string)cboListaCiudad.SelectedValue;
+            _usuario.oRol = new Rol
+            {
+                IdRol = Convert.ToInt32(cboRol.SelectedValue) 
+            };
+            _usuario.FechaRegistro = DateTime.Now;
+            
+
+            usuariosServices.EditarUsuarios(_usuario);
+            MessageBox.Show("Usuario editado correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            EditarUsuariosHandler?.Invoke(this, EventArgs.Empty); 
         }
     }
 }

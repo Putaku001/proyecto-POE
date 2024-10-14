@@ -29,10 +29,15 @@ namespace BusinessLayer.Services
         {
             _usuariosrepositoriess.AddUsuarios(usuarios);
         }
+        public void EditarUsuarios(Usuarios usuarios)
+        {
+            _usuariosrepositoriess.EditarUsuarios(usuarios);
+        }
 
         public void DeleteUsuarios(int IdUsuarios)
         {
             _usuariosrepositoriess.DeleteUsuarios(IdUsuarios);
         }
+
     }
 }

@@ -53,6 +53,8 @@
             txtClave = new TextBox();
             gbProvincia = new GroupBox();
             btnGuardar = new FontAwesome.Sharp.IconButton();
+            btnEditar = new FontAwesome.Sharp.IconButton();
+            dtmFechaRegistro = new DateTimePicker();
             gbDetallesUsuarios.SuspendLayout();
             gbProvincia.SuspendLayout();
             SuspendLayout();
@@ -202,7 +204,7 @@
             gbDetallesUsuarios.Controls.Add(txtUsuario);
             gbDetallesUsuarios.Location = new Point(13, 74);
             gbDetallesUsuarios.Name = "gbDetallesUsuarios";
-            gbDetallesUsuarios.Size = new Size(462, 445);
+            gbDetallesUsuarios.Size = new Size(462, 419);
             gbDetallesUsuarios.TabIndex = 15;
             gbDetallesUsuarios.TabStop = false;
             gbDetallesUsuarios.Text = "Datos Del Usuario";
@@ -258,6 +260,7 @@
             // 
             // gbProvincia
             // 
+            gbProvincia.Controls.Add(dtmFechaRegistro);
             gbProvincia.Controls.Add(label8);
             gbProvincia.Controls.Add(cboListaCiudad);
             gbProvincia.Controls.Add(cboListaPaises);
@@ -280,7 +283,7 @@
             btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnGuardar.IconSize = 28;
             btnGuardar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnGuardar.Location = new Point(397, 562);
+            btnGuardar.Location = new Point(401, 515);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(215, 46);
             btnGuardar.TabIndex = 17;
@@ -288,12 +291,38 @@
             btnGuardar.UseVisualStyleBackColor = false;
             btnGuardar.Click += btnGuardar_Click;
             // 
+            // btnEditar
+            // 
+            btnEditar.BackColor = SystemColors.HotTrack;
+            btnEditar.FlatAppearance.BorderSize = 0;
+            btnEditar.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            btnEditar.IconColor = Color.White;
+            btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnEditar.IconSize = 28;
+            btnEditar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnEditar.Location = new Point(401, 567);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(215, 46);
+            btnEditar.TabIndex = 18;
+            btnEditar.Text = "Editar";
+            btnEditar.UseVisualStyleBackColor = false;
+            btnEditar.Click += btnEditar_Click;
+            // 
+            // dtmFechaRegistro
+            // 
+            dtmFechaRegistro.Enabled = false;
+            dtmFechaRegistro.Location = new Point(27, 263);
+            dtmFechaRegistro.Name = "dtmFechaRegistro";
+            dtmFechaRegistro.Size = new Size(380, 28);
+            dtmFechaRegistro.TabIndex = 15;
+            // 
             // AñadirUsuariosForm
             // 
             AutoScaleDimensions = new SizeF(10F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.CadetBlue;
             ClientSize = new Size(1000, 620);
+            Controls.Add(btnEditar);
             Controls.Add(btnGuardar);
             Controls.Add(gbProvincia);
             Controls.Add(lblAñadirUsuarios);
@@ -339,5 +368,7 @@
         private Label label1;
         private Label label10;
         private TextBox txtEdad;
+        private FontAwesome.Sharp.IconButton btnEditar;
+        private DateTimePicker dtmFechaRegistro;
     }
 }

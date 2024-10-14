@@ -15,14 +15,21 @@ namespace PresentationLayer.Forms
 {
     public partial class EditarUsuarioForm : Form
     {
-        public EditarUsuarioForm()
+        bool IsEditing = false;
+        private Usuarios _usuario;
+        public EditarUsuarioForm(UsuariosServices usuariosServices, RolServices rolServices, Usuarios usuario = null)
         {
-            InitializeComponent();           
+            InitializeComponent();
+
+            _usuario = usuario;
+            IsEditing = usuario != null; 
+
         }
 
+
+        public event EventHandler EditarUsuariosHandler;
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-
 
         }
     }

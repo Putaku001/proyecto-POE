@@ -54,22 +54,53 @@ namespace PresentationLayer.Forms
         {
             AñadirUsuariosForm formularioAñadir = new AñadirUsuariosForm(_usuariosservices, _rolservices);
 
-            // Suscribirse al evento que notifica cuando se agrega un nuevo usuario
             formularioAñadir.UsuarioAgregado += (s, args) =>
             {
-                // Lógica para actualizar el DataGridView
-                LoadData(); // Método para cargar los usuarios en el DataGridView
+                LoadData(); 
             };
 
-            // Abrir el formulario de "Añadir Usuarios"
             AbrirFormulario(formularioAñadir);
 
         }
 
         private void pbEditarUsuario_Click(object sender, EventArgs e)
         {
+            if (dgvUsuarios.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Debe seleccionar un usuario para editar.", "Advertencia",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            DataGridViewRow filaSeleccionada = dgvUsuarios.SelectedRows[0];
+            Usuarios usuarioSeleccionado = new Usuarios
+            {
+                IdUsuario = Convert.ToInt32(filaSeleccionada.Cells["IdUsuario"].Value),
+                Nombre = filaSeleccionada.Cells["Nombre"].Value.ToString(),
+                Edad = Convert.ToInt32(filaSeleccionada.Cells["Edad"].Value.ToString()),
+                Correo = filaSeleccionada.Cells["Correo"].Value.ToString(),
+                Usuario = filaSeleccionada.Cells["Usuario"].Value.ToString(),
+                Clave = filaSeleccionada.Cells["Clave"].Value.ToString(),
 
+                Pais = filaSeleccionada.Cells["Pais"].Value.ToString(),
+                Departamento = filaSeleccionada.Cells["Departamento"].Value.ToString(),
+                Ciudad = filaSeleccionada.Cells["Ciudad"].Value.ToString(),
+                Estado = filaSeleccionada.Cells["Estado"].Value.ToString(),
+                FechaRegistro = Convert.ToDateTime(filaSeleccionada.Cells["FechaRegistro"].Value),
+                oRol = new Rol
+                {
+                    IdRol = Convert.ToInt32(filaSeleccionada.Cells["IdRol"].Value)
+                }
+            };
+
+            AñadirUsuariosForm editarUsuarioForm = new AñadirUsuariosForm(_usuariosservices, _rolservices, usuarioSeleccionado);
+
+            editarUsuarioForm.EditarUsuariosHandler += (s, args) =>
+            {
+                LoadData(); 
+            };
+
+            AbrirFormulario(editarUsuarioForm);
         }
 
         private void pbEliminarUsuario_Click(object sender, EventArgs e)

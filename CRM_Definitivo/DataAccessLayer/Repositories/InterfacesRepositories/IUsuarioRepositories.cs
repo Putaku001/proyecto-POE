@@ -12,6 +12,8 @@ namespace DataAccessLayer.Repositories.InterfacesRepositories
     {
         DataTable GetAllUsuarios();
         void AddUsuarios(Usuarios usuarios);
+        void EditarUsuarios(Usuarios usuarios);
         void DeleteUsuarios(int IdUsuarios);
+
     }
 }

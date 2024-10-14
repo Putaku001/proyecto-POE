@@ -33,7 +33,7 @@
             gbLogin = new GroupBox();
             pictureBoxMostrar = new PictureBox();
             pictureBoxOcultar = new PictureBox();
-            label6 = new Label();
+            lblCrearCuenta = new Label();
             label4 = new Label();
             pictureBox1 = new PictureBox();
             label3 = new Label();
@@ -59,7 +59,7 @@
             gbLogin.BackColor = Color.Transparent;
             gbLogin.Controls.Add(pictureBoxMostrar);
             gbLogin.Controls.Add(pictureBoxOcultar);
-            gbLogin.Controls.Add(label6);
+            gbLogin.Controls.Add(lblCrearCuenta);
             gbLogin.Controls.Add(label4);
             gbLogin.Controls.Add(pictureBox1);
             gbLogin.Controls.Add(label3);
@@ -101,27 +101,28 @@
             pictureBoxOcultar.Click += pictureBoxOcultar_Click;
             pictureBoxOcultar.MouseHover += pictureBoxOcultar_MouseHover;
             // 
-            // label6
+            // lblCrearCuenta
             // 
-            label6.AutoSize = true;
-            label6.Cursor = Cursors.Hand;
-            label6.Font = new Font("Century Gothic", 9F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
-            label6.ForeColor = SystemColors.Highlight;
-            label6.Location = new Point(337, 335);
-            label6.Name = "label6";
-            label6.Size = new Size(50, 18);
-            label6.TabIndex = 9;
-            label6.Text = "unete";
+            lblCrearCuenta.AutoSize = true;
+            lblCrearCuenta.Cursor = Cursors.Hand;
+            lblCrearCuenta.Font = new Font("Century Gothic", 9F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
+            lblCrearCuenta.ForeColor = SystemColors.Highlight;
+            lblCrearCuenta.Location = new Point(315, 339);
+            lblCrearCuenta.Name = "lblCrearCuenta";
+            lblCrearCuenta.Size = new Size(116, 18);
+            lblCrearCuenta.TabIndex = 9;
+            lblCrearCuenta.Text = "create una ya!";
+            lblCrearCuenta.Click += lblCrearCuenta_Click;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.ForeColor = Color.White;
-            label4.Location = new Point(166, 335);
+            label4.Location = new Point(116, 339);
             label4.Name = "label4";
-            label4.Size = new Size(175, 18);
+            label4.Size = new Size(203, 18);
             label4.TabIndex = 7;
-            label4.Text = "No eres miembro aun?";
+            label4.Text = "Aun no tienes una cuenta?";
             // 
             // pictureBox1
             // 
@@ -250,7 +251,7 @@
         #endregion
 
         private GroupBox gbLogin;
-        private Label label6;
+        private Label lblCrearCuenta;
         private Label label4;
         private PictureBox pictureBox1;
         private Label label3;

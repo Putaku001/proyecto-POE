@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             tpAñadirNuevasTareas = new TabPage();
-            panelTarea = new Panel();
             gbAñadirNuevasTareas = new GroupBox();
             cboProyectoTareasAñadir = new ComboBox();
             btnEliminarNT = new FontAwesome.Sharp.IconButton();
@@ -40,7 +39,6 @@
             lblProyectoSeleccionar = new Label();
             dgvTareas = new DataGridView();
             tpAñadirNuevaCategoria = new TabPage();
-            panelCategoria = new Panel();
             gbAñadirNuevasCategorias = new GroupBox();
             cboProyectoCategoria = new ComboBox();
             btnEliminarNC = new FontAwesome.Sharp.IconButton();
@@ -104,10 +102,9 @@
             // 
             // tpAñadirNuevasTareas
             // 
-            tpAñadirNuevasTareas.Controls.Add(panelTarea);
             tpAñadirNuevasTareas.Controls.Add(gbAñadirNuevasTareas);
             tpAñadirNuevasTareas.Controls.Add(dgvTareas);
-            tpAñadirNuevasTareas.Location = new Point(4, 4);
+            tpAñadirNuevasTareas.Location = new Point(4, 29);
             tpAñadirNuevasTareas.Name = "tpAñadirNuevasTareas";
             tpAñadirNuevasTareas.Padding = new Padding(3);
             tpAñadirNuevasTareas.Size = new Size(1365, 655);
@@ -115,16 +112,9 @@
             tpAñadirNuevasTareas.Text = "Añadir nuevas tareas";
             tpAñadirNuevasTareas.UseVisualStyleBackColor = true;
             // 
-            // panelTarea
-            // 
-            panelTarea.BackColor = Color.DimGray;
-            panelTarea.Location = new Point(572, 61);
-            panelTarea.Name = "panelTarea";
-            panelTarea.Size = new Size(10, 545);
-            panelTarea.TabIndex = 13;
-            // 
             // gbAñadirNuevasTareas
             // 
+            gbAñadirNuevasTareas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             gbAñadirNuevasTareas.Controls.Add(cboProyectoTareasAñadir);
             gbAñadirNuevasTareas.Controls.Add(btnEliminarNT);
             gbAñadirNuevasTareas.Controls.Add(btnEditarNT);
@@ -232,6 +222,7 @@
             // dgvTareas
             // 
             dgvTareas.AllowUserToAddRows = false;
+            dgvTareas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvTareas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvTareas.Location = new Point(620, 61);
             dgvTareas.Name = "dgvTareas";
@@ -242,10 +233,9 @@
             // 
             // tpAñadirNuevaCategoria
             // 
-            tpAñadirNuevaCategoria.Controls.Add(panelCategoria);
             tpAñadirNuevaCategoria.Controls.Add(gbAñadirNuevasCategorias);
             tpAñadirNuevaCategoria.Controls.Add(dgvCategorias);
-            tpAñadirNuevaCategoria.Location = new Point(4, 4);
+            tpAñadirNuevaCategoria.Location = new Point(4, 29);
             tpAñadirNuevaCategoria.Name = "tpAñadirNuevaCategoria";
             tpAñadirNuevaCategoria.Padding = new Padding(3);
             tpAñadirNuevaCategoria.Size = new Size(1365, 655);
@@ -253,16 +243,9 @@
             tpAñadirNuevaCategoria.Text = "Añadir nuevas categorias";
             tpAñadirNuevaCategoria.UseVisualStyleBackColor = true;
             // 
-            // panelCategoria
-            // 
-            panelCategoria.BackColor = Color.DimGray;
-            panelCategoria.Location = new Point(572, 61);
-            panelCategoria.Name = "panelCategoria";
-            panelCategoria.Size = new Size(10, 545);
-            panelCategoria.TabIndex = 10;
-            // 
             // gbAñadirNuevasCategorias
             // 
+            gbAñadirNuevasCategorias.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             gbAñadirNuevasCategorias.Controls.Add(cboProyectoCategoria);
             gbAñadirNuevasCategorias.Controls.Add(btnEliminarNC);
             gbAñadirNuevasCategorias.Controls.Add(btnEditarNC);
@@ -370,6 +353,7 @@
             // dgvCategorias
             // 
             dgvCategorias.AllowUserToAddRows = false;
+            dgvCategorias.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvCategorias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCategorias.Location = new Point(620, 61);
             dgvCategorias.Name = "dgvCategorias";
@@ -382,7 +366,7 @@
             // 
             tbAñadirProyectos.Controls.Add(gbAñadirNuevosProyectos);
             tbAñadirProyectos.Controls.Add(dgvAñadirProyectos);
-            tbAñadirProyectos.Location = new Point(4, 4);
+            tbAñadirProyectos.Location = new Point(4, 29);
             tbAñadirProyectos.Name = "tbAñadirProyectos";
             tbAñadirProyectos.Padding = new Padding(3);
             tbAñadirProyectos.Size = new Size(1365, 655);
@@ -529,7 +513,7 @@
             // tpListaProyectos
             // 
             tpListaProyectos.Controls.Add(dgvListaProyectos);
-            tpListaProyectos.Location = new Point(4, 4);
+            tpListaProyectos.Location = new Point(4, 29);
             tpListaProyectos.Name = "tpListaProyectos";
             tpListaProyectos.Padding = new Padding(3);
             tpListaProyectos.Size = new Size(1365, 655);
@@ -554,7 +538,7 @@
             // 
             tpAsignarProyectos.Controls.Add(dataGridView1);
             tpAsignarProyectos.Controls.Add(gbListaProyecto);
-            tpAsignarProyectos.Location = new Point(4, 4);
+            tpAsignarProyectos.Location = new Point(4, 29);
             tpAsignarProyectos.Name = "tpAsignarProyectos";
             tpAsignarProyectos.Padding = new Padding(3);
             tpAsignarProyectos.Size = new Size(1365, 655);
@@ -778,7 +762,6 @@
             // 
             // tbProyectos
             // 
-            tbProyectos.Alignment = TabAlignment.Bottom;
             tbProyectos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tbProyectos.Controls.Add(tpAsignarProyectos);
             tbProyectos.Controls.Add(tpListaProyectos);
@@ -857,7 +840,6 @@
         private Label lblProyecto;
         private TextBox txtNombreProyectoAñadir;
         private DataGridView dgvAñadirProyectos;
-        private Panel panelTarea;
         private GroupBox gbAñadirNuevasTareas;
         private ComboBox cboProyectoTareasAñadir;
         private FontAwesome.Sharp.IconButton btnEliminarNT;
@@ -867,7 +849,6 @@
         private TextBox txtTareaAñadirTarea;
         private Label lblProyectoSeleccionar;
         private DataGridView dgvTareas;
-        private Panel panelCategoria;
         private GroupBox gbAñadirNuevasCategorias;
         private FontAwesome.Sharp.IconButton btnEliminarNC;
         private FontAwesome.Sharp.IconButton btnEditarNC;

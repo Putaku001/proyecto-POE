@@ -19,6 +19,7 @@ namespace CommonLayer.Entities
         public string Ciudad { get; set; }
         public string Estado { get; set; }
         public Rol oRol { get; set; }
+        public DateTime FechaRegistro { get; set; }
 
     }
 }

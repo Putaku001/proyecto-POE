@@ -12,6 +12,7 @@ namespace BusinessLayer.Services.Interfaces
     {
         DataTable GetUsuarios();
         void AddUsuarios(Usuarios usuarios);
+        void EditarUsuarios(Usuarios usuarios);
         void DeleteUsuarios(int IdUsuarios);
     }
 }

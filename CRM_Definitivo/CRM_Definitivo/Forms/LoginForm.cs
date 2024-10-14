@@ -6,6 +6,7 @@ using BusinessLayer.Services.InterfacesServices;
 using CommonLayer.Entities;
 using DataAccessLayer.Repositories.InterfacesRepositories;
 using PresentationLayer.Forms;
+using PresentationLayer;
 
 namespace CRM_Definitivo
 {
@@ -87,7 +88,7 @@ namespace CRM_Definitivo
 
             DataRow ousariosRow = usuariosTable
                 .AsEnumerable()
-                .FirstOrDefault(u => u.Field<string>("Usuario") == txtUsuario.Text 
+                .FirstOrDefault(u => u.Field<string>("Usuario") == txtUsuario.Text
                 &&
                 u.Field<string>("Clave") == txtContraseña.Text);
 
@@ -112,6 +113,21 @@ namespace CRM_Definitivo
             }
 
 
+        }
+
+        private void lblCrearCuenta_Click(object sender, EventArgs e)
+        {
+            CrearCuentaForm crearCuenta = new CrearCuentaForm();
+
+            crearCuenta.FormClosing += CrearCuenta_FormClosing;
+
+
+            crearCuenta.ShowDialog();
+        }
+
+        private void CrearCuenta_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Show();
         }
     }
 }

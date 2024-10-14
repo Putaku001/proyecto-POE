@@ -54,7 +54,6 @@ namespace PresentationLayer.Forms
         private void MenuForm_Load(object sender, EventArgs e)
         {
             lblNombreUsuario.Text = usuarioactual.Nombre;
-            lblNombreUsuario2.Text = usuarioactual.Nombre;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -65,26 +64,22 @@ namespace PresentationLayer.Forms
         private void AbrirFormulario(Form formulario)
         {
 
-            // Limpiar cualquier formulario abierto dentro del panel
             if (this.contenedor.Controls.Count > 0)
                 this.contenedor.Controls.RemoveAt(0);
 
-            // Ajustar el formulario hijo al tamaño del panel
             formulario.TopLevel = false;
             formulario.FormBorderStyle = FormBorderStyle.None;
             formulario.Dock = DockStyle.Fill;
 
-            // Agregar el formulario al panel
             this.contenedor.Controls.Add(formulario);
             this.contenedor.Tag = formulario;
 
-            // Mostrar el formulario hijo
             formulario.Show();
         }
 
         private void btnUsuariosForm_Click(object sender, EventArgs e)
         {
-            UsuariosForm formulario = new UsuariosForm(usuarioServices, _rolServices);  // Instancia de tu formulario hijo
+            UsuariosForm formulario = new UsuariosForm(usuarioServices, _rolServices); 
             AbrirFormulario(formulario);
         }
 

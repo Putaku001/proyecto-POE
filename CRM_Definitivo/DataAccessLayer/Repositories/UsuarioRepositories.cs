@@ -69,6 +69,44 @@ namespace DataAccessLayer.Repositories
             }
         }
 
+        public void EditarUsuarios(Usuarios usuarios)
+        {
+            using(var connection = _dbConnection.GetConnection())
+            {
+                string query = @"UPDATE Usuarios SET " +
+                                "IdRol = @IdRol, " +
+                                "Usuario = @Usuario, " +
+                                "Clave = @Clave, " +
+                                "Nombre = @Nombre, " +
+                                "Edad = @Edad, " +
+                                "Correo = @Correo, " +
+                                "Pais = @Pais, " +
+                                "Departamento = @Departamento, " +
+                                "Ciudad = @Ciudad, " +
+                                "Estado = @Estado, " +
+                                "FechaRegistro = @FechaRegistro " +
+                                "WHERE IdUsuario = @IdUsuario";
+
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@IdRol", usuarios.oRol.IdRol);
+                command.Parameters.AddWithValue("@Usuario", usuarios.Usuario);
+                command.Parameters.AddWithValue("@Clave", usuarios.Clave);
+                command.Parameters.AddWithValue("@Nombre", usuarios.Nombre);
+                command.Parameters.AddWithValue("@Edad", usuarios.Edad);
+                command.Parameters.AddWithValue("@Correo", usuarios.Correo);
+                command.Parameters.AddWithValue("@Pais", usuarios.Pais);
+                command.Parameters.AddWithValue("@Departamento", usuarios.Departamento);
+                command.Parameters.AddWithValue("@Ciudad", usuarios.Ciudad);
+                command.Parameters.AddWithValue("@Estado", usuarios.Estado);
+                command.Parameters.AddWithValue("@IdUsuario", usuarios.IdUsuario);
+                command.Parameters.AddWithValue("@FechaRegistro", usuarios.FechaRegistro);
+
+                connection.Open();
+
+                command.ExecuteNonQuery();
+            }
+        }
+
         public void DeleteUsuarios(int IdUsuarios)
         {
             using(var connection = _dbConnection.GetConnection())

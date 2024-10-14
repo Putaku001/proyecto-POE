@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditarUsuarioForm));
             gbProvincia = new GroupBox();
             label8 = new Label();
             cboListaCiudad = new ComboBox();
@@ -297,7 +298,9 @@
             Controls.Add(gbProvincia);
             Controls.Add(gbDetallesUsuarios);
             Font = new Font("Century Gothic", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "EditarUsuarioForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "EditarUsuarioForm";
             gbProvincia.ResumeLayout(false);
             gbProvincia.PerformLayout();
