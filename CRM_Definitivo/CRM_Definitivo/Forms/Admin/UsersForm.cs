@@ -3,6 +3,8 @@ using BusinessLayer.Services.Interfaces;
 using BusinessLayer.Services.InterfacesServices;
 using CommonLayer.Entities;
 using DataAccessLayer.Repositories;
+using Microsoft.IdentityModel.Tokens;
+using PresentationLayer.Reports;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,11 +23,13 @@ namespace PresentationLayer.Forms
     {
         private IRolServices _rolservices;
         private IUsersServices _usuersservices;
-        public UsersForm(IUsersServices usuarioServices, IRolServices rolServices)
+        private readonly IUserReports _userReports;
+        public UsersForm(IUsersServices usuarioServices, IRolServices rolServices, IUserReports userReports)
         {
             InitializeComponent();
             _usuersservices = usuarioServices;
             _rolservices = rolServices;
+            _userReports = userReports;
             LoadData();
 
         }
@@ -37,6 +41,8 @@ namespace PresentationLayer.Forms
             dgvUsuarios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             dgvUsuarios.Columns["idUser"].Visible = false;
+            //dgvUsuarios.Columns["nameUser"].Visible = false;
+            //dgvUsuarios.Columns["lastName"].Visible = false;
 
         }
 
@@ -51,7 +57,7 @@ namespace PresentationLayer.Forms
 
             formularioAñadir.AddUsuario += (s, args) =>
             {
-                LoadData(); 
+                LoadData();
             };
 
             AbrirFormulario(formularioAñadir);
@@ -71,6 +77,7 @@ namespace PresentationLayer.Forms
             User usuarioSeleccionado = new User
             {
                 IdUser = Convert.ToInt32(filaSeleccionada.Cells["idUser"].Value),
+                UserAccount = filaSeleccionada.Cells["UserAccount"].Value.ToString(),
                 NameUser = filaSeleccionada.Cells["nameuser"].Value.ToString(),
                 LastName = filaSeleccionada.Cells["lastName"].Value.ToString(),
                 Birthdate = Convert.ToDateTime(filaSeleccionada.Cells["birthdate"].Value),
@@ -106,6 +113,26 @@ namespace PresentationLayer.Forms
                 int idUser = Convert.ToInt32(dgvUsuarios.CurrentRow.Cells["idUser"].Value);
                 _usuersservices.DeleteUsers(idUser);
                 LoadData();
+            }
+        }
+
+        private void btnUsersPdf_Click(object sender, EventArgs e)
+        {
+            _userReports.GenerateReports();
+        }
+
+        private void btnSearchUser_Click(object sender, EventArgs e)
+        {
+            if (txtSearchUsers.Text.IsNullOrEmpty())
+            {
+                LoadData();
+            }
+            else
+            {
+                string search = txtSearchUsers.Text;
+                var users = _usuersservices.UserSearch(search);
+
+                dgvUsuarios.DataSource = users;
             }
         }
     }

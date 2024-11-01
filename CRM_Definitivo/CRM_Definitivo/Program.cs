@@ -9,6 +9,8 @@ using DataAccessLayer.Repositories.InterfacesRepositories;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PresentationLayer.Forms;
+using PresentationLayer.Reports;
+using QuestPDF.Infrastructure;
 
 namespace CRM_Definitivo
 {
@@ -20,6 +22,8 @@ namespace CRM_Definitivo
         [STAThread]
         static void Main()
         {
+            QuestPDF.Settings.License = LicenseType.Community;
+
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
@@ -47,13 +51,18 @@ namespace CRM_Definitivo
 
                     //BUSISNESSLAYER
                     services.AddScoped<IUsersServices, UsersServices>();
+                    services.AddScoped<IPermisoServices, PermissionServices>();
                     services.AddScoped<IRolServices, RolServices>();
                     services.AddScoped<IListProyectsServices, ListProyectsServices>();
 
-                    //REPOR
+                    //REPOSITORIES
                     services.AddScoped<IUsersRepositories, UsersRepositories>();
+                    services.AddScoped<IPermissionRepositories, PermissionRepositories>();
                     services.AddScoped<IRolRepositories,  RolRepositories>();
                     services.AddScoped<IListProyectsRepositories, ListProyectsRepositories>();
+
+                    //REPORTS
+                    services.AddScoped<IUserReports, UserReports>();
 
                     //SQLDATA
                     services.AddSingleton<ISqlDataAccess, SqlDataAccess>();

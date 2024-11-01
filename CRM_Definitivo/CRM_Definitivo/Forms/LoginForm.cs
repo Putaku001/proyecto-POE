@@ -7,22 +7,25 @@ using CommonLayer.Entities;
 using DataAccessLayer.Repositories.InterfacesRepositories;
 using PresentationLayer.Forms;
 using PresentationLayer;
+using PresentationLayer.Reports;
 
 namespace CRM_Definitivo
 {
     public partial class LoginForm : Form
     {
-        private IListProyectsServices proyectoServices;
-        private IUsersRepositories usuarioRepositories;
-        private IUsersServices usuarioServices;
-        private IRolServices _rolServices;
-        public LoginForm(IUsersRepositories _usuarioRepositories, IUsersServices _usuarioServices, IRolServices rolServices, IListProyectsServices _proyectoServices)
+        private readonly IListProyectsServices proyectoServices;
+        private readonly IUsersRepositories usuarioRepositories;
+        private readonly IUsersServices usuarioServices;
+        private readonly IUserReports _userReports;
+        private readonly IRolServices _rolServices;
+        public LoginForm(IUsersRepositories _usuarioRepositories, IUsersServices _usuarioServices, IRolServices rolServices, IListProyectsServices _proyectoServices, IUserReports userReports)
         {
             InitializeComponent();
             usuarioRepositories = _usuarioRepositories;
             usuarioServices = _usuarioServices;
             _rolServices = rolServices;
             proyectoServices = _proyectoServices;
+            _userReports = userReports;
         }
 
 
@@ -98,13 +101,13 @@ namespace CRM_Definitivo
             var usuarios = new UsersServices(usuarioRepositories).GetUsers();
 
             User ousuario = usuarios.FirstOrDefault(u =>
-                u.NameUser == txtUser.Text &&
+                u.UserAccount == txtUser.Text &&
                 u.Passworduser == txtPassword.Text
             );
 
             if (ousuario != null)
             {
-                MenuForm form = new MenuForm(ousuario, usuarioServices, _rolServices, proyectoServices);
+                MenuForm form = new MenuForm(ousuario, usuarioServices, _rolServices, proyectoServices, _userReports);
                 form.Show();
                 this.Hide();
 

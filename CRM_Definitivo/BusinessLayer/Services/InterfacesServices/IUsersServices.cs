@@ -14,5 +14,6 @@ namespace BusinessLayer.Services.Interfaces
         void AddUsers(User user);
         void EditUsers(User user);
         void DeleteUsers(int idUser);
+        IEnumerable<User> UserSearch(string search);
     }
 }

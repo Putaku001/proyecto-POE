@@ -40,6 +40,7 @@ namespace PresentationLayer.Forms
         {
             if (IsEditing)
             {
+                txtUserAccount.Text = _usuario.UserAccount;
                 txtName.Text = _usuario.NameUser;
                 txtLastName.Text = _usuario.LastName;
                 dtpBirthDate.Value = _usuario.Birthdate;
@@ -72,6 +73,7 @@ namespace PresentationLayer.Forms
 
         private void LimpiarCampos()
         {
+            txtUserAccount.Clear();
             txtName.Clear();
             txtLastName.Clear();
             txtNumberPhone.Clear();
@@ -142,26 +144,17 @@ namespace PresentationLayer.Forms
         private void btnGuardar_Click(object sender, EventArgs e)
         {
 
-            string Nombre = txtName.Text;
-            string Apellido = txtLastName.Text;
-            DateTime FechaNacimiento = dtpBirthDate.Value;
-            string Telefono = txtNumberPhone.Text;
-            string Clave = txtPassword.Text;
-            string Pais = (string)cboListCountrys.SelectedValue;
-            string Ciudad = (string)cboListCity.SelectedValue;
-            string Estado = (string)cboStates.SelectedValue;
-            int IdRol = (int)cboRol.SelectedValue;
-
             User usuario = new User()
             {
-                NameUser = Nombre,
-                LastName = Apellido,
-                Birthdate = FechaNacimiento,
-                NumberPhone = Telefono,
-                Passworduser = Clave,
-                Country = Pais,
-                City = Ciudad,
-                Statususer = Estado,
+                UserAccount = txtUserAccount.Text,
+                NameUser = txtName.Text,
+                LastName = txtLastName.Text,
+                Birthdate = dtpBirthDate.Value,
+                NumberPhone = txtNumberPhone.Text,
+                Passworduser = txtPassword.Text,
+                Country = (string)cboListCountrys.SelectedValue,
+                City = (string)cboListCity.SelectedValue,
+                Statususer = (string)cboStates.SelectedValue,
                 DateRegistration = DateTime.Now,
             };
 
@@ -170,10 +163,12 @@ namespace PresentationLayer.Forms
             LoadProvincias();
             AddUsuario?.Invoke(this, EventArgs.Empty);
             LimpiarCampos();
+            this.Close();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            _usuario.UserAccount = txtUserAccount.Text;
             _usuario.NameUser = txtName.Text;
             _usuario.Birthdate = dtpBirthDate.Value;
             _usuario.NumberPhone = txtNumberPhone.Text;
@@ -186,6 +181,8 @@ namespace PresentationLayer.Forms
             _usuersservices.EditUsers(_usuario);
             MessageBox.Show("Usuario editado correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             EditUsuariosHandler?.Invoke(this, EventArgs.Empty);
+            LimpiarCampos();
+            this.Close();
         }
     }
 }

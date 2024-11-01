@@ -27,5 +27,6 @@ namespace BusinessLayer.Services
 
         public void DeleteUsers(int idUser) => _usuariosrepositoriess.DeleteUser(idUser);
 
+        public IEnumerable<User> UserSearch(string search) => _usuariosrepositoriess.UserSearch(search);
     }
 }

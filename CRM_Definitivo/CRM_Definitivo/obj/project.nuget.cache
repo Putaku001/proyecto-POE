@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uEUdnPBdRQ0=",
+  "dgSpecHash": "25+BqwSs8vE=",
   "success": true,
-  "projectFilePath": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\PresentationLayer.csproj",
+  "projectFilePath": "C:\\Users\\fuent\\Downloads\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\PresentationLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\fuent\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\fuent\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
@@ -51,6 +51,7 @@
     "C:\\Users\\fuent\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\fuent\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\fuent\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
+    "C:\\Users\\fuent\\.nuget\\packages\\questpdf\\2024.10.2\\questpdf.2024.10.2.nupkg.sha512",
     "C:\\Users\\fuent\\.nuget\\packages\\system.clientmodel\\1.0.0\\system.clientmodel.1.0.0.nupkg.sha512",
     "C:\\Users\\fuent\\.nuget\\packages\\system.configuration.configurationmanager\\8.0.0\\system.configuration.configurationmanager.8.0.0.nupkg.sha512",
     "C:\\Users\\fuent\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.1\\system.diagnostics.diagnosticsource.6.0.1.nupkg.sha512",

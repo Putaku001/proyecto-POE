@@ -31,19 +31,19 @@
             dgvUsuarios = new DataGridView();
             panelUsuarios = new Panel();
             iconButton2 = new FontAwesome.Sharp.IconButton();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
+            btnSearchUser = new FontAwesome.Sharp.IconButton();
             lblBuscar = new Label();
-            textBox1 = new TextBox();
+            txtSearchUsers = new TextBox();
             panel1 = new Panel();
             pbImprimir = new PictureBox();
-            pbPdf = new PictureBox();
+            btnUsersPdf = new PictureBox();
             pbEliminarUsuario = new PictureBox();
             pbEditarUsuario = new PictureBox();
             pbAñadirUsuario = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dgvUsuarios).BeginInit();
             panelUsuarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbImprimir).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbPdf).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnUsersPdf).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbEliminarUsuario).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbEditarUsuario).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbAñadirUsuario).BeginInit();
@@ -64,12 +64,12 @@
             panelUsuarios.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panelUsuarios.BackColor = Color.White;
             panelUsuarios.Controls.Add(iconButton2);
-            panelUsuarios.Controls.Add(iconButton1);
+            panelUsuarios.Controls.Add(btnSearchUser);
             panelUsuarios.Controls.Add(lblBuscar);
-            panelUsuarios.Controls.Add(textBox1);
+            panelUsuarios.Controls.Add(txtSearchUsers);
             panelUsuarios.Controls.Add(panel1);
             panelUsuarios.Controls.Add(pbImprimir);
-            panelUsuarios.Controls.Add(pbPdf);
+            panelUsuarios.Controls.Add(btnUsersPdf);
             panelUsuarios.Controls.Add(pbEliminarUsuario);
             panelUsuarios.Controls.Add(pbEditarUsuario);
             panelUsuarios.Controls.Add(pbAñadirUsuario);
@@ -92,19 +92,20 @@
             iconButton2.TabIndex = 10;
             iconButton2.UseVisualStyleBackColor = true;
             // 
-            // iconButton1
+            // btnSearchUser
             // 
-            iconButton1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.Search;
-            iconButton1.IconColor = Color.Black;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.IconSize = 25;
-            iconButton1.Location = new Point(1171, 16);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(37, 29);
-            iconButton1.TabIndex = 9;
-            iconButton1.UseVisualStyleBackColor = true;
+            btnSearchUser.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnSearchUser.FlatStyle = FlatStyle.Flat;
+            btnSearchUser.IconChar = FontAwesome.Sharp.IconChar.Search;
+            btnSearchUser.IconColor = Color.Black;
+            btnSearchUser.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnSearchUser.IconSize = 25;
+            btnSearchUser.Location = new Point(1171, 16);
+            btnSearchUser.Name = "btnSearchUser";
+            btnSearchUser.Size = new Size(37, 29);
+            btnSearchUser.TabIndex = 9;
+            btnSearchUser.UseVisualStyleBackColor = true;
+            btnSearchUser.Click += btnSearchUser_Click;
             // 
             // lblBuscar
             // 
@@ -116,13 +117,13 @@
             lblBuscar.TabIndex = 8;
             lblBuscar.Text = "Buscar";
             // 
-            // textBox1
+            // txtSearchUsers
             // 
-            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            textBox1.Location = new Point(939, 17);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(230, 27);
-            textBox1.TabIndex = 7;
+            txtSearchUsers.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            txtSearchUsers.Location = new Point(939, 17);
+            txtSearchUsers.Name = "txtSearchUsers";
+            txtSearchUsers.Size = new Size(230, 27);
+            txtSearchUsers.TabIndex = 7;
             // 
             // panel1
             // 
@@ -143,16 +144,17 @@
             pbImprimir.TabIndex = 5;
             pbImprimir.TabStop = false;
             // 
-            // pbPdf
+            // btnUsersPdf
             // 
-            pbPdf.Cursor = Cursors.Hand;
-            pbPdf.Image = Properties.Resources.pdf;
-            pbPdf.Location = new Point(246, 12);
-            pbPdf.Name = "pbPdf";
-            pbPdf.Size = new Size(42, 38);
-            pbPdf.SizeMode = PictureBoxSizeMode.Zoom;
-            pbPdf.TabIndex = 4;
-            pbPdf.TabStop = false;
+            btnUsersPdf.Cursor = Cursors.Hand;
+            btnUsersPdf.Image = Properties.Resources.pdf;
+            btnUsersPdf.Location = new Point(246, 12);
+            btnUsersPdf.Name = "btnUsersPdf";
+            btnUsersPdf.Size = new Size(42, 38);
+            btnUsersPdf.SizeMode = PictureBoxSizeMode.Zoom;
+            btnUsersPdf.TabIndex = 4;
+            btnUsersPdf.TabStop = false;
+            btnUsersPdf.Click += btnUsersPdf_Click;
             // 
             // pbEliminarUsuario
             // 
@@ -190,7 +192,7 @@
             pbAñadirUsuario.TabStop = false;
             pbAñadirUsuario.Click += pbAñadirUsuario_Click;
             // 
-            // UsuariosForm
+            // UsersForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -200,13 +202,13 @@
             Controls.Add(dgvUsuarios);
             Controls.Add(panelUsuarios);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "UsuariosForm";
+            Name = "UsersForm";
             Text = "Usuarios";
             ((System.ComponentModel.ISupportInitialize)dgvUsuarios).EndInit();
             panelUsuarios.ResumeLayout(false);
             panelUsuarios.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbImprimir).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbPdf).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnUsersPdf).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbEliminarUsuario).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbEditarUsuario).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbAñadirUsuario).EndInit();
@@ -219,13 +221,13 @@
         private Panel panelUsuarios;
         private PictureBox pbAñadirUsuario;
         private Label lblBuscar;
-        private TextBox textBox1;
+        private TextBox txtSearchUsers;
         private Panel panel1;
         private PictureBox pbImprimir;
-        private PictureBox pbPdf;
+        private PictureBox btnUsersPdf;
         private PictureBox pbEliminarUsuario;
         private PictureBox pbEditarUsuario;
         private FontAwesome.Sharp.IconButton iconButton2;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton btnSearchUser;
     }
 }

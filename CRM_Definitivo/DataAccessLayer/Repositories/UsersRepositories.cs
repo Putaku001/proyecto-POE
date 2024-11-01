@@ -22,7 +22,7 @@ namespace DataAccessLayer.Repositories
         {
             using (var connection = _dbConnection.GetConnection())
             {
-                string query = @"SELECT u.idUser, u.nameuser, u.lastName, u.birthdate, 
+                string query = @"SELECT u.idUser, u.UserAccount, u.nameuser, u.lastName, u.birthdate, 
                                         u.numberPhone, u.passworduser, u.country, u.city, u.statususer, u.DateRegistration
                                  FROM Users u";
 
@@ -34,13 +34,14 @@ namespace DataAccessLayer.Repositories
         {
             using (var connection = _dbConnection.GetConnection())
             {
-                string query = @"INSERT INTO Users (nameuser, lastName, birthdate, 
+                string query = @"INSERT INTO Users (UserAccount,nameuser, lastName, birthdate, 
                                      numberPhone, passworduser, country, city, statususer, DateRegistration) 
-                                 VALUES (@nameuser, @lastName, @birthdate, 
+                                 VALUES (@UserAccount, @nameuser, @lastName, @birthdate, 
                                          @numberPhone, @passworduser, @country, 
                                          @city, @statususer, @DateRegistration)";
                 connection.Query<User>(query, new 
                 { 
+                    user.UserAccount,
                     user.NameUser,
                     user.LastName,
                     user.Birthdate,
@@ -59,7 +60,8 @@ namespace DataAccessLayer.Repositories
             using (var connection = _dbConnection.GetConnection())
             {
                 string query = @"UPDATE Users 
-                                 SET nameuser = @nameuser, 
+                                 SET UserAccount = @UserAccount,
+                                     nameuser = @nameuser, 
                                      lastName = @lastName, 
                                      birthdate = @birthdate, 
                                      numberPhone = @numberPhone, 
@@ -81,6 +83,18 @@ namespace DataAccessLayer.Repositories
                 string query = "DELETE FROM Users WHERE idUser = @idUser";
 
                 connection.Query<User>(query, new { idUser });
+            }
+        }
+
+        IEnumerable<User> IUsersRepositories.UserSearch(string search)
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = @"SELECT idUser, UserAccount, nameuser, lastName, birthdate, 
+                                        numberPhone, passworduser, country, city, statususer, DateRegistration
+                                 FROM Users WHERE UserAccount LIKE '%' + @search + '%'";
+
+                return connection.Query<User>(query, new {search});
             }
         }
     }

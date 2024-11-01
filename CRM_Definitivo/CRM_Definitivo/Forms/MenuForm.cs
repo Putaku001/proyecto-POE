@@ -3,6 +3,7 @@ using BusinessLayer.Services.InterfacesServices;
 using CommonLayer.Entities;
 using FontAwesome.Sharp;
 using Microsoft.VisualBasic;
+using PresentationLayer.Reports;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,8 +25,9 @@ namespace PresentationLayer.Forms
         private IListProyectsServices proyectoServices;
         private IUsersServices usuarioServices;
         private IRolServices _rolServices;
+        private readonly IUserReports _userReports;
         private System.Windows.Forms.Timer timer;
-        public MenuForm(User ousuarios, IUsersServices _usuarioServices, IRolServices rolServices, IListProyectsServices _proyectoServices)
+        public MenuForm(User ousuarios, IUsersServices _usuarioServices, IRolServices rolServices, IListProyectsServices _proyectoServices, IUserReports userReports)
         {
 
             InitializeComponent();
@@ -33,6 +35,7 @@ namespace PresentationLayer.Forms
             usuarioServices = _usuarioServices;
             _rolServices = rolServices;
             proyectoServices = _proyectoServices;
+            _userReports = userReports;
             timer = new System.Windows.Forms.Timer();
             timer.Interval = 1000;
             timer.Tick += Timer_tick;
@@ -53,7 +56,7 @@ namespace PresentationLayer.Forms
 
         private void MenuForm_Load(object sender, EventArgs e)
         {
-            lblNombreUsuario.Text = usuarioactual.NameUser;
+            lblNombreUsuario.Text = usuarioactual.UserAccount;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -79,7 +82,7 @@ namespace PresentationLayer.Forms
 
         private void btnUsuariosForm_Click(object sender, EventArgs e)
         {
-            UsersForm formulario = new UsersForm(usuarioServices, _rolServices); 
+            UsersForm formulario = new UsersForm(usuarioServices, _rolServices, _userReports); 
             AbrirFormulario(formulario);
         }
 

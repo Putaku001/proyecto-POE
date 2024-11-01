@@ -9,6 +9,7 @@ namespace CommonLayer.Entities
     public class User
     {
         public int IdUser { get; set; }
+        public string UserAccount { get; set; }
         public string NameUser { get; set; }
         public string LastName {  get; set; }
         public DateTime Birthdate {  get; set; }

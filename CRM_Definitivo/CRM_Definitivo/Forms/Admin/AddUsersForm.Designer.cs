@@ -47,12 +47,14 @@
             txtLastName = new TextBox();
             gbProvincia = new GroupBox();
             dtmFechaRegistro = new DateTimePicker();
-            btnGuardar = new FontAwesome.Sharp.IconButton();
-            btnEditar = new FontAwesome.Sharp.IconButton();
-            cboListCountrys = new ComboBox();
-            label6 = new Label();
             label8 = new Label();
             cboListCity = new ComboBox();
+            cboListCountrys = new ComboBox();
+            label6 = new Label();
+            btnGuardar = new FontAwesome.Sharp.IconButton();
+            btnEditar = new FontAwesome.Sharp.IconButton();
+            lblUserAccount = new Label();
+            txtUserAccount = new TextBox();
             gbDetallesUsuarios.SuspendLayout();
             gbProvincia.SuspendLayout();
             SuspendLayout();
@@ -71,7 +73,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(29, 98);
+            label2.Location = new Point(30, 133);
             label2.Name = "label2";
             label2.Size = new Size(81, 19);
             label2.TabIndex = 1;
@@ -79,7 +81,7 @@
             // 
             // txtName
             // 
-            txtName.Location = new Point(109, 95);
+            txtName.Location = new Point(110, 130);
             txtName.Name = "txtName";
             txtName.Size = new Size(248, 28);
             txtName.TabIndex = 2;
@@ -87,7 +89,7 @@
             // cboRol
             // 
             cboRol.FormattingEnabled = true;
-            cboRol.Location = new Point(109, 49);
+            cboRol.Location = new Point(110, 84);
             cboRol.Name = "cboRol";
             cboRol.Size = new Size(248, 27);
             cboRol.TabIndex = 7;
@@ -95,7 +97,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(29, 52);
+            label5.Location = new Point(30, 87);
             label5.Name = "label5";
             label5.Size = new Size(39, 19);
             label5.TabIndex = 8;
@@ -103,6 +105,8 @@
             // 
             // gbDetallesUsuarios
             // 
+            gbDetallesUsuarios.Controls.Add(lblUserAccount);
+            gbDetallesUsuarios.Controls.Add(txtUserAccount);
             gbDetallesUsuarios.Controls.Add(dtpBirthDate);
             gbDetallesUsuarios.Controls.Add(label10);
             gbDetallesUsuarios.Controls.Add(txtNumberPhone);
@@ -126,7 +130,7 @@
             // 
             // dtpBirthDate
             // 
-            dtpBirthDate.Location = new Point(109, 190);
+            dtpBirthDate.Location = new Point(110, 225);
             dtpBirthDate.Name = "dtpBirthDate";
             dtpBirthDate.Size = new Size(250, 28);
             dtpBirthDate.TabIndex = 19;
@@ -134,7 +138,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(29, 235);
+            label10.Location = new Point(30, 270);
             label10.Name = "label10";
             label10.Size = new Size(84, 19);
             label10.TabIndex = 17;
@@ -142,7 +146,7 @@
             // 
             // txtNumberPhone
             // 
-            txtNumberPhone.Location = new Point(109, 232);
+            txtNumberPhone.Location = new Point(110, 267);
             txtNumberPhone.Name = "txtNumberPhone";
             txtNumberPhone.Size = new Size(248, 28);
             txtNumberPhone.TabIndex = 18;
@@ -150,7 +154,7 @@
             // cboStates
             // 
             cboStates.FormattingEnabled = true;
-            cboStates.Location = new Point(109, 329);
+            cboStates.Location = new Point(110, 364);
             cboStates.Name = "cboStates";
             cboStates.Size = new Size(248, 27);
             cboStates.TabIndex = 15;
@@ -158,7 +162,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(29, 332);
+            label1.Location = new Point(30, 367);
             label1.Name = "label1";
             label1.Size = new Size(68, 19);
             label1.TabIndex = 16;
@@ -167,7 +171,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(29, 284);
+            label9.Location = new Point(30, 319);
             label9.Name = "label9";
             label9.Size = new Size(63, 19);
             label9.TabIndex = 7;
@@ -175,7 +179,7 @@
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(109, 282);
+            txtPassword.Location = new Point(110, 317);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(248, 28);
             txtPassword.TabIndex = 8;
@@ -183,16 +187,16 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(29, 190);
+            label3.Location = new Point(30, 225);
             label3.Name = "label3";
-            label3.Size = new Size(70, 19);
+            label3.Size = new Size(60, 19);
             label3.TabIndex = 3;
-            label3.Text = "Correo:";
+            label3.Text = "Fecha";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(29, 146);
+            label4.Location = new Point(30, 181);
             label4.Name = "label4";
             label4.Size = new Size(83, 19);
             label4.TabIndex = 5;
@@ -200,7 +204,7 @@
             // 
             // txtLastName
             // 
-            txtLastName.Location = new Point(109, 143);
+            txtLastName.Location = new Point(110, 178);
             txtLastName.Name = "txtLastName";
             txtLastName.Size = new Size(248, 28);
             txtLastName.TabIndex = 6;
@@ -226,6 +230,40 @@
             dtmFechaRegistro.Name = "dtmFechaRegistro";
             dtmFechaRegistro.Size = new Size(380, 28);
             dtmFechaRegistro.TabIndex = 15;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(27, 146);
+            label8.Name = "label8";
+            label8.Size = new Size(74, 19);
+            label8.TabIndex = 14;
+            label8.Text = "Ciudad:";
+            // 
+            // cboListCity
+            // 
+            cboListCity.FormattingEnabled = true;
+            cboListCity.Location = new Point(159, 146);
+            cboListCity.Name = "cboListCity";
+            cboListCity.Size = new Size(248, 27);
+            cboListCity.TabIndex = 13;
+            // 
+            // cboListCountrys
+            // 
+            cboListCountrys.FormattingEnabled = true;
+            cboListCountrys.Location = new Point(159, 101);
+            cboListCountrys.Name = "cboListCountrys";
+            cboListCountrys.Size = new Size(248, 27);
+            cboListCountrys.TabIndex = 9;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(27, 101);
+            label6.Name = "label6";
+            label6.Size = new Size(47, 19);
+            label6.TabIndex = 10;
+            label6.Text = "Pais:";
             // 
             // btnGuardar
             // 
@@ -261,39 +299,21 @@
             btnEditar.UseVisualStyleBackColor = false;
             btnEditar.Click += btnEditar_Click;
             // 
-            // cboListCountrys
+            // lblUserAccount
             // 
-            cboListCountrys.FormattingEnabled = true;
-            cboListCountrys.Location = new Point(159, 101);
-            cboListCountrys.Name = "cboListCountrys";
-            cboListCountrys.Size = new Size(248, 27);
-            cboListCountrys.TabIndex = 9;
+            lblUserAccount.AutoSize = true;
+            lblUserAccount.Location = new Point(30, 43);
+            lblUserAccount.Name = "lblUserAccount";
+            lblUserAccount.Size = new Size(73, 19);
+            lblUserAccount.TabIndex = 20;
+            lblUserAccount.Text = "Usuario:";
             // 
-            // label6
+            // txtUserAccount
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(27, 101);
-            label6.Name = "label6";
-            label6.Size = new Size(47, 19);
-            label6.TabIndex = 10;
-            label6.Text = "Pais:";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(27, 146);
-            label8.Name = "label8";
-            label8.Size = new Size(74, 19);
-            label8.TabIndex = 14;
-            label8.Text = "Ciudad:";
-            // 
-            // cboListCity
-            // 
-            cboListCity.FormattingEnabled = true;
-            cboListCity.Location = new Point(159, 146);
-            cboListCity.Name = "cboListCity";
-            cboListCity.Size = new Size(248, 27);
-            cboListCity.TabIndex = 13;
+            txtUserAccount.Location = new Point(112, 40);
+            txtUserAccount.Name = "txtUserAccount";
+            txtUserAccount.Size = new Size(248, 28);
+            txtUserAccount.TabIndex = 21;
             // 
             // AddUsersForm
             // 
@@ -349,5 +369,7 @@
         private ComboBox cboListCity;
         private ComboBox cboListCountrys;
         private Label label6;
+        private Label lblUserAccount;
+        private TextBox txtUserAccount;
     }
 }
