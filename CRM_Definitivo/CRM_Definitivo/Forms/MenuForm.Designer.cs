@@ -42,7 +42,7 @@
             panel3 = new Panel();
             lblNombreProyecto = new Label();
             pictureBox2 = new PictureBox();
-            btnAcercaDe = new Button();
+            btnPerfilUser = new Button();
             btnAjustesForm = new Button();
             btnHistorialForm = new Button();
             btnProyectosForm = new Button();
@@ -172,7 +172,7 @@
             panel2.Controls.Add(panel3);
             panel2.Controls.Add(lblNombreProyecto);
             panel2.Controls.Add(pictureBox2);
-            panel2.Controls.Add(btnAcercaDe);
+            panel2.Controls.Add(btnPerfilUser);
             panel2.Controls.Add(btnAjustesForm);
             panel2.Controls.Add(btnHistorialForm);
             panel2.Controls.Add(btnProyectosForm);
@@ -222,22 +222,23 @@
             pictureBox2.TabIndex = 8;
             pictureBox2.TabStop = false;
             // 
-            // btnAcercaDe
+            // btnPerfilUser
             // 
-            btnAcercaDe.FlatAppearance.BorderSize = 0;
-            btnAcercaDe.FlatStyle = FlatStyle.Flat;
-            btnAcercaDe.Font = new Font("Century Gothic", 13.8F);
-            btnAcercaDe.ForeColor = Color.White;
-            btnAcercaDe.Image = Properties.Resources.info;
-            btnAcercaDe.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAcercaDe.Location = new Point(12, 467);
-            btnAcercaDe.Name = "btnAcercaDe";
-            btnAcercaDe.Size = new Size(238, 36);
-            btnAcercaDe.TabIndex = 7;
-            btnAcercaDe.Text = "Acerca de";
-            btnAcercaDe.TextAlign = ContentAlignment.MiddleLeft;
-            btnAcercaDe.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnAcercaDe.UseVisualStyleBackColor = true;
+            btnPerfilUser.FlatAppearance.BorderSize = 0;
+            btnPerfilUser.FlatStyle = FlatStyle.Flat;
+            btnPerfilUser.Font = new Font("Century Gothic", 13.8F);
+            btnPerfilUser.ForeColor = Color.White;
+            btnPerfilUser.Image = Properties.Resources.info;
+            btnPerfilUser.ImageAlign = ContentAlignment.MiddleLeft;
+            btnPerfilUser.Location = new Point(12, 467);
+            btnPerfilUser.Name = "btnPerfilUser";
+            btnPerfilUser.Size = new Size(238, 36);
+            btnPerfilUser.TabIndex = 7;
+            btnPerfilUser.Text = "Cuenta";
+            btnPerfilUser.TextAlign = ContentAlignment.MiddleLeft;
+            btnPerfilUser.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnPerfilUser.UseVisualStyleBackColor = true;
+            btnPerfilUser.Click += btnPerfilUser_Click;
             // 
             // btnAjustesForm
             // 
@@ -331,7 +332,7 @@
         private Label lblNombreUsuario;
         private Button btnUsuariosForm;
         private Panel panel2;
-        private Button btnAcercaDe;
+        private Button btnPerfilUser;
         private Button btnAjustesForm;
         private Button btnHistorialForm;
         private Button btnProyectosForm;

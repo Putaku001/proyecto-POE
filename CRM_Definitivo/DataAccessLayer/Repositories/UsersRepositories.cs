@@ -18,6 +18,18 @@ namespace DataAccessLayer.Repositories
             _dbConnection = dbConnection;
         }
 
+        public IEnumerable<User> GetUser(User user)
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = @"SELECT u.idUser, u.UserAccount, u.nameuser, u.lastName, u.birthdate, 
+                                        u.numberPhone, u.passworduser, u.country, u.city, u.statususer, u.DateRegistration
+                                 FROM Users u WHERE idUser = @idUser";
+
+                return connection.Query<User>(query, user);
+            }
+        }
+
         public IEnumerable<User> GetAllUser()
         {
             using (var connection = _dbConnection.GetConnection())

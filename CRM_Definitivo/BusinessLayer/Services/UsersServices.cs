@@ -19,6 +19,7 @@ namespace BusinessLayer.Services
         {
             _usuariosrepositoriess = usuarioRepositories;
         }
+        public IEnumerable<User> GetUser(User user) => _usuariosrepositoriess.GetUser(user);
 
         public IEnumerable<User> GetUsers() => _usuariosrepositoriess.GetAllUser();
 

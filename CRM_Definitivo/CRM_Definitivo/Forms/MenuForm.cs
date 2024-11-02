@@ -2,6 +2,7 @@
 using BusinessLayer.Services.InterfacesServices;
 using CommonLayer.Entities;
 using FontAwesome.Sharp;
+using PresentationLayer.Forms.Cliente;
 using Microsoft.VisualBasic;
 using PresentationLayer.Reports;
 using System;
@@ -82,7 +83,7 @@ namespace PresentationLayer.Forms
 
         private void btnUsuariosForm_Click(object sender, EventArgs e)
         {
-            UsersForm formulario = new UsersForm(usuarioServices, _rolServices, _userReports); 
+            UsersForm formulario = new UsersForm(usuarioServices, _rolServices, _userReports);
             AbrirFormulario(formulario);
         }
 
@@ -110,6 +111,12 @@ namespace PresentationLayer.Forms
         {
             ProyectsForm proyectosForm = new ProyectsForm(proyectoServices);
             AbrirFormulario(proyectosForm);
+        }
+
+        private void btnPerfilUser_Click(object sender, EventArgs e)
+        {
+            ProfileUserAccountForm profileUser = new ProfileUserAccountForm(usuarioServices);
+            AbrirFormulario(profileUser);
         }
     }
 

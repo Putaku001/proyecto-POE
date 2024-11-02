@@ -68,12 +68,12 @@ namespace PresentationLayer.Reports
                 // step 1
                 table.ColumnsDefinition(columns =>
                 {
-                    columns.RelativeColumn(); //Id de la categoria
-                    columns.RelativeColumn(); //Id de la categoria
+                    columns.RelativeColumn(); 
+                    columns.RelativeColumn(); 
                     columns.RelativeColumn();
-                    columns.RelativeColumn(); //Id de la categoria
+                    columns.RelativeColumn(); 
                     columns.RelativeColumn();
-                    columns.RelativeColumn(); //Id de la categoria
+                    columns.RelativeColumn(); 
                     columns.RelativeColumn();
                     columns.RelativeColumn();
                     columns.RelativeColumn();
@@ -83,15 +83,15 @@ namespace PresentationLayer.Reports
                 table.Header(header =>
                 {
                     //esto es para el estilo el cellstyle
-                    header.Cell().Element(CellStyle).Text("idUser");
-                    header.Cell().Element(CellStyle).Text("UserAccount");
-                    header.Cell().Element(CellStyle).Text("birthdate");
-                    header.Cell().Element(CellStyle).Text("numberPhone");
-                    header.Cell().Element(CellStyle).Text("passworduser");
-                    header.Cell().Element(CellStyle).Text("country");
-                    header.Cell().Element(CellStyle).Text("city");
-                    header.Cell().Element(CellStyle).Text("statususer");
-                    header.Cell().Element(CellStyle).Text("DateRegistration");
+                    header.Cell().Element(CellStyle).Background(Colors.Grey.Lighten1).Text("idUser").Bold().FontColor(Colors.White);
+                    header.Cell().Element(CellStyle).Background(Colors.Grey.Lighten1).Text("UserAccount").Bold().FontColor(Colors.White);
+                    header.Cell().Element(CellStyle).Background(Colors.Grey.Lighten1).Text("birthdate").Bold().FontColor(Colors.White);
+                    header.Cell().Element(CellStyle).Background(Colors.Grey.Lighten1).Text("numberPhone").Bold().FontColor(Colors.White);
+                    header.Cell().Element(CellStyle).Background(Colors.Grey.Lighten1).Text("passworduser").Bold().FontColor(Colors.White);
+                    header.Cell().Element(CellStyle).Background(Colors.Grey.Lighten1).Text("country").Bold().FontColor(Colors.White);
+                    header.Cell().Element(CellStyle).Background(Colors.Grey.Lighten1).Text("city").Bold().FontColor(Colors.White);
+                    header.Cell().Element(CellStyle).Background(Colors.Grey.Lighten1).Text("statususer").Bold().FontColor(Colors.White);
+                    header.Cell().Element(CellStyle).Background(Colors.Grey.Lighten1).Text("DateRegistration").Bold().FontColor(Colors.White);
 
                     static IContainer CellStyle(IContainer container)
                     {
@@ -119,6 +119,8 @@ namespace PresentationLayer.Reports
                     }
                 }
             });
+
+
         }
 
 

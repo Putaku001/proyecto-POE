@@ -287,3 +287,4 @@ C:\Users\fuent\Downloads\proyecto-POE\CRM_Definitivo\CRM_Definitivo\bin\Debug\ne
 C:\Users\fuent\Downloads\proyecto-POE\CRM_Definitivo\CRM_Definitivo\bin\Debug\net8.0-windows\runtimes\osx-x64\native\libQuestPdfSkia.dylib
 C:\Users\fuent\Downloads\proyecto-POE\CRM_Definitivo\CRM_Definitivo\bin\Debug\net8.0-windows\runtimes\win-x64\native\QuestPdfSkia.dll
 C:\Users\fuent\Downloads\proyecto-POE\CRM_Definitivo\CRM_Definitivo\bin\Debug\net8.0-windows\runtimes\win-x86\native\QuestPdfSkia.dll
+C:\Users\fuent\Downloads\proyecto-POE\CRM_Definitivo\CRM_Definitivo\obj\Debug\net8.0-windows\PresentationLayer.Forms.Cliente.ProfileUserAccountForm.resources
