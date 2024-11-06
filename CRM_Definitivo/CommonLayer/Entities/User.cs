@@ -12,6 +12,7 @@ namespace CommonLayer.Entities
         public string UserAccount { get; set; }
         public string NameUser { get; set; }
         public string LastName {  get; set; }
+        public string Email { get; set; }
         public DateTime Birthdate {  get; set; }
         public string NumberPhone { get; set; }
         public string Passworduser { get; set; }
@@ -19,7 +20,7 @@ namespace CommonLayer.Entities
         public string City { get; set; }
         public string Statususer { get; set; }
         public DateTime DateRegistration { get; set; }
-
-
+        public int idRol { get; set; }
+        
     }
 }

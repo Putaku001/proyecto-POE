@@ -8,6 +8,7 @@ using DataAccessLayer.Repositories.InterfacesRepositories;
 using PresentationLayer.Forms;
 using PresentationLayer;
 using PresentationLayer.Reports;
+using PresentationLayer.Forms.Cliente;
 
 namespace CRM_Definitivo
 {
@@ -18,6 +19,7 @@ namespace CRM_Definitivo
         private readonly IUsersServices usuarioServices;
         private readonly IUserReports _userReports;
         private readonly IRolServices _rolServices;
+
         public LoginForm(IUsersRepositories _usuarioRepositories, IUsersServices _usuarioServices, IRolServices rolServices, IListProyectsServices _proyectoServices, IUserReports userReports)
         {
             InitializeComponent();
@@ -28,7 +30,6 @@ namespace CRM_Definitivo
             _userReports = userReports;
         }
 
-
         private void pictureBoxClosed_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -36,7 +37,7 @@ namespace CRM_Definitivo
 
         private void pictureBoxClosed_MouseHover(object sender, EventArgs e)
         {
-            toolTip1.SetToolTip(pictureBoxClosed, "Cerrar aplicacion");
+            toolTip1.SetToolTip(pictureBoxClosed, "Cerrar aplicación");
         }
 
         private void pictureBoxMinimize_Click(object sender, EventArgs e)
@@ -46,7 +47,7 @@ namespace CRM_Definitivo
 
         private void pictureBoxMinimize_MouseHover(object sender, EventArgs e)
         {
-            toolTip1.SetToolTip(pictureBoxMinimize, "Minimizar aplicacion");
+            toolTip1.SetToolTip(pictureBoxMinimize, "Minimizar aplicación");
         }
 
         private void pictureBoxOcultar_MouseHover(object sender, EventArgs e)
@@ -84,10 +85,7 @@ namespace CRM_Definitivo
         private void lblCrearCuenta_Click(object sender, EventArgs e)
         {
             NewAccountForm crearCuenta = new NewAccountForm(usuarioServices);
-
             crearCuenta.FormClosing += CrearCuenta_FormClosing;
-
-
             crearCuenta.ShowDialog();
         }
 
@@ -98,25 +96,45 @@ namespace CRM_Definitivo
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            var usuarios = new UsersServices(usuarioRepositories).GetUsers();
-
-            User ousuario = usuarios.FirstOrDefault(u =>
-                u.UserAccount == txtUser.Text &&
-                u.Passworduser == txtPassword.Text
-            );
-
-            if (ousuario != null)
+            try
             {
-                MenuForm form = new MenuForm(ousuario, usuarioServices, _rolServices, proyectoServices, _userReports);
-                form.Show();
-                this.Hide();
+                var usuarios = usuarioServices.GetUsers();
+                User ousuario = usuarios.FirstOrDefault(u =>
+                    u.UserAccount == txtUser.Text &&
+                    VerifyPassword(txtPassword.Text, u.Passworduser)
+                );
 
-                form.FormClosing += frm_closing;
+                if (ousuario != null)
+                {
+                    if (ousuario.idRol == 2)
+                    {
+                        ClientForm clientForm = new ClientForm(usuarioServices);
+                        clientForm.Show();
+                        this.Hide();
+                        clientForm.FormClosing += frm_closing;
+                    }
+                    else
+                    {
+                        MenuForm form = new MenuForm(ousuario, usuarioServices, _rolServices, proyectoServices, _userReports);
+                        form.Show();
+                        this.Hide();
+                        form.FormClosing += frm_closing;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró el usuario o contraseña incorrecta.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("No se encontró el usuario.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show($"Error durante el inicio de sesión: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private bool VerifyPassword(string enteredPassword, string storedHash)
+        {
+            return enteredPassword == storedHash;
         }
     }
 }

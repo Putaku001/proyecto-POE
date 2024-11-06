@@ -34,6 +34,13 @@
             pictureBoxClosed = new PictureBox();
             lblCrearCuenta = new Label();
             gbRegistrar = new GroupBox();
+            emailLabel = new Label();
+            emailTextBox = new TextBox();
+            userLabel = new Label();
+            txtUserName = new TextBox();
+            label7 = new Label();
+            lblLogin = new Label();
+            label1 = new Label();
             btnNewAccount = new FontAwesome.Sharp.IconButton();
             label8 = new Label();
             cboListCity = new ComboBox();
@@ -45,14 +52,11 @@
             label9 = new Label();
             txtPassword = new TextBox();
             label2 = new Label();
-            txtName = new TextBox();
+            nameTexBox = new TextBox();
             label3 = new Label();
             label4 = new Label();
-            txtLastName = new TextBox();
+            lastNameTexBox = new TextBox();
             toolTip1 = new ToolTip(components);
-            label1 = new Label();
-            lblLogin = new Label();
-            label7 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMinimize).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxClosed).BeginInit();
             gbRegistrar.SuspendLayout();
@@ -101,6 +105,10 @@
             // gbRegistrar
             // 
             gbRegistrar.BackColor = Color.White;
+            gbRegistrar.Controls.Add(emailLabel);
+            gbRegistrar.Controls.Add(emailTextBox);
+            gbRegistrar.Controls.Add(userLabel);
+            gbRegistrar.Controls.Add(txtUserName);
             gbRegistrar.Controls.Add(label7);
             gbRegistrar.Controls.Add(lblLogin);
             gbRegistrar.Controls.Add(label1);
@@ -116,15 +124,82 @@
             gbRegistrar.Controls.Add(label9);
             gbRegistrar.Controls.Add(txtPassword);
             gbRegistrar.Controls.Add(label2);
-            gbRegistrar.Controls.Add(txtName);
+            gbRegistrar.Controls.Add(nameTexBox);
             gbRegistrar.Controls.Add(label3);
             gbRegistrar.Controls.Add(label4);
-            gbRegistrar.Controls.Add(txtLastName);
+            gbRegistrar.Controls.Add(lastNameTexBox);
             gbRegistrar.Location = new Point(91, 76);
             gbRegistrar.Name = "gbRegistrar";
             gbRegistrar.Size = new Size(481, 745);
             gbRegistrar.TabIndex = 9;
             gbRegistrar.TabStop = false;
+            // 
+            // emailLabel
+            // 
+            emailLabel.AutoSize = true;
+            emailLabel.Location = new Point(51, 257);
+            emailLabel.Name = "emailLabel";
+            emailLabel.Size = new Size(41, 16);
+            emailLabel.TabIndex = 42;
+            emailLabel.Text = "Email:";
+            // 
+            // emailTextBox
+            // 
+            emailTextBox.Location = new Point(131, 254);
+            emailTextBox.Name = "emailTextBox";
+            emailTextBox.Size = new Size(299, 22);
+            emailTextBox.TabIndex = 43;
+            // 
+            // userLabel
+            // 
+            userLabel.AutoSize = true;
+            userLabel.Location = new Point(53, 397);
+            userLabel.Name = "userLabel";
+            userLabel.Size = new Size(53, 16);
+            userLabel.TabIndex = 38;
+            userLabel.Text = "Usuario:";
+            // 
+            // txtUserName
+            // 
+            txtUserName.Location = new Point(133, 395);
+            txtUserName.Name = "txtUserName";
+            txtUserName.Size = new Size(299, 22);
+            txtUserName.TabIndex = 39;
+            // 
+            // label7
+            // 
+            label7.Font = new Font("Century Gothic", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.ForeColor = SystemColors.AppWorkspace;
+            label7.Location = new Point(6, 626);
+            label7.Name = "label7";
+            label7.Size = new Size(469, 80);
+            label7.TabIndex = 37;
+            label7.Text = "*Al registrarse, aceptas nuestros Terminos De Servicios, Politica de Privacidad y recibir  actualizaciones por parte de los InsanosSV";
+            label7.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblLogin
+            // 
+            lblLogin.Cursor = Cursors.Hand;
+            lblLogin.Font = new Font("Century Gothic", 9F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            lblLogin.ForeColor = Color.Turquoise;
+            lblLogin.Location = new Point(289, 102);
+            lblLogin.Name = "lblLogin";
+            lblLogin.Size = new Size(81, 30);
+            lblLogin.TabIndex = 36;
+            lblLogin.Text = "Ingresar";
+            lblLogin.TextAlign = ContentAlignment.MiddleLeft;
+            lblLogin.Click += lblLogin_Click;
+            // 
+            // label1
+            // 
+            label1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.ControlDark;
+            label1.Location = new Point(122, 102);
+            label1.Name = "label1";
+            label1.Size = new Size(174, 30);
+            label1.TabIndex = 35;
+            label1.Text = "ya tienes una cuenta? ";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnNewAccount
             // 
@@ -145,74 +220,74 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(50, 492);
+            label8.Location = new Point(50, 526);
             label8.Name = "label8";
-            label8.Size = new Size(67, 18);
+            label8.Size = new Size(53, 16);
             label8.TabIndex = 33;
             label8.Text = "Ciudad:";
             // 
             // cboListCity
             // 
             cboListCity.FormattingEnabled = true;
-            cboListCity.Location = new Point(133, 489);
+            cboListCity.Location = new Point(133, 523);
             cboListCity.Name = "cboListCity";
-            cboListCity.Size = new Size(299, 26);
+            cboListCity.Size = new Size(299, 24);
             cboListCity.TabIndex = 32;
             // 
             // cboListCountrys
             // 
             cboListCountrys.FormattingEnabled = true;
-            cboListCountrys.Location = new Point(133, 444);
+            cboListCountrys.Location = new Point(133, 478);
             cboListCountrys.Name = "cboListCountrys";
-            cboListCountrys.Size = new Size(299, 26);
+            cboListCountrys.Size = new Size(299, 24);
             cboListCountrys.TabIndex = 30;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(50, 447);
+            label6.Location = new Point(50, 481);
             label6.Name = "label6";
-            label6.Size = new Size(40, 18);
+            label6.Size = new Size(33, 16);
             label6.TabIndex = 31;
             label6.Text = "Pais:";
             // 
             // dtpBirthDate
             // 
-            dtpBirthDate.Location = new Point(133, 263);
+            dtpBirthDate.Location = new Point(133, 299);
             dtpBirthDate.Name = "dtpBirthDate";
-            dtpBirthDate.Size = new Size(301, 26);
+            dtpBirthDate.Size = new Size(301, 22);
             dtpBirthDate.TabIndex = 29;
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(53, 308);
+            label10.Location = new Point(53, 344);
             label10.Name = "label10";
-            label10.Size = new Size(75, 18);
+            label10.Size = new Size(61, 16);
             label10.TabIndex = 27;
             label10.Text = "Telefono:";
             // 
             // txtNumberPhone
             // 
-            txtNumberPhone.Location = new Point(133, 305);
+            txtNumberPhone.Location = new Point(133, 341);
             txtNumberPhone.Name = "txtNumberPhone";
-            txtNumberPhone.Size = new Size(299, 26);
+            txtNumberPhone.Size = new Size(299, 22);
             txtNumberPhone.TabIndex = 28;
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(53, 357);
+            label9.Location = new Point(53, 442);
             label9.Name = "label9";
-            label9.Size = new Size(56, 18);
+            label9.Size = new Size(45, 16);
             label9.TabIndex = 25;
             label9.Text = "Clave:";
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(133, 355);
+            txtPassword.Location = new Point(133, 440);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(299, 26);
+            txtPassword.Size = new Size(299, 22);
             txtPassword.TabIndex = 26;
             // 
             // label2
@@ -220,80 +295,45 @@
             label2.AutoSize = true;
             label2.Location = new Point(53, 171);
             label2.Name = "label2";
-            label2.Size = new Size(72, 18);
+            label2.Size = new Size(58, 16);
             label2.TabIndex = 20;
             label2.Text = "Nombre:";
             // 
-            // txtName
+            // nameTexBox
             // 
-            txtName.Location = new Point(133, 168);
-            txtName.Name = "txtName";
-            txtName.Size = new Size(299, 26);
-            txtName.TabIndex = 21;
+            nameTexBox.Location = new Point(131, 168);
+            nameTexBox.Name = "nameTexBox";
+            nameTexBox.Size = new Size(299, 22);
+            nameTexBox.TabIndex = 21;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(22, 269);
+            label3.Location = new Point(22, 305);
             label3.Name = "label3";
-            label3.Size = new Size(106, 18);
+            label3.Size = new Size(84, 16);
             label3.TabIndex = 22;
             label3.Text = "Cumpleaños:";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(53, 219);
+            label4.Location = new Point(51, 213);
             label4.Name = "label4";
-            label4.Size = new Size(75, 18);
+            label4.Size = new Size(60, 16);
             label4.TabIndex = 23;
             label4.Text = "Apellido:";
             // 
-            // txtLastName
+            // lastNameTexBox
             // 
-            txtLastName.Location = new Point(133, 216);
-            txtLastName.Name = "txtLastName";
-            txtLastName.Size = new Size(299, 26);
-            txtLastName.TabIndex = 24;
-            // 
-            // label1
-            // 
-            label1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.ControlDark;
-            label1.Location = new Point(122, 102);
-            label1.Name = "label1";
-            label1.Size = new Size(174, 30);
-            label1.TabIndex = 35;
-            label1.Text = "ya tienes una cuenta? ";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // lblLogin
-            // 
-            lblLogin.Cursor = Cursors.Hand;
-            lblLogin.Font = new Font("Century Gothic", 9F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            lblLogin.ForeColor = Color.Turquoise;
-            lblLogin.Location = new Point(289, 102);
-            lblLogin.Name = "lblLogin";
-            lblLogin.Size = new Size(81, 30);
-            lblLogin.TabIndex = 36;
-            lblLogin.Text = "Ingresar";
-            lblLogin.TextAlign = ContentAlignment.MiddleLeft;
-            lblLogin.Click += lblLogin_Click;
-            // 
-            // label7
-            // 
-            label7.Font = new Font("Century Gothic", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.ForeColor = SystemColors.AppWorkspace;
-            label7.Location = new Point(6, 626);
-            label7.Name = "label7";
-            label7.Size = new Size(469, 80);
-            label7.TabIndex = 37;
-            label7.Text = "*Al registrarse, aceptas nuestros Terminos De Servicios, Politica de Privacidad y recibir  actualizaciones por parte de los InsanosSV";
-            label7.TextAlign = ContentAlignment.MiddleCenter;
+            lastNameTexBox.Location = new Point(131, 210);
+            lastNameTexBox.Name = "lastNameTexBox";
+            lastNameTexBox.Size = new Size(299, 22);
+            lastNameTexBox.TabIndex = 24;
             // 
             // NewAccountForm
             // 
-            AutoScaleDimensions = new SizeF(9F, 18F);
+            AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(665, 858);
             Controls.Add(gbRegistrar);
@@ -323,10 +363,10 @@
         private Label label9;
         private TextBox txtPassword;
         private Label label2;
-        private TextBox txtName;
+        private TextBox nameTexBox;
         private Label label3;
         private Label label4;
-        private TextBox txtLastName;
+        private TextBox lastNameTexBox;
         private FontAwesome.Sharp.IconButton btnNewAccount;
         private Label label8;
         private ComboBox cboListCity;
@@ -336,5 +376,9 @@
         private Label label7;
         private Label lblLogin;
         private Label label1;
+        private Label userLabel;
+        private TextBox txtUserName;
+        private Label emailLabel;
+        private TextBox emailTextBox;
     }
 }

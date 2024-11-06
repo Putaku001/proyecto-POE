@@ -1738,19 +1738,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\fuent\\.nuget\\packages\\": {}
+    "C:\\Users\\blanc_ma7kouo\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fuent\\Downloads\\proyecto-POE\\CRM_Definitivo\\DataAccessLayer\\DataAccessLayer.csproj",
+      "projectUniqueName": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\aahh\\proyecto-POE-main\\CRM_Definitivo\\DataAccessLayer\\DataAccessLayer.csproj",
       "projectName": "DataAccessLayer",
-      "projectPath": "C:\\Users\\fuent\\Downloads\\proyecto-POE\\CRM_Definitivo\\DataAccessLayer\\DataAccessLayer.csproj",
-      "packagesPath": "C:\\Users\\fuent\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fuent\\Downloads\\proyecto-POE\\CRM_Definitivo\\DataAccessLayer\\obj\\",
+      "projectPath": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\aahh\\proyecto-POE-main\\CRM_Definitivo\\DataAccessLayer\\DataAccessLayer.csproj",
+      "packagesPath": "C:\\Users\\blanc_ma7kouo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\aahh\\proyecto-POE-main\\CRM_Definitivo\\DataAccessLayer\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\fuent\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\blanc_ma7kouo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1764,8 +1769,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\fuent\\Downloads\\proyecto-POE\\CRM_Definitivo\\CommonLayer\\CommonLayer.csproj": {
-              "projectPath": "C:\\Users\\fuent\\Downloads\\proyecto-POE\\CRM_Definitivo\\CommonLayer\\CommonLayer.csproj"
+            "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\aahh\\proyecto-POE-main\\CRM_Definitivo\\CommonLayer\\CommonLayer.csproj": {
+              "projectPath": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\aahh\\proyecto-POE-main\\CRM_Definitivo\\CommonLayer\\CommonLayer.csproj"
             }
           }
         }
@@ -1810,7 +1815,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

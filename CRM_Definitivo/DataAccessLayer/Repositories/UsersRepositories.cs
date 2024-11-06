@@ -22,7 +22,7 @@ namespace DataAccessLayer.Repositories
         {
             using (var connection = _dbConnection.GetConnection())
             {
-                string query = @"SELECT u.idUser, u.UserAccount, u.nameuser, u.lastName, u.birthdate, 
+                string query = @"SELECT u.idUser, u.UserAccount, u.nameuser, u.lastName, u.email, u.birthdate, 
                                         u.numberPhone, u.passworduser, u.country, u.city, u.statususer, u.DateRegistration
                                  FROM Users u WHERE idUser = @idUser";
 
@@ -34,7 +34,7 @@ namespace DataAccessLayer.Repositories
         {
             using (var connection = _dbConnection.GetConnection())
             {
-                string query = @"SELECT u.idUser, u.UserAccount, u.nameuser, u.lastName, u.birthdate, 
+                string query = @"SELECT u.idUser, u.UserAccount, u.nameuser, u.lastName, u.email, u.birthdate, 
                                         u.numberPhone, u.passworduser, u.country, u.city, u.statususer, u.DateRegistration
                                  FROM Users u";
 
@@ -46,16 +46,17 @@ namespace DataAccessLayer.Repositories
         {
             using (var connection = _dbConnection.GetConnection())
             {
-                string query = @"INSERT INTO Users (UserAccount,nameuser, lastName, birthdate, 
-                                     numberPhone, passworduser, country, city, statususer, DateRegistration) 
-                                 VALUES (@UserAccount, @nameuser, @lastName, @birthdate, 
-                                         @numberPhone, @passworduser, @country, 
-                                         @city, @statususer, @DateRegistration)";
-                connection.Query<User>(query, new 
-                { 
+                string query = @"INSERT INTO Users (UserAccount, nameuser, lastName, email, birthdate, 
+                             numberPhone, passworduser, country, city, statususer, DateRegistration, idRol) 
+                         VALUES (@UserAccount, @nameuser, @lastName, @email, @birthdate, 
+                                 @numberPhone, @passworduser, @country, 
+                                 @city, @statususer, @DateRegistration, @idRol)";
+                connection.Query<User>(query, new
+                {
                     user.UserAccount,
                     user.NameUser,
                     user.LastName,
+                    user.Email,
                     user.Birthdate,
                     user.NumberPhone,
                     user.Passworduser,
@@ -63,9 +64,11 @@ namespace DataAccessLayer.Repositories
                     user.City,
                     user.Statususer,
                     user.DateRegistration,
+                    idRol = 2
                 });
             }
         }
+
 
         public void EditUser(User user)
         {
@@ -74,7 +77,8 @@ namespace DataAccessLayer.Repositories
                 string query = @"UPDATE Users 
                                  SET UserAccount = @UserAccount,
                                      nameuser = @nameuser, 
-                                     lastName = @lastName, 
+                                     lastName = @lastName,
+                                     email = @email,
                                      birthdate = @birthdate, 
                                      numberPhone = @numberPhone, 
                                      passworduser = @passworduser, 
@@ -102,7 +106,7 @@ namespace DataAccessLayer.Repositories
         {
             using (var connection = _dbConnection.GetConnection())
             {
-                string query = @"SELECT idUser, UserAccount, nameuser, lastName, birthdate, 
+                string query = @"SELECT idUser, UserAccount, nameuser, lastName, email, birthdate, 
                                         numberPhone, passworduser, country, city, statususer, DateRegistration
                                  FROM Users WHERE UserAccount LIKE '%' + @search + '%'";
 

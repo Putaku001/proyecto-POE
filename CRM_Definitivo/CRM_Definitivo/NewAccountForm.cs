@@ -16,6 +16,7 @@ namespace PresentationLayer
     public partial class NewAccountForm : Form
     {
         private IUsersServices _usersServices;
+
         public NewAccountForm(IUsersServices usersServices)
         {
             InitializeComponent();
@@ -25,7 +26,7 @@ namespace PresentationLayer
 
         private void LoadProvincias()
         {
-            List<string> ListaPaises = new List<string>()
+            List<string> ListaPaises = new List<string>
             {
                 "El Salvador",
                 "Colombia",
@@ -35,9 +36,7 @@ namespace PresentationLayer
             cboListCountrys.DataSource = ListaPaises;
             cboListCountrys.SelectedIndex = -1;
 
-
-
-            List<string> ListaCiudad = new List<string>()
+            List<string> ListaCiudad = new List<string>
             {
                 "San Salvador",
                 "La Libertad",
@@ -48,7 +47,6 @@ namespace PresentationLayer
                 "La Plata",
                 "Mendoza",
                 "Cordoba"
-
             };
 
             cboListCity.DataSource = ListaCiudad;
@@ -57,12 +55,11 @@ namespace PresentationLayer
 
         private void CleanFields()
         {
-            txtName.Text = "";
-            txtLastName.Text = "";
-            dtpBirthDate.Text = "";
+            nameTexBox.Text = "";
+            lastNameTexBox.Text = "";
+            dtpBirthDate.Value = DateTime.Now;
             txtNumberPhone.Text = "";
             txtPassword.Text = "";
-
             cboListCountrys.SelectedIndex = -1;
             cboListCity.SelectedIndex = -1;
         }
@@ -89,32 +86,82 @@ namespace PresentationLayer
 
         private void btnNewAccount_Click(object sender, EventArgs e)
         {
-            string Name = txtName.Text;
-            string LastName = txtLastName.Text;
-            DateTime BirthDate = dtpBirthDate.Value;
-            string Phone = txtNumberPhone.Text;
-            string Password = txtPassword.Text;
+            try
+            {
+                if (ValidateFields())
+                {
+                    if (!IsValidEmail(emailTextBox.Text))
+                    {
+                        MessageBox.Show("El formato del correo electrónico no es válido.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
 
-            string Country = (string)cboListCountrys.SelectedValue;
-            string City = (string)cboListCity.SelectedValue;
+                    string password = txtPassword.Text;
+                    if (password.Length < 8)
+                    {
+                        MessageBox.Show("La contraseña debe tener al menos 8 caracteres.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
 
-            User newAccount = new User();
-            newAccount.NameUser = Name;
-            newAccount.LastName = LastName;
-            newAccount.Birthdate = BirthDate;
-            newAccount.NumberPhone = Phone;
-            newAccount.Passworduser = Password;
-            newAccount.Country = Country;
-            newAccount.City = City;
-            newAccount.Statususer = "Activo";
-            newAccount.DateRegistration = DateTime.Now;
+                    User newAccount = new User
+                    {
+                        UserAccount = txtUserName.Text,
+                        NameUser = nameTexBox.Text,
+                        LastName = lastNameTexBox.Text,
+                        Email = emailTextBox.Text,
+                        Birthdate = dtpBirthDate.Value,
+                        NumberPhone = txtNumberPhone.Text,
+                        Passworduser = HashPassword(password),
+                        Country = (string)cboListCountrys.SelectedValue,
+                        City = (string)cboListCity.SelectedValue,
+                        Statususer = "Activo",
+                        DateRegistration = DateTime.Now,
+                        idRol = 2
+                    };
 
-            _usersServices.AddUsers(newAccount);
-            CleanFields();
+                    _usersServices.AddUsers(newAccount);
+                    CleanFields();
 
-            MessageBox.Show("La cuenta se ha creado con exito!!");
-            this.Close();
+                    MessageBox.Show("La cuenta se ha creado con éxito.");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, completa todos los campos requeridos.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al crear la cuenta: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
+        private bool ValidateFields()
+        {
+            return !string.IsNullOrWhiteSpace(nameTexBox.Text) &&
+                   !string.IsNullOrWhiteSpace(lastNameTexBox.Text) &&
+                   !string.IsNullOrWhiteSpace(emailTextBox.Text) &&
+                   !string.IsNullOrWhiteSpace(txtNumberPhone.Text) &&
+                   !string.IsNullOrWhiteSpace(txtPassword.Text) &&
+                   cboListCountrys.SelectedIndex != -1 &&
+                   cboListCity.SelectedIndex != -1;
+        }
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        private string HashPassword(string password)
+        {
+            return password;
         }
 
         private void lblLogin_Click(object sender, EventArgs e)
