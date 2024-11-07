@@ -15,6 +15,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CommonLayer.Enums;
 
 namespace PresentationLayer.Forms
 {
@@ -22,17 +23,18 @@ namespace PresentationLayer.Forms
     {
         private static IconMenuItem MenuActivo = null;
         private static Form FormularioActivo = null;
-        private User usuarioactual;
+        //private User usuarioactual;
         private IListProyectsServices proyectoServices;
         private IUsersServices usuarioServices;
         private IRolServices _rolServices;
         private readonly IUserReports _userReports;
         private System.Windows.Forms.Timer timer;
-        public MenuForm(User ousuarios, IUsersServices _usuarioServices, IRolServices rolServices, IListProyectsServices _proyectoServices, IUserReports userReports)
+        public MenuForm(IUsersServices _usuarioServices, IRolServices rolServices, IListProyectsServices _proyectoServices, IUserReports userReports)
         {
 
             InitializeComponent();
-            this.usuarioactual = ousuarios;
+            SetPermmisions();
+            //this.usuarioactual = ousuarios;
             usuarioServices = _usuarioServices;
             _rolServices = rolServices;
             proyectoServices = _proyectoServices;
@@ -43,6 +45,50 @@ namespace PresentationLayer.Forms
             timer.Start();
 
             fechayhora();
+        }
+
+
+        public void SetPermmisions()
+        {
+            //AuthUser.idRol = 2;
+            
+            MessageBox.Show($"Rol actual: {AuthUser.idRol}");
+
+            if (AuthUser.idRol == (int)RolEnum.Admin)
+            {
+                buttonUsuariosForm.Enabled = true;
+                buttonUsuariosForm.Visible = true;
+
+                btnProyectosForm.Enabled = true;
+                btnProyectosForm.Visible = true;
+
+                btnAjustesForm.Enabled = true;
+                btnAjustesForm.Visible = true;
+
+                btnHistorialForm.Enabled = true;
+                btnHistorialForm.Visible = true;
+
+                btnPerfilUser.Enabled = true;
+                btnPerfilUser.Visible = true;
+            }
+
+            if (AuthUser.idRol == (int)RolEnum.Empleado)
+            {
+                buttonUsuariosForm.Enabled = false;
+                buttonUsuariosForm.Visible = false;
+
+                btnProyectosForm.Enabled = true;
+                btnProyectosForm.Visible = true;
+
+                btnAjustesForm.Enabled = true;
+                btnAjustesForm.Visible = true;
+
+                btnHistorialForm.Enabled = true;
+                btnHistorialForm.Visible = true;
+
+                btnPerfilUser.Enabled = true;
+                btnPerfilUser.Visible = true;
+            }
         }
 
         private void fechayhora()
@@ -57,7 +103,8 @@ namespace PresentationLayer.Forms
 
         private void MenuForm_Load(object sender, EventArgs e)
         {
-            lblNombreUsuario.Text = usuarioactual.UserAccount;
+            //lblNombreUsuario.Text = usuarioactual.UserAccount;
+
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -80,6 +127,7 @@ namespace PresentationLayer.Forms
 
             formulario.Show();
         }
+        
 
         private void btnUsuariosForm_Click(object sender, EventArgs e)
         {

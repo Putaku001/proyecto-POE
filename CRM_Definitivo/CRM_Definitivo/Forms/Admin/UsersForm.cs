@@ -77,6 +77,7 @@ namespace PresentationLayer.Forms
             User usuarioSeleccionado = new User
             {
                 IdUser = Convert.ToInt32(filaSeleccionada.Cells["idUser"].Value),
+                idRol = Convert.ToInt32(filaSeleccionada.Cells["idRol"].Value.ToString()),
                 UserAccount = filaSeleccionada.Cells["UserAccount"].Value.ToString(),
                 NameUser = filaSeleccionada.Cells["nameuser"].Value.ToString(),
                 LastName = filaSeleccionada.Cells["lastName"].Value.ToString(),
@@ -85,7 +86,8 @@ namespace PresentationLayer.Forms
                 Passworduser = filaSeleccionada.Cells["passworduser"].Value.ToString(),
                 Country = filaSeleccionada.Cells["country"].Value.ToString(),
                 City = filaSeleccionada.Cells["city"].Value.ToString(),
-                Statususer = filaSeleccionada.Cells["statususer"].Value.ToString()
+                Statususer = filaSeleccionada.Cells["statususer"].Value.ToString(),
+                Email = filaSeleccionada.Cells["Email"].Value.ToString()
             };
 
             AddUsersForm editarUsuarioForm = new AddUsersForm(_usuersservices, _rolservices, usuarioSeleccionado);

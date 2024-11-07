@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CommonLayer.Entities
+namespace CommonLayer.Enums
 {
-    public class Roll
+    public enum RolEnum
     {
-        public int idRol { get; set; }
-        public string Rol { get; set; }
-
+        Admin = 1,
+        Empleado = 2,
+        Cliente = 3,
     }
 }

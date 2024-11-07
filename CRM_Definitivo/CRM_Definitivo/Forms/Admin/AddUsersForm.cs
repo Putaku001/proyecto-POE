@@ -2,6 +2,7 @@
 using BusinessLayer.Services.Interfaces;
 using BusinessLayer.Services.InterfacesServices;
 using CommonLayer.Entities;
+using PresentationLayer.Resources;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -40,7 +41,15 @@ namespace PresentationLayer.Forms
         {
             if (IsEditing)
             {
+                cboRol.DataSource = rolServices.GetRol();
+                cboRol.DisplayMember = "Rol";
+                cboRol.ValueMember = "idRol";
+
+                cboRol.SelectedValue = _usuario.idRol;
+
+
                 txtUserAccount.Text = _usuario.UserAccount;
+                textBoxEmail.Text = _usuario.Email;
                 txtName.Text = _usuario.NameUser;
                 txtLastName.Text = _usuario.LastName;
                 dtpBirthDate.Value = _usuario.Birthdate;
@@ -132,10 +141,6 @@ namespace PresentationLayer.Forms
         private void AñadirUsuariosForm_Load(object sender, EventArgs e)
         {
 
-            cboRol.DataSource = rolServices.GetRolFiltro();
-            cboRol.DisplayMember = "Rol";
-            cboRol.ValueMember = "idRoles";
-            cboRol.SelectedIndex = 0;
         }
 
         public event EventHandler AddUsuario;
@@ -147,6 +152,8 @@ namespace PresentationLayer.Forms
             User usuario = new User()
             {
                 UserAccount = txtUserAccount.Text,
+                Email = textBoxEmail.Text,
+                idRol = Convert.ToInt32(cboRol.SelectedValue),
                 NameUser = txtName.Text,
                 LastName = txtLastName.Text,
                 Birthdate = dtpBirthDate.Value,
@@ -169,6 +176,8 @@ namespace PresentationLayer.Forms
         private void btnEditar_Click(object sender, EventArgs e)
         {
             _usuario.UserAccount = txtUserAccount.Text;
+            _usuario.Email = textBoxEmail.Text;
+            _usuario.idRol = Convert.ToInt32(cboRol.SelectedValue);
             _usuario.NameUser = txtName.Text;
             _usuario.Birthdate = dtpBirthDate.Value;
             _usuario.NumberPhone = txtNumberPhone.Text;

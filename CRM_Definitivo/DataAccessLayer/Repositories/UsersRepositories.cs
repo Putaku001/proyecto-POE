@@ -18,15 +18,16 @@ namespace DataAccessLayer.Repositories
             _dbConnection = dbConnection;
         }
 
-        public IEnumerable<User> GetUser(User user)
-        {
+        public User? GetUserByeUserAndPassword(string UserAccount, string passworduser)
+        {           
+                string query = @"SELECT idUser, idRol, UserAccount, nameuser, lastName, email, birthdate, 
+                                        numberPhone, passworduser, country, city, statususer, DateRegistration
+                                 FROM Users 
+                                 WHERE UserAccount = @UserAccount AND passworduser = @PasswordUser";
+
             using (var connection = _dbConnection.GetConnection())
             {
-                string query = @"SELECT u.idUser, u.UserAccount, u.nameuser, u.lastName, u.email, u.birthdate, 
-                                        u.numberPhone, u.passworduser, u.country, u.city, u.statususer, u.DateRegistration
-                                 FROM Users u WHERE idUser = @idUser";
-
-                return connection.Query<User>(query, user);
+                return connection.QueryFirstOrDefault<User>(query, new { UserAccount, passworduser });
             }
         }
 
@@ -34,9 +35,9 @@ namespace DataAccessLayer.Repositories
         {
             using (var connection = _dbConnection.GetConnection())
             {
-                string query = @"SELECT u.idUser, u.UserAccount, u.nameuser, u.lastName, u.email, u.birthdate, 
-                                        u.numberPhone, u.passworduser, u.country, u.city, u.statususer, u.DateRegistration
-                                 FROM Users u";
+                string query = @"SELECT idUser, idRol, UserAccount, nameuser, lastName, email, birthdate, 
+                                        numberPhone, passworduser, country, city, statususer, DateRegistration
+                                 FROM Users";
 
                 return connection.Query<User>(query);
             }
@@ -64,7 +65,7 @@ namespace DataAccessLayer.Repositories
                     user.City,
                     user.Statususer,
                     user.DateRegistration,
-                    idRol = 2
+                    user.idRol
                 });
             }
         }
@@ -76,6 +77,7 @@ namespace DataAccessLayer.Repositories
             {
                 string query = @"UPDATE Users 
                                  SET UserAccount = @UserAccount,
+                                     idRol = @idRol,
                                      nameuser = @nameuser, 
                                      lastName = @lastName,
                                      email = @email,
@@ -106,7 +108,7 @@ namespace DataAccessLayer.Repositories
         {
             using (var connection = _dbConnection.GetConnection())
             {
-                string query = @"SELECT idUser, UserAccount, nameuser, lastName, email, birthdate, 
+                string query = @"SELECT idUser, idRol, UserAccount, nameuser, lastName, email, birthdate, 
                                         numberPhone, passworduser, country, city, statususer, DateRegistration
                                  FROM Users WHERE UserAccount LIKE '%' + @search + '%'";
 

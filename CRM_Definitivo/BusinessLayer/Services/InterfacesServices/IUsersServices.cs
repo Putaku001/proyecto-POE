@@ -10,7 +10,7 @@ namespace BusinessLayer.Services.Interfaces
 {
     public interface IUsersServices
     {
-        IEnumerable<User> GetUser(User user);
+        User? Login(string username, string password);
         IEnumerable<User> GetUsers();
         void AddUsers(User user);
         void EditUsers(User user);

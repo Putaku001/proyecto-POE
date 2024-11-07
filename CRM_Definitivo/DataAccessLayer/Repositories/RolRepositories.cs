@@ -36,7 +36,7 @@ namespace DataAccessLayer.Repositories
         {
             using(var connection = _dbConnection.GetConnection())
             {
-                string query = "SELECT idRoles, Rol FROM roles";
+                string query = "SELECT idRol, Rol FROM roles";
 
 
                 return connection.Query<Roll>(query);

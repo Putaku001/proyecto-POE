@@ -36,7 +36,7 @@
             pictureBox1 = new PictureBox();
             lblHoraUsuario = new Label();
             lblNombreUsuario = new Label();
-            btnUsuariosForm = new Button();
+            buttonUsuariosForm = new Button();
             panel2 = new Panel();
             panel4 = new Panel();
             panel3 = new Panel();
@@ -147,23 +147,23 @@
             lblNombreUsuario.TabIndex = 4;
             lblNombreUsuario.Text = "lblNombreUsuario";
             // 
-            // btnUsuariosForm
+            // buttonUsuariosForm
             // 
-            btnUsuariosForm.FlatAppearance.BorderSize = 0;
-            btnUsuariosForm.FlatStyle = FlatStyle.Flat;
-            btnUsuariosForm.Font = new Font("Century Gothic", 13.8F);
-            btnUsuariosForm.ForeColor = Color.White;
-            btnUsuariosForm.Image = Properties.Resources.round_account_button_with_user_inside_icon_icons1;
-            btnUsuariosForm.ImageAlign = ContentAlignment.MiddleLeft;
-            btnUsuariosForm.Location = new Point(12, 187);
-            btnUsuariosForm.Name = "btnUsuariosForm";
-            btnUsuariosForm.Size = new Size(238, 36);
-            btnUsuariosForm.TabIndex = 3;
-            btnUsuariosForm.Text = "Usuarios";
-            btnUsuariosForm.TextAlign = ContentAlignment.MiddleLeft;
-            btnUsuariosForm.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnUsuariosForm.UseVisualStyleBackColor = true;
-            btnUsuariosForm.Click += btnUsuariosForm_Click;
+            buttonUsuariosForm.FlatAppearance.BorderSize = 0;
+            buttonUsuariosForm.FlatStyle = FlatStyle.Flat;
+            buttonUsuariosForm.Font = new Font("Century Gothic", 13.8F);
+            buttonUsuariosForm.ForeColor = Color.White;
+            buttonUsuariosForm.Image = Properties.Resources.round_account_button_with_user_inside_icon_icons1;
+            buttonUsuariosForm.ImageAlign = ContentAlignment.MiddleLeft;
+            buttonUsuariosForm.Location = new Point(12, 187);
+            buttonUsuariosForm.Name = "buttonUsuariosForm";
+            buttonUsuariosForm.Size = new Size(238, 36);
+            buttonUsuariosForm.TabIndex = 3;
+            buttonUsuariosForm.Text = "Usuarios";
+            buttonUsuariosForm.TextAlign = ContentAlignment.MiddleLeft;
+            buttonUsuariosForm.TextImageRelation = TextImageRelation.ImageBeforeText;
+            buttonUsuariosForm.UseVisualStyleBackColor = true;
+            buttonUsuariosForm.Click += btnUsuariosForm_Click;
             // 
             // panel2
             // 
@@ -176,7 +176,7 @@
             panel2.Controls.Add(btnAjustesForm);
             panel2.Controls.Add(btnHistorialForm);
             panel2.Controls.Add(btnProyectosForm);
-            panel2.Controls.Add(btnUsuariosForm);
+            panel2.Controls.Add(buttonUsuariosForm);
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
@@ -330,7 +330,7 @@
         private Panel panel1;
         private Label lblHoraUsuario;
         private Label lblNombreUsuario;
-        private Button btnUsuariosForm;
+        private Button buttonUsuariosForm;
         private Panel panel2;
         private Button btnPerfilUser;
         private Button btnAjustesForm;

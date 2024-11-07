@@ -9,6 +9,7 @@ using PresentationLayer.Forms;
 using PresentationLayer;
 using PresentationLayer.Reports;
 using PresentationLayer.Forms.Cliente;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace CRM_Definitivo
 {
@@ -19,8 +20,9 @@ namespace CRM_Definitivo
         private readonly IUsersServices usuarioServices;
         private readonly IUserReports _userReports;
         private readonly IRolServices _rolServices;
+        private readonly IServiceProvider _serviceProvider;
 
-        public LoginForm(IUsersRepositories _usuarioRepositories, IUsersServices _usuarioServices, IRolServices rolServices, IListProyectsServices _proyectoServices, IUserReports userReports)
+        public LoginForm(IServiceProvider serviceProvider, IUsersRepositories _usuarioRepositories, IUsersServices _usuarioServices, IRolServices rolServices, IListProyectsServices _proyectoServices, IUserReports userReports)
         {
             InitializeComponent();
             usuarioRepositories = _usuarioRepositories;
@@ -28,6 +30,7 @@ namespace CRM_Definitivo
             _rolServices = rolServices;
             proyectoServices = _proyectoServices;
             _userReports = userReports;
+            _serviceProvider = serviceProvider;
         }
 
         private void pictureBoxClosed_Click(object sender, EventArgs e)
@@ -96,45 +99,22 @@ namespace CRM_Definitivo
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            try
-            {
-                var usuarios = usuarioServices.GetUsers();
-                User ousuario = usuarios.FirstOrDefault(u =>
-                    u.UserAccount == txtUser.Text &&
-                    VerifyPassword(txtPassword.Text, u.Passworduser)
-                );
+                var user = usuarioServices.Login(txtUser.Text, txtPassword.Text);
 
-                if (ousuario != null)
+                if (user != null)
                 {
-                    if (ousuario.idRol == 2)
-                    {
-                        ClientForm clientForm = new ClientForm(usuarioServices);
-                        clientForm.Show();
-                        this.Hide();
-                        clientForm.FormClosing += frm_closing;
-                    }
-                    else
-                    {
-                        MenuForm form = new MenuForm(ousuario, usuarioServices, _rolServices, proyectoServices, _userReports);
-                        form.Show();
-                        this.Hide();
-                        form.FormClosing += frm_closing;
-                    }
+                    var menuForm = _serviceProvider.GetRequiredService<MenuForm>();
+                    menuForm.ShowDialog();
+
+                    AuthUser.UserAccount = user.UserAccount;
+                    AuthUser.idRol = user.idRol;
                 }
                 else
                 {
-                    MessageBox.Show("No se encontró el usuario o contraseña incorrecta.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Usuario o contraseña incorrecta, vuelva a intentarlo");
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error durante el inicio de sesión: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
         }
 
-        private bool VerifyPassword(string enteredPassword, string storedHash)
-        {
-            return enteredPassword == storedHash;
-        }
     }
 }

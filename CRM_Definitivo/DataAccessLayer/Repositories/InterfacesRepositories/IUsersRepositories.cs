@@ -10,7 +10,7 @@ namespace DataAccessLayer.Repositories.InterfacesRepositories
 {
     public interface IUsersRepositories
     {
-        IEnumerable<User> GetUser(User user);
+        User? GetUserByeUserAndPassword(string UserAccount, string passworduser);
         IEnumerable<User> GetAllUser();
         void AddUser(User user);
         void EditUser(User user);

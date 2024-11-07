@@ -106,6 +106,7 @@ namespace PresentationLayer
                     User newAccount = new User
                     {
                         UserAccount = txtUserName.Text,
+                        idRol = 4,
                         NameUser = nameTexBox.Text,
                         LastName = lastNameTexBox.Text,
                         Email = emailTextBox.Text,
@@ -116,7 +117,6 @@ namespace PresentationLayer
                         City = (string)cboListCity.SelectedValue,
                         Statususer = "Activo",
                         DateRegistration = DateTime.Now,
-                        idRol = 2
                     };
 
                     _usersServices.AddUsers(newAccount);

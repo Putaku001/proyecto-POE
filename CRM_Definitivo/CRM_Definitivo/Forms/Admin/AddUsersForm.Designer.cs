@@ -35,6 +35,8 @@
             cboRol = new ComboBox();
             label5 = new Label();
             gbDetallesUsuarios = new GroupBox();
+            lblUserAccount = new Label();
+            txtUserAccount = new TextBox();
             dtpBirthDate = new DateTimePicker();
             label10 = new Label();
             txtNumberPhone = new TextBox();
@@ -53,8 +55,8 @@
             label6 = new Label();
             btnGuardar = new FontAwesome.Sharp.IconButton();
             btnEditar = new FontAwesome.Sharp.IconButton();
-            lblUserAccount = new Label();
-            txtUserAccount = new TextBox();
+            label11 = new Label();
+            textBoxEmail = new TextBox();
             gbDetallesUsuarios.SuspendLayout();
             gbProvincia.SuspendLayout();
             SuspendLayout();
@@ -73,7 +75,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(30, 133);
+            label2.Location = new Point(32, 178);
             label2.Name = "label2";
             label2.Size = new Size(81, 19);
             label2.TabIndex = 1;
@@ -81,7 +83,7 @@
             // 
             // txtName
             // 
-            txtName.Location = new Point(110, 130);
+            txtName.Location = new Point(112, 175);
             txtName.Name = "txtName";
             txtName.Size = new Size(248, 28);
             txtName.TabIndex = 2;
@@ -89,7 +91,7 @@
             // cboRol
             // 
             cboRol.FormattingEnabled = true;
-            cboRol.Location = new Point(110, 84);
+            cboRol.Location = new Point(112, 129);
             cboRol.Name = "cboRol";
             cboRol.Size = new Size(248, 27);
             cboRol.TabIndex = 7;
@@ -97,7 +99,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(30, 87);
+            label5.Location = new Point(32, 132);
             label5.Name = "label5";
             label5.Size = new Size(39, 19);
             label5.TabIndex = 8;
@@ -105,6 +107,8 @@
             // 
             // gbDetallesUsuarios
             // 
+            gbDetallesUsuarios.Controls.Add(label11);
+            gbDetallesUsuarios.Controls.Add(textBoxEmail);
             gbDetallesUsuarios.Controls.Add(lblUserAccount);
             gbDetallesUsuarios.Controls.Add(txtUserAccount);
             gbDetallesUsuarios.Controls.Add(dtpBirthDate);
@@ -123,14 +127,30 @@
             gbDetallesUsuarios.Controls.Add(txtLastName);
             gbDetallesUsuarios.Location = new Point(13, 74);
             gbDetallesUsuarios.Name = "gbDetallesUsuarios";
-            gbDetallesUsuarios.Size = new Size(462, 419);
+            gbDetallesUsuarios.Size = new Size(462, 487);
             gbDetallesUsuarios.TabIndex = 15;
             gbDetallesUsuarios.TabStop = false;
             gbDetallesUsuarios.Text = "Datos Del Usuario";
             // 
+            // lblUserAccount
+            // 
+            lblUserAccount.AutoSize = true;
+            lblUserAccount.Location = new Point(30, 43);
+            lblUserAccount.Name = "lblUserAccount";
+            lblUserAccount.Size = new Size(73, 19);
+            lblUserAccount.TabIndex = 20;
+            lblUserAccount.Text = "Usuario:";
+            // 
+            // txtUserAccount
+            // 
+            txtUserAccount.Location = new Point(112, 40);
+            txtUserAccount.Name = "txtUserAccount";
+            txtUserAccount.Size = new Size(248, 28);
+            txtUserAccount.TabIndex = 21;
+            // 
             // dtpBirthDate
             // 
-            dtpBirthDate.Location = new Point(110, 225);
+            dtpBirthDate.Location = new Point(112, 270);
             dtpBirthDate.Name = "dtpBirthDate";
             dtpBirthDate.Size = new Size(250, 28);
             dtpBirthDate.TabIndex = 19;
@@ -138,7 +158,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(30, 270);
+            label10.Location = new Point(32, 315);
             label10.Name = "label10";
             label10.Size = new Size(84, 19);
             label10.TabIndex = 17;
@@ -146,7 +166,7 @@
             // 
             // txtNumberPhone
             // 
-            txtNumberPhone.Location = new Point(110, 267);
+            txtNumberPhone.Location = new Point(112, 312);
             txtNumberPhone.Name = "txtNumberPhone";
             txtNumberPhone.Size = new Size(248, 28);
             txtNumberPhone.TabIndex = 18;
@@ -154,7 +174,7 @@
             // cboStates
             // 
             cboStates.FormattingEnabled = true;
-            cboStates.Location = new Point(110, 364);
+            cboStates.Location = new Point(112, 409);
             cboStates.Name = "cboStates";
             cboStates.Size = new Size(248, 27);
             cboStates.TabIndex = 15;
@@ -162,7 +182,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(30, 367);
+            label1.Location = new Point(32, 412);
             label1.Name = "label1";
             label1.Size = new Size(68, 19);
             label1.TabIndex = 16;
@@ -171,7 +191,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(30, 319);
+            label9.Location = new Point(32, 364);
             label9.Name = "label9";
             label9.Size = new Size(63, 19);
             label9.TabIndex = 7;
@@ -179,7 +199,7 @@
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(110, 317);
+            txtPassword.Location = new Point(112, 362);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(248, 28);
             txtPassword.TabIndex = 8;
@@ -187,7 +207,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(30, 225);
+            label3.Location = new Point(32, 270);
             label3.Name = "label3";
             label3.Size = new Size(60, 19);
             label3.TabIndex = 3;
@@ -196,7 +216,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(30, 181);
+            label4.Location = new Point(32, 226);
             label4.Name = "label4";
             label4.Size = new Size(83, 19);
             label4.TabIndex = 5;
@@ -204,7 +224,7 @@
             // 
             // txtLastName
             // 
-            txtLastName.Location = new Point(110, 178);
+            txtLastName.Location = new Point(112, 223);
             txtLastName.Name = "txtLastName";
             txtLastName.Size = new Size(248, 28);
             txtLastName.TabIndex = 6;
@@ -274,7 +294,7 @@
             btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnGuardar.IconSize = 28;
             btnGuardar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnGuardar.Location = new Point(401, 515);
+            btnGuardar.Location = new Point(527, 453);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(215, 46);
             btnGuardar.TabIndex = 17;
@@ -291,7 +311,7 @@
             btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnEditar.IconSize = 28;
             btnEditar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEditar.Location = new Point(401, 567);
+            btnEditar.Location = new Point(527, 505);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(215, 46);
             btnEditar.TabIndex = 18;
@@ -299,21 +319,21 @@
             btnEditar.UseVisualStyleBackColor = false;
             btnEditar.Click += btnEditar_Click;
             // 
-            // lblUserAccount
+            // label11
             // 
-            lblUserAccount.AutoSize = true;
-            lblUserAccount.Location = new Point(30, 43);
-            lblUserAccount.Name = "lblUserAccount";
-            lblUserAccount.Size = new Size(73, 19);
-            lblUserAccount.TabIndex = 20;
-            lblUserAccount.Text = "Usuario:";
+            label11.AutoSize = true;
+            label11.Location = new Point(30, 89);
+            label11.Name = "label11";
+            label11.Size = new Size(70, 19);
+            label11.TabIndex = 22;
+            label11.Text = "Correo:";
             // 
-            // txtUserAccount
+            // textBoxEmail
             // 
-            txtUserAccount.Location = new Point(112, 40);
-            txtUserAccount.Name = "txtUserAccount";
-            txtUserAccount.Size = new Size(248, 28);
-            txtUserAccount.TabIndex = 21;
+            textBoxEmail.Location = new Point(112, 86);
+            textBoxEmail.Name = "textBoxEmail";
+            textBoxEmail.Size = new Size(248, 28);
+            textBoxEmail.TabIndex = 23;
             // 
             // AddUsersForm
             // 
@@ -371,5 +391,7 @@
         private Label label6;
         private Label lblUserAccount;
         private TextBox txtUserAccount;
+        private Label label11;
+        private TextBox textBoxEmail;
     }
 }
