@@ -9,6 +9,7 @@ namespace CommonLayer.Entities
     public class Permission
     {
         public int idPermission { get; set; }
-        public string idMenu { get; set; }
+        public int idMenu { get; set; }
+        public string NameForm { get; set; }
     }
 }

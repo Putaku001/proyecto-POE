@@ -16,6 +16,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CommonLayer.Enums;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace PresentationLayer.Forms
 {
@@ -23,18 +24,19 @@ namespace PresentationLayer.Forms
     {
         private static IconMenuItem MenuActivo = null;
         private static Form FormularioActivo = null;
-        //private User usuarioactual;
+        private readonly IPermisoServices _permisosServices;
         private IListProyectsServices proyectoServices;
         private IUsersServices usuarioServices;
         private IRolServices _rolServices;
+        private readonly IServiceProvider _provider;
         private readonly IUserReports _userReports;
         private System.Windows.Forms.Timer timer;
-        public MenuForm(IUsersServices _usuarioServices, IRolServices rolServices, IListProyectsServices _proyectoServices, IUserReports userReports)
+        public MenuForm(IPermisoServices services, IServiceProvider serviceProvider, IUsersServices _usuarioServices, IRolServices rolServices, IListProyectsServices _proyectoServices, IUserReports userReports)
         {
 
             InitializeComponent();
-            SetPermmisions();
-            //this.usuarioactual = ousuarios;
+            _permisosServices = services;
+            _provider = serviceProvider;
             usuarioServices = _usuarioServices;
             _rolServices = rolServices;
             proyectoServices = _proyectoServices;
@@ -45,50 +47,6 @@ namespace PresentationLayer.Forms
             timer.Start();
 
             fechayhora();
-        }
-
-
-        public void SetPermmisions()
-        {
-            //AuthUser.idRol = 2;
-            
-            MessageBox.Show($"Rol actual: {AuthUser.idRol}");
-
-            if (AuthUser.idRol == (int)RolEnum.Admin)
-            {
-                buttonUsuariosForm.Enabled = true;
-                buttonUsuariosForm.Visible = true;
-
-                btnProyectosForm.Enabled = true;
-                btnProyectosForm.Visible = true;
-
-                btnAjustesForm.Enabled = true;
-                btnAjustesForm.Visible = true;
-
-                btnHistorialForm.Enabled = true;
-                btnHistorialForm.Visible = true;
-
-                btnPerfilUser.Enabled = true;
-                btnPerfilUser.Visible = true;
-            }
-
-            if (AuthUser.idRol == (int)RolEnum.Empleado)
-            {
-                buttonUsuariosForm.Enabled = false;
-                buttonUsuariosForm.Visible = false;
-
-                btnProyectosForm.Enabled = true;
-                btnProyectosForm.Visible = true;
-
-                btnAjustesForm.Enabled = true;
-                btnAjustesForm.Visible = true;
-
-                btnHistorialForm.Enabled = true;
-                btnHistorialForm.Visible = true;
-
-                btnPerfilUser.Enabled = true;
-                btnPerfilUser.Visible = true;
-            }
         }
 
         private void fechayhora()
@@ -103,8 +61,20 @@ namespace PresentationLayer.Forms
 
         private void MenuForm_Load(object sender, EventArgs e)
         {
-            //lblNombreUsuario.Text = usuarioactual.UserAccount;
+            lblNombreUsuario.Text = AuthUser.UserAccount;
 
+            var permisions = _permisosServices.GetPermisos(AuthUser.idUser);
+
+            foreach (IconMenuItem iconMenu in menu.Items)
+            {
+                bool econtrado = permisions.Any(m => m.NameForm == iconMenu.Name);
+
+                if (econtrado == false)
+                {
+
+                    iconMenu.Visible = false;
+                }
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -127,7 +97,7 @@ namespace PresentationLayer.Forms
 
             formulario.Show();
         }
-        
+
 
         private void btnUsuariosForm_Click(object sender, EventArgs e)
         {
@@ -155,16 +125,32 @@ namespace PresentationLayer.Forms
             toolTip1.SetToolTip(pbMinimizar, "Minimizar aplicacion");
         }
 
-        private void btnProyectosForm_Click(object sender, EventArgs e)
+        private void IconMenuUsersForm_Click(object sender, EventArgs e)
         {
-            ProyectsForm proyectosForm = new ProyectsForm(proyectoServices);
-            AbrirFormulario(proyectosForm);
+            var IconMenuUsersForm = _provider.GetRequiredService<UsersForm>();
+            AbrirFormulario(IconMenuUsersForm);
         }
 
-        private void btnPerfilUser_Click(object sender, EventArgs e)
+        private void IconMenuProyectsForm_Click(object sender, EventArgs e)
         {
-            ProfileUserAccountForm profileUser = new ProfileUserAccountForm(usuarioServices);
-            AbrirFormulario(profileUser);
+            var IconMenuProyectsForm = _provider.GetRequiredService<ProyectsForm>();
+            AbrirFormulario(IconMenuProyectsForm);
+        }
+
+        private void IconMenuRecordForm_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void IconMenusSettingsForm_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void IconMenuAccountForm_Click(object sender, EventArgs e)
+        {
+            var IconMenuAccountForm = _provider.GetRequiredService<ProfileUserAccountForm>();
+            AbrirFormulario(IconMenuAccountForm);
         }
     }
 

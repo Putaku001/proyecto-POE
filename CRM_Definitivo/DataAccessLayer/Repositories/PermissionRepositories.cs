@@ -1,4 +1,6 @@
-﻿using DataAccessLayer.DbConnection;
+﻿using CommonLayer.Entities;
+using Dapper;
+using DataAccessLayer.DbConnection;
 using DataAccessLayer.DbSqlDataAccess;
 using DataAccessLayer.Repositories.InterfacesRepositories;
 using Microsoft.Data.SqlClient;
@@ -20,30 +22,19 @@ namespace DataAccessLayer.Repositories
             _dbConnection = dbConnection;
         }
 
-        public DataTable GetAllPermiso(int IdUsuario)
+        public IEnumerable<Permission> GetAllPermiso(int idUser)
         {
-            DataTable permisosTable = new DataTable();
-
             using (var connection = _dbConnection.GetConnection())
             {
-                string query = @"SELECT p.IdRol, p.NombreMenu FROM PERMISO p
-                                    inner join ROL r on r.IdRol = p.IdRol
-                                    inner join Usuarios u on u.IdRol = r.IdRol
-                                    where u.IdUsuario = @IdUsuario";
+                string query = @"SELECT r.idRol, m.nameForm , p.idPermission FROM rolPermission rp
+                                JOIN roles r ON rp.idRoles = r.idRol
+                                JOIN permission p ON rp.idPermission = p.idPermission
+                                JOIN menu m ON p.idMenu = m.idMenu
+                                JOIN users u on u.idRol = r.idRol
+                               WHERE u.idUser = @idUser";
 
-                using(var sqlcommand = new SqlCommand(query, connection))
-                {
-                    sqlcommand.Parameters.AddWithValue("@IdUsuario", IdUsuario);
-                    connection.Open();
-
-                    using (SqlDataReader reader = sqlcommand.ExecuteReader())
-                    {
-                        permisosTable.Load(reader);
-                    }
-                }
+                return connection.Query<Permission>(query, new { idUser });
             }
-
-            return permisosTable;
         }
     }
 }

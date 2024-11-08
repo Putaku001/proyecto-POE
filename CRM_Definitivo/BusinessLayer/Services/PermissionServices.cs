@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Services.InterfacesServices;
+using CommonLayer.Entities;
 using DataAccessLayer.Repositories;
 using DataAccessLayer.Repositories.InterfacesRepositories;
 using System;
@@ -19,9 +20,9 @@ namespace BusinessLayer.Services
             _permisosrepositories = permisosRepositories;
         }
 
-        public DataTable GetPermisos(int IdUsuario)
+        public IEnumerable<Permission> GetPermisos(int idUser)
         {
-            return _permisosrepositories.GetAllPermiso(IdUsuario);
+            return _permisosrepositories.GetAllPermiso(idUser);
         }
     }
 }

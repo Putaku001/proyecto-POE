@@ -36,25 +36,29 @@
             pictureBox1 = new PictureBox();
             lblHoraUsuario = new Label();
             lblNombreUsuario = new Label();
-            buttonUsuariosForm = new Button();
             panel2 = new Panel();
             panel4 = new Panel();
             panel3 = new Panel();
             lblNombreProyecto = new Label();
             pictureBox2 = new PictureBox();
-            btnPerfilUser = new Button();
-            btnAjustesForm = new Button();
-            btnHistorialForm = new Button();
-            btnProyectosForm = new Button();
+            menu = new MenuStrip();
+            IconMenuUsersForm = new FontAwesome.Sharp.IconMenuItem();
+            IconMenuProyectsForm = new FontAwesome.Sharp.IconMenuItem();
+            IconMenuRecordForm = new FontAwesome.Sharp.IconMenuItem();
+            IconMenusSettingsForm = new FontAwesome.Sharp.IconMenuItem();
+            IconMenuAccountForm = new FontAwesome.Sharp.IconMenuItem();
             timer1 = new System.Windows.Forms.Timer(components);
             contenedor = new Panel();
             toolTip1 = new ToolTip(components);
+            iconMenuItemProjectsEmployee = new FontAwesome.Sharp.IconMenuItem();
+            iconMenuItemRequestClientProjects = new FontAwesome.Sharp.IconMenuItem();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbMinimizar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbEliminar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            menu.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -147,24 +151,6 @@
             lblNombreUsuario.TabIndex = 4;
             lblNombreUsuario.Text = "lblNombreUsuario";
             // 
-            // buttonUsuariosForm
-            // 
-            buttonUsuariosForm.FlatAppearance.BorderSize = 0;
-            buttonUsuariosForm.FlatStyle = FlatStyle.Flat;
-            buttonUsuariosForm.Font = new Font("Century Gothic", 13.8F);
-            buttonUsuariosForm.ForeColor = Color.White;
-            buttonUsuariosForm.Image = Properties.Resources.round_account_button_with_user_inside_icon_icons1;
-            buttonUsuariosForm.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonUsuariosForm.Location = new Point(12, 187);
-            buttonUsuariosForm.Name = "buttonUsuariosForm";
-            buttonUsuariosForm.Size = new Size(238, 36);
-            buttonUsuariosForm.TabIndex = 3;
-            buttonUsuariosForm.Text = "Usuarios";
-            buttonUsuariosForm.TextAlign = ContentAlignment.MiddleLeft;
-            buttonUsuariosForm.TextImageRelation = TextImageRelation.ImageBeforeText;
-            buttonUsuariosForm.UseVisualStyleBackColor = true;
-            buttonUsuariosForm.Click += btnUsuariosForm_Click;
-            // 
             // panel2
             // 
             panel2.BackColor = Color.Turquoise;
@@ -172,11 +158,7 @@
             panel2.Controls.Add(panel3);
             panel2.Controls.Add(lblNombreProyecto);
             panel2.Controls.Add(pictureBox2);
-            panel2.Controls.Add(btnPerfilUser);
-            panel2.Controls.Add(btnAjustesForm);
-            panel2.Controls.Add(btnHistorialForm);
-            panel2.Controls.Add(btnProyectosForm);
-            panel2.Controls.Add(buttonUsuariosForm);
+            panel2.Controls.Add(menu);
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
@@ -222,75 +204,93 @@
             pictureBox2.TabIndex = 8;
             pictureBox2.TabStop = false;
             // 
-            // btnPerfilUser
+            // menu
             // 
-            btnPerfilUser.FlatAppearance.BorderSize = 0;
-            btnPerfilUser.FlatStyle = FlatStyle.Flat;
-            btnPerfilUser.Font = new Font("Century Gothic", 13.8F);
-            btnPerfilUser.ForeColor = Color.White;
-            btnPerfilUser.Image = Properties.Resources.info;
-            btnPerfilUser.ImageAlign = ContentAlignment.MiddleLeft;
-            btnPerfilUser.Location = new Point(12, 467);
-            btnPerfilUser.Name = "btnPerfilUser";
-            btnPerfilUser.Size = new Size(238, 36);
-            btnPerfilUser.TabIndex = 7;
-            btnPerfilUser.Text = "Cuenta";
-            btnPerfilUser.TextAlign = ContentAlignment.MiddleLeft;
-            btnPerfilUser.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnPerfilUser.UseVisualStyleBackColor = true;
-            btnPerfilUser.Click += btnPerfilUser_Click;
+            menu.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            menu.AutoSize = false;
+            menu.Dock = DockStyle.None;
+            menu.ImageScalingSize = new Size(20, 20);
+            menu.Items.AddRange(new ToolStripItem[] { IconMenuUsersForm, IconMenuProyectsForm, iconMenuItemRequestClientProjects, iconMenuItemProjectsEmployee, IconMenuRecordForm, IconMenusSettingsForm, IconMenuAccountForm });
+            menu.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
+            menu.Location = new Point(3, 184);
+            menu.Name = "menu";
+            menu.Size = new Size(239, 484);
+            menu.TabIndex = 9;
             // 
-            // btnAjustesForm
+            // IconMenuUsersForm
             // 
-            btnAjustesForm.FlatAppearance.BorderSize = 0;
-            btnAjustesForm.FlatStyle = FlatStyle.Flat;
-            btnAjustesForm.Font = new Font("Century Gothic", 13.8F);
-            btnAjustesForm.ForeColor = Color.White;
-            btnAjustesForm.Image = Properties.Resources.ajustes;
-            btnAjustesForm.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAjustesForm.Location = new Point(12, 401);
-            btnAjustesForm.Name = "btnAjustesForm";
-            btnAjustesForm.Size = new Size(238, 36);
-            btnAjustesForm.TabIndex = 6;
-            btnAjustesForm.Text = "Ajustes";
-            btnAjustesForm.TextAlign = ContentAlignment.MiddleLeft;
-            btnAjustesForm.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnAjustesForm.UseVisualStyleBackColor = true;
+            IconMenuUsersForm.AutoSize = false;
+            IconMenuUsersForm.Font = new Font("Segoe UI", 10.2F);
+            IconMenuUsersForm.IconChar = FontAwesome.Sharp.IconChar.User;
+            IconMenuUsersForm.IconColor = Color.Black;
+            IconMenuUsersForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            IconMenuUsersForm.ImageAlign = ContentAlignment.BottomLeft;
+            IconMenuUsersForm.Margin = new Padding(0, 20, 0, 0);
+            IconMenuUsersForm.Name = "IconMenuUsersForm";
+            IconMenuUsersForm.Size = new Size(232, 27);
+            IconMenuUsersForm.Text = "Usuarios";
+            IconMenuUsersForm.TextImageRelation = TextImageRelation.Overlay;
+            IconMenuUsersForm.Click += IconMenuUsersForm_Click;
             // 
-            // btnHistorialForm
+            // IconMenuProyectsForm
             // 
-            btnHistorialForm.FlatAppearance.BorderSize = 0;
-            btnHistorialForm.FlatStyle = FlatStyle.Flat;
-            btnHistorialForm.Font = new Font("Century Gothic", 13.8F);
-            btnHistorialForm.ForeColor = Color.White;
-            btnHistorialForm.Image = Properties.Resources.historial;
-            btnHistorialForm.ImageAlign = ContentAlignment.MiddleLeft;
-            btnHistorialForm.Location = new Point(12, 331);
-            btnHistorialForm.Name = "btnHistorialForm";
-            btnHistorialForm.Size = new Size(238, 36);
-            btnHistorialForm.TabIndex = 5;
-            btnHistorialForm.Text = "Historial";
-            btnHistorialForm.TextAlign = ContentAlignment.MiddleLeft;
-            btnHistorialForm.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnHistorialForm.UseVisualStyleBackColor = true;
+            IconMenuProyectsForm.AutoSize = false;
+            IconMenuProyectsForm.Font = new Font("Segoe UI", 10.2F);
+            IconMenuProyectsForm.IconChar = FontAwesome.Sharp.IconChar.Compass;
+            IconMenuProyectsForm.IconColor = Color.Black;
+            IconMenuProyectsForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            IconMenuProyectsForm.ImageAlign = ContentAlignment.BottomLeft;
+            IconMenuProyectsForm.Margin = new Padding(0, 20, 0, 0);
+            IconMenuProyectsForm.Name = "IconMenuProyectsForm";
+            IconMenuProyectsForm.Size = new Size(232, 27);
+            IconMenuProyectsForm.Text = "Proyectos";
+            IconMenuProyectsForm.TextImageRelation = TextImageRelation.Overlay;
+            IconMenuProyectsForm.Click += IconMenuProyectsForm_Click;
             // 
-            // btnProyectosForm
+            // IconMenuRecordForm
             // 
-            btnProyectosForm.FlatAppearance.BorderSize = 0;
-            btnProyectosForm.FlatStyle = FlatStyle.Flat;
-            btnProyectosForm.Font = new Font("Century Gothic", 13.8F);
-            btnProyectosForm.ForeColor = Color.White;
-            btnProyectosForm.Image = Properties.Resources.Proyecto;
-            btnProyectosForm.ImageAlign = ContentAlignment.MiddleLeft;
-            btnProyectosForm.Location = new Point(12, 260);
-            btnProyectosForm.Name = "btnProyectosForm";
-            btnProyectosForm.Size = new Size(198, 36);
-            btnProyectosForm.TabIndex = 4;
-            btnProyectosForm.Text = "Proyectos";
-            btnProyectosForm.TextAlign = ContentAlignment.MiddleLeft;
-            btnProyectosForm.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnProyectosForm.UseVisualStyleBackColor = true;
-            btnProyectosForm.Click += btnProyectosForm_Click;
+            IconMenuRecordForm.AutoSize = false;
+            IconMenuRecordForm.Font = new Font("Segoe UI", 10.2F);
+            IconMenuRecordForm.IconChar = FontAwesome.Sharp.IconChar.Poll;
+            IconMenuRecordForm.IconColor = Color.Black;
+            IconMenuRecordForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            IconMenuRecordForm.ImageAlign = ContentAlignment.BottomLeft;
+            IconMenuRecordForm.Margin = new Padding(0, 20, 0, 0);
+            IconMenuRecordForm.Name = "IconMenuRecordForm";
+            IconMenuRecordForm.Size = new Size(232, 27);
+            IconMenuRecordForm.Text = "Historial";
+            IconMenuRecordForm.TextImageRelation = TextImageRelation.Overlay;
+            IconMenuRecordForm.Click += IconMenuRecordForm_Click;
+            // 
+            // IconMenusSettingsForm
+            // 
+            IconMenusSettingsForm.AutoSize = false;
+            IconMenusSettingsForm.Font = new Font("Segoe UI", 10.2F);
+            IconMenusSettingsForm.IconChar = FontAwesome.Sharp.IconChar.Stream;
+            IconMenusSettingsForm.IconColor = Color.Black;
+            IconMenusSettingsForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            IconMenusSettingsForm.ImageAlign = ContentAlignment.BottomLeft;
+            IconMenusSettingsForm.Margin = new Padding(0, 20, 0, 0);
+            IconMenusSettingsForm.Name = "IconMenusSettingsForm";
+            IconMenusSettingsForm.Size = new Size(232, 27);
+            IconMenusSettingsForm.Text = "Ajustes";
+            IconMenusSettingsForm.TextImageRelation = TextImageRelation.Overlay;
+            IconMenusSettingsForm.Click += IconMenusSettingsForm_Click;
+            // 
+            // IconMenuAccountForm
+            // 
+            IconMenuAccountForm.AutoSize = false;
+            IconMenuAccountForm.Font = new Font("Segoe UI", 10.2F);
+            IconMenuAccountForm.IconChar = FontAwesome.Sharp.IconChar.CircleInfo;
+            IconMenuAccountForm.IconColor = Color.Black;
+            IconMenuAccountForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            IconMenuAccountForm.ImageAlign = ContentAlignment.BottomLeft;
+            IconMenuAccountForm.Margin = new Padding(0, 20, 0, 0);
+            IconMenuAccountForm.Name = "IconMenuAccountForm";
+            IconMenuAccountForm.Size = new Size(232, 27);
+            IconMenuAccountForm.Text = "Perfil";
+            IconMenuAccountForm.TextImageRelation = TextImageRelation.Overlay;
+            IconMenuAccountForm.Click += IconMenuAccountForm_Click;
             // 
             // contenedor
             // 
@@ -300,6 +300,32 @@
             contenedor.Name = "contenedor";
             contenedor.Size = new Size(1186, 676);
             contenedor.TabIndex = 0;
+            // 
+            // iconMenuItemProjectsEmployee
+            // 
+            iconMenuItemProjectsEmployee.Font = new Font("Segoe UI", 10.2F);
+            iconMenuItemProjectsEmployee.IconChar = FontAwesome.Sharp.IconChar.Compass;
+            iconMenuItemProjectsEmployee.IconColor = Color.Black;
+            iconMenuItemProjectsEmployee.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconMenuItemProjectsEmployee.ImageAlign = ContentAlignment.BottomLeft;
+            iconMenuItemProjectsEmployee.Margin = new Padding(0, 20, 0, 0);
+            iconMenuItemProjectsEmployee.Name = "iconMenuItemProjectsEmployee";
+            iconMenuItemProjectsEmployee.Size = new Size(232, 27);
+            iconMenuItemProjectsEmployee.Text = "Mis proyectos";
+            iconMenuItemProjectsEmployee.TextImageRelation = TextImageRelation.Overlay;
+            // 
+            // iconMenuItemRequestClientProjects
+            // 
+            iconMenuItemRequestClientProjects.Font = new Font("Segoe UI", 10.2F);
+            iconMenuItemRequestClientProjects.IconChar = FontAwesome.Sharp.IconChar.Receipt;
+            iconMenuItemRequestClientProjects.IconColor = Color.Black;
+            iconMenuItemRequestClientProjects.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconMenuItemRequestClientProjects.ImageAlign = ContentAlignment.BottomLeft;
+            iconMenuItemRequestClientProjects.Margin = new Padding(0, 20, 0, 0);
+            iconMenuItemRequestClientProjects.Name = "iconMenuItemRequestClientProjects";
+            iconMenuItemRequestClientProjects.Size = new Size(232, 27);
+            iconMenuItemRequestClientProjects.Text = "Solicitar Proyecto";
+            iconMenuItemRequestClientProjects.TextImageRelation = TextImageRelation.Overlay;
             // 
             // MenuForm
             // 
@@ -312,6 +338,7 @@
             Controls.Add(panel2);
             Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
+            MainMenuStrip = menu;
             Name = "MenuForm";
             Text = "E";
             WindowState = FormWindowState.Maximized;
@@ -323,6 +350,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            menu.ResumeLayout(false);
+            menu.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -330,12 +359,7 @@
         private Panel panel1;
         private Label lblHoraUsuario;
         private Label lblNombreUsuario;
-        private Button buttonUsuariosForm;
         private Panel panel2;
-        private Button btnPerfilUser;
-        private Button btnAjustesForm;
-        private Button btnHistorialForm;
-        private Button btnProyectosForm;
         private Label label2;
         private System.Windows.Forms.Timer timer1;
         private Panel contenedor;
@@ -347,5 +371,13 @@
         private PictureBox pbMinimizar;
         private PictureBox pbEliminar;
         private ToolTip toolTip1;
+        private MenuStrip menu;
+        private FontAwesome.Sharp.IconMenuItem IconMenuUsersForm;
+        private FontAwesome.Sharp.IconMenuItem IconMenuProyectsForm;
+        private FontAwesome.Sharp.IconMenuItem IconMenuRecordForm;
+        private FontAwesome.Sharp.IconMenuItem IconMenusSettingsForm;
+        private FontAwesome.Sharp.IconMenuItem IconMenuAccountForm;
+        private FontAwesome.Sharp.IconMenuItem iconMenuItemProjectsEmployee;
+        private FontAwesome.Sharp.IconMenuItem iconMenuItemRequestClientProjects;
     }
 }

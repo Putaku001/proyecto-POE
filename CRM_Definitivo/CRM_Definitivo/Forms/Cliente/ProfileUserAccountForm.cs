@@ -24,7 +24,29 @@ namespace PresentationLayer.Forms.Cliente
 
         private void LoadData()
         {
+            //informacion del usuario
+            textboxNameUser.Text = CaptureData.NameUser;
+            textboxLastNameUser.Text = CaptureData.LastName;
+            textboxNumberphoneUser.Text = CaptureData.NumberPhone;
+            textboxPasswordChangeUser.Text = CaptureData.Password;
+            datetimeDateUser.Value = CaptureData.DateBirth;
 
+            //residencia del usuario
+            comboboxCountryUser.Text = CaptureData.Country;
+            comboboxCityUser.Text = CaptureData.City;
+        }
+
+        private void iconButtonSaveProfile_Click(object sender, EventArgs e)
+        {
+            User SaveProfile = new User();
+            SaveProfile.NameUser = textboxNameUser.Text;
+            SaveProfile.LastName = textboxLastNameUser.Text;
+            SaveProfile.NumberPhone = textboxNumberphoneUser.Text;
+            SaveProfile.Birthdate = datetimeDateUser.Value;
+            SaveProfile.Country = Convert.ToString(comboboxCountryUser.SelectedValue);
+            SaveProfile.City = Convert.ToString(comboboxCityUser.SelectedValue);
+
+            _usersServices.EditAccountUser(SaveProfile);
         }
     }
 }

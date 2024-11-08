@@ -103,11 +103,24 @@ namespace CRM_Definitivo
 
                 if (user != null)
                 {
-                    var menuForm = _serviceProvider.GetRequiredService<MenuForm>();
-                    menuForm.ShowDialog();
 
+                    AuthUser.idUser = user.IdUser;
                     AuthUser.UserAccount = user.UserAccount;
                     AuthUser.idRol = user.idRol;
+
+                    CaptureData.UserAccount = user.UserAccount;
+                    CaptureData.NameUser = user.NameUser;
+                    CaptureData.LastName = user.LastName;
+                    CaptureData.Email = user.Email;
+                    CaptureData.DateBirth = user.Birthdate;
+                    CaptureData.NumberPhone = user.NumberPhone;
+                    CaptureData.Country = user.Country;
+                    CaptureData.City = user.City;
+                    CaptureData.Password = user.Passworduser;
+
+
+                    var menuForm = _serviceProvider.GetRequiredService<MenuForm>();
+                    menuForm.ShowDialog();
                 }
                 else
                 {

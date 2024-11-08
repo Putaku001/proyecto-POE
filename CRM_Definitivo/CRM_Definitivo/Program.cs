@@ -9,6 +9,7 @@ using DataAccessLayer.Repositories.InterfacesRepositories;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PresentationLayer.Forms;
+using PresentationLayer.Forms.Cliente;
 using PresentationLayer.Reports;
 using QuestPDF.Infrastructure;
 
@@ -47,6 +48,7 @@ namespace CRM_Definitivo
                     services.AddTransient<ProyectsForm>();
                     services.AddTransient<EditUsersForm>();
                     services.AddTransient<AddUsersForm>();
+                    services.AddTransient<ProfileUserAccountForm>();
                    
 
                     //BUSISNESSLAYER

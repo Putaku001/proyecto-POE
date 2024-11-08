@@ -16,6 +16,6 @@ namespace DataAccessLayer.Repositories.InterfacesRepositories
         void EditUser(User user);
         void DeleteUser(int idUser);
         IEnumerable<User> UserSearch(string search);
-
+        void EditAccountUser(User user);
     }
 }

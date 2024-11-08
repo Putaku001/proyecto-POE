@@ -443,3 +443,5 @@ C:\Users\fuent\source\repos\proyecto-POE\CRM_Definitivo\CRM_Definitivo\bin\Debug
 C:\Users\fuent\source\repos\proyecto-POE\CRM_Definitivo\CRM_Definitivo\bin\Debug\net8.0-windows\runtimes\win-x86\native\QuestPdfSkia.dll
 C:\Users\fuent\source\repos\proyecto-POE\CRM_Definitivo\CRM_Definitivo\obj\Debug\net8.0-windows\PresentationLayer.Forms.Cliente.ClientForm.resources
 C:\Users\fuent\source\repos\proyecto-POE\CRM_Definitivo\CRM_Definitivo\obj\Debug\net8.0-windows\PresentationLayer.Forms.Cliente.ProfileUserAccountForm.resources
+C:\Users\fuent\Downloads\proyecto-POE\CRM_Definitivo\CRM_Definitivo\obj\Debug\net8.0-windows\PresentationLayer.Forms.Cliente.ClientForm.resources
+C:\Users\fuent\Downloads\proyecto-POE\CRM_Definitivo\CRM_Definitivo\obj\Debug\net8.0-windows\PresentationLayer.Forms.Empleados.ProjectEmployeeForm.resources

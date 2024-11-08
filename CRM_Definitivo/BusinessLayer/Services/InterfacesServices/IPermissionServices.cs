@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CommonLayer.Entities;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace BusinessLayer.Services.InterfacesServices
 {
     public interface IPermisoServices
     {
-        DataTable GetPermisos(int IdUsuario);
+        IEnumerable<Permission> GetPermisos(int idUser);
     }
 }

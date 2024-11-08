@@ -28,6 +28,7 @@ namespace BusinessLayer.Services
 
         public void AddUsers(User user) => _usuariosrepositoriess.AddUser(user);
         public void EditUsers(User user) => _usuariosrepositoriess.EditUser(user);
+        public void EditAccountUser(User user) => _usuariosrepositoriess.EditAccountUser(user);
 
         public void DeleteUsers(int idUser) => _usuariosrepositoriess.DeleteUser(idUser);
 

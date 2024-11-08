@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CommonLayer.Entities;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace DataAccessLayer.Repositories.InterfacesRepositories
 {
     public interface IPermissionRepositories
     {
-        DataTable GetAllPermiso(int IdUsuario);
+        IEnumerable<Permission> GetAllPermiso(int idUser);
     }
 }

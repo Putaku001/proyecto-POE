@@ -19,8 +19,8 @@ namespace DataAccessLayer.Repositories
         }
 
         public User? GetUserByeUserAndPassword(string UserAccount, string passworduser)
-        {           
-                string query = @"SELECT idUser, idRol, UserAccount, nameuser, lastName, email, birthdate, 
+        {
+            string query = @"SELECT idUser, idRol, UserAccount, nameuser, lastName, email, birthdate, 
                                         numberPhone, passworduser, country, city, statususer, DateRegistration
                                  FROM Users 
                                  WHERE UserAccount = @UserAccount AND passworduser = @PasswordUser";
@@ -88,6 +88,27 @@ namespace DataAccessLayer.Repositories
                                      city = @city, 
                                      statususer = @statususer,
                                      DateRegistration = @DateRegistration 
+                                 WHERE idUser = @idUser";
+
+                connection.Query<User>(query, user);
+            }
+        }
+
+        public void EditAccountUser(User user)
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = @"UPDATE Users 
+                                 SET UserAccount = @UserAccount,
+                                     nameuser = @nameuser, 
+                                     lastName = @lastName,
+                                     email = @email,
+                                     birthdate = @birthdate, 
+                                     numberPhone = @numberPhone, 
+                                     passworduser = @passworduser, 
+                                     country = @country, 
+                                     city = @city, 
+                                     statususer = @statususer
                                  WHERE idUser = @idUser";
 
                 connection.Query<User>(query, user);
