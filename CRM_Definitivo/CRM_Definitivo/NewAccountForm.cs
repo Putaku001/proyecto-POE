@@ -1,6 +1,7 @@
 ﻿using BusinessLayer.Services.Interfaces;
 using CommonLayer.Entities;
 using PresentationLayer.Forms;
+using QuestPDF.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +11,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using Twilio.TwiML.Voice;
 
 namespace PresentationLayer
 {
@@ -28,27 +31,29 @@ namespace PresentationLayer
         {
             List<string> ListaPaises = new List<string>
             {
-                "El Salvador",
-                "Colombia",
-                "Argentina"
+                "El Salvador"
+              
             };
 
             cboListCountrys.DataSource = ListaPaises;
             cboListCountrys.SelectedIndex = -1;
-
             List<string> ListaCiudad = new List<string>
             {
-                "San Salvador",
-                "La Libertad",
-                "Santa Ana",
-                "Medellin",
-                "Bogota",
-                "Cali",
-                "La Plata",
-                "Mendoza",
-                "Cordoba"
+                "Ahuachapán", 
+                "Sonsonate", 
+                "Santa Ana", 
+                "La Libertad", 
+                "Chalatenango", 
+                "San Salvador", 
+                "Cuscatlán", 
+                "La Paz", 
+                "San Vicente", 
+                "Cabañas", 
+                "Usulután", 
+                "San Miguel", 
+                "Morazán", 
+                "La Unión"
             };
-
             cboListCity.DataSource = ListaCiudad;
             cboListCity.SelectedIndex = -1;
         }

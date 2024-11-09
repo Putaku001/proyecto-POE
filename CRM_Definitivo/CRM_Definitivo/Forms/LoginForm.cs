@@ -10,6 +10,10 @@ using PresentationLayer;
 using PresentationLayer.Reports;
 using PresentationLayer.Forms.Cliente;
 using Microsoft.Extensions.DependencyInjection;
+using Twilio.Types;
+using Twilio;
+using Twilio.Rest.Api.V2010.Account;
+
 
 namespace CRM_Definitivo
 {
@@ -99,35 +103,92 @@ namespace CRM_Definitivo
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-                var user = usuarioServices.Login(txtUser.Text, txtPassword.Text);
+            var user = usuarioServices.Login(txtUser.Text, txtPassword.Text);
 
-                if (user != null)
-                {
+            if (user != null)
+            {
 
-                    AuthUser.idUser = user.IdUser;
-                    AuthUser.UserAccount = user.UserAccount;
-                    AuthUser.idRol = user.idRol;
+                AuthUser.idUser = user.IdUser;
+                AuthUser.UserAccount = user.UserAccount;
+                AuthUser.idRol = user.idRol;
 
-                    CaptureData.UserAccount = user.UserAccount;
-                    CaptureData.NameUser = user.NameUser;
-                    CaptureData.LastName = user.LastName;
-                    CaptureData.Email = user.Email;
-                    CaptureData.DateBirth = user.Birthdate;
-                    CaptureData.NumberPhone = user.NumberPhone;
-                    CaptureData.Country = user.Country;
-                    CaptureData.City = user.City;
-                    CaptureData.Password = user.Passworduser;
+                CaptureData.UserAccount = user.UserAccount;
+                CaptureData.NameUser = user.NameUser;
+                CaptureData.LastName = user.LastName;
+                CaptureData.Email = user.Email;
+                CaptureData.DateBirth = user.Birthdate;
+                CaptureData.NumberPhone = user.NumberPhone;
+                CaptureData.Country = user.Country;
+                CaptureData.City = user.City;
+                CaptureData.Password = user.Passworduser;
 
 
-                    var menuForm = _serviceProvider.GetRequiredService<MenuForm>();
-                    menuForm.ShowDialog();
-                }
-                else
-                {
-                    MessageBox.Show("Usuario o contraseña incorrecta, vuelva a intentarlo");
-                }
+                var menuForm = _serviceProvider.GetRequiredService<MenuForm>();
+                menuForm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Usuario o contraseña incorrecta, vuelva a intentarlo");
+            }
 
         }
 
+        private void fotgotPassLabel_Click(object sender, EventArgs e)
+        {
+            // Obtener el usuario desde la base de datos
+            var user = usuarioServices.UserSearch(txtUser.Text).FirstOrDefault();
+
+            if (user != null)
+            {
+                // Generar un código de verificación de 6 dígitos
+                Random rnd = new Random();
+                int verificationCode = rnd.Next(100000, 999999);
+
+                // Enviar SMS al usuario
+                SendVerificationCode(user.NumberPhone, verificationCode.ToString());
+
+                // Guardar el código en el usuario temporalmente
+                user.VerificationCode = verificationCode;
+
+                // Redirigir al formulario de verificación
+                VerificationForm verificationForm = new VerificationForm(user, usuarioServices);
+                verificationForm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Usuario no encontrado.");
+            }
+        }
+        private void SendVerificationCode(string phoneNumber, string code)
+        {
+            try
+            {
+                string accountSid = "numero_de_cuenta";
+                string authToken = "Secreto";
+                TwilioClient.Init(accountSid, authToken);
+
+                // número de teléfono en formato E.164
+                if (!phoneNumber.StartsWith("+"))
+                {
+                    phoneNumber = "+503" + phoneNumber;
+                }
+
+                var message = MessageResource.Create(
+                    body: $"Tu código de verificación es: {code}",
+                    from: new PhoneNumber("Numero_de_Cell"),
+                    to: new PhoneNumber(phoneNumber)
+                );
+
+                Console.WriteLine("Mensaje enviado con SID: " + message.Sid);
+            }
+            catch (Twilio.Exceptions.ApiException ex)
+            {
+                Console.WriteLine("Error al enviar mensaje: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error inesperado: " + ex.Message);
+            }
+        }
     }
 }
