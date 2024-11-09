@@ -43,6 +43,16 @@ namespace DataAccessLayer.Repositories
             }
         }
 
+        public IEnumerable<User> GetByIdUsers(int idUser)
+        {
+            using(var connection = _dbConnection.GetConnection())
+            {
+                string query = "SELECT * FROM Users WHERE idUser = @idUser";
+
+                return connection.Query<User>(query, new { idUser });
+            }
+        }
+
         public void AddUser(User user)
         {
             using (var connection = _dbConnection.GetConnection())
@@ -60,7 +70,7 @@ namespace DataAccessLayer.Repositories
                     user.Email,
                     user.Birthdate,
                     user.NumberPhone,
-                    user.Passworduser,
+                    user.passworduser,
                     user.Country,
                     user.City,
                     user.Statususer,
@@ -103,12 +113,24 @@ namespace DataAccessLayer.Repositories
                                      nameuser = @nameuser, 
                                      lastName = @lastName,
                                      email = @email,
-                                     birthdate = @birthdate, 
+                                     birthdate = @birthdate,
                                      numberPhone = @numberPhone, 
                                      passworduser = @passworduser, 
                                      country = @country, 
                                      city = @city, 
                                      statususer = @statususer
+                                 WHERE idUser = @idUser";
+
+                connection.Query<User>(query, user);
+            }
+        }
+
+        public void ChangePassword(User user)
+        {
+            using(var connection = _dbConnection.GetConnection())
+            {
+                string query = @"UPDATE Users
+                                 SET passworduser = @passworduser
                                  WHERE idUser = @idUser";
 
                 connection.Query<User>(query, user);

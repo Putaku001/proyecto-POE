@@ -17,7 +17,7 @@ namespace CommonLayer.Entities
         public string Email { get; set; }
         public DateTime Birthdate {  get; set; }
         public string NumberPhone { get; set; }
-        public string Passworduser { get; set; }
+        public string passworduser { get; set; }
         public string Country { get; set; }
         public string City { get; set; }
         public string Statususer { get; set; }

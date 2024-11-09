@@ -26,10 +26,27 @@ namespace PresentationLayer.Forms
 
         private void changePasswordButton_Click(object sender, EventArgs e)
         {
+            //if (newPasswordTexBox.Text == confirmPasswordTexBox.Text)
+            //{
+
+            //    _user.Passworduser = newPasswordTexBox.Text;
+            //    _usuarioServices.EditAccountUser(_user);
+
+            //    MessageBox.Show("Contraseña cambiada con éxito.");
+            //    this.Close();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Las contraseñas no coinciden.");
+            //}
+        }
+
+        private void iconButtonChangePassword_Click(object sender, EventArgs e)
+        {
             if (newPasswordTexBox.Text == confirmPasswordTexBox.Text)
             {
 
-                _user.Passworduser = newPasswordTexBox.Text; 
+                _user.passworduser = newPasswordTexBox.Text;
                 _usuarioServices.EditAccountUser(_user);
 
                 MessageBox.Show("Contraseña cambiada con éxito.");

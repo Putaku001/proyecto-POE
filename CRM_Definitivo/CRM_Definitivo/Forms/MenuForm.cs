@@ -139,12 +139,14 @@ namespace PresentationLayer.Forms
 
         private void IconMenuRecordForm_Click(object sender, EventArgs e)
         {
-
+            var IconMenuRecordForm = _provider.GetRequiredService<ProjectsHistoric>();
+            AbrirFormulario(IconMenuRecordForm);
         }
 
         private void IconMenusSettingsForm_Click(object sender, EventArgs e)
         {
-
+            var IconMenusSettingsForm = _provider.GetRequiredService<SettingsUserForm>();
+            AbrirFormulario(IconMenusSettingsForm);
         }
 
         private void IconMenuAccountForm_Click(object sender, EventArgs e)

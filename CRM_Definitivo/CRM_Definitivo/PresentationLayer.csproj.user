@@ -4,13 +4,22 @@
     <Compile Update="Forms\ChangePasswordForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\ChangePasswordProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\Cliente\ClientForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\Cliente\ProfileUserAccountForm.cs">
+    <Compile Update="Forms\ProfileUserAccountForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\Empleados\ProjectEmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\ProjectsHistoric.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\SettingsUserForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\VerificationForm.cs">

@@ -120,7 +120,7 @@ namespace CRM_Definitivo
                 CaptureData.NumberPhone = user.NumberPhone;
                 CaptureData.Country = user.Country;
                 CaptureData.City = user.City;
-                CaptureData.Password = user.Passworduser;
+                CaptureData.Password = user.passworduser;
 
 
                 var menuForm = _serviceProvider.GetRequiredService<MenuForm>();
@@ -163,8 +163,8 @@ namespace CRM_Definitivo
         {
             try
             {
-                string accountSid = "numero_de_cuenta";
-                string authToken = "Secreto";
+                string accountSid = "ACda51772af5ba53292479ff29856eddbe";
+                string authToken = "b02d4032c456f1e1c978e8a2b1a6442b";
                 TwilioClient.Init(accountSid, authToken);
 
                 // número de teléfono en formato E.164
@@ -175,7 +175,7 @@ namespace CRM_Definitivo
 
                 var message = MessageResource.Create(
                     body: $"Tu código de verificación es: {code}",
-                    from: new PhoneNumber("Numero_de_Cell"),
+                    from: new PhoneNumber("+13023608137"),
                     to: new PhoneNumber(phoneNumber)
                 );
 

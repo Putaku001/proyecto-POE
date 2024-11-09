@@ -54,7 +54,7 @@ namespace PresentationLayer.Forms
                 txtLastName.Text = _usuario.LastName;
                 dtpBirthDate.Value = _usuario.Birthdate;
                 txtNumberPhone.Text = _usuario.NumberPhone;
-                txtPassword.Text = _usuario.Passworduser;
+                txtPassword.Text = _usuario.passworduser;
 
                 if (cboListCountrys.Items.Count > 0)
                 {
@@ -158,7 +158,7 @@ namespace PresentationLayer.Forms
                 LastName = txtLastName.Text,
                 Birthdate = dtpBirthDate.Value,
                 NumberPhone = txtNumberPhone.Text,
-                Passworduser = txtPassword.Text,
+                passworduser = txtPassword.Text,
                 Country = (string)cboListCountrys.SelectedValue,
                 City = (string)cboListCity.SelectedValue,
                 Statususer = (string)cboStates.SelectedValue,
@@ -181,7 +181,7 @@ namespace PresentationLayer.Forms
             _usuario.NameUser = txtName.Text;
             _usuario.Birthdate = dtpBirthDate.Value;
             _usuario.NumberPhone = txtNumberPhone.Text;
-            _usuario.Passworduser = txtPassword.Text;
+            _usuario.passworduser = txtPassword.Text;
             _usuario.Country = (string)cboListCountrys.SelectedValue;
             _usuario.City = (string)cboListCity.SelectedValue;
             _usuario.Statususer = (string)cboStates.SelectedValue;

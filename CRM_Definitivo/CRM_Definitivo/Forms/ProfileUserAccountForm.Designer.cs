@@ -47,9 +47,11 @@
             label9 = new Label();
             label7 = new Label();
             gbAccountUser = new GroupBox();
-            label1 = new Label();
+            labelChangePasswordProfile = new Label();
             textboxPasswordChangeUser = new TextBox();
             label8 = new Label();
+            textBoxUserAccount = new TextBox();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)pbProfileUser).BeginInit();
             gbPhotoUser.SuspendLayout();
             gbInformationUser.SuspendLayout();
@@ -249,7 +251,9 @@
             // gbAccountUser
             // 
             gbAccountUser.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            gbAccountUser.Controls.Add(textBoxUserAccount);
             gbAccountUser.Controls.Add(label1);
+            gbAccountUser.Controls.Add(labelChangePasswordProfile);
             gbAccountUser.Controls.Add(textboxPasswordChangeUser);
             gbAccountUser.Controls.Add(label8);
             gbAccountUser.Location = new Point(316, 372);
@@ -259,33 +263,54 @@
             gbAccountUser.TabStop = false;
             gbAccountUser.Text = "Cuenta";
             // 
-            // label1
+            // labelChangePasswordProfile
             // 
-            label1.AutoSize = true;
-            label1.Cursor = Cursors.Hand;
-            label1.Font = new Font("Century Gothic", 9F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.Highlight;
-            label1.Location = new Point(314, 105);
-            label1.Name = "label1";
-            label1.Size = new Size(160, 20);
-            label1.TabIndex = 2;
-            label1.Text = "Cambiar contraseña";
+            labelChangePasswordProfile.AutoSize = true;
+            labelChangePasswordProfile.Cursor = Cursors.Hand;
+            labelChangePasswordProfile.Font = new Font("Century Gothic", 9F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            labelChangePasswordProfile.ForeColor = SystemColors.Highlight;
+            labelChangePasswordProfile.Location = new Point(404, 132);
+            labelChangePasswordProfile.Name = "labelChangePasswordProfile";
+            labelChangePasswordProfile.Size = new Size(160, 20);
+            labelChangePasswordProfile.TabIndex = 2;
+            labelChangePasswordProfile.Text = "Cambiar contraseña";
+            labelChangePasswordProfile.Click += labelChangePasswordProfile_Click;
             // 
             // textboxPasswordChangeUser
             // 
-            textboxPasswordChangeUser.Location = new Point(136, 102);
+            textboxPasswordChangeUser.Location = new Point(144, 129);
             textboxPasswordChangeUser.Name = "textboxPasswordChangeUser";
-            textboxPasswordChangeUser.Size = new Size(172, 26);
+            textboxPasswordChangeUser.Size = new Size(254, 26);
             textboxPasswordChangeUser.TabIndex = 11;
+            textboxPasswordChangeUser.Text = "pruebadestacochinada";
+            textboxPasswordChangeUser.UseSystemPasswordChar = true;
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(30, 102);
+            label8.Location = new Point(38, 129);
             label8.Name = "label8";
             label8.Size = new Size(99, 20);
             label8.TabIndex = 10;
             label8.Text = "Contraseña:";
+            // 
+            // textBoxUserAccount
+            // 
+            textBoxUserAccount.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            textBoxUserAccount.Location = new Point(144, 85);
+            textBoxUserAccount.Name = "textBoxUserAccount";
+            textBoxUserAccount.Size = new Size(389, 26);
+            textBoxUserAccount.TabIndex = 9;
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            label1.AutoSize = true;
+            label1.Location = new Point(38, 88);
+            label1.Name = "label1";
+            label1.Size = new Size(67, 20);
+            label1.TabIndex = 8;
+            label1.Text = "Usuario:";
             // 
             // ProfileUserAccountForm
             // 
@@ -337,7 +362,9 @@
         private Label label8;
         private TextBox txt;
         private Label label6;
-        private Label label1;
+        private Label labelChangePasswordProfile;
         private FontAwesome.Sharp.IconButton iconButtonSaveProfile;
+        private TextBox textBoxUserAccount;
+        private Label label1;
     }
 }

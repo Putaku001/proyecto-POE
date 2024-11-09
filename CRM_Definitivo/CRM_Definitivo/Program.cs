@@ -49,6 +49,9 @@ namespace CRM_Definitivo
                     services.AddTransient<EditUsersForm>();
                     services.AddTransient<AddUsersForm>();
                     services.AddTransient<ProfileUserAccountForm>();
+                    services.AddTransient<ChangePasswordProfileForm>();
+                    services.AddTransient<ProjectsHistoric>();
+                    services.AddTransient<SettingsUserForm>();
                    
 
                     //BUSISNESSLAYER
@@ -68,6 +71,7 @@ namespace CRM_Definitivo
 
                     //SQLDATA
                     services.AddSingleton<ISqlDataAccess, SqlDataAccess>();
+                    services.AddSingleton<User>();
                 });
         }
     }

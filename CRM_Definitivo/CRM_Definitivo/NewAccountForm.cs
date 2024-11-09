@@ -117,7 +117,7 @@ namespace PresentationLayer
                         Email = emailTextBox.Text,
                         Birthdate = dtpBirthDate.Value,
                         NumberPhone = txtNumberPhone.Text,
-                        Passworduser = HashPassword(password),
+                        passworduser = HashPassword(password),
                         Country = (string)cboListCountrys.SelectedValue,
                         City = (string)cboListCity.SelectedValue,
                         Statususer = "Activo",

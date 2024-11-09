@@ -28,71 +28,97 @@
         /// </summary>
         private void InitializeComponent()
         {
+            menuStrip1 = new MenuStrip();
+            recuperarContraseñaToolStripMenuItem = new ToolStripMenuItem();
             verificationCodeTexBox = new TextBox();
-            verifyButton = new Button();
             messageLabel = new Label();
-            groupBox1 = new GroupBox();
-            groupBox1.SuspendLayout();
+            iconButtonVerify = new FontAwesome.Sharp.IconButton();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
+            // 
+            // menuStrip1
+            // 
+            menuStrip1.BackColor = Color.Turquoise;
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { recuperarContraseñaToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Padding = new Padding(7, 2, 0, 2);
+            menuStrip1.Size = new Size(653, 31);
+            menuStrip1.TabIndex = 4;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // recuperarContraseñaToolStripMenuItem
+            // 
+            recuperarContraseñaToolStripMenuItem.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            recuperarContraseñaToolStripMenuItem.ForeColor = Color.White;
+            recuperarContraseñaToolStripMenuItem.Name = "recuperarContraseñaToolStripMenuItem";
+            recuperarContraseñaToolStripMenuItem.Size = new Size(241, 27);
+            recuperarContraseñaToolStripMenuItem.Text = "Recuperar contraseña";
             // 
             // verificationCodeTexBox
             // 
-            verificationCodeTexBox.Location = new Point(106, 133);
+            verificationCodeTexBox.Location = new Point(207, 205);
+            verificationCodeTexBox.Margin = new Padding(3, 4, 3, 4);
             verificationCodeTexBox.Name = "verificationCodeTexBox";
-            verificationCodeTexBox.Size = new Size(129, 29);
+            verificationCodeTexBox.Size = new Size(258, 26);
             verificationCodeTexBox.TabIndex = 0;
-            // 
-            // verifyButton
-            // 
-            verifyButton.Location = new Point(134, 183);
-            verifyButton.Name = "verifyButton";
-            verifyButton.Size = new Size(75, 30);
-            verifyButton.TabIndex = 1;
-            verifyButton.Text = "Verificar";
-            verifyButton.UseVisualStyleBackColor = true;
-            verifyButton.Click += verifyButton_Click;
+            verificationCodeTexBox.TextAlign = HorizontalAlignment.Center;
             // 
             // messageLabel
             // 
-            messageLabel.AutoSize = true;
-            messageLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            messageLabel.Location = new Point(6, 43);
+            messageLabel.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 161);
+            messageLabel.ForeColor = Color.DimGray;
+            messageLabel.Location = new Point(97, 93);
             messageLabel.Name = "messageLabel";
-            messageLabel.Size = new Size(301, 34);
+            messageLabel.Size = new Size(483, 80);
             messageLabel.TabIndex = 2;
-            messageLabel.Text = "Se a enviado un codigo de 6 digitos a su numero \r\nde telefono\r\n";
+            messageLabel.Text = "Introduce el codigo de 6 digitos que se te ha enviado al numero de telefono asociado a su cuenta en Tilinizos77";
             // 
-            // groupBox1
+            // iconButtonVerify
             // 
-            groupBox1.Controls.Add(messageLabel);
-            groupBox1.Controls.Add(verifyButton);
-            groupBox1.Controls.Add(verificationCodeTexBox);
-            groupBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            groupBox1.Location = new Point(222, 99);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(343, 230);
-            groupBox1.TabIndex = 3;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Se a enviado un codigo de Verificacion ";
+            iconButtonVerify.BackColor = Color.LimeGreen;
+            iconButtonVerify.FlatStyle = FlatStyle.Flat;
+            iconButtonVerify.ForeColor = Color.White;
+            iconButtonVerify.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
+            iconButtonVerify.IconColor = Color.White;
+            iconButtonVerify.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButtonVerify.IconSize = 34;
+            iconButtonVerify.ImageAlign = ContentAlignment.MiddleLeft;
+            iconButtonVerify.Location = new Point(246, 259);
+            iconButtonVerify.Name = "iconButtonVerify";
+            iconButtonVerify.Size = new Size(175, 33);
+            iconButtonVerify.TabIndex = 5;
+            iconButtonVerify.Text = "Verificar";
+            iconButtonVerify.UseVisualStyleBackColor = false;
+            iconButtonVerify.Click += iconButtonVerify_Click;
             // 
             // VerificationForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(groupBox1);
+            ClientSize = new Size(653, 321);
+            Controls.Add(iconButtonVerify);
+            Controls.Add(messageLabel);
+            Controls.Add(verificationCodeTexBox);
+            Controls.Add(menuStrip1);
+            Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            MainMenuStrip = menuStrip1;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "VerificationForm";
-            Text = "VerificationForm";
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Codigo de Verificacion";
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem recuperarContraseñaToolStripMenuItem;
         private TextBox verificationCodeTexBox;
-        private Button verifyButton;
         private Label messageLabel;
-        private GroupBox groupBox1;
+        private FontAwesome.Sharp.IconButton iconButtonVerify;
     }
 }

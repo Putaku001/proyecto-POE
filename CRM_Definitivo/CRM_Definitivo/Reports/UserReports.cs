@@ -107,7 +107,7 @@ namespace PresentationLayer.Reports
                     table.Cell().Element(CellStyle).Text($"{item.UserAccount}");
                     table.Cell().Element(CellStyle).Text($"{item.Birthdate}");
                     table.Cell().Element(CellStyle).Text($"{item.NumberPhone}");
-                    table.Cell().Element(CellStyle).Text($"{item.Passworduser}");
+                    table.Cell().Element(CellStyle).Text($"{item.passworduser}");
                     table.Cell().Element(CellStyle).Text($"{item.Country}");
                     table.Cell().Element(CellStyle).Text($"{item.City}");
                     table.Cell().Element(CellStyle).Text($"{item.Statususer}");

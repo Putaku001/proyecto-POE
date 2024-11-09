@@ -26,6 +26,20 @@ namespace PresentationLayer.Forms
 
         private void verifyButton_Click(object sender, EventArgs e)
         {
+            //if (verificationCodeTexBox.Text == _user.VerificationCode.ToString())
+            //{
+            //    ChangePasswordForm changePasswordForm = new ChangePasswordForm(_user, _usuarioServices);
+            //    changePasswordForm.ShowDialog();
+            //    this.Close();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Código incorrecto. Inténtalo de nuevo.");
+            //}
+        }
+
+        private void iconButtonVerify_Click(object sender, EventArgs e)
+        {
             if (verificationCodeTexBox.Text == _user.VerificationCode.ToString())
             {
                 ChangePasswordForm changePasswordForm = new ChangePasswordForm(_user, _usuarioServices);

@@ -83,7 +83,7 @@ namespace PresentationLayer.Forms
                 LastName = filaSeleccionada.Cells["lastName"].Value.ToString(),
                 Birthdate = Convert.ToDateTime(filaSeleccionada.Cells["birthdate"].Value),
                 NumberPhone = filaSeleccionada.Cells["numberPhone"].Value.ToString(),
-                Passworduser = filaSeleccionada.Cells["passworduser"].Value.ToString(),
+                passworduser = filaSeleccionada.Cells["passworduser"].Value.ToString(),
                 Country = filaSeleccionada.Cells["country"].Value.ToString(),
                 City = filaSeleccionada.Cells["city"].Value.ToString(),
                 Statususer = filaSeleccionada.Cells["statususer"].Value.ToString(),

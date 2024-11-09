@@ -577,3 +577,11 @@ C:\Users\blanc_ma7kouo\Desktop\PutakUnivo\proogra\aahh\proyecto poe par 3\proyec
 C:\Users\blanc_ma7kouo\Desktop\PutakUnivo\proogra\aahh\proyecto poe par 3\proyecto-POE\CRM_Definitivo\CRM_Definitivo\bin\Debug\net8.0-windows\Twilio.dll
 C:\Users\blanc_ma7kouo\Desktop\PutakUnivo\proogra\aahh\proyecto poe par 3\proyecto-POE\CRM_Definitivo\CRM_Definitivo\obj\Debug\net8.0-windows\PresentationLayer.Forms.ChangePasswordForm.resources
 C:\Users\blanc_ma7kouo\Desktop\PutakUnivo\proogra\aahh\proyecto poe par 3\proyecto-POE\CRM_Definitivo\CRM_Definitivo\obj\Debug\net8.0-windows\PresentationLayer.Forms.VerificationForm.resources
+C:\Users\fuent\source\repos\proyecto-POE\CRM_Definitivo\CRM_Definitivo\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+C:\Users\fuent\source\repos\proyecto-POE\CRM_Definitivo\CRM_Definitivo\bin\Debug\net8.0-windows\Twilio.dll
+C:\Users\fuent\source\repos\proyecto-POE\CRM_Definitivo\CRM_Definitivo\obj\Debug\net8.0-windows\PresentationLayer.Forms.ChangePasswordForm.resources
+C:\Users\fuent\source\repos\proyecto-POE\CRM_Definitivo\CRM_Definitivo\obj\Debug\net8.0-windows\PresentationLayer.Forms.Empleados.ProjectEmployeeForm.resources
+C:\Users\fuent\source\repos\proyecto-POE\CRM_Definitivo\CRM_Definitivo\obj\Debug\net8.0-windows\PresentationLayer.Forms.VerificationForm.resources
+C:\Users\fuent\source\repos\proyecto-POE\CRM_Definitivo\CRM_Definitivo\obj\Debug\net8.0-windows\PresentationLayer.Forms.ChangePasswordProfileForm.resources
+C:\Users\fuent\source\repos\proyecto-POE\CRM_Definitivo\CRM_Definitivo\obj\Debug\net8.0-windows\PresentationLayer.Forms.ProjectsHistoric.resources
+C:\Users\fuent\source\repos\proyecto-POE\CRM_Definitivo\CRM_Definitivo\obj\Debug\net8.0-windows\PresentationLayer.Forms.SettingsUserForm.resources
