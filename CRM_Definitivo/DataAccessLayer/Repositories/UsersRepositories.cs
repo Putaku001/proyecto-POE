@@ -47,7 +47,10 @@ namespace DataAccessLayer.Repositories
         {
             using(var connection = _dbConnection.GetConnection())
             {
-                string query = "SELECT * FROM Users WHERE idUser = @idUser";
+                string query = @"SELECT idUser, idRol, UserAccount, CONCAT(nameuser, ' ' ,lastName) AS nameUser, email, birthdate, 
+                                        numberPhone, passworduser, country, city, statususer, DateRegistration 
+                                        FROM Users 
+                                 WHERE idUser = @idUser";
 
                 return connection.Query<User>(query, new { idUser });
             }
@@ -158,5 +161,36 @@ namespace DataAccessLayer.Repositories
                 return connection.Query<User>(query, new {search});
             }
         }
+
+        //METODOS DEL INICIO PARA USERS
+
+        public IEnumerable<Admins> GetAdmins()
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = "SELECT * FROM Admins";
+
+                return connection.Query<Admins>(query);
+            }
+        }
+        public IEnumerable<Employee> GetEmployee()
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = "SELECT * FROM Employee";
+
+                return connection.Query<Employee>(query);
+            }
+        }
+        public IEnumerable<Clients> GetClients()
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = "SELECT * FROM Clients";
+
+                return connection.Query<Clients>(query);
+            }
+        }
+
     }
 }

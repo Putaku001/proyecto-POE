@@ -163,6 +163,16 @@ namespace PresentationLayer.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_permissions {
+            get {
+                object obj = ResourceManager.GetObject("icon-permissions", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap imprimir {
             get {
                 object obj = ResourceManager.GetObject("imprimir", resourceCulture);

@@ -19,5 +19,10 @@ namespace DataAccessLayer.Repositories.InterfacesRepositories
         void EditAccountUser(User user);
         void ChangePassword(User user);
         IEnumerable<User> GetByIdUsers(int idUser);
+
+        //METODO PARA LLAMAR A LAS TABLAS ADMINS, CLIENTES Y EMPLEADOS DE MENU
+        IEnumerable<Admins> GetAdmins();
+        IEnumerable<Employee> GetEmployee();
+        IEnumerable<Clients> GetClients();
     }
 }

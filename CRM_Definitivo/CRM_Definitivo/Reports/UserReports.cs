@@ -75,8 +75,8 @@ namespace PresentationLayer.Reports
                     columns.RelativeColumn();
                     columns.RelativeColumn(); 
                     columns.RelativeColumn();
-                    columns.RelativeColumn();
-                    columns.RelativeColumn();
+                    //columns.RelativeColumn();
+                    //columns.RelativeColumn();
                 });
 
                 // step 2
@@ -87,10 +87,10 @@ namespace PresentationLayer.Reports
                     header.Cell().Element(CellStyle).Background(Colors.Grey.Lighten1).Text("UserAccount").Bold().FontColor(Colors.White);
                     header.Cell().Element(CellStyle).Background(Colors.Grey.Lighten1).Text("birthdate").Bold().FontColor(Colors.White);
                     header.Cell().Element(CellStyle).Background(Colors.Grey.Lighten1).Text("numberPhone").Bold().FontColor(Colors.White);
-                    header.Cell().Element(CellStyle).Background(Colors.Grey.Lighten1).Text("passworduser").Bold().FontColor(Colors.White);
+                    //header.Cell().Element(CellStyle).Background(Colors.Grey.Lighten1).Text("passworduser").Bold().FontColor(Colors.White);
                     header.Cell().Element(CellStyle).Background(Colors.Grey.Lighten1).Text("country").Bold().FontColor(Colors.White);
                     header.Cell().Element(CellStyle).Background(Colors.Grey.Lighten1).Text("city").Bold().FontColor(Colors.White);
-                    header.Cell().Element(CellStyle).Background(Colors.Grey.Lighten1).Text("statususer").Bold().FontColor(Colors.White);
+                    //header.Cell().Element(CellStyle).Background(Colors.Grey.Lighten1).Text("statususer").Bold().FontColor(Colors.White);
                     header.Cell().Element(CellStyle).Background(Colors.Grey.Lighten1).Text("DateRegistration").Bold().FontColor(Colors.White);
 
                     static IContainer CellStyle(IContainer container)
@@ -107,10 +107,10 @@ namespace PresentationLayer.Reports
                     table.Cell().Element(CellStyle).Text($"{item.UserAccount}");
                     table.Cell().Element(CellStyle).Text($"{item.Birthdate}");
                     table.Cell().Element(CellStyle).Text($"{item.NumberPhone}");
-                    table.Cell().Element(CellStyle).Text($"{item.passworduser}");
+                    //table.Cell().Element(CellStyle).Text($"{item.passworduser}");
                     table.Cell().Element(CellStyle).Text($"{item.Country}");
                     table.Cell().Element(CellStyle).Text($"{item.City}");
-                    table.Cell().Element(CellStyle).Text($"{item.Statususer}");
+                    //table.Cell().Element(CellStyle).Text($"{item.Statususer}");
                     table.Cell().Element(CellStyle).Text($"{item.DateRegistration}");
 
                     static IContainer CellStyle(IContainer container)

@@ -24,4 +24,20 @@ namespace CommonLayer.Entities
         public DateTime DateRegistration { get; set; }
         public int VerificationCode { get; set; }
     }
+
+    public class Admins
+    {
+        public int idAdmin { get; set; }
+        public int idUser { get; set; }
+    }
+    public class Employee
+    {
+        public int idEmployee { get; set; }
+        public int idUser { get; set; }
+    }
+    public class Clients
+    {
+        public int idCliente { get; set; }
+        public int idUser { get; set; }
+    }
 }

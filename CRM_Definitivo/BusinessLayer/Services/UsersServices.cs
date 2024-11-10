@@ -24,15 +24,19 @@ namespace BusinessLayer.Services
         {
             return _usuariosrepositoriess.GetUserByeUserAndPassword(UserAccount, passwordUser);
         }
+
         public IEnumerable<User> GetUsers() => _usuariosrepositoriess.GetAllUser();
         public IEnumerable<User> GetByIdUser(int idUser) => _usuariosrepositoriess.GetByIdUsers(idUser);
-
         public void AddUsers(User user) => _usuariosrepositoriess.AddUser(user);
         public void EditUsers(User user) => _usuariosrepositoriess.EditUser(user);
         public void EditAccountUser(User user) => _usuariosrepositoriess.EditAccountUser(user);
         public void ChangePassword(User user) => _usuariosrepositoriess.ChangePassword(user);
         public void DeleteUsers(int idUser) => _usuariosrepositoriess.DeleteUser(idUser);
-
         public IEnumerable<User> UserSearch(string search) => _usuariosrepositoriess.UserSearch(search);
+
+        //SERVICICIOS PARA LLAMAR A LAS TABLAS ADMINS, CLIENTES Y EMPLEADOS DE MENU
+        public IEnumerable<Admins> GetAdmins() =>  _usuariosrepositoriess.GetAdmins();
+        public IEnumerable<Employee> GetEmployees() => _usuariosrepositoriess.GetEmployee();
+        public IEnumerable<Clients> GetClients() => _usuariosrepositoriess.GetClients();
     }
 }

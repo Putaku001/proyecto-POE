@@ -18,6 +18,9 @@ using System.Windows.Forms;
 using CommonLayer.Enums;
 using Microsoft.Extensions.DependencyInjection;
 using PresentationLayer.Forms.Admin;
+using Microsoft.VisualBasic.ApplicationServices;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using System.Diagnostics.Metrics;
 
 namespace PresentationLayer.Forms
 {
@@ -36,6 +39,7 @@ namespace PresentationLayer.Forms
         {
 
             InitializeComponent();
+            LoadData();
             _permisosServices = services;
             _provider = serviceProvider;
             usuarioServices = _usuarioServices;
@@ -50,9 +54,18 @@ namespace PresentationLayer.Forms
             fechayhora();
         }
 
+        private void LoadData()
+        {
+            dataGridViewUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+    
+
+        }
+
         private void fechayhora()
         {
             lblHoraUsuario.Text = DateTime.Now.ToString("dd/mm/yyyy hh:mm:ss");
+            labelUserAccount.Text = AuthUser.UserAccount;
         }
 
         private void Timer_tick(object sender, EventArgs e)
@@ -60,9 +73,18 @@ namespace PresentationLayer.Forms
             fechayhora();
         }
 
+        private List<Control> controlesIniciales;
+
         private void MenuForm_Load(object sender, EventArgs e)
         {
+
             lblNombreUsuario.Text = AuthUser.UserAccount;
+
+            controlesIniciales = new List<Control>();
+            foreach (Control control in contenedor.Controls)
+            {
+                controlesIniciales.Add(control);
+            }
 
             var permisions = _permisosServices.GetPermisos(AuthUser.idUser);
 
@@ -160,6 +182,71 @@ namespace PresentationLayer.Forms
         {
             var iconMenuItemMenus = _provider.GetRequiredService<PermissionForm>();
             AbrirFormulario(iconMenuItemMenus);
+        }
+
+        private void RestaurarControlesIniciales()
+        {
+            this.contenedor.Controls.Clear();
+
+            foreach (Control control in controlesIniciales)
+            {
+                this.contenedor.Controls.Add(control);
+            }
+        }
+
+        private void iconMenuItemHome_Click(object sender, EventArgs e)
+        {
+            RestaurarControlesIniciales();
+        }
+
+        private void iconButtonUserAdministrator_Click(object sender, EventArgs e)
+        {
+            dataGridViewUsers.DataSource = usuarioServices.GetAdmins();
+        }
+
+        private void iconButtonUserEmployee_Click(object sender, EventArgs e)
+        {
+            dataGridViewUsers.DataSource = usuarioServices.GetEmployees();
+        }
+
+        private void iconButtonUserClients_Click(object sender, EventArgs e)
+        {
+            dataGridViewUsers.DataSource = usuarioServices.GetClients();
+        }
+
+        private void dataGridViewUsers_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex >= 0)
+            {
+                int idUser = int.Parse(dataGridViewUsers.CurrentRow.Cells[2].Value.ToString()); 
+
+                panelUsersView.Visible = true;
+                var users = usuarioServices.GetByIdUser(idUser);
+
+                var SelectedUser = users.Where(u => u.IdUser == idUser).ToList();
+
+                if (SelectedUser.Any())   
+                {
+                    foreach (var user in SelectedUser)
+                    {
+                        labelByUser.Text = user.UserAccount;
+                        labelCity.Text = user.City;
+                        labelnameUser.Text = user.NameUser;
+                        labelEmail.Text = user.Email;
+                        labelNumberPhone.Text = user.NumberPhone;
+                        labelRegistration.Text = Convert.ToString(user.DateRegistration);
+                        labelCountryByUser.Text = user.Country;
+                    }                   
+                }
+                else
+                {
+                    MessageBox.Show("usuario no econtrado");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No se ha seleccionado a un usuario ");
+            }
         }
     }
 

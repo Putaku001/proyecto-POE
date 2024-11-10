@@ -19,5 +19,10 @@ namespace BusinessLayer.Services.Interfaces
         void EditAccountUser(User user);
         void ChangePassword(User user);
         IEnumerable<User> GetByIdUser(int idUser);
+
+        //INTERFAZ DE SERVICICIOS PARA LLAMAR A LAS TABLAS ADMINS, CLIENTES Y EMPLEADOS DE MENU
+        IEnumerable<Admins> GetAdmins();
+        IEnumerable<Employee> GetEmployees();
+        IEnumerable<Clients> GetClients();
     }
 }

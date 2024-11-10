@@ -109,9 +109,7 @@ namespace PresentationLayer.Forms
 
             List<string> ListaPaises = new List<string>()
             {
-                "El Salvador",
-                "Colombia",
-                "Argentina"
+                "El Salvador"
             };
 
             cboListCountrys.DataSource = ListaPaises;
@@ -121,15 +119,20 @@ namespace PresentationLayer.Forms
 
             List<string> ListaCiudad = new List<string>()
             {
-                "San Salvador",
-                "La Libertad",
+                "Ahuachapán",
+                "Sonsonate",
                 "Santa Ana",
-                "Medellin",
-                "Bogota",
-                "Cali",
-                "La Plata",
-                "Mendoza",
-                "Cordoba"
+                "La Libertad",
+                "Chalatenango",
+                "San Salvador",
+                "Cuscatlán",
+                "La Paz",
+                "San Vicente",
+                "Cabañas",
+                "Usulután",
+                "San Miguel",
+                "Morazán",
+                "La Unión"
 
             };
 
