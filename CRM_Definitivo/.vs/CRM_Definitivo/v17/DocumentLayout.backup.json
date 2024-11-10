@@ -1,7 +1,32 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F3F7CAD5-8046-41BF-8662-9FA4276D94E4}|DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\fuent\\source\\repos\\proyecto-poe\\crm_definitivo\\dataaccesslayer\\repositories\\permissionrepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3F7CAD5-8046-41BF-8662-9FA4276D94E4}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\repositories\\permissionrepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|c:\\users\\fuent\\source\\repos\\proyecto-poe\\crm_definitivo\\crm_definitivo\\forms\\admin\\permissionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\admin\\permissionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3F7CAD5-8046-41BF-8662-9FA4276D94E4}|DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\fuent\\source\\repos\\proyecto-poe\\crm_definitivo\\dataaccesslayer\\repositories\\usersrepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3F7CAD5-8046-41BF-8662-9FA4276D94E4}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\repositories\\usersrepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37613FE5-0BD6-40C6-B7C5-E7B4B65545CF}|BusinessLayer\\BusinessLayer.csproj|c:\\users\\fuent\\source\\repos\\proyecto-poe\\crm_definitivo\\businesslayer\\services\\interfacesservices\\ipermissionservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{37613FE5-0BD6-40C6-B7C5-E7B4B65545CF}|BusinessLayer\\BusinessLayer.csproj|solutionrelative:businesslayer\\services\\interfacesservices\\ipermissionservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37613FE5-0BD6-40C6-B7C5-E7B4B65545CF}|BusinessLayer\\BusinessLayer.csproj|c:\\users\\fuent\\source\\repos\\proyecto-poe\\crm_definitivo\\businesslayer\\services\\permissionservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{37613FE5-0BD6-40C6-B7C5-E7B4B65545CF}|BusinessLayer\\BusinessLayer.csproj|solutionrelative:businesslayer\\services\\permissionservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\crm_definitivo\\forms\\admin\\permissionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\admin\\permissionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,6 +79,83 @@
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PermissionRepositories.cs",
+              "DocumentMoniker": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\DataAccessLayer\\Repositories\\PermissionRepositories.cs",
+              "RelativeDocumentMoniker": "DataAccessLayer\\Repositories\\PermissionRepositories.cs",
+              "ToolTip": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\DataAccessLayer\\Repositories\\PermissionRepositories.cs",
+              "RelativeToolTip": "DataAccessLayer\\Repositories\\PermissionRepositories.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAWwJ0AAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T05:20:15.525Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UsersRepositories.cs",
+              "DocumentMoniker": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\DataAccessLayer\\Repositories\\UsersRepositories.cs",
+              "RelativeDocumentMoniker": "DataAccessLayer\\Repositories\\UsersRepositories.cs",
+              "ToolTip": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\DataAccessLayer\\Repositories\\UsersRepositories.cs",
+              "RelativeToolTip": "DataAccessLayer\\Repositories\\UsersRepositories.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T05:12:14.466Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PermissionForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\PermissionForm.cs",
+              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\Admin\\PermissionForm.cs",
+              "ToolTip": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\PermissionForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "CRM_Definitivo\\Forms\\Admin\\PermissionForm.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T03:06:27.181Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PermissionServices.cs",
+              "DocumentMoniker": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\BusinessLayer\\Services\\PermissionServices.cs",
+              "RelativeDocumentMoniker": "BusinessLayer\\Services\\PermissionServices.cs",
+              "ToolTip": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\BusinessLayer\\Services\\PermissionServices.cs",
+              "RelativeToolTip": "BusinessLayer\\Services\\PermissionServices.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAADgvycAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T03:40:36.95Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PermissionForm.cs",
+              "DocumentMoniker": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\PermissionForm.cs",
+              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\Admin\\PermissionForm.cs",
+              "ToolTip": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\PermissionForm.cs",
+              "RelativeToolTip": "CRM_Definitivo\\Forms\\Admin\\PermissionForm.cs",
+              "ViewState": "AgIAAHgAAAAAAAAAAAAAAIYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T03:06:30.965Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IPermissionServices.cs",
+              "DocumentMoniker": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\BusinessLayer\\Services\\InterfacesServices\\IPermissionServices.cs",
+              "RelativeDocumentMoniker": "BusinessLayer\\Services\\InterfacesServices\\IPermissionServices.cs",
+              "ToolTip": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\BusinessLayer\\Services\\InterfacesServices\\IPermissionServices.cs",
+              "RelativeToolTip": "BusinessLayer\\Services\\InterfacesServices\\IPermissionServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T03:44:22.507Z",
+              "EditorCaption": ""
             }
           ]
         }

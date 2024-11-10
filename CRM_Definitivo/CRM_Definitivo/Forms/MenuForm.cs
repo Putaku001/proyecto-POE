@@ -17,6 +17,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CommonLayer.Enums;
 using Microsoft.Extensions.DependencyInjection;
+using PresentationLayer.Forms.Admin;
 
 namespace PresentationLayer.Forms
 {
@@ -153,6 +154,12 @@ namespace PresentationLayer.Forms
         {
             var IconMenuAccountForm = _provider.GetRequiredService<ProfileUserAccountForm>();
             AbrirFormulario(IconMenuAccountForm);
+        }
+
+        private void iconMenuItemMenus_Click(object sender, EventArgs e)
+        {
+            var iconMenuItemMenus = _provider.GetRequiredService<PermissionForm>();
+            AbrirFormulario(iconMenuItemMenus);
         }
     }
 

@@ -32,26 +32,26 @@ namespace PresentationLayer
             List<string> ListaPaises = new List<string>
             {
                 "El Salvador"
-              
+
             };
 
             cboListCountrys.DataSource = ListaPaises;
             cboListCountrys.SelectedIndex = -1;
             List<string> ListaCiudad = new List<string>
             {
-                "Ahuachapán", 
-                "Sonsonate", 
-                "Santa Ana", 
-                "La Libertad", 
-                "Chalatenango", 
-                "San Salvador", 
-                "Cuscatlán", 
-                "La Paz", 
-                "San Vicente", 
-                "Cabañas", 
-                "Usulután", 
-                "San Miguel", 
-                "Morazán", 
+                "Ahuachapán",
+                "Sonsonate",
+                "Santa Ana",
+                "La Libertad",
+                "Chalatenango",
+                "San Salvador",
+                "Cuscatlán",
+                "La Paz",
+                "San Vicente",
+                "Cabañas",
+                "Usulután",
+                "San Miguel",
+                "Morazán",
                 "La Unión"
             };
             cboListCity.DataSource = ListaCiudad;
@@ -128,6 +128,12 @@ namespace PresentationLayer
                     CleanFields();
 
                     MessageBox.Show("La cuenta se ha creado con éxito.");
+
+                    notifyIcon1.BalloonTipTitle = $"Bienvenido {txtUserName.Text}, usted se ha registrado correctamente a los Tilinazos77";
+                    notifyIcon1.BalloonTipText = "Ver detalles";
+                    notifyIcon1.Icon = SystemIcons.Information;
+                    notifyIcon1.ShowBalloonTip(3000);
+
                     this.Close();
                 }
                 else
@@ -148,7 +154,7 @@ namespace PresentationLayer
                    !string.IsNullOrWhiteSpace(emailTextBox.Text) &&
                    !string.IsNullOrWhiteSpace(txtNumberPhone.Text) &&
                    !string.IsNullOrWhiteSpace(txtPassword.Text) &&
-                   cboListCountrys.SelectedIndex != -1 &&
+                   cboListCountrys.SelectedIndex != 1 &&
                    cboListCity.SelectedIndex != -1;
         }
         private bool IsValidEmail(string email)
@@ -173,5 +179,25 @@ namespace PresentationLayer
         {
             this.Close();
         }
+
+        private void notifyIcon1_BalloonTipClicked(object sender, EventArgs e)
+        {
+            //Esto no se toca que se modificara despues(si es que no me da hueva de hacerlo):)
+            //System.Diagnostics.Process.Start("https://www.google.com");
+
+            try
+            {
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                {
+                    FileName = "https://www.google.com",
+                    UseShellExecute = true 
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al abrir la URL: " + ex.Message);
+            }
+
+        }
     }
-}
+}   

@@ -9,6 +9,7 @@ using DataAccessLayer.Repositories.InterfacesRepositories;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PresentationLayer.Forms;
+using PresentationLayer.Forms.Admin;
 using PresentationLayer.Forms.Cliente;
 using PresentationLayer.Reports;
 using QuestPDF.Infrastructure;
@@ -52,6 +53,7 @@ namespace CRM_Definitivo
                     services.AddTransient<ChangePasswordProfileForm>();
                     services.AddTransient<ProjectsHistoric>();
                     services.AddTransient<SettingsUserForm>();
+                    services.AddTransient<PermissionForm>();
                    
 
                     //BUSISNESSLAYER

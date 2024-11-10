@@ -44,14 +44,15 @@
             menu = new MenuStrip();
             IconMenuUsersForm = new FontAwesome.Sharp.IconMenuItem();
             IconMenuProyectsForm = new FontAwesome.Sharp.IconMenuItem();
+            iconMenuItemRequestClientProjects = new FontAwesome.Sharp.IconMenuItem();
+            iconMenuItemProjectsEmployee = new FontAwesome.Sharp.IconMenuItem();
             IconMenuRecordForm = new FontAwesome.Sharp.IconMenuItem();
             IconMenusSettingsForm = new FontAwesome.Sharp.IconMenuItem();
             IconMenuAccountForm = new FontAwesome.Sharp.IconMenuItem();
             timer1 = new System.Windows.Forms.Timer(components);
             contenedor = new Panel();
             toolTip1 = new ToolTip(components);
-            iconMenuItemProjectsEmployee = new FontAwesome.Sharp.IconMenuItem();
-            iconMenuItemRequestClientProjects = new FontAwesome.Sharp.IconMenuItem();
+            iconMenuItemMenus = new FontAwesome.Sharp.IconMenuItem();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbMinimizar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbEliminar).BeginInit();
@@ -210,7 +211,7 @@
             menu.AutoSize = false;
             menu.Dock = DockStyle.None;
             menu.ImageScalingSize = new Size(20, 20);
-            menu.Items.AddRange(new ToolStripItem[] { IconMenuUsersForm, IconMenuProyectsForm, iconMenuItemRequestClientProjects, iconMenuItemProjectsEmployee, IconMenuRecordForm, IconMenusSettingsForm, IconMenuAccountForm });
+            menu.Items.AddRange(new ToolStripItem[] { IconMenuUsersForm, IconMenuProyectsForm, iconMenuItemRequestClientProjects, iconMenuItemProjectsEmployee, IconMenuRecordForm, IconMenusSettingsForm, IconMenuAccountForm, iconMenuItemMenus });
             menu.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
             menu.Location = new Point(3, 184);
             menu.Name = "menu";
@@ -246,6 +247,32 @@
             IconMenuProyectsForm.Text = "Proyectos";
             IconMenuProyectsForm.TextImageRelation = TextImageRelation.Overlay;
             IconMenuProyectsForm.Click += IconMenuProyectsForm_Click;
+            // 
+            // iconMenuItemRequestClientProjects
+            // 
+            iconMenuItemRequestClientProjects.Font = new Font("Segoe UI", 10.2F);
+            iconMenuItemRequestClientProjects.IconChar = FontAwesome.Sharp.IconChar.Receipt;
+            iconMenuItemRequestClientProjects.IconColor = Color.Black;
+            iconMenuItemRequestClientProjects.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconMenuItemRequestClientProjects.ImageAlign = ContentAlignment.BottomLeft;
+            iconMenuItemRequestClientProjects.Margin = new Padding(0, 20, 0, 0);
+            iconMenuItemRequestClientProjects.Name = "iconMenuItemRequestClientProjects";
+            iconMenuItemRequestClientProjects.Size = new Size(232, 27);
+            iconMenuItemRequestClientProjects.Text = "Solicitar Proyecto";
+            iconMenuItemRequestClientProjects.TextImageRelation = TextImageRelation.Overlay;
+            // 
+            // iconMenuItemProjectsEmployee
+            // 
+            iconMenuItemProjectsEmployee.Font = new Font("Segoe UI", 10.2F);
+            iconMenuItemProjectsEmployee.IconChar = FontAwesome.Sharp.IconChar.Compass;
+            iconMenuItemProjectsEmployee.IconColor = Color.Black;
+            iconMenuItemProjectsEmployee.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconMenuItemProjectsEmployee.ImageAlign = ContentAlignment.BottomLeft;
+            iconMenuItemProjectsEmployee.Margin = new Padding(0, 20, 0, 0);
+            iconMenuItemProjectsEmployee.Name = "iconMenuItemProjectsEmployee";
+            iconMenuItemProjectsEmployee.Size = new Size(232, 27);
+            iconMenuItemProjectsEmployee.Text = "Mis proyectos";
+            iconMenuItemProjectsEmployee.TextImageRelation = TextImageRelation.Overlay;
             // 
             // IconMenuRecordForm
             // 
@@ -301,31 +328,20 @@
             contenedor.Size = new Size(1186, 676);
             contenedor.TabIndex = 0;
             // 
-            // iconMenuItemProjectsEmployee
+            // iconMenuItemMenus
             // 
-            iconMenuItemProjectsEmployee.Font = new Font("Segoe UI", 10.2F);
-            iconMenuItemProjectsEmployee.IconChar = FontAwesome.Sharp.IconChar.Compass;
-            iconMenuItemProjectsEmployee.IconColor = Color.Black;
-            iconMenuItemProjectsEmployee.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconMenuItemProjectsEmployee.ImageAlign = ContentAlignment.BottomLeft;
-            iconMenuItemProjectsEmployee.Margin = new Padding(0, 20, 0, 0);
-            iconMenuItemProjectsEmployee.Name = "iconMenuItemProjectsEmployee";
-            iconMenuItemProjectsEmployee.Size = new Size(232, 27);
-            iconMenuItemProjectsEmployee.Text = "Mis proyectos";
-            iconMenuItemProjectsEmployee.TextImageRelation = TextImageRelation.Overlay;
-            // 
-            // iconMenuItemRequestClientProjects
-            // 
-            iconMenuItemRequestClientProjects.Font = new Font("Segoe UI", 10.2F);
-            iconMenuItemRequestClientProjects.IconChar = FontAwesome.Sharp.IconChar.Receipt;
-            iconMenuItemRequestClientProjects.IconColor = Color.Black;
-            iconMenuItemRequestClientProjects.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconMenuItemRequestClientProjects.ImageAlign = ContentAlignment.BottomLeft;
-            iconMenuItemRequestClientProjects.Margin = new Padding(0, 20, 0, 0);
-            iconMenuItemRequestClientProjects.Name = "iconMenuItemRequestClientProjects";
-            iconMenuItemRequestClientProjects.Size = new Size(232, 27);
-            iconMenuItemRequestClientProjects.Text = "Solicitar Proyecto";
-            iconMenuItemRequestClientProjects.TextImageRelation = TextImageRelation.Overlay;
+            iconMenuItemMenus.AutoSize = false;
+            iconMenuItemMenus.Font = new Font("Segoe UI", 10.2F);
+            iconMenuItemMenus.IconChar = FontAwesome.Sharp.IconChar.CircleInfo;
+            iconMenuItemMenus.IconColor = Color.Black;
+            iconMenuItemMenus.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconMenuItemMenus.ImageAlign = ContentAlignment.BottomLeft;
+            iconMenuItemMenus.Margin = new Padding(0, 20, 0, 0);
+            iconMenuItemMenus.Name = "iconMenuItemMenus";
+            iconMenuItemMenus.Size = new Size(232, 27);
+            iconMenuItemMenus.Text = "Menus";
+            iconMenuItemMenus.TextImageRelation = TextImageRelation.Overlay;
+            iconMenuItemMenus.Click += iconMenuItemMenus_Click;
             // 
             // MenuForm
             // 
@@ -379,5 +395,6 @@
         private FontAwesome.Sharp.IconMenuItem IconMenuAccountForm;
         private FontAwesome.Sharp.IconMenuItem iconMenuItemProjectsEmployee;
         private FontAwesome.Sharp.IconMenuItem iconMenuItemRequestClientProjects;
+        private FontAwesome.Sharp.IconMenuItem iconMenuItemMenus;
     }
 }

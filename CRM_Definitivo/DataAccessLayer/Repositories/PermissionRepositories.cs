@@ -36,5 +36,130 @@ namespace DataAccessLayer.Repositories
                 return connection.Query<Permission>(query, new { idUser });
             }
         }
+
+        //CRUD DE MENUS
+        public IEnumerable<Menu> GetByMenus()
+        {
+            using(var connection = _dbConnection.GetConnection())
+            {
+                string query = "SELECT * FROM menu";
+
+                return connection.Query<Menu>(query);
+            }
+        }
+
+        public void AddMenus(Menu menu)
+        {
+            using(var connection = _dbConnection.GetConnection())
+            {
+                string query = @"INSERT INTO menu(name, nameForm)
+                                 VALUES(@name, @nameForm)";
+
+                connection.Query<Menu>(query, new
+                {
+                    menu.name,
+                    menu.NameForm
+                });
+            }
+        }
+        
+        public void EditMenus(Menu menu)
+        {
+            using(var connection = _dbConnection.GetConnection())
+            {
+                string query = @"UPDATE menu SET
+                                    name = @name,
+                                    nameForm = @nameForm
+                                 WHERE idMenu = @idMenu";
+
+                connection.Query<Menu>(query, menu);
+            }
+        }
+
+        public void DeleteMenus(int idMenu)
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = "DELETE FROM menu WHERE idMenu = @idMenu";
+
+                connection.Query(query, new { idMenu });
+            }
+        }
+
+        //CRUD DE PERMISOS
+
+        public IEnumerable<Permissions> GetPermissions()
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = "SELECT * FROM permission";
+
+                return connection.Query<Permissions>(query);
+            }
+        }
+        public void AddPermissions(Permissions permissions)
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = @"INSERT INTO permission(idMenu)
+                                 VALUES(@idMenu)";
+
+                connection.Query<Permissions>(query, new
+                {
+                    permissions.idMenu
+                });
+            }
+        }
+
+        public void EditPermissions(Permissions permissions)
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = @"UPDATE permission SET
+                                 idMenu = @idMenu
+                                 WHERE idPermission = @idPermission";
+
+                connection.Query<Permissions>(query, permissions);
+            }
+        }
+
+
+        //CRUD PARA LA TABLA RolPermission
+        public IEnumerable<RolPermission> GetRolPermissions()
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = "SELECT * FROM rolPermission";
+
+                return connection.Query<RolPermission>(query);
+            }
+        }
+        public void AddRolPermissions(RolPermission RolPermission)
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = @"INSERT INTO rolPermission(idRoles, idPermission)
+                                 VALUES(@idRoles, @idPermission)";
+
+                connection.Query<Permission>(query, new
+                {
+                    RolPermission.idRoles,
+                    RolPermission.idPermission
+                });
+            }
+        }
+
+        public void EditRolPermissions(RolPermission rolPermission)
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = @"UPDATE rolPermission SET
+                                 idRoles = @idRoles,
+                                 idPermission = @idPermission
+                                 WHERE idRolPermission = @idRolPermission";
+
+                connection.Query<RolPermission>(query, rolPermission);
+            }
+        }
     }
 }

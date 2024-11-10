@@ -57,6 +57,7 @@
             label4 = new Label();
             lastNameTexBox = new TextBox();
             toolTip1 = new ToolTip(components);
+            notifyIcon1 = new NotifyIcon(components);
             ((System.ComponentModel.ISupportInitialize)pictureBoxMinimize).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxClosed).BeginInit();
             gbRegistrar.SuspendLayout();
@@ -331,6 +332,12 @@
             lastNameTexBox.Size = new Size(299, 26);
             lastNameTexBox.TabIndex = 24;
             // 
+            // notifyIcon1
+            // 
+            notifyIcon1.Text = "notifyIcon1";
+            notifyIcon1.Visible = true;
+            notifyIcon1.BalloonTipClicked += notifyIcon1_BalloonTipClicked;
+            // 
             // NewAccountForm
             // 
             AutoScaleDimensions = new SizeF(9F, 18F);
@@ -380,5 +387,6 @@
         private TextBox txtUserName;
         private Label emailLabel;
         private TextBox emailTextBox;
+        private NotifyIcon notifyIcon1;
     }
 }

@@ -10,6 +10,15 @@ namespace BusinessLayer.Services.InterfacesServices
 {
     public interface IPermisoServices
     {
+        void AddMenu(Menu menu);
+        void AddPermissions(Permissions permissions);
+        void AddRolPermission(RolPermission rolpermission);
+        void EditMenu(Menu menu);
+        void EditPermissions(Permissions permissions);
+        void EditRolPermission(RolPermission rolpermission);
+        IEnumerable<Menu> GetByMenu();
+        IEnumerable<RolPermission> GetByRolPermissions();
         IEnumerable<Permission> GetPermisos(int idUser);
+        IEnumerable<Permissions> GetPermissions();
     }
 }

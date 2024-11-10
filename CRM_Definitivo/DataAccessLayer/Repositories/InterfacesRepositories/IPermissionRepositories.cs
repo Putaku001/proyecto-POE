@@ -10,6 +10,15 @@ namespace DataAccessLayer.Repositories.InterfacesRepositories
 {
     public interface IPermissionRepositories
     {
+        void AddMenus(Menu menu);
+        void AddPermissions(Permissions permissions);
+        void AddRolPermissions(RolPermission rolPermission);
+        void EditMenus(Menu menu);
+        void EditPermissions(Permissions permissions);
+        void EditRolPermissions(RolPermission rolPermission);
         IEnumerable<Permission> GetAllPermiso(int idUser);
+        IEnumerable<Menu> GetByMenus();
+        IEnumerable<Permissions> GetPermissions();
+        IEnumerable<RolPermission> GetRolPermissions();
     }
 }
