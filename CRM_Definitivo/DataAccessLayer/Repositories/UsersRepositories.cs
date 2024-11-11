@@ -48,7 +48,7 @@ namespace DataAccessLayer.Repositories
             using(var connection = _dbConnection.GetConnection())
             {
                 string query = @"SELECT idUser, idRol, UserAccount, CONCAT(nameuser, ' ' ,lastName) AS nameUser, email, birthdate, 
-                                        numberPhone, passworduser, country, city, statususer, DateRegistration 
+                                        numberPhone, passworduser, country, city, statususer, DateRegistration, Image 
                                         FROM Users 
                                  WHERE idUser = @idUser";
 
@@ -56,15 +56,17 @@ namespace DataAccessLayer.Repositories
             }
         }
 
+
+
         public void AddUser(User user)
         {
             using (var connection = _dbConnection.GetConnection())
             {
                 string query = @"INSERT INTO Users (UserAccount, nameuser, lastName, email, birthdate, 
-                             numberPhone, passworduser, country, city, statususer, DateRegistration, idRol) 
+                             numberPhone, passworduser, country, city, statususer, Image, DateRegistration, idRol) 
                          VALUES (@UserAccount, @nameuser, @lastName, @email, @birthdate, 
                                  @numberPhone, @passworduser, @country, 
-                                 @city, @statususer, @DateRegistration, @idRol)";
+                                 @city, @statususer, @Image, @DateRegistration, @idRol)";
                 connection.Query<User>(query, new
                 {
                     user.UserAccount,
@@ -77,6 +79,7 @@ namespace DataAccessLayer.Repositories
                     user.Country,
                     user.City,
                     user.Statususer,
+                    user.Image,
                     user.DateRegistration,
                     user.idRol
                 });
@@ -121,12 +124,23 @@ namespace DataAccessLayer.Repositories
                                      passworduser = @passworduser, 
                                      country = @country, 
                                      city = @city, 
-                                     statususer = @statususer
+                                     statususer = @statususer,
+                                     Image = @image
                                  WHERE idUser = @idUser";
 
                 connection.Query<User>(query, user);
             }
         }
+
+        public byte[] GetProfileImage(int idUser)
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = @"SELECT Image FROM Users WHERE idUser = @idUser";
+                return connection.QueryFirstOrDefault<byte[]>(query, new { idUser });
+            }
+        }
+
 
         public void ChangePassword(User user)
         {

@@ -21,6 +21,7 @@ namespace CommonLayer.Entities
         public string Country { get; set; }
         public string City { get; set; }
         public string Statususer { get; set; }
+        public Byte[] Image { get; set; }
         public DateTime DateRegistration { get; set; }
         public int VerificationCode { get; set; }
     }
@@ -39,5 +40,11 @@ namespace CommonLayer.Entities
     {
         public int idCliente { get; set; }
         public int idUser { get; set; }
+    }
+
+    public class ImageProfile
+    {
+        
+
     }
 }

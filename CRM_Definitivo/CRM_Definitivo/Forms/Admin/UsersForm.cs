@@ -41,6 +41,7 @@ namespace PresentationLayer.Forms
             dgvUsuarios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             dgvUsuarios.Columns["idUser"].Visible = false;
+            dgvUsuarios.Columns["Image"].Visible = false ;
 
 
         }

@@ -39,6 +39,7 @@ namespace PresentationLayer.Forms
         {
 
             InitializeComponent();
+            
             LoadData();
             _permisosServices = services;
             _provider = serviceProvider;
@@ -46,12 +47,31 @@ namespace PresentationLayer.Forms
             _rolServices = rolServices;
             proyectoServices = _proyectoServices;
             _userReports = userReports;
+            LoadImageProfileUser(AuthUser.idUser);
             timer = new System.Windows.Forms.Timer();
             timer.Interval = 1000;
             timer.Tick += Timer_tick;
             timer.Start();
 
             fechayhora();
+        }
+
+        private void LoadImageProfileUser(int idUser)
+        {
+            var servicesUser = usuarioServices.GetProfileImage(idUser);
+            byte[] imagebyte = servicesUser;
+
+            if(imagebyte != null)
+            {
+                using (var memoryStream = new MemoryStream(imagebyte))
+                {
+                    pictureBoxImageByIdUser.Image = Image.FromStream(memoryStream);
+                }
+            }
+            else
+            {
+                pictureBoxImageByIdUser.Image = null;
+            }
         }
 
         private void LoadData()
@@ -222,20 +242,46 @@ namespace PresentationLayer.Forms
 
                 panelUsersView.Visible = true;
                 var users = usuarioServices.GetByIdUser(idUser);
+                var image = usuarioServices.GetProfileImage(idUser);
+
+                byte[] imageBytes = image;
 
                 var SelectedUser = users.Where(u => u.IdUser == idUser).ToList();
+
 
                 if (SelectedUser.Any())   
                 {
                     foreach (var user in SelectedUser)
                     {
+                        DateTime fechaActual = DateTime.Now; 
+                        int edad = fechaActual.Year - user.Birthdate.Year; 
+
+                        if (fechaActual.Month < user.Birthdate.Month ||
+                            (fechaActual.Month == user.Birthdate.Month && fechaActual.Day < user.Birthdate.Day))
+                        {
+                            edad--;
+                        }
+
                         labelByUser.Text = user.UserAccount;
+                        labelByAgeUser.Text = Convert.ToString(edad);
                         labelCity.Text = user.City;
                         labelnameUser.Text = user.NameUser;
                         labelEmail.Text = user.Email;
                         labelNumberPhone.Text = user.NumberPhone;
                         labelRegistration.Text = Convert.ToString(user.DateRegistration);
                         labelCountryByUser.Text = user.Country;
+
+                        if(imageBytes != null && imageBytes.Length > 0)
+                        {
+                            using(var memoryStream = new MemoryStream(imageBytes))
+                            {
+                                pictureBoxSelectedUser.Image = Image.FromStream(memoryStream);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se pudo moestrar la imagen");
+                        }
                     }                   
                 }
                 else

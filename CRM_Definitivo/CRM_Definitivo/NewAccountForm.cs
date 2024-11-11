@@ -6,19 +6,23 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using Twilio.TwiML.Voice;
+using System.Windows.Controls;
+using System.Drawing;
+
 
 namespace PresentationLayer
 {
     public partial class NewAccountForm : Form
     {
         private IUsersServices _usersServices;
+        byte[] imageBytes = null;
+
 
         public NewAccountForm(IUsersServices usersServices)
         {
@@ -26,6 +30,7 @@ namespace PresentationLayer
             _usersServices = usersServices;
             LoadProvincias();
         }
+
 
         private void LoadProvincias()
         {
@@ -108,6 +113,8 @@ namespace PresentationLayer
                         return;
                     }
 
+                    
+                    
                     User newAccount = new User
                     {
                         UserAccount = txtUserName.Text,
@@ -121,6 +128,7 @@ namespace PresentationLayer
                         Country = (string)cboListCountrys.SelectedValue,
                         City = (string)cboListCity.SelectedValue,
                         Statususer = "Activo",
+                        Image = imageBytes,
                         DateRegistration = DateTime.Now,
                     };
 
@@ -190,7 +198,7 @@ namespace PresentationLayer
                 System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
                 {
                     FileName = "https://www.google.com",
-                    UseShellExecute = true 
+                    UseShellExecute = true
                 });
             }
             catch (Exception ex)
@@ -198,6 +206,26 @@ namespace PresentationLayer
                 MessageBox.Show("Error al abrir la URL: " + ex.Message);
             }
 
+        }
+
+        private void labelSelectedImageUser_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog photoUser = new OpenFileDialog();
+            photoUser.Filter = "Archivos de imagenes (*.png; *.jpg; *.jpeg) | *.png; *.jpg; *.jpeg";
+
+            if(photoUser.ShowDialog() == DialogResult.OK)
+            {
+                pictureBoxPhotoNewUser.Image = System.Drawing.Image.FromFile(photoUser.FileName);
+
+                if (pictureBoxPhotoNewUser.Image != null)
+                {
+                    using (MemoryStream memoryStream = new MemoryStream())
+                    {
+                        pictureBoxPhotoNewUser.Image.Save(memoryStream, System.Drawing.Imaging.ImageFormat.Png);
+                        imageBytes = memoryStream.ToArray();
+                    }
+                }
+            }
         }
     }
 }   

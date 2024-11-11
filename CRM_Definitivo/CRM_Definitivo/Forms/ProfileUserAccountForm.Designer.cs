@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pbProfileUser = new PictureBox();
+            pictureBoxProfileUser = new PictureBox();
             gbPhotoUser = new GroupBox();
             lblPhotoProfileChangeUser = new Label();
             gbInformationUser = new GroupBox();
@@ -47,32 +47,34 @@
             label9 = new Label();
             label7 = new Label();
             gbAccountUser = new GroupBox();
+            textBoxUserAccount = new TextBox();
+            label1 = new Label();
             labelChangePasswordProfile = new Label();
             textboxPasswordChangeUser = new TextBox();
             label8 = new Label();
-            textBoxUserAccount = new TextBox();
-            label1 = new Label();
-            ((System.ComponentModel.ISupportInitialize)pbProfileUser).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxProfileUser).BeginInit();
             gbPhotoUser.SuspendLayout();
             gbInformationUser.SuspendLayout();
             gbResidenceUser.SuspendLayout();
             gbAccountUser.SuspendLayout();
             SuspendLayout();
             // 
-            // pbProfileUser
+            // pictureBoxProfileUser
             // 
-            pbProfileUser.BackColor = Color.White;
-            pbProfileUser.Location = new Point(60, 57);
-            pbProfileUser.Name = "pbProfileUser";
-            pbProfileUser.Size = new Size(142, 109);
-            pbProfileUser.TabIndex = 0;
-            pbProfileUser.TabStop = false;
+            pictureBoxProfileUser.BackColor = Color.White;
+            pictureBoxProfileUser.BorderStyle = BorderStyle.Fixed3D;
+            pictureBoxProfileUser.Location = new Point(60, 57);
+            pictureBoxProfileUser.Name = "pictureBoxProfileUser";
+            pictureBoxProfileUser.Size = new Size(142, 109);
+            pictureBoxProfileUser.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxProfileUser.TabIndex = 0;
+            pictureBoxProfileUser.TabStop = false;
             // 
             // gbPhotoUser
             // 
             gbPhotoUser.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             gbPhotoUser.Controls.Add(lblPhotoProfileChangeUser);
-            gbPhotoUser.Controls.Add(pbProfileUser);
+            gbPhotoUser.Controls.Add(pictureBoxProfileUser);
             gbPhotoUser.Location = new Point(14, 12);
             gbPhotoUser.Name = "gbPhotoUser";
             gbPhotoUser.Size = new Size(285, 610);
@@ -91,6 +93,7 @@
             lblPhotoProfileChangeUser.Size = new Size(170, 20);
             lblPhotoProfileChangeUser.TabIndex = 1;
             lblPhotoProfileChangeUser.Text = "Cambiar foto de perfil";
+            lblPhotoProfileChangeUser.Click += lblPhotoProfileChangeUser_Click;
             // 
             // gbInformationUser
             // 
@@ -263,6 +266,24 @@
             gbAccountUser.TabStop = false;
             gbAccountUser.Text = "Cuenta";
             // 
+            // textBoxUserAccount
+            // 
+            textBoxUserAccount.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            textBoxUserAccount.Location = new Point(144, 85);
+            textBoxUserAccount.Name = "textBoxUserAccount";
+            textBoxUserAccount.Size = new Size(389, 26);
+            textBoxUserAccount.TabIndex = 9;
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            label1.AutoSize = true;
+            label1.Location = new Point(38, 88);
+            label1.Name = "label1";
+            label1.Size = new Size(67, 20);
+            label1.TabIndex = 8;
+            label1.Text = "Usuario:";
+            // 
             // labelChangePasswordProfile
             // 
             labelChangePasswordProfile.AutoSize = true;
@@ -294,24 +315,6 @@
             label8.TabIndex = 10;
             label8.Text = "Contraseña:";
             // 
-            // textBoxUserAccount
-            // 
-            textBoxUserAccount.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            textBoxUserAccount.Location = new Point(144, 85);
-            textBoxUserAccount.Name = "textBoxUserAccount";
-            textBoxUserAccount.Size = new Size(389, 26);
-            textBoxUserAccount.TabIndex = 9;
-            // 
-            // label1
-            // 
-            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            label1.AutoSize = true;
-            label1.Location = new Point(38, 88);
-            label1.Name = "label1";
-            label1.Size = new Size(67, 20);
-            label1.TabIndex = 8;
-            label1.Text = "Usuario:";
-            // 
             // ProfileUserAccountForm
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
@@ -324,7 +327,7 @@
             Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Name = "ProfileUserAccountForm";
             Text = "ProfileUserAccountForm";
-            ((System.ComponentModel.ISupportInitialize)pbProfileUser).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxProfileUser).EndInit();
             gbPhotoUser.ResumeLayout(false);
             gbPhotoUser.PerformLayout();
             gbInformationUser.ResumeLayout(false);
@@ -338,7 +341,7 @@
 
         #endregion
 
-        private PictureBox pbProfileUser;
+        private PictureBox pictureBoxProfileUser;
         private GroupBox gbPhotoUser;
         private Label lblPhotoProfileChangeUser;
         private GroupBox gbInformationUser;

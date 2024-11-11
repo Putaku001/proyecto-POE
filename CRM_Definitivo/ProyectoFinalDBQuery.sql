@@ -1,15 +1,15 @@
 CREATE DATABASE SistemaProyectosDB;
 
-SELECT * FROM users				
+	SELECT * FROM Clients					
 
 insert into menu
-VALUES('Cliente', 'iconMenuItemProjectsEmployee')
+VALUES('Admin', 'iconMenuItemMenus')
 
 INSERT INTO permission
-VALUES(9)
+VALUES(10)
 
 INSERT into rolPermission
-VALUES(4, 8)
+VALUES(1, 13)
 
 SELECT r.idRol, m.nameForm , p.idPermission 
 FROM rolPermission rp
@@ -19,13 +19,21 @@ JOIN menu m ON p.idMenu = m.idMenu
 JOIN users u on u.idRol = r.idRol
 WHERE u.idUser = @idUser;
 
-
+INSERT INT0 menu(name, nameForm)
 
                 SELECT COUNT(*) 
                 FROM rolPermission rp
                 INNER JOIN permission p ON rp.idPermission = p.idPermission
 
-SELECT * FROM Users
+SELECT * FROM rolPermission
+
+
+SELECT idUser, idRol, UserAccount, CONCAT(nameuser, ' ' ,lastName), email, birthdate, 
+                                        numberPhone, passworduser, country, city, statususer, DateRegistration 
+                                        FROM Users
+
+
+
 
 
 insert into roles(Rol)
@@ -233,6 +241,70 @@ BEGIN
     CLOSE user_cursor;
     DEALLOCATE user_cursor;
 END;
+
+
+CREATE TRIGGER UpdateRoleInSpecificTable
+ON Users
+AFTER UPDATE
+AS
+BEGIN
+    DECLARE @idUser INT;
+    DECLARE @oldRoleId INT;
+    DECLARE @newRoleId INT;
+    DECLARE @adminRoleId INT;
+    DECLARE @clientRoleId INT;
+    DECLARE @employeeRoleId INT;
+
+    SELECT @adminRoleId = idRol FROM roles WHERE Rol = 'Admin';
+    SELECT @clientRoleId = idRol FROM roles WHERE Rol = 'Cliente';
+    SELECT @employeeRoleId = idRol FROM roles WHERE Rol = 'Empleado';
+
+    DECLARE user_cursor CURSOR FOR 
+        SELECT idUser, idRol FROM inserted;
+    OPEN user_cursor;
+    FETCH NEXT FROM user_cursor INTO @idUser, @newRoleId;
+
+    WHILE @@FETCH_STATUS = 0
+    BEGIN
+        SELECT @oldRoleId = idRol FROM deleted WHERE idUser = @idUser;
+
+        IF @oldRoleId != @newRoleId
+        BEGIN
+            IF @oldRoleId = @adminRoleId
+            BEGIN
+                DELETE FROM Admins WHERE idUser = @idUser;
+            END
+            ELSE IF @oldRoleId = @clientRoleId
+            BEGIN
+                DELETE FROM Clients WHERE idUser = @idUser;
+            END
+            ELSE IF @oldRoleId = @employeeRoleId
+            BEGIN
+                DELETE FROM Employee WHERE idUser = @idUser;
+            END
+
+            IF @newRoleId = @adminRoleId
+            BEGIN
+                INSERT INTO Admins (idUser) VALUES (@idUser);
+            END
+            ELSE IF @newRoleId = @clientRoleId
+            BEGIN
+                INSERT INTO Clients (idUser) VALUES (@idUser);
+            END
+            ELSE IF @newRoleId = @employeeRoleId
+            BEGIN
+                INSERT INTO Employee (idUser) VALUES (@idUser);
+            END
+        END
+
+        FETCH NEXT FROM user_cursor INTO @idUser, @newRoleId;
+    END;
+
+    CLOSE user_cursor;
+    DEALLOCATE user_cursor;
+END;
+
+
 
 
 

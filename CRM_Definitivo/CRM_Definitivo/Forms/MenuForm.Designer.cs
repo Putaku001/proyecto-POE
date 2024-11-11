@@ -33,7 +33,7 @@
             label2 = new Label();
             pbMinimizar = new PictureBox();
             pbEliminar = new PictureBox();
-            pictureBox1 = new PictureBox();
+            pictureBoxImageByIdUser = new PictureBox();
             lblNombreUsuario = new Label();
             lblHoraUsuario = new Label();
             panel2 = new Panel();
@@ -55,6 +55,7 @@
             contenedor = new Panel();
             groupBox1 = new GroupBox();
             panelUsersView = new Panel();
+            panel10 = new Panel();
             label7 = new Label();
             panel9 = new Panel();
             labelRegistration = new Label();
@@ -77,7 +78,7 @@
             labelCity = new Label();
             labelCountryByUser = new Label();
             labelByAgeUser = new Label();
-            pictureBox3 = new PictureBox();
+            pictureBoxSelectedUser = new PictureBox();
             labelByUser = new Label();
             label1 = new Label();
             panel8 = new Panel();
@@ -94,7 +95,7 @@
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbMinimizar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbEliminar).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxImageByIdUser).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             menu.SuspendLayout();
@@ -106,7 +107,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSelectedUser).BeginInit();
             panel8.SuspendLayout();
             panelInfoUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewUsers).BeginInit();
@@ -118,12 +119,12 @@
             panel1.Controls.Add(label2);
             panel1.Controls.Add(pbMinimizar);
             panel1.Controls.Add(pbEliminar);
-            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(pictureBoxImageByIdUser);
             panel1.Controls.Add(lblNombreUsuario);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(242, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1186, 96);
+            panel1.Size = new Size(1186, 72);
             panel1.TabIndex = 2;
             // 
             // label2
@@ -132,7 +133,7 @@
             label2.Cursor = Cursors.Hand;
             label2.Font = new Font("Century Gothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.InfoText;
-            label2.Location = new Point(69, 64);
+            label2.Location = new Point(69, 42);
             label2.Name = "label2";
             label2.Size = new Size(126, 22);
             label2.TabIndex = 6;
@@ -167,23 +168,23 @@
             pbEliminar.Click += pbEliminar_Click;
             pbEliminar.MouseHover += pbEliminar_MouseHover;
             // 
-            // pictureBox1
+            // pictureBoxImageByIdUser
             // 
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.Image = Properties.Resources.user_icon_icons_com_57997;
-            pictureBox1.Location = new Point(5, 35);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(58, 51);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 6;
-            pictureBox1.TabStop = false;
+            pictureBoxImageByIdUser.BackColor = SystemColors.ButtonShadow;
+            pictureBoxImageByIdUser.Image = Properties.Resources.user_icon_icons_com_57997;
+            pictureBoxImageByIdUser.Location = new Point(5, 13);
+            pictureBoxImageByIdUser.Name = "pictureBoxImageByIdUser";
+            pictureBoxImageByIdUser.Size = new Size(58, 51);
+            pictureBoxImageByIdUser.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxImageByIdUser.TabIndex = 6;
+            pictureBoxImageByIdUser.TabStop = false;
             // 
             // lblNombreUsuario
             // 
             lblNombreUsuario.AutoSize = true;
             lblNombreUsuario.Font = new Font("Century Gothic", 12F);
             lblNombreUsuario.ForeColor = Color.White;
-            lblNombreUsuario.Location = new Point(69, 35);
+            lblNombreUsuario.Location = new Point(69, 13);
             lblNombreUsuario.Name = "lblNombreUsuario";
             lblNombreUsuario.Size = new Size(183, 23);
             lblNombreUsuario.TabIndex = 4;
@@ -405,9 +406,9 @@
             contenedor.BackColor = Color.White;
             contenedor.Controls.Add(groupBox1);
             contenedor.Dock = DockStyle.Fill;
-            contenedor.Location = new Point(242, 96);
+            contenedor.Location = new Point(242, 72);
             contenedor.Name = "contenedor";
-            contenedor.Size = new Size(1186, 776);
+            contenedor.Size = new Size(1186, 800);
             contenedor.TabIndex = 0;
             // 
             // groupBox1
@@ -422,14 +423,15 @@
             groupBox1.Controls.Add(panelPrijectsAssignament);
             groupBox1.Location = new Point(6, 9);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1177, 767);
+            groupBox1.Size = new Size(1177, 791);
             groupBox1.TabIndex = 7;
             groupBox1.TabStop = false;
             groupBox1.Text = "Inicio";
             // 
             // panelUsersView
             // 
-            panelUsersView.BackColor = SystemColors.Control;
+            panelUsersView.BackColor = Color.MediumTurquoise;
+            panelUsersView.Controls.Add(panel10);
             panelUsersView.Controls.Add(label7);
             panelUsersView.Controls.Add(panel9);
             panelUsersView.Controls.Add(panel7);
@@ -439,14 +441,24 @@
             panelUsersView.Controls.Add(labelCity);
             panelUsersView.Controls.Add(labelCountryByUser);
             panelUsersView.Controls.Add(labelByAgeUser);
-            panelUsersView.Controls.Add(pictureBox3);
+            panelUsersView.Controls.Add(pictureBoxSelectedUser);
             panelUsersView.Controls.Add(labelByUser);
             panelUsersView.Dock = DockStyle.Right;
             panelUsersView.Location = new Point(684, 22);
             panelUsersView.Name = "panelUsersView";
-            panelUsersView.Size = new Size(490, 742);
+            panelUsersView.Size = new Size(490, 766);
             panelUsersView.TabIndex = 6;
             panelUsersView.Visible = false;
+            // 
+            // panel10
+            // 
+            panel10.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel10.BackColor = Color.DarkCyan;
+            panel10.BorderStyle = BorderStyle.Fixed3D;
+            panel10.Location = new Point(20, 667);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(424, 99);
+            panel10.TabIndex = 24;
             // 
             // label7
             // 
@@ -651,7 +663,7 @@
             // 
             labelnameUser.AutoSize = true;
             labelnameUser.Font = new Font("Century Gothic", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            labelnameUser.ForeColor = Color.Black;
+            labelnameUser.ForeColor = Color.White;
             labelnameUser.Location = new Point(102, 62);
             labelnameUser.Name = "labelnameUser";
             labelnameUser.Size = new Size(70, 23);
@@ -672,7 +684,7 @@
             // labelCity
             // 
             labelCity.AutoSize = true;
-            labelCity.BackColor = SystemColors.Control;
+            labelCity.BackColor = Color.Transparent;
             labelCity.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             labelCity.ForeColor = Color.RoyalBlue;
             labelCity.Location = new Point(277, 90);
@@ -684,7 +696,7 @@
             // labelCountryByUser
             // 
             labelCountryByUser.AutoSize = true;
-            labelCountryByUser.BackColor = SystemColors.Control;
+            labelCountryByUser.BackColor = Color.Transparent;
             labelCountryByUser.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             labelCountryByUser.ForeColor = Color.RoyalBlue;
             labelCountryByUser.Location = new Point(152, 90);
@@ -696,7 +708,7 @@
             // labelByAgeUser
             // 
             labelByAgeUser.AutoSize = true;
-            labelByAgeUser.BackColor = SystemColors.Control;
+            labelByAgeUser.BackColor = Color.Transparent;
             labelByAgeUser.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             labelByAgeUser.ForeColor = Color.RoyalBlue;
             labelByAgeUser.Location = new Point(102, 90);
@@ -705,22 +717,22 @@
             labelByAgeUser.TabIndex = 11;
             labelByAgeUser.Text = "age";
             // 
-            // pictureBox3
+            // pictureBoxSelectedUser
             // 
-            pictureBox3.BackColor = Color.Transparent;
-            pictureBox3.Image = Properties.Resources.user_icon_icons_com_57997;
-            pictureBox3.Location = new Point(20, 62);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(58, 51);
-            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox3.TabIndex = 10;
-            pictureBox3.TabStop = false;
+            pictureBoxSelectedUser.BackColor = Color.Transparent;
+            pictureBoxSelectedUser.Image = Properties.Resources.user_icon_icons_com_57997;
+            pictureBoxSelectedUser.Location = new Point(20, 62);
+            pictureBoxSelectedUser.Name = "pictureBoxSelectedUser";
+            pictureBoxSelectedUser.Size = new Size(58, 51);
+            pictureBoxSelectedUser.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxSelectedUser.TabIndex = 10;
+            pictureBoxSelectedUser.TabStop = false;
             // 
             // labelByUser
             // 
             labelByUser.AutoSize = true;
             labelByUser.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            labelByUser.ForeColor = Color.Black;
+            labelByUser.ForeColor = Color.White;
             labelByUser.Location = new Point(20, 16);
             labelByUser.Name = "labelByUser";
             labelByUser.Size = new Size(72, 34);
@@ -744,7 +756,7 @@
             panel8.Controls.Add(label11);
             panel8.Location = new Point(19, 580);
             panel8.Name = "panel8";
-            panel8.Size = new Size(651, 175);
+            panel8.Size = new Size(651, 199);
             panel8.TabIndex = 3;
             // 
             // label11
@@ -884,7 +896,7 @@
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbMinimizar).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbEliminar).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxImageByIdUser).EndInit();
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             menu.ResumeLayout(false);
@@ -902,7 +914,7 @@
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSelectedUser).EndInit();
             panel8.ResumeLayout(false);
             panelInfoUsers.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridViewUsers).EndInit();
@@ -921,7 +933,7 @@
         private PictureBox pictureBox2;
         private Panel panel4;
         private Panel panel3;
-        private PictureBox pictureBox1;
+        private PictureBox pictureBoxImageByIdUser;
         private PictureBox pbMinimizar;
         private PictureBox pbEliminar;
         private ToolTip toolTip1;
@@ -951,7 +963,7 @@
         private DataGridViewButtonColumn viewUser;
         private Label labelCountryByUser;
         private Label labelByAgeUser;
-        private PictureBox pictureBox3;
+        private PictureBox pictureBoxSelectedUser;
         private Label labelByUser;
         private Label label3;
         private Label labelCity;
@@ -974,5 +986,6 @@
         private Label label8;
         private PictureBox pictureBox4;
         private Label label11;
+        private Panel panel10;
     }
 }

@@ -1,5 +1,7 @@
 ﻿using BusinessLayer.Services.Interfaces;
 using CommonLayer.Entities;
+using DataAccessLayer.DbConnection;
+using DataAccessLayer.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -15,15 +17,18 @@ namespace PresentationLayer.Forms.Cliente
 {
     public partial class ProfileUserAccountForm : Form
     {
+        private readonly ISqlDataAccess _dbConnection;
         private readonly IUsersServices _usersServices;
         private readonly IServiceProvider _serviceProvider;
-        public ProfileUserAccountForm(IServiceProvider serviceProvider, IUsersServices usersServices)
+        public ProfileUserAccountForm(ISqlDataAccess dbConnection ,IServiceProvider serviceProvider, IUsersServices usersServices)
         {
             InitializeComponent();
+            _dbConnection = dbConnection;
             _serviceProvider = serviceProvider;
             LoadProvincias();
             _usersServices = usersServices;
             LoadData();
+            CargarImagenEnPictureBox(AuthUser.idUser);
         }
 
         public void LoadProvincias()
@@ -103,6 +108,61 @@ namespace PresentationLayer.Forms.Cliente
         {
             var ChangePasswordProfile = _serviceProvider.GetRequiredService<ChangePasswordProfileForm>();
             ChangePasswordProfile.ShowDialog();
+        }
+
+        private void CargarImagenEnPictureBox(int idUser)
+        {
+            var repo =_usersServices.GetProfileImage(idUser);
+            byte[] imageBytes = repo;
+
+            if (imageBytes != null && imageBytes.Length > 0)
+            {
+                using (var memoryStream = new MemoryStream(imageBytes))
+                {
+                    pictureBoxProfileUser.Image = Image.FromStream(memoryStream);
+                }
+            }
+            else
+            {
+                pictureBoxProfileUser.Image = null; 
+            }
+        }
+
+
+        private void lblPhotoProfileChangeUser_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog PhotoProfileUser = new OpenFileDialog();
+            PhotoProfileUser.Filter = "Archivos de imagen (*.png; *.jpg; *.jpeg)|*.png;*.jpg;*.jpeg";
+
+            if (PhotoProfileUser.ShowDialog() == DialogResult.OK)
+            {
+                pictureBoxProfileUser.Image = Image.FromFile(PhotoProfileUser.FileName);
+
+                byte[] imageBytes;
+                using (MemoryStream memoryStream = new MemoryStream())
+                {
+                    pictureBoxProfileUser.Image.Save(memoryStream, System.Drawing.Imaging.ImageFormat.Png);
+                    imageBytes = memoryStream.ToArray();
+                }
+
+                var imageProfile = new User
+                {
+                    UserAccount = textBoxUserAccount.Text,
+                    IdUser = AuthUser.idUser,
+                    NameUser = textboxNameUser.Text,
+                    LastName = textboxLastNameUser.Text,
+                    NumberPhone = textboxNumberphoneUser.Text,
+                    Email = CaptureData.Email,
+                    Birthdate = datetimeDateUser.Value,
+                    passworduser = CaptureData.Password,
+                    Statususer = "Activo",
+                    Country = comboboxCountryUser.SelectedValue?.ToString(),
+                    City = comboboxCityUser.SelectedValue?.ToString(),
+                    Image = imageBytes
+                };
+
+                 _usersServices.EditAccountUser(imageProfile);                
+            }
         }
     }
 }

@@ -38,5 +38,8 @@ namespace BusinessLayer.Services
         public IEnumerable<Admins> GetAdmins() =>  _usuariosrepositoriess.GetAdmins();
         public IEnumerable<Employee> GetEmployees() => _usuariosrepositoriess.GetEmployee();
         public IEnumerable<Clients> GetClients() => _usuariosrepositoriess.GetClients();
+
+
+        public Byte[] GetProfileImage(int idUser) => _usuariosrepositoriess.GetProfileImage(idUser);
     }
 }

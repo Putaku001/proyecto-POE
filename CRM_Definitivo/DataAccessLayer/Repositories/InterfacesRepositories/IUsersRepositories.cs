@@ -24,5 +24,8 @@ namespace DataAccessLayer.Repositories.InterfacesRepositories
         IEnumerable<Admins> GetAdmins();
         IEnumerable<Employee> GetEmployee();
         IEnumerable<Clients> GetClients();
+
+
+        byte[] GetProfileImage(int idUser);
     }
 }
