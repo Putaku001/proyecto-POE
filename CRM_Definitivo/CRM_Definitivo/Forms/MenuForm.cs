@@ -3,6 +3,7 @@ using BusinessLayer.Services.InterfacesServices;
 using CommonLayer.Entities;
 using FontAwesome.Sharp;
 using PresentationLayer.Forms.Cliente;
+using PresentationLayer.Forms.Empleados;
 using Microsoft.VisualBasic;
 using PresentationLayer.Reports;
 using System;
@@ -35,11 +36,12 @@ namespace PresentationLayer.Forms
         private readonly IServiceProvider _provider;
         private readonly IUserReports _userReports;
         private System.Windows.Forms.Timer timer;
+
         public MenuForm(IPermisoServices services, IServiceProvider serviceProvider, IUsersServices _usuarioServices, IRolServices rolServices, IListProyectsServices _proyectoServices, IUserReports userReports)
         {
 
             InitializeComponent();
-            
+            PermissionUserView(AuthUser.idRol);
             LoadData();
             _permisosServices = services;
             _provider = serviceProvider;
@@ -54,18 +56,38 @@ namespace PresentationLayer.Forms
             timer.Start();
 
             fechayhora();
+
+            System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
+            System.Drawing.Drawing2D.GraphicsPath pathSelectedUser = new System.Drawing.Drawing2D.GraphicsPath();
+            path.AddEllipse(0,0, pictureBoxImageByIdUser.Width, pictureBoxImageByIdUser.Height);
+            pathSelectedUser.AddEllipse(0,0, pictureBoxSelectedUser.Width, pictureBoxSelectedUser.Height);
+
+            pictureBoxImageByIdUser.Region = new Region(path);
+            pictureBoxSelectedUser.Region = new Region(pathSelectedUser);
+
+            System.Drawing.Drawing2D.GraphicsPath path1 = new System.Drawing.Drawing2D.GraphicsPath();
+            path1.AddArc(0, 0, 20, 20, 180, 90); 
+            path1.AddArc(panelUsersView.Width - 20, 0, 20, 20, 270, 90); 
+            path1.AddArc(panelUsersView.Width - 20, panelUsersView.Height - 20, 20, 20, 0, 90); 
+            path1.AddArc(0, panelUsersView.Height - 20, 20, 20, 90, 90); 
+            path1.CloseAllFigures();
+
+            panelUsersView.Region = new Region(path1);
         }
+
+
 
         private void LoadImageProfileUser(int idUser)
         {
             var servicesUser = usuarioServices.GetProfileImage(idUser);
             byte[] imagebyte = servicesUser;
 
-            if(imagebyte != null)
+            if (imagebyte != null)
             {
                 using (var memoryStream = new MemoryStream(imagebyte))
                 {
                     pictureBoxImageByIdUser.Image = Image.FromStream(memoryStream);
+
                 }
             }
             else
@@ -74,11 +96,11 @@ namespace PresentationLayer.Forms
             }
         }
 
+
+
         private void LoadData()
         {
             dataGridViewUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-    
 
         }
 
@@ -140,6 +162,27 @@ namespace PresentationLayer.Forms
 
             formulario.Show();
         }
+
+        private void PermissionUserView(int idRol)
+        {
+            if (idRol != 1)
+            {
+                contenedor.Controls.Clear();
+
+            }
+            else if (idRol == 2)
+            {
+                var HomeUserCllient = _provider.GetRequiredService<HomeUserClientForm>();
+                AbrirFormulario(HomeUserCllient);
+            }
+            else if (idRol == 4)
+            {
+                var HomeUserEmployee = _provider.GetRequiredService<HomeUserEmployeeForm>();
+                AbrirFormulario(HomeUserEmployee);
+            }
+        }
+
+
 
 
         private void btnUsuariosForm_Click(object sender, EventArgs e)
@@ -236,9 +279,9 @@ namespace PresentationLayer.Forms
 
         private void dataGridViewUsers_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex >= 0)
+            if (e.RowIndex >= 0)
             {
-                int idUser = int.Parse(dataGridViewUsers.CurrentRow.Cells[2].Value.ToString()); 
+                int idUser = int.Parse(dataGridViewUsers.CurrentRow.Cells[2].Value.ToString());
 
                 panelUsersView.Visible = true;
                 var users = usuarioServices.GetByIdUser(idUser);
@@ -249,12 +292,12 @@ namespace PresentationLayer.Forms
                 var SelectedUser = users.Where(u => u.IdUser == idUser).ToList();
 
 
-                if (SelectedUser.Any())   
+                if (SelectedUser.Any())
                 {
                     foreach (var user in SelectedUser)
                     {
-                        DateTime fechaActual = DateTime.Now; 
-                        int edad = fechaActual.Year - user.Birthdate.Year; 
+                        DateTime fechaActual = DateTime.Now;
+                        int edad = fechaActual.Year - user.Birthdate.Year;
 
                         if (fechaActual.Month < user.Birthdate.Month ||
                             (fechaActual.Month == user.Birthdate.Month && fechaActual.Day < user.Birthdate.Day))
@@ -271,9 +314,9 @@ namespace PresentationLayer.Forms
                         labelRegistration.Text = Convert.ToString(user.DateRegistration);
                         labelCountryByUser.Text = user.Country;
 
-                        if(imageBytes != null && imageBytes.Length > 0)
+                        if (imageBytes != null && imageBytes.Length > 0)
                         {
-                            using(var memoryStream = new MemoryStream(imageBytes))
+                            using (var memoryStream = new MemoryStream(imageBytes))
                             {
                                 pictureBoxSelectedUser.Image = Image.FromStream(memoryStream);
                             }
@@ -282,7 +325,7 @@ namespace PresentationLayer.Forms
                         {
                             MessageBox.Show("No se pudo moestrar la imagen");
                         }
-                    }                   
+                    }
                 }
                 else
                 {

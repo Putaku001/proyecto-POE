@@ -47,7 +47,7 @@ namespace DataAccessLayer.Repositories
         {
             using(var connection = _dbConnection.GetConnection())
             {
-                string query = @"SELECT idUser, idRol, UserAccount, CONCAT(nameuser, ' ' ,lastName) AS nameUser, email, birthdate, 
+                string query = @"SELECT idUser, idRol, UserAccount,nameuser,lastName, email, birthdate, 
                                         numberPhone, passworduser, country, city, statususer, DateRegistration, Image 
                                         FROM Users 
                                  WHERE idUser = @idUser";

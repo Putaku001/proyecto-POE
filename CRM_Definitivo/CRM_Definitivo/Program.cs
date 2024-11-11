@@ -11,6 +11,7 @@ using Microsoft.Extensions.Hosting;
 using PresentationLayer.Forms;
 using PresentationLayer.Forms.Admin;
 using PresentationLayer.Forms.Cliente;
+using PresentationLayer.Forms.Empleados;
 using PresentationLayer.Reports;
 using QuestPDF.Infrastructure;
 
@@ -54,7 +55,9 @@ namespace CRM_Definitivo
                     services.AddTransient<ProjectsHistoric>();
                     services.AddTransient<SettingsUserForm>();
                     services.AddTransient<PermissionForm>();
-                   
+                    services.AddTransient<HomeUserClientForm>();
+                    services.AddTransient<HomeUserEmployeeForm>();
+
 
                     //BUSISNESSLAYER
                     services.AddScoped<IUsersServices, UsersServices>();

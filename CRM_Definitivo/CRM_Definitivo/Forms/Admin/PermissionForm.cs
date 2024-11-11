@@ -64,6 +64,7 @@ namespace PresentationLayer.Forms.Admin
                 _permissionServices.EditMenu(menu);
 
                 MessageBox.Show("El menu se ha actualizado de forma exitosa!");
+                LoadData();
 
                 isEditing = false;
             }
@@ -74,6 +75,7 @@ namespace PresentationLayer.Forms.Admin
 
                 _permissionServices.AddMenu(menu);
                 MessageBox.Show("El nuevo menu se ha agregado correctamente!");
+                LoadData();
             }
         }
 
@@ -95,6 +97,7 @@ namespace PresentationLayer.Forms.Admin
             {
                 permission.idPermission = int.Parse(dataGridViewMenu.CurrentRow.Cells[0].Value.ToString());
                 _permissionServices.EditPermissions(permission);
+                LoadData();
                 isEditing = false;
             }
             else
@@ -102,6 +105,7 @@ namespace PresentationLayer.Forms.Admin
                 permission.idMenu = Convert.ToInt32(comboBoxMenu.SelectedValue);
 
                 _permissionServices.AddPermissions(permission);
+                LoadData();
                 MessageBox.Show("Se ha agregado correctamente!");
             }
         }
@@ -132,6 +136,7 @@ namespace PresentationLayer.Forms.Admin
                 _permissionServices.EditRolPermission(rolPermission);
 
                 MessageBox.Show("Se ha editado el permiso correctamente");
+                LoadData();
 
                 isEditing = false;
             }
@@ -143,6 +148,7 @@ namespace PresentationLayer.Forms.Admin
                 _permissionServices.AddRolPermission(rolPermission);
 
                 MessageBox.Show($"Se ha asignado un nuevo permiso a los {comboBoxidRol.SelectedValue} correctamente!");
+                LoadData();
             }
 
         }

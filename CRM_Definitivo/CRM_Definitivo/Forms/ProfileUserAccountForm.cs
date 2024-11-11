@@ -29,28 +29,43 @@ namespace PresentationLayer.Forms.Cliente
             _usersServices = usersServices;
             LoadData();
             CargarImagenEnPictureBox(AuthUser.idUser);
+
+            //pictureBoxProfileUser.Width = 100;
+            //pictureBoxProfileUser.Height = 100;
+            System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
+            path.AddEllipse(0, 0, pictureBoxProfileUser.Width, pictureBoxProfileUser.Height); 
+
+            pictureBoxProfileUser.Region = new Region(path);
         }
 
-        public void LoadProvincias()
-        {
 
-            List<string> ListaPaises = new List<string>()
+        private void LoadProvincias()
+        {
+            List<string> ListaPaises = new List<string>
             {
                 "El Salvador"
+
             };
 
             comboboxCountryUser.DataSource = ListaPaises;
             comboboxCountryUser.SelectedIndex = -1;
-
-
-
-            List<string> ListaCiudad = new List<string>()
+            List<string> ListaCiudad = new List<string>
             {
-                "San Salvador",
+                "Ahuachapán",
+                "Sonsonate",
+                "Santa Ana",
                 "La Libertad",
-                "Santa Ana"
+                "Chalatenango",
+                "San Salvador",
+                "Cuscatlán",
+                "La Paz",
+                "San Vicente",
+                "Cabañas",
+                "Usulután",
+                "San Miguel",
+                "Morazán",
+                "La Unión"
             };
-
             comboboxCityUser.DataSource = ListaCiudad;
             comboboxCityUser.SelectedIndex = -1;
         }
@@ -58,61 +73,27 @@ namespace PresentationLayer.Forms.Cliente
 
         private void LoadData()
         {
-            //informacion del usuario
-            textBoxUserAccount.Text = CaptureData.UserAccount;
-            textboxNameUser.Text = CaptureData.NameUser;
-            textboxLastNameUser.Text = CaptureData.LastName;
-            textboxNumberphoneUser.Text = CaptureData.NumberPhone;
-            datetimeDateUser.Value = CaptureData.DateBirth;
+            int idUser = AuthUser.idUser;
+            var capture = _usersServices.GetByIdUser(idUser).Where(u => u.IdUser == idUser).ToList();
 
-            //residencia del usuario
-            comboboxCountryUser.Text = CaptureData.Country;
-            comboboxCityUser.Text = CaptureData.City;
-        }
+                foreach (var user in capture)
+                {
+                    //informacion del usuario
+                    textBoxUserAccount.Text = user.UserAccount;
+                    textboxNameUser.Text = user.NameUser;
+                    textboxLastNameUser.Text = user.LastName;
+                    textboxNumberphoneUser.Text = user.NumberPhone;
+                    datetimeDateUser.Value = user.Birthdate;
 
-        private void iconButtonSaveProfile_Click(object sender, EventArgs e)
-        {
-            var SaveProfile = new User()
-            {
-                UserAccount = textBoxUserAccount.Text,
-                IdUser = AuthUser.idUser,
-                NameUser = textboxNameUser.Text,
-                LastName = textboxLastNameUser.Text,
-                NumberPhone = textboxNumberphoneUser.Text,
-                Email = CaptureData.Email,
-                Birthdate = datetimeDateUser.Value,
-                passworduser = CaptureData.Password,
-                Statususer = "Activo",
-                Country = comboboxCountryUser.SelectedValue?.ToString(),
-                City = comboboxCityUser.SelectedValue?.ToString(),
-
-            };
-
-            _usersServices.EditAccountUser(SaveProfile);
-
-            textBoxUserAccount.Text = SaveProfile.UserAccount;
-            textboxNameUser.Text = SaveProfile.NameUser;
-            textboxLastNameUser.Text = SaveProfile.LastName;
-            textboxNumberphoneUser.Text = SaveProfile.NumberPhone;
-            datetimeDateUser.Value = SaveProfile.Birthdate;
-
-            comboboxCountryUser.Text = SaveProfile.Country;
-            comboboxCityUser.Text = SaveProfile.City;
-
-            MessageBox.Show("Perfil actualizado correctamente!");
-
-
-        }
-
-        private void labelChangePasswordProfile_Click(object sender, EventArgs e)
-        {
-            var ChangePasswordProfile = _serviceProvider.GetRequiredService<ChangePasswordProfileForm>();
-            ChangePasswordProfile.ShowDialog();
+                    //residencia del usuario
+                    comboboxCountryUser.Text = user.Country;
+                    comboboxCityUser.Text = user.City;
+                }                
         }
 
         private void CargarImagenEnPictureBox(int idUser)
         {
-            var repo =_usersServices.GetProfileImage(idUser);
+            var repo = _usersServices.GetProfileImage(idUser);
             byte[] imageBytes = repo;
 
             if (imageBytes != null && imageBytes.Length > 0)
@@ -124,7 +105,7 @@ namespace PresentationLayer.Forms.Cliente
             }
             else
             {
-                pictureBoxProfileUser.Image = null; 
+                pictureBoxProfileUser.Image = null;
             }
         }
 
@@ -161,8 +142,59 @@ namespace PresentationLayer.Forms.Cliente
                     Image = imageBytes
                 };
 
-                 _usersServices.EditAccountUser(imageProfile);                
+                _usersServices.EditAccountUser(imageProfile);
+                LoadData();
+
             }
         }
+
+        private void iconButtonSaveProfile_Click(object sender, EventArgs e)
+        {
+            byte[] imageBytes;
+            using (MemoryStream memoryStream = new MemoryStream())
+            {
+                pictureBoxProfileUser.Image.Save(memoryStream, System.Drawing.Imaging.ImageFormat.Png);
+                imageBytes = memoryStream.ToArray();
+            }
+
+            var SaveProfile = new User()
+            {
+                UserAccount = textBoxUserAccount.Text,
+                IdUser = AuthUser.idUser,
+                NameUser = textboxNameUser.Text,
+                LastName = textboxLastNameUser.Text,
+                NumberPhone = textboxNumberphoneUser.Text,
+                Email = CaptureData.Email,
+                Birthdate = datetimeDateUser.Value,
+                passworduser = CaptureData.Password,
+                Statususer = "Activo",
+                Image = imageBytes,
+                Country = comboboxCountryUser.SelectedValue?.ToString(),
+                City = comboboxCityUser.SelectedValue?.ToString(),
+
+            };
+
+            _usersServices.EditAccountUser(SaveProfile);
+
+            MessageBox.Show("Perfil actualizado correctamente!");
+
+            textBoxUserAccount.Text = SaveProfile.UserAccount;
+            textboxNameUser.Text = SaveProfile.NameUser;
+            textboxLastNameUser.Text = SaveProfile.LastName;
+            textboxNumberphoneUser.Text = SaveProfile.NumberPhone;
+            datetimeDateUser.Value = SaveProfile.Birthdate;
+
+            comboboxCountryUser.Text = SaveProfile.Country;
+            comboboxCityUser.Text = SaveProfile.City;            
+
+        }
+
+        private void labelChangePasswordProfile_Click(object sender, EventArgs e)
+        {
+            var ChangePasswordProfile = _serviceProvider.GetRequiredService<ChangePasswordProfileForm>();
+            ChangePasswordProfile.ShowDialog();
+        }
+
+        
     }
 }
