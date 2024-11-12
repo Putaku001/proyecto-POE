@@ -50,8 +50,6 @@
             IconMenusSettingsForm = new FontAwesome.Sharp.IconMenuItem();
             IconMenuAccountForm = new FontAwesome.Sharp.IconMenuItem();
             iconMenuItemMenus = new FontAwesome.Sharp.IconMenuItem();
-            iconMenuItemConfigurationEmployee = new FontAwesome.Sharp.IconMenuItem();
-            iconMenuItemConfigurationUserClient = new FontAwesome.Sharp.IconMenuItem();
             timer1 = new System.Windows.Forms.Timer(components);
             contenedor = new Panel();
             groupBox1 = new GroupBox();
@@ -126,9 +124,9 @@
             panel1.Controls.Add(pbEliminar);
             panel1.Controls.Add(lblNombreUsuario);
             panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(73, 0);
+            panel1.Location = new Point(59, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1355, 62);
+            panel1.Size = new Size(1369, 62);
             panel1.TabIndex = 2;
             // 
             // label2
@@ -149,7 +147,7 @@
             pbMinimizar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pbMinimizar.Cursor = Cursors.Hand;
             pbMinimizar.Image = Properties.Resources.negative_sign_icon_icons_com_70439;
-            pbMinimizar.Location = new Point(1269, 3);
+            pbMinimizar.Location = new Point(1283, 3);
             pbMinimizar.Name = "pbMinimizar";
             pbMinimizar.Size = new Size(34, 44);
             pbMinimizar.SizeMode = PictureBoxSizeMode.Zoom;
@@ -163,7 +161,7 @@
             pbEliminar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pbEliminar.Cursor = Cursors.Hand;
             pbEliminar.Image = Properties.Resources.close_remove_delete_icon_148989;
-            pbEliminar.Location = new Point(1309, 3);
+            pbEliminar.Location = new Point(1323, 3);
             pbEliminar.Name = "pbEliminar";
             pbEliminar.Size = new Size(34, 44);
             pbEliminar.SizeMode = PictureBoxSizeMode.Zoom;
@@ -201,7 +199,7 @@
             lblHoraUsuario.BackColor = Color.White;
             lblHoraUsuario.Font = new Font("Century Gothic", 12F);
             lblHoraUsuario.ForeColor = Color.Black;
-            lblHoraUsuario.Location = new Point(633, 25);
+            lblHoraUsuario.Location = new Point(647, 25);
             lblHoraUsuario.Name = "lblHoraUsuario";
             lblHoraUsuario.Size = new Size(150, 23);
             lblHoraUsuario.TabIndex = 5;
@@ -217,7 +215,7 @@
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(73, 872);
+            panel2.Size = new Size(59, 872);
             panel2.TabIndex = 4;
             // 
             // panel4
@@ -226,7 +224,7 @@
             panel4.BackColor = Color.Azure;
             panel4.Location = new Point(0, 771);
             panel4.Name = "panel4";
-            panel4.Size = new Size(73, 10);
+            panel4.Size = new Size(59, 10);
             panel4.TabIndex = 1;
             // 
             // panel3
@@ -235,7 +233,7 @@
             panel3.BackColor = Color.Azure;
             panel3.Location = new Point(0, 101);
             panel3.Name = "panel3";
-            panel3.Size = new Size(73, 10);
+            panel3.Size = new Size(59, 10);
             panel3.TabIndex = 0;
             // 
             // menu
@@ -244,11 +242,11 @@
             menu.AutoSize = false;
             menu.Dock = DockStyle.None;
             menu.ImageScalingSize = new Size(20, 20);
-            menu.Items.AddRange(new ToolStripItem[] { iconMenuItemHome, IconMenuUsersForm, IconMenuProyectsForm, iconMenuItemRequestClientProjects, iconMenuItemProjectsEmployee, IconMenuRecordForm, IconMenusSettingsForm, IconMenuAccountForm, iconMenuItemMenus, iconMenuItemConfigurationEmployee, iconMenuItemConfigurationUserClient });
+            menu.Items.AddRange(new ToolStripItem[] { iconMenuItemHome, IconMenuUsersForm, IconMenuProyectsForm, iconMenuItemRequestClientProjects, iconMenuItemProjectsEmployee, IconMenuRecordForm, IconMenusSettingsForm, IconMenuAccountForm, iconMenuItemMenus });
             menu.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
             menu.Location = new Point(0, 114);
             menu.Name = "menu";
-            menu.Size = new Size(70, 654);
+            menu.Size = new Size(58, 654);
             menu.TabIndex = 9;
             // 
             // iconMenuItemHome
@@ -310,7 +308,7 @@
             iconMenuItemRequestClientProjects.ImageScaling = ToolStripItemImageScaling.None;
             iconMenuItemRequestClientProjects.Margin = new Padding(0, 20, 0, 0);
             iconMenuItemRequestClientProjects.Name = "iconMenuItemRequestClientProjects";
-            iconMenuItemRequestClientProjects.Size = new Size(63, 32);
+            iconMenuItemRequestClientProjects.Size = new Size(51, 32);
             iconMenuItemRequestClientProjects.TextImageRelation = TextImageRelation.Overlay;
             // 
             // iconMenuItemProjectsEmployee
@@ -324,7 +322,7 @@
             iconMenuItemProjectsEmployee.ImageScaling = ToolStripItemImageScaling.None;
             iconMenuItemProjectsEmployee.Margin = new Padding(0, 20, 0, 0);
             iconMenuItemProjectsEmployee.Name = "iconMenuItemProjectsEmployee";
-            iconMenuItemProjectsEmployee.Size = new Size(63, 32);
+            iconMenuItemProjectsEmployee.Size = new Size(51, 32);
             iconMenuItemProjectsEmployee.TextImageRelation = TextImageRelation.Overlay;
             // 
             // IconMenuRecordForm
@@ -391,46 +389,14 @@
             iconMenuItemMenus.TextImageRelation = TextImageRelation.Overlay;
             iconMenuItemMenus.Click += iconMenuItemMenus_Click;
             // 
-            // iconMenuItemConfigurationEmployee
-            // 
-            iconMenuItemConfigurationEmployee.AutoSize = false;
-            iconMenuItemConfigurationEmployee.BackgroundImageLayout = ImageLayout.None;
-            iconMenuItemConfigurationEmployee.Font = new Font("Segoe UI", 10.2F);
-            iconMenuItemConfigurationEmployee.IconChar = FontAwesome.Sharp.IconChar.Stop;
-            iconMenuItemConfigurationEmployee.IconColor = Color.Black;
-            iconMenuItemConfigurationEmployee.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconMenuItemConfigurationEmployee.IconSize = 28;
-            iconMenuItemConfigurationEmployee.ImageScaling = ToolStripItemImageScaling.None;
-            iconMenuItemConfigurationEmployee.Margin = new Padding(0, 20, 0, 0);
-            iconMenuItemConfigurationEmployee.Name = "iconMenuItemConfigurationEmployee";
-            iconMenuItemConfigurationEmployee.Size = new Size(232, 27);
-            iconMenuItemConfigurationEmployee.TextImageRelation = TextImageRelation.Overlay;
-            iconMenuItemConfigurationEmployee.Click += iconMenuItemConfigurationEmployee_Click;
-            // 
-            // iconMenuItemConfigurationUserClient
-            // 
-            iconMenuItemConfigurationUserClient.AutoSize = false;
-            iconMenuItemConfigurationUserClient.BackgroundImageLayout = ImageLayout.None;
-            iconMenuItemConfigurationUserClient.Font = new Font("Segoe UI", 10.2F);
-            iconMenuItemConfigurationUserClient.IconChar = FontAwesome.Sharp.IconChar.StripeS;
-            iconMenuItemConfigurationUserClient.IconColor = Color.Black;
-            iconMenuItemConfigurationUserClient.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconMenuItemConfigurationUserClient.IconSize = 28;
-            iconMenuItemConfigurationUserClient.ImageScaling = ToolStripItemImageScaling.None;
-            iconMenuItemConfigurationUserClient.Margin = new Padding(0, 20, 0, 0);
-            iconMenuItemConfigurationUserClient.Name = "iconMenuItemConfigurationUserClient";
-            iconMenuItemConfigurationUserClient.Size = new Size(232, 27);
-            iconMenuItemConfigurationUserClient.TextImageRelation = TextImageRelation.Overlay;
-            iconMenuItemConfigurationUserClient.Click += iconMenuItemConfigurationUserClient_Click;
-            // 
             // contenedor
             // 
             contenedor.BackColor = Color.WhiteSmoke;
             contenedor.Controls.Add(groupBox1);
             contenedor.Dock = DockStyle.Fill;
-            contenedor.Location = new Point(73, 62);
+            contenedor.Location = new Point(59, 62);
             contenedor.Name = "contenedor";
-            contenedor.Size = new Size(1355, 810);
+            contenedor.Size = new Size(1369, 810);
             contenedor.TabIndex = 0;
             // 
             // groupBox1
@@ -445,7 +411,7 @@
             groupBox1.Controls.Add(panelPrijectsAssignament);
             groupBox1.Location = new Point(6, 9);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1346, 801);
+            groupBox1.Size = new Size(1360, 801);
             groupBox1.TabIndex = 7;
             groupBox1.TabStop = false;
             groupBox1.Text = "Inicio";
@@ -466,7 +432,7 @@
             panelUsersView.Controls.Add(pictureBoxSelectedUser);
             panelUsersView.Controls.Add(labelByUser);
             panelUsersView.Dock = DockStyle.Right;
-            panelUsersView.Location = new Point(918, 22);
+            panelUsersView.Location = new Point(932, 22);
             panelUsersView.Name = "panelUsersView";
             panelUsersView.Size = new Size(425, 776);
             panelUsersView.TabIndex = 6;
@@ -780,7 +746,7 @@
             panel8.Controls.Add(label11);
             panel8.Location = new Point(19, 580);
             panel8.Name = "panel8";
-            panel8.Size = new Size(877, 217);
+            panel8.Size = new Size(891, 217);
             panel8.TabIndex = 3;
             // 
             // label11
@@ -801,7 +767,7 @@
             panelInfoUsers.Controls.Add(iconButtonUserEmployee);
             panelInfoUsers.Location = new Point(19, 252);
             panelInfoUsers.Name = "panelInfoUsers";
-            panelInfoUsers.Size = new Size(877, 289);
+            panelInfoUsers.Size = new Size(891, 289);
             panelInfoUsers.TabIndex = 3;
             // 
             // dataGridViewUsers
@@ -814,7 +780,7 @@
             dataGridViewUsers.Location = new Point(293, 0);
             dataGridViewUsers.Name = "dataGridViewUsers";
             dataGridViewUsers.RowHeadersWidth = 51;
-            dataGridViewUsers.Size = new Size(577, 306);
+            dataGridViewUsers.Size = new Size(591, 306);
             dataGridViewUsers.TabIndex = 7;
             dataGridViewUsers.CellClick += dataGridViewUsers_CellClick;
             // 
@@ -899,7 +865,7 @@
             panelPrijectsAssignament.Controls.Add(pictureBox1);
             panelPrijectsAssignament.Location = new Point(19, 79);
             panelPrijectsAssignament.Name = "panelPrijectsAssignament";
-            panelPrijectsAssignament.Size = new Size(872, 158);
+            panelPrijectsAssignament.Size = new Size(886, 158);
             panelPrijectsAssignament.TabIndex = 2;
             // 
             // pictureBox2
@@ -908,7 +874,7 @@
             pictureBox2.BackColor = Color.LightGray;
             pictureBox2.Location = new Point(0, 0);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(575, 154);
+            pictureBox2.Size = new Size(589, 154);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
@@ -917,7 +883,7 @@
             // 
             pictureBox1.Dock = DockStyle.Right;
             pictureBox1.Image = Properties.Resources.rimuru2;
-            pictureBox1.Location = new Point(598, 0);
+            pictureBox1.Location = new Point(612, 0);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(270, 154);
             pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -1038,7 +1004,5 @@
         private Panel panel4;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
-        private FontAwesome.Sharp.IconMenuItem iconMenuItemConfigurationEmployee;
-        private FontAwesome.Sharp.IconMenuItem iconMenuItemConfigurationUserClient;
     }
 }

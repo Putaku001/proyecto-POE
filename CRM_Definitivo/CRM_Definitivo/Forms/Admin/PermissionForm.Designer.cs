@@ -174,6 +174,7 @@
             iconButtonDeleteMenus.TabIndex = 4;
             iconButtonDeleteMenus.Text = "Eliminar";
             iconButtonDeleteMenus.UseVisualStyleBackColor = true;
+            iconButtonDeleteMenus.Click += iconButtonDeleteMenus_Click;
             // 
             // tabControlPermission
             // 

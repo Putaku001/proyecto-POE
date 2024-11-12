@@ -13,6 +13,7 @@ namespace BusinessLayer.Services.InterfacesServices
         void AddMenu(Menu menu);
         void AddPermissions(Permissions permissions);
         void AddRolPermission(RolPermission rolpermission);
+        void DeleteMenu(int idMenu);
         void EditMenu(Menu menu);
         void EditPermissions(Permissions permissions);
         void EditRolPermission(RolPermission rolpermission);

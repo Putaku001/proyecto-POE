@@ -1,6 +1,6 @@
 CREATE DATABASE SistemaProyectosDB;
 
-	SELECT * FROM Clients					
+	SELECT * FROM menu						
 
 insert into menu
 VALUES('Admin', 'iconMenuItemMenus')
@@ -303,6 +303,21 @@ BEGIN
     CLOSE user_cursor;
     DEALLOCATE user_cursor;
 END;
+
+*/*EN PROCESO DE PRUEBA */*
+CREATE TRIGGER trg_DeleteMenu ON menu
+AFTER DELETE
+AS
+BEGIN
+    DELETE FROM rolPermission
+    WHERE idPermission IN (SELECT idPermission FROM permission WHERE idMenu IN (SELECT idMenu FROM DELETED));
+
+    DELETE FROM permission
+    WHERE idMenu IN (SELECT idMenu FROM DELETED);
+END;
+
+	
+
 
 
 

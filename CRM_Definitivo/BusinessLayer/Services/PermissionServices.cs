@@ -39,6 +39,10 @@ namespace BusinessLayer.Services
         {
             _permisosrepositories.EditMenus(menu);
         }
+        public void DeleteMenu(int idMenu)
+        {
+            _permisosrepositories.DeleteMenus(idMenu);
+        }
 
         //PERMISOS CRUD
         public IEnumerable<Permissions> GetPermissions()

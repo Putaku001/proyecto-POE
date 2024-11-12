@@ -1,4 +1,5 @@
-﻿using BusinessLayer.Services.Interfaces;
+﻿using BusinessLayer.Services;
+using BusinessLayer.Services.Interfaces;
 using BusinessLayer.Services.InterfacesServices;
 using CommonLayer.Entities;
 using System;
@@ -114,7 +115,7 @@ namespace PresentationLayer.Forms.Admin
 
         private void iconButtonEditMenus_Click(object sender, EventArgs e)
         {
-            if(dataGridViewMenu.SelectedRows.Count > 0)
+            if (dataGridViewMenu.SelectedRows.Count > 0)
             {
                 textBoxNameMenu.Text = dataGridViewMenu.CurrentRow.Cells[1].Value.ToString();
                 textBoxNameMenuForm.Text = dataGridViewMenu.CurrentRow.Cells[2].Value.ToString();
@@ -153,6 +154,26 @@ namespace PresentationLayer.Forms.Admin
             else
             {
                 MessageBox.Show("Debe seleccionar una fila antes de editar");
+            }
+        }
+
+        private void iconButtonDeleteMenus_Click(object sender, EventArgs e)
+        {
+            if(dataGridViewMenu.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Debe seleccionar un menu para eliminar.", "Advertencia",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            var eliminarConfirmar = MessageBox.Show(
+                "¿Está seguro de que desea eliminar este menu?",
+                "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if(eliminarConfirmar == DialogResult.Yes)
+            {
+                int idMenu = Convert.ToInt32(dataGridViewMenu.CurrentRow.Cells["idMenu"].Value);
+                _permissionServices.DeleteMenu(idMenu);
+                LoadData();
             }
         }
 
@@ -200,6 +221,6 @@ namespace PresentationLayer.Forms.Admin
             }
         }
 
-
+        
     }
 }

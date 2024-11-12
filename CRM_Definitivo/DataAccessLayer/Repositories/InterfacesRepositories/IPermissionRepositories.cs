@@ -13,6 +13,7 @@ namespace DataAccessLayer.Repositories.InterfacesRepositories
         void AddMenus(Menu menu);
         void AddPermissions(Permissions permissions);
         void AddRolPermissions(RolPermission rolPermission);
+        void DeleteMenus(int idMenu);
         void EditMenus(Menu menu);
         void EditPermissions(Permissions permissions);
         void EditRolPermissions(RolPermission rolPermission);

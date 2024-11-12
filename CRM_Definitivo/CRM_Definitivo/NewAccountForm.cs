@@ -21,7 +21,7 @@ namespace PresentationLayer
     public partial class NewAccountForm : Form
     {
         private IUsersServices _usersServices;
-        byte[] imageBytes = null;
+        byte[] imageBytes;
 
 
         public NewAccountForm(IUsersServices usersServices)

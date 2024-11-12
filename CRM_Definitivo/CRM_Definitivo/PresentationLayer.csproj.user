@@ -13,13 +13,7 @@
     <Compile Update="Forms\Cliente\ClientForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\Cliente\ConfigurationUserClientForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Forms\Cliente\HomeUserClientForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Forms\Empleados\ConfigurationUserEmployeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\Empleados\HomeUserEmployeeForm.cs">

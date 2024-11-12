@@ -42,7 +42,6 @@ namespace PresentationLayer.Forms
         {
 
             InitializeComponent();
-            PermissionUserView(AuthUser.idRol);
             LoadData();
             _permisosServices = services;
             _provider = serviceProvider;
@@ -164,32 +163,6 @@ namespace PresentationLayer.Forms
             this.contenedor.Tag = formulario;
 
             formulario.Show();
-        }
-
-        private void PermissionUserView(int idRol)
-        {
-
-            if (idRol == 2)
-            {
-                //var HomeUserCllient = _provider.GetRequiredService<HomeUserClientForm>();
-                HomeUserClientForm homeUserClientForm = new HomeUserClientForm();
-                AbrirFormulario(homeUserClientForm);
-            }
-            else if (idRol == 4)
-            {
-                //var HomeUserEmployee = _provider.GetRequiredService<HomeUserEmployeeForm>();
-                HomeUserEmployeeForm homeUserEmployeeForm = new HomeUserEmployeeForm();
-                AbrirFormulario(homeUserEmployeeForm);
-            }
-        }
-
-
-
-
-        private void btnUsuariosForm_Click(object sender, EventArgs e)
-        {
-            UsersForm formulario = new UsersForm(usuarioServices, _rolServices, _userReports);
-            AbrirFormulario(formulario);
         }
 
         private void pbEliminar_Click(object sender, EventArgs e)
