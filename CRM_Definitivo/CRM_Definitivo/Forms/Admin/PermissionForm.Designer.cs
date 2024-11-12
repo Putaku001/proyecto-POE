@@ -103,7 +103,7 @@
             groupBox3.Size = new Size(1406, 200);
             groupBox3.TabIndex = 8;
             groupBox3.TabStop = false;
-            groupBox3.Text = "groupBox3";
+            groupBox3.Text = "Agregar nuevos menus";
             // 
             // textBoxNameMenuForm
             // 
@@ -133,9 +133,9 @@
             label1.AutoSize = true;
             label1.Location = new Point(28, 74);
             label1.Name = "label1";
-            label1.Size = new Size(144, 20);
+            label1.Size = new Size(240, 20);
             label1.TabIndex = 1;
-            label1.Text = "Nombre del menu:";
+            label1.Text = "Nombre del el objeto a mostrar:";
             // 
             // iconButtonEditMenus
             // 
@@ -339,9 +339,9 @@
             label4.AutoSize = true;
             label4.Location = new Point(23, 49);
             label4.Name = "label4";
-            label4.Size = new Size(174, 20);
+            label4.Size = new Size(162, 20);
             label4.TabIndex = 0;
-            label4.Text = "Coloce el id del menu:";
+            label4.Text = "Seleccionar el menu:";
             // 
             // dataGridViewPermission
             // 

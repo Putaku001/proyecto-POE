@@ -130,8 +130,8 @@
   <data name="ajustes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ajustes.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="negative-sign_icon-icons.com_70439" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\negative-sign_icon-icons.com_70439.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="rimuru2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rimuru2.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Proyecto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Proyecto.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,11 +145,17 @@
   <data name="info" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\info.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="photoMenuAdmin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\photoMenuAdmin.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="eliminar_Usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eliminar_Usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="round-account-button-with-user-inside_icon-icons1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\round-account-button-with-user-inside_icon-icons.com_725961.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon-permissions" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-permissions.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="editar_Usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\editar_Usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,11 +169,14 @@
   <data name="añadir_usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\añadir_usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pendiente" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pendiente.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="3844476-eye-see-show-view-watch_110339" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3844476-eye-see-show-view-watch_110339.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="projects_icon_142976" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\projects_icon_142976.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="negative-sign_icon-icons.com_70439" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\negative-sign_icon-icons.com_70439.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="imprimir" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imprimir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,7 +184,10 @@
   <data name="user_icon-icons.com_57997" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user_icon-icons.com_57997.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon-permissions" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon-permissions.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="projects_icon_142976" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\projects_icon_142976.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="good" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\good.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

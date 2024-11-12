@@ -36,6 +36,39 @@ namespace PresentationLayer.Forms.Admin
             dataGridViewPermission.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewrolPermission.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
+            //Diseño para dgv menu
+            dataGridViewMenu.DefaultCellStyle.BackColor = Color.WhiteSmoke;
+            dataGridViewMenu.DefaultCellStyle.ForeColor = Color.Black;
+            dataGridViewMenu.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
+            dataGridViewMenu.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkSlateGray;
+            dataGridViewMenu.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridViewMenu.EnableHeadersVisualStyles = false;
+
+            dataGridViewMenu.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewMenu.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+
+            //Diseño para dgvPermission
+            dataGridViewPermission.DefaultCellStyle.BackColor = Color.WhiteSmoke;
+            dataGridViewPermission.DefaultCellStyle.ForeColor = Color.Black;
+            dataGridViewPermission.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
+            dataGridViewPermission.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkSlateGray;
+            dataGridViewPermission.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridViewPermission.EnableHeadersVisualStyles = false;
+
+            dataGridViewPermission.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewPermission.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+
+            //Diseño para dgvRolPermission
+            dataGridViewrolPermission.DefaultCellStyle.BackColor = Color.WhiteSmoke;
+            dataGridViewrolPermission.DefaultCellStyle.ForeColor = Color.Black;
+            dataGridViewrolPermission.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
+            dataGridViewrolPermission.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkSlateGray;
+            dataGridViewrolPermission.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridViewrolPermission.EnableHeadersVisualStyles = false;
+
+            dataGridViewrolPermission.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewrolPermission.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+
             //DATASOURCE DEL MENU 
             comboBoxMenu.DataSource = _permissionServices.GetByMenu();
             comboBoxMenu.DisplayMember = "nameForm";

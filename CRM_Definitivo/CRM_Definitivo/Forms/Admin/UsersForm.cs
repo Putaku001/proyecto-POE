@@ -37,8 +37,15 @@ namespace PresentationLayer.Forms
         private void LoadData()
         {
             dgvUsuarios.DataSource = _usuersservices.GetUsers();
+            dgvUsuarios.DefaultCellStyle.BackColor = Color.WhiteSmoke;
+            dgvUsuarios.DefaultCellStyle.ForeColor = Color.Black;
+            dgvUsuarios.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
+            dgvUsuarios.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkSlateGray;
+            dgvUsuarios.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvUsuarios.EnableHeadersVisualStyles = false;
 
             dgvUsuarios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvUsuarios.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
             dgvUsuarios.Columns["idUser"].Visible = false;
             dgvUsuarios.Columns["Image"].Visible = false ;

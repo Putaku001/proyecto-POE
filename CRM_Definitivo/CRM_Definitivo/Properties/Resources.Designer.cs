@@ -153,6 +153,16 @@ namespace PresentationLayer.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap good {
+            get {
+                object obj = ResourceManager.GetObject("good", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap historial {
             get {
                 object obj = ResourceManager.GetObject("historial", resourceCulture);
@@ -213,6 +223,26 @@ namespace PresentationLayer.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pendiente {
+            get {
+                object obj = ResourceManager.GetObject("pendiente", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap photoMenuAdmin {
+            get {
+                object obj = ResourceManager.GetObject("photoMenuAdmin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap projects_icon_142976 {
             get {
                 object obj = ResourceManager.GetObject("projects_icon_142976", resourceCulture);
@@ -226,6 +256,16 @@ namespace PresentationLayer.Properties {
         internal static System.Drawing.Bitmap Proyecto {
             get {
                 object obj = ResourceManager.GetObject("Proyecto", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rimuru2 {
+            get {
+                object obj = ResourceManager.GetObject("rimuru2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CommonLayer.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,13 @@ namespace PresentationLayer.Forms.Empleados
         public HomeUserEmployeeForm()
         {
             InitializeComponent();
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            labelUserAccount.Text = AuthUser.UserAccount;
+            lblHoraUsuario.Text = DateTime.Now.ToString("g");
         }
     }
 }

@@ -51,9 +51,12 @@ namespace CRM_Definitivo
                     services.AddTransient<EditUsersForm>();
                     services.AddTransient<AddUsersForm>();
                     services.AddTransient<ProfileUserAccountForm>();
+                    services.AddTransient<ImageViewerForm>();
                     services.AddTransient<ChangePasswordProfileForm>();
                     services.AddTransient<ProjectsHistoric>();
                     services.AddTransient<SettingsUserForm>();
+                    services.AddTransient<ConfigurationUserEmployeeForm>();
+                    services.AddTransient<ConfigurationUserClientForm>();
                     services.AddTransient<PermissionForm>();
                     services.AddTransient<HomeUserClientForm>();
                     services.AddTransient<HomeUserEmployeeForm>();

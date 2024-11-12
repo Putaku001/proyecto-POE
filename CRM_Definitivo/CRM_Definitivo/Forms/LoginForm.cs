@@ -124,6 +124,7 @@ namespace CRM_Definitivo
 
 
                 var menuForm = _serviceProvider.GetRequiredService<MenuForm>();
+                this.Hide();
                 menuForm.ShowDialog();
             }
             else

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuForm));
             panel1 = new Panel();
             label2 = new Label();
             pbMinimizar = new PictureBox();
@@ -49,6 +50,8 @@
             IconMenusSettingsForm = new FontAwesome.Sharp.IconMenuItem();
             IconMenuAccountForm = new FontAwesome.Sharp.IconMenuItem();
             iconMenuItemMenus = new FontAwesome.Sharp.IconMenuItem();
+            iconMenuItemConfigurationEmployee = new FontAwesome.Sharp.IconMenuItem();
+            iconMenuItemConfigurationUserClient = new FontAwesome.Sharp.IconMenuItem();
             timer1 = new System.Windows.Forms.Timer(components);
             contenedor = new Panel();
             groupBox1 = new GroupBox();
@@ -89,6 +92,8 @@
             iconButtonUserEmployee = new FontAwesome.Sharp.IconButton();
             labelUserAccount = new Label();
             panelPrijectsAssignament = new Panel();
+            pictureBox2 = new PictureBox();
+            pictureBox1 = new PictureBox();
             toolTip1 = new ToolTip(components);
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbMinimizar).BeginInit();
@@ -108,11 +113,14 @@
             panel8.SuspendLayout();
             panelInfoUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewUsers).BeginInit();
+            panelPrijectsAssignament.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.BackColor = SystemColors.ButtonShadow;
+            panel1.BackColor = Color.SteelBlue;
             panel1.Controls.Add(label2);
             panel1.Controls.Add(pbMinimizar);
             panel1.Controls.Add(pbEliminar);
@@ -120,7 +128,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(73, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1355, 54);
+            panel1.Size = new Size(1355, 62);
             panel1.TabIndex = 2;
             // 
             // label2
@@ -143,7 +151,7 @@
             pbMinimizar.Image = Properties.Resources.negative_sign_icon_icons_com_70439;
             pbMinimizar.Location = new Point(1269, 3);
             pbMinimizar.Name = "pbMinimizar";
-            pbMinimizar.Size = new Size(34, 36);
+            pbMinimizar.Size = new Size(34, 44);
             pbMinimizar.SizeMode = PictureBoxSizeMode.Zoom;
             pbMinimizar.TabIndex = 8;
             pbMinimizar.TabStop = false;
@@ -157,7 +165,7 @@
             pbEliminar.Image = Properties.Resources.close_remove_delete_icon_148989;
             pbEliminar.Location = new Point(1309, 3);
             pbEliminar.Name = "pbEliminar";
-            pbEliminar.Size = new Size(34, 36);
+            pbEliminar.Size = new Size(34, 44);
             pbEliminar.SizeMode = PictureBoxSizeMode.Zoom;
             pbEliminar.TabIndex = 7;
             pbEliminar.TabStop = false;
@@ -236,11 +244,11 @@
             menu.AutoSize = false;
             menu.Dock = DockStyle.None;
             menu.ImageScalingSize = new Size(20, 20);
-            menu.Items.AddRange(new ToolStripItem[] { iconMenuItemHome, IconMenuUsersForm, IconMenuProyectsForm, iconMenuItemRequestClientProjects, iconMenuItemProjectsEmployee, IconMenuRecordForm, IconMenusSettingsForm, IconMenuAccountForm, iconMenuItemMenus });
+            menu.Items.AddRange(new ToolStripItem[] { iconMenuItemHome, IconMenuUsersForm, IconMenuProyectsForm, iconMenuItemRequestClientProjects, iconMenuItemProjectsEmployee, IconMenuRecordForm, IconMenusSettingsForm, IconMenuAccountForm, iconMenuItemMenus, iconMenuItemConfigurationEmployee, iconMenuItemConfigurationUserClient });
             menu.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
             menu.Location = new Point(0, 114);
             menu.Name = "menu";
-            menu.Size = new Size(73, 654);
+            menu.Size = new Size(70, 654);
             menu.TabIndex = 9;
             // 
             // iconMenuItemHome
@@ -302,7 +310,7 @@
             iconMenuItemRequestClientProjects.ImageScaling = ToolStripItemImageScaling.None;
             iconMenuItemRequestClientProjects.Margin = new Padding(0, 20, 0, 0);
             iconMenuItemRequestClientProjects.Name = "iconMenuItemRequestClientProjects";
-            iconMenuItemRequestClientProjects.Size = new Size(66, 32);
+            iconMenuItemRequestClientProjects.Size = new Size(63, 32);
             iconMenuItemRequestClientProjects.TextImageRelation = TextImageRelation.Overlay;
             // 
             // iconMenuItemProjectsEmployee
@@ -316,7 +324,7 @@
             iconMenuItemProjectsEmployee.ImageScaling = ToolStripItemImageScaling.None;
             iconMenuItemProjectsEmployee.Margin = new Padding(0, 20, 0, 0);
             iconMenuItemProjectsEmployee.Name = "iconMenuItemProjectsEmployee";
-            iconMenuItemProjectsEmployee.Size = new Size(66, 32);
+            iconMenuItemProjectsEmployee.Size = new Size(63, 32);
             iconMenuItemProjectsEmployee.TextImageRelation = TextImageRelation.Overlay;
             // 
             // IconMenuRecordForm
@@ -383,14 +391,46 @@
             iconMenuItemMenus.TextImageRelation = TextImageRelation.Overlay;
             iconMenuItemMenus.Click += iconMenuItemMenus_Click;
             // 
+            // iconMenuItemConfigurationEmployee
+            // 
+            iconMenuItemConfigurationEmployee.AutoSize = false;
+            iconMenuItemConfigurationEmployee.BackgroundImageLayout = ImageLayout.None;
+            iconMenuItemConfigurationEmployee.Font = new Font("Segoe UI", 10.2F);
+            iconMenuItemConfigurationEmployee.IconChar = FontAwesome.Sharp.IconChar.Stop;
+            iconMenuItemConfigurationEmployee.IconColor = Color.Black;
+            iconMenuItemConfigurationEmployee.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconMenuItemConfigurationEmployee.IconSize = 28;
+            iconMenuItemConfigurationEmployee.ImageScaling = ToolStripItemImageScaling.None;
+            iconMenuItemConfigurationEmployee.Margin = new Padding(0, 20, 0, 0);
+            iconMenuItemConfigurationEmployee.Name = "iconMenuItemConfigurationEmployee";
+            iconMenuItemConfigurationEmployee.Size = new Size(232, 27);
+            iconMenuItemConfigurationEmployee.TextImageRelation = TextImageRelation.Overlay;
+            iconMenuItemConfigurationEmployee.Click += iconMenuItemConfigurationEmployee_Click;
+            // 
+            // iconMenuItemConfigurationUserClient
+            // 
+            iconMenuItemConfigurationUserClient.AutoSize = false;
+            iconMenuItemConfigurationUserClient.BackgroundImageLayout = ImageLayout.None;
+            iconMenuItemConfigurationUserClient.Font = new Font("Segoe UI", 10.2F);
+            iconMenuItemConfigurationUserClient.IconChar = FontAwesome.Sharp.IconChar.StripeS;
+            iconMenuItemConfigurationUserClient.IconColor = Color.Black;
+            iconMenuItemConfigurationUserClient.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconMenuItemConfigurationUserClient.IconSize = 28;
+            iconMenuItemConfigurationUserClient.ImageScaling = ToolStripItemImageScaling.None;
+            iconMenuItemConfigurationUserClient.Margin = new Padding(0, 20, 0, 0);
+            iconMenuItemConfigurationUserClient.Name = "iconMenuItemConfigurationUserClient";
+            iconMenuItemConfigurationUserClient.Size = new Size(232, 27);
+            iconMenuItemConfigurationUserClient.TextImageRelation = TextImageRelation.Overlay;
+            iconMenuItemConfigurationUserClient.Click += iconMenuItemConfigurationUserClient_Click;
+            // 
             // contenedor
             // 
-            contenedor.BackColor = Color.White;
+            contenedor.BackColor = Color.WhiteSmoke;
             contenedor.Controls.Add(groupBox1);
             contenedor.Dock = DockStyle.Fill;
-            contenedor.Location = new Point(73, 54);
+            contenedor.Location = new Point(73, 62);
             contenedor.Name = "contenedor";
-            contenedor.Size = new Size(1355, 818);
+            contenedor.Size = new Size(1355, 810);
             contenedor.TabIndex = 0;
             // 
             // groupBox1
@@ -405,7 +445,7 @@
             groupBox1.Controls.Add(panelPrijectsAssignament);
             groupBox1.Location = new Point(6, 9);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1346, 809);
+            groupBox1.Size = new Size(1346, 801);
             groupBox1.TabIndex = 7;
             groupBox1.TabStop = false;
             groupBox1.Text = "Inicio";
@@ -428,7 +468,7 @@
             panelUsersView.Dock = DockStyle.Right;
             panelUsersView.Location = new Point(918, 22);
             panelUsersView.Name = "panelUsersView";
-            panelUsersView.Size = new Size(425, 784);
+            panelUsersView.Size = new Size(425, 776);
             panelUsersView.TabIndex = 6;
             panelUsersView.Visible = false;
             // 
@@ -439,7 +479,7 @@
             panel10.BorderStyle = BorderStyle.Fixed3D;
             panel10.Location = new Point(17, 669);
             panel10.Name = "panel10";
-            panel10.Size = new Size(397, 112);
+            panel10.Size = new Size(397, 104);
             panel10.TabIndex = 24;
             // 
             // label7
@@ -475,7 +515,7 @@
             labelRegistration.AutoSize = true;
             labelRegistration.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline);
             labelRegistration.ForeColor = Color.White;
-            labelRegistration.Location = new Point(235, 122);
+            labelRegistration.Location = new Point(220, 123);
             labelRegistration.Name = "labelRegistration";
             labelRegistration.Size = new Size(69, 21);
             labelRegistration.TabIndex = 25;
@@ -486,7 +526,7 @@
             labelNumberPhone.AutoSize = true;
             labelNumberPhone.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline);
             labelNumberPhone.ForeColor = Color.White;
-            labelNumberPhone.Location = new Point(130, 87);
+            labelNumberPhone.Location = new Point(115, 88);
             labelNumberPhone.Name = "labelNumberPhone";
             labelNumberPhone.Size = new Size(66, 21);
             labelNumberPhone.TabIndex = 24;
@@ -497,7 +537,7 @@
             labelEmail.AutoSize = true;
             labelEmail.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline);
             labelEmail.ForeColor = Color.White;
-            labelEmail.Location = new Point(109, 50);
+            labelEmail.Location = new Point(94, 51);
             labelEmail.Name = "labelEmail";
             labelEmail.Size = new Size(71, 21);
             labelEmail.TabIndex = 23;
@@ -508,7 +548,7 @@
             label10.AutoSize = true;
             label10.Font = new Font("Century Gothic", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label10.ForeColor = Color.White;
-            label10.Location = new Point(30, 120);
+            label10.Location = new Point(15, 121);
             label10.Name = "label10";
             label10.Size = new Size(203, 23);
             label10.TabIndex = 22;
@@ -519,7 +559,7 @@
             label9.AutoSize = true;
             label9.Font = new Font("Century Gothic", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label9.ForeColor = Color.White;
-            label9.Location = new Point(30, 87);
+            label9.Location = new Point(15, 88);
             label9.Name = "label9";
             label9.Size = new Size(99, 23);
             label9.TabIndex = 21;
@@ -530,7 +570,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Century Gothic", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(27, 50);
+            label8.Location = new Point(12, 51);
             label8.Name = "label8";
             label8.Size = new Size(83, 23);
             label8.TabIndex = 20;
@@ -702,6 +742,7 @@
             // pictureBoxSelectedUser
             // 
             pictureBoxSelectedUser.BackColor = Color.Transparent;
+            pictureBoxSelectedUser.Cursor = Cursors.Hand;
             pictureBoxSelectedUser.Image = Properties.Resources.user_icon_icons_com_57997;
             pictureBoxSelectedUser.Location = new Point(17, 68);
             pictureBoxSelectedUser.Name = "pictureBoxSelectedUser";
@@ -709,6 +750,7 @@
             pictureBoxSelectedUser.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxSelectedUser.TabIndex = 10;
             pictureBoxSelectedUser.TabStop = false;
+            pictureBoxSelectedUser.Click += pictureBoxSelectedUser_Click;
             // 
             // labelByUser
             // 
@@ -727,13 +769,13 @@
             label1.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold);
             label1.Location = new Point(19, 21);
             label1.Name = "label1";
-            label1.Size = new Size(256, 27);
+            label1.Size = new Size(257, 27);
             label1.TabIndex = 0;
-            label1.Text = "Bienvenido de vuelta ";
+            label1.Text = "Bienvenido de nuevo ";
             // 
             // panel8
             // 
-            panel8.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel8.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel8.BorderStyle = BorderStyle.Fixed3D;
             panel8.Controls.Add(label11);
             panel8.Location = new Point(19, 580);
@@ -757,9 +799,9 @@
             panelInfoUsers.Controls.Add(iconButtonUserClients);
             panelInfoUsers.Controls.Add(iconButtonUserAdministrator);
             panelInfoUsers.Controls.Add(iconButtonUserEmployee);
-            panelInfoUsers.Location = new Point(19, 231);
+            panelInfoUsers.Location = new Point(19, 252);
             panelInfoUsers.Name = "panelInfoUsers";
-            panelInfoUsers.Size = new Size(877, 310);
+            panelInfoUsers.Size = new Size(877, 289);
             panelInfoUsers.TabIndex = 3;
             // 
             // dataGridViewUsers
@@ -853,10 +895,34 @@
             // 
             panelPrijectsAssignament.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelPrijectsAssignament.BorderStyle = BorderStyle.Fixed3D;
+            panelPrijectsAssignament.Controls.Add(pictureBox2);
+            panelPrijectsAssignament.Controls.Add(pictureBox1);
             panelPrijectsAssignament.Location = new Point(19, 79);
             panelPrijectsAssignament.Name = "panelPrijectsAssignament";
-            panelPrijectsAssignament.Size = new Size(877, 125);
+            panelPrijectsAssignament.Size = new Size(872, 158);
             panelPrijectsAssignament.TabIndex = 2;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            pictureBox2.BackColor = Color.LightGray;
+            pictureBox2.Location = new Point(0, 0);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(575, 154);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 1;
+            pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Dock = DockStyle.Right;
+            pictureBox1.Image = Properties.Resources.rimuru2;
+            pictureBox1.Location = new Point(598, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(270, 154);
+            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // MenuForm
             // 
@@ -869,9 +935,10 @@
             Controls.Add(panel2);
             Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menu;
             Name = "MenuForm";
-            Text = "E";
+            Text = "ProyectosSV";
             WindowState = FormWindowState.Maximized;
             Load += MenuForm_Load;
             panel1.ResumeLayout(false);
@@ -899,6 +966,10 @@
             panel8.ResumeLayout(false);
             panelInfoUsers.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridViewUsers).EndInit();
+            panelPrijectsAssignament.ResumeLayout(false);
+            panelPrijectsAssignament.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -930,7 +1001,6 @@
         private Panel panel8;
         private Panel panelInfoUsers;
         private Panel panelUsersView;
-        private Panel panel5;
         private FontAwesome.Sharp.IconButton iconButtonUserAdministrator;
         private DataGridView dataGridViewUsers;
         private FontAwesome.Sharp.IconButton iconButton3;
@@ -966,5 +1036,9 @@
         private Panel panel10;
         public PictureBox pictureBoxImageByIdUser;
         private Panel panel4;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
+        private FontAwesome.Sharp.IconMenuItem iconMenuItemConfigurationEmployee;
+        private FontAwesome.Sharp.IconMenuItem iconMenuItemConfigurationUserClient;
     }
 }

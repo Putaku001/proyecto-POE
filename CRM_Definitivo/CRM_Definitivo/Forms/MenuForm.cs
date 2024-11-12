@@ -22,6 +22,7 @@ using PresentationLayer.Forms.Admin;
 using Microsoft.VisualBasic.ApplicationServices;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Diagnostics.Metrics;
+using CRM_Definitivo;
 
 namespace PresentationLayer.Forms
 {
@@ -59,20 +60,20 @@ namespace PresentationLayer.Forms
 
             System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
             System.Drawing.Drawing2D.GraphicsPath pathSelectedUser = new System.Drawing.Drawing2D.GraphicsPath();
-            path.AddEllipse(0,0, pictureBoxImageByIdUser.Width, pictureBoxImageByIdUser.Height);
-            pathSelectedUser.AddEllipse(0,0, pictureBoxSelectedUser.Width, pictureBoxSelectedUser.Height);
+            path.AddEllipse(0, 0, pictureBoxImageByIdUser.Width, pictureBoxImageByIdUser.Height);
+            pathSelectedUser.AddEllipse(0, 0, pictureBoxSelectedUser.Width, pictureBoxSelectedUser.Height);
 
             pictureBoxImageByIdUser.Region = new Region(path);
             pictureBoxSelectedUser.Region = new Region(pathSelectedUser);
 
-            System.Drawing.Drawing2D.GraphicsPath path1 = new System.Drawing.Drawing2D.GraphicsPath();
-            path1.AddArc(0, 0, 20, 20, 180, 90); 
-            path1.AddArc(panelUsersView.Width - 20, 0, 20, 20, 270, 90); 
-            path1.AddArc(panelUsersView.Width - 20, panelUsersView.Height - 20, 20, 20, 0, 90); 
-            path1.AddArc(0, panelUsersView.Height - 20, 20, 20, 90, 90); 
-            path1.CloseAllFigures();
+            //System.Drawing.Drawing2D.GraphicsPath path1 = new System.Drawing.Drawing2D.GraphicsPath();
+            //path1.AddArc(0, 0, 20, 20, 180, 90); 
+            //path1.AddArc(panelUsersView.Width - 20, 0, 20, 20, 270, 90); 
+            //path1.AddArc(panelUsersView.Width - 20, panelUsersView.Height - 20, 20, 20, 0, 90); 
+            //path1.AddArc(0, panelUsersView.Height - 20, 20, 20, 90, 90); 
+            //path1.CloseAllFigures();
 
-            panelUsersView.Region = new Region(path1);
+            //panelUsersView.Region = new Region(path1);
         }
 
 
@@ -145,6 +146,8 @@ namespace PresentationLayer.Forms
         private void label2_Click(object sender, EventArgs e)
         {
             this.Close();
+            var LoginForm = _provider.GetRequiredService<LoginForm>();
+            LoginForm.ShowDialog();
         }
 
         private void AbrirFormulario(Form formulario)
@@ -165,20 +168,18 @@ namespace PresentationLayer.Forms
 
         private void PermissionUserView(int idRol)
         {
-            if (idRol != 1)
-            {
-                contenedor.Controls.Clear();
 
-            }
-            else if (idRol == 2)
+            if (idRol == 2)
             {
-                var HomeUserCllient = _provider.GetRequiredService<HomeUserClientForm>();
-                AbrirFormulario(HomeUserCllient);
+                //var HomeUserCllient = _provider.GetRequiredService<HomeUserClientForm>();
+                HomeUserClientForm homeUserClientForm = new HomeUserClientForm();
+                AbrirFormulario(homeUserClientForm);
             }
             else if (idRol == 4)
             {
-                var HomeUserEmployee = _provider.GetRequiredService<HomeUserEmployeeForm>();
-                AbrirFormulario(HomeUserEmployee);
+                //var HomeUserEmployee = _provider.GetRequiredService<HomeUserEmployeeForm>();
+                HomeUserEmployeeForm homeUserEmployeeForm = new HomeUserEmployeeForm();
+                AbrirFormulario(homeUserEmployeeForm);
             }
         }
 
@@ -227,6 +228,18 @@ namespace PresentationLayer.Forms
         {
             var IconMenuRecordForm = _provider.GetRequiredService<ProjectsHistoric>();
             AbrirFormulario(IconMenuRecordForm);
+        }
+
+        private void iconMenuItemConfigurationEmployee_Click(object sender, EventArgs e)
+        {
+            var ConfigurationEmployeeForm = _provider.GetRequiredService<ConfigurationUserEmployeeForm>();
+            AbrirFormulario(ConfigurationEmployeeForm);
+        }
+
+        private void iconMenuItemConfigurationUserClient_Click(object sender, EventArgs e)
+        {
+            var ConfigurationClientForm = _provider.GetRequiredService<ConfigurationUserClientForm>();
+            AbrirFormulario(ConfigurationClientForm);
         }
 
         private void IconMenusSettingsForm_Click(object sender, EventArgs e)
@@ -337,6 +350,17 @@ namespace PresentationLayer.Forms
                 MessageBox.Show("No se ha seleccionado a un usuario ");
             }
         }
+
+        private void pictureBoxSelectedUser_Click(object sender, EventArgs e)
+        {
+            var ImageViewerForm = _provider.GetRequiredService<ImageViewerForm>();
+            ImageViewerForm.pictureBoxView.Image = pictureBoxSelectedUser.Image;
+
+            ImageViewerForm.StartPosition = FormStartPosition.CenterScreen;
+            ImageViewerForm.ShowDialog();
+        }
+
+        
     }
 
 }
