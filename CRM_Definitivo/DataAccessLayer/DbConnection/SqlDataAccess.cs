@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DataAccessLayer.DbConnection;
 using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
 
 
 namespace DataAccessLayer.DbSqlDataAccess
@@ -13,7 +14,7 @@ namespace DataAccessLayer.DbSqlDataAccess
     {
         private readonly string _connectionString;
 
-        public SqlDataAccess()
+        public SqlDataAccess(IConfiguration configuration)
         {
             _connectionString = "Data Source=LAPTOP-PHCFNULN\\SQLEXPRESS;Initial Catalog=SistemaProyectosDB;Integrated Security=True;Encrypt=False;Trust Server Certificate=True";
         }

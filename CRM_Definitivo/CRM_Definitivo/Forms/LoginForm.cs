@@ -13,6 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Twilio.Types;
 using Twilio;
 using Twilio.Rest.Api.V2010.Account;
+using System.Net.Mail;
 
 
 namespace CRM_Definitivo
@@ -28,13 +29,14 @@ namespace CRM_Definitivo
 
         public LoginForm(IServiceProvider serviceProvider, IUsersRepositories _usuarioRepositories, IUsersServices _usuarioServices, IRolServices rolServices, IListProyectsServices _proyectoServices, IUserReports userReports)
         {
-            InitializeComponent();
+            InitializeComponent();           
             usuarioRepositories = _usuarioRepositories;
             usuarioServices = _usuarioServices;
             _rolServices = rolServices;
             proyectoServices = _proyectoServices;
             _userReports = userReports;
             _serviceProvider = serviceProvider;
+
         }
 
         private void pictureBoxClosed_Click(object sender, EventArgs e)
@@ -139,6 +141,7 @@ namespace CRM_Definitivo
             // Obtener el usuario desde la base de datos
             var user = usuarioServices.UserSearch(txtUser.Text).FirstOrDefault();
 
+            string idUserVerification = txtUser.Text;
             if (user != null)
             {
                 // Generar un código de verificación de 6 dígitos
@@ -152,7 +155,7 @@ namespace CRM_Definitivo
                 user.VerificationCode = verificationCode;
 
                 // Redirigir al formulario de verificación
-                VerificationForm verificationForm = new VerificationForm(user, usuarioServices);
+                VerificationForm verificationForm = new VerificationForm(user, usuarioServices, idUserVerification);
                 verificationForm.ShowDialog();
             }
             else

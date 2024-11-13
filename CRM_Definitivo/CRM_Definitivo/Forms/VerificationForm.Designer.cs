@@ -33,6 +33,7 @@
             verificationCodeTexBox = new TextBox();
             messageLabel = new Label();
             iconButtonVerify = new FontAwesome.Sharp.IconButton();
+            linkLabelVerificationEmail = new LinkLabel();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -58,7 +59,7 @@
             // 
             // verificationCodeTexBox
             // 
-            verificationCodeTexBox.Location = new Point(207, 205);
+            verificationCodeTexBox.Location = new Point(208, 177);
             verificationCodeTexBox.Margin = new Padding(3, 4, 3, 4);
             verificationCodeTexBox.Name = "verificationCodeTexBox";
             verificationCodeTexBox.Size = new Size(258, 26);
@@ -85,7 +86,7 @@
             iconButtonVerify.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButtonVerify.IconSize = 34;
             iconButtonVerify.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButtonVerify.Location = new Point(246, 259);
+            iconButtonVerify.Location = new Point(256, 225);
             iconButtonVerify.Name = "iconButtonVerify";
             iconButtonVerify.Size = new Size(175, 33);
             iconButtonVerify.TabIndex = 5;
@@ -93,11 +94,24 @@
             iconButtonVerify.UseVisualStyleBackColor = false;
             iconButtonVerify.Click += iconButtonVerify_Click;
             // 
+            // linkLabelVerificationEmail
+            // 
+            linkLabelVerificationEmail.AutoSize = true;
+            linkLabelVerificationEmail.Font = new Font("Century Gothic", 7.20000029F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            linkLabelVerificationEmail.Location = new Point(176, 295);
+            linkLabelVerificationEmail.Name = "linkLabelVerificationEmail";
+            linkLabelVerificationEmail.Size = new Size(331, 17);
+            linkLabelVerificationEmail.TabIndex = 6;
+            linkLabelVerificationEmail.TabStop = true;
+            linkLabelVerificationEmail.Text = "Recuperar mi contraseña con mi correo asociado";
+            linkLabelVerificationEmail.LinkClicked += linkLabelVerificationEmail_LinkClicked;
+            // 
             // VerificationForm
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(653, 321);
+            Controls.Add(linkLabelVerificationEmail);
             Controls.Add(iconButtonVerify);
             Controls.Add(messageLabel);
             Controls.Add(verificationCodeTexBox);
@@ -120,5 +134,6 @@
         private TextBox verificationCodeTexBox;
         private Label messageLabel;
         private FontAwesome.Sharp.IconButton iconButtonVerify;
+        private LinkLabel linkLabelVerificationEmail;
     }
 }

@@ -203,18 +203,6 @@ namespace PresentationLayer.Forms
             AbrirFormulario(IconMenuRecordForm);
         }
 
-        private void iconMenuItemConfigurationEmployee_Click(object sender, EventArgs e)
-        {
-            var ConfigurationEmployeeForm = _provider.GetRequiredService<ConfigurationUserEmployeeForm>();
-            AbrirFormulario(ConfigurationEmployeeForm);
-        }
-
-        private void iconMenuItemConfigurationUserClient_Click(object sender, EventArgs e)
-        {
-            var ConfigurationClientForm = _provider.GetRequiredService<ConfigurationUserClientForm>();
-            AbrirFormulario(ConfigurationClientForm);
-        }
-
         private void IconMenusSettingsForm_Click(object sender, EventArgs e)
         {
             var IconMenusSettingsForm = _provider.GetRequiredService<SettingsUserForm>();

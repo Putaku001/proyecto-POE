@@ -6,6 +6,7 @@ using DataAccessLayer.DbConnection;
 using DataAccessLayer.DbSqlDataAccess;
 using DataAccessLayer.Repositories;
 using DataAccessLayer.Repositories.InterfacesRepositories;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PresentationLayer.Forms;
@@ -41,46 +42,46 @@ namespace CRM_Definitivo
         static IHostBuilder CreateHostBuilder()
         {
             return Host.CreateDefaultBuilder()
-                .ConfigureServices((context, services) =>
-                {
-                    //FORMS
-                    services.AddTransient<UsersForm>();
-                    services.AddTransient<LoginForm>();
-                    services.AddTransient<MenuForm>();
-                    services.AddTransient<ProyectsForm>();
-                    services.AddTransient<EditUsersForm>();
-                    services.AddTransient<AddUsersForm>();
-                    services.AddTransient<ProfileUserAccountForm>();
-                    services.AddTransient<ImageViewerForm>();
-                    services.AddTransient<ChangePasswordProfileForm>();
-                    services.AddTransient<ProjectsHistoric>();
-                    services.AddTransient<SettingsUserForm>();
-                    services.AddTransient<ConfigurationUserEmployeeForm>();
-                    services.AddTransient<ConfigurationUserClientForm>();
-                    services.AddTransient<PermissionForm>();
-                    services.AddTransient<HomeUserClientForm>();
-                    services.AddTransient<HomeUserEmployeeForm>();
+                    .ConfigureServices((context, services) =>
+                    {
+                        //FORMS
+                        services.AddTransient<UsersForm>();
+                        services.AddTransient<LoginForm>();
+                        services.AddTransient<MenuForm>();
+                        services.AddTransient<ProyectsForm>();
+                        services.AddTransient<EditUsersForm>();
+                        services.AddTransient<AddUsersForm>();
+                        services.AddTransient<ProfileUserAccountForm>();
+                        services.AddTransient<ImageViewerForm>();
+                        services.AddTransient<ChangePasswordProfileForm>();
+                        services.AddTransient<ProjectsHistoric>();
+                        services.AddTransient<SettingsUserForm>();
+                        services.AddTransient<PermissionForm>();
+                        services.AddTransient<HomeUserClientForm>();
+                        services.AddTransient<HomeUserEmployeeForm>();
 
 
-                    //BUSISNESSLAYER
-                    services.AddScoped<IUsersServices, UsersServices>();
-                    services.AddScoped<IPermisoServices, PermissionServices>();
-                    services.AddScoped<IRolServices, RolServices>();
-                    services.AddScoped<IListProyectsServices, ListProyectsServices>();
+                        //BUSISNESSLAYER
+                        services.AddScoped<IUsersServices, UsersServices>();
+                        services.AddScoped<IPermisoServices, PermissionServices>();
+                        services.AddScoped<IRolServices, RolServices>();
+                        services.AddScoped<IListProyectsServices, ListProyectsServices>();
 
-                    //REPOSITORIES
-                    services.AddScoped<IUsersRepositories, UsersRepositories>();
-                    services.AddScoped<IPermissionRepositories, PermissionRepositories>();
-                    services.AddScoped<IRolRepositories,  RolRepositories>();
-                    services.AddScoped<IListProyectsRepositories, ListProyectsRepositories>();
+                        //REPOSITORIES
+                        services.AddScoped<IUsersRepositories, UsersRepositories>();
+                        services.AddScoped<IPermissionRepositories, PermissionRepositories>();
+                        services.AddScoped<IRolRepositories,  RolRepositories>();
+                        services.AddScoped<IListProyectsRepositories, ListProyectsRepositories>();
 
-                    //REPORTS
-                    services.AddScoped<IUserReports, UserReports>();
+                        //REPORTS
+                        services.AddScoped<IUserReports, UserReports>();
 
-                    //SQLDATA
-                    services.AddSingleton<ISqlDataAccess, SqlDataAccess>();
-                    services.AddSingleton<User>();
-                });
+                        //SQLDATA
+                        services.AddSingleton<ISqlDataAccess, SqlDataAccess>();
+                        services.AddSingleton<User>();
+
+                        //Notificacioations
+                    });
         }
     }
 }
