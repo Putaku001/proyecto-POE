@@ -27,7 +27,9 @@ namespace CRM_Definitivo
         private readonly IRolServices _rolServices;
         private readonly IServiceProvider _serviceProvider;
 
-        public LoginForm(IServiceProvider serviceProvider, IUsersRepositories _usuarioRepositories, IUsersServices _usuarioServices, IRolServices rolServices, IListProyectsServices _proyectoServices, IUserReports userReports)
+        private readonly EmailSettings _emailSettings;
+
+        public LoginForm(IServiceProvider serviceProvider, IUsersRepositories _usuarioRepositories, IUsersServices _usuarioServices, IRolServices rolServices, IListProyectsServices _proyectoServices, IUserReports userReports, EmailSettings emailSettings)
         {
             InitializeComponent();           
             usuarioRepositories = _usuarioRepositories;
@@ -36,6 +38,7 @@ namespace CRM_Definitivo
             proyectoServices = _proyectoServices;
             _userReports = userReports;
             _serviceProvider = serviceProvider;
+            _emailSettings = emailSettings;
 
         }
 
@@ -155,7 +158,7 @@ namespace CRM_Definitivo
                 user.VerificationCode = verificationCode;
 
                 // Redirigir al formulario de verificación
-                VerificationForm verificationForm = new VerificationForm(user, usuarioServices, idUserVerification);
+                VerificationForm verificationForm = new VerificationForm(user, _emailSettings , usuarioServices, idUserVerification);
                 verificationForm.ShowDialog();
             }
             else

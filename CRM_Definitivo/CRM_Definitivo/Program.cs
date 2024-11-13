@@ -79,6 +79,7 @@ namespace CRM_Definitivo
                         //SQLDATA
                         services.AddSingleton<ISqlDataAccess, SqlDataAccess>();
                         services.AddSingleton<User>();
+                        services.AddSingleton<EmailSettings>();
 
                         //Notificacioations
                     });

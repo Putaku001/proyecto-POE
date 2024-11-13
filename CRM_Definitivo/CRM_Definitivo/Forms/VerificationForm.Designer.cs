@@ -59,22 +59,25 @@
             // 
             // verificationCodeTexBox
             // 
-            verificationCodeTexBox.Location = new Point(208, 177);
+            verificationCodeTexBox.BackColor = Color.White;
+            verificationCodeTexBox.BorderStyle = BorderStyle.None;
+            verificationCodeTexBox.ForeColor = Color.Black;
+            verificationCodeTexBox.Location = new Point(216, 163);
             verificationCodeTexBox.Margin = new Padding(3, 4, 3, 4);
             verificationCodeTexBox.Name = "verificationCodeTexBox";
-            verificationCodeTexBox.Size = new Size(258, 26);
+            verificationCodeTexBox.Size = new Size(258, 19);
             verificationCodeTexBox.TabIndex = 0;
             verificationCodeTexBox.TextAlign = HorizontalAlignment.Center;
             // 
             // messageLabel
             // 
             messageLabel.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 161);
-            messageLabel.ForeColor = Color.DimGray;
+            messageLabel.ForeColor = Color.White;
             messageLabel.Location = new Point(97, 93);
             messageLabel.Name = "messageLabel";
-            messageLabel.Size = new Size(483, 80);
+            messageLabel.Size = new Size(483, 50);
             messageLabel.TabIndex = 2;
-            messageLabel.Text = "Introduce el codigo de 6 digitos que se te ha enviado al numero de telefono asociado a su cuenta en Tilinizos77";
+            messageLabel.Text = "Introduce el codigo de 6 digitos que se te ha enviado al numero de telefono asociado a su cuenta en Tilinazos77";
             // 
             // iconButtonVerify
             // 
@@ -86,7 +89,7 @@
             iconButtonVerify.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButtonVerify.IconSize = 34;
             iconButtonVerify.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButtonVerify.Location = new Point(256, 225);
+            iconButtonVerify.Location = new Point(258, 207);
             iconButtonVerify.Name = "iconButtonVerify";
             iconButtonVerify.Size = new Size(175, 33);
             iconButtonVerify.TabIndex = 5;
@@ -110,6 +113,7 @@
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ControlDark;
             ClientSize = new Size(653, 321);
             Controls.Add(linkLabelVerificationEmail);
             Controls.Add(iconButtonVerify);

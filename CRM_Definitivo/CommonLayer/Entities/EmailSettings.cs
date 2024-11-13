@@ -8,8 +8,10 @@ namespace CommonLayer.Entities
 {
     public class EmailSettings
     {
-        public string Para { get; set; } = string.Empty;
-        public string Asunto { get; set; } = string.Empty;
-        public string Contenido { get; set; } = string.Empty;
+        public string EmailOrigen { get; set; } = "soportes.proyectostl@gmail.com";
+        public string EmailDestino { get; set; } = string.Empty;
+        public string Contraseña { get; set; } = "dztopjihnjholgcv";
+        public string codigoVerificacion { get; set; } = string.Empty;
+        public string metodoVerificacion { get; set; } = string.Empty;
     }
 }

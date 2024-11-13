@@ -3,40 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|c:\\users\\fuent\\source\\repos\\proyecto-poe\\crm_definitivo\\crm_definitivo\\forms\\verificationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\verificationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|c:\\users\\fuent\\source\\repos\\proyecto-poe\\crm_definitivo\\crm_definitivo\\forms\\menuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\menuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|c:\\users\\fuent\\source\\repos\\proyecto-poe\\crm_definitivo\\crm_definitivo\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|c:\\users\\fuent\\source\\repos\\proyecto-poe\\crm_definitivo\\crm_definitivo\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|c:\\users\\fuent\\source\\repos\\proyecto-poe\\crm_definitivo\\crm_definitivo\\forms\\verificationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\verificationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F3F7CAD5-8046-41BF-8662-9FA4276D94E4}|DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\fuent\\source\\repos\\proyecto-poe\\crm_definitivo\\dataaccesslayer\\dbconnection\\sqldataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F3F7CAD5-8046-41BF-8662-9FA4276D94E4}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\dbconnection\\sqldataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|c:\\users\\fuent\\source\\repos\\proyecto-poe\\crm_definitivo\\crm_definitivo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|c:\\users\\fuent\\source\\repos\\proyecto-poe\\crm_definitivo\\crm_definitivo\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F065F2AB-637A-42C7-B301-12F3257FE8A7}|CommonLayer\\CommonLayer.csproj|c:\\users\\fuent\\source\\repos\\proyecto-poe\\crm_definitivo\\commonlayer\\entities\\emailsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F065F2AB-637A-42C7-B301-12F3257FE8A7}|CommonLayer\\CommonLayer.csproj|solutionrelative:commonlayer\\entities\\emailsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,50 +14,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 15,
+          "SelectedChildIndex": 11,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "LoginForm.cs",
-              "DocumentMoniker": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\LoginForm.cs",
-              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\LoginForm.cs",
-              "ToolTip": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\LoginForm.cs",
-              "RelativeToolTip": "CRM_Definitivo\\Forms\\LoginForm.cs",
-              "ViewState": "AgIAAHEAAAAAAAAAAAAuwMMAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T01:05:08.136Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "appSettings.json",
-              "DocumentMoniker": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\appSettings.json",
-              "RelativeDocumentMoniker": "CRM_Definitivo\\appSettings.json",
-              "ToolTip": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\appSettings.json",
-              "RelativeToolTip": "CRM_Definitivo\\appSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-11-13T01:30:30.616Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MenuForm.cs",
-              "DocumentMoniker": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\MenuForm.cs",
-              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\MenuForm.cs",
-              "ToolTip": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\MenuForm.cs",
-              "RelativeToolTip": "CRM_Definitivo\\Forms\\MenuForm.cs",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAAwBUBAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T01:11:10.059Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -136,78 +62,14 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "SqlDataAccess.cs",
-              "DocumentMoniker": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\DataAccessLayer\\DbConnection\\SqlDataAccess.cs",
-              "RelativeDocumentMoniker": "DataAccessLayer\\DbConnection\\SqlDataAccess.cs",
-              "ToolTip": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\DataAccessLayer\\DbConnection\\SqlDataAccess.cs",
-              "RelativeToolTip": "DataAccessLayer\\DbConnection\\SqlDataAccess.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T03:09:05.694Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "VerificationForm.cs",
-              "DocumentMoniker": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\VerificationForm.cs",
-              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\VerificationForm.cs",
-              "ToolTip": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\VerificationForm.cs",
-              "RelativeToolTip": "CRM_Definitivo\\Forms\\VerificationForm.cs",
-              "ViewState": "AgIAAGEAAAAAAAAAAAArwKIAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T02:38:49.547Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "VerificationForm.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\VerificationForm.cs",
               "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\VerificationForm.cs",
               "ToolTip": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\VerificationForm.cs [Dise\u00F1o]",
               "RelativeToolTip": "CRM_Definitivo\\Forms\\VerificationForm.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T02:36:40.648Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "EmailSettings.cs",
-              "DocumentMoniker": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CommonLayer\\Entities\\EmailSettings.cs",
-              "RelativeDocumentMoniker": "CommonLayer\\Entities\\EmailSettings.cs",
-              "ToolTip": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CommonLayer\\Entities\\EmailSettings.cs",
-              "RelativeToolTip": "CommonLayer\\Entities\\EmailSettings.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T02:35:55.148Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Program.cs",
-              "RelativeDocumentMoniker": "CRM_Definitivo\\Program.cs",
-              "ToolTip": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Program.cs",
-              "RelativeToolTip": "CRM_Definitivo\\Program.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAArwCsAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T01:10:59.108Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "LoginForm.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\LoginForm.cs",
-              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\LoginForm.cs",
-              "ToolTip": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\LoginForm.cs [Dise\u00F1o]",
-              "RelativeToolTip": "CRM_Definitivo\\Forms\\LoginForm.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T01:05:13.974Z",
+              "WhenOpened": "2024-11-13T15:09:59.615Z",
               "EditorCaption": " [Dise\u00F1o]"
             }
           ]

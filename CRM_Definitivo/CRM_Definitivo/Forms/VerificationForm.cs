@@ -15,25 +15,22 @@ namespace PresentationLayer.Forms
 {
     public partial class VerificationForm : Form
     {
-        private string idUserVerification;
+        private string userAccount;
         private readonly User _user;
+        private readonly EmailSettings _emailSettings;
         private readonly IUsersServices _usuarioServices;
         private DateTime _codeTime;
 
-        public VerificationForm(User user, IUsersServices usuarioServices, string _idUserVerification)
+        public VerificationForm(User user, EmailSettings email, IUsersServices usuarioServices, string _userAccount)
         {
             InitializeComponent();
-            idUserVerification = _idUserVerification;
+            userAccount = _userAccount;
             _user = user;
+            _emailSettings = email;
             _usuarioServices = usuarioServices;
             _codeTime = DateTime.Now;
-        }
 
-        string EmailOrigen = "soportes.proyectostl@gmail.com";
-        string EmailDestino;
-        string Contraseña = "dztopjihnjholgcv";
-        string codigoVerificacion;
-        string metodoVerificacion;
+        }
 
         private string GenerateCodeVerification()
         {
@@ -45,29 +42,31 @@ namespace PresentationLayer.Forms
 
         private void linkLabelVerificationEmail_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            metodoVerificacion = "Correo";
+            
+            
+            _emailSettings.metodoVerificacion = "Correo";
 
-            codigoVerificacion = GenerateCodeVerification();
+            _emailSettings.codigoVerificacion = GenerateCodeVerification();
 
             var user = _usuarioServices.GetUsers();
 
-            var users = user.Where(u => u.UserAccount == idUserVerification).ToList();
+            var users = user.Where(u => u.UserAccount == userAccount).ToList();
 
             foreach (var getEmail in users)
             {
                 var Email = getEmail.Email;
-                EmailDestino = Email;
+                _emailSettings.EmailDestino = Email;
 
             }
 
             //ya uno vez creando los 3 datos que ocuparemos se va crear dos objetos para el mensaje y el otro para el enio del mensaje
-            MailMessage mailMessage = new MailMessage(EmailOrigen, EmailDestino, "Recuperación de contraseña",
+            MailMessage mailMessage = new MailMessage(_emailSettings.EmailOrigen, _emailSettings.EmailDestino, "Recuperación de contraseña",
             $@"
-            <p>Estimado/a {idUserVerification},</p>
+            <p>Estimado/a {userAccount},</p>
 
             <p>Hemos recibido una solicitud para restablecer la contraseña de tu cuenta. Para completar el proceso de recuperación de contraseña, utiliza el siguiente código de verificación:</p>
 
-            <p style='font-size: 18px; color: #2E86C1;'><b>{codigoVerificacion}</b></p>
+            <p style='font-size: 18px; color: #2E86C1;'><b>{_emailSettings.codigoVerificacion}</b></p>
 
             <p>Por favor, introduce este código en la pantalla de verificación para restablecer tu contraseña y acceder nuevamente a tu cuenta. Este código es válido solo por un período limitado, por lo que te recomendamos que completes el proceso lo antes posible.</p>
 
@@ -88,29 +87,23 @@ namespace PresentationLayer.Forms
             smtpClient.UseDefaultCredentials = false;
             smtpClient.Host = "smtp.gmail.com";
             smtpClient.Port = 587;
-            smtpClient.Credentials = new System.Net.NetworkCredential(EmailOrigen, Contraseña);
+            smtpClient.Credentials = new System.Net.NetworkCredential(_emailSettings.EmailOrigen, _emailSettings.Contraseña);
 
             smtpClient.Send(mailMessage);
 
             smtpClient.Dispose();
+
+            MessageBox.Show("Se le ha enviado correctamente el correo para restablecer la conraseña", "Restablecer contraseña", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
 
         public void HabilitarCambioContraseña()
         {
-
-            if (verificationCodeTexBox.Text == codigoVerificacion)
+            if (verificationCodeTexBox.Text == _emailSettings.codigoVerificacion)
             {
-                //MessageBox.Show("Código correcto. Formulario de cambio de contraseña habilitado.");
-                //ChangePasswordForm changePasswordForm = new ChangePasswordForm(_user, _usuarioServices);
-                //changePasswordForm.ShowDialog();
-                //this.Close();
-                SetTimeVerificationGmail(codigoVerificacion);
+
+                SetTimeVerificationGmail(_emailSettings.codigoVerificacion);
             }
-            //else
-            //{
-            //    Console.WriteLine("El código ingresado es incorrecto.");
-            //}
         }
 
         public bool SetTimeVerificationGmail(string codeIngresado)
@@ -139,7 +132,7 @@ namespace PresentationLayer.Forms
 
         private void iconButtonVerify_Click(object sender, EventArgs e)
         {
-            if(metodoVerificacion == "Correo")
+            if(_emailSettings.metodoVerificacion == "Correo")
             {
                 HabilitarCambioContraseña();
             }
