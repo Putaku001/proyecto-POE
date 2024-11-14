@@ -76,3 +76,19 @@ C:\Users\blanc_ma7kouo\Desktop\PutakUnivo\proogra\aahh\proyecto poe par 3\proyec
 C:\Users\blanc_ma7kouo\Desktop\PutakUnivo\proogra\aahh\proyecto poe par 3\proyecto-POE\CRM_Definitivo\DataAccessLayer\obj\Debug\net8.0\refint\DataAccessLayer.dll
 C:\Users\blanc_ma7kouo\Desktop\PutakUnivo\proogra\aahh\proyecto poe par 3\proyecto-POE\CRM_Definitivo\DataAccessLayer\obj\Debug\net8.0\DataAccessLayer.pdb
 C:\Users\blanc_ma7kouo\Desktop\PutakUnivo\proogra\aahh\proyecto poe par 3\proyecto-POE\CRM_Definitivo\DataAccessLayer\obj\Debug\net8.0\ref\DataAccessLayer.dll
+C:\Users\kenne\OneDrive\Documentos\proyect poe\proyecto-POE\CRM_Definitivo\DataAccessLayer\bin\Debug\net8.0\DataAccessLayer.deps.json
+C:\Users\kenne\OneDrive\Documentos\proyect poe\proyecto-POE\CRM_Definitivo\DataAccessLayer\bin\Debug\net8.0\DataAccessLayer.dll
+C:\Users\kenne\OneDrive\Documentos\proyect poe\proyecto-POE\CRM_Definitivo\DataAccessLayer\bin\Debug\net8.0\DataAccessLayer.pdb
+C:\Users\kenne\OneDrive\Documentos\proyect poe\proyecto-POE\CRM_Definitivo\DataAccessLayer\bin\Debug\net8.0\CommonLayer.dll
+C:\Users\kenne\OneDrive\Documentos\proyect poe\proyecto-POE\CRM_Definitivo\DataAccessLayer\bin\Debug\net8.0\CommonLayer.pdb
+C:\Users\kenne\OneDrive\Documentos\proyect poe\proyecto-POE\CRM_Definitivo\DataAccessLayer\obj\Debug\net8.0\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\kenne\OneDrive\Documentos\proyect poe\proyecto-POE\CRM_Definitivo\DataAccessLayer\obj\Debug\net8.0\DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kenne\OneDrive\Documentos\proyect poe\proyecto-POE\CRM_Definitivo\DataAccessLayer\obj\Debug\net8.0\DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\kenne\OneDrive\Documentos\proyect poe\proyecto-POE\CRM_Definitivo\DataAccessLayer\obj\Debug\net8.0\DataAccessLayer.AssemblyInfo.cs
+C:\Users\kenne\OneDrive\Documentos\proyect poe\proyecto-POE\CRM_Definitivo\DataAccessLayer\obj\Debug\net8.0\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\kenne\OneDrive\Documentos\proyect poe\proyecto-POE\CRM_Definitivo\DataAccessLayer\obj\Debug\net8.0\DataAccessLayer.sourcelink.json
+C:\Users\kenne\OneDrive\Documentos\proyect poe\proyecto-POE\CRM_Definitivo\DataAccessLayer\obj\Debug\net8.0\DataAcce.E67BD773.Up2Date
+C:\Users\kenne\OneDrive\Documentos\proyect poe\proyecto-POE\CRM_Definitivo\DataAccessLayer\obj\Debug\net8.0\DataAccessLayer.dll
+C:\Users\kenne\OneDrive\Documentos\proyect poe\proyecto-POE\CRM_Definitivo\DataAccessLayer\obj\Debug\net8.0\refint\DataAccessLayer.dll
+C:\Users\kenne\OneDrive\Documentos\proyect poe\proyecto-POE\CRM_Definitivo\DataAccessLayer\obj\Debug\net8.0\DataAccessLayer.pdb
+C:\Users\kenne\OneDrive\Documentos\proyect poe\proyecto-POE\CRM_Definitivo\DataAccessLayer\obj\Debug\net8.0\ref\DataAccessLayer.dll

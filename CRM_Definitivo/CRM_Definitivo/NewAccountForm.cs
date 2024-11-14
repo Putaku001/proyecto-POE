@@ -211,7 +211,7 @@ namespace PresentationLayer
         private void labelSelectedImageUser_Click(object sender, EventArgs e)
         {
             OpenFileDialog photoUser = new OpenFileDialog();
-            photoUser.Filter = "Archivos de imagenes (*.png; *.jpg; *.jpeg) | *.png; *.jpg; *.jpeg";
+            photoUser.Filter = "Archivos de imagenes (*.png; *.jpg; *.jpeg; *.WEBP) | *.png; *.jpg; *.jpeg; *.WEBP";
 
             if(photoUser.ShowDialog() == DialogResult.OK)
             {

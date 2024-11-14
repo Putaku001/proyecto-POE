@@ -59,7 +59,7 @@ namespace PresentationLayer.Forms
 
             }
 
-            //ya uno vez creando los 3 datos que ocuparemos se va crear dos objetos para el mensaje y el otro para el enio del mensaje
+            //ya una vez creando los 3 datos que ocuparemos se va crear dos objetos para el mensaje y el otro para el enio del mensaje
             MailMessage mailMessage = new MailMessage(_emailSettings.EmailOrigen, _emailSettings.EmailDestino, "Recuperación de contraseña",
             $@"
             <p>Estimado/a {userAccount},</p>
@@ -113,7 +113,7 @@ namespace PresentationLayer.Forms
                 MessageBox.Show("El codigo ha expirado, ha excedido el limite de 10 minutos establecido, mande una nueva solicitud");
                 return false;
             }
-            if (codeIngresado != verificationCodeTexBox.Text)
+            else if (codeIngresado != verificationCodeTexBox.Text)
             {
                 Console.WriteLine("El código ingresado es incorrecto.");
                 return false;
@@ -143,7 +143,7 @@ namespace PresentationLayer.Forms
                     MessageBox.Show("El codigo ha expirado, ha excedido el limite de 10 minutos establecido, mande una nueva solicitud");
 
                 }
-                if (verificationCodeTexBox.Text == _user.VerificationCode.ToString())
+                else if (verificationCodeTexBox.Text == _user.VerificationCode.ToString())
                 {
                     ChangePasswordForm changePasswordForm = new ChangePasswordForm(_user, _usuarioServices);
                     changePasswordForm.ShowDialog();

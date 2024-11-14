@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\PresentationLayer.csproj": {}
+    "C:\\Users\\kenne\\OneDrive\\Documentos\\proyect poe\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\PresentationLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\BusinessLayer\\BusinessLayer.csproj": {
+    "C:\\Users\\kenne\\OneDrive\\Documentos\\proyect poe\\proyecto-POE\\CRM_Definitivo\\BusinessLayer\\BusinessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\BusinessLayer\\BusinessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\kenne\\OneDrive\\Documentos\\proyect poe\\proyecto-POE\\CRM_Definitivo\\BusinessLayer\\BusinessLayer.csproj",
         "projectName": "BusinessLayer",
-        "projectPath": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\BusinessLayer\\BusinessLayer.csproj",
-        "packagesPath": "C:\\Users\\fuent\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\BusinessLayer\\obj\\",
+        "projectPath": "C:\\Users\\kenne\\OneDrive\\Documentos\\proyect poe\\proyecto-POE\\CRM_Definitivo\\BusinessLayer\\BusinessLayer.csproj",
+        "packagesPath": "C:\\Users\\kenne\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kenne\\OneDrive\\Documentos\\proyect poe\\proyecto-POE\\CRM_Definitivo\\BusinessLayer\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\fuent\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kenne\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +32,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\DataAccessLayer\\DataAccessLayer.csproj": {
-                "projectPath": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\DataAccessLayer\\DataAccessLayer.csproj"
+              "C:\\Users\\kenne\\OneDrive\\Documentos\\proyect poe\\proyecto-POE\\CRM_Definitivo\\DataAccessLayer\\DataAccessLayer.csproj": {
+                "projectPath": "C:\\Users\\kenne\\OneDrive\\Documentos\\proyect poe\\proyecto-POE\\CRM_Definitivo\\DataAccessLayer\\DataAccessLayer.csproj"
               }
             }
           }
@@ -70,21 +74,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CommonLayer\\CommonLayer.csproj": {
+    "C:\\Users\\kenne\\OneDrive\\Documentos\\proyect poe\\proyecto-POE\\CRM_Definitivo\\CommonLayer\\CommonLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CommonLayer\\CommonLayer.csproj",
+        "projectUniqueName": "C:\\Users\\kenne\\OneDrive\\Documentos\\proyect poe\\proyecto-POE\\CRM_Definitivo\\CommonLayer\\CommonLayer.csproj",
         "projectName": "CommonLayer",
-        "projectPath": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CommonLayer\\CommonLayer.csproj",
-        "packagesPath": "C:\\Users\\fuent\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CommonLayer\\obj\\",
+        "projectPath": "C:\\Users\\kenne\\OneDrive\\Documentos\\proyect poe\\proyecto-POE\\CRM_Definitivo\\CommonLayer\\CommonLayer.csproj",
+        "packagesPath": "C:\\Users\\kenne\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kenne\\OneDrive\\Documentos\\proyect poe\\proyecto-POE\\CRM_Definitivo\\CommonLayer\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\fuent\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kenne\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -130,21 +138,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\PresentationLayer.csproj": {
+    "C:\\Users\\kenne\\OneDrive\\Documentos\\proyect poe\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\PresentationLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\PresentationLayer.csproj",
+        "projectUniqueName": "C:\\Users\\kenne\\OneDrive\\Documentos\\proyect poe\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\PresentationLayer.csproj",
         "projectName": "PresentationLayer",
-        "projectPath": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\PresentationLayer.csproj",
-        "packagesPath": "C:\\Users\\fuent\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\obj\\",
+        "projectPath": "C:\\Users\\kenne\\OneDrive\\Documentos\\proyect poe\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\PresentationLayer.csproj",
+        "packagesPath": "C:\\Users\\kenne\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kenne\\OneDrive\\Documentos\\proyect poe\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\fuent\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kenne\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -158,14 +170,14 @@
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\BusinessLayer\\BusinessLayer.csproj": {
-                "projectPath": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\BusinessLayer\\BusinessLayer.csproj"
+              "C:\\Users\\kenne\\OneDrive\\Documentos\\proyect poe\\proyecto-POE\\CRM_Definitivo\\BusinessLayer\\BusinessLayer.csproj": {
+                "projectPath": "C:\\Users\\kenne\\OneDrive\\Documentos\\proyect poe\\proyecto-POE\\CRM_Definitivo\\BusinessLayer\\BusinessLayer.csproj"
               },
-              "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CommonLayer\\CommonLayer.csproj": {
-                "projectPath": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CommonLayer\\CommonLayer.csproj"
+              "C:\\Users\\kenne\\OneDrive\\Documentos\\proyect poe\\proyecto-POE\\CRM_Definitivo\\CommonLayer\\CommonLayer.csproj": {
+                "projectPath": "C:\\Users\\kenne\\OneDrive\\Documentos\\proyect poe\\proyecto-POE\\CRM_Definitivo\\CommonLayer\\CommonLayer.csproj"
               },
-              "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\DataAccessLayer\\DataAccessLayer.csproj": {
-                "projectPath": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\DataAccessLayer\\DataAccessLayer.csproj"
+              "C:\\Users\\kenne\\OneDrive\\Documentos\\proyect poe\\proyecto-POE\\CRM_Definitivo\\DataAccessLayer\\DataAccessLayer.csproj": {
+                "projectPath": "C:\\Users\\kenne\\OneDrive\\Documentos\\proyect poe\\proyecto-POE\\CRM_Definitivo\\DataAccessLayer\\DataAccessLayer.csproj"
               }
             }
           }
@@ -233,21 +245,25 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\DataAccessLayer\\DataAccessLayer.csproj": {
+    "C:\\Users\\kenne\\OneDrive\\Documentos\\proyect poe\\proyecto-POE\\CRM_Definitivo\\DataAccessLayer\\DataAccessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\DataAccessLayer\\DataAccessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\kenne\\OneDrive\\Documentos\\proyect poe\\proyecto-POE\\CRM_Definitivo\\DataAccessLayer\\DataAccessLayer.csproj",
         "projectName": "DataAccessLayer",
-        "projectPath": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\DataAccessLayer\\DataAccessLayer.csproj",
-        "packagesPath": "C:\\Users\\fuent\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\DataAccessLayer\\obj\\",
+        "projectPath": "C:\\Users\\kenne\\OneDrive\\Documentos\\proyect poe\\proyecto-POE\\CRM_Definitivo\\DataAccessLayer\\DataAccessLayer.csproj",
+        "packagesPath": "C:\\Users\\kenne\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kenne\\OneDrive\\Documentos\\proyect poe\\proyecto-POE\\CRM_Definitivo\\DataAccessLayer\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\fuent\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kenne\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -261,8 +277,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CommonLayer\\CommonLayer.csproj": {
-                "projectPath": "C:\\Users\\fuent\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CommonLayer\\CommonLayer.csproj"
+              "C:\\Users\\kenne\\OneDrive\\Documentos\\proyect poe\\proyecto-POE\\CRM_Definitivo\\CommonLayer\\CommonLayer.csproj": {
+                "projectPath": "C:\\Users\\kenne\\OneDrive\\Documentos\\proyect poe\\proyecto-POE\\CRM_Definitivo\\CommonLayer\\CommonLayer.csproj"
               }
             }
           }
@@ -311,7 +327,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

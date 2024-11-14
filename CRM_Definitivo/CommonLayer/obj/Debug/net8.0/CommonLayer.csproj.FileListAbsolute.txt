@@ -56,3 +56,15 @@ C:\Users\blanc_ma7kouo\Desktop\PutakUnivo\proogra\aahh\proyecto poe par 3\proyec
 C:\Users\blanc_ma7kouo\Desktop\PutakUnivo\proogra\aahh\proyecto poe par 3\proyecto-POE\CRM_Definitivo\CommonLayer\obj\Debug\net8.0\refint\CommonLayer.dll
 C:\Users\blanc_ma7kouo\Desktop\PutakUnivo\proogra\aahh\proyecto poe par 3\proyecto-POE\CRM_Definitivo\CommonLayer\obj\Debug\net8.0\CommonLayer.pdb
 C:\Users\blanc_ma7kouo\Desktop\PutakUnivo\proogra\aahh\proyecto poe par 3\proyecto-POE\CRM_Definitivo\CommonLayer\obj\Debug\net8.0\ref\CommonLayer.dll
+C:\Users\kenne\OneDrive\Documentos\proyect poe\proyecto-POE\CRM_Definitivo\CommonLayer\bin\Debug\net8.0\CommonLayer.deps.json
+C:\Users\kenne\OneDrive\Documentos\proyect poe\proyecto-POE\CRM_Definitivo\CommonLayer\bin\Debug\net8.0\CommonLayer.dll
+C:\Users\kenne\OneDrive\Documentos\proyect poe\proyecto-POE\CRM_Definitivo\CommonLayer\bin\Debug\net8.0\CommonLayer.pdb
+C:\Users\kenne\OneDrive\Documentos\proyect poe\proyecto-POE\CRM_Definitivo\CommonLayer\obj\Debug\net8.0\CommonLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kenne\OneDrive\Documentos\proyect poe\proyecto-POE\CRM_Definitivo\CommonLayer\obj\Debug\net8.0\CommonLayer.AssemblyInfoInputs.cache
+C:\Users\kenne\OneDrive\Documentos\proyect poe\proyecto-POE\CRM_Definitivo\CommonLayer\obj\Debug\net8.0\CommonLayer.AssemblyInfo.cs
+C:\Users\kenne\OneDrive\Documentos\proyect poe\proyecto-POE\CRM_Definitivo\CommonLayer\obj\Debug\net8.0\CommonLayer.csproj.CoreCompileInputs.cache
+C:\Users\kenne\OneDrive\Documentos\proyect poe\proyecto-POE\CRM_Definitivo\CommonLayer\obj\Debug\net8.0\CommonLayer.sourcelink.json
+C:\Users\kenne\OneDrive\Documentos\proyect poe\proyecto-POE\CRM_Definitivo\CommonLayer\obj\Debug\net8.0\CommonLayer.dll
+C:\Users\kenne\OneDrive\Documentos\proyect poe\proyecto-POE\CRM_Definitivo\CommonLayer\obj\Debug\net8.0\refint\CommonLayer.dll
+C:\Users\kenne\OneDrive\Documentos\proyect poe\proyecto-POE\CRM_Definitivo\CommonLayer\obj\Debug\net8.0\CommonLayer.pdb
+C:\Users\kenne\OneDrive\Documentos\proyect poe\proyecto-POE\CRM_Definitivo\CommonLayer\obj\Debug\net8.0\ref\CommonLayer.dll
