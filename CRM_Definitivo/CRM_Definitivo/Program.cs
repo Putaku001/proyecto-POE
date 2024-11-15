@@ -59,6 +59,7 @@ namespace CRM_Definitivo
                         services.AddTransient<PermissionForm>();
                         services.AddTransient<HomeUserClientForm>();
                         services.AddTransient<HomeUserEmployeeForm>();
+                        services.AddTransient<ProjectEmployeeForm>();
 
 
                         //BUSISNESSLAYER

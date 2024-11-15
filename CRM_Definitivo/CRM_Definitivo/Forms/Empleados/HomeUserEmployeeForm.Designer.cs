@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            labelUserAccount = new Label();
             panel1 = new Panel();
             panel9 = new Panel();
             panel7 = new Panel();
@@ -47,7 +48,6 @@
             panelInfoUsers = new Panel();
             iconButtonUserClients = new FontAwesome.Sharp.IconButton();
             iconButtonUserEmployee = new FontAwesome.Sharp.IconButton();
-            labelUserAccount = new Label();
             panelPrijectsAssignament = new Panel();
             pictureBox1 = new PictureBox();
             label5 = new Label();
@@ -81,6 +81,16 @@
             groupBox1.TabIndex = 8;
             groupBox1.TabStop = false;
             groupBox1.Text = "Inicio";
+            // 
+            // labelUserAccount
+            // 
+            labelUserAccount.AutoSize = true;
+            labelUserAccount.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold);
+            labelUserAccount.Location = new Point(262, 21);
+            labelUserAccount.Name = "labelUserAccount";
+            labelUserAccount.Size = new Size(125, 27);
+            labelUserAccount.TabIndex = 1;
+            labelUserAccount.Text = "nameUser";
             // 
             // panel1
             // 
@@ -290,16 +300,6 @@
             iconButtonUserEmployee.TabIndex = 4;
             iconButtonUserEmployee.Text = "Mis proyectos pendientes";
             iconButtonUserEmployee.UseVisualStyleBackColor = false;
-            // 
-            // labelUserAccount
-            // 
-            labelUserAccount.AutoSize = true;
-            labelUserAccount.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold);
-            labelUserAccount.Location = new Point(262, 20);
-            labelUserAccount.Name = "labelUserAccount";
-            labelUserAccount.Size = new Size(125, 27);
-            labelUserAccount.TabIndex = 1;
-            labelUserAccount.Text = "nameUser";
             // 
             // panelPrijectsAssignament
             // 

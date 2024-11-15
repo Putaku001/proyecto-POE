@@ -36,7 +36,8 @@ namespace BusinessLayer.Services
 
         //SERVICICIOS PARA LLAMAR A LAS TABLAS ADMINS, CLIENTES Y EMPLEADOS DE MENU
         public IEnumerable<Admins> GetAdmins() =>  _usuariosrepositoriess.GetAdmins();
-        public IEnumerable<Employee> GetEmployees() => _usuariosrepositoriess.GetEmployee();
+        public IEnumerable<Employees> GetEmployees() => _usuariosrepositoriess.GetEmployee();
+        public IEnumerable<Employee> GetByIdEmployees(int idEmployee) => _usuariosrepositoriess.GetByIdEmployee(idEmployee);
         public IEnumerable<Clients> GetClients() => _usuariosrepositoriess.GetClients();
 
 

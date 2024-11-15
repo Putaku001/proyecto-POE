@@ -23,5 +23,12 @@ namespace BusinessLayer.Services
         {
             return _listaProyectosRepositories.GetLisProyect();
         }
+        public IEnumerable<ListProyects> GetByIdProjects(int idProject) => _listaProyectosRepositories.GetByIdProjects(idProject);
+        public IEnumerable<ListProyects> GetByIdProjectsEmployee(int idEmployee) => _listaProyectosRepositories.GetByIdProjectsEmployee(idEmployee);
+        public void UpdateProjectsEmployee(int idProject, int idStatusProyect, byte[] file) => _listaProyectosRepositories.UpdateProjectsEmployee(idProject, idStatusProyect, file); 
+        //public byte[] LoadLinkFile (int idProject) => _listaProyectosRepositories.LoadLinkFile(idProject);
+        
+        //status project
+        public List<StatusProjects> GetStatusProjects() => _listaProyectosRepositories.GetStatusProjects();
     }
 }

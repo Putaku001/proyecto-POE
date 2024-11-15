@@ -1,15 +1,7 @@
 CREATE DATABASE SistemaProyectosDB;
 
-	SELECT * FROM menu						
+	SELECT * FROM proyect				
 
-insert into menu
-VALUES('Admin', 'iconMenuItemMenus')
-
-INSERT INTO permission
-VALUES(10)
-
-INSERT into rolPermission
-VALUES(1, 13)
 
 SELECT r.idRol, m.nameForm , p.idPermission 
 FROM rolPermission rp
@@ -19,46 +11,12 @@ JOIN menu m ON p.idMenu = m.idMenu
 JOIN users u on u.idRol = r.idRol
 WHERE u.idUser = @idUser;
 
-INSERT INT0 menu(name, nameForm)
-
-                SELECT COUNT(*) 
-                FROM rolPermission rp
-                INNER JOIN permission p ON rp.idPermission = p.idPermission
-
-SELECT * FROM rolPermission
-
-
-SELECT idUser, idRol, UserAccount, CONCAT(nameuser, ' ' ,lastName), email, birthdate, 
-                                        numberPhone, passworduser, country, city, statususer, DateRegistration 
-                                        FROM Users
-
-
-
-
-
-insert into roles(Rol)
-VALUES('Cliente')
-
-DELETE FROM Users;
-
-
-DELETE FROM Users
-WHERE idUser IN(25);  
 
 
 UPDATE Users
 SET email ='default@gmail.com'
 WHERE idUser = 15;
 
-
-EXEC sp_rename 'Users.FechaRegistro', 'DateRegistration', 'COLUMN';
-
-UPDATE Users SET FechaRegistro = '2024-10-25 23:38:20' 
-
-SELECT u.idUser, r.idRol, u.UserAccount, u.nameuser, u.lastName, u.email, u.birthdate, 
-                                        u.numberPhone, u.passworduser, u.country, u.city, u.statususer, u.DateRegistration
-                                 FROM Users u
-                                 INNER JOIN roles r on r.idRol = u.idRol
 
 
 update Users
@@ -67,9 +25,6 @@ WHERE idUser = 5
 
 ALTER TABLE Users
 ADD CONSTRAINT Fk_Roles FOREIGN KEY(idRol) REFERENCES roles(idRol)
-
-ALTER TABLE Users
-ADD email VARCHAR(100)
 
 CREATE TABLE Users 
 (
@@ -103,6 +58,7 @@ CREATE TABLE Clients (
 CREATE TABLE employee (
     idEmployee INT PRIMARY KEY identity(1,1),
     idUser INT,
+	namaEmployee NVARCHAR(100),
     comment VARCHAR(255),
     workStation VARCHAR(50),
 	FOREIGN KEY (idUser) REFERENCES Users(idUser) ON DELETE SET NULL
@@ -122,6 +78,7 @@ CREATE TABLE proyect (
     idStatusProyect INT,
     idClient INT null,
     idEmployee INT,
+	[file] varbinary(MAX)
     FOREIGN KEY (idStatusProyect) REFERENCES statusProyect(idStatusProyect),
     FOREIGN KEY (idClient) REFERENCES Clients(idCliente)ON DELETE SET NULL,
     FOREIGN KEY (idEmployee) REFERENCES employee(idEmployee) ON DELETE SET NULL

@@ -50,6 +50,7 @@ namespace PresentationLayer.Forms
             proyectoServices = _proyectoServices;
             _userReports = userReports;
             LoadImageProfileUser(AuthUser.idUser);
+            loadPermisos();
             timer = new System.Windows.Forms.Timer();
             timer.Interval = 1000;
             timer.Tick += Timer_tick;
@@ -73,6 +74,28 @@ namespace PresentationLayer.Forms
             //path1.CloseAllFigures();
 
             //panelUsersView.Region = new Region(path1);
+        }
+
+        public void loadPermisos()
+        {
+            groupBox1.Visible = false;
+
+            if(CaptureData.IdRol == 1)
+            {
+                groupBox1.Visible = true;
+            }
+            else if (CaptureData.IdRol == 2)
+            {
+                groupBox1.Controls.Clear();
+                var HomeUserEmployeeForm = _provider.GetRequiredService<HomeUserEmployeeForm>();
+                AbrirFormulario(HomeUserEmployeeForm);
+            }
+            else if(CaptureData.IdRol == 4)
+            {
+                groupBox1.Controls.Clear();
+                var HomeUserClientForm = _provider.GetRequiredService<HomeUserClientForm>();
+                AbrirFormulario(HomeUserClientForm);
+            }
         }
 
 
@@ -321,7 +344,11 @@ namespace PresentationLayer.Forms
             ImageViewerForm.ShowDialog();
         }
 
-        
+        private void iconMenuItemProjectsEmployee_Click(object sender, EventArgs e)
+        {
+            var iconMenuItemProjectsEmployee = _provider.GetRequiredService<ProjectEmployeeForm>();
+            AbrirFormulario(iconMenuItemProjectsEmployee);
+        }
     }
 
 }

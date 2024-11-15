@@ -185,7 +185,7 @@
             // 
             pictureBoxImageByIdUser.BackColor = Color.DarkSlateGray;
             pictureBoxImageByIdUser.Image = Properties.Resources.user_icon_icons_com_57997;
-            pictureBoxImageByIdUser.Location = new Point(12, 9);
+            pictureBoxImageByIdUser.Location = new Point(7, 7);
             pictureBoxImageByIdUser.Name = "pictureBoxImageByIdUser";
             pictureBoxImageByIdUser.Size = new Size(46, 47);
             pictureBoxImageByIdUser.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -324,6 +324,7 @@
             iconMenuItemProjectsEmployee.Name = "iconMenuItemProjectsEmployee";
             iconMenuItemProjectsEmployee.Size = new Size(51, 32);
             iconMenuItemProjectsEmployee.TextImageRelation = TextImageRelation.Overlay;
+            iconMenuItemProjectsEmployee.Click += iconMenuItemProjectsEmployee_Click;
             // 
             // IconMenuRecordForm
             // 
@@ -402,12 +403,12 @@
             // groupBox1
             // 
             groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            groupBox1.Controls.Add(labelUserAccount);
             groupBox1.Controls.Add(lblHoraUsuario);
             groupBox1.Controls.Add(panelUsersView);
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(panel8);
             groupBox1.Controls.Add(panelInfoUsers);
-            groupBox1.Controls.Add(labelUserAccount);
             groupBox1.Controls.Add(panelPrijectsAssignament);
             groupBox1.Location = new Point(6, 9);
             groupBox1.Name = "groupBox1";
@@ -731,7 +732,6 @@
             // 
             // label1
             // 
-            label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold);
             label1.Location = new Point(19, 21);
             label1.Name = "label1";
@@ -851,7 +851,7 @@
             // 
             labelUserAccount.AutoSize = true;
             labelUserAccount.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold);
-            labelUserAccount.Location = new Point(268, 21);
+            labelUserAccount.Location = new Point(265, 21);
             labelUserAccount.Name = "labelUserAccount";
             labelUserAccount.Size = new Size(125, 27);
             labelUserAccount.TabIndex = 1;

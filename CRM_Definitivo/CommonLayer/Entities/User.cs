@@ -31,7 +31,7 @@ namespace CommonLayer.Entities
         public int idAdmin { get; set; }
         public int idUser { get; set; }
     }
-    public class Employee
+    public class Employees
     {
         public int idEmployee { get; set; }
         public int idUser { get; set; }

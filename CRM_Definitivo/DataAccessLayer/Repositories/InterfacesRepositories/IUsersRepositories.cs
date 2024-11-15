@@ -22,10 +22,11 @@ namespace DataAccessLayer.Repositories.InterfacesRepositories
 
         //METODO PARA LLAMAR A LAS TABLAS ADMINS, CLIENTES Y EMPLEADOS DE MENU
         IEnumerable<Admins> GetAdmins();
-        IEnumerable<Employee> GetEmployee();
+        IEnumerable<Employees> GetEmployee();
         IEnumerable<Clients> GetClients();
 
 
         byte[] GetProfileImage(int idUser);
+        IEnumerable<Employee> GetByIdEmployee(int idEmployee);
     }
 }

@@ -187,13 +187,23 @@ namespace DataAccessLayer.Repositories
                 return connection.Query<Admins>(query);
             }
         }
-        public IEnumerable<Employee> GetEmployee()
+        public IEnumerable<Employees> GetEmployee()
         {
             using (var connection = _dbConnection.GetConnection())
             {
                 string query = "SELECT * FROM Employee";
 
-                return connection.Query<Employee>(query);
+                return connection.Query<Employees>(query);
+            }
+        }
+
+        public IEnumerable<Employee> GetByIdEmployee(int idEmployee)
+        {
+            using(var connection = _dbConnection.GetConnection())
+            {
+                string query = "SELECT * FROM Employee WHERE idEmployee = @idEmployee";
+
+                return connection.Query<Employee>(query, new { idEmployee });
             }
         }
         public IEnumerable<Clients> GetClients()

@@ -13,8 +13,11 @@ namespace CommonLayer.Entities
         public string description { get; set; }
         public int idClient { get; set; }
         public int idEmployee { get; set; }
+        public byte[] file {  get; set; }
+        public int idStatusProyect { get; set; }
         public DateTime dateInit {  get; set; }
         public DateTime dateEnd { get; set; }
+        
 
     }
 }

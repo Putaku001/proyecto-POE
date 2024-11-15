@@ -22,8 +22,9 @@ namespace BusinessLayer.Services.Interfaces
 
         //INTERFAZ DE SERVICICIOS PARA LLAMAR A LAS TABLAS ADMINS, CLIENTES Y EMPLEADOS DE MENU
         IEnumerable<Admins> GetAdmins();
-        IEnumerable<Employee> GetEmployees();
+        IEnumerable<Employees> GetEmployees();
         IEnumerable<Clients> GetClients();
         byte[] GetProfileImage(int idUser);
+        IEnumerable<Employee> GetByIdEmployees(int idEmployee);
     }
 }

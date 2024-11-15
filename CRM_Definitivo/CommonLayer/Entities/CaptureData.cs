@@ -8,6 +8,8 @@ namespace CommonLayer.Entities
 {
     public static class CaptureData
     {
+        public static int idUser {  get; set; }
+        public static int IdRol { get; set; }
         public static string UserAccount { get; set; }
         public static string NameUser { get; set; }
         public static string LastName { get; set; }

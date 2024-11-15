@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            label2 = new Label();
+            labelUserAccount = new Label();
             panel1 = new Panel();
             panel2 = new Panel();
             panel9 = new Panel();
@@ -43,7 +43,6 @@
             label11 = new Label();
             panelInfoUsers = new Panel();
             pictureBox3 = new PictureBox();
-            labelUserAccount = new Label();
             panelPrijectsAssignament = new Panel();
             pictureBox1 = new PictureBox();
             label5 = new Label();
@@ -67,14 +66,13 @@
             // 
             groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             groupBox1.BackgroundImageLayout = ImageLayout.None;
-            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(labelUserAccount);
             groupBox1.Controls.Add(panel1);
             groupBox1.Controls.Add(panel10);
             groupBox1.Controls.Add(lblHoraUsuario);
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(panel8);
             groupBox1.Controls.Add(panelInfoUsers);
-            groupBox1.Controls.Add(labelUserAccount);
             groupBox1.Controls.Add(panelPrijectsAssignament);
             groupBox1.Controls.Add(panelUsersView);
             groupBox1.Location = new Point(12, 10);
@@ -84,15 +82,15 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Inicio";
             // 
-            // label2
+            // labelUserAccount
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold);
-            label2.Location = new Point(257, 23);
-            label2.Name = "label2";
-            label2.Size = new Size(18, 27);
-            label2.TabIndex = 30;
-            label2.Text = ",";
+            labelUserAccount.AutoSize = true;
+            labelUserAccount.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold);
+            labelUserAccount.Location = new Point(262, 21);
+            labelUserAccount.Name = "labelUserAccount";
+            labelUserAccount.Size = new Size(125, 27);
+            labelUserAccount.TabIndex = 1;
+            labelUserAccount.Text = "nameUser";
             // 
             // panel1
             // 
@@ -232,16 +230,6 @@
             pictureBox3.TabIndex = 32;
             pictureBox3.TabStop = false;
             // 
-            // labelUserAccount
-            // 
-            labelUserAccount.AutoSize = true;
-            labelUserAccount.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold);
-            labelUserAccount.Location = new Point(270, 21);
-            labelUserAccount.Name = "labelUserAccount";
-            labelUserAccount.Size = new Size(125, 27);
-            labelUserAccount.TabIndex = 1;
-            labelUserAccount.Text = "nameUser";
-            // 
             // panelPrijectsAssignament
             // 
             panelPrijectsAssignament.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
@@ -380,6 +368,5 @@
         private Label label3;
         private Panel panel2;
         private PictureBox pictureBox3;
-        private Label label2;
     }
 }

@@ -117,6 +117,8 @@ namespace CRM_Definitivo
                 AuthUser.UserAccount = user.UserAccount;
                 AuthUser.idRol = user.idRol;
 
+                CaptureData.idUser = user.IdUser;
+                CaptureData.IdRol = user.idRol;
                 CaptureData.UserAccount = user.UserAccount;
                 CaptureData.NameUser = user.NameUser;
                 CaptureData.LastName = user.LastName;
