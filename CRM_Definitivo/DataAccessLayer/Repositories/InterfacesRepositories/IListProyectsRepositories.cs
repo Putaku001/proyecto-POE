@@ -12,9 +12,10 @@ namespace DataAccessLayer.Repositories.InterfacesRepositories
     {
         IEnumerable<ListProyects> GetByIdProjects(int idProject);
         IEnumerable<ListProyects> GetByIdProjectsEmployee(int idEmployee);
+        IEnumerable<TaskEmployee> GetByIdTaskEmployee(int idProyect);
         IEnumerable<ListProyects> GetLisProyect();
         List<StatusProjects> GetStatusProjects();
         //byte[] LoadLinkFile(int idProject);
-        void UpdateProjectsEmployee(int idProject, int idStatusProject, byte[] file);
+        void UpdateTaskEmployee(int idTask, byte[] file);
     }
 }

@@ -3,6 +3,7 @@ using BusinessLayer.Services.Interfaces;
 using BusinessLayer.Services.InterfacesServices;
 using CommonLayer.Entities;
 using DataAccessLayer.Repositories;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using PresentationLayer.Reports;
 using System;
@@ -24,6 +25,7 @@ namespace PresentationLayer.Forms
         private IRolServices _rolservices;
         private IUsersServices _usuersservices;
         private readonly IUserReports _userReports;
+
         public UsersForm(IUsersServices usuarioServices, IRolServices rolServices, IUserReports userReports)
         {
             InitializeComponent();
@@ -49,6 +51,7 @@ namespace PresentationLayer.Forms
 
             dgvUsuarios.Columns["idUser"].Visible = false;
             dgvUsuarios.Columns["Image"].Visible = false ;
+            dgvUsuarios.Columns["idRol"].Visible = false;
 
 
         }
@@ -61,6 +64,7 @@ namespace PresentationLayer.Forms
         private void pbAñadirUsuario_Click(object sender, EventArgs e)
         {
             AddUsersForm formularioAñadir = new AddUsersForm(_usuersservices, _rolservices);
+            //var formularioAñadir = _serviceProvider.GetRequiredService<AddUsersForm>();
 
             formularioAñadir.AddUsuario += (s, args) =>
             {
@@ -98,6 +102,7 @@ namespace PresentationLayer.Forms
             };
 
             AddUsersForm editarUsuarioForm = new AddUsersForm(_usuersservices, _rolservices, usuarioSeleccionado);
+            //var editarUsuarioForm = _serviceProvider.GetRequiredService<AddUsersForm>();
 
             editarUsuarioForm.EditUsuariosHandler += (s, args) => LoadData();
 

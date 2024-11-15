@@ -742,3 +742,10 @@ C:\Users\kenne\OneDrive\Documentos\proyect poe\proyecto-POE\CRM_Definitivo\CRM_D
 C:\Users\kenne\OneDrive\Documentos\proyect poe\proyecto-POE\CRM_Definitivo\CRM_Definitivo\obj\Debug\net8.0-windows\PresentationLayer.pdb
 C:\Users\kenne\OneDrive\Documentos\proyect poe\proyecto-POE\CRM_Definitivo\CRM_Definitivo\obj\Debug\net8.0-windows\PresentationLayer.genruntimeconfig.cache
 C:\Users\kenne\OneDrive\Documentos\proyect poe\proyecto-POE\CRM_Definitivo\CRM_Definitivo\obj\Debug\net8.0-windows\ref\PresentationLayer.dll
+C:\Users\fuent\Downloads\proyecto-POE\CRM_Definitivo\CRM_Definitivo\bin\Debug\net8.0-windows\BouncyCastle.Cryptography.dll
+C:\Users\fuent\Downloads\proyecto-POE\CRM_Definitivo\CRM_Definitivo\bin\Debug\net8.0-windows\MailKit.dll
+C:\Users\fuent\Downloads\proyecto-POE\CRM_Definitivo\CRM_Definitivo\bin\Debug\net8.0-windows\MimeKit.dll
+C:\Users\fuent\Downloads\proyecto-POE\CRM_Definitivo\CRM_Definitivo\obj\Debug\net8.0-windows\PresentationLayer.Forms.Cliente.HomeUserClientForm.resources
+C:\Users\fuent\Downloads\proyecto-POE\CRM_Definitivo\CRM_Definitivo\obj\Debug\net8.0-windows\PresentationLayer.Forms.Empleados.HomeUserEmployeeForm.resources
+C:\Users\fuent\Downloads\proyecto-POE\CRM_Definitivo\CRM_Definitivo\obj\Debug\net8.0-windows\PresentationLayer.Forms.ImageViewerForm.resources
+C:\Users\fuent\Downloads\proyecto-POE\CRM_Definitivo\CRM_Definitivo\obj\Debug\net8.0-windows\PresentationLayer.Forms.Admin.InfoEmployeeForm.resources

@@ -12,9 +12,10 @@ namespace BusinessLayer.Services.InterfacesServices
     {
         IEnumerable<ListProyects> GetByIdProjects(int idProject);
         IEnumerable<ListProyects> GetByIdProjectsEmployee(int idEmployee);
+        IEnumerable<TaskEmployee> GetByIdTaskEmployee(int idProyect);
         IEnumerable<ListProyects> GetLisProyect();
         List<StatusProjects> GetStatusProjects();
-        void UpdateProjectsEmployee(int idProject, int idStatusProyect, byte[] file);
+        void UpdateTaskEmployee(int idTask, byte[] file);
         //byte[] LoadLinkFile (int idProject);
     }
 }

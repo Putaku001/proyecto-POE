@@ -35,6 +35,8 @@
             cboRol = new ComboBox();
             label5 = new Label();
             gbDetallesUsuarios = new GroupBox();
+            label11 = new Label();
+            textBoxEmail = new TextBox();
             lblUserAccount = new Label();
             txtUserAccount = new TextBox();
             dtpBirthDate = new DateTimePicker();
@@ -55,8 +57,6 @@
             label6 = new Label();
             btnGuardar = new FontAwesome.Sharp.IconButton();
             btnEditar = new FontAwesome.Sharp.IconButton();
-            label11 = new Label();
-            textBoxEmail = new TextBox();
             gbDetallesUsuarios.SuspendLayout();
             gbProvincia.SuspendLayout();
             SuspendLayout();
@@ -95,6 +95,7 @@
             cboRol.Name = "cboRol";
             cboRol.Size = new Size(248, 27);
             cboRol.TabIndex = 7;
+            cboRol.SelectedIndexChanged += cboRol_SelectedIndexChanged;
             // 
             // label5
             // 
@@ -131,6 +132,22 @@
             gbDetallesUsuarios.TabIndex = 15;
             gbDetallesUsuarios.TabStop = false;
             gbDetallesUsuarios.Text = "Datos Del Usuario";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(30, 89);
+            label11.Name = "label11";
+            label11.Size = new Size(70, 19);
+            label11.TabIndex = 22;
+            label11.Text = "Correo:";
+            // 
+            // textBoxEmail
+            // 
+            textBoxEmail.Location = new Point(112, 86);
+            textBoxEmail.Name = "textBoxEmail";
+            textBoxEmail.Size = new Size(248, 28);
+            textBoxEmail.TabIndex = 23;
             // 
             // lblUserAccount
             // 
@@ -318,22 +335,6 @@
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = false;
             btnEditar.Click += btnEditar_Click;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new Point(30, 89);
-            label11.Name = "label11";
-            label11.Size = new Size(70, 19);
-            label11.TabIndex = 22;
-            label11.Text = "Correo:";
-            // 
-            // textBoxEmail
-            // 
-            textBoxEmail.Location = new Point(112, 86);
-            textBoxEmail.Name = "textBoxEmail";
-            textBoxEmail.Size = new Size(248, 28);
-            textBoxEmail.TabIndex = 23;
             // 
             // AddUsersForm
             // 

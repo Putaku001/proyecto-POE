@@ -262,16 +262,19 @@ namespace PresentationLayer.Forms
         private void iconButtonUserAdministrator_Click(object sender, EventArgs e)
         {
             dataGridViewUsers.DataSource = usuarioServices.GetAdmins();
+            dataGridViewUsers.Columns["idUser"].Visible = false;
         }
 
         private void iconButtonUserEmployee_Click(object sender, EventArgs e)
         {
             dataGridViewUsers.DataSource = usuarioServices.GetEmployees();
+            dataGridViewUsers.Columns["idUser"].Visible = false;
         }
 
         private void iconButtonUserClients_Click(object sender, EventArgs e)
         {
             dataGridViewUsers.DataSource = usuarioServices.GetClients();
+            dataGridViewUsers.Columns["idUser"].Visible = false;
         }
 
         private void dataGridViewUsers_CellClick(object sender, DataGridViewCellEventArgs e)

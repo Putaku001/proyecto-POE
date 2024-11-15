@@ -92,7 +92,8 @@ namespace DataAccessLayer.Repositories
         {
             using (var connection = _dbConnection.GetConnection())
             {
-                string query = "SELECT * FROM permission";
+                string query = @"SELECT p.idPermission, p.idMenu, m.nameForm FROM permission p
+                               LEFT JOIN menu m on p.idMenu = m.idMenu";
 
                 return connection.Query<Permissions>(query);
             }
@@ -129,7 +130,9 @@ namespace DataAccessLayer.Repositories
         {
             using (var connection = _dbConnection.GetConnection())
             {
-                string query = "SELECT * FROM rolPermission";
+                string query = @"SELECT rp.idRolPermission, rp.idPermission, m.nameForm, rp.idRoles FROM rolPermission rp
+							    LEFT JOIN permission p on rp.idPermission = p.idPermission
+							    LEFT JOIN menu m on p.idMenu = m.idMenu";
 
                 return connection.Query<RolPermission>(query);
             }

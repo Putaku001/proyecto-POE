@@ -27,15 +27,7 @@ namespace PresentationLayer.Forms.Empleados
             _usersService = usersServices;
             _listProyectsServices = listProyectsServices;
             LoadData();
-            LoadCboStatus();
             panelInformationProject.Visible = false;
-        }
-
-        private void LoadCboStatus()
-        {
-            comboBoxStatus.DataSource = _listProyectsServices.GetStatusProjects();
-            comboBoxStatus.DisplayMember = "statusproyect";
-            comboBoxStatus.ValueMember = "idStatusProyect";
         }
 
         public void LoadData()
@@ -48,8 +40,11 @@ namespace PresentationLayer.Forms.Empleados
             if (idEmployee > 0)
             {
                 var employeeProjects = _listProyectsServices.GetByIdProjectsEmployee(idEmployee);
-                dataGridViewProjectsEmployee.DataSource = employeeProjects;
-                dataGridViewProjectsEmployee.Columns["file"].Visible = false;
+
+                var GetProjectById = employeeProjects.Where(e => e.idEmployee == idEmployee).Select(e => e.idProyect).FirstOrDefault();
+
+                var employeeTask = _listProyectsServices.GetByIdTaskEmployee(GetProjectById);
+                dataGridViewProjectsEmployee.DataSource = employeeTask;
                 dataGridViewProjectsEmployee.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 dataGridViewProjectsEmployee.DefaultCellStyle.BackColor = Color.WhiteSmoke;
                 dataGridViewProjectsEmployee.DefaultCellStyle.ForeColor = Color.Black;
@@ -69,20 +64,26 @@ namespace PresentationLayer.Forms.Empleados
 
         private void dataGridViewProjectsEmployee_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int idProject = int.Parse(dataGridViewProjectsEmployee.CurrentRow.Cells[1].Value.ToString());
+            var idEmployee = _usersService.GetEmployees()
+                .Where(u => u.idUser == AuthUser.idUser)
+                .Select(e => e.idEmployee)
+                .FirstOrDefault();
+
+            int idTask = Convert.ToInt32(dataGridViewProjectsEmployee.CurrentRow.Cells["idTask"].Value);
+            var idem = _listProyectsServices.GetByIdTaskEmployee(idEmployee);
+            var Noc = idem.Where(e => e.idTask == idTask).Select(t => t.idTask).FirstOrDefault();
 
             panelInformationProject.Visible = true;
 
-            var projects = _listProyectsServices.GetByIdProjects(idProject);
+            var projects = _listProyectsServices.GetByIdTaskEmployee(Noc);
 
-            var selectedProject = projects.FirstOrDefault(p => p.idProyect == idProject);
+            var selectedTask = projects.FirstOrDefault(p => p.idTask == Noc);
 
-            if (selectedProject != null)
+            if (selectedTask != null)
             {
-                labelProjectName.Text = selectedProject.titleName;
-                labelNameClient.Text = Convert.ToString(selectedProject.idClient);
-                textBoxDescription.Text = selectedProject.description;
-                comboBoxStatus.SelectedValue = selectedProject.idStatusProyect;
+                labelProjectName.Text = selectedTask.titleName;
+                labelNameTask.Text = selectedTask.nameTask;
+                textBoxDescriptionTask.Text = selectedTask.descriptionTask;
             }
             else
             {
@@ -114,12 +115,17 @@ namespace PresentationLayer.Forms.Empleados
 
         private void iconButtonSubmit_Click(object sender, EventArgs e)
         {
-            int idProject = int.Parse(dataGridViewProjectsEmployee.CurrentRow.Cells[1].Value.ToString());
-            int updateStatus = Convert.ToInt32(comboBoxStatus.SelectedValue);
+            int idTask = int.Parse(dataGridViewProjectsEmployee.CurrentRow.Cells[1].Value.ToString());
+            //int updateStatus = Convert.ToInt32(comboBoxStatus.SelectedValue);
             byte[] updateFile = fileByte;
 
 
-            _listProyectsServices.UpdateProjectsEmployee(idProject, updateStatus, updateFile);
+            //_listProyectsServices.UpdateProjectsEmployee(idProject, updateStatus, updateFile);
+            _listProyectsServices.UpdateTaskEmployee(idTask, updateFile);
+
+
+            MessageBox.Show("Se ha enviado correctamente", "Enviado correctamente", MessageBoxButtons.OK);
+            LoadData();
         }
     }
 }

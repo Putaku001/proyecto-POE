@@ -2,6 +2,8 @@
 using BusinessLayer.Services.Interfaces;
 using BusinessLayer.Services.InterfacesServices;
 using CommonLayer.Entities;
+using Microsoft.Extensions.DependencyInjection;
+using PresentationLayer.Forms.Admin;
 using PresentationLayer.Resources;
 using System;
 using System.Collections.Generic;
@@ -27,6 +29,7 @@ namespace PresentationLayer.Forms
         {
             InitializeComponent();
 
+
             _usuario = usuario;
             IsEditing = usuario != null;
             _usuersservices = _usuersServices;
@@ -35,15 +38,21 @@ namespace PresentationLayer.Forms
 
             ConfigurarFormulario();
 
+            // En el constructor o inicializador del formulario
+            //cboRol.SelectedIndexChanged += cboRol_SelectedIndexChanged;
+
+
         }
 
         private void ConfigurarFormulario()
         {
+            cboRol.DataSource = rolServices.GetRol();
+            cboRol.DisplayMember = "Rol";
+            cboRol.ValueMember = "idRol";
+
             if (IsEditing)
             {
-                cboRol.DataSource = rolServices.GetRol();
-                cboRol.DisplayMember = "Rol";
-                cboRol.ValueMember = "idRol";
+                
 
                 cboRol.SelectedValue = _usuario.idRol;
 
@@ -75,8 +84,8 @@ namespace PresentationLayer.Forms
             }
             else
             {
-                btnGuardar.Visible = true;   
-                btnEditar.Visible = false;    
+                btnGuardar.Visible = true;
+                btnEditar.Visible = false;
             }
         }
 
@@ -195,6 +204,22 @@ namespace PresentationLayer.Forms
             EditUsuariosHandler?.Invoke(this, EventArgs.Empty);
             LimpiarCampos();
             this.Close();
+        }
+
+        private void cboRol_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selecteRol = cboRol.Text;
+
+            switch(selecteRol)
+            {
+                case "Empleado":
+                    var inforemployeeform = new InfoEmployeeForm();
+                    inforemployeeform.ShowDialog();
+                    break;
+                //default:
+                //    MessageBox.Show("Seleccion no valida");
+                //    break;
+            }
         }
     }
 }

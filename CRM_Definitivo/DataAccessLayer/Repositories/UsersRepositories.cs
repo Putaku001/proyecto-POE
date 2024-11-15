@@ -35,9 +35,10 @@ namespace DataAccessLayer.Repositories
         {
             using (var connection = _dbConnection.GetConnection())
             {
-                string query = @"SELECT idUser, idRol, UserAccount, nameuser, lastName, email, birthdate, 
-                                        numberPhone, passworduser, country, city, statususer, DateRegistration
-                                 FROM Users";
+                string query = @"SELECT u.idUser, u.idRol, r.Rol, u.UserAccount, u.nameuser, u.lastName, u.email, u.birthdate, 
+                                 u.numberPhone, u.passworduser, u.country, u.city, u.statususer, u.DateRegistration
+                                 FROM Users u
+								 LEFT JOIN roles r on u.idRol = r.idRol";
 
                 return connection.Query<User>(query);
             }
@@ -182,7 +183,7 @@ namespace DataAccessLayer.Repositories
         {
             using (var connection = _dbConnection.GetConnection())
             {
-                string query = "SELECT * FROM Admins";
+                string query = "select a.idAdmin, a.idUser, u.userAccount from Admins a LEFT JOIN Users u on a.idUser = u.idUser";
 
                 return connection.Query<Admins>(query);
             }
@@ -191,7 +192,7 @@ namespace DataAccessLayer.Repositories
         {
             using (var connection = _dbConnection.GetConnection())
             {
-                string query = "SELECT * FROM Employee";
+                string query = "select e.idEmployee, e.idUser, u.UserAccount from employee e LEFT JOIN Users u on e.idUser = u.idUser";
 
                 return connection.Query<Employees>(query);
             }
@@ -210,7 +211,7 @@ namespace DataAccessLayer.Repositories
         {
             using (var connection = _dbConnection.GetConnection())
             {
-                string query = "SELECT * FROM Clients";
+                string query = "select c.idCliente, c.idUser, u.userAccount from Clients c LEFT JOIN Users u on c.idUser = u.idUser";
 
                 return connection.Query<Clients>(query);
             }

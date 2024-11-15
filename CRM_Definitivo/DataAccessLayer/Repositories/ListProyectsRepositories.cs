@@ -34,7 +34,26 @@ namespace DataAccessLayer.Repositories
         {
             using (var connection = _dbConnection.GetConnection())
             {
-                string query = @"SELECT idProyect, titleName, description, idClient, idEmployee, idStatusProyect, dateInit, dateEnd FROM proyect WHERE idProyect = @idProject";
+                string query = @"SELECT 
+                                P.idProyect,
+                                P.titleName,
+                                P.description,   
+                                CU.UserAccount AS Client,
+                                P.idEmployee,
+                                EU.UserAccount AS Employee,
+	                            E.workStation,
+	                            P.dateInit,
+                                P.dateEnd,
+                                S.statusproyect
+
+                            FROM 
+                                Proyect P
+                            LEFT JOIN StatusProyect S ON P.idStatusProyect = S.idStatusProyect
+                            LEFT JOIN Clients CL ON P.idClient = CL.idCliente
+                            LEFT JOIN Users CU ON CL.idUser = CU.idUser
+                            LEFT JOIN Employee E ON P.idEmployee = E.idEmployee
+                            LEFT JOIN Users EU ON E.idUser = EU.idUser
+                            WHERE P.idProyect = @idProject";
 
                 return connection.Query<ListProyects>(query, new { idProject });
             }
@@ -44,34 +63,25 @@ namespace DataAccessLayer.Repositories
         {
             using (var connection = _dbConnection.GetConnection())
             {
-                string query = @"SELECT idProyect, titleName, description, idClient, idEmployee, idStatusProyect, dateInit, dateEnd FROM proyect WHERE idEmployee = @idEmployee";
+                string query = @"SELECT t.idTask, t.idProyect, p.titleName, t.nameTask, t.descriptionTask, t.idEmployee from task t 
+                                left join proyect p on t.idProyect = p.idProyect
+                                LEFT JOIN employee e on e.idEmployee = e.idUser
+                            WHERE t.idEmployee = @idEmployee";
 
                 return connection.Query<ListProyects>(query, new { idEmployee });
             }
         }
-        public void UpdateProjectsEmployee(int idProject, int idStatusProject, byte[] file)
+        public void UpdateTaskEmployee(int idTask, byte[] file)
         {
             using(var connection = _dbConnection.GetConnection())
             {
-                string query = @"UPDATE proyect SET
-                                 idStatusProyect = @idStatusProject,
+                string query = @"UPDATE task SET
                                  [file] = @file
-                                 WHERE idProyect = @idProject";
+                                 WHERE idTask = @idTask";
 
-                connection.Query(query, new { idProject,idStatusProject,file });
+                connection.Query(query, new { idTask, file });
             }
         }
-
-        //public byte[] LoadLinkFile(int idProject)
-        //{
-        //    using (var connection = _dbConnection.GetConnection())
-        //    {
-        //        string query = @"SELECT [file] FROM proyect 
-        //                        WHERE idProyect = @idProject";
-
-        //        return connection.QueryFirstOrDefault<byte[]>(query, new {idProject});
-        //    }
-        //}
 
         //STATUS PROJECTS
         public List<StatusProjects> GetStatusProjects()
@@ -81,6 +91,20 @@ namespace DataAccessLayer.Repositories
                 string query = @"SELECT idStatusProyect, statusproyect FROM statusProyect";
 
                 return connection.Query<StatusProjects>(query).ToList();
+            }
+        }
+
+
+        //TASK
+        public IEnumerable<TaskEmployee> GetByIdTaskEmployee(int idProyect)
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = @"SELECT t.idTask, t.idProyect, p.titleName, t.nameTask, t.descriptionTask, t.idEmployee from task t 
+                                left join proyect p on t.idProyect = p.idProyect
+                                WHERE t.idProyect = @idProyect";
+
+                return connection.Query<TaskEmployee>(query, new { idProyect });
             }
         }
     }

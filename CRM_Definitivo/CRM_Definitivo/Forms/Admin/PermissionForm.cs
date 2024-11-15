@@ -30,8 +30,15 @@ namespace PresentationLayer.Forms.Admin
         private void LoadData()
         {
             dataGridViewMenu.DataSource = _permissionServices.GetByMenu();
+            dataGridViewMenu.Columns["idMenu"].Visible = false;
             dataGridViewPermission.DataSource = _permissionServices.GetPermissions();
+            dataGridViewPermission.Columns["idMenu"].Visible = false;
+            dataGridViewPermission.Columns["idPermission"].Visible = false;
             dataGridViewrolPermission.DataSource = _permissionServices.GetByRolPermissions();
+            dataGridViewrolPermission.Columns["idRolPermission"].Visible = false;
+            dataGridViewrolPermission.Columns["idPermission"].Visible = false;
+
+
 
             dataGridViewMenu.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewPermission.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -77,6 +84,7 @@ namespace PresentationLayer.Forms.Admin
 
             //DATASOURCE DE PERMISSIONS
             comboBoxidPermission.DataSource = _permissionServices.GetPermissions();
+            comboBoxidPermission.DisplayMember = "nameForm";
             comboBoxidPermission.ValueMember = "idPermission";
 
             //DATASOURCE DE ROLPERMISSIONS
@@ -211,8 +219,8 @@ namespace PresentationLayer.Forms.Admin
         {
             if (dataGridViewrolPermission.SelectedRows.Count > 0)
             {
-                comboBoxidRol.Text = dataGridViewrolPermission.CurrentRow.Cells[2].Value.ToString();
-                comboBoxidPermission.Text = dataGridViewrolPermission.CurrentRow.Cells[1].Value.ToString();
+                comboBoxidRol.Text = dataGridViewrolPermission.CurrentRow.Cells["idRoles"].Value.ToString();
+                comboBoxidPermission.Text = dataGridViewrolPermission.CurrentRow.Cells["nameForm"].Value.ToString();
                 isEditing = true;
             }
             else

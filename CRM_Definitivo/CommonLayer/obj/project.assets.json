@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fuent\\Source\\Repos\\proyecto-POE\\CRM_Definitivo\\CommonLayer\\CommonLayer.csproj",
+      "projectUniqueName": "C:\\Users\\fuent\\Downloads\\proyecto-POE\\CRM_Definitivo\\CommonLayer\\CommonLayer.csproj",
       "projectName": "CommonLayer",
-      "projectPath": "C:\\Users\\fuent\\Source\\Repos\\proyecto-POE\\CRM_Definitivo\\CommonLayer\\CommonLayer.csproj",
+      "projectPath": "C:\\Users\\fuent\\Downloads\\proyecto-POE\\CRM_Definitivo\\CommonLayer\\CommonLayer.csproj",
       "packagesPath": "C:\\Users\\fuent\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fuent\\Source\\Repos\\proyecto-POE\\CRM_Definitivo\\CommonLayer\\obj\\",
+      "outputPath": "C:\\Users\\fuent\\Downloads\\proyecto-POE\\CRM_Definitivo\\CommonLayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\fuent\\AppData\\Roaming\\NuGet\\NuGet.Config",

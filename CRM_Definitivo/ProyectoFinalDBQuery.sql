@@ -1,6 +1,6 @@
 CREATE DATABASE SistemaProyectosDB;
 
-	SELECT * FROM proyect				
+	SELECT * FROM users				
 
 
 SELECT r.idRol, m.nameForm , p.idPermission 
@@ -12,11 +12,62 @@ JOIN users u on u.idRol = r.idRol
 WHERE u.idUser = @idUser;
 
 
+SELECT t.idTask, t.idProyect, p.titleName, t.nameTask, t.descriptionTask, t.idEmployee from task t 
+                                left join proyect p on t.idProyect = p.idProyect
+                                LEFT JOIN employee e on e.idEmployee = e.idUser
+                                WHERE t.idTask = 3
 
 UPDATE Users
 SET email ='default@gmail.com'
 WHERE idUser = 15;
 
+
+*/* Metodo para proyecto*/*
+SELECT idProyect, titleName, description, idClient, idEmployee, idStatusProyect, dateInit, dateEnd FROM proyect
+
+
+SELECT 
+                                P.idProyect,
+                                P.titleName,
+                                P.description,   
+                                CU.UserAccount AS Client,
+								p.idEmployee,
+                                EU.UserAccount AS Employee,
+	                            E.workStation,
+	                            P.dateInit,
+                                P.dateEnd,
+                                S.statusproyect
+
+                            FROM 
+                                Proyect P
+                            LEFT JOIN StatusProyect S ON P.idStatusProyect = S.idStatusProyect
+                            LEFT JOIN Clients CL ON P.idClient = CL.idCliente
+                            LEFT JOIN Users CU ON CL.idUser = CU.idUser
+                            LEFT JOIN Employee E ON P.idEmployee = E.idEmployee
+                            LEFT JOIN Users EU ON E.idUser = EU.idUser
+							WHERE p.idEmployee = 1
+
+							select a.idAdmin, u.userAccount from Admins a
+							LEFT JOIN Users u on a.idUser = u.idUser
+
+							select e.idEmployee, u.UserAccount from employee e LEFT JOIN Users u on e.idUser = u.idUser
+
+							select c.idCliente, u.userAccount from Clients c LEFT JOIN Users u on c.idUser = u.idUser 
+
+							/*SELECT DE PERMISOS*/
+							SELECT p.idPermission, p.idMenu, m.nameForm FROM permission p
+							LEFT JOIN menu m on p.idMenu = m.idMenu
+
+							SELECT rp.idRolPermission, rp.idPermission, rp.idRoles, m.nameForm FROM rolPermission rp
+							LEFT JOIN permission p on rp.idPermission = p.idPermission
+							LEFT JOIN menu m on p.idMenu = m.idMenu 
+
+
+
+
+
+SELECT p.idProyect, p.titleName, p.description, p.idClient, p.idEmployee, p.idStatusProyect, p.dateInit, p.dateEnd, u.UserAccount FROM proyect p
+INNER JOIN  Users u on p.idEmployee = u.idUser 
 
 
 update Users
@@ -58,7 +109,6 @@ CREATE TABLE Clients (
 CREATE TABLE employee (
     idEmployee INT PRIMARY KEY identity(1,1),
     idUser INT,
-	namaEmployee NVARCHAR(100),
     comment VARCHAR(255),
     workStation VARCHAR(50),
 	FOREIGN KEY (idUser) REFERENCES Users(idUser) ON DELETE SET NULL
@@ -78,11 +128,25 @@ CREATE TABLE proyect (
     idStatusProyect INT,
     idClient INT null,
     idEmployee INT,
+	idTask INT,
 	[file] varbinary(MAX)
     FOREIGN KEY (idStatusProyect) REFERENCES statusProyect(idStatusProyect),
     FOREIGN KEY (idClient) REFERENCES Clients(idCliente)ON DELETE SET NULL,
     FOREIGN KEY (idEmployee) REFERENCES employee(idEmployee) ON DELETE SET NULL
 );
+
+
+
+
+alter tabLE Proyect
+ADD task INT
+
+alter table Proyect
+ADD CONSTRAINT Fk_task FOREIGN KEY(task) REFERENCES task(idTask)
+
+
+select * from task
+
 
 CREATE TABLE task (
     idTask INT PRIMARY KEY identity(1,1),
@@ -93,6 +157,28 @@ CREATE TABLE task (
     FOREIGN KEY (idEmployee) REFERENCES employee(idEmployee),
     FOREIGN KEY (idProyect) REFERENCES proyect(idProyect)
 );
+
+
+SELECT t.idProyect, p.titleName, t.nameTask, t.descriptionTask, t.idEmployee from task t 
+left join proyect p on t.idProyect = p.idProyect
+LEFT JOIN employee e on e.idEmployee = e.idUser
+WHERE t.idProyect = 1
+
+
+SELECT 
+                                P.idProyect,
+                                P.titleName,
+								p.idClient,
+								p.idEmployee,
+								t.nameTask,
+	                            P.dateInit,
+                                P.dateEnd,
+                                p.idStatusProyect
+
+                            FROM 
+                                Proyect P
+								left join task t on t.idTask = p.task
+
 
 EXEC sp_rename 'roles.idRoles', 'idRol', 'COLUMN';
 

@@ -29,74 +29,61 @@
         private void InitializeComponent()
         {
             tpAñadirNuevasTareas = new TabPage();
-            gbAñadirNuevasTareas = new GroupBox();
-            cboProyectoTareasAñadir = new ComboBox();
-            btnEliminarNT = new FontAwesome.Sharp.IconButton();
-            btnEditarNT = new FontAwesome.Sharp.IconButton();
-            btnGuardarNT = new FontAwesome.Sharp.IconButton();
-            lblTareaAñadir = new Label();
-            txtTareaAñadirTarea = new TextBox();
-            lblProyectoSeleccionar = new Label();
             dgvTareas = new DataGridView();
-            tpAñadirNuevaCategoria = new TabPage();
-            gbAñadirNuevasCategorias = new GroupBox();
-            cboProyectoCategoria = new ComboBox();
-            btnEliminarNC = new FontAwesome.Sharp.IconButton();
-            btnEditarNC = new FontAwesome.Sharp.IconButton();
-            btnGuardarNC = new FontAwesome.Sharp.IconButton();
-            lblCategoriaAñadir = new Label();
-            textBox8 = new TextBox();
-            lblSeleccionProyectoCategoria = new Label();
-            dgvCategorias = new DataGridView();
+            gbAñadirNuevasTareas = new GroupBox();
+            lblProyectoSeleccionar = new Label();
+            txtTareaAñadirTarea = new TextBox();
+            lblTareaAñadir = new Label();
+            btnGuardarNT = new FontAwesome.Sharp.IconButton();
+            btnEditarNT = new FontAwesome.Sharp.IconButton();
+            btnEliminarNT = new FontAwesome.Sharp.IconButton();
+            cboProyectoTareasAñadir = new ComboBox();
             tbAñadirProyectos = new TabPage();
-            gbAñadirNuevosProyectos = new GroupBox();
-            btnEliminarNP = new FontAwesome.Sharp.IconButton();
-            btnEditarNP = new FontAwesome.Sharp.IconButton();
-            btnGuardarNP = new FontAwesome.Sharp.IconButton();
-            lblTareas = new Label();
-            txtTareasProyectoAñadir = new TextBox();
-            lblCategoria = new Label();
-            txtCategoriaProyectoAñadir = new TextBox();
-            lblProyecto = new Label();
-            txtNombreProyectoAñadir = new TextBox();
             dgvAñadirProyectos = new DataGridView();
+            gbAñadirNuevosProyectos = new GroupBox();
+            txtNombreProyectoAñadir = new TextBox();
+            lblProyecto = new Label();
+            txtCategoriaProyectoAñadir = new TextBox();
+            lblCategoria = new Label();
+            txtTareasProyectoAñadir = new TextBox();
+            lblTareas = new Label();
+            btnGuardarNP = new FontAwesome.Sharp.IconButton();
+            btnEditarNP = new FontAwesome.Sharp.IconButton();
+            btnEliminarNP = new FontAwesome.Sharp.IconButton();
             tpListaProyectos = new TabPage();
             dgvListaProyectos = new DataGridView();
             tpAsignarProyectos = new TabPage();
-            dataGridView1 = new DataGridView();
             gbListaProyecto = new GroupBox();
-            btnEliminar = new FontAwesome.Sharp.IconButton();
-            label4 = new Label();
-            btnEditar = new FontAwesome.Sharp.IconButton();
-            dtpFechaEntrega = new DateTimePicker();
-            btnGuardar = new FontAwesome.Sharp.IconButton();
-            cboCategorias = new ComboBox();
-            cboClientes = new ComboBox();
-            lblFechaFin = new Label();
-            label3 = new Label();
-            cboTareas = new ComboBox();
-            label1 = new Label();
-            label2 = new Label();
-            cboEmpleados = new ComboBox();
-            cboProyectos = new ComboBox();
-            label5 = new Label();
-            lblProyectos = new Label();
             txtCodigo = new TextBox();
+            lblProyectos = new Label();
+            label5 = new Label();
+            cboProyectos = new ComboBox();
+            cboEmpleados = new ComboBox();
+            label2 = new Label();
+            label1 = new Label();
+            cboTareas = new ComboBox();
+            lblFechaFin = new Label();
+            cboClientes = new ComboBox();
+            btnGuardar = new FontAwesome.Sharp.IconButton();
+            dtpFechaEntrega = new DateTimePicker();
+            btnEditar = new FontAwesome.Sharp.IconButton();
+            label4 = new Label();
+            btnEliminar = new FontAwesome.Sharp.IconButton();
+            dataGridView1 = new DataGridView();
             tbProyectos = new TabControl();
+            label3 = new Label();
+            comboBox1 = new ComboBox();
             tpAñadirNuevasTareas.SuspendLayout();
-            gbAñadirNuevasTareas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvTareas).BeginInit();
-            tpAñadirNuevaCategoria.SuspendLayout();
-            gbAñadirNuevasCategorias.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvCategorias).BeginInit();
+            gbAñadirNuevasTareas.SuspendLayout();
             tbAñadirProyectos.SuspendLayout();
-            gbAñadirNuevosProyectos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvAñadirProyectos).BeginInit();
+            gbAñadirNuevosProyectos.SuspendLayout();
             tpListaProyectos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvListaProyectos).BeginInit();
             tpAsignarProyectos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             gbListaProyecto.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             tbProyectos.SuspendLayout();
             SuspendLayout();
             // 
@@ -111,6 +98,19 @@
             tpAñadirNuevasTareas.TabIndex = 5;
             tpAñadirNuevasTareas.Text = "Añadir nuevas tareas";
             tpAñadirNuevasTareas.UseVisualStyleBackColor = true;
+            // 
+            // dgvTareas
+            // 
+            dgvTareas.AllowUserToAddRows = false;
+            dgvTareas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvTareas.BackgroundColor = Color.White;
+            dgvTareas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvTareas.Location = new Point(620, 61);
+            dgvTareas.Name = "dgvTareas";
+            dgvTareas.ReadOnly = true;
+            dgvTareas.RowHeadersWidth = 51;
+            dgvTareas.Size = new Size(713, 545);
+            dgvTareas.TabIndex = 11;
             // 
             // gbAñadirNuevasTareas
             // 
@@ -129,51 +129,30 @@
             gbAñadirNuevasTareas.TabStop = false;
             gbAñadirNuevasTareas.Text = "Añadir nuevas tareas:";
             // 
-            // cboProyectoTareasAñadir
+            // lblProyectoSeleccionar
             // 
-            cboProyectoTareasAñadir.FormattingEnabled = true;
-            cboProyectoTareasAñadir.Location = new Point(32, 125);
-            cboProyectoTareasAñadir.Name = "cboProyectoTareasAñadir";
-            cboProyectoTareasAñadir.Size = new Size(319, 28);
-            cboProyectoTareasAñadir.TabIndex = 26;
+            lblProyectoSeleccionar.AutoSize = true;
+            lblProyectoSeleccionar.Location = new Point(32, 102);
+            lblProyectoSeleccionar.Name = "lblProyectoSeleccionar";
+            lblProyectoSeleccionar.Size = new Size(162, 20);
+            lblProyectoSeleccionar.TabIndex = 0;
+            lblProyectoSeleccionar.Text = "Seleccione el proyecto:";
             // 
-            // btnEliminarNT
+            // txtTareaAñadirTarea
             // 
-            btnEliminarNT.BackColor = Color.Crimson;
-            btnEliminarNT.Cursor = Cursors.Hand;
-            btnEliminarNT.FlatAppearance.BorderColor = Color.Black;
-            btnEliminarNT.FlatStyle = FlatStyle.Flat;
-            btnEliminarNT.ForeColor = Color.White;
-            btnEliminarNT.IconChar = FontAwesome.Sharp.IconChar.DeleteLeft;
-            btnEliminarNT.IconColor = Color.White;
-            btnEliminarNT.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnEliminarNT.IconSize = 22;
-            btnEliminarNT.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEliminarNT.Location = new Point(32, 377);
-            btnEliminarNT.Name = "btnEliminarNT";
-            btnEliminarNT.Size = new Size(319, 29);
-            btnEliminarNT.TabIndex = 25;
-            btnEliminarNT.Text = "Eliminar";
-            btnEliminarNT.UseVisualStyleBackColor = false;
+            txtTareaAñadirTarea.Location = new Point(32, 198);
+            txtTareaAñadirTarea.Name = "txtTareaAñadirTarea";
+            txtTareaAñadirTarea.Size = new Size(319, 27);
+            txtTareaAñadirTarea.TabIndex = 5;
             // 
-            // btnEditarNT
+            // lblTareaAñadir
             // 
-            btnEditarNT.BackColor = Color.DodgerBlue;
-            btnEditarNT.Cursor = Cursors.Hand;
-            btnEditarNT.FlatAppearance.BorderColor = Color.Black;
-            btnEditarNT.FlatStyle = FlatStyle.Flat;
-            btnEditarNT.ForeColor = Color.White;
-            btnEditarNT.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            btnEditarNT.IconColor = Color.White;
-            btnEditarNT.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnEditarNT.IconSize = 22;
-            btnEditarNT.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEditarNT.Location = new Point(32, 342);
-            btnEditarNT.Name = "btnEditarNT";
-            btnEditarNT.Size = new Size(319, 29);
-            btnEditarNT.TabIndex = 24;
-            btnEditarNT.Text = "Editar";
-            btnEditarNT.UseVisualStyleBackColor = false;
+            lblTareaAñadir.AutoSize = true;
+            lblTareaAñadir.Location = new Point(32, 175);
+            lblTareaAñadir.Name = "lblTareaAñadir";
+            lblTareaAñadir.Size = new Size(47, 20);
+            lblTareaAñadir.TabIndex = 4;
+            lblTareaAñadir.Text = "Tarea:";
             // 
             // btnGuardarNT
             // 
@@ -194,175 +173,51 @@
             btnGuardarNT.Text = "Añadir";
             btnGuardarNT.UseVisualStyleBackColor = false;
             // 
-            // lblTareaAñadir
+            // btnEditarNT
             // 
-            lblTareaAñadir.AutoSize = true;
-            lblTareaAñadir.Location = new Point(32, 175);
-            lblTareaAñadir.Name = "lblTareaAñadir";
-            lblTareaAñadir.Size = new Size(47, 20);
-            lblTareaAñadir.TabIndex = 4;
-            lblTareaAñadir.Text = "Tarea:";
+            btnEditarNT.BackColor = Color.DodgerBlue;
+            btnEditarNT.Cursor = Cursors.Hand;
+            btnEditarNT.FlatAppearance.BorderColor = Color.Black;
+            btnEditarNT.FlatStyle = FlatStyle.Flat;
+            btnEditarNT.ForeColor = Color.White;
+            btnEditarNT.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            btnEditarNT.IconColor = Color.White;
+            btnEditarNT.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnEditarNT.IconSize = 22;
+            btnEditarNT.ImageAlign = ContentAlignment.MiddleLeft;
+            btnEditarNT.Location = new Point(32, 342);
+            btnEditarNT.Name = "btnEditarNT";
+            btnEditarNT.Size = new Size(319, 29);
+            btnEditarNT.TabIndex = 24;
+            btnEditarNT.Text = "Editar";
+            btnEditarNT.UseVisualStyleBackColor = false;
             // 
-            // txtTareaAñadirTarea
+            // btnEliminarNT
             // 
-            txtTareaAñadirTarea.Location = new Point(32, 198);
-            txtTareaAñadirTarea.Name = "txtTareaAñadirTarea";
-            txtTareaAñadirTarea.Size = new Size(319, 27);
-            txtTareaAñadirTarea.TabIndex = 5;
+            btnEliminarNT.BackColor = Color.Crimson;
+            btnEliminarNT.Cursor = Cursors.Hand;
+            btnEliminarNT.FlatAppearance.BorderColor = Color.Black;
+            btnEliminarNT.FlatStyle = FlatStyle.Flat;
+            btnEliminarNT.ForeColor = Color.White;
+            btnEliminarNT.IconChar = FontAwesome.Sharp.IconChar.DeleteLeft;
+            btnEliminarNT.IconColor = Color.White;
+            btnEliminarNT.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnEliminarNT.IconSize = 22;
+            btnEliminarNT.ImageAlign = ContentAlignment.MiddleLeft;
+            btnEliminarNT.Location = new Point(32, 377);
+            btnEliminarNT.Name = "btnEliminarNT";
+            btnEliminarNT.Size = new Size(319, 29);
+            btnEliminarNT.TabIndex = 25;
+            btnEliminarNT.Text = "Eliminar";
+            btnEliminarNT.UseVisualStyleBackColor = false;
             // 
-            // lblProyectoSeleccionar
+            // cboProyectoTareasAñadir
             // 
-            lblProyectoSeleccionar.AutoSize = true;
-            lblProyectoSeleccionar.Location = new Point(32, 102);
-            lblProyectoSeleccionar.Name = "lblProyectoSeleccionar";
-            lblProyectoSeleccionar.Size = new Size(162, 20);
-            lblProyectoSeleccionar.TabIndex = 0;
-            lblProyectoSeleccionar.Text = "Seleccione el proyecto:";
-            // 
-            // dgvTareas
-            // 
-            dgvTareas.AllowUserToAddRows = false;
-            dgvTareas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dgvTareas.BackgroundColor = Color.White;
-            dgvTareas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvTareas.Location = new Point(620, 61);
-            dgvTareas.Name = "dgvTareas";
-            dgvTareas.ReadOnly = true;
-            dgvTareas.RowHeadersWidth = 51;
-            dgvTareas.Size = new Size(713, 545);
-            dgvTareas.TabIndex = 11;
-            // 
-            // tpAñadirNuevaCategoria
-            // 
-            tpAñadirNuevaCategoria.Controls.Add(gbAñadirNuevasCategorias);
-            tpAñadirNuevaCategoria.Controls.Add(dgvCategorias);
-            tpAñadirNuevaCategoria.Location = new Point(4, 29);
-            tpAñadirNuevaCategoria.Name = "tpAñadirNuevaCategoria";
-            tpAñadirNuevaCategoria.Padding = new Padding(3);
-            tpAñadirNuevaCategoria.Size = new Size(1365, 655);
-            tpAñadirNuevaCategoria.TabIndex = 4;
-            tpAñadirNuevaCategoria.Text = "Añadir nuevas categorias";
-            tpAñadirNuevaCategoria.UseVisualStyleBackColor = true;
-            // 
-            // gbAñadirNuevasCategorias
-            // 
-            gbAñadirNuevasCategorias.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            gbAñadirNuevasCategorias.Controls.Add(cboProyectoCategoria);
-            gbAñadirNuevasCategorias.Controls.Add(btnEliminarNC);
-            gbAñadirNuevasCategorias.Controls.Add(btnEditarNC);
-            gbAñadirNuevasCategorias.Controls.Add(btnGuardarNC);
-            gbAñadirNuevasCategorias.Controls.Add(lblCategoriaAñadir);
-            gbAñadirNuevasCategorias.Controls.Add(textBox8);
-            gbAñadirNuevasCategorias.Controls.Add(lblSeleccionProyectoCategoria);
-            gbAñadirNuevasCategorias.Location = new Point(31, 49);
-            gbAñadirNuevasCategorias.Name = "gbAñadirNuevasCategorias";
-            gbAñadirNuevasCategorias.Size = new Size(507, 557);
-            gbAñadirNuevasCategorias.TabIndex = 9;
-            gbAñadirNuevasCategorias.TabStop = false;
-            gbAñadirNuevasCategorias.Text = "Añadir nuevas categorias:";
-            // 
-            // cboProyectoCategoria
-            // 
-            cboProyectoCategoria.FormattingEnabled = true;
-            cboProyectoCategoria.Location = new Point(32, 125);
-            cboProyectoCategoria.Name = "cboProyectoCategoria";
-            cboProyectoCategoria.Size = new Size(319, 28);
-            cboProyectoCategoria.TabIndex = 26;
-            // 
-            // btnEliminarNC
-            // 
-            btnEliminarNC.BackColor = Color.Crimson;
-            btnEliminarNC.Cursor = Cursors.Hand;
-            btnEliminarNC.FlatAppearance.BorderColor = Color.Black;
-            btnEliminarNC.FlatStyle = FlatStyle.Flat;
-            btnEliminarNC.ForeColor = Color.White;
-            btnEliminarNC.IconChar = FontAwesome.Sharp.IconChar.DeleteLeft;
-            btnEliminarNC.IconColor = Color.White;
-            btnEliminarNC.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnEliminarNC.IconSize = 22;
-            btnEliminarNC.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEliminarNC.Location = new Point(32, 377);
-            btnEliminarNC.Name = "btnEliminarNC";
-            btnEliminarNC.Size = new Size(319, 29);
-            btnEliminarNC.TabIndex = 25;
-            btnEliminarNC.Text = "Eliminar";
-            btnEliminarNC.UseVisualStyleBackColor = false;
-            // 
-            // btnEditarNC
-            // 
-            btnEditarNC.BackColor = Color.DodgerBlue;
-            btnEditarNC.Cursor = Cursors.Hand;
-            btnEditarNC.FlatAppearance.BorderColor = Color.Black;
-            btnEditarNC.FlatStyle = FlatStyle.Flat;
-            btnEditarNC.ForeColor = Color.White;
-            btnEditarNC.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            btnEditarNC.IconColor = Color.White;
-            btnEditarNC.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnEditarNC.IconSize = 22;
-            btnEditarNC.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEditarNC.Location = new Point(32, 342);
-            btnEditarNC.Name = "btnEditarNC";
-            btnEditarNC.Size = new Size(319, 29);
-            btnEditarNC.TabIndex = 24;
-            btnEditarNC.Text = "Editar";
-            btnEditarNC.UseVisualStyleBackColor = false;
-            // 
-            // btnGuardarNC
-            // 
-            btnGuardarNC.BackColor = Color.ForestGreen;
-            btnGuardarNC.Cursor = Cursors.Hand;
-            btnGuardarNC.FlatAppearance.BorderColor = Color.Black;
-            btnGuardarNC.FlatStyle = FlatStyle.Flat;
-            btnGuardarNC.ForeColor = Color.White;
-            btnGuardarNC.IconChar = FontAwesome.Sharp.IconChar.Save;
-            btnGuardarNC.IconColor = Color.White;
-            btnGuardarNC.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnGuardarNC.IconSize = 22;
-            btnGuardarNC.ImageAlign = ContentAlignment.MiddleLeft;
-            btnGuardarNC.Location = new Point(32, 307);
-            btnGuardarNC.Name = "btnGuardarNC";
-            btnGuardarNC.Size = new Size(319, 29);
-            btnGuardarNC.TabIndex = 23;
-            btnGuardarNC.Text = "Añadir";
-            btnGuardarNC.UseVisualStyleBackColor = false;
-            // 
-            // lblCategoriaAñadir
-            // 
-            lblCategoriaAñadir.AutoSize = true;
-            lblCategoriaAñadir.Location = new Point(32, 175);
-            lblCategoriaAñadir.Name = "lblCategoriaAñadir";
-            lblCategoriaAñadir.Size = new Size(77, 20);
-            lblCategoriaAñadir.TabIndex = 4;
-            lblCategoriaAñadir.Text = "Categoria:";
-            // 
-            // textBox8
-            // 
-            textBox8.Location = new Point(32, 198);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(319, 27);
-            textBox8.TabIndex = 5;
-            // 
-            // lblSeleccionProyectoCategoria
-            // 
-            lblSeleccionProyectoCategoria.AutoSize = true;
-            lblSeleccionProyectoCategoria.Location = new Point(32, 102);
-            lblSeleccionProyectoCategoria.Name = "lblSeleccionProyectoCategoria";
-            lblSeleccionProyectoCategoria.Size = new Size(166, 20);
-            lblSeleccionProyectoCategoria.TabIndex = 0;
-            lblSeleccionProyectoCategoria.Text = "Seleccione un proyecto:";
-            // 
-            // dgvCategorias
-            // 
-            dgvCategorias.AllowUserToAddRows = false;
-            dgvCategorias.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dgvCategorias.BackgroundColor = Color.White;
-            dgvCategorias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCategorias.Location = new Point(620, 61);
-            dgvCategorias.Name = "dgvCategorias";
-            dgvCategorias.ReadOnly = true;
-            dgvCategorias.RowHeadersWidth = 51;
-            dgvCategorias.Size = new Size(713, 545);
-            dgvCategorias.TabIndex = 8;
+            cboProyectoTareasAñadir.FormattingEnabled = true;
+            cboProyectoTareasAñadir.Location = new Point(32, 125);
+            cboProyectoTareasAñadir.Name = "cboProyectoTareasAñadir";
+            cboProyectoTareasAñadir.Size = new Size(319, 28);
+            cboProyectoTareasAñadir.TabIndex = 26;
             // 
             // tbAñadirProyectos
             // 
@@ -375,6 +230,19 @@
             tbAñadirProyectos.TabIndex = 3;
             tbAñadirProyectos.Text = "Añadir nuevos proyectos";
             tbAñadirProyectos.UseVisualStyleBackColor = true;
+            // 
+            // dgvAñadirProyectos
+            // 
+            dgvAñadirProyectos.AllowUserToAddRows = false;
+            dgvAñadirProyectos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvAñadirProyectos.BackgroundColor = Color.White;
+            dgvAñadirProyectos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvAñadirProyectos.Location = new Point(609, 70);
+            dgvAñadirProyectos.Name = "dgvAñadirProyectos";
+            dgvAñadirProyectos.ReadOnly = true;
+            dgvAñadirProyectos.RowHeadersWidth = 51;
+            dgvAñadirProyectos.Size = new Size(713, 545);
+            dgvAñadirProyectos.TabIndex = 5;
             // 
             // gbAñadirNuevosProyectos
             // 
@@ -395,43 +263,53 @@
             gbAñadirNuevosProyectos.TabStop = false;
             gbAñadirNuevosProyectos.Text = "Añadir nuevos proyectos:";
             // 
-            // btnEliminarNP
+            // txtNombreProyectoAñadir
             // 
-            btnEliminarNP.BackColor = Color.Crimson;
-            btnEliminarNP.Cursor = Cursors.Hand;
-            btnEliminarNP.FlatAppearance.BorderColor = Color.Black;
-            btnEliminarNP.FlatStyle = FlatStyle.Flat;
-            btnEliminarNP.ForeColor = Color.White;
-            btnEliminarNP.IconChar = FontAwesome.Sharp.IconChar.DeleteLeft;
-            btnEliminarNP.IconColor = Color.White;
-            btnEliminarNP.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnEliminarNP.IconSize = 22;
-            btnEliminarNP.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEliminarNP.Location = new Point(32, 439);
-            btnEliminarNP.Name = "btnEliminarNP";
-            btnEliminarNP.Size = new Size(319, 29);
-            btnEliminarNP.TabIndex = 25;
-            btnEliminarNP.Text = "Eliminar";
-            btnEliminarNP.UseVisualStyleBackColor = false;
+            txtNombreProyectoAñadir.Location = new Point(32, 125);
+            txtNombreProyectoAñadir.Name = "txtNombreProyectoAñadir";
+            txtNombreProyectoAñadir.Size = new Size(319, 27);
+            txtNombreProyectoAñadir.TabIndex = 1;
             // 
-            // btnEditarNP
+            // lblProyecto
             // 
-            btnEditarNP.BackColor = Color.DodgerBlue;
-            btnEditarNP.Cursor = Cursors.Hand;
-            btnEditarNP.FlatAppearance.BorderColor = Color.Black;
-            btnEditarNP.FlatStyle = FlatStyle.Flat;
-            btnEditarNP.ForeColor = Color.White;
-            btnEditarNP.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            btnEditarNP.IconColor = Color.White;
-            btnEditarNP.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnEditarNP.IconSize = 22;
-            btnEditarNP.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEditarNP.Location = new Point(32, 404);
-            btnEditarNP.Name = "btnEditarNP";
-            btnEditarNP.Size = new Size(319, 29);
-            btnEditarNP.TabIndex = 24;
-            btnEditarNP.Text = "Editar";
-            btnEditarNP.UseVisualStyleBackColor = false;
+            lblProyecto.AutoSize = true;
+            lblProyecto.Location = new Point(32, 102);
+            lblProyecto.Name = "lblProyecto";
+            lblProyecto.Size = new Size(155, 20);
+            lblProyecto.TabIndex = 0;
+            lblProyecto.Text = "Nombre del proyecto:";
+            // 
+            // txtCategoriaProyectoAñadir
+            // 
+            txtCategoriaProyectoAñadir.Location = new Point(32, 198);
+            txtCategoriaProyectoAñadir.Name = "txtCategoriaProyectoAñadir";
+            txtCategoriaProyectoAñadir.Size = new Size(319, 27);
+            txtCategoriaProyectoAñadir.TabIndex = 5;
+            // 
+            // lblCategoria
+            // 
+            lblCategoria.AutoSize = true;
+            lblCategoria.Location = new Point(32, 175);
+            lblCategoria.Name = "lblCategoria";
+            lblCategoria.Size = new Size(165, 20);
+            lblCategoria.TabIndex = 4;
+            lblCategoria.Text = "Categoria del proyecto:";
+            // 
+            // txtTareasProyectoAñadir
+            // 
+            txtTareasProyectoAñadir.Location = new Point(32, 277);
+            txtTareasProyectoAñadir.Name = "txtTareasProyectoAñadir";
+            txtTareasProyectoAñadir.Size = new Size(319, 27);
+            txtTareasProyectoAñadir.TabIndex = 9;
+            // 
+            // lblTareas
+            // 
+            lblTareas.AutoSize = true;
+            lblTareas.Location = new Point(32, 254);
+            lblTareas.Name = "lblTareas";
+            lblTareas.Size = new Size(141, 20);
+            lblTareas.TabIndex = 8;
+            lblTareas.Text = "Tareas del proyecto:";
             // 
             // btnGuardarNP
             // 
@@ -452,66 +330,43 @@
             btnGuardarNP.Text = "Añadir";
             btnGuardarNP.UseVisualStyleBackColor = false;
             // 
-            // lblTareas
+            // btnEditarNP
             // 
-            lblTareas.AutoSize = true;
-            lblTareas.Location = new Point(32, 254);
-            lblTareas.Name = "lblTareas";
-            lblTareas.Size = new Size(141, 20);
-            lblTareas.TabIndex = 8;
-            lblTareas.Text = "Tareas del proyecto:";
+            btnEditarNP.BackColor = Color.DodgerBlue;
+            btnEditarNP.Cursor = Cursors.Hand;
+            btnEditarNP.FlatAppearance.BorderColor = Color.Black;
+            btnEditarNP.FlatStyle = FlatStyle.Flat;
+            btnEditarNP.ForeColor = Color.White;
+            btnEditarNP.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            btnEditarNP.IconColor = Color.White;
+            btnEditarNP.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnEditarNP.IconSize = 22;
+            btnEditarNP.ImageAlign = ContentAlignment.MiddleLeft;
+            btnEditarNP.Location = new Point(32, 404);
+            btnEditarNP.Name = "btnEditarNP";
+            btnEditarNP.Size = new Size(319, 29);
+            btnEditarNP.TabIndex = 24;
+            btnEditarNP.Text = "Editar";
+            btnEditarNP.UseVisualStyleBackColor = false;
             // 
-            // txtTareasProyectoAñadir
+            // btnEliminarNP
             // 
-            txtTareasProyectoAñadir.Location = new Point(32, 277);
-            txtTareasProyectoAñadir.Name = "txtTareasProyectoAñadir";
-            txtTareasProyectoAñadir.Size = new Size(319, 27);
-            txtTareasProyectoAñadir.TabIndex = 9;
-            // 
-            // lblCategoria
-            // 
-            lblCategoria.AutoSize = true;
-            lblCategoria.Location = new Point(32, 175);
-            lblCategoria.Name = "lblCategoria";
-            lblCategoria.Size = new Size(165, 20);
-            lblCategoria.TabIndex = 4;
-            lblCategoria.Text = "Categoria del proyecto:";
-            // 
-            // txtCategoriaProyectoAñadir
-            // 
-            txtCategoriaProyectoAñadir.Location = new Point(32, 198);
-            txtCategoriaProyectoAñadir.Name = "txtCategoriaProyectoAñadir";
-            txtCategoriaProyectoAñadir.Size = new Size(319, 27);
-            txtCategoriaProyectoAñadir.TabIndex = 5;
-            // 
-            // lblProyecto
-            // 
-            lblProyecto.AutoSize = true;
-            lblProyecto.Location = new Point(32, 102);
-            lblProyecto.Name = "lblProyecto";
-            lblProyecto.Size = new Size(155, 20);
-            lblProyecto.TabIndex = 0;
-            lblProyecto.Text = "Nombre del proyecto:";
-            // 
-            // txtNombreProyectoAñadir
-            // 
-            txtNombreProyectoAñadir.Location = new Point(32, 125);
-            txtNombreProyectoAñadir.Name = "txtNombreProyectoAñadir";
-            txtNombreProyectoAñadir.Size = new Size(319, 27);
-            txtNombreProyectoAñadir.TabIndex = 1;
-            // 
-            // dgvAñadirProyectos
-            // 
-            dgvAñadirProyectos.AllowUserToAddRows = false;
-            dgvAñadirProyectos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dgvAñadirProyectos.BackgroundColor = Color.White;
-            dgvAñadirProyectos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvAñadirProyectos.Location = new Point(609, 70);
-            dgvAñadirProyectos.Name = "dgvAñadirProyectos";
-            dgvAñadirProyectos.ReadOnly = true;
-            dgvAñadirProyectos.RowHeadersWidth = 51;
-            dgvAñadirProyectos.Size = new Size(713, 545);
-            dgvAñadirProyectos.TabIndex = 5;
+            btnEliminarNP.BackColor = Color.Crimson;
+            btnEliminarNP.Cursor = Cursors.Hand;
+            btnEliminarNP.FlatAppearance.BorderColor = Color.Black;
+            btnEliminarNP.FlatStyle = FlatStyle.Flat;
+            btnEliminarNP.ForeColor = Color.White;
+            btnEliminarNP.IconChar = FontAwesome.Sharp.IconChar.DeleteLeft;
+            btnEliminarNP.IconColor = Color.White;
+            btnEliminarNP.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnEliminarNP.IconSize = 22;
+            btnEliminarNP.ImageAlign = ContentAlignment.MiddleLeft;
+            btnEliminarNP.Location = new Point(32, 439);
+            btnEliminarNP.Name = "btnEliminarNP";
+            btnEliminarNP.Size = new Size(319, 29);
+            btnEliminarNP.TabIndex = 25;
+            btnEliminarNP.Text = "Eliminar";
+            btnEliminarNP.UseVisualStyleBackColor = false;
             // 
             // tpListaProyectos
             // 
@@ -550,31 +405,18 @@
             tpAsignarProyectos.Text = "Asignar Proyectos";
             tpAsignarProyectos.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
-            // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(29, 271);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1298, 362);
-            dataGridView1.TabIndex = 4;
-            // 
             // gbListaProyecto
             // 
             gbListaProyecto.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            gbListaProyecto.Controls.Add(label3);
+            gbListaProyecto.Controls.Add(comboBox1);
             gbListaProyecto.Controls.Add(btnEliminar);
             gbListaProyecto.Controls.Add(label4);
             gbListaProyecto.Controls.Add(btnEditar);
             gbListaProyecto.Controls.Add(dtpFechaEntrega);
             gbListaProyecto.Controls.Add(btnGuardar);
-            gbListaProyecto.Controls.Add(cboCategorias);
             gbListaProyecto.Controls.Add(cboClientes);
             gbListaProyecto.Controls.Add(lblFechaFin);
-            gbListaProyecto.Controls.Add(label3);
             gbListaProyecto.Controls.Add(cboTareas);
             gbListaProyecto.Controls.Add(label1);
             gbListaProyecto.Controls.Add(label2);
@@ -590,59 +432,89 @@
             gbListaProyecto.TabStop = false;
             gbListaProyecto.Text = "Asignar proyectos:";
             // 
-            // btnEliminar
+            // txtCodigo
             // 
-            btnEliminar.BackColor = Color.Crimson;
-            btnEliminar.Cursor = Cursors.Hand;
-            btnEliminar.FlatAppearance.BorderColor = Color.Black;
-            btnEliminar.FlatStyle = FlatStyle.Flat;
-            btnEliminar.ForeColor = Color.White;
-            btnEliminar.IconChar = FontAwesome.Sharp.IconChar.DeleteLeft;
-            btnEliminar.IconColor = Color.White;
-            btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnEliminar.IconSize = 22;
-            btnEliminar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEliminar.Location = new Point(808, 180);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(319, 29);
-            btnEliminar.TabIndex = 25;
-            btnEliminar.Text = "Eliminar";
-            btnEliminar.UseVisualStyleBackColor = false;
+            txtCodigo.Location = new Point(32, 59);
+            txtCodigo.Name = "txtCodigo";
+            txtCodigo.Size = new Size(319, 27);
+            txtCodigo.TabIndex = 1;
             // 
-            // label4
+            // lblProyectos
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(456, 36);
-            label4.Name = "label4";
-            label4.Size = new Size(53, 20);
-            label4.TabIndex = 7;
-            label4.Text = "Tareas:";
+            lblProyectos.AutoSize = true;
+            lblProyectos.Location = new Point(32, 36);
+            lblProyectos.Name = "lblProyectos";
+            lblProyectos.Size = new Size(61, 20);
+            lblProyectos.TabIndex = 0;
+            lblProyectos.Text = "Codigo:";
             // 
-            // btnEditar
+            // label5
             // 
-            btnEditar.BackColor = Color.DodgerBlue;
-            btnEditar.Cursor = Cursors.Hand;
-            btnEditar.FlatAppearance.BorderColor = Color.Black;
-            btnEditar.FlatStyle = FlatStyle.Flat;
-            btnEditar.ForeColor = Color.White;
-            btnEditar.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            btnEditar.IconColor = Color.White;
-            btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnEditar.IconSize = 22;
-            btnEditar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEditar.Location = new Point(808, 145);
-            btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(319, 29);
-            btnEditar.TabIndex = 24;
-            btnEditar.Text = "Editar";
-            btnEditar.UseVisualStyleBackColor = false;
+            label5.AutoSize = true;
+            label5.Location = new Point(456, 144);
+            label5.Name = "label5";
+            label5.Size = new Size(55, 20);
+            label5.TabIndex = 8;
+            label5.Text = "Cliente";
             // 
-            // dtpFechaEntrega
+            // cboProyectos
             // 
-            dtpFechaEntrega.Location = new Point(808, 59);
-            dtpFechaEntrega.Name = "dtpFechaEntrega";
-            dtpFechaEntrega.Size = new Size(319, 27);
-            dtpFechaEntrega.TabIndex = 10;
+            cboProyectos.FormattingEnabled = true;
+            cboProyectos.Location = new Point(32, 111);
+            cboProyectos.Name = "cboProyectos";
+            cboProyectos.Size = new Size(319, 28);
+            cboProyectos.TabIndex = 2;
+            // 
+            // cboEmpleados
+            // 
+            cboEmpleados.FormattingEnabled = true;
+            cboEmpleados.Location = new Point(456, 113);
+            cboEmpleados.Name = "cboEmpleados";
+            cboEmpleados.Size = new Size(319, 28);
+            cboEmpleados.TabIndex = 27;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(32, 88);
+            label2.Name = "label2";
+            label2.Size = new Size(70, 20);
+            label2.TabIndex = 3;
+            label2.Text = "Proyecto:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(456, 90);
+            label1.Name = "label1";
+            label1.Size = new Size(80, 20);
+            label1.TabIndex = 28;
+            label1.Text = "Empleado:";
+            // 
+            // cboTareas
+            // 
+            cboTareas.FormattingEnabled = true;
+            cboTareas.Location = new Point(456, 59);
+            cboTareas.Name = "cboTareas";
+            cboTareas.Size = new Size(319, 28);
+            cboTareas.TabIndex = 6;
+            // 
+            // lblFechaFin
+            // 
+            lblFechaFin.AutoSize = true;
+            lblFechaFin.Location = new Point(808, 36);
+            lblFechaFin.Name = "lblFechaFin";
+            lblFechaFin.Size = new Size(126, 20);
+            lblFechaFin.TabIndex = 11;
+            lblFechaFin.Text = "Fecha de entrega:";
+            // 
+            // cboClientes
+            // 
+            cboClientes.FormattingEnabled = true;
+            cboClientes.Location = new Point(456, 167);
+            cboClientes.Name = "cboClientes";
+            cboClientes.Size = new Size(319, 28);
+            cboClientes.TabIndex = 29;
             // 
             // btnGuardar
             // 
@@ -663,106 +535,72 @@
             btnGuardar.Text = "Añadir";
             btnGuardar.UseVisualStyleBackColor = false;
             // 
-            // cboCategorias
+            // dtpFechaEntrega
             // 
-            cboCategorias.FormattingEnabled = true;
-            cboCategorias.Location = new Point(32, 165);
-            cboCategorias.Name = "cboCategorias";
-            cboCategorias.Size = new Size(319, 28);
-            cboCategorias.TabIndex = 26;
+            dtpFechaEntrega.Location = new Point(808, 59);
+            dtpFechaEntrega.Name = "dtpFechaEntrega";
+            dtpFechaEntrega.Size = new Size(319, 27);
+            dtpFechaEntrega.TabIndex = 10;
             // 
-            // cboClientes
+            // btnEditar
             // 
-            cboClientes.FormattingEnabled = true;
-            cboClientes.Location = new Point(456, 167);
-            cboClientes.Name = "cboClientes";
-            cboClientes.Size = new Size(319, 28);
-            cboClientes.TabIndex = 29;
+            btnEditar.BackColor = Color.DodgerBlue;
+            btnEditar.Cursor = Cursors.Hand;
+            btnEditar.FlatAppearance.BorderColor = Color.Black;
+            btnEditar.FlatStyle = FlatStyle.Flat;
+            btnEditar.ForeColor = Color.White;
+            btnEditar.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            btnEditar.IconColor = Color.White;
+            btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnEditar.IconSize = 22;
+            btnEditar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnEditar.Location = new Point(808, 145);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(319, 29);
+            btnEditar.TabIndex = 24;
+            btnEditar.Text = "Editar";
+            btnEditar.UseVisualStyleBackColor = false;
             // 
-            // lblFechaFin
+            // label4
             // 
-            lblFechaFin.AutoSize = true;
-            lblFechaFin.Location = new Point(808, 36);
-            lblFechaFin.Name = "lblFechaFin";
-            lblFechaFin.Size = new Size(126, 20);
-            lblFechaFin.TabIndex = 11;
-            lblFechaFin.Text = "Fecha de entrega:";
+            label4.AutoSize = true;
+            label4.Location = new Point(456, 36);
+            label4.Name = "label4";
+            label4.Size = new Size(53, 20);
+            label4.TabIndex = 7;
+            label4.Text = "Tareas:";
             // 
-            // label3
+            // btnEliminar
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(32, 142);
-            label3.Name = "label3";
-            label3.Size = new Size(77, 20);
-            label3.TabIndex = 4;
-            label3.Text = "Categoria:";
+            btnEliminar.BackColor = Color.Crimson;
+            btnEliminar.Cursor = Cursors.Hand;
+            btnEliminar.FlatAppearance.BorderColor = Color.Black;
+            btnEliminar.FlatStyle = FlatStyle.Flat;
+            btnEliminar.ForeColor = Color.White;
+            btnEliminar.IconChar = FontAwesome.Sharp.IconChar.DeleteLeft;
+            btnEliminar.IconColor = Color.White;
+            btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnEliminar.IconSize = 22;
+            btnEliminar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnEliminar.Location = new Point(808, 180);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(319, 29);
+            btnEliminar.TabIndex = 25;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = false;
             // 
-            // cboTareas
+            // dataGridView1
             // 
-            cboTareas.FormattingEnabled = true;
-            cboTareas.Location = new Point(456, 59);
-            cboTareas.Name = "cboTareas";
-            cboTareas.Size = new Size(319, 28);
-            cboTareas.TabIndex = 6;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(456, 90);
-            label1.Name = "label1";
-            label1.Size = new Size(80, 20);
-            label1.TabIndex = 28;
-            label1.Text = "Empleado:";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(32, 88);
-            label2.Name = "label2";
-            label2.Size = new Size(70, 20);
-            label2.TabIndex = 3;
-            label2.Text = "Proyecto:";
-            // 
-            // cboEmpleados
-            // 
-            cboEmpleados.FormattingEnabled = true;
-            cboEmpleados.Location = new Point(456, 113);
-            cboEmpleados.Name = "cboEmpleados";
-            cboEmpleados.Size = new Size(319, 28);
-            cboEmpleados.TabIndex = 27;
-            // 
-            // cboProyectos
-            // 
-            cboProyectos.FormattingEnabled = true;
-            cboProyectos.Location = new Point(32, 111);
-            cboProyectos.Name = "cboProyectos";
-            cboProyectos.Size = new Size(319, 28);
-            cboProyectos.TabIndex = 2;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(456, 144);
-            label5.Name = "label5";
-            label5.Size = new Size(55, 20);
-            label5.TabIndex = 8;
-            label5.Text = "Cliente";
-            // 
-            // lblProyectos
-            // 
-            lblProyectos.AutoSize = true;
-            lblProyectos.Location = new Point(32, 36);
-            lblProyectos.Name = "lblProyectos";
-            lblProyectos.Size = new Size(61, 20);
-            lblProyectos.TabIndex = 0;
-            lblProyectos.Text = "Codigo:";
-            // 
-            // txtCodigo
-            // 
-            txtCodigo.Location = new Point(32, 59);
-            txtCodigo.Name = "txtCodigo";
-            txtCodigo.Size = new Size(319, 27);
-            txtCodigo.TabIndex = 1;
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(29, 271);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(1298, 362);
+            dataGridView1.TabIndex = 4;
             // 
             // tbProyectos
             // 
@@ -770,13 +608,29 @@
             tbProyectos.Controls.Add(tpAsignarProyectos);
             tbProyectos.Controls.Add(tpListaProyectos);
             tbProyectos.Controls.Add(tbAñadirProyectos);
-            tbProyectos.Controls.Add(tpAñadirNuevaCategoria);
             tbProyectos.Controls.Add(tpAñadirNuevasTareas);
             tbProyectos.Location = new Point(12, 32);
             tbProyectos.Name = "tbProyectos";
             tbProyectos.SelectedIndex = 0;
             tbProyectos.Size = new Size(1373, 688);
             tbProyectos.TabIndex = 0;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(32, 144);
+            label3.Name = "label3";
+            label3.Size = new Size(57, 20);
+            label3.TabIndex = 31;
+            label3.Text = "Estado:";
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(32, 167);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(319, 28);
+            comboBox1.TabIndex = 30;
             // 
             // ProyectsForm
             // 
@@ -787,63 +641,26 @@
             Name = "ProyectsForm";
             Text = "ProyectosForm";
             tpAñadirNuevasTareas.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvTareas).EndInit();
             gbAñadirNuevasTareas.ResumeLayout(false);
             gbAñadirNuevasTareas.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvTareas).EndInit();
-            tpAñadirNuevaCategoria.ResumeLayout(false);
-            gbAñadirNuevasCategorias.ResumeLayout(false);
-            gbAñadirNuevasCategorias.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvCategorias).EndInit();
             tbAñadirProyectos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvAñadirProyectos).EndInit();
             gbAñadirNuevosProyectos.ResumeLayout(false);
             gbAñadirNuevosProyectos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvAñadirProyectos).EndInit();
             tpListaProyectos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvListaProyectos).EndInit();
             tpAsignarProyectos.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             gbListaProyecto.ResumeLayout(false);
             gbListaProyecto.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             tbProyectos.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
-
-        private TabPage tpAñadirNuevasTareas;
-        private TabPage tpAñadirNuevaCategoria;
-        private TabPage tbAñadirProyectos;
-        private TabPage tpListaProyectos;
-        private TabPage tpAsignarProyectos;
-        private DataGridView dataGridView1;
-        private GroupBox gbListaProyecto;
-        private ComboBox cboProyectos;
-        private Label lblProyectos;
-        private TextBox txtCodigo;
-        private TabControl tbProyectos;
-        private Label lblFechaFin;
-        private DateTimePicker dtpFechaEntrega;
-        private Label label5;
-        private Label label4;
-        private ComboBox cboTareas;
-        private Label label3;
-        private Label label2;
-        private FontAwesome.Sharp.IconButton btnEliminar;
-        private FontAwesome.Sharp.IconButton btnEditar;
-        private FontAwesome.Sharp.IconButton btnGuardar;
-        private DataGridView dgvListaProyectos;
-        private GroupBox gbAñadirNuevosProyectos;
-        private FontAwesome.Sharp.IconButton btnEliminarNP;
-        private FontAwesome.Sharp.IconButton btnEditarNP;
-        private FontAwesome.Sharp.IconButton btnGuardarNP;
         private DateTimePicker dateTimePicker2;
-        private Label lblTareas;
-        private TextBox txtTareasProyectoAñadir;
-        private Label lblCategoria;
-        private TextBox txtCategoriaProyectoAñadir;
-        private Label lblProyecto;
-        private TextBox txtNombreProyectoAñadir;
-        private DataGridView dgvAñadirProyectos;
+        private TabPage tpAñadirNuevasTareas;
         private GroupBox gbAñadirNuevasTareas;
         private ComboBox cboProyectoTareasAñadir;
         private FontAwesome.Sharp.IconButton btnEliminarNT;
@@ -853,18 +670,40 @@
         private TextBox txtTareaAñadirTarea;
         private Label lblProyectoSeleccionar;
         private DataGridView dgvTareas;
-        private GroupBox gbAñadirNuevasCategorias;
-        private FontAwesome.Sharp.IconButton btnEliminarNC;
-        private FontAwesome.Sharp.IconButton btnEditarNC;
-        private FontAwesome.Sharp.IconButton btnGuardarNC;
-        private Label lblCategoriaAñadir;
-        private TextBox textBox8;
-        private Label lblSeleccionProyectoCategoria;
-        private DataGridView dgvCategorias;
+        private TabPage tbAñadirProyectos;
+        private GroupBox gbAñadirNuevosProyectos;
+        private FontAwesome.Sharp.IconButton btnEliminarNP;
+        private FontAwesome.Sharp.IconButton btnEditarNP;
+        private FontAwesome.Sharp.IconButton btnGuardarNP;
+        private Label lblTareas;
+        private TextBox txtTareasProyectoAñadir;
+        private Label lblCategoria;
+        private TextBox txtCategoriaProyectoAñadir;
+        private Label lblProyecto;
+        private TextBox txtNombreProyectoAñadir;
+        private DataGridView dgvAñadirProyectos;
+        private TabPage tpListaProyectos;
+        private DataGridView dgvListaProyectos;
+        private TabPage tpAsignarProyectos;
+        private DataGridView dataGridView1;
+        private GroupBox gbListaProyecto;
+        private Label label3;
+        private ComboBox comboBox1;
+        private FontAwesome.Sharp.IconButton btnEliminar;
+        private Label label4;
+        private FontAwesome.Sharp.IconButton btnEditar;
+        private DateTimePicker dtpFechaEntrega;
+        private FontAwesome.Sharp.IconButton btnGuardar;
         private ComboBox cboClientes;
+        private Label lblFechaFin;
+        private ComboBox cboTareas;
         private Label label1;
+        private Label label2;
         private ComboBox cboEmpleados;
-        private ComboBox cboCategorias;
-        private ComboBox cboProyectoCategoria;
+        private ComboBox cboProyectos;
+        private Label label5;
+        private Label lblProyectos;
+        private TextBox txtCodigo;
+        private TabControl tbProyectos;
     }
 }

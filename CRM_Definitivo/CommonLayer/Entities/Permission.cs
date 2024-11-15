@@ -26,12 +26,15 @@ namespace CommonLayer.Entities
     {
         public int idPermission { get; set; }
         public int idMenu { get; set; }
+        public string nameForm { get; set; }
     }
 
     public class RolPermission
     {
         public int idRolPermission { get; set; }
         public int idPermission { get; set; }
+        public string nameForm { get; set; }
         public int idRoles { get; set; }
+
     }
 }

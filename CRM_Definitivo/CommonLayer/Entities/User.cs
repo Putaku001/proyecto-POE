@@ -12,6 +12,7 @@ namespace CommonLayer.Entities
         public int IdUser { get; set; }
         public string UserAccount { get; set; }
         public int idRol { get; set; }
+        public string Rol { get; set; }
         public string NameUser { get; set; }
         public string LastName {  get; set; }
         public string Email { get; set; }
@@ -30,21 +31,20 @@ namespace CommonLayer.Entities
     {
         public int idAdmin { get; set; }
         public int idUser { get; set; }
+        public string UserAccount { get; set; }
     }
     public class Employees
     {
         public int idEmployee { get; set; }
         public int idUser { get; set; }
+        public string UserAccount { get; set; }
+
     }
     public class Clients
     {
         public int idCliente { get; set; }
         public int idUser { get; set; }
-    }
-
-    public class ImageProfile
-    {
-        
+        public string UserAccount { get; set; }
 
     }
 }
