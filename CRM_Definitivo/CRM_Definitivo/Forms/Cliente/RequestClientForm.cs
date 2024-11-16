@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace PresentationLayer.Forms.Cliente
 {
-    public partial class ClientForm : Form
+    public partial class RequestClientForm : Form
     {
         private readonly IUsersServices _usersServices;
-        public ClientForm(IUsersServices usersServices)
+        public RequestClientForm(IUsersServices usersServices)
         {
             InitializeComponent();
             _usersServices = usersServices;

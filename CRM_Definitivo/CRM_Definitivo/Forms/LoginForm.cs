@@ -129,7 +129,7 @@ namespace CRM_Definitivo
                 CaptureData.City = user.City;
                 CaptureData.Password = user.passworduser;
 
-
+                
                 var menuForm = _serviceProvider.GetRequiredService<MenuForm>();
                 this.Hide();
                 menuForm.ShowDialog();

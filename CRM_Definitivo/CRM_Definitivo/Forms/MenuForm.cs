@@ -80,7 +80,7 @@ namespace PresentationLayer.Forms
         {
             groupBox1.Visible = false;
 
-            if(CaptureData.IdRol == 1)
+            if (CaptureData.IdRol == 1)
             {
                 groupBox1.Visible = true;
             }
@@ -90,7 +90,7 @@ namespace PresentationLayer.Forms
                 var HomeUserEmployeeForm = _provider.GetRequiredService<HomeUserEmployeeForm>();
                 AbrirFormulario(HomeUserEmployeeForm);
             }
-            else if(CaptureData.IdRol == 4)
+            else if (CaptureData.IdRol == 4)
             {
                 groupBox1.Controls.Clear();
                 var HomeUserClientForm = _provider.GetRequiredService<HomeUserClientForm>();
@@ -167,9 +167,11 @@ namespace PresentationLayer.Forms
 
         private void label2_Click(object sender, EventArgs e)
         {
-            this.Close();
-            var LoginForm = _provider.GetRequiredService<LoginForm>();
-            LoginForm.ShowDialog();
+
+            //var LoginForm = _provider.GetRequiredService<LoginForm>();
+            //LoginForm.ShowDialog();
+            Application.Restart();
+
         }
 
         private void AbrirFormulario(Form formulario)
@@ -210,8 +212,10 @@ namespace PresentationLayer.Forms
 
         private void IconMenuUsersForm_Click(object sender, EventArgs e)
         {
+
             var IconMenuUsersForm = _provider.GetRequiredService<UsersForm>();
             AbrirFormulario(IconMenuUsersForm);
+
         }
 
         private void IconMenuProyectsForm_Click(object sender, EventArgs e)
@@ -351,6 +355,12 @@ namespace PresentationLayer.Forms
         {
             var iconMenuItemProjectsEmployee = _provider.GetRequiredService<ProjectEmployeeForm>();
             AbrirFormulario(iconMenuItemProjectsEmployee);
+        }
+
+        private void iconMenuItemRequestClientProjects_Click(object sender, EventArgs e)
+        {
+            var iconMenuItemRequest = _provider.GetRequiredService<RequestClientForm>();
+            AbrirFormulario(iconMenuItemRequest);
         }
     }
 

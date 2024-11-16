@@ -53,6 +53,7 @@
             timer1 = new System.Windows.Forms.Timer(components);
             contenedor = new Panel();
             groupBox1 = new GroupBox();
+            labelUserAccount = new Label();
             panelUsersView = new Panel();
             panel10 = new Panel();
             label7 = new Label();
@@ -88,7 +89,6 @@
             iconButtonUserClients = new FontAwesome.Sharp.IconButton();
             iconButtonUserAdministrator = new FontAwesome.Sharp.IconButton();
             iconButtonUserEmployee = new FontAwesome.Sharp.IconButton();
-            labelUserAccount = new Label();
             panelPrijectsAssignament = new Panel();
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
@@ -137,7 +137,7 @@
             label2.ForeColor = SystemColors.InfoText;
             label2.Location = new Point(6, 32);
             label2.Name = "label2";
-            label2.Size = new Size(126, 22);
+            label2.Size = new Size(199, 36);
             label2.TabIndex = 6;
             label2.Text = "Cerrar sesion";
             label2.Click += label2_Click;
@@ -177,7 +177,7 @@
             lblNombreUsuario.ForeColor = Color.White;
             lblNombreUsuario.Location = new Point(6, 9);
             lblNombreUsuario.Name = "lblNombreUsuario";
-            lblNombreUsuario.Size = new Size(183, 23);
+            lblNombreUsuario.Size = new Size(291, 39);
             lblNombreUsuario.TabIndex = 4;
             lblNombreUsuario.Text = "lblNombreUsuario";
             // 
@@ -201,7 +201,7 @@
             lblHoraUsuario.ForeColor = Color.Black;
             lblHoraUsuario.Location = new Point(647, 25);
             lblHoraUsuario.Name = "lblHoraUsuario";
-            lblHoraUsuario.Size = new Size(150, 23);
+            lblHoraUsuario.Size = new Size(238, 39);
             lblHoraUsuario.TabIndex = 5;
             lblHoraUsuario.Text = "lblHoraUsuario";
             // 
@@ -310,6 +310,7 @@
             iconMenuItemRequestClientProjects.Name = "iconMenuItemRequestClientProjects";
             iconMenuItemRequestClientProjects.Size = new Size(51, 32);
             iconMenuItemRequestClientProjects.TextImageRelation = TextImageRelation.Overlay;
+            iconMenuItemRequestClientProjects.Click += iconMenuItemRequestClientProjects_Click;
             // 
             // iconMenuItemProjectsEmployee
             // 
@@ -417,6 +418,16 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Inicio";
             // 
+            // labelUserAccount
+            // 
+            labelUserAccount.AutoSize = true;
+            labelUserAccount.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold);
+            labelUserAccount.Location = new Point(265, 21);
+            labelUserAccount.Name = "labelUserAccount";
+            labelUserAccount.Size = new Size(200, 44);
+            labelUserAccount.TabIndex = 1;
+            labelUserAccount.Text = "nameUser";
+            // 
             // panelUsersView
             // 
             panelUsersView.BackColor = Color.MediumTurquoise;
@@ -433,9 +444,9 @@
             panelUsersView.Controls.Add(pictureBoxSelectedUser);
             panelUsersView.Controls.Add(labelByUser);
             panelUsersView.Dock = DockStyle.Right;
-            panelUsersView.Location = new Point(932, 22);
+            panelUsersView.Location = new Point(932, 33);
             panelUsersView.Name = "panelUsersView";
-            panelUsersView.Size = new Size(425, 776);
+            panelUsersView.Size = new Size(425, 765);
             panelUsersView.TabIndex = 6;
             panelUsersView.Visible = false;
             // 
@@ -446,7 +457,7 @@
             panel10.BorderStyle = BorderStyle.Fixed3D;
             panel10.Location = new Point(17, 669);
             panel10.Name = "panel10";
-            panel10.Size = new Size(397, 104);
+            panel10.Size = new Size(397, 93);
             panel10.TabIndex = 24;
             // 
             // label7
@@ -456,7 +467,7 @@
             label7.ForeColor = Color.Black;
             label7.Location = new Point(128, 96);
             label7.Name = "label7";
-            label7.Size = new Size(15, 23);
+            label7.Size = new Size(26, 39);
             label7.TabIndex = 19;
             label7.Text = ",";
             // 
@@ -484,7 +495,7 @@
             labelRegistration.ForeColor = Color.White;
             labelRegistration.Location = new Point(220, 123);
             labelRegistration.Name = "labelRegistration";
-            labelRegistration.Size = new Size(69, 21);
+            labelRegistration.Size = new Size(114, 34);
             labelRegistration.TabIndex = 25;
             labelRegistration.Text = "registro";
             // 
@@ -495,7 +506,7 @@
             labelNumberPhone.ForeColor = Color.White;
             labelNumberPhone.Location = new Point(115, 88);
             labelNumberPhone.Name = "labelNumberPhone";
-            labelNumberPhone.Size = new Size(66, 21);
+            labelNumberPhone.Size = new Size(109, 34);
             labelNumberPhone.TabIndex = 24;
             labelNumberPhone.Text = "celular";
             // 
@@ -506,7 +517,7 @@
             labelEmail.ForeColor = Color.White;
             labelEmail.Location = new Point(94, 51);
             labelEmail.Name = "labelEmail";
-            labelEmail.Size = new Size(71, 21);
+            labelEmail.Size = new Size(117, 34);
             labelEmail.TabIndex = 23;
             labelEmail.Text = "Correo:";
             // 
@@ -517,7 +528,7 @@
             label10.ForeColor = Color.White;
             label10.Location = new Point(15, 121);
             label10.Name = "label10";
-            label10.Size = new Size(203, 23);
+            label10.Size = new Size(318, 39);
             label10.TabIndex = 22;
             label10.Text = "Fecha de creacion:";
             // 
@@ -528,7 +539,7 @@
             label9.ForeColor = Color.White;
             label9.Location = new Point(15, 88);
             label9.Name = "label9";
-            label9.Size = new Size(99, 23);
+            label9.Size = new Size(155, 39);
             label9.TabIndex = 21;
             label9.Text = "Telefono:";
             // 
@@ -539,7 +550,7 @@
             label8.ForeColor = Color.White;
             label8.Location = new Point(12, 51);
             label8.Name = "label8";
-            label8.Size = new Size(83, 23);
+            label8.Size = new Size(131, 39);
             label8.TabIndex = 20;
             label8.Text = "Correo:";
             // 
@@ -550,7 +561,7 @@
             label6.ForeColor = Color.White;
             label6.Location = new Point(3, 10);
             label6.Name = "label6";
-            label6.Size = new Size(241, 23);
+            label6.Size = new Size(380, 39);
             label6.TabIndex = 20;
             label6.Text = "Informacion del usuario";
             // 
@@ -583,11 +594,11 @@
             listBoxRequestProjects.BorderStyle = BorderStyle.None;
             listBoxRequestProjects.Font = new Font("Century Gothic", 9F, FontStyle.Italic);
             listBoxRequestProjects.FormattingEnabled = true;
-            listBoxRequestProjects.ItemHeight = 18;
+            listBoxRequestProjects.ItemHeight = 28;
             listBoxRequestProjects.Items.AddRange(new object[] { "prueba1", "prueba2", "prueba3", "prueba4", "prueba5" });
             listBoxRequestProjects.Location = new Point(109, 47);
             listBoxRequestProjects.Name = "listBoxRequestProjects";
-            listBoxRequestProjects.Size = new Size(251, 54);
+            listBoxRequestProjects.Size = new Size(251, 28);
             listBoxRequestProjects.TabIndex = 21;
             // 
             // label4
@@ -597,7 +608,7 @@
             label4.ForeColor = Color.White;
             label4.Location = new Point(109, 12);
             label4.Name = "label4";
-            label4.Size = new Size(216, 23);
+            label4.Size = new Size(341, 39);
             label4.TabIndex = 20;
             label4.Text = "Proyectos solicitados";
             // 
@@ -630,11 +641,11 @@
             listBoxProjectsAsignamment.BorderStyle = BorderStyle.None;
             listBoxProjectsAsignamment.Font = new Font("Century Gothic", 9F, FontStyle.Italic);
             listBoxProjectsAsignamment.FormattingEnabled = true;
-            listBoxProjectsAsignamment.ItemHeight = 18;
+            listBoxProjectsAsignamment.ItemHeight = 28;
             listBoxProjectsAsignamment.Items.AddRange(new object[] { "prueba1", "prueba2", "prueba3", "prueba4", "prueba5" });
             listBoxProjectsAsignamment.Location = new Point(109, 47);
             listBoxProjectsAsignamment.Name = "listBoxProjectsAsignamment";
-            listBoxProjectsAsignamment.Size = new Size(251, 54);
+            listBoxProjectsAsignamment.Size = new Size(251, 28);
             listBoxProjectsAsignamment.TabIndex = 20;
             // 
             // label5
@@ -644,7 +655,7 @@
             label5.ForeColor = Color.White;
             label5.Location = new Point(109, 6);
             label5.Name = "label5";
-            label5.Size = new Size(212, 23);
+            label5.Size = new Size(336, 39);
             label5.TabIndex = 19;
             label5.Text = "Proyectos asignados";
             // 
@@ -655,7 +666,7 @@
             labelnameUser.ForeColor = Color.White;
             labelnameUser.Location = new Point(99, 68);
             labelnameUser.Name = "labelnameUser";
-            labelnameUser.Size = new Size(70, 23);
+            labelnameUser.Size = new Size(112, 39);
             labelnameUser.TabIndex = 18;
             labelnameUser.Text = "Name";
             // 
@@ -666,7 +677,7 @@
             label3.ForeColor = Color.Black;
             label3.Location = new Point(262, 97);
             label3.Name = "label3";
-            label3.Size = new Size(15, 23);
+            label3.Size = new Size(26, 39);
             label3.TabIndex = 17;
             label3.Text = ",";
             // 
@@ -678,7 +689,7 @@
             labelCity.ForeColor = Color.RoyalBlue;
             labelCity.Location = new Point(274, 96);
             labelCity.Name = "labelCity";
-            labelCity.Size = new Size(49, 23);
+            labelCity.Size = new Size(79, 38);
             labelCity.TabIndex = 16;
             labelCity.Text = "City";
             // 
@@ -690,7 +701,7 @@
             labelCountryByUser.ForeColor = Color.RoyalBlue;
             labelCountryByUser.Location = new Point(149, 96);
             labelCountryByUser.Name = "labelCountryByUser";
-            labelCountryByUser.Size = new Size(114, 23);
+            labelCountryByUser.Size = new Size(184, 38);
             labelCountryByUser.TabIndex = 12;
             labelCountryByUser.Text = "El salvador";
             // 
@@ -702,7 +713,7 @@
             labelByAgeUser.ForeColor = Color.RoyalBlue;
             labelByAgeUser.Location = new Point(99, 96);
             labelByAgeUser.Name = "labelByAgeUser";
-            labelByAgeUser.Size = new Size(49, 23);
+            labelByAgeUser.Size = new Size(79, 38);
             labelByAgeUser.TabIndex = 11;
             labelByAgeUser.Text = "age";
             // 
@@ -726,7 +737,7 @@
             labelByUser.ForeColor = Color.White;
             labelByUser.Location = new Point(17, 22);
             labelByUser.Name = "labelByUser";
-            labelByUser.Size = new Size(72, 34);
+            labelByUser.Size = new Size(113, 55);
             labelByUser.TabIndex = 9;
             labelByUser.Text = "User";
             // 
@@ -847,16 +858,6 @@
             iconButtonUserEmployee.UseVisualStyleBackColor = false;
             iconButtonUserEmployee.Click += iconButtonUserEmployee_Click;
             // 
-            // labelUserAccount
-            // 
-            labelUserAccount.AutoSize = true;
-            labelUserAccount.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold);
-            labelUserAccount.Location = new Point(265, 21);
-            labelUserAccount.Name = "labelUserAccount";
-            labelUserAccount.Size = new Size(125, 27);
-            labelUserAccount.TabIndex = 1;
-            labelUserAccount.Text = "nameUser";
-            // 
             // panelPrijectsAssignament
             // 
             panelPrijectsAssignament.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
@@ -892,7 +893,7 @@
             // 
             // MenuForm
             // 
-            AutoScaleDimensions = new SizeF(9F, 20F);
+            AutoScaleDimensions = new SizeF(14F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1428, 872);
