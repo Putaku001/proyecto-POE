@@ -443,7 +443,6 @@ C:\Users\fuent\source\repos\proyecto-POE\CRM_Definitivo\CRM_Definitivo\bin\Debug
 C:\Users\fuent\source\repos\proyecto-POE\CRM_Definitivo\CRM_Definitivo\bin\Debug\net8.0-windows\runtimes\win-x86\native\QuestPdfSkia.dll
 C:\Users\fuent\source\repos\proyecto-POE\CRM_Definitivo\CRM_Definitivo\obj\Debug\net8.0-windows\PresentationLayer.Forms.Cliente.ClientForm.resources
 C:\Users\fuent\source\repos\proyecto-POE\CRM_Definitivo\CRM_Definitivo\obj\Debug\net8.0-windows\PresentationLayer.Forms.Cliente.ProfileUserAccountForm.resources
-C:\Users\fuent\Downloads\proyecto-POE\CRM_Definitivo\CRM_Definitivo\obj\Debug\net8.0-windows\PresentationLayer.Forms.Cliente.ClientForm.resources
 C:\Users\fuent\Downloads\proyecto-POE\CRM_Definitivo\CRM_Definitivo\obj\Debug\net8.0-windows\PresentationLayer.Forms.Empleados.ProjectEmployeeForm.resources
 C:\Users\blanc_ma7kouo\Desktop\PutakUnivo\proogra\aahh\proyecto poe par 3\proyecto-POE\CRM_Definitivo\CRM_Definitivo\bin\Debug\net8.0-windows\LatoFont\Lato-Black.ttf
 C:\Users\blanc_ma7kouo\Desktop\PutakUnivo\proogra\aahh\proyecto poe par 3\proyecto-POE\CRM_Definitivo\CRM_Definitivo\bin\Debug\net8.0-windows\LatoFont\Lato-BlackItalic.ttf
@@ -750,3 +749,8 @@ C:\Users\fuent\Downloads\proyecto-POE\CRM_Definitivo\CRM_Definitivo\obj\Debug\ne
 C:\Users\fuent\Downloads\proyecto-POE\CRM_Definitivo\CRM_Definitivo\obj\Debug\net8.0-windows\PresentationLayer.Forms.Admin.InfoEmployeeForm.resources
 C:\Users\kenne\OneDrive\Documentos\proyect poe\proyecto-POE\CRM_Definitivo\CRM_Definitivo\obj\Debug\net8.0-windows\PresentationLayer.Forms.Admin.InfoEmployeeForm.resources
 C:\Users\kenne\OneDrive\Documentos\proyect poe\proyecto-POE\CRM_Definitivo\CRM_Definitivo\obj\Debug\net8.0-windows\PresentationLayer.Forms.Cliente.RequestClientForm.resources
+C:\Users\fuent\Downloads\proyecto-POE\CRM_Definitivo\CRM_Definitivo\obj\Debug\net8.0-windows\PresentationLayer.Forms.Cliente.RequestClientForm.resources
+C:\Users\fuent\Downloads\proyecto-POE\CRM_Definitivo\CRM_Definitivo\obj\Debug\net8.0-windows\PresentationLayer.Forms.Admin.AssignamentTaskEmployeeForm.resources
+C:\Users\fuent\Downloads\proyecto-POE\CRM_Definitivo\CRM_Definitivo\obj\Debug\net8.0-windows\PresentationLayer.Forms.Admin.SendProjectForm.resources
+C:\Users\fuent\Downloads\proyecto-POE\CRM_Definitivo\CRM_Definitivo\obj\Debug\net8.0-windows\PresentationLayer.Forms.Cliente.InforProjectsClient.resources
+C:\Users\fuent\Downloads\proyecto-POE\CRM_Definitivo\CRM_Definitivo\obj\Debug\net8.0-windows\PresentationLayer.Forms.Cliente.RefusedProjectClient.resources

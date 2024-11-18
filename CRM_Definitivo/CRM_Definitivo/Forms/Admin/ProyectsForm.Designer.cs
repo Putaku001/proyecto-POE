@@ -28,488 +28,500 @@
         /// </summary>
         private void InitializeComponent()
         {
-            tpAñadirNuevasTareas = new TabPage();
-            dgvTareas = new DataGridView();
-            gbAñadirNuevasTareas = new GroupBox();
-            lblProyectoSeleccionar = new Label();
-            txtTareaAñadirTarea = new TextBox();
-            lblTareaAñadir = new Label();
-            btnGuardarNT = new FontAwesome.Sharp.IconButton();
-            btnEditarNT = new FontAwesome.Sharp.IconButton();
-            btnEliminarNT = new FontAwesome.Sharp.IconButton();
-            cboProyectoTareasAñadir = new ComboBox();
+            tabPageProjects = new TabPage();
+            panelSearchPip = new Panel();
+            iconButtonCleanPip = new FontAwesome.Sharp.IconButton();
+            iconButtonSearchPip = new FontAwesome.Sharp.IconButton();
+            labelSearchpip = new Label();
+            comboBoxSearchPip = new ComboBox();
+            dataGridViewProjectsInProgress = new DataGridView();
+            SelectProjectInProgress = new DataGridViewButtonColumn();
             tpListaProyectos = new TabPage();
-            dgvListaProyectos = new DataGridView();
-            tpAsignarProyectos = new TabPage();
-            gbListaProyecto = new GroupBox();
-            cboProyectos = new ComboBox();
-            cboEmpleados = new ComboBox();
-            label2 = new Label();
-            label1 = new Label();
-            cboTareas = new ComboBox();
-            lblFechaFin = new Label();
-            btnGuardar = new FontAwesome.Sharp.IconButton();
-            dtpFechaEntrega = new DateTimePicker();
-            btnEditar = new FontAwesome.Sharp.IconButton();
-            label4 = new Label();
-            btnEliminar = new FontAwesome.Sharp.IconButton();
-            comboBox1 = new ComboBox();
-            label3 = new Label();
-            dataGridView1 = new DataGridView();
+            dataGridViewRequestProjects = new DataGridView();
+            SelectPr = new DataGridViewButtonColumn();
             tbTask = new TabControl();
-            tpAñadirNuevasTareas.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvTareas).BeginInit();
-            gbAñadirNuevasTareas.SuspendLayout();
+            tabPage1 = new TabPage();
+            panelSearchpf = new Panel();
+            iconButtonClearpf = new FontAwesome.Sharp.IconButton();
+            iconButtonSearchpf = new FontAwesome.Sharp.IconButton();
+            labelSearchpf = new Label();
+            comboBoxSearchpf = new ComboBox();
+            dataGridViewProjectsEnd = new DataGridView();
+            SelectPe = new DataGridViewButtonColumn();
+            tabPageProjectsRefused = new TabPage();
+            panelSearchPr = new Panel();
+            iconButtonClearPr = new FontAwesome.Sharp.IconButton();
+            iconButtonSearchPr = new FontAwesome.Sharp.IconButton();
+            labelSearchPr = new Label();
+            comboBoxSearchPr = new ComboBox();
+            dataGridViewProjectsRefused = new DataGridView();
+            SelectRp = new DataGridViewButtonColumn();
+            tabPageWaitClient = new TabPage();
+            panelSearchWr = new Panel();
+            iconButtonClearSearchWr = new FontAwesome.Sharp.IconButton();
+            iconButtonSearchWr = new FontAwesome.Sharp.IconButton();
+            labelSearchWr = new Label();
+            comboBoxSearchWr = new ComboBox();
+            dataGridViewProjectsWaitingResponse = new DataGridView();
+            tabPageProjects.SuspendLayout();
+            panelSearchPip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewProjectsInProgress).BeginInit();
             tpListaProyectos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvListaProyectos).BeginInit();
-            tpAsignarProyectos.SuspendLayout();
-            gbListaProyecto.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewRequestProjects).BeginInit();
             tbTask.SuspendLayout();
+            tabPage1.SuspendLayout();
+            panelSearchpf.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewProjectsEnd).BeginInit();
+            tabPageProjectsRefused.SuspendLayout();
+            panelSearchPr.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewProjectsRefused).BeginInit();
+            tabPageWaitClient.SuspendLayout();
+            panelSearchWr.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewProjectsWaitingResponse).BeginInit();
             SuspendLayout();
             // 
-            // tpAñadirNuevasTareas
+            // tabPageProjects
             // 
-            tpAñadirNuevasTareas.Controls.Add(gbAñadirNuevasTareas);
-            tpAñadirNuevasTareas.Controls.Add(dgvTareas);
-            tpAñadirNuevasTareas.Location = new Point(8, 46);
-            tpAñadirNuevasTareas.Margin = new Padding(5);
-            tpAñadirNuevasTareas.Name = "tpAñadirNuevasTareas";
-            tpAñadirNuevasTareas.Padding = new Padding(5);
-            tpAñadirNuevasTareas.Size = new Size(2215, 1047);
-            tpAñadirNuevasTareas.TabIndex = 5;
-            tpAñadirNuevasTareas.Text = "Añadir nuevas tareas";
-            tpAñadirNuevasTareas.UseVisualStyleBackColor = true;
+            tabPageProjects.Controls.Add(panelSearchPip);
+            tabPageProjects.Controls.Add(dataGridViewProjectsInProgress);
+            tabPageProjects.Location = new Point(4, 29);
+            tabPageProjects.Name = "tabPageProjects";
+            tabPageProjects.Padding = new Padding(3);
+            tabPageProjects.Size = new Size(1122, 561);
+            tabPageProjects.TabIndex = 6;
+            tabPageProjects.Text = "Proyectos en curso";
+            tabPageProjects.UseVisualStyleBackColor = true;
             // 
-            // dgvTareas
+            // panelSearchPip
             // 
-            dgvTareas.AllowUserToAddRows = false;
-            dgvTareas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dgvTareas.BackgroundColor = Color.White;
-            dgvTareas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvTareas.Location = new Point(1008, 98);
-            dgvTareas.Margin = new Padding(5);
-            dgvTareas.Name = "dgvTareas";
-            dgvTareas.ReadOnly = true;
-            dgvTareas.RowHeadersWidth = 51;
-            dgvTareas.Size = new Size(1159, 872);
-            dgvTareas.TabIndex = 11;
+            panelSearchPip.Controls.Add(iconButtonCleanPip);
+            panelSearchPip.Controls.Add(iconButtonSearchPip);
+            panelSearchPip.Controls.Add(labelSearchpip);
+            panelSearchPip.Controls.Add(comboBoxSearchPip);
+            panelSearchPip.Dock = DockStyle.Top;
+            panelSearchPip.Location = new Point(3, 3);
+            panelSearchPip.Name = "panelSearchPip";
+            panelSearchPip.Size = new Size(1116, 69);
+            panelSearchPip.TabIndex = 1;
             // 
-            // gbAñadirNuevasTareas
+            // iconButtonCleanPip
             // 
-            gbAñadirNuevasTareas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            gbAñadirNuevasTareas.Controls.Add(cboProyectoTareasAñadir);
-            gbAñadirNuevasTareas.Controls.Add(btnEliminarNT);
-            gbAñadirNuevasTareas.Controls.Add(btnEditarNT);
-            gbAñadirNuevasTareas.Controls.Add(btnGuardarNT);
-            gbAñadirNuevasTareas.Controls.Add(lblTareaAñadir);
-            gbAñadirNuevasTareas.Controls.Add(txtTareaAñadirTarea);
-            gbAñadirNuevasTareas.Controls.Add(lblProyectoSeleccionar);
-            gbAñadirNuevasTareas.Location = new Point(50, 78);
-            gbAñadirNuevasTareas.Margin = new Padding(5);
-            gbAñadirNuevasTareas.Name = "gbAñadirNuevasTareas";
-            gbAñadirNuevasTareas.Padding = new Padding(5);
-            gbAñadirNuevasTareas.Size = new Size(824, 891);
-            gbAñadirNuevasTareas.TabIndex = 12;
-            gbAñadirNuevasTareas.TabStop = false;
-            gbAñadirNuevasTareas.Text = "Añadir nuevas tareas:";
+            iconButtonCleanPip.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconButtonCleanPip.IconColor = Color.Black;
+            iconButtonCleanPip.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButtonCleanPip.Location = new Point(326, 21);
+            iconButtonCleanPip.Name = "iconButtonCleanPip";
+            iconButtonCleanPip.Size = new Size(32, 29);
+            iconButtonCleanPip.TabIndex = 3;
+            iconButtonCleanPip.UseVisualStyleBackColor = true;
             // 
-            // lblProyectoSeleccionar
+            // iconButtonSearchPip
             // 
-            lblProyectoSeleccionar.AutoSize = true;
-            lblProyectoSeleccionar.Location = new Point(52, 58);
-            lblProyectoSeleccionar.Margin = new Padding(5, 0, 5, 0);
-            lblProyectoSeleccionar.Name = "lblProyectoSeleccionar";
-            lblProyectoSeleccionar.Size = new Size(260, 32);
-            lblProyectoSeleccionar.TabIndex = 0;
-            lblProyectoSeleccionar.Text = "Seleccione el proyecto:";
+            iconButtonSearchPip.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconButtonSearchPip.IconColor = Color.Black;
+            iconButtonSearchPip.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButtonSearchPip.Location = new Point(288, 21);
+            iconButtonSearchPip.Name = "iconButtonSearchPip";
+            iconButtonSearchPip.Size = new Size(32, 29);
+            iconButtonSearchPip.TabIndex = 2;
+            iconButtonSearchPip.UseVisualStyleBackColor = true;
             // 
-            // txtTareaAñadirTarea
+            // labelSearchpip
             // 
-            txtTareaAñadirTarea.Location = new Point(52, 216);
-            txtTareaAñadirTarea.Margin = new Padding(5);
-            txtTareaAñadirTarea.Name = "txtTareaAñadirTarea";
-            txtTareaAñadirTarea.Size = new Size(516, 39);
-            txtTareaAñadirTarea.TabIndex = 5;
+            labelSearchpip.AutoSize = true;
+            labelSearchpip.Location = new Point(8, 25);
+            labelSearchpip.Name = "labelSearchpip";
+            labelSearchpip.Size = new Size(52, 20);
+            labelSearchpip.TabIndex = 1;
+            labelSearchpip.Text = "Buscar";
             // 
-            // lblTareaAñadir
+            // comboBoxSearchPip
             // 
-            lblTareaAñadir.AutoSize = true;
-            lblTareaAñadir.Location = new Point(52, 179);
-            lblTareaAñadir.Margin = new Padding(5, 0, 5, 0);
-            lblTareaAñadir.Name = "lblTareaAñadir";
-            lblTareaAñadir.Size = new Size(74, 32);
-            lblTareaAñadir.TabIndex = 4;
-            lblTareaAñadir.Text = "Tarea:";
+            comboBoxSearchPip.FormattingEnabled = true;
+            comboBoxSearchPip.Location = new Point(66, 22);
+            comboBoxSearchPip.Name = "comboBoxSearchPip";
+            comboBoxSearchPip.Size = new Size(216, 28);
+            comboBoxSearchPip.TabIndex = 0;
             // 
-            // btnGuardarNT
+            // dataGridViewProjectsInProgress
             // 
-            btnGuardarNT.BackColor = Color.ForestGreen;
-            btnGuardarNT.Cursor = Cursors.Hand;
-            btnGuardarNT.FlatAppearance.BorderColor = Color.Black;
-            btnGuardarNT.FlatStyle = FlatStyle.Flat;
-            btnGuardarNT.ForeColor = Color.White;
-            btnGuardarNT.IconChar = FontAwesome.Sharp.IconChar.Save;
-            btnGuardarNT.IconColor = Color.White;
-            btnGuardarNT.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnGuardarNT.IconSize = 22;
-            btnGuardarNT.ImageAlign = ContentAlignment.MiddleLeft;
-            btnGuardarNT.Location = new Point(52, 491);
-            btnGuardarNT.Margin = new Padding(5);
-            btnGuardarNT.Name = "btnGuardarNT";
-            btnGuardarNT.Size = new Size(518, 46);
-            btnGuardarNT.TabIndex = 23;
-            btnGuardarNT.Text = "Añadir";
-            btnGuardarNT.UseVisualStyleBackColor = false;
+            dataGridViewProjectsInProgress.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridViewProjectsInProgress.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewProjectsInProgress.Columns.AddRange(new DataGridViewColumn[] { SelectProjectInProgress });
+            dataGridViewProjectsInProgress.Location = new Point(3, 78);
+            dataGridViewProjectsInProgress.Name = "dataGridViewProjectsInProgress";
+            dataGridViewProjectsInProgress.RowHeadersWidth = 51;
+            dataGridViewProjectsInProgress.Size = new Size(1116, 480);
+            dataGridViewProjectsInProgress.TabIndex = 0;
+            dataGridViewProjectsInProgress.CellContentClick += dataGridViewProjectsInProgress_CellContentClick;
             // 
-            // btnEditarNT
+            // SelectProjectInProgress
             // 
-            btnEditarNT.BackColor = Color.DodgerBlue;
-            btnEditarNT.Cursor = Cursors.Hand;
-            btnEditarNT.FlatAppearance.BorderColor = Color.Black;
-            btnEditarNT.FlatStyle = FlatStyle.Flat;
-            btnEditarNT.ForeColor = Color.White;
-            btnEditarNT.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            btnEditarNT.IconColor = Color.White;
-            btnEditarNT.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnEditarNT.IconSize = 22;
-            btnEditarNT.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEditarNT.Location = new Point(52, 547);
-            btnEditarNT.Margin = new Padding(5);
-            btnEditarNT.Name = "btnEditarNT";
-            btnEditarNT.Size = new Size(518, 46);
-            btnEditarNT.TabIndex = 24;
-            btnEditarNT.Text = "Editar";
-            btnEditarNT.UseVisualStyleBackColor = false;
-            // 
-            // btnEliminarNT
-            // 
-            btnEliminarNT.BackColor = Color.Crimson;
-            btnEliminarNT.Cursor = Cursors.Hand;
-            btnEliminarNT.FlatAppearance.BorderColor = Color.Black;
-            btnEliminarNT.FlatStyle = FlatStyle.Flat;
-            btnEliminarNT.ForeColor = Color.White;
-            btnEliminarNT.IconChar = FontAwesome.Sharp.IconChar.DeleteLeft;
-            btnEliminarNT.IconColor = Color.White;
-            btnEliminarNT.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnEliminarNT.IconSize = 22;
-            btnEliminarNT.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEliminarNT.Location = new Point(52, 603);
-            btnEliminarNT.Margin = new Padding(5);
-            btnEliminarNT.Name = "btnEliminarNT";
-            btnEliminarNT.Size = new Size(518, 46);
-            btnEliminarNT.TabIndex = 25;
-            btnEliminarNT.Text = "Eliminar";
-            btnEliminarNT.UseVisualStyleBackColor = false;
-            // 
-            // cboProyectoTareasAñadir
-            // 
-            cboProyectoTareasAñadir.FormattingEnabled = true;
-            cboProyectoTareasAñadir.Location = new Point(52, 95);
-            cboProyectoTareasAñadir.Margin = new Padding(5);
-            cboProyectoTareasAñadir.Name = "cboProyectoTareasAñadir";
-            cboProyectoTareasAñadir.Size = new Size(516, 40);
-            cboProyectoTareasAñadir.TabIndex = 26;
+            SelectProjectInProgress.HeaderText = "Select";
+            SelectProjectInProgress.MinimumWidth = 6;
+            SelectProjectInProgress.Name = "SelectProjectInProgress";
+            SelectProjectInProgress.Resizable = DataGridViewTriState.True;
+            SelectProjectInProgress.SortMode = DataGridViewColumnSortMode.Automatic;
+            SelectProjectInProgress.Width = 70;
             // 
             // tpListaProyectos
             // 
-            tpListaProyectos.Controls.Add(dgvListaProyectos);
-            tpListaProyectos.Location = new Point(8, 46);
-            tpListaProyectos.Margin = new Padding(5);
+            tpListaProyectos.Controls.Add(dataGridViewRequestProjects);
+            tpListaProyectos.Location = new Point(4, 29);
             tpListaProyectos.Name = "tpListaProyectos";
-            tpListaProyectos.Padding = new Padding(5);
-            tpListaProyectos.Size = new Size(2215, 1047);
+            tpListaProyectos.Padding = new Padding(3);
+            tpListaProyectos.Size = new Size(1122, 561);
             tpListaProyectos.TabIndex = 2;
-            tpListaProyectos.Text = "Lista de proyectos";
+            tpListaProyectos.Text = "Proyectos solicitados";
             tpListaProyectos.UseVisualStyleBackColor = true;
             tpListaProyectos.Click += tpListaProyectos_Click;
             // 
-            // dgvListaProyectos
+            // dataGridViewRequestProjects
             // 
-            dgvListaProyectos.AllowUserToAddRows = false;
-            dgvListaProyectos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dgvListaProyectos.BackgroundColor = Color.White;
-            dgvListaProyectos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvListaProyectos.Location = new Point(46, 88);
-            dgvListaProyectos.Margin = new Padding(5);
-            dgvListaProyectos.Name = "dgvListaProyectos";
-            dgvListaProyectos.ReadOnly = true;
-            dgvListaProyectos.RowHeadersWidth = 51;
-            dgvListaProyectos.Size = new Size(2134, 928);
-            dgvListaProyectos.TabIndex = 5;
+            dataGridViewRequestProjects.AllowUserToAddRows = false;
+            dataGridViewRequestProjects.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridViewRequestProjects.BackgroundColor = Color.White;
+            dataGridViewRequestProjects.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewRequestProjects.Columns.AddRange(new DataGridViewColumn[] { SelectPr });
+            dataGridViewRequestProjects.Location = new Point(33, 55);
+            dataGridViewRequestProjects.Name = "dataGridViewRequestProjects";
+            dataGridViewRequestProjects.ReadOnly = true;
+            dataGridViewRequestProjects.RowHeadersWidth = 51;
+            dataGridViewRequestProjects.Size = new Size(1070, 486);
+            dataGridViewRequestProjects.TabIndex = 5;
+            dataGridViewRequestProjects.CellContentClick += dataGridViewRequestProjects_CellContentClick;
             // 
-            // tpAsignarProyectos
+            // SelectPr
             // 
-            tpAsignarProyectos.Controls.Add(dataGridView1);
-            tpAsignarProyectos.Controls.Add(gbListaProyecto);
-            tpAsignarProyectos.Location = new Point(8, 46);
-            tpAsignarProyectos.Margin = new Padding(5);
-            tpAsignarProyectos.Name = "tpAsignarProyectos";
-            tpAsignarProyectos.Padding = new Padding(5);
-            tpAsignarProyectos.Size = new Size(2215, 1047);
-            tpAsignarProyectos.TabIndex = 1;
-            tpAsignarProyectos.Text = "Asignar Tareas";
-            tpAsignarProyectos.UseVisualStyleBackColor = true;
-            // 
-            // gbListaProyecto
-            // 
-            gbListaProyecto.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            gbListaProyecto.Controls.Add(label3);
-            gbListaProyecto.Controls.Add(comboBox1);
-            gbListaProyecto.Controls.Add(btnEliminar);
-            gbListaProyecto.Controls.Add(label4);
-            gbListaProyecto.Controls.Add(btnEditar);
-            gbListaProyecto.Controls.Add(dtpFechaEntrega);
-            gbListaProyecto.Controls.Add(btnGuardar);
-            gbListaProyecto.Controls.Add(lblFechaFin);
-            gbListaProyecto.Controls.Add(cboTareas);
-            gbListaProyecto.Controls.Add(label1);
-            gbListaProyecto.Controls.Add(label2);
-            gbListaProyecto.Controls.Add(cboEmpleados);
-            gbListaProyecto.Controls.Add(cboProyectos);
-            gbListaProyecto.Location = new Point(47, 53);
-            gbListaProyecto.Margin = new Padding(5);
-            gbListaProyecto.Name = "gbListaProyecto";
-            gbListaProyecto.Padding = new Padding(5);
-            gbListaProyecto.Size = new Size(2109, 371);
-            gbListaProyecto.TabIndex = 3;
-            gbListaProyecto.TabStop = false;
-            gbListaProyecto.Text = "Asignar Tareas:";
-            // 
-            // cboProyectos
-            // 
-            cboProyectos.FormattingEnabled = true;
-            cboProyectos.Location = new Point(48, 94);
-            cboProyectos.Margin = new Padding(5);
-            cboProyectos.Name = "cboProyectos";
-            cboProyectos.Size = new Size(516, 40);
-            cboProyectos.TabIndex = 2;
-            // 
-            // cboEmpleados
-            // 
-            cboEmpleados.FormattingEnabled = true;
-            cboEmpleados.Location = new Point(741, 181);
-            cboEmpleados.Margin = new Padding(5);
-            cboEmpleados.Name = "cboEmpleados";
-            cboEmpleados.Size = new Size(516, 40);
-            cboEmpleados.TabIndex = 27;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(48, 57);
-            label2.Margin = new Padding(5, 0, 5, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(112, 32);
-            label2.TabIndex = 3;
-            label2.Text = "Proyecto:";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(741, 144);
-            label1.Margin = new Padding(5, 0, 5, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(125, 32);
-            label1.TabIndex = 28;
-            label1.Text = "Empleado:";
-            // 
-            // cboTareas
-            // 
-            cboTareas.FormattingEnabled = true;
-            cboTareas.Location = new Point(741, 94);
-            cboTareas.Margin = new Padding(5);
-            cboTareas.Name = "cboTareas";
-            cboTareas.Size = new Size(516, 40);
-            cboTareas.TabIndex = 6;
-            // 
-            // lblFechaFin
-            // 
-            lblFechaFin.AutoSize = true;
-            lblFechaFin.Location = new Point(741, 246);
-            lblFechaFin.Margin = new Padding(5, 0, 5, 0);
-            lblFechaFin.Name = "lblFechaFin";
-            lblFechaFin.Size = new Size(204, 32);
-            lblFechaFin.TabIndex = 11;
-            lblFechaFin.Text = "Fecha de entrega:";
-            // 
-            // btnGuardar
-            // 
-            btnGuardar.BackColor = Color.ForestGreen;
-            btnGuardar.Cursor = Cursors.Hand;
-            btnGuardar.FlatAppearance.BorderColor = Color.Black;
-            btnGuardar.FlatStyle = FlatStyle.Flat;
-            btnGuardar.ForeColor = Color.White;
-            btnGuardar.IconChar = FontAwesome.Sharp.IconChar.Save;
-            btnGuardar.IconColor = Color.White;
-            btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnGuardar.IconSize = 22;
-            btnGuardar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnGuardar.Location = new Point(1341, 117);
-            btnGuardar.Margin = new Padding(5);
-            btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(518, 46);
-            btnGuardar.TabIndex = 23;
-            btnGuardar.Text = "Agregar";
-            btnGuardar.UseVisualStyleBackColor = false;
-            // 
-            // dtpFechaEntrega
-            // 
-            dtpFechaEntrega.Location = new Point(741, 282);
-            dtpFechaEntrega.Margin = new Padding(5);
-            dtpFechaEntrega.Name = "dtpFechaEntrega";
-            dtpFechaEntrega.Size = new Size(516, 39);
-            dtpFechaEntrega.TabIndex = 10;
-            // 
-            // btnEditar
-            // 
-            btnEditar.BackColor = Color.DodgerBlue;
-            btnEditar.Cursor = Cursors.Hand;
-            btnEditar.FlatAppearance.BorderColor = Color.Black;
-            btnEditar.FlatStyle = FlatStyle.Flat;
-            btnEditar.ForeColor = Color.White;
-            btnEditar.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            btnEditar.IconColor = Color.White;
-            btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnEditar.IconSize = 22;
-            btnEditar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEditar.Location = new Point(1341, 173);
-            btnEditar.Margin = new Padding(5);
-            btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(518, 46);
-            btnEditar.TabIndex = 24;
-            btnEditar.Text = "Editar";
-            btnEditar.UseVisualStyleBackColor = false;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(741, 58);
-            label4.Margin = new Padding(5, 0, 5, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(84, 32);
-            label4.TabIndex = 7;
-            label4.Text = "Tareas:";
-            // 
-            // btnEliminar
-            // 
-            btnEliminar.BackColor = Color.Crimson;
-            btnEliminar.Cursor = Cursors.Hand;
-            btnEliminar.FlatAppearance.BorderColor = Color.Black;
-            btnEliminar.FlatStyle = FlatStyle.Flat;
-            btnEliminar.ForeColor = Color.White;
-            btnEliminar.IconChar = FontAwesome.Sharp.IconChar.DeleteLeft;
-            btnEliminar.IconColor = Color.White;
-            btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnEliminar.IconSize = 22;
-            btnEliminar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEliminar.Location = new Point(1341, 229);
-            btnEliminar.Margin = new Padding(5);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(518, 46);
-            btnEliminar.TabIndex = 25;
-            btnEliminar.Text = "Eliminar";
-            btnEliminar.UseVisualStyleBackColor = false;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(48, 183);
-            comboBox1.Margin = new Padding(5);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(516, 40);
-            comboBox1.TabIndex = 30;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(48, 146);
-            label3.Margin = new Padding(5, 0, 5, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(89, 32);
-            label3.TabIndex = 31;
-            label3.Text = "Estado:";
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(47, 434);
-            dataGridView1.Margin = new Padding(5);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(2109, 579);
-            dataGridView1.TabIndex = 4;
+            SelectPr.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            SelectPr.HeaderText = "Select";
+            SelectPr.MinimumWidth = 6;
+            SelectPr.Name = "SelectPr";
+            SelectPr.ReadOnly = true;
+            SelectPr.Width = 70;
             // 
             // tbTask
             // 
             tbTask.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            tbTask.Controls.Add(tpAsignarProyectos);
             tbTask.Controls.Add(tpListaProyectos);
-            tbTask.Controls.Add(tpAñadirNuevasTareas);
-            tbTask.Location = new Point(20, 51);
-            tbTask.Margin = new Padding(5);
+            tbTask.Controls.Add(tabPageProjects);
+            tbTask.Controls.Add(tabPage1);
+            tbTask.Controls.Add(tabPageProjectsRefused);
+            tbTask.Controls.Add(tabPageWaitClient);
+            tbTask.Location = new Point(12, 32);
             tbTask.Name = "tbTask";
             tbTask.SelectedIndex = 0;
-            tbTask.Size = new Size(2231, 1101);
+            tbTask.Size = new Size(1130, 594);
             tbTask.TabIndex = 0;
+            // 
+            // tabPage1
+            // 
+            tabPage1.Controls.Add(panelSearchpf);
+            tabPage1.Controls.Add(dataGridViewProjectsEnd);
+            tabPage1.Location = new Point(4, 29);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(1122, 561);
+            tabPage1.TabIndex = 7;
+            tabPage1.Text = "Proyectos finalizados";
+            tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // panelSearchpf
+            // 
+            panelSearchpf.Controls.Add(iconButtonClearpf);
+            panelSearchpf.Controls.Add(iconButtonSearchpf);
+            panelSearchpf.Controls.Add(labelSearchpf);
+            panelSearchpf.Controls.Add(comboBoxSearchpf);
+            panelSearchpf.Dock = DockStyle.Top;
+            panelSearchpf.Location = new Point(3, 3);
+            panelSearchpf.Name = "panelSearchpf";
+            panelSearchpf.Size = new Size(1116, 69);
+            panelSearchpf.TabIndex = 3;
+            // 
+            // iconButtonClearpf
+            // 
+            iconButtonClearpf.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconButtonClearpf.IconColor = Color.Black;
+            iconButtonClearpf.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButtonClearpf.Location = new Point(325, 21);
+            iconButtonClearpf.Name = "iconButtonClearpf";
+            iconButtonClearpf.Size = new Size(32, 29);
+            iconButtonClearpf.TabIndex = 3;
+            iconButtonClearpf.UseVisualStyleBackColor = true;
+            // 
+            // iconButtonSearchpf
+            // 
+            iconButtonSearchpf.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconButtonSearchpf.IconColor = Color.Black;
+            iconButtonSearchpf.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButtonSearchpf.Location = new Point(287, 21);
+            iconButtonSearchpf.Name = "iconButtonSearchpf";
+            iconButtonSearchpf.Size = new Size(32, 29);
+            iconButtonSearchpf.TabIndex = 2;
+            iconButtonSearchpf.UseVisualStyleBackColor = true;
+            // 
+            // labelSearchpf
+            // 
+            labelSearchpf.AutoSize = true;
+            labelSearchpf.Location = new Point(7, 25);
+            labelSearchpf.Name = "labelSearchpf";
+            labelSearchpf.Size = new Size(52, 20);
+            labelSearchpf.TabIndex = 1;
+            labelSearchpf.Text = "Buscar";
+            // 
+            // comboBoxSearchpf
+            // 
+            comboBoxSearchpf.FormattingEnabled = true;
+            comboBoxSearchpf.Location = new Point(65, 22);
+            comboBoxSearchpf.Name = "comboBoxSearchpf";
+            comboBoxSearchpf.Size = new Size(216, 28);
+            comboBoxSearchpf.TabIndex = 0;
+            // 
+            // dataGridViewProjectsEnd
+            // 
+            dataGridViewProjectsEnd.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridViewProjectsEnd.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewProjectsEnd.Columns.AddRange(new DataGridViewColumn[] { SelectPe });
+            dataGridViewProjectsEnd.Location = new Point(3, 78);
+            dataGridViewProjectsEnd.Name = "dataGridViewProjectsEnd";
+            dataGridViewProjectsEnd.RowHeadersWidth = 51;
+            dataGridViewProjectsEnd.Size = new Size(1116, 480);
+            dataGridViewProjectsEnd.TabIndex = 2;
+            dataGridViewProjectsEnd.CellContentClick += dataGridViewProjectsEnd_CellContentClick;
+            // 
+            // SelectPe
+            // 
+            SelectPe.HeaderText = "Select";
+            SelectPe.MinimumWidth = 6;
+            SelectPe.Name = "SelectPe";
+            SelectPe.Resizable = DataGridViewTriState.True;
+            SelectPe.SortMode = DataGridViewColumnSortMode.Automatic;
+            SelectPe.Width = 70;
+            // 
+            // tabPageProjectsRefused
+            // 
+            tabPageProjectsRefused.Controls.Add(panelSearchPr);
+            tabPageProjectsRefused.Controls.Add(dataGridViewProjectsRefused);
+            tabPageProjectsRefused.Location = new Point(4, 29);
+            tabPageProjectsRefused.Name = "tabPageProjectsRefused";
+            tabPageProjectsRefused.Padding = new Padding(3);
+            tabPageProjectsRefused.Size = new Size(1122, 561);
+            tabPageProjectsRefused.TabIndex = 8;
+            tabPageProjectsRefused.Text = "Proyectos rechazados";
+            tabPageProjectsRefused.UseVisualStyleBackColor = true;
+            // 
+            // panelSearchPr
+            // 
+            panelSearchPr.Controls.Add(iconButtonClearPr);
+            panelSearchPr.Controls.Add(iconButtonSearchPr);
+            panelSearchPr.Controls.Add(labelSearchPr);
+            panelSearchPr.Controls.Add(comboBoxSearchPr);
+            panelSearchPr.Dock = DockStyle.Top;
+            panelSearchPr.Location = new Point(3, 3);
+            panelSearchPr.Name = "panelSearchPr";
+            panelSearchPr.Size = new Size(1116, 69);
+            panelSearchPr.TabIndex = 5;
+            // 
+            // iconButtonClearPr
+            // 
+            iconButtonClearPr.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconButtonClearPr.IconColor = Color.Black;
+            iconButtonClearPr.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButtonClearPr.Location = new Point(324, 18);
+            iconButtonClearPr.Name = "iconButtonClearPr";
+            iconButtonClearPr.Size = new Size(32, 29);
+            iconButtonClearPr.TabIndex = 3;
+            iconButtonClearPr.UseVisualStyleBackColor = true;
+            // 
+            // iconButtonSearchPr
+            // 
+            iconButtonSearchPr.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconButtonSearchPr.IconColor = Color.Black;
+            iconButtonSearchPr.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButtonSearchPr.Location = new Point(286, 18);
+            iconButtonSearchPr.Name = "iconButtonSearchPr";
+            iconButtonSearchPr.Size = new Size(32, 29);
+            iconButtonSearchPr.TabIndex = 2;
+            iconButtonSearchPr.UseVisualStyleBackColor = true;
+            // 
+            // labelSearchPr
+            // 
+            labelSearchPr.AutoSize = true;
+            labelSearchPr.Location = new Point(6, 22);
+            labelSearchPr.Name = "labelSearchPr";
+            labelSearchPr.Size = new Size(52, 20);
+            labelSearchPr.TabIndex = 1;
+            labelSearchPr.Text = "Buscar";
+            // 
+            // comboBoxSearchPr
+            // 
+            comboBoxSearchPr.FormattingEnabled = true;
+            comboBoxSearchPr.Location = new Point(64, 19);
+            comboBoxSearchPr.Name = "comboBoxSearchPr";
+            comboBoxSearchPr.Size = new Size(216, 28);
+            comboBoxSearchPr.TabIndex = 0;
+            // 
+            // dataGridViewProjectsRefused
+            // 
+            dataGridViewProjectsRefused.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridViewProjectsRefused.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewProjectsRefused.Columns.AddRange(new DataGridViewColumn[] { SelectRp });
+            dataGridViewProjectsRefused.Location = new Point(3, 78);
+            dataGridViewProjectsRefused.Name = "dataGridViewProjectsRefused";
+            dataGridViewProjectsRefused.RowHeadersWidth = 51;
+            dataGridViewProjectsRefused.Size = new Size(1116, 480);
+            dataGridViewProjectsRefused.TabIndex = 4;
+            dataGridViewProjectsRefused.CellContentClick += dataGridViewProjectsRefused_CellContentClick;
+            // 
+            // SelectRp
+            // 
+            SelectRp.HeaderText = "Select";
+            SelectRp.MinimumWidth = 6;
+            SelectRp.Name = "SelectRp";
+            SelectRp.Resizable = DataGridViewTriState.True;
+            SelectRp.SortMode = DataGridViewColumnSortMode.Automatic;
+            SelectRp.Width = 70;
+            // 
+            // tabPageWaitClient
+            // 
+            tabPageWaitClient.Controls.Add(panelSearchWr);
+            tabPageWaitClient.Controls.Add(dataGridViewProjectsWaitingResponse);
+            tabPageWaitClient.Location = new Point(4, 29);
+            tabPageWaitClient.Name = "tabPageWaitClient";
+            tabPageWaitClient.Padding = new Padding(3);
+            tabPageWaitClient.Size = new Size(1122, 561);
+            tabPageWaitClient.TabIndex = 9;
+            tabPageWaitClient.Text = "Esperando respuesta del cliente";
+            tabPageWaitClient.UseVisualStyleBackColor = true;
+            // 
+            // panelSearchWr
+            // 
+            panelSearchWr.Controls.Add(iconButtonClearSearchWr);
+            panelSearchWr.Controls.Add(iconButtonSearchWr);
+            panelSearchWr.Controls.Add(labelSearchWr);
+            panelSearchWr.Controls.Add(comboBoxSearchWr);
+            panelSearchWr.Dock = DockStyle.Top;
+            panelSearchWr.Location = new Point(3, 3);
+            panelSearchWr.Name = "panelSearchWr";
+            panelSearchWr.Size = new Size(1116, 69);
+            panelSearchWr.TabIndex = 7;
+            // 
+            // iconButtonClearSearchWr
+            // 
+            iconButtonClearSearchWr.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconButtonClearSearchWr.IconColor = Color.Black;
+            iconButtonClearSearchWr.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButtonClearSearchWr.Location = new Point(324, 18);
+            iconButtonClearSearchWr.Name = "iconButtonClearSearchWr";
+            iconButtonClearSearchWr.Size = new Size(32, 29);
+            iconButtonClearSearchWr.TabIndex = 3;
+            iconButtonClearSearchWr.UseVisualStyleBackColor = true;
+            // 
+            // iconButtonSearchWr
+            // 
+            iconButtonSearchWr.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconButtonSearchWr.IconColor = Color.Black;
+            iconButtonSearchWr.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButtonSearchWr.Location = new Point(286, 18);
+            iconButtonSearchWr.Name = "iconButtonSearchWr";
+            iconButtonSearchWr.Size = new Size(32, 29);
+            iconButtonSearchWr.TabIndex = 2;
+            iconButtonSearchWr.UseVisualStyleBackColor = true;
+            // 
+            // labelSearchWr
+            // 
+            labelSearchWr.AutoSize = true;
+            labelSearchWr.Location = new Point(6, 22);
+            labelSearchWr.Name = "labelSearchWr";
+            labelSearchWr.Size = new Size(52, 20);
+            labelSearchWr.TabIndex = 1;
+            labelSearchWr.Text = "Buscar";
+            // 
+            // comboBoxSearchWr
+            // 
+            comboBoxSearchWr.FormattingEnabled = true;
+            comboBoxSearchWr.Location = new Point(64, 19);
+            comboBoxSearchWr.Name = "comboBoxSearchWr";
+            comboBoxSearchWr.Size = new Size(216, 28);
+            comboBoxSearchWr.TabIndex = 0;
+            // 
+            // dataGridViewProjectsWaitingResponse
+            // 
+            dataGridViewProjectsWaitingResponse.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridViewProjectsWaitingResponse.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewProjectsWaitingResponse.Location = new Point(3, 78);
+            dataGridViewProjectsWaitingResponse.Name = "dataGridViewProjectsWaitingResponse";
+            dataGridViewProjectsWaitingResponse.RowHeadersWidth = 51;
+            dataGridViewProjectsWaitingResponse.Size = new Size(1116, 480);
+            dataGridViewProjectsWaitingResponse.TabIndex = 6;
+            dataGridViewProjectsWaitingResponse.CellContentClick += dataGridViewProjectsWaitingResponse_CellContentClick;
             // 
             // ProyectsForm
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(2320, 1205);
+            ClientSize = new Size(1184, 659);
             Controls.Add(tbTask);
-            Margin = new Padding(5);
             Name = "ProyectsForm";
             Text = "ProyectosForm";
-            tpAñadirNuevasTareas.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvTareas).EndInit();
-            gbAñadirNuevasTareas.ResumeLayout(false);
-            gbAñadirNuevasTareas.PerformLayout();
+            tabPageProjects.ResumeLayout(false);
+            panelSearchPip.ResumeLayout(false);
+            panelSearchPip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewProjectsInProgress).EndInit();
             tpListaProyectos.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvListaProyectos).EndInit();
-            tpAsignarProyectos.ResumeLayout(false);
-            gbListaProyecto.ResumeLayout(false);
-            gbListaProyecto.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewRequestProjects).EndInit();
             tbTask.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
+            panelSearchpf.ResumeLayout(false);
+            panelSearchpf.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewProjectsEnd).EndInit();
+            tabPageProjectsRefused.ResumeLayout(false);
+            panelSearchPr.ResumeLayout(false);
+            panelSearchPr.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewProjectsRefused).EndInit();
+            tabPageWaitClient.ResumeLayout(false);
+            panelSearchWr.ResumeLayout(false);
+            panelSearchWr.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewProjectsWaitingResponse).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
         private DateTimePicker dateTimePicker2;
-        private TabPage tpAñadirNuevasTareas;
-        private GroupBox gbAñadirNuevasTareas;
-        private ComboBox cboProyectoTareasAñadir;
-        private FontAwesome.Sharp.IconButton btnEliminarNT;
-        private FontAwesome.Sharp.IconButton btnEditarNT;
-        private FontAwesome.Sharp.IconButton btnGuardarNT;
-        private Label lblTareaAñadir;
-        private TextBox txtTareaAñadirTarea;
-        private Label lblProyectoSeleccionar;
-        private DataGridView dgvTareas;
+        private TabPage tabPageProjects;
         private TabPage tpListaProyectos;
-        private DataGridView dgvListaProyectos;
-        private TabPage tpAsignarProyectos;
-        private DataGridView dataGridView1;
-        private GroupBox gbListaProyecto;
-        private Label label3;
-        private ComboBox comboBox1;
-        private FontAwesome.Sharp.IconButton btnEliminar;
-        private Label label4;
-        private FontAwesome.Sharp.IconButton btnEditar;
-        private DateTimePicker dtpFechaEntrega;
-        private FontAwesome.Sharp.IconButton btnGuardar;
-        private Label lblFechaFin;
-        private ComboBox cboTareas;
-        private Label label1;
-        private Label label2;
-        private ComboBox cboEmpleados;
-        private ComboBox cboProyectos;
+        private DataGridView dataGridViewRequestProjects;
         private TabControl tbTask;
+        private TabPage tabPage1;
+        private Panel panelSearchPip;
+        private Label labelSearchpip;
+        private ComboBox comboBoxSearchPip;
+        private DataGridView dataGridViewProjectsInProgress;
+        private DataGridViewButtonColumn SelectProjectInProgress;
+        private FontAwesome.Sharp.IconButton iconButtonCleanPip;
+        private FontAwesome.Sharp.IconButton iconButtonSearchPip;
+        private Panel panelSearchpf;
+        private FontAwesome.Sharp.IconButton iconButtonClearpf;
+        private FontAwesome.Sharp.IconButton iconButtonSearchpf;
+        private Label labelSearchpf;
+        private ComboBox comboBoxSearchpf;
+        private DataGridView dataGridViewProjectsEnd;
+        private TabPage tabPageProjectsRefused;
+        private Panel panelSearchPr;
+        private FontAwesome.Sharp.IconButton iconButtonClearPr;
+        private FontAwesome.Sharp.IconButton iconButtonSearchPr;
+        private Label labelSearchPr;
+        private ComboBox comboBoxSearchPr;
+        private DataGridView dataGridViewProjectsRefused;
+        private DataGridViewButtonColumn SelectPr;
+        private DataGridViewButtonColumn SelectPe;
+        private DataGridViewButtonColumn SelectRp;
+        private TabPage tabPageWaitClient;
+        private Panel panelSearchWr;
+        private FontAwesome.Sharp.IconButton iconButtonClearSearchWr;
+        private FontAwesome.Sharp.IconButton iconButtonSearchWr;
+        private Label labelSearchWr;
+        private ComboBox comboBoxSearchWr;
+        private DataGridView dataGridViewProjectsWaitingResponse;
     }
 }

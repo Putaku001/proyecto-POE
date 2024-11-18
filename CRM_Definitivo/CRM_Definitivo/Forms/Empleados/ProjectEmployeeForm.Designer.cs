@@ -32,23 +32,23 @@
             Select = new DataGridViewButtonColumn();
             panelInformationProject = new Panel();
             groupBoxProjectsInfo = new GroupBox();
+            pictureBox1 = new PictureBox();
             flowLayoutPanelLinkFile = new FlowLayoutPanel();
             labelLinkFile = new Label();
             iconButtonSubmit = new FontAwesome.Sharp.IconButton();
             textBoxDescriptionTask = new TextBox();
             labelProjectName = new Label();
             linkLabelFile = new LinkLabel();
-            labelNameTask = new Label();
             labelDescription = new Label();
+            labelNameTask = new Label();
             panelProjects = new Panel();
             labelProjectsAssignament = new Label();
-            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dataGridViewProjectsEmployee).BeginInit();
             panelInformationProject.SuspendLayout();
             groupBoxProjectsInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             flowLayoutPanelLinkFile.SuspendLayout();
             panelProjects.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // dataGridViewProjectsEmployee
@@ -99,6 +99,15 @@
             groupBoxProjectsInfo.TabIndex = 12;
             groupBoxProjectsInfo.TabStop = false;
             groupBoxProjectsInfo.Text = "Proyecto";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.White;
+            pictureBox1.Location = new Point(203, 256);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(139, 124);
+            pictureBox1.TabIndex = 13;
+            pictureBox1.TabStop = false;
             // 
             // flowLayoutPanelLinkFile
             // 
@@ -165,16 +174,6 @@
             linkLabelFile.Text = "En este apartado subira su tarea";
             linkLabelFile.LinkClicked += linkLabelFile_LinkClicked;
             // 
-            // labelNameTask
-            // 
-            labelNameTask.AutoSize = true;
-            labelNameTask.Font = new Font("Century Gothic", 10.2F);
-            labelNameTask.Location = new Point(252, 9);
-            labelNameTask.Name = "labelNameTask";
-            labelNameTask.Size = new Size(58, 21);
-            labelNameTask.TabIndex = 7;
-            labelNameTask.Text = "Tarea";
-            // 
             // labelDescription
             // 
             labelDescription.AutoSize = true;
@@ -184,6 +183,16 @@
             labelDescription.Size = new Size(112, 21);
             labelDescription.TabIndex = 5;
             labelDescription.Text = "Descripcion:";
+            // 
+            // labelNameTask
+            // 
+            labelNameTask.AutoSize = true;
+            labelNameTask.Font = new Font("Century Gothic", 10.2F);
+            labelNameTask.Location = new Point(252, 9);
+            labelNameTask.Name = "labelNameTask";
+            labelNameTask.Size = new Size(58, 21);
+            labelNameTask.TabIndex = 7;
+            labelNameTask.Text = "Tarea";
             // 
             // panelProjects
             // 
@@ -206,15 +215,6 @@
             labelProjectsAssignament.TabIndex = 13;
             labelProjectsAssignament.Text = "Proyectos Asignados";
             // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = Color.White;
-            pictureBox1.Location = new Point(203, 256);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(139, 124);
-            pictureBox1.TabIndex = 13;
-            pictureBox1.TabStop = false;
-            // 
             // ProjectEmployeeForm
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
@@ -232,11 +232,11 @@
             panelInformationProject.PerformLayout();
             groupBoxProjectsInfo.ResumeLayout(false);
             groupBoxProjectsInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             flowLayoutPanelLinkFile.ResumeLayout(false);
             flowLayoutPanelLinkFile.PerformLayout();
             panelProjects.ResumeLayout(false);
             panelProjects.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 

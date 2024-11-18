@@ -16,7 +16,7 @@ namespace DataAccessLayer.DbSqlDataAccess
 
         public SqlDataAccess(IConfiguration configuration)
         {
-            _connectionString = "Data Source=PUTAKU\\SQLEXPRESS;Initial Catalog=SistemaProyectosDB;Integrated Security=True;Encrypt=False;Trust Server Certificate=True";
+            _connectionString = "Data Source=LAPTOP-PHCFNULN\\SQLEXPRESS;Initial Catalog=SistemaProyectosDB;Integrated Security=True;Encrypt=False;Trust Server Certificate=True";
         }
 
         public SqlConnection GetConnection()

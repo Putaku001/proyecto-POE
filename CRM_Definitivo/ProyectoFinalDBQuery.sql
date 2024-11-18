@@ -138,6 +138,106 @@ CREATE TABLE proyect (
 
 
 
+
+
+
+
+select * from RequestProjectClient
+
+INSERT INTO statusProyect(statusproyect)
+VALUES('Pendiente'),('Abierto'),('En progreso'),('esperando aprobacion del cliente'),('Rechazado'),('Terminado')
+	
+INSERT INTO RequestProjectClient(idClient, codeProject, nameProject, descriptionProject, idStatusProject)
+VALUES(12, 'U24947', 'proyecto prueba2', 'descripcion proyeto prueba2', 4 )
+
+
+
+drop table RefusedProject
+
+/* NUEVAS TABLAS */
+CREATE TABLE RequestProjectClient
+(
+	idProject INT PRIMARY KEY IDENTITY(1,1),
+	idClient INT,
+	codeProject NVARCHAR(6) NOT NULL,
+	nameProject NVARCHAR(200) NOT NULL,
+	descriptionProject NVARCHAR(200) NOT NULL,
+	[file] VARBINARY(MAX),
+	idStatusProject INT,
+	idRefused INT,
+	dateInit DATE,
+	dateEnd DATE,
+	dateRegistration DATETIME DEFAULT GETDATE()
+
+	FOREIGN KEY (idStatusProject) REFERENCES statusProyect(idStatusProyect),
+	FOREIGN KEY (idClient) REFERENCES Clients(idCliente),
+	FOREIGN KEY (idRefused) REFERENCES RefusedProject(idRefused)
+)
+
+
+CREATE TABLE RefusedProject
+(
+	idRefused INT PRIMARY KEY IDENTITY(1,1),
+	idProject INT,
+	reason NVARCHAR(50) NOT NULL,
+	reasonForRejection NVARCHAR(500) NOT NULL
+
+)
+
+CREATE TABLE taskProjects (
+    idTask INT PRIMARY KEY identity(1,1),
+	codeProject NVARCHAR(6),
+    nameTask VARCHAR(100),
+    descriptionTask VARCHAR(255),
+    idEmployee INT,
+	dateEnd DATE,
+    FOREIGN KEY (idEmployee) REFERENCES employee(idEmployee),
+);
+
+/* Consulta para proyecto de cliente */
+SELECT r.codeProject, u.UserAccount, r.nameProject, r.descriptionProject, r.[file], st.statusproyect, r.dateInit, r.dateEnd, rf.reason, rf.reasonForRejection, r.dateRegistration FROM RequestProjectClient r
+LEFT JOIN RefusedProject rf on rf.idRefused = r.idRefused
+LEFT JOIN Clients c on c.idCliente = r.idClient
+LEFT JOIN Users u on u.idUser = c.idUser
+LEFT JOIN statusProyect st on st.idStatusProyect = r.idStatusProject
+
+
+/* Consulta para tareas de proyectos */
+SELECT tp.idTask, tp.codeProject, u.UserAccount, tp.nameTask, tp.descriptionTask, tp.dateEnd FROM taskProjects tp
+LEFT JOIN employee e on e.idEmployee = tp.idEmployee
+LEFT JOIN Users u on u.idUser = e.idEmployee
+
+/* Consulta para proyectos rechazados */
+SELECT p.codeProject, rp.reason, rp.reasonForRejection, sp.statusproyect FROM RefusedProject rp
+LEFT JOIN RequestProjectClient p on p.idProject = rp.idProject
+LEFT JOIN statusProyect sp on sp.idStatusProyect = p.idStatusProject
+
+
+
+
+
+
+
+SELECT r.codeProject, u.UserAccount, r.nameProject, r.descriptionProject, r.[file], st.statusproyect, r.dateInit, r.dateEnd, rf.reason, rf.reasonForRejection, r.dateRegistration FROM RequestProjectClient r
+                                 LEFT JOIN RefusedProject rf on rf.idRefused = r.idRefused
+                                 LEFT JOIN Clients c on c.idCliente = r.idClient
+                                 LEFT JOIN Users u on u.idUser = c.idUser
+                                 LEFT JOIN statusProyect st on st.idStatusProyect = r.idStatusProject
+                                 WHERE u.idUser = 32  AND st.statusproyect = 'terminado';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 alter tabLE Proyect
 ADD task INT
 

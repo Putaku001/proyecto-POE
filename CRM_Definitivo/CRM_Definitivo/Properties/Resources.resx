@@ -142,11 +142,11 @@
   <data name="377721" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\377721.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="añadir_usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\añadir_usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="info" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\info.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="photoMenuAdmin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\photoMenuAdmin.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="eliminar_Usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eliminar_Usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,6 +157,9 @@
   <data name="icon-permissions" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-permissions.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="good" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\good.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="editar_Usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\editar_Usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -166,8 +169,8 @@
   <data name="3844477-disable-eye-inactive-see-show-view-watch_110343" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3844477-disable-eye-inactive-see-show-view-watch_110343.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="añadir_usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\añadir_usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="projects_icon_142976" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\projects_icon_142976.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pendiente" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pendiente.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,13 +184,16 @@
   <data name="imprimir" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imprimir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="calendario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\calendario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="user_icon-icons.com_57997" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user_icon-icons.com_57997.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="projects_icon_142976" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\projects_icon_142976.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="photoMenuAdmin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\photoMenuAdmin.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="good" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\good.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="calendario1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\calendario1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

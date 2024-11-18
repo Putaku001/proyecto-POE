@@ -30,47 +30,7 @@ namespace DataAccessLayer.Repositories
                 return connection.Query<ListProyects>(query);
             }
         }
-        public IEnumerable<ListProyects> GetByIdProjects(int idProject)
-        {
-            using (var connection = _dbConnection.GetConnection())
-            {
-                string query = @"SELECT 
-                                P.idProyect,
-                                P.titleName,
-                                P.description,   
-                                CU.UserAccount AS Client,
-                                P.idEmployee,
-                                EU.UserAccount AS Employee,
-	                            E.workStation,
-	                            P.dateInit,
-                                P.dateEnd,
-                                S.statusproyect
 
-                            FROM 
-                                Proyect P
-                            LEFT JOIN StatusProyect S ON P.idStatusProyect = S.idStatusProyect
-                            LEFT JOIN Clients CL ON P.idClient = CL.idCliente
-                            LEFT JOIN Users CU ON CL.idUser = CU.idUser
-                            LEFT JOIN Employee E ON P.idEmployee = E.idEmployee
-                            LEFT JOIN Users EU ON E.idUser = EU.idUser
-                            WHERE P.idProyect = @idProject";
-
-                return connection.Query<ListProyects>(query, new { idProject });
-            }
-        }
-
-        public IEnumerable<ListProyects> GetByIdProjectsEmployee (int idEmployee)
-        {
-            using (var connection = _dbConnection.GetConnection())
-            {
-                string query = @"SELECT t.idTask, t.idProyect, p.titleName, t.nameTask, t.descriptionTask, t.idEmployee from task t 
-                                left join proyect p on t.idProyect = p.idProyect
-                                LEFT JOIN employee e on e.idEmployee = e.idUser
-                            WHERE t.idEmployee = @idEmployee";
-
-                return connection.Query<ListProyects>(query, new { idEmployee });
-            }
-        }
         public void UpdateTaskEmployee(int idTask, byte[] file)
         {
             using(var connection = _dbConnection.GetConnection())
@@ -95,17 +55,196 @@ namespace DataAccessLayer.Repositories
         }
 
 
-        //TASK
-        public IEnumerable<TaskEmployee> GetByIdTaskEmployee(int idProyect)
+
+
+
+
+
+
+        //METODOS PARA PROYECTOS
+        public IEnumerable<RequestProjects> GetRequestProjects()
         {
             using (var connection = _dbConnection.GetConnection())
             {
-                string query = @"SELECT t.idTask, t.idProyect, p.titleName, t.nameTask, t.descriptionTask, t.idEmployee from task t 
-                                left join proyect p on t.idProyect = p.idProyect
-                                WHERE t.idProyect = @idProyect";
+                string query = @"SELECT r.codeProject ,u.UserAccount, r.nameProject, r.descriptionProject, st.statusproyect, r.dateRegistration FROM RequestProjectClient r
+                                LEFT JOIN Clients c on c.idCliente = r.idClient
+                                LEFT JOIN Users u on u.idUser = c.idUser
+                                LEFT JOIN statusProyect st on st.idStatusProyect = r.idStatusProject
+                                WHERE st.statusproyect = 'Pendiente'";
 
-                return connection.Query<TaskEmployee>(query, new { idProyect });
+                return connection.Query<RequestProjects>(query);
             }
         }
+
+        public IEnumerable<Projects> GetRequestProjectsProgress()
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = @"SELECT r.codeProject ,u.UserAccount, r.nameProject, r.descriptionProject, r.[file], st.statusproyect, r.dateInit, r.dateEnd, r.dateRegistration FROM RequestProjectClient r
+                                LEFT JOIN Clients c on c.idCliente = r.idClient
+                                LEFT JOIN Users u on u.idUser = c.idUser
+                                LEFT JOIN statusProyect st on st.idStatusProyect = r.idStatusProject
+                                WHERE st.statusproyect IN ('Abierto', 'En progreso')";
+
+                return connection.Query<Projects>(query);
+            }
+        }
+
+        public IEnumerable<Projects> GetProjectsWaitingReponse()
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = @"SELECT r.codeProject ,u.UserAccount, r.nameProject, r.descriptionProject, r.[file], st.statusproyect, r.dateInit, r.dateEnd, r.dateRegistration FROM RequestProjectClient r
+                                LEFT JOIN Clients c on c.idCliente = r.idClient
+                                LEFT JOIN Users u on u.idUser = c.idUser
+                                LEFT JOIN statusProyect st on st.idStatusProyect = r.idStatusProject
+                                WHERE st.statusproyect = 'esperando aprobacion del cliente'";
+
+                return connection.Query<Projects>(query);
+            }
+        }
+
+        public IEnumerable<Projects> GetRequestProjectsFinish()
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = @"SELECT r.codeProject ,u.UserAccount, r.nameProject, r.descriptionProject, r.[file], st.statusproyect, r.dateInit, r.dateEnd, r.dateRegistration FROM RequestProjectClient r
+                                LEFT JOIN Clients c on c.idCliente = r.idClient
+                                LEFT JOIN Users u on u.idUser = c.idUser
+                                LEFT JOIN statusProyect st on st.idStatusProyect = r.idStatusProject
+                                WHERE st.statusproyect = 'Terminado'";
+
+                return connection.Query<Projects>(query);
+            }
+        }
+        public IEnumerable<Projects> GetRequestProjectsRefused()
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = @"SELECT p.codeProject, rp.reason, rp.reasonForRejection, sp.statusproyect FROM RefusedProject rp
+                                LEFT JOIN RequestProjectClient p on p.idProject = rp.idProject
+                                LEFT JOIN statusProyect sp on sp.idStatusProyect = p.idStatusProject
+                                WHERE sp.statusproyect = 'Rechazado'";
+
+                return connection.Query<Projects>(query);
+            }
+        }
+
+        public IEnumerable<TaskEmployees> GetTaskEmployees()
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = @"SELECT tp.idTask, tp.codeProject, u.UserAccount, tp.nameTask, tp.descriptionTask, tp.dateEnd FROM taskProjects tp
+                                LEFT JOIN employee e on e.idEmployee = tp.idEmployee
+                                LEFT JOIN Users u on u.idUser = e.idEmployee
+                                ";
+
+                return connection.Query<TaskEmployees>(query);
+            }
+        }
+
+        public void ProjectRedo(string codeProject,int idStatusProject)
+        {
+            using(var connection = _dbConnection.GetConnection())
+            {
+                string query = @"UPDATE RequestProjectClient SET 
+                                idStatusProject = @idStatusProject
+                                WHERE codeProject = @codeProject";
+
+                connection.Query<Projects>(query, new { codeProject, idStatusProject });
+            }
+            
+        }
+
+        public void StatusProject(string codeProject, int idStatusProject)
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = @"UPDATE RequestProjectClient SET 
+                                idStatusProject = @idStatusProject
+                                WHERE codeProject = @codeProject";
+
+                connection.Query<Projects>(query, new { codeProject , idStatusProject });
+            }
+        }
+
+        public void DateInit(string codeProject,DateTime dateInit)
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = @"UPDATE RequestProjectClient SET 
+                                dateInit = @dateInit
+                                WHERE codeProject = @codeProject";
+
+                connection.Query<Projects>(query, new { codeProject, dateInit });
+            }
+        }
+
+        public void DateEnd(string codeProject, DateTime dateEnd)
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = @"UPDATE RequestProjectClient SET 
+                                dateEnd = @dateEnd
+                                WHERE codeProject = @codeProject";
+
+                connection.Query<Projects>(query, new { codeProject, dateEnd });
+            }
+        }
+
+        public void SendProjects(string codeProject, byte[] file)
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = @"UPDATE RequestProjectClient SET  
+                                 [file] = @file
+                                 WHERE codeProject = @codeProject";
+
+                connection.Query<Projects>(query, new { codeProject ,file });
+            }
+        }
+
+        //metodo crud para asignar tareas
+        public void AddTasksEmployees(TaskEmployees taskEmployees)
+        {
+            using(var connection = _dbConnection.GetConnection())
+            {
+                string query = @"INSERT INTO taskProjects (codeProject, nameTask, descriptionTask, idEmployee, dateEnd) 
+                                 VALUES(@codeProject, @nameTask, @descriptionTask, @idEmployee, @dateEnd)";
+
+                connection.Query<TaskEmployees>(query, new
+                {
+                    taskEmployees.codeProject,
+                    taskEmployees.nameTask,
+                    taskEmployees.descriptionTask,
+                    taskEmployees.idEmployee,
+                    taskEmployees.dateEnd
+                });
+            }
+        }
+
+
+        //--------------------------------------------------------------------------------------//
+
+
+
+        //Metodos para Clientes
+        public IEnumerable<Employees> GetProjectsByIdClient(int idUser)
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = @"SELECT r.codeProject, u.UserAccount, r.nameProject, r.descriptionProject, r.[file], st.statusproyect, r.dateInit, r.dateEnd, rf.reason, rf.reasonForRejection, r.dateRegistration FROM RequestProjectClient r
+                                 LEFT JOIN RefusedProject rf on rf.idRefused = r.idRefused
+                                 LEFT JOIN Clients c on c.idCliente = r.idClient
+                                 LEFT JOIN Users u on u.idUser = c.idUser
+                                 LEFT JOIN statusProyect st on st.idStatusProyect = r.idStatusProject
+                                 WHERE u.idUser = @idUser AND st.statusproyect = 'Pendiente'";
+
+                return connection.Query<Employees>(query, new { idUser });
+            }
+        }
+
+        //Metodos para Empleados 
+
     }
 }

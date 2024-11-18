@@ -23,14 +23,32 @@ namespace BusinessLayer.Services
         {
             return _listaProyectosRepositories.GetLisProyect();
         }
-        public IEnumerable<ListProyects> GetByIdProjects(int idProject) => _listaProyectosRepositories.GetByIdProjects(idProject);
-        public IEnumerable<ListProyects> GetByIdProjectsEmployee(int idEmployee) => _listaProyectosRepositories.GetByIdProjectsEmployee(idEmployee);
-        public void UpdateProjectsEmployee(int idProject, int idStatusProyect, byte[] file) => _listaProyectosRepositories.UpdateTaskEmployee(idProject, file); 
+ 
+        public void UpdateTaskEmployee(int idTask, byte[] file) => _listaProyectosRepositories.UpdateTaskEmployee(idTask, file);
         
 
-        public IEnumerable<TaskEmployee> GetByIdTaskEmployee(int idTask) => _listaProyectosRepositories.GetByIdTaskEmployee(idTask);
-        public void UpdateTaskEmployee(int idTask, byte[] file) => _listaProyectosRepositories.UpdateTaskEmployee(idTask, file);
+        //METODOS PARA PROYECTOS
+        public IEnumerable<RequestProjects> GetRequestProjects() => _listaProyectosRepositories.GetRequestProjects();
+        public IEnumerable<TaskEmployees> GetTaskEmployees() => _listaProyectosRepositories.GetTaskEmployees();
+        public IEnumerable<Projects> GetRequestProjectsProgress() => _listaProyectosRepositories.GetRequestProjectsProgress();
+        public IEnumerable<Projects> GetProjectsWaitingReponse() => _listaProyectosRepositories.GetProjectsWaitingReponse();
+        public IEnumerable<Projects> GetRequestProjectsFinish() => _listaProyectosRepositories.GetRequestProjectsFinish();
+        public IEnumerable<Projects> GetRequestProjectsRefused() => _listaProyectosRepositories.GetRequestProjectsRefused();
+        public void StatusProject(string codeProject, int idStatusProject) => _listaProyectosRepositories.StatusProject(codeProject, idStatusProject);
+        public void ProjectRedo(string codeProject, int idStatusProject) => _listaProyectosRepositories.ProjectRedo(codeProject, idStatusProject);
+        public void DateInit(string codeProject, DateTime DateInit) => _listaProyectosRepositories.DateInit(codeProject, DateInit); 
+        public void DateEnd(string codeProject, DateTime DateEnd) => _listaProyectosRepositories.DateEnd(codeProject, DateEnd);
+        public void SendProjects(string codeProject, byte[] file) => _listaProyectosRepositories.SendProjects( codeProject ,file);
+        
+        
+        //metodos crud para tareas
+        public void AddTasksEmployees(TaskEmployees taskEmployees) => _listaProyectosRepositories.AddTasksEmployees(taskEmployees);
+
+        
         //status project
         public List<StatusProjects> GetStatusProjects() => _listaProyectosRepositories.GetStatusProjects();
+
+        //Metodos para Clientes
+        public IEnumerable<Employees> GetProjectsByIdClient(int idUser) => _listaProyectosRepositories.GetProjectsByIdClient(idUser);
     }
 }

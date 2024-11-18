@@ -42,8 +42,7 @@ namespace PresentationLayer.Forms
 
         private void linkLabelVerificationEmail_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            
-            
+                        
             _emailSettings.metodoVerificacion = "Correo";
 
             _emailSettings.codigoVerificacion = GenerateCodeVerification();

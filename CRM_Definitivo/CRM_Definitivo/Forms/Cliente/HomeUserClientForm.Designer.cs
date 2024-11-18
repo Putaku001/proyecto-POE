@@ -75,11 +75,9 @@
             groupBox1.Controls.Add(panelInfoUsers);
             groupBox1.Controls.Add(panelPrijectsAssignament);
             groupBox1.Controls.Add(panelUsersView);
-            groupBox1.Location = new Point(20, 16);
-            groupBox1.Margin = new Padding(5, 5, 5, 5);
+            groupBox1.Location = new Point(12, 10);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(5, 5, 5, 5);
-            groupBox1.Size = new Size(2366, 1696);
+            groupBox1.Size = new Size(1173, 669);
             groupBox1.TabIndex = 9;
             groupBox1.TabStop = false;
             groupBox1.Text = "Inicio";
@@ -88,10 +86,9 @@
             // 
             labelUserAccount.AutoSize = true;
             labelUserAccount.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold);
-            labelUserAccount.Location = new Point(426, 34);
-            labelUserAccount.Margin = new Padding(5, 0, 5, 0);
+            labelUserAccount.Location = new Point(262, 21);
             labelUserAccount.Name = "labelUserAccount";
-            labelUserAccount.Size = new Size(200, 44);
+            labelUserAccount.Size = new Size(125, 27);
             labelUserAccount.TabIndex = 1;
             labelUserAccount.Text = "nameUser";
             // 
@@ -104,10 +101,9 @@
             panel1.Controls.Add(panel6);
             panel1.Controls.Add(labelByUser);
             panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(1254, 37);
-            panel1.Margin = new Padding(5, 5, 5, 5);
+            panel1.Location = new Point(489, 23);
             panel1.Name = "panel1";
-            panel1.Size = new Size(541, 1584);
+            panel1.Size = new Size(333, 598);
             panel1.TabIndex = 25;
             // 
             // panel2
@@ -115,10 +111,9 @@
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel2.BackColor = Color.MintCream;
             panel2.BorderStyle = BorderStyle.Fixed3D;
-            panel2.Location = new Point(29, 965);
-            panel2.Margin = new Padding(5, 5, 5, 5);
+            panel2.Location = new Point(18, 603);
             panel2.Name = "panel2";
-            panel2.Size = new Size(482, 14);
+            panel2.Size = new Size(298, 10);
             panel2.TabIndex = 28;
             // 
             // panel9
@@ -126,10 +121,9 @@
             panel9.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel9.BackColor = Color.MintCream;
             panel9.BorderStyle = BorderStyle.Fixed3D;
-            panel9.Location = new Point(29, 722);
-            panel9.Margin = new Padding(5, 5, 5, 5);
+            panel9.Location = new Point(18, 451);
             panel9.Name = "panel9";
-            panel9.Size = new Size(482, 162);
+            panel9.Size = new Size(298, 103);
             panel9.TabIndex = 27;
             // 
             // panel7
@@ -137,10 +131,9 @@
             panel7.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel7.BackColor = Color.MintCream;
             panel7.BorderStyle = BorderStyle.Fixed3D;
-            panel7.Location = new Point(29, 494);
-            panel7.Margin = new Padding(5, 5, 5, 5);
+            panel7.Location = new Point(18, 309);
             panel7.Name = "panel7";
-            panel7.Size = new Size(482, 148);
+            panel7.Size = new Size(298, 94);
             panel7.TabIndex = 26;
             // 
             // panel6
@@ -148,10 +141,9 @@
             panel6.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel6.BackColor = Color.MintCream;
             panel6.BorderStyle = BorderStyle.Fixed3D;
-            panel6.Location = new Point(29, 275);
-            panel6.Margin = new Padding(5, 5, 5, 5);
+            panel6.Location = new Point(18, 172);
             panel6.Name = "panel6";
-            panel6.Size = new Size(482, 138);
+            panel6.Size = new Size(298, 88);
             panel6.TabIndex = 25;
             // 
             // labelByUser
@@ -159,10 +151,9 @@
             labelByUser.AutoSize = true;
             labelByUser.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             labelByUser.ForeColor = Color.White;
-            labelByUser.Location = new Point(149, 111);
-            labelByUser.Margin = new Padding(5, 0, 5, 0);
+            labelByUser.Location = new Point(92, 69);
             labelByUser.Name = "labelByUser";
-            labelByUser.Size = new Size(245, 55);
+            labelByUser.Size = new Size(156, 34);
             labelByUser.TabIndex = 28;
             labelByUser.Text = "Proyectos ";
             // 
@@ -171,10 +162,9 @@
             panel10.BackColor = Color.SteelBlue;
             panel10.BorderStyle = BorderStyle.Fixed3D;
             panel10.Dock = DockStyle.Bottom;
-            panel10.Location = new Point(5, 1621);
-            panel10.Margin = new Padding(5, 5, 5, 5);
+            panel10.Location = new Point(3, 621);
             panel10.Name = "panel10";
-            panel10.Size = new Size(1790, 70);
+            panel10.Size = new Size(819, 45);
             panel10.TabIndex = 29;
             // 
             // lblHoraUsuario
@@ -184,10 +174,9 @@
             lblHoraUsuario.BackColor = Color.Transparent;
             lblHoraUsuario.Font = new Font("Century Gothic", 12F);
             lblHoraUsuario.ForeColor = Color.Black;
-            lblHoraUsuario.Location = new Point(866, 34);
-            lblHoraUsuario.Margin = new Padding(5, 0, 5, 0);
+            lblHoraUsuario.Location = new Point(250, 21);
             lblHoraUsuario.Name = "lblHoraUsuario";
-            lblHoraUsuario.Size = new Size(238, 39);
+            lblHoraUsuario.Size = new Size(150, 23);
             lblHoraUsuario.TabIndex = 5;
             lblHoraUsuario.Text = "lblHoraUsuario";
             // 
@@ -195,10 +184,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold);
-            label1.Location = new Point(31, 34);
-            label1.Margin = new Padding(5, 0, 5, 0);
+            label1.Location = new Point(19, 21);
             label1.Name = "label1";
-            label1.Size = new Size(408, 44);
+            label1.Size = new Size(256, 27);
             label1.TabIndex = 0;
             label1.Text = "Bienvenido de vuelta ";
             // 
@@ -207,18 +195,16 @@
             panel8.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel8.BorderStyle = BorderStyle.Fixed3D;
             panel8.Controls.Add(label11);
-            panel8.Location = new Point(31, 923);
-            panel8.Margin = new Padding(5, 5, 5, 5);
+            panel8.Location = new Point(19, 577);
             panel8.Name = "panel8";
-            panel8.Size = new Size(1159, 345);
+            panel8.Size = new Size(432, 217);
             panel8.TabIndex = 3;
             // 
             // label11
             // 
-            label11.Location = new Point(210, 75);
-            label11.Margin = new Padding(5, 0, 5, 0);
+            label11.Location = new Point(129, 47);
             label11.Name = "label11";
-            label11.Size = new Size(604, 130);
+            label11.Size = new Size(372, 81);
             label11.TabIndex = 0;
             label11.Text = "Aca lo mas probable que vaya graficas y estadisticas sobre los proyectos que mas piden los clientes y eso si es que no me da huevaxd";
             // 
@@ -227,10 +213,9 @@
             panelInfoUsers.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelInfoUsers.BorderStyle = BorderStyle.Fixed3D;
             panelInfoUsers.Controls.Add(pictureBox3);
-            panelInfoUsers.Location = new Point(31, 360);
-            panelInfoUsers.Margin = new Padding(5, 5, 5, 5);
+            panelInfoUsers.Location = new Point(19, 225);
             panelInfoUsers.Name = "panelInfoUsers";
-            panelInfoUsers.Size = new Size(1159, 494);
+            panelInfoUsers.Size = new Size(432, 310);
             panelInfoUsers.TabIndex = 3;
             // 
             // pictureBox3
@@ -239,9 +224,8 @@
             pictureBox3.Cursor = Cursors.Help;
             pictureBox3.Dock = DockStyle.Fill;
             pictureBox3.Location = new Point(0, 0);
-            pictureBox3.Margin = new Padding(5, 5, 5, 5);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(1155, 490);
+            pictureBox3.Size = new Size(428, 306);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 32;
             pictureBox3.TabStop = false;
@@ -254,20 +238,18 @@
             panelPrijectsAssignament.Controls.Add(label5);
             panelPrijectsAssignament.Controls.Add(label4);
             panelPrijectsAssignament.Controls.Add(label3);
-            panelPrijectsAssignament.Location = new Point(31, 117);
-            panelPrijectsAssignament.Margin = new Padding(5, 5, 5, 5);
+            panelPrijectsAssignament.Location = new Point(19, 73);
             panelPrijectsAssignament.Name = "panelPrijectsAssignament";
-            panelPrijectsAssignament.Size = new Size(1159, 198);
+            panelPrijectsAssignament.Size = new Size(432, 125);
             panelPrijectsAssignament.TabIndex = 2;
             // 
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox1.Image = Properties.Resources.pendiente;
-            pictureBox1.Location = new Point(921, 29);
-            pictureBox1.Margin = new Padding(5, 5, 5, 5);
+            pictureBox1.Location = new Point(297, 17);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(208, 146);
+            pictureBox1.Size = new Size(128, 91);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
@@ -276,10 +258,9 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Century Gothic", 10.2F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label5.Location = new Point(36, 96);
-            label5.Margin = new Padding(5, 0, 5, 0);
+            label5.Location = new Point(22, 60);
             label5.Name = "label5";
-            label5.Size = new Size(285, 34);
+            label5.Size = new Size(177, 21);
             label5.TabIndex = 3;
             label5.Text = "espere cante bicho";
             // 
@@ -288,10 +269,9 @@
             label4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label4.AutoSize = true;
             label4.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(832, 51);
-            label4.Margin = new Padding(5, 0, 5, 0);
+            label4.Location = new Point(229, 32);
             label4.Name = "label4";
-            label4.Size = new Size(56, 56);
+            label4.Size = new Size(37, 37);
             label4.TabIndex = 2;
             label4.Text = "p";
             // 
@@ -299,10 +279,9 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(36, 59);
-            label3.Margin = new Padding(5, 0, 5, 0);
+            label3.Location = new Point(22, 37);
             label3.Name = "label3";
-            label3.Size = new Size(717, 38);
+            label3.Size = new Size(455, 23);
             label3.TabIndex = 1;
             label3.Text = "El estado actual de su proyecto solicidato es:";
             // 
@@ -312,20 +291,18 @@
             panelUsersView.Controls.Add(pictureBox2);
             panelUsersView.Controls.Add(label6);
             panelUsersView.Dock = DockStyle.Right;
-            panelUsersView.Location = new Point(1795, 37);
-            panelUsersView.Margin = new Padding(5, 5, 5, 5);
+            panelUsersView.Location = new Point(822, 23);
             panelUsersView.Name = "panelUsersView";
-            panelUsersView.Size = new Size(566, 1654);
+            panelUsersView.Size = new Size(348, 643);
             panelUsersView.TabIndex = 6;
             // 
             // pictureBox2
             // 
             pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox2.Image = Properties.Resources.projects_icon_142976;
-            pictureBox2.Location = new Point(154, 568);
-            pictureBox2.Margin = new Padding(5, 5, 5, 5);
+            pictureBox2.Location = new Point(95, 355);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(304, 285);
+            pictureBox2.Size = new Size(187, 178);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 31;
             pictureBox2.TabStop = false;
@@ -335,21 +312,19 @@
             label6.AutoSize = true;
             label6.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(133, 874);
-            label6.Margin = new Padding(5, 0, 5, 0);
+            label6.Location = new Point(82, 546);
             label6.Name = "label6";
-            label6.Size = new Size(355, 55);
+            label6.Size = new Size(227, 34);
             label6.TabIndex = 30;
             label6.Text = "Los Tilinizasos77";
             // 
             // HomeUserClientForm
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(2402, 1728);
+            ClientSize = new Size(1195, 689);
             Controls.Add(groupBox1);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(5, 5, 5, 5);
             Name = "HomeUserClientForm";
             Text = "HomeUserClientForm";
             groupBox1.ResumeLayout(false);

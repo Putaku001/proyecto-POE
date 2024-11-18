@@ -62,6 +62,8 @@ namespace CRM_Definitivo
                         services.AddTransient<ProjectEmployeeForm>();
                         services.AddTransient<RequestClientForm>();
                         services.AddTransient<InfoEmployeeForm>();
+                        services.AddTransient<AssignamentTaskEmployeeForm>();
+                        services.AddTransient<SendProjectForm>();
 
 
                         //BUSISNESSLAYER
