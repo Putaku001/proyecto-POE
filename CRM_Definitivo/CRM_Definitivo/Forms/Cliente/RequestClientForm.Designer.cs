@@ -30,8 +30,8 @@
         {
             gbAñadirNuevosProyectos = new GroupBox();
             descriptionLabel = new Label();
-            textBox1 = new TextBox();
-            btnGuardarNP = new FontAwesome.Sharp.IconButton();
+            textBoxDescription = new TextBox();
+            iconButtonGuardarNP = new FontAwesome.Sharp.IconButton();
             lblProyecto = new Label();
             txtNombreProyectoAñadir = new TextBox();
             tabControl1 = new TabControl();
@@ -52,8 +52,8 @@
             // 
             gbAñadirNuevosProyectos.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             gbAñadirNuevosProyectos.Controls.Add(descriptionLabel);
-            gbAñadirNuevosProyectos.Controls.Add(textBox1);
-            gbAñadirNuevosProyectos.Controls.Add(btnGuardarNP);
+            gbAñadirNuevosProyectos.Controls.Add(textBoxDescription);
+            gbAñadirNuevosProyectos.Controls.Add(iconButtonGuardarNP);
             gbAñadirNuevosProyectos.Controls.Add(lblProyecto);
             gbAñadirNuevosProyectos.Controls.Add(txtNombreProyectoAñadir);
             gbAñadirNuevosProyectos.Location = new Point(0, 0);
@@ -72,33 +72,34 @@
             descriptionLabel.TabIndex = 26;
             descriptionLabel.Text = "Descripcion:";
             // 
-            // textBox1
+            // textBoxDescription
             // 
-            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBox1.Location = new Point(121, 250);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(319, 116);
-            textBox1.TabIndex = 27;
+            textBoxDescription.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            textBoxDescription.Location = new Point(121, 250);
+            textBoxDescription.Multiline = true;
+            textBoxDescription.Name = "textBoxDescription";
+            textBoxDescription.Size = new Size(319, 116);
+            textBoxDescription.TabIndex = 27;
             // 
-            // btnGuardarNP
+            // iconButtonGuardarNP
             // 
-            btnGuardarNP.BackColor = Color.ForestGreen;
-            btnGuardarNP.Cursor = Cursors.Hand;
-            btnGuardarNP.FlatAppearance.BorderColor = Color.Black;
-            btnGuardarNP.FlatStyle = FlatStyle.Flat;
-            btnGuardarNP.ForeColor = Color.White;
-            btnGuardarNP.IconChar = FontAwesome.Sharp.IconChar.Save;
-            btnGuardarNP.IconColor = Color.White;
-            btnGuardarNP.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnGuardarNP.IconSize = 22;
-            btnGuardarNP.ImageAlign = ContentAlignment.MiddleLeft;
-            btnGuardarNP.Location = new Point(124, 410);
-            btnGuardarNP.Name = "btnGuardarNP";
-            btnGuardarNP.Size = new Size(319, 29);
-            btnGuardarNP.TabIndex = 23;
-            btnGuardarNP.Text = "Solicitar";
-            btnGuardarNP.UseVisualStyleBackColor = false;
+            iconButtonGuardarNP.BackColor = Color.ForestGreen;
+            iconButtonGuardarNP.Cursor = Cursors.Hand;
+            iconButtonGuardarNP.FlatAppearance.BorderColor = Color.Black;
+            iconButtonGuardarNP.FlatStyle = FlatStyle.Flat;
+            iconButtonGuardarNP.ForeColor = Color.White;
+            iconButtonGuardarNP.IconChar = FontAwesome.Sharp.IconChar.Save;
+            iconButtonGuardarNP.IconColor = Color.White;
+            iconButtonGuardarNP.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButtonGuardarNP.IconSize = 22;
+            iconButtonGuardarNP.ImageAlign = ContentAlignment.MiddleLeft;
+            iconButtonGuardarNP.Location = new Point(124, 410);
+            iconButtonGuardarNP.Name = "iconButtonGuardarNP";
+            iconButtonGuardarNP.Size = new Size(319, 29);
+            iconButtonGuardarNP.TabIndex = 23;
+            iconButtonGuardarNP.Text = "Solicitar";
+            iconButtonGuardarNP.UseVisualStyleBackColor = false;
+            iconButtonGuardarNP.Click += iconButtonGuardarNP_Click;
             // 
             // lblProyecto
             // 
@@ -209,8 +210,8 @@
 
         private GroupBox gbAñadirNuevosProyectos;
         private Label descriptionLabel;
-        private TextBox textBox1;
-        private FontAwesome.Sharp.IconButton btnGuardarNP;
+        private TextBox textBoxDescription;
+        private FontAwesome.Sharp.IconButton iconButtonGuardarNP;
         private Label lblProyecto;
         private TextBox txtNombreProyectoAñadir;
         private TabControl tabControl1;

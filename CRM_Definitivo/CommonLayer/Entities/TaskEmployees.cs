@@ -13,6 +13,8 @@ namespace CommonLayer.Entities
         public string nameTask { get; set; }
         public string descriptionTask { get; set; }
         public int idEmployee { get; set; }
+        public int idStatusTask { get; set; }
+        public string statusTask { get; set; }
         public DateTime dateEnd { get; set; }
     }
 }

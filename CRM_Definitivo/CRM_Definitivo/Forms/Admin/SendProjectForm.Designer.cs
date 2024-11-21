@@ -38,7 +38,10 @@
             textBoxDescription = new TextBox();
             label1 = new Label();
             labelEnd = new Label();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            checkedListBoxGetEmployees = new CheckedListBox();
             groupBoxProject.SuspendLayout();
+            flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // iconButtonSendProject
@@ -153,11 +156,28 @@
             labelEnd.Text = "2024-11-12";
             labelEnd.TextAlign = ContentAlignment.TopRight;
             // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.Controls.Add(checkedListBoxGetEmployees);
+            flowLayoutPanel1.Location = new Point(227, 31);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(357, 51);
+            flowLayoutPanel1.TabIndex = 25;
+            // 
+            // checkedListBoxGetEmployees
+            // 
+            checkedListBoxGetEmployees.FormattingEnabled = true;
+            checkedListBoxGetEmployees.Location = new Point(3, 3);
+            checkedListBoxGetEmployees.Name = "checkedListBoxGetEmployees";
+            checkedListBoxGetEmployees.Size = new Size(353, 48);
+            checkedListBoxGetEmployees.TabIndex = 0;
+            // 
             // SendProjectForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(607, 384);
+            Controls.Add(flowLayoutPanel1);
             Controls.Add(labelEnd);
             Controls.Add(labelUserAccount);
             Controls.Add(labelClient);
@@ -168,6 +188,7 @@
             Load += SendProjectForm_Load;
             groupBoxProject.ResumeLayout(false);
             groupBoxProject.PerformLayout();
+            flowLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -184,5 +205,7 @@
         private Label label1;
         private Label labelEnd;
         private Label labelCodeProject;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private CheckedListBox checkedListBoxGetEmployees;
     }
 }

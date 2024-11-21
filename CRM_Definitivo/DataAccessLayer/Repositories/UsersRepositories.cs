@@ -198,13 +198,13 @@ namespace DataAccessLayer.Repositories
             }
         }
 
-        public IEnumerable<Employee> GetByIdEmployee(int idEmployee)
+        public IEnumerable<Employees> GetByIdEmployee(int idEmployee)
         {
             using(var connection = _dbConnection.GetConnection())
             {
                 string query = "SELECT * FROM Employee WHERE idEmployee = @idEmployee";
 
-                return connection.Query<Employee>(query, new { idEmployee });
+                return connection.Query<Employees>(query, new { idEmployee });
             }
         }
         public IEnumerable<Clients> GetClients()

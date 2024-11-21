@@ -43,6 +43,7 @@ namespace PresentationLayer.Forms
             dataGridViewProjectsRefused.Columns["file"].Visible = false;
             dataGridViewProjectsEnd.Columns["file"].Visible = false;
             dataGridViewRequestProjects.Columns["file"].Visible = false;
+            dataGridViewRequestProjects.Columns["idClient"].Visible = false;
             dataGridViewProjectsInProgress.Columns["file"].Visible = false;
 
         }

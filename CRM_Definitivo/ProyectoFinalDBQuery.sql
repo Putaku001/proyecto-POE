@@ -152,7 +152,6 @@ VALUES(12, 'U24947', 'proyecto prueba2', 'descripcion proyeto prueba2', 4 )
 
 
 
-drop table RefusedProject
 
 /* NUEVAS TABLAS */
 CREATE TABLE RequestProjectClient
@@ -184,15 +183,27 @@ CREATE TABLE RefusedProject
 
 )
 
+DROP TABLE taskProjects
 CREATE TABLE taskProjects (
     idTask INT PRIMARY KEY identity(1,1),
 	codeProject NVARCHAR(6),
     nameTask VARCHAR(100),
     descriptionTask VARCHAR(255),
     idEmployee INT,
+	idStatusTask INT,
 	dateEnd DATE,
     FOREIGN KEY (idEmployee) REFERENCES employee(idEmployee),
+	FOREIGN KEY (idStatusTask) REFERENCES taskEmployeesStatus(idStatusTask)
 );
+
+CREATE TABLE taskEmployeesStatus
+(
+	idStatusTask INT PRIMARY KEY IDENTITY(1,1),
+	statusTask NVARCHAR(50)
+)
+
+INSERT INTO taskEmployeesStatus(statusTask)
+VALUES('Pendiente'),('En proceso'),('Terminado')
 
 /* Consulta para proyecto de cliente */
 SELECT r.codeProject, u.UserAccount, r.nameProject, r.descriptionProject, r.[file], st.statusproyect, r.dateInit, r.dateEnd, rf.reason, rf.reasonForRejection, r.dateRegistration FROM RequestProjectClient r
@@ -203,9 +214,10 @@ LEFT JOIN statusProyect st on st.idStatusProyect = r.idStatusProject
 
 
 /* Consulta para tareas de proyectos */
-SELECT tp.idTask, tp.codeProject, u.UserAccount, tp.nameTask, tp.descriptionTask, tp.dateEnd FROM taskProjects tp
+SELECT tp.idTask, tp.codeProject, TP.idEmployee , u.UserAccount, tp.nameTask, tp.descriptionTask, se.statusTask, tp.dateEnd FROM taskProjects tp
 LEFT JOIN employee e on e.idEmployee = tp.idEmployee
 LEFT JOIN Users u on u.idUser = e.idEmployee
+INNER JOIN taskEmployeesStatus se on se.idStatusTask = tp.idStatusTask
 
 /* Consulta para proyectos rechazados */
 SELECT p.codeProject, rp.reason, rp.reasonForRejection, sp.statusproyect FROM RefusedProject rp
@@ -223,8 +235,7 @@ SELECT r.codeProject, u.UserAccount, r.nameProject, r.descriptionProject, r.[fil
                                  LEFT JOIN Clients c on c.idCliente = r.idClient
                                  LEFT JOIN Users u on u.idUser = c.idUser
                                  LEFT JOIN statusProyect st on st.idStatusProyect = r.idStatusProject
-                                 WHERE u.idUser = 32  AND st.statusproyect = 'terminado';
-
+                                 WHERE idClient = 11 AND st.statusproyect = 'Pendiente'
 
 
 

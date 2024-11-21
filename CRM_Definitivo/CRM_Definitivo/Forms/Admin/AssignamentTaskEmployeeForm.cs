@@ -40,6 +40,7 @@ namespace PresentationLayer.Forms.Admin
         private void AssignamentTaskEmployeeForm_Load(object sender, EventArgs e)
         {
             dataGridViewAssignamentTasks.DataSource = _proyectsServices.GetTaskEmployees();
+            dataGridViewAssignamentTasks.Columns["idStatusTask"].Visible = false;
 
             labelUserAccount.Text = Client;
             labelCodeProject.Text = CodeProject;
@@ -54,6 +55,7 @@ namespace PresentationLayer.Forms.Admin
             AssignamentTaskEmployees.nameTask = textBoxTask.Text;
             AssignamentTaskEmployees.descriptionTask = textBoxDescription.Text;
             AssignamentTaskEmployees.idEmployee = Convert.ToInt32(comboBoxEmployee.SelectedValue);
+            AssignamentTaskEmployees.idStatusTask = 1;
             AssignamentTaskEmployees.dateEnd = dateTimePickerEnd.Value;
 
             var dateEnd = dateTimePickerEnd.Value;
@@ -61,8 +63,10 @@ namespace PresentationLayer.Forms.Admin
 
             _proyectsServices.AddTasksEmployees(AssignamentTaskEmployees);
             MessageBox.Show("La tarea se ha agregado exitosamente!");
+            LoadEmployee();
 
-          
+
+
         }
     }
 }

@@ -134,14 +134,16 @@ namespace DataAccessLayer.Repositories
         {
             using (var connection = _dbConnection.GetConnection())
             {
-                string query = @"SELECT tp.idTask, tp.codeProject, u.UserAccount, tp.nameTask, tp.descriptionTask, tp.dateEnd FROM taskProjects tp
+                string query = @"SELECT tp.idTask, tp.codeProject, u.UserAccount, tp.nameTask, tp.descriptionTask, se.statusTask, tp.dateEnd FROM taskProjects tp
                                 LEFT JOIN employee e on e.idEmployee = tp.idEmployee
                                 LEFT JOIN Users u on u.idUser = e.idEmployee
+                                INNER JOIN taskEmployeesStatus se on se.idStatusTask = tp.idStatusTask
                                 ";
 
                 return connection.Query<TaskEmployees>(query);
             }
         }
+
 
         public void ProjectRedo(string codeProject,int idStatusProject)
         {
@@ -209,8 +211,8 @@ namespace DataAccessLayer.Repositories
         {
             using(var connection = _dbConnection.GetConnection())
             {
-                string query = @"INSERT INTO taskProjects (codeProject, nameTask, descriptionTask, idEmployee, dateEnd) 
-                                 VALUES(@codeProject, @nameTask, @descriptionTask, @idEmployee, @dateEnd)";
+                string query = @"INSERT INTO taskProjects (codeProject, nameTask, descriptionTask, idEmployee, idStatusTask, dateEnd) 
+                                 VALUES(@codeProject, @nameTask, @descriptionTask, @idEmployee, @idStatusTask, @dateEnd)";
 
                 connection.Query<TaskEmployees>(query, new
                 {
@@ -218,6 +220,7 @@ namespace DataAccessLayer.Repositories
                     taskEmployees.nameTask,
                     taskEmployees.descriptionTask,
                     taskEmployees.idEmployee,
+                    taskEmployees.idStatusTask,
                     taskEmployees.dateEnd
                 });
             }
@@ -229,7 +232,7 @@ namespace DataAccessLayer.Repositories
 
 
         //Metodos para Clientes
-        public IEnumerable<Employees> GetProjectsByIdClient(int idUser)
+        public IEnumerable<RequestProjects> GetProjectsByIdClient(int idUser)
         {
             using (var connection = _dbConnection.GetConnection())
             {
@@ -238,9 +241,26 @@ namespace DataAccessLayer.Repositories
                                  LEFT JOIN Clients c on c.idCliente = r.idClient
                                  LEFT JOIN Users u on u.idUser = c.idUser
                                  LEFT JOIN statusProyect st on st.idStatusProyect = r.idStatusProject
-                                 WHERE u.idUser = @idUser AND st.statusproyect = 'Pendiente'";
+                                 WHERE idClient = @idUser AND st.statusproyect = 'Pendiente'";
 
-                return connection.Query<Employees>(query, new { idUser });
+                return connection.Query<RequestProjects>(query, new { idUser });
+            }
+        }
+
+        public void AddNewProject(string codeProject, int idClient, string nameProject, string descriptionProject)
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = @"INSERT INTO RequestProjectClient (codeProject, idClient, nameProject, descriptionProject) 
+                         VALUES (@codeProject, @idClient, @nameProject, @descriptionProject)";
+
+                connection.Execute(query, new
+                {
+                    codeProject,
+                    idClient,
+                    nameProject,
+                    descriptionProject
+                });
             }
         }
 

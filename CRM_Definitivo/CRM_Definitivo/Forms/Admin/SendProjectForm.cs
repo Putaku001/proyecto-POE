@@ -1,4 +1,5 @@
-﻿using BusinessLayer.Services.InterfacesServices;
+﻿using BusinessLayer.Services.Interfaces;
+using BusinessLayer.Services.InterfacesServices;
 using CommonLayer.Entities;
 using System;
 using System.Collections.Generic;
@@ -21,10 +22,12 @@ namespace PresentationLayer.Forms.Admin
         public DateTime DateEnd { get; set; }
         byte[] fileByte;
         private readonly IListProyectsServices _proyectsServices;
+        private readonly IUsersServices _usersServices;
 
-        public SendProjectForm(IListProyectsServices proyectsServices)
+        public SendProjectForm(IListProyectsServices proyectsServices, IUsersServices usersServices)
         {
             _proyectsServices = proyectsServices;
+            _usersServices = usersServices;
             InitializeComponent();
         }
 
@@ -35,6 +38,8 @@ namespace PresentationLayer.Forms.Admin
             labelUserAccount.Text = Client;
             labelNameProject.Text = NameProject;
             labelEnd.Text = DateEnd.ToString();
+
+            checkedListBoxGetEmployees.Items.Clear();
         }
 
         private void linkLabelFileProject_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

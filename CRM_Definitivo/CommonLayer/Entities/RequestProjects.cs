@@ -10,6 +10,7 @@ namespace CommonLayer.Entities
     {
         public string codeProject {  get; set; }
         public string UserAccount { get; set; }
+        public int idClient { get; set; }
         public string nameProject { get; set; }
         public string descriptionProject { get; set; }
         public byte[] file {  get; set; }

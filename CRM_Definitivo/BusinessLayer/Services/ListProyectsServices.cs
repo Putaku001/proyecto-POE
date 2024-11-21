@@ -49,6 +49,7 @@ namespace BusinessLayer.Services
         public List<StatusProjects> GetStatusProjects() => _listaProyectosRepositories.GetStatusProjects();
 
         //Metodos para Clientes
-        public IEnumerable<Employees> GetProjectsByIdClient(int idUser) => _listaProyectosRepositories.GetProjectsByIdClient(idUser);
+        public IEnumerable<RequestProjects> GetProjectsByIdClient(int idUser) => _listaProyectosRepositories.GetProjectsByIdClient(idUser);
+        public void AddNewProject(string codeProject, int idClient, string nameProject, string descriptionProject) => _listaProyectosRepositories.AddNewProject(codeProject, idClient, nameProject, descriptionProject);
     }
 }

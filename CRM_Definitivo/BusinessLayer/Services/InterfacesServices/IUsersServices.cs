@@ -25,6 +25,6 @@ namespace BusinessLayer.Services.Interfaces
         IEnumerable<Employees> GetEmployees();
         IEnumerable<Clients> GetClients();
         byte[] GetProfileImage(int idUser);
-        IEnumerable<Employee> GetByIdEmployees(int idEmployee);
+        IEnumerable<Employees> GetByIdEmployees(int idEmployee);
     }
 }
