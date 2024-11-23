@@ -31,14 +31,14 @@ namespace PresentationLayer.Forms
         private static IconMenuItem MenuActivo = null;
         private static Form FormularioActivo = null;
         private readonly IPermisoServices _permisosServices;
-        private IListProyectsServices proyectoServices;
-        private IUsersServices usuarioServices;
-        private IRolServices _rolServices;
+        private readonly IProyectsServices proyectoServices;
+        private readonly IUsersServices usuarioServices;
+        private readonly IRolServices _rolServices;
         private readonly IServiceProvider _provider;
         private readonly IUserReports _userReports;
         private System.Windows.Forms.Timer timer;
 
-        public MenuForm(IPermisoServices services, IServiceProvider serviceProvider, IUsersServices _usuarioServices, IRolServices rolServices, IListProyectsServices _proyectoServices, IUserReports userReports)
+        public MenuForm(IPermisoServices services, IServiceProvider serviceProvider, IUsersServices _usuarioServices, IRolServices rolServices, IProyectsServices _proyectoServices, IUserReports userReports)
         {
 
             InitializeComponent();
@@ -66,14 +66,6 @@ namespace PresentationLayer.Forms
             pictureBoxImageByIdUser.Region = new Region(path);
             pictureBoxSelectedUser.Region = new Region(pathSelectedUser);
 
-            //System.Drawing.Drawing2D.GraphicsPath path1 = new System.Drawing.Drawing2D.GraphicsPath();
-            //path1.AddArc(0, 0, 20, 20, 180, 90); 
-            //path1.AddArc(panelUsersView.Width - 20, 0, 20, 20, 270, 90); 
-            //path1.AddArc(panelUsersView.Width - 20, panelUsersView.Height - 20, 20, 20, 0, 90); 
-            //path1.AddArc(0, panelUsersView.Height - 20, 20, 20, 90, 90); 
-            //path1.CloseAllFigures();
-
-            //panelUsersView.Region = new Region(path1);
         }
 
         public void loadPermisos()
@@ -124,7 +116,6 @@ namespace PresentationLayer.Forms
         private void LoadData()
         {
             dataGridViewUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
         }
 
         private void fechayhora()
@@ -167,11 +158,7 @@ namespace PresentationLayer.Forms
 
         private void label2_Click(object sender, EventArgs e)
         {
-
-            //var LoginForm = _provider.GetRequiredService<LoginForm>();
-            //LoginForm.ShowDialog();
             Application.Restart();
-
         }
 
         private void AbrirFormulario(Form formulario)
@@ -267,18 +254,24 @@ namespace PresentationLayer.Forms
         {
             dataGridViewUsers.DataSource = usuarioServices.GetAdmins();
             dataGridViewUsers.Columns["idUser"].Visible = false;
+            panelAssignamentProject.Visible = false;
+            panelRequestProjects.Visible = false;
         }
 
         private void iconButtonUserEmployee_Click(object sender, EventArgs e)
         {
             dataGridViewUsers.DataSource = usuarioServices.GetEmployees();
             dataGridViewUsers.Columns["idUser"].Visible = false;
+            panelRequestProjects.Visible = false;
+            panelAssignamentProject.Visible = true;
         }
 
         private void iconButtonUserClients_Click(object sender, EventArgs e)
         {
             dataGridViewUsers.DataSource = usuarioServices.GetClients();
             dataGridViewUsers.Columns["idUser"].Visible = false;
+            panelAssignamentProject.Visible = false;
+            panelRequestProjects.Visible = true;    
         }
 
         private void dataGridViewUsers_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -286,6 +279,8 @@ namespace PresentationLayer.Forms
             if (e.RowIndex >= 0)
             {
                 int idUser = int.Parse(dataGridViewUsers.CurrentRow.Cells[2].Value.ToString());
+
+                
 
                 panelUsersView.Visible = true;
                 var users = usuarioServices.GetByIdUser(idUser);
@@ -317,6 +312,17 @@ namespace PresentationLayer.Forms
                         labelNumberPhone.Text = user.NumberPhone;
                         labelRegistration.Text = Convert.ToString(user.DateRegistration);
                         labelCountryByUser.Text = user.Country;
+
+                        if(panelAssignamentProject.Visible == true)
+                        {
+                            var GetidEmployee = usuarioServices.GetEmployees().Where(id => id.idUser == idUser).Select(e => e.idEmployee).FirstOrDefault();
+                            listBoxProjectsAsignamment.DataSource = proyectoServices.GetTasksByEmployees(GetidEmployee).ToList();
+                        }
+                        else if(panelRequestProjects.Visible == true)
+                        {
+                            var GetIdClient = Convert.ToInt32(usuarioServices.GetClients().Where( id => id.idUser == idUser ).Select(id => id.idCliente).FirstOrDefault());
+                            listBoxRequestProjects.DataSource = proyectoServices.GetRequestProyectsByIdClient(GetIdClient).ToList();
+                        }
 
                         if (imageBytes != null && imageBytes.Length > 0)
                         {

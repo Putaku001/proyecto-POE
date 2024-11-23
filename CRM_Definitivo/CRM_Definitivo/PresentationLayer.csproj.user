@@ -7,6 +7,9 @@
     <Compile Update="Forms\Admin\InfoEmployeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\Admin\infoProjects.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\Admin\PermissionForm.cs">
       <SubType>Form</SubType>
     </Compile>

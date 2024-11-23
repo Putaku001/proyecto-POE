@@ -15,6 +15,7 @@ namespace CommonLayer.Entities
         public int idEmployee { get; set; }
         public int idStatusTask { get; set; }
         public string statusTask { get; set; }
+        public byte[] fileTask { get; set; }
         public DateTime dateEnd { get; set; }
     }
 }

@@ -35,7 +35,6 @@
             labelSearchpip = new Label();
             comboBoxSearchPip = new ComboBox();
             dataGridViewProjectsInProgress = new DataGridView();
-            SelectProjectInProgress = new DataGridViewButtonColumn();
             tpListaProyectos = new TabPage();
             dataGridViewRequestProjects = new DataGridView();
             SelectPr = new DataGridViewButtonColumn();
@@ -63,6 +62,7 @@
             labelSearchWr = new Label();
             comboBoxSearchWr = new ComboBox();
             dataGridViewProjectsWaitingResponse = new DataGridView();
+            SelectProjectInProgress = new DataGridViewButtonColumn();
             tabPageProjects.SuspendLayout();
             panelSearchPip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewProjectsInProgress).BeginInit();
@@ -154,15 +154,7 @@
             dataGridViewProjectsInProgress.Size = new Size(1116, 480);
             dataGridViewProjectsInProgress.TabIndex = 0;
             dataGridViewProjectsInProgress.CellContentClick += dataGridViewProjectsInProgress_CellContentClick;
-            // 
-            // SelectProjectInProgress
-            // 
-            SelectProjectInProgress.HeaderText = "Select";
-            SelectProjectInProgress.MinimumWidth = 6;
-            SelectProjectInProgress.Name = "SelectProjectInProgress";
-            SelectProjectInProgress.Resizable = DataGridViewTriState.True;
-            SelectProjectInProgress.SortMode = DataGridViewColumnSortMode.Automatic;
-            SelectProjectInProgress.Width = 70;
+            dataGridViewProjectsInProgress.CellDoubleClick += dataGridViewProjectsInProgress_CellDoubleClick;
             // 
             // tpListaProyectos
             // 
@@ -456,6 +448,16 @@
             dataGridViewProjectsWaitingResponse.TabIndex = 6;
             dataGridViewProjectsWaitingResponse.CellContentClick += dataGridViewProjectsWaitingResponse_CellContentClick;
             // 
+            // SelectProjectInProgress
+            // 
+            SelectProjectInProgress.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            SelectProjectInProgress.HeaderText = "Subir";
+            SelectProjectInProgress.MinimumWidth = 6;
+            SelectProjectInProgress.Name = "SelectProjectInProgress";
+            SelectProjectInProgress.Resizable = DataGridViewTriState.True;
+            SelectProjectInProgress.SortMode = DataGridViewColumnSortMode.Automatic;
+            SelectProjectInProgress.Width = 70;
+            // 
             // ProyectsForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -497,7 +499,6 @@
         private Label labelSearchpip;
         private ComboBox comboBoxSearchPip;
         private DataGridView dataGridViewProjectsInProgress;
-        private DataGridViewButtonColumn SelectProjectInProgress;
         private FontAwesome.Sharp.IconButton iconButtonCleanPip;
         private FontAwesome.Sharp.IconButton iconButtonSearchPip;
         private Panel panelSearchpf;
@@ -523,5 +524,6 @@
         private Label labelSearchWr;
         private ComboBox comboBoxSearchWr;
         private DataGridView dataGridViewProjectsWaitingResponse;
+        private DataGridViewButtonColumn SelectProjectInProgress;
     }
 }

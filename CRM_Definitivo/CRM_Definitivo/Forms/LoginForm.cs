@@ -20,7 +20,7 @@ namespace CRM_Definitivo
 {
     public partial class LoginForm : Form
     {
-        private readonly IListProyectsServices proyectoServices;
+        private readonly IProyectsServices proyectoServices;
         private readonly IUsersRepositories usuarioRepositories;
         private readonly IUsersServices usuarioServices;
         private readonly IUserReports _userReports;
@@ -29,7 +29,7 @@ namespace CRM_Definitivo
 
         private readonly EmailSettings _emailSettings;
 
-        public LoginForm(IServiceProvider serviceProvider, IUsersRepositories _usuarioRepositories, IUsersServices _usuarioServices, IRolServices rolServices, IListProyectsServices _proyectoServices, IUserReports userReports, EmailSettings emailSettings)
+        public LoginForm(IServiceProvider serviceProvider, IUsersRepositories _usuarioRepositories, IUsersServices _usuarioServices, IRolServices rolServices, IProyectsServices _proyectoServices, IUserReports userReports, EmailSettings emailSettings)
         {
             InitializeComponent();           
             usuarioRepositories = _usuarioRepositories;

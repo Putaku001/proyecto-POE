@@ -51,7 +51,7 @@
             panelPrijectsAssignament = new Panel();
             pictureBox1 = new PictureBox();
             label5 = new Label();
-            label4 = new Label();
+            labelProjectsPendings = new Label();
             label3 = new Label();
             groupBox1.SuspendLayout();
             panel1.SuspendLayout();
@@ -307,7 +307,7 @@
             panelPrijectsAssignament.BorderStyle = BorderStyle.Fixed3D;
             panelPrijectsAssignament.Controls.Add(pictureBox1);
             panelPrijectsAssignament.Controls.Add(label5);
-            panelPrijectsAssignament.Controls.Add(label4);
+            panelPrijectsAssignament.Controls.Add(labelProjectsPendings);
             panelPrijectsAssignament.Controls.Add(label3);
             panelPrijectsAssignament.Location = new Point(19, 76);
             panelPrijectsAssignament.Name = "panelPrijectsAssignament";
@@ -335,16 +335,16 @@
             label5.TabIndex = 3;
             label5.Text = "Que esperas? chambea!";
             // 
-            // label4
+            // labelProjectsPendings
             // 
-            label4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            label4.AutoSize = true;
-            label4.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(523, 46);
-            label4.Name = "label4";
-            label4.Size = new Size(37, 37);
-            label4.TabIndex = 2;
-            label4.Text = "p";
+            labelProjectsPendings.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            labelProjectsPendings.AutoSize = true;
+            labelProjectsPendings.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelProjectsPendings.Location = new Point(523, 46);
+            labelProjectsPendings.Name = "labelProjectsPendings";
+            labelProjectsPendings.Size = new Size(37, 37);
+            labelProjectsPendings.TabIndex = 2;
+            labelProjectsPendings.Text = "p";
             // 
             // label3
             // 
@@ -404,7 +404,7 @@
         private Label label3;
         private PictureBox pictureBox1;
         private Label label5;
-        private Label label4;
+        private Label labelProjectsPendings;
         private PictureBox pictureBox2;
         private Label label6;
     }

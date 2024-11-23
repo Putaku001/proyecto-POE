@@ -65,14 +65,6 @@
             label9 = new Label();
             label8 = new Label();
             label6 = new Label();
-            panel7 = new Panel();
-            pictureBox6 = new PictureBox();
-            listBoxRequestProjects = new ListBox();
-            label4 = new Label();
-            panel6 = new Panel();
-            pictureBox4 = new PictureBox();
-            listBoxProjectsAsignamment = new ListBox();
-            label5 = new Label();
             labelnameUser = new Label();
             label3 = new Label();
             labelCity = new Label();
@@ -82,7 +74,14 @@
             labelByUser = new Label();
             label1 = new Label();
             panel8 = new Panel();
-            label11 = new Label();
+            panelAssignamentProject = new Panel();
+            panelRequestProjects = new Panel();
+            pictureBox6 = new PictureBox();
+            listBoxRequestProjects = new ListBox();
+            label4 = new Label();
+            pictureBox4 = new PictureBox();
+            listBoxProjectsAsignamment = new ListBox();
+            label5 = new Label();
             panelInfoUsers = new Panel();
             dataGridViewUsers = new DataGridView();
             viewUser = new DataGridViewButtonColumn();
@@ -103,12 +102,12 @@
             groupBox1.SuspendLayout();
             panelUsersView.SuspendLayout();
             panel9.SuspendLayout();
-            panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxSelectedUser).BeginInit();
             panel8.SuspendLayout();
+            panelAssignamentProject.SuspendLayout();
+            panelRequestProjects.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             panelInfoUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewUsers).BeginInit();
             panelPrijectsAssignament.SuspendLayout();
@@ -137,7 +136,7 @@
             label2.ForeColor = SystemColors.InfoText;
             label2.Location = new Point(6, 32);
             label2.Name = "label2";
-            label2.Size = new Size(199, 36);
+            label2.Size = new Size(126, 22);
             label2.TabIndex = 6;
             label2.Text = "Cerrar sesion";
             label2.Click += label2_Click;
@@ -177,7 +176,7 @@
             lblNombreUsuario.ForeColor = Color.White;
             lblNombreUsuario.Location = new Point(6, 9);
             lblNombreUsuario.Name = "lblNombreUsuario";
-            lblNombreUsuario.Size = new Size(291, 39);
+            lblNombreUsuario.Size = new Size(183, 23);
             lblNombreUsuario.TabIndex = 4;
             lblNombreUsuario.Text = "lblNombreUsuario";
             // 
@@ -201,7 +200,7 @@
             lblHoraUsuario.ForeColor = Color.Black;
             lblHoraUsuario.Location = new Point(647, 25);
             lblHoraUsuario.Name = "lblHoraUsuario";
-            lblHoraUsuario.Size = new Size(238, 39);
+            lblHoraUsuario.Size = new Size(150, 23);
             lblHoraUsuario.TabIndex = 5;
             lblHoraUsuario.Text = "lblHoraUsuario";
             // 
@@ -424,7 +423,7 @@
             labelUserAccount.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold);
             labelUserAccount.Location = new Point(265, 21);
             labelUserAccount.Name = "labelUserAccount";
-            labelUserAccount.Size = new Size(200, 44);
+            labelUserAccount.Size = new Size(125, 27);
             labelUserAccount.TabIndex = 1;
             labelUserAccount.Text = "nameUser";
             // 
@@ -434,8 +433,6 @@
             panelUsersView.Controls.Add(panel10);
             panelUsersView.Controls.Add(label7);
             panelUsersView.Controls.Add(panel9);
-            panelUsersView.Controls.Add(panel7);
-            panelUsersView.Controls.Add(panel6);
             panelUsersView.Controls.Add(labelnameUser);
             panelUsersView.Controls.Add(label3);
             panelUsersView.Controls.Add(labelCity);
@@ -444,9 +441,9 @@
             panelUsersView.Controls.Add(pictureBoxSelectedUser);
             panelUsersView.Controls.Add(labelByUser);
             panelUsersView.Dock = DockStyle.Right;
-            panelUsersView.Location = new Point(932, 33);
+            panelUsersView.Location = new Point(932, 22);
             panelUsersView.Name = "panelUsersView";
-            panelUsersView.Size = new Size(425, 765);
+            panelUsersView.Size = new Size(425, 776);
             panelUsersView.TabIndex = 6;
             panelUsersView.Visible = false;
             // 
@@ -457,7 +454,7 @@
             panel10.BorderStyle = BorderStyle.Fixed3D;
             panel10.Location = new Point(17, 669);
             panel10.Name = "panel10";
-            panel10.Size = new Size(397, 93);
+            panel10.Size = new Size(397, 104);
             panel10.TabIndex = 24;
             // 
             // label7
@@ -467,7 +464,7 @@
             label7.ForeColor = Color.Black;
             label7.Location = new Point(128, 96);
             label7.Name = "label7";
-            label7.Size = new Size(26, 39);
+            label7.Size = new Size(15, 23);
             label7.TabIndex = 19;
             label7.Text = ",";
             // 
@@ -483,9 +480,9 @@
             panel9.Controls.Add(label9);
             panel9.Controls.Add(label8);
             panel9.Controls.Add(label6);
-            panel9.Location = new Point(17, 488);
+            panel9.Location = new Point(17, 150);
             panel9.Name = "panel9";
-            panel9.Size = new Size(397, 159);
+            panel9.Size = new Size(397, 497);
             panel9.TabIndex = 5;
             // 
             // labelRegistration
@@ -493,9 +490,9 @@
             labelRegistration.AutoSize = true;
             labelRegistration.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline);
             labelRegistration.ForeColor = Color.White;
-            labelRegistration.Location = new Point(220, 123);
+            labelRegistration.Location = new Point(220, 452);
             labelRegistration.Name = "labelRegistration";
-            labelRegistration.Size = new Size(114, 34);
+            labelRegistration.Size = new Size(69, 21);
             labelRegistration.TabIndex = 25;
             labelRegistration.Text = "registro";
             // 
@@ -504,9 +501,9 @@
             labelNumberPhone.AutoSize = true;
             labelNumberPhone.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline);
             labelNumberPhone.ForeColor = Color.White;
-            labelNumberPhone.Location = new Point(115, 88);
+            labelNumberPhone.Location = new Point(118, 145);
             labelNumberPhone.Name = "labelNumberPhone";
-            labelNumberPhone.Size = new Size(109, 34);
+            labelNumberPhone.Size = new Size(66, 21);
             labelNumberPhone.TabIndex = 24;
             labelNumberPhone.Text = "celular";
             // 
@@ -515,9 +512,9 @@
             labelEmail.AutoSize = true;
             labelEmail.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline);
             labelEmail.ForeColor = Color.White;
-            labelEmail.Location = new Point(94, 51);
+            labelEmail.Location = new Point(97, 108);
             labelEmail.Name = "labelEmail";
-            labelEmail.Size = new Size(117, 34);
+            labelEmail.Size = new Size(71, 21);
             labelEmail.TabIndex = 23;
             labelEmail.Text = "Correo:";
             // 
@@ -526,9 +523,9 @@
             label10.AutoSize = true;
             label10.Font = new Font("Century Gothic", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label10.ForeColor = Color.White;
-            label10.Location = new Point(15, 121);
+            label10.Location = new Point(15, 450);
             label10.Name = "label10";
-            label10.Size = new Size(318, 39);
+            label10.Size = new Size(203, 23);
             label10.TabIndex = 22;
             label10.Text = "Fecha de creacion:";
             // 
@@ -537,9 +534,9 @@
             label9.AutoSize = true;
             label9.Font = new Font("Century Gothic", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label9.ForeColor = Color.White;
-            label9.Location = new Point(15, 88);
+            label9.Location = new Point(18, 145);
             label9.Name = "label9";
-            label9.Size = new Size(155, 39);
+            label9.Size = new Size(99, 23);
             label9.TabIndex = 21;
             label9.Text = "Telefono:";
             // 
@@ -548,9 +545,9 @@
             label8.AutoSize = true;
             label8.Font = new Font("Century Gothic", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(12, 51);
+            label8.Location = new Point(15, 108);
             label8.Name = "label8";
-            label8.Size = new Size(131, 39);
+            label8.Size = new Size(83, 23);
             label8.TabIndex = 20;
             label8.Text = "Correo:";
             // 
@@ -559,105 +556,11 @@
             label6.AutoSize = true;
             label6.Font = new Font("Century Gothic", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(3, 10);
+            label6.Location = new Point(15, 40);
             label6.Name = "label6";
-            label6.Size = new Size(380, 39);
+            label6.Size = new Size(241, 23);
             label6.TabIndex = 20;
             label6.Text = "Informacion del usuario";
-            // 
-            // panel7
-            // 
-            panel7.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panel7.BackColor = Color.DarkCyan;
-            panel7.BorderStyle = BorderStyle.Fixed3D;
-            panel7.Controls.Add(pictureBox6);
-            panel7.Controls.Add(listBoxRequestProjects);
-            panel7.Controls.Add(label4);
-            panel7.Location = new Point(17, 323);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(397, 122);
-            panel7.TabIndex = 4;
-            // 
-            // pictureBox6
-            // 
-            pictureBox6.BackColor = Color.Transparent;
-            pictureBox6.Image = Properties.Resources.Proyecto;
-            pictureBox6.Location = new Point(12, 12);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(74, 98);
-            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox6.TabIndex = 23;
-            pictureBox6.TabStop = false;
-            // 
-            // listBoxRequestProjects
-            // 
-            listBoxRequestProjects.BorderStyle = BorderStyle.None;
-            listBoxRequestProjects.Font = new Font("Century Gothic", 9F, FontStyle.Italic);
-            listBoxRequestProjects.FormattingEnabled = true;
-            listBoxRequestProjects.ItemHeight = 28;
-            listBoxRequestProjects.Items.AddRange(new object[] { "prueba1", "prueba2", "prueba3", "prueba4", "prueba5" });
-            listBoxRequestProjects.Location = new Point(109, 47);
-            listBoxRequestProjects.Name = "listBoxRequestProjects";
-            listBoxRequestProjects.Size = new Size(251, 28);
-            listBoxRequestProjects.TabIndex = 21;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Century Gothic", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(109, 12);
-            label4.Name = "label4";
-            label4.Size = new Size(341, 39);
-            label4.TabIndex = 20;
-            label4.Text = "Proyectos solicitados";
-            // 
-            // panel6
-            // 
-            panel6.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panel6.BackColor = Color.DarkCyan;
-            panel6.BorderStyle = BorderStyle.Fixed3D;
-            panel6.Controls.Add(pictureBox4);
-            panel6.Controls.Add(listBoxProjectsAsignamment);
-            panel6.Controls.Add(label5);
-            panel6.Location = new Point(17, 157);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(397, 116);
-            panel6.TabIndex = 3;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.BackColor = Color.Transparent;
-            pictureBox4.Image = Properties.Resources.projects_icon_142976;
-            pictureBox4.Location = new Point(12, 6);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(74, 98);
-            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox4.TabIndex = 24;
-            pictureBox4.TabStop = false;
-            // 
-            // listBoxProjectsAsignamment
-            // 
-            listBoxProjectsAsignamment.BorderStyle = BorderStyle.None;
-            listBoxProjectsAsignamment.Font = new Font("Century Gothic", 9F, FontStyle.Italic);
-            listBoxProjectsAsignamment.FormattingEnabled = true;
-            listBoxProjectsAsignamment.ItemHeight = 28;
-            listBoxProjectsAsignamment.Items.AddRange(new object[] { "prueba1", "prueba2", "prueba3", "prueba4", "prueba5" });
-            listBoxProjectsAsignamment.Location = new Point(109, 47);
-            listBoxProjectsAsignamment.Name = "listBoxProjectsAsignamment";
-            listBoxProjectsAsignamment.Size = new Size(251, 28);
-            listBoxProjectsAsignamment.TabIndex = 20;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Century Gothic", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(109, 6);
-            label5.Name = "label5";
-            label5.Size = new Size(336, 39);
-            label5.TabIndex = 19;
-            label5.Text = "Proyectos asignados";
             // 
             // labelnameUser
             // 
@@ -666,7 +569,7 @@
             labelnameUser.ForeColor = Color.White;
             labelnameUser.Location = new Point(99, 68);
             labelnameUser.Name = "labelnameUser";
-            labelnameUser.Size = new Size(112, 39);
+            labelnameUser.Size = new Size(70, 23);
             labelnameUser.TabIndex = 18;
             labelnameUser.Text = "Name";
             // 
@@ -677,7 +580,7 @@
             label3.ForeColor = Color.Black;
             label3.Location = new Point(262, 97);
             label3.Name = "label3";
-            label3.Size = new Size(26, 39);
+            label3.Size = new Size(15, 23);
             label3.TabIndex = 17;
             label3.Text = ",";
             // 
@@ -689,7 +592,7 @@
             labelCity.ForeColor = Color.RoyalBlue;
             labelCity.Location = new Point(274, 96);
             labelCity.Name = "labelCity";
-            labelCity.Size = new Size(79, 38);
+            labelCity.Size = new Size(49, 23);
             labelCity.TabIndex = 16;
             labelCity.Text = "City";
             // 
@@ -701,7 +604,7 @@
             labelCountryByUser.ForeColor = Color.RoyalBlue;
             labelCountryByUser.Location = new Point(149, 96);
             labelCountryByUser.Name = "labelCountryByUser";
-            labelCountryByUser.Size = new Size(184, 38);
+            labelCountryByUser.Size = new Size(114, 23);
             labelCountryByUser.TabIndex = 12;
             labelCountryByUser.Text = "El salvador";
             // 
@@ -713,7 +616,7 @@
             labelByAgeUser.ForeColor = Color.RoyalBlue;
             labelByAgeUser.Location = new Point(99, 96);
             labelByAgeUser.Name = "labelByAgeUser";
-            labelByAgeUser.Size = new Size(79, 38);
+            labelByAgeUser.Size = new Size(49, 23);
             labelByAgeUser.TabIndex = 11;
             labelByAgeUser.Text = "age";
             // 
@@ -737,7 +640,7 @@
             labelByUser.ForeColor = Color.White;
             labelByUser.Location = new Point(17, 22);
             labelByUser.Name = "labelByUser";
-            labelByUser.Size = new Size(113, 55);
+            labelByUser.Size = new Size(72, 34);
             labelByUser.TabIndex = 9;
             labelByUser.Text = "User";
             // 
@@ -754,19 +657,104 @@
             // 
             panel8.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel8.BorderStyle = BorderStyle.Fixed3D;
-            panel8.Controls.Add(label11);
+            panel8.Controls.Add(panelRequestProjects);
+            panel8.Controls.Add(panelAssignamentProject);
             panel8.Location = new Point(19, 580);
             panel8.Name = "panel8";
             panel8.Size = new Size(891, 217);
             panel8.TabIndex = 3;
             // 
-            // label11
+            // panelAssignamentProject
             // 
-            label11.Location = new Point(129, 47);
-            label11.Name = "label11";
-            label11.Size = new Size(372, 81);
-            label11.TabIndex = 0;
-            label11.Text = "Aca lo mas probable que vaya graficas y estadisticas sobre los proyectos que mas piden los clientes y eso si es que no me da huevaxd";
+            panelAssignamentProject.BackColor = Color.DarkCyan;
+            panelAssignamentProject.BorderStyle = BorderStyle.Fixed3D;
+            panelAssignamentProject.Controls.Add(pictureBox4);
+            panelAssignamentProject.Controls.Add(listBoxProjectsAsignamment);
+            panelAssignamentProject.Controls.Add(label5);
+            panelAssignamentProject.Location = new Point(485, 17);
+            panelAssignamentProject.Name = "panelAssignamentProject";
+            panelAssignamentProject.Size = new Size(397, 157);
+            panelAssignamentProject.TabIndex = 3;
+            panelAssignamentProject.Visible = false;
+            // 
+            // panelRequestProjects
+            // 
+            panelRequestProjects.BackColor = Color.DarkCyan;
+            panelRequestProjects.BorderStyle = BorderStyle.Fixed3D;
+            panelRequestProjects.Controls.Add(pictureBox6);
+            panelRequestProjects.Controls.Add(listBoxRequestProjects);
+            panelRequestProjects.Controls.Add(label4);
+            panelRequestProjects.Location = new Point(3, 17);
+            panelRequestProjects.Name = "panelRequestProjects";
+            panelRequestProjects.Size = new Size(403, 157);
+            panelRequestProjects.TabIndex = 4;
+            panelRequestProjects.Visible = false;
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.BackColor = Color.Transparent;
+            pictureBox6.Image = Properties.Resources.Proyecto;
+            pictureBox6.Location = new Point(29, 30);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(74, 98);
+            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox6.TabIndex = 23;
+            pictureBox6.TabStop = false;
+            // 
+            // listBoxRequestProjects
+            // 
+            listBoxRequestProjects.BorderStyle = BorderStyle.None;
+            listBoxRequestProjects.Font = new Font("Century Gothic", 9F, FontStyle.Italic);
+            listBoxRequestProjects.FormattingEnabled = true;
+            listBoxRequestProjects.ItemHeight = 18;
+            listBoxRequestProjects.Location = new Point(109, 38);
+            listBoxRequestProjects.Name = "listBoxRequestProjects";
+            listBoxRequestProjects.Size = new Size(265, 90);
+            listBoxRequestProjects.TabIndex = 21;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Century Gothic", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(109, 12);
+            label4.Name = "label4";
+            label4.Size = new Size(216, 23);
+            label4.TabIndex = 20;
+            label4.Text = "Proyectos solicitados";
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.BackColor = Color.Transparent;
+            pictureBox4.Image = Properties.Resources.projects_icon_142976;
+            pictureBox4.Location = new Point(18, 32);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(74, 98);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox4.TabIndex = 24;
+            pictureBox4.TabStop = false;
+            // 
+            // listBoxProjectsAsignamment
+            // 
+            listBoxProjectsAsignamment.BorderStyle = BorderStyle.None;
+            listBoxProjectsAsignamment.Font = new Font("Century Gothic", 9F, FontStyle.Italic);
+            listBoxProjectsAsignamment.FormattingEnabled = true;
+            listBoxProjectsAsignamment.ItemHeight = 18;
+            listBoxProjectsAsignamment.Location = new Point(109, 32);
+            listBoxProjectsAsignamment.Name = "listBoxProjectsAsignamment";
+            listBoxProjectsAsignamment.Size = new Size(263, 108);
+            listBoxProjectsAsignamment.TabIndex = 20;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Century Gothic", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(109, 6);
+            label5.Name = "label5";
+            label5.Size = new Size(212, 23);
+            label5.TabIndex = 19;
+            label5.Text = "Proyectos asignados";
             // 
             // panelInfoUsers
             // 
@@ -893,7 +881,7 @@
             // 
             // MenuForm
             // 
-            AutoScaleDimensions = new SizeF(14F, 30F);
+            AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1428, 872);
@@ -923,14 +911,14 @@
             panelUsersView.PerformLayout();
             panel9.ResumeLayout(false);
             panel9.PerformLayout();
-            panel7.ResumeLayout(false);
-            panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            panel6.ResumeLayout(false);
-            panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxSelectedUser).EndInit();
             panel8.ResumeLayout(false);
+            panelAssignamentProject.ResumeLayout(false);
+            panelAssignamentProject.PerformLayout();
+            panelRequestProjects.ResumeLayout(false);
+            panelRequestProjects.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             panelInfoUsers.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridViewUsers).EndInit();
             panelPrijectsAssignament.ResumeLayout(false);
@@ -981,29 +969,28 @@
         private Label labelByUser;
         private Label label3;
         private Label labelCity;
-        private Label label5;
         private Label labelnameUser;
         private Panel panel9;
         private Label label6;
-        private Panel panel7;
-        private Label label4;
-        private Panel panel6;
-        private ListBox listBoxProjectsAsignamment;
         private Label label7;
-        private PictureBox pictureBox6;
-        private ListBox listBoxRequestProjects;
         private Label labelRegistration;
         private Label labelNumberPhone;
         private Label labelEmail;
         private Label label10;
         private Label label9;
         private Label label8;
-        private PictureBox pictureBox4;
-        private Label label11;
         private Panel panel10;
         public PictureBox pictureBoxImageByIdUser;
         private Panel panel4;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
+        private Panel panelRequestProjects;
+        private PictureBox pictureBox6;
+        private ListBox listBoxRequestProjects;
+        private Label label4;
+        private Panel panelAssignamentProject;
+        private PictureBox pictureBox4;
+        private ListBox listBoxProjectsAsignamment;
+        private Label label5;
     }
 }

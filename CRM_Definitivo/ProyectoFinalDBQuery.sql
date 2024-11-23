@@ -192,9 +192,13 @@ CREATE TABLE taskProjects (
     idEmployee INT,
 	idStatusTask INT,
 	dateEnd DATE,
+	fileTask VARBINARY(MAX)
     FOREIGN KEY (idEmployee) REFERENCES employee(idEmployee),
 	FOREIGN KEY (idStatusTask) REFERENCES taskEmployeesStatus(idStatusTask)
 );
+
+ALTER TABLE taskProjects
+ADD fileTask VARBINARY(MAX)
 
 CREATE TABLE taskEmployeesStatus
 (
@@ -223,6 +227,18 @@ INNER JOIN taskEmployeesStatus se on se.idStatusTask = tp.idStatusTask
 SELECT p.codeProject, rp.reason, rp.reasonForRejection, sp.statusproyect FROM RefusedProject rp
 LEFT JOIN RequestProjectClient p on p.idProject = rp.idProject
 LEFT JOIN statusProyect sp on sp.idStatusProyect = p.idStatusProject
+
+/* Consulta para seleccionar tareas relacionadas al codigo de un proyecto solicitiado */
+SELECT t.idEmployee, t.nameTask, t.descriptionTask, t.idStatusTask , te.statusTask FROM taskProjects t
+INNER JOIN taskEmployeesStatus te ON te.idStatusTask = t.idStatusTask
+INNER JOIN employee e ON e.idEmployee = t.idEmployee
+WHERE t.codeProject = 'U24590'
+
+
+
+SELECT tp.codeProject FROM taskProjects tp WHERE idEmployee = 3 AND idStatusTask = 3
+
+SELECT rp.nameProject FROM RequestProjectClient rp WHERE idClient = @idClient AND idStatusProject = 9
 
 
 

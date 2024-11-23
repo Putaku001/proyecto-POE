@@ -1,4 +1,6 @@
-﻿using CommonLayer.Entities;
+﻿using BusinessLayer.Services.Interfaces;
+using BusinessLayer.Services.InterfacesServices;
+using CommonLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +15,15 @@ namespace PresentationLayer.Forms.Empleados
 {
     public partial class HomeUserEmployeeForm : Form
     {
-        public HomeUserEmployeeForm()
+        private readonly IProyectsServices _proyectsServices;
+        private readonly IUsersServices _usersServices;
+        int idUser;
+        public HomeUserEmployeeForm(IProyectsServices proyectsServices, IUsersServices usersServices)
         {
             InitializeComponent();
+            _proyectsServices = proyectsServices;
+            _usersServices = usersServices;
+            idUser = CaptureData.idUser;
             LoadData();
         }
 
@@ -23,6 +31,10 @@ namespace PresentationLayer.Forms.Empleados
         {
             labelUserAccount.Text = AuthUser.UserAccount;
             lblHoraUsuario.Text = DateTime.Now.ToString("g");
+
+            var getidClient = _usersServices.GetClients().Where(id => id.idUser == idUser).Select(select => select.idCliente).FirstOrDefault();
+            var projectsCount = _proyectsServices.GetProjectsByIdClient(getidClient).Count();
+            labelProjectsPendings.Text = projectsCount.ToString();
         }
     }
 }

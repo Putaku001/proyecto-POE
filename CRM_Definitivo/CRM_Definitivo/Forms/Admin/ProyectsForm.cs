@@ -16,9 +16,9 @@ namespace PresentationLayer.Forms
 {
     public partial class ProyectsForm : Form
     {
-        private readonly IListProyectsServices _proyectoServices;
+        private readonly IProyectsServices _proyectoServices;
         private readonly IServiceProvider _serviceProvider;
-        public ProyectsForm(IListProyectsServices proyectoServices, IServiceProvider serviceProvider)
+        public ProyectsForm(IProyectsServices proyectoServices, IServiceProvider serviceProvider)
         {
             InitializeComponent();
             _proyectoServices = proyectoServices;
@@ -130,6 +130,19 @@ namespace PresentationLayer.Forms
         private void dataGridViewProjectsWaitingResponse_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void dataGridViewProjectsInProgress_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex == 0)
+            {
+                var CodeProject = dataGridViewProjectsInProgress.Rows[e.RowIndex].Cells["codeProject"].Value.ToString();
+
+                var OpenInfoProjects = _serviceProvider.GetRequiredService<infoProjects>();
+                OpenInfoProjects.codeProject = CodeProject;
+                OpenInfoProjects.ShowDialog();
+                
+            }
         }
     }
 }

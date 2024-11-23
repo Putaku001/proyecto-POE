@@ -188,6 +188,9 @@ namespace DataAccessLayer.Repositories
                 return connection.Query<Admins>(query);
             }
         }
+
+
+        //EMPLEADOS
         public IEnumerable<Employees> GetEmployee()
         {
             using (var connection = _dbConnection.GetConnection())
@@ -207,6 +210,8 @@ namespace DataAccessLayer.Repositories
                 return connection.Query<Employees>(query, new { idEmployee });
             }
         }
+
+        //CLIENTES
         public IEnumerable<Clients> GetClients()
         {
             using (var connection = _dbConnection.GetConnection())

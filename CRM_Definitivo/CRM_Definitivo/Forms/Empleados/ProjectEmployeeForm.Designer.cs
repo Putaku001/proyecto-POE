@@ -211,9 +211,9 @@
             labelProjectsAssignament.ForeColor = Color.White;
             labelProjectsAssignament.Location = new Point(6, 9);
             labelProjectsAssignament.Name = "labelProjectsAssignament";
-            labelProjectsAssignament.Size = new Size(246, 29);
+            labelProjectsAssignament.Size = new Size(208, 29);
             labelProjectsAssignament.TabIndex = 13;
-            labelProjectsAssignament.Text = "Proyectos Asignados";
+            labelProjectsAssignament.Text = "Tareas Asignadas";
             // 
             // ProjectEmployeeForm
             // 

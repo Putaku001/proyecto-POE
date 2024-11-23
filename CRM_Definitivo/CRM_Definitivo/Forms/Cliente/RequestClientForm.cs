@@ -18,10 +18,10 @@ namespace PresentationLayer.Forms.Cliente
     public partial class RequestClientForm : Form
     {
         private readonly IUsersServices _usersServices;
-        private readonly IListProyectsServices _proyectsServices;
+        private readonly IProyectsServices _proyectsServices;
         private readonly IServiceProvider _serviceProvider;
         int idClienById;
-        public RequestClientForm(IUsersServices usersServices, IListProyectsServices listProyectsServices, IServiceProvider serviceProvider)
+        public RequestClientForm(IUsersServices usersServices, IProyectsServices listProyectsServices, IServiceProvider serviceProvider)
         {
             InitializeComponent();
             _usersServices = usersServices;

@@ -20,9 +20,9 @@ namespace PresentationLayer.Forms.Admin
         public string NameProject { get; set; }
         public string DescriptionProject { get; set; }
         public string Client { get; set; }
-        private readonly IListProyectsServices _proyectsServices;
+        private readonly IProyectsServices _proyectsServices;
         private readonly IUsersServices _usersServices;
-        public AssignamentTaskEmployeeForm(IListProyectsServices proyectsServices, IUsersServices usersServices)
+        public AssignamentTaskEmployeeForm(IProyectsServices proyectsServices, IUsersServices usersServices)
         {
             InitializeComponent();
             _proyectsServices = proyectsServices;

@@ -64,19 +64,20 @@ namespace CRM_Definitivo
                         services.AddTransient<InfoEmployeeForm>();
                         services.AddTransient<AssignamentTaskEmployeeForm>();
                         services.AddTransient<SendProjectForm>();
+                        services.AddTransient<infoProjects>();
 
 
                         //BUSISNESSLAYER
                         services.AddScoped<IUsersServices, UsersServices>();
                         services.AddScoped<IPermisoServices, PermissionServices>();
                         services.AddScoped<IRolServices, RolServices>();
-                        services.AddScoped<IListProyectsServices, ListProyectsServices>();
+                        services.AddScoped<IProyectsServices, ProyectsServices>();
 
                         //REPOSITORIES
                         services.AddScoped<IUsersRepositories, UsersRepositories>();
                         services.AddScoped<IPermissionRepositories, PermissionRepositories>();
                         services.AddScoped<IRolRepositories,  RolRepositories>();
-                        services.AddScoped<IListProyectsRepositories, ListProyectsRepositories>();
+                        services.AddScoped<IProyectsRepositories, ProyectsRepositories>();
 
                         //REPORTS
                         services.AddScoped<IUserReports, UserReports>();
