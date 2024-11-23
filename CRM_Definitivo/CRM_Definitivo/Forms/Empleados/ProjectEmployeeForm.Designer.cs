@@ -43,6 +43,7 @@
             labelNameTask = new Label();
             panelProjects = new Panel();
             labelProjectsAssignament = new Label();
+            comboBoxTaskStatus = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dataGridViewProjectsEmployee).BeginInit();
             panelInformationProject.SuspendLayout();
             groupBoxProjectsInfo.SuspendLayout();
@@ -85,6 +86,7 @@
             // groupBoxProjectsInfo
             // 
             groupBoxProjectsInfo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            groupBoxProjectsInfo.Controls.Add(comboBoxTaskStatus);
             groupBoxProjectsInfo.Controls.Add(pictureBox1);
             groupBoxProjectsInfo.Controls.Add(flowLayoutPanelLinkFile);
             groupBoxProjectsInfo.Controls.Add(iconButtonSubmit);
@@ -166,7 +168,7 @@
             // linkLabelFile
             // 
             linkLabelFile.AutoSize = true;
-            linkLabelFile.Location = new Point(137, 399);
+            linkLabelFile.Location = new Point(142, 383);
             linkLabelFile.Name = "linkLabelFile";
             linkLabelFile.Size = new Size(245, 20);
             linkLabelFile.TabIndex = 3;
@@ -215,6 +217,14 @@
             labelProjectsAssignament.TabIndex = 13;
             labelProjectsAssignament.Text = "Tareas Asignadas";
             // 
+            // comboBoxTaskStatus
+            // 
+            comboBoxTaskStatus.FormattingEnabled = true;
+            comboBoxTaskStatus.Location = new Point(191, 422);
+            comboBoxTaskStatus.Name = "comboBoxTaskStatus";
+            comboBoxTaskStatus.Size = new Size(151, 28);
+            comboBoxTaskStatus.TabIndex = 14;
+            // 
             // ProjectEmployeeForm
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
@@ -258,5 +268,6 @@
         private Panel panelProjects;
         private Label labelProjectsAssignament;
         private PictureBox pictureBox1;
+        private ComboBox comboBoxTaskStatus;
     }
 }

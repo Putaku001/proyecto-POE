@@ -13,7 +13,7 @@ namespace DataAccessLayer.Repositories.InterfacesRepositories
 
         IEnumerable<ListProyects> GetLisProyect();
         List<StatusProjects> GetStatusProjects();
-        void UpdateTaskEmployee(int idTask, byte[] file);
+        void UpdateTaskEmployee(int idTask, byte[] file, int idStatusTask);
 
         //proyectos
         IEnumerable<RequestProjects> GetRequestProjects();
@@ -37,6 +37,7 @@ namespace DataAccessLayer.Repositories.InterfacesRepositories
         void AddTasksEmployees(TaskEmployees taskEmployees);
         IEnumerable<TaskEmployees> GetTasksByCode(string codeProject);
         byte[] DownloadTask(int idTask);
+        IEnumerable<TaskEmployees> GetByIdTaskEmployee(int idEmployee);
 
 
 
@@ -48,5 +49,7 @@ namespace DataAccessLayer.Repositories.InterfacesRepositories
 
         //Metodos para Empleados
         List<string> GetTasksByEmployees(int idEmployee);
+        IEnumerable<TaskEmployees> GetsProjects(int idEmployee);
+        IEnumerable<StatusTaskEmployees> GetStatusTaskEmployees();
     }
 }

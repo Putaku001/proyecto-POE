@@ -24,7 +24,7 @@ namespace BusinessLayer.Services
             return _listaProyectosRepositories.GetLisProyect();
         }
  
-        public void UpdateTaskEmployee(int idTask, byte[] file) => _listaProyectosRepositories.UpdateTaskEmployee(idTask, file);
+        public void UpdateTaskEmployee(int idTask, byte[] file, int idStatusTask) => _listaProyectosRepositories.UpdateTaskEmployee(idTask, file, idStatusTask);
         
 
         //METODOS PARA PROYECTOS
@@ -45,6 +45,7 @@ namespace BusinessLayer.Services
         public void AddTasksEmployees(TaskEmployees taskEmployees) => _listaProyectosRepositories.AddTasksEmployees(taskEmployees);
         public IEnumerable<TaskEmployees> GetTasksByCode(string codeProject) => _listaProyectosRepositories.GetTasksByCode(codeProject);
         public byte[] DownloadTask(int idTask) => _listaProyectosRepositories.DownloadTask(idTask);
+        public IEnumerable<TaskEmployees> GetByIdTaskEmployee(int idEmployee) => _listaProyectosRepositories.GetByIdTaskEmployee(idEmployee);
 
         //status project
         public List<StatusProjects> GetStatusProjects() => _listaProyectosRepositories.GetStatusProjects();
@@ -56,5 +57,7 @@ namespace BusinessLayer.Services
 
         //Metodos para Empleados
         public List<string> GetTasksByEmployees(int idEmployee) => _listaProyectosRepositories.GetTasksByEmployees(idEmployee);
+        public IEnumerable<TaskEmployees> GetsProjects(int idEmployee) => _listaProyectosRepositories.GetsProjects(idEmployee);
+        public IEnumerable<StatusTaskEmployees> GetStatusTaskEmployees() => _listaProyectosRepositories.GetStatusTaskEmployees();
     }
 }

@@ -20,7 +20,7 @@ namespace BusinessLayer.Services.InterfacesServices
 
         IEnumerable<ListProyects> GetLisProyect();
         List<StatusProjects> GetStatusProjects();
-        void UpdateTaskEmployee(int idTask, byte[] file);
+        void UpdateTaskEmployee(int idTask, byte[] file, int idStatusTask);
         void ProjectRedo(string codeProject, int idStatusProject);
         void StatusProject(string codeProject, int idStatusProject);
         void DateInit(string codeProject, DateTime DateInit);
@@ -35,6 +35,7 @@ namespace BusinessLayer.Services.InterfacesServices
         void AddTasksEmployees(TaskEmployees employees);
         IEnumerable<TaskEmployees> GetTasksByCode(string codeProject);
         byte[] DownloadTask(int idTask);
+        IEnumerable<TaskEmployees> GetByIdTaskEmployee(int idEmployee);
 
 
 
@@ -48,5 +49,8 @@ namespace BusinessLayer.Services.InterfacesServices
 
         //Metodos para Empleados
         List<string> GetTasksByEmployees(int idEmployee);
+        IEnumerable<TaskEmployees> GetsProjects(int idEmployee);
+        IEnumerable<StatusTaskEmployees> GetStatusTaskEmployees();
+
     }
 }

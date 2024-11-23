@@ -32,15 +32,16 @@ namespace DataAccessLayer.Repositories
             }
         }
 
-        public void UpdateTaskEmployee(int idTask, byte[] file)
+        public void UpdateTaskEmployee(int idTask, byte[] file, int idStatusTask)
         {
             using(var connection = _dbConnection.GetConnection())
             {
-                string query = @"UPDATE task SET
-                                 [file] = @file
+                string query = @"UPDATE taskProjects SET
+                                 fileTask = @file,
+                                 idStatusTask = @idStatusTask
                                  WHERE idTask = @idTask";
 
-                connection.Query(query, new { idTask, file });
+                connection.Query(query, new { idTask, file, idStatusTask });
             }
         }
 
@@ -234,6 +235,16 @@ namespace DataAccessLayer.Repositories
             }
         }
 
+        public IEnumerable<TaskEmployees> GetByIdTaskEmployee(int idEmployee)
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = @"SELECT tk.idTask, tk.codeProject, tk.nameTask, tk.descriptionTask, tk.fileTask FROM taskProjects tk 
+                                WHERE tk.idEmployee = @idEmployee";
+                return connection.Query<TaskEmployees>(query, new { idEmployee });
+            }
+        }
+
         //Metodo para descargar un archivo
         public byte[] DownloadTask(int idTask)
         {
@@ -304,5 +315,26 @@ namespace DataAccessLayer.Repositories
             }
         }
 
+        public IEnumerable<TaskEmployees> GetsProjects(int idEmployee)
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = @"SELECT tp.idTask, tp.codeProject, tp.idEmployee , u.UserAccount, tp.nameTask, tp.descriptionTask, se.statusTask, tp.dateEnd FROM taskProjects tp
+                                LEFT JOIN employee e on e.idEmployee = tp.idEmployee
+                                LEFT JOIN Users u on u.idUser = e.idEmployee
+                                INNER JOIN taskEmployeesStatus se on se.idStatusTask = tp.idStatusTask
+                                WHERE tp.idEmployee = @idEmployee";
+                return connection.Query<TaskEmployees>(query, new {idEmployee});
+            }
+        }
+
+        public IEnumerable<StatusTaskEmployees> GetStatusTaskEmployees()
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = @"SELECT idStatusTask, statusTask FROM taskEmployeesStatus";
+                return connection.Query<StatusTaskEmployees>(query);
+            }
+        }
     }
 }
