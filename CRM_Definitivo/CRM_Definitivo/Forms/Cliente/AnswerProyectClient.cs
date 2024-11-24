@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace PresentationLayer.Forms.Cliente
 {
-    public partial class InforProjectsClient : Form
+    public partial class AnswerProyectClient : Form
     {
         private readonly IServiceProvider _servicesProvider;
-        public InforProjectsClient(IServiceProvider serviceProvider)
+        public AnswerProyectClient(IServiceProvider serviceProvider)
         {
             InitializeComponent();
             _servicesProvider = serviceProvider;
@@ -22,8 +22,7 @@ namespace PresentationLayer.Forms.Cliente
 
         private void iconButtonRefusedProject_Click(object sender, EventArgs e)
         {
-            var OpenRefusedForm = _servicesProvider.GetRequiredService<RefusedProjectClient>();
-            OpenRefusedForm.ShowDialog();
+            
         }
     }
 }

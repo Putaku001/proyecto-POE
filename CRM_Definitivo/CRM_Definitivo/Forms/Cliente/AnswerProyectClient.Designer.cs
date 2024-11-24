@@ -1,6 +1,6 @@
 ﻿namespace PresentationLayer.Forms.Cliente
 {
-    partial class InforProjectsClient
+    partial class AnswerProyectClient
     {
         /// <summary>
         /// Required designer variable.

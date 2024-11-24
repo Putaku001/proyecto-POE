@@ -304,6 +304,31 @@ namespace DataAccessLayer.Repositories
             }
         }
 
+        public IEnumerable<RequestProjects> GetProjectsByIdStatus(int idStatus)
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = @"
+            SELECT 
+                r.codeProject,  
+                r.nameProject, 
+                r.descriptionProject, 
+                r.[file], 
+                st.statusproyect,  
+                r.dateEnd, 
+                r.dateRegistration
+            FROM 
+                RequestProjectClient r
+            LEFT JOIN 
+                statusProyect st ON st.idStatusProyect = r.idStatusProject
+            WHERE 
+                r.idStatusProject = @idStatus";
+
+                return connection.Query<RequestProjects>(query, new { idStatus });
+            }
+        }
+
+
         //Metodos para Empleados 
         public List<string> GetTasksByEmployees(int idEmployee)
         {

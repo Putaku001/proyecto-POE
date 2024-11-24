@@ -84,7 +84,7 @@ namespace PresentationLayer.Forms
 
         private void dataGridViewProjectsInProgress_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == dataGridViewProjectsInProgress.Columns["SelectProjectInProgress"].Index)
+            if (e.RowIndex >= 0)
             {
                 string CodeProject = dataGridViewProjectsInProgress.Rows[e.RowIndex].Cells["codeProject"].Value.ToString();
                 string NameProject = dataGridViewProjectsInProgress.Rows[e.RowIndex].Cells["nameProject"].Value.ToString();
@@ -134,7 +134,7 @@ namespace PresentationLayer.Forms
 
         private void dataGridViewProjectsInProgress_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex == 0)
+            if(e.RowIndex >= 0)
             {
                 var CodeProject = dataGridViewProjectsInProgress.Rows[e.RowIndex].Cells["codeProject"].Value.ToString();
 

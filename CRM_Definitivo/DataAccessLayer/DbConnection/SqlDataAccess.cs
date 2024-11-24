@@ -16,7 +16,7 @@ namespace DataAccessLayer.DbSqlDataAccess
 
         public SqlDataAccess(IConfiguration configuration)
         {
-            _connectionString = "Data Source=AlePC\\SQLEXPRESS;Initial Catalog=SistemaProyectosDB;Integrated Security=True;Trust Server Certificate=True";
+            _connectionString = "Data Source=DESKTOP-OKJJS3Y\\SQLEXPRESS;Initial Catalog=SistemaProyectosDB;Integrated Security=True;Encrypt=False";
         }
 
         public SqlConnection GetConnection()

@@ -57,8 +57,10 @@
             gbAñadirNuevosProyectos.Controls.Add(lblProyecto);
             gbAñadirNuevosProyectos.Controls.Add(txtNombreProyectoAñadir);
             gbAñadirNuevosProyectos.Location = new Point(0, 0);
+            gbAñadirNuevosProyectos.Margin = new Padding(3, 2, 3, 2);
             gbAñadirNuevosProyectos.Name = "gbAñadirNuevosProyectos";
-            gbAñadirNuevosProyectos.Size = new Size(580, 753);
+            gbAñadirNuevosProyectos.Padding = new Padding(3, 2, 3, 2);
+            gbAñadirNuevosProyectos.Size = new Size(508, 565);
             gbAñadirNuevosProyectos.TabIndex = 8;
             gbAñadirNuevosProyectos.TabStop = false;
             gbAñadirNuevosProyectos.Text = "Añadir nuevos proyectos:";
@@ -66,19 +68,20 @@
             // descriptionLabel
             // 
             descriptionLabel.AutoSize = true;
-            descriptionLabel.Location = new Point(124, 230);
+            descriptionLabel.Location = new Point(108, 172);
             descriptionLabel.Name = "descriptionLabel";
-            descriptionLabel.Size = new Size(90, 20);
+            descriptionLabel.Size = new Size(72, 15);
             descriptionLabel.TabIndex = 26;
             descriptionLabel.Text = "Descripcion:";
             // 
             // textBoxDescription
             // 
             textBoxDescription.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBoxDescription.Location = new Point(121, 250);
+            textBoxDescription.Location = new Point(106, 188);
+            textBoxDescription.Margin = new Padding(3, 2, 3, 2);
             textBoxDescription.Multiline = true;
             textBoxDescription.Name = "textBoxDescription";
-            textBoxDescription.Size = new Size(319, 116);
+            textBoxDescription.Size = new Size(280, 88);
             textBoxDescription.TabIndex = 27;
             // 
             // iconButtonGuardarNP
@@ -93,9 +96,10 @@
             iconButtonGuardarNP.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButtonGuardarNP.IconSize = 22;
             iconButtonGuardarNP.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButtonGuardarNP.Location = new Point(124, 410);
+            iconButtonGuardarNP.Location = new Point(108, 308);
+            iconButtonGuardarNP.Margin = new Padding(3, 2, 3, 2);
             iconButtonGuardarNP.Name = "iconButtonGuardarNP";
-            iconButtonGuardarNP.Size = new Size(319, 29);
+            iconButtonGuardarNP.Size = new Size(279, 22);
             iconButtonGuardarNP.TabIndex = 23;
             iconButtonGuardarNP.Text = "Solicitar";
             iconButtonGuardarNP.UseVisualStyleBackColor = false;
@@ -104,19 +108,20 @@
             // lblProyecto
             // 
             lblProyecto.AutoSize = true;
-            lblProyecto.Location = new Point(124, 164);
+            lblProyecto.Location = new Point(108, 123);
             lblProyecto.Name = "lblProyecto";
-            lblProyecto.Size = new Size(155, 20);
+            lblProyecto.Size = new Size(123, 15);
             lblProyecto.TabIndex = 0;
             lblProyecto.Text = "Nombre del proyecto:";
             // 
             // txtNombreProyectoAñadir
             // 
             txtNombreProyectoAñadir.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtNombreProyectoAñadir.Location = new Point(121, 185);
+            txtNombreProyectoAñadir.Location = new Point(106, 139);
+            txtNombreProyectoAñadir.Margin = new Padding(3, 2, 3, 2);
             txtNombreProyectoAñadir.Multiline = true;
             txtNombreProyectoAñadir.Name = "txtNombreProyectoAñadir";
-            txtNombreProyectoAñadir.Size = new Size(319, 27);
+            txtNombreProyectoAñadir.Size = new Size(280, 21);
             txtNombreProyectoAñadir.TabIndex = 1;
             // 
             // tabControl1
@@ -124,19 +129,21 @@
             tabControl1.Controls.Add(tabPageRequestProject);
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Dock = DockStyle.Right;
-            tabControl1.Location = new Point(586, 0);
+            tabControl1.Location = new Point(513, 0);
+            tabControl1.Margin = new Padding(3, 2, 3, 2);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(598, 754);
+            tabControl1.Size = new Size(523, 566);
             tabControl1.TabIndex = 9;
             // 
             // tabPageRequestProject
             // 
             tabPageRequestProject.Controls.Add(dataGridViewRequestProject);
-            tabPageRequestProject.Location = new Point(4, 29);
+            tabPageRequestProject.Location = new Point(4, 24);
+            tabPageRequestProject.Margin = new Padding(3, 2, 3, 2);
             tabPageRequestProject.Name = "tabPageRequestProject";
-            tabPageRequestProject.Padding = new Padding(3);
-            tabPageRequestProject.Size = new Size(590, 721);
+            tabPageRequestProject.Padding = new Padding(3, 2, 3, 2);
+            tabPageRequestProject.Size = new Size(515, 538);
             tabPageRequestProject.TabIndex = 0;
             tabPageRequestProject.Text = "Solicitar proyectos";
             tabPageRequestProject.UseVisualStyleBackColor = true;
@@ -147,20 +154,22 @@
             dataGridViewRequestProject.BackgroundColor = Color.White;
             dataGridViewRequestProject.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewRequestProject.Dock = DockStyle.Fill;
-            dataGridViewRequestProject.Location = new Point(3, 3);
+            dataGridViewRequestProject.Location = new Point(3, 2);
+            dataGridViewRequestProject.Margin = new Padding(3, 2, 3, 2);
             dataGridViewRequestProject.Name = "dataGridViewRequestProject";
             dataGridViewRequestProject.ReadOnly = true;
             dataGridViewRequestProject.RowHeadersWidth = 51;
-            dataGridViewRequestProject.Size = new Size(584, 715);
+            dataGridViewRequestProject.Size = new Size(509, 534);
             dataGridViewRequestProject.TabIndex = 8;
             // 
             // tabPage2
             // 
             tabPage2.Controls.Add(dataGridView1);
-            tabPage2.Location = new Point(4, 29);
+            tabPage2.Location = new Point(4, 24);
+            tabPage2.Margin = new Padding(3, 2, 3, 2);
             tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(590, 721);
+            tabPage2.Padding = new Padding(3, 2, 3, 2);
+            tabPage2.Size = new Size(515, 538);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Proyectos en curso";
             tabPage2.UseVisualStyleBackColor = true;
@@ -170,26 +179,27 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { SelectPf });
             dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(3, 3);
+            dataGridView1.Location = new Point(3, 2);
+            dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(584, 715);
+            dataGridView1.Size = new Size(509, 534);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // SelectPf
             // 
             SelectPf.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            SelectPf.HeaderText = "Select";
+            SelectPf.HeaderText = "Acción";
             SelectPf.MinimumWidth = 6;
             SelectPf.Name = "SelectPf";
             SelectPf.Width = 70;
             // 
             // RequestClientForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1184, 754);
+            ClientSize = new Size(1036, 566);
             Controls.Add(tabControl1);
             Controls.Add(gbAñadirNuevosProyectos);
             Margin = new Padding(2);

@@ -42,16 +42,39 @@ namespace PresentationLayer.Forms.Cliente
             dataGridViewRequestProject.Columns["codeProject"].HeaderText = "Codigo";
             dataGridViewRequestProject.Columns["nameProject"].HeaderText = "Proyecto";
             dataGridViewRequestProject.Columns["descriptionProject"].HeaderText = "Descripcion";
+
+            int pendingStatusId = 7;
+            dataGridView1.DataSource = _proyectsServices.GetProjectsByIdStatus(pendingStatusId);
+
+            dataGridView1.Columns["idClient"].Visible = false;
+            dataGridView1.Columns["UserAccount"].Visible = false;
+            dataGridView1.Columns["file"].Visible = false;
+            dataGridView1.Columns["codeProject"].HeaderText = "Codigo";
+            dataGridView1.Columns["nameProject"].HeaderText = "Proyecto";
+            dataGridView1.Columns["descriptionProject"].HeaderText = "Descripcion";
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == dataGridView1.Columns["SelectPf"].Index)
+            if (e.RowIndex >= 0 && dataGridView1.Columns[e.ColumnIndex].Name == "SelectPf")
             {
-                var OpenInfoProjects = _serviceProvider.GetRequiredService<InforProjectsClient>();
-                OpenInfoProjects.ShowDialog();
-                //te falta hacer esta parte 
-                //acordate que aqui va ir la logica de que dependiendo si el proyecto esta finalizado osea esperando la probacion del cliente mostrara el form de infor o el form para rechazar o aceptar el proyecto
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                string codeProject = row.Cells["codeProject"].Value.ToString();
+                string nameProject = row.Cells["nameProject"].Value.ToString();
+                string projectStatusId = row.Cells["statusproyect"].Value.ToString(); 
+                string pendingStatusId = "Pendiente"; 
+
+                // Verifica si el proyecto está en estado "Pendiente"
+                if (projectStatusId == pendingStatusId)
+                {
+                    MessageBox.Show($"El proyecto '{nameProject}' (Código: {codeProject}) está en estado pendiente y no puede abrirse.",
+                                    "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    var openInfoProjects = _serviceProvider.GetRequiredService<AnswerProyectClient>();
+                    openInfoProjects.ShowDialog();
+                }
             }
         }
 
@@ -80,7 +103,7 @@ namespace PresentationLayer.Forms.Cliente
                 idStatusProyect = 4
             };
 
-            _proyectsServices.AddNewProject(newProject.codeProject, newProject.idClient, newProject.nameProject, newProject.descriptionProject); // <-------- Error
+            _proyectsServices.AddNewProject(newProject.codeProject, newProject.idClient, newProject.nameProject, newProject.descriptionProject);
             _proyectsServices.StatusProject(newProject.codeProject , status.idStatusProyect);
 
             dataGridViewRequestProject.DataSource = _proyectsServices.GetProjectsByIdClient(Convert.ToInt32(_usersServices.GetClients().Where(u => u.idUser == idUser).Select(e => e.idCliente).FirstOrDefault()));

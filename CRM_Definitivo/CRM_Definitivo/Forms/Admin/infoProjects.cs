@@ -31,6 +31,7 @@ namespace PresentationLayer.Forms.Admin
             dataGridViewGetTask.Columns["idTask"].Visible = false;
             dataGridViewGetTask.Columns["idStatusTask"].Visible = false;
             dataGridViewGetTask.Columns["dateEnd"].Visible = false;
+            dataGridViewGetTask.Columns["fileTask"].Visible = false;
         }
 
         private void dataGridViewGetTask_CellClick(object sender, DataGridViewCellEventArgs e)

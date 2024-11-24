@@ -54,8 +54,6 @@ namespace CRM_Definitivo
                         services.AddTransient<ProfileUserAccountForm>();
                         services.AddTransient<ImageViewerForm>();
                         services.AddTransient<ChangePasswordProfileForm>();
-                        services.AddTransient<ProjectsHistoric>();
-                        services.AddTransient<SettingsUserForm>();
                         services.AddTransient<PermissionForm>();
                         services.AddTransient<HomeUserClientForm>();
                         services.AddTransient<HomeUserEmployeeForm>();
@@ -65,6 +63,7 @@ namespace CRM_Definitivo
                         services.AddTransient<AssignamentTaskEmployeeForm>();
                         services.AddTransient<SendProjectForm>();
                         services.AddTransient<infoProjects>();
+                        services.AddTransient<AnswerProyectClient>();
 
 
                         //BUSISNESSLAYER

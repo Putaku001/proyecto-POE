@@ -45,6 +45,7 @@ namespace BusinessLayer.Services.InterfacesServices
         IEnumerable<RequestProjects> GetProjectsByIdClient(int idUser);
         void AddNewProject(string codeProject, int idClient, string nameProject, string descriptionProject);
         List<string> GetRequestProyectsByIdClient(int idClient);
+        IEnumerable<RequestProjects> GetProjectsByIdStatus(int idStatus);
 
 
         //Metodos para Empleados

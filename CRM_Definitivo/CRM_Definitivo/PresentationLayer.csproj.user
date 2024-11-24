@@ -22,10 +22,7 @@
     <Compile Update="Forms\ChangePasswordProfileForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\Cliente\InforProjectsClient.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Forms\Cliente\RefusedProjectClient.cs">
+    <Compile Update="Forms\Cliente\AnswerProyectClient.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\Cliente\RequestClientForm.cs">
@@ -44,12 +41,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\Empleados\ProjectEmployeeForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Forms\ProjectsHistoric.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Forms\SettingsUserForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\VerificationForm.cs">
