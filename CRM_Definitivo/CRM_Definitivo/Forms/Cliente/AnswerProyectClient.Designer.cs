@@ -56,13 +56,14 @@
             IconButtonApprovedProject.TabIndex = 24;
             IconButtonApprovedProject.Text = "Aprobar";
             IconButtonApprovedProject.UseVisualStyleBackColor = false;
+            IconButtonApprovedProject.Click += IconButtonApprovedProject_Click;
             // 
             // labelDescription
             // 
             labelDescription.AutoSize = true;
             labelDescription.Location = new Point(222, 22);
             labelDescription.Name = "labelDescription";
-            labelDescription.Size = new Size(195, 20);
+            labelDescription.Size = new Size(159, 17);
             labelDescription.TabIndex = 25;
             labelDescription.Text = "Descripcion del proyecto";
             // 
@@ -111,7 +112,7 @@
             labelNameProject.Font = new Font("Century Gothic", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             labelNameProject.Location = new Point(14, 9);
             labelNameProject.Name = "labelNameProject";
-            labelNameProject.Size = new Size(134, 23);
+            labelNameProject.Size = new Size(109, 21);
             labelNameProject.TabIndex = 27;
             labelNameProject.Text = "nameProject";
             // 
@@ -122,13 +123,13 @@
             labelCodeProject.ForeColor = SystemColors.ButtonShadow;
             labelCodeProject.Location = new Point(606, 13);
             labelCodeProject.Name = "labelCodeProject";
-            labelCodeProject.Size = new Size(57, 18);
+            labelCodeProject.Size = new Size(49, 16);
             labelCodeProject.TabIndex = 27;
             labelCodeProject.Text = "u24123";
             // 
-            // InforProjectsClient
+            // AnswerProyectClient
             // 
-            AutoScaleDimensions = new SizeF(9F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(679, 348);
             Controls.Add(labelCodeProject);
@@ -137,9 +138,11 @@
             Controls.Add(IconButtonApprovedProject);
             Controls.Add(groupBoxInfo);
             Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Name = "InforProjectsClient";
+            MaximizeBox = false;
+            Name = "AnswerProyectClient";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Informacion";
+            Load += AnswerProyectClient_Load;
             groupBoxInfo.ResumeLayout(false);
             groupBoxInfo.PerformLayout();
             ResumeLayout(false);

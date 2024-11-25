@@ -31,6 +31,10 @@ namespace PresentationLayer.Forms.Cliente
 
         private void RequestClientForm_Load(object sender, EventArgs e)
         {
+           loadData();
+        }
+        public void loadData()
+        {
             int idUser = CaptureData.idUser;
             var idClientByID = Convert.ToInt32(_usersServices.GetClients().Where(u => u.idUser == idUser).Select(e => e.idCliente).FirstOrDefault());
             dataGridViewRequestProject.DataSource = _proyectsServices.GetProjectsByIdClient(idClientByID);
@@ -43,7 +47,7 @@ namespace PresentationLayer.Forms.Cliente
             dataGridViewRequestProject.Columns["nameProject"].HeaderText = "Proyecto";
             dataGridViewRequestProject.Columns["descriptionProject"].HeaderText = "Descripcion";
 
-            int pendingStatusId = 7;
+            var pendingStatusId = new List<int> { 7, 6 };
             dataGridView1.DataSource = _proyectsServices.GetProjectsByIdStatus(pendingStatusId);
 
             dataGridView1.Columns["idClient"].Visible = false;
@@ -52,6 +56,7 @@ namespace PresentationLayer.Forms.Cliente
             dataGridView1.Columns["codeProject"].HeaderText = "Codigo";
             dataGridView1.Columns["nameProject"].HeaderText = "Proyecto";
             dataGridView1.Columns["descriptionProject"].HeaderText = "Descripcion";
+            dataGridView1.Columns["statusproyect"].HeaderText = "Estado";
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -61,19 +66,63 @@ namespace PresentationLayer.Forms.Cliente
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                 string codeProject = row.Cells["codeProject"].Value.ToString();
                 string nameProject = row.Cells["nameProject"].Value.ToString();
+                string Description = row.Cells["descriptionProject"].Value.ToString();
                 string projectStatusId = row.Cells["statusproyect"].Value.ToString(); 
-                string pendingStatusId = "Pendiente"; 
+                string progressStatusId = "En progreso"; 
 
-                // Verifica si el proyecto está en estado "Pendiente"
-                if (projectStatusId == pendingStatusId)
+                
+ 
+                if (projectStatusId == progressStatusId)
                 {
-                    MessageBox.Show($"El proyecto '{nameProject}' (Código: {codeProject}) está en estado pendiente y no puede abrirse.",
+                    MessageBox.Show($"El proyecto '{nameProject}' (Código: {codeProject}) está en progreso, aun no esta listo.",
                                     "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
                     var openInfoProjects = _serviceProvider.GetRequiredService<AnswerProyectClient>();
+                    openInfoProjects.codeProyect = codeProject;
+                    openInfoProjects.nameProject = nameProject;
+                    openInfoProjects.Description = Description;
+                    
+                    
                     openInfoProjects.ShowDialog();
+                    loadData();
+
+                }
+            }
+            else if (e.RowIndex >= 0 && dataGridView1.Columns[e.ColumnIndex].Name == "downloadProject")
+            {
+                if (dataGridView1.Rows[e.RowIndex].Cells["statusproyect"].Value.ToString() == "En progreso")
+                {
+                    MessageBox.Show($"El proyecto no esta listo y no puede descargarse",
+                                   "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    
+                    try
+                    {
+                        string codeProject = dataGridView1.Rows[e.RowIndex].Cells["codeProject"].Value.ToString();
+                        byte[] content = _proyectsServices.getProjectInDB(codeProject);
+
+                        SaveFileDialog saveFileDialog = new SaveFileDialog
+                        {
+                            FileName = "proyecto",
+                            Filter = "Todos los archivos|*.*"
+                        };
+
+                        if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            string filePath = saveFileDialog.FileName;
+                            File.WriteAllBytes(filePath, content);
+
+                            MessageBox.Show("Proyecto descargada correctamente");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error en la descargar la tarea: " + ex.Message);
+                    }
                 }
             }
         }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BrQO4G7TIApE3wKlhvWXCqlYx6xBdotiVQOlBAC+amHL47a6yIfglSpUtmKTKI5Rk+5cSy1yOR50EZf8ahttkQ==",
+  "dgSpecHash": "5Z1zg6ybvBwvxI/Rtra0pfY3mLGVfOO6aWWgvr4+95BAWp/rQ0kK70QW8ibMZdTUma9L6NttBl2Dy2XC53rX1Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\BusinessLayer\\BusinessLayer.csproj",
+  "projectFilePath": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\subir al repo\\proyecto-POE\\CRM_Definitivo\\BusinessLayer\\BusinessLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\blanc_ma7kouo\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\blanc_ma7kouo\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

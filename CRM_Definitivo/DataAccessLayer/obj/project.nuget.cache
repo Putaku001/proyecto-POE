@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hUF1tGjPxI7XabIdaVK/09M/dtXo/FgYOrO0/HCIkCAsqC2Az0cO/JWkmfPcjtldX+Cvad3Y1AxAzbjOnQzPqQ==",
+  "dgSpecHash": "Ihwigoev3RMAB9t6lVIdAIdqEr6Xx2a6/fJ73YgeO3yJDXXWRnOmpDteCZHmJ35vt5buW9eDTVbnFE8hOIjF1g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\DataAccessLayer\\DataAccessLayer.csproj",
+  "projectFilePath": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\subir al repo\\proyecto-POE\\CRM_Definitivo\\DataAccessLayer\\DataAccessLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\blanc_ma7kouo\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\blanc_ma7kouo\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

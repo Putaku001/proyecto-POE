@@ -45,12 +45,15 @@ namespace DataAccessLayer.Repositories.InterfacesRepositories
         IEnumerable<RequestProjects> GetProjectsByIdClient(int idUser);
         void AddNewProject(string codeProject, int idClient, string nameProject, string descriptionProject);
         List<string> GetRequestProyectsByIdClient(int idClient);
-        IEnumerable<RequestProjects> GetProjectsByIdStatus(int idStatus);
+        IEnumerable<RequestProjects> GetProjectsByIdStatus(IEnumerable<int> idStatus);
+        byte[] getProjectInDB(string codeProject);
+
 
 
         //Metodos para Empleados
         List<string> GetTasksByEmployees(int idEmployee);
         IEnumerable<TaskEmployees> GetsProjects(int idEmployee);
         IEnumerable<StatusTaskEmployees> GetStatusTaskEmployees();
+        
     }
 }

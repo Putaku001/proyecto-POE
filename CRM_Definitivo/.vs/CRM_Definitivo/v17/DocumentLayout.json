@@ -1,69 +1,69 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\",
+  "WorkspaceRootPath": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\subir al repo\\proyecto-POE\\CRM_Definitivo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|c:\\users\\blanc_ma7kouo\\desktop\\putakunivo\\proogra\\proyecto poe\\proyecto-poe\\crm_definitivo\\crm_definitivo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\crm_definitivo\\forms\\cliente\\requestclientform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\cliente\\requestclientform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\crm_definitivo\\forms\\cliente\\requestclientform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\cliente\\requestclientform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|c:\\users\\blanc_ma7kouo\\desktop\\putakunivo\\proogra\\proyecto poe\\proyecto-poe\\crm_definitivo\\crm_definitivo\\forms\\menuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\menuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F3F7CAD5-8046-41BF-8662-9FA4276D94E4}|DataAccessLayer\\DataAccessLayer.csproj|C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\dataaccesslayer\\repositories\\proyectsrepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F3F7CAD5-8046-41BF-8662-9FA4276D94E4}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\repositories\\proyectsrepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\crm_definitivo\\forms\\cliente\\homeuserclientform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\cliente\\homeuserclientform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|c:\\users\\blanc_ma7kouo\\desktop\\putakunivo\\proogra\\proyecto poe\\proyecto-poe\\crm_definitivo\\crm_definitivo\\forms\\cliente\\answerproyectclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|c:\\users\\blanc_ma7kouo\\desktop\\putakunivo\\proogra\\subir al repo\\proyecto-poe\\crm_definitivo\\crm_definitivo\\forms\\cliente\\answerproyectclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\cliente\\answerproyectclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F3F7CAD5-8046-41BF-8662-9FA4276D94E4}|DataAccessLayer\\DataAccessLayer.csproj|C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\dataaccesslayer\\repositories\\interfacesrepositories\\iproyectsrepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F3F7CAD5-8046-41BF-8662-9FA4276D94E4}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\repositories\\interfacesrepositories\\iproyectsrepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{37613FE5-0BD6-40C6-B7C5-E7B4B65545CF}|BusinessLayer\\BusinessLayer.csproj|C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\businesslayer\\services\\proyectsservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{37613FE5-0BD6-40C6-B7C5-E7B4B65545CF}|BusinessLayer\\BusinessLayer.csproj|solutionrelative:businesslayer\\services\\proyectsservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|c:\\users\\blanc_ma7kouo\\desktop\\putakunivo\\proogra\\proyecto poe\\proyecto-poe\\crm_definitivo\\crm_definitivo\\forms\\cliente\\answerproyectclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\cliente\\answerproyectclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{37613FE5-0BD6-40C6-B7C5-E7B4B65545CF}|BusinessLayer\\BusinessLayer.csproj|C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\businesslayer\\services\\interfacesservices\\iproyectsservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{37613FE5-0BD6-40C6-B7C5-E7B4B65545CF}|BusinessLayer\\BusinessLayer.csproj|solutionrelative:businesslayer\\services\\interfacesservices\\iproyectsservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\crm_definitivo\\forms\\admin\\proyectsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\subir al repo\\proyecto-POE\\CRM_Definitivo\\crm_definitivo\\forms\\admin\\proyectsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\admin\\proyectsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\crm_definitivo\\forms\\admin\\infoprojects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\admin\\infoprojects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\subir al repo\\proyecto-POE\\CRM_Definitivo\\crm_definitivo\\forms\\cliente\\answerproyectclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\cliente\\answerproyectclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\crm_definitivo\\forms\\admin\\proyectsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\subir al repo\\proyecto-POE\\CRM_Definitivo\\crm_definitivo\\forms\\empleados\\projectemployeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\empleados\\projectemployeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\subir al repo\\proyecto-POE\\CRM_Definitivo\\crm_definitivo\\forms\\admin\\assignamenttaskemployeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\admin\\assignamenttaskemployeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\subir al repo\\proyecto-POE\\CRM_Definitivo\\crm_definitivo\\forms\\admin\\assignamenttaskemployeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\admin\\assignamenttaskemployeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\subir al repo\\proyecto-POE\\CRM_Definitivo\\crm_definitivo\\forms\\admin\\proyectsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\admin\\proyectsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\crm_definitivo\\forms\\admin\\infoprojects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\admin\\infoprojects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\subir al repo\\proyecto-POE\\CRM_Definitivo\\crm_definitivo\\forms\\cliente\\requestclientform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\cliente\\requestclientform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F3F7CAD5-8046-41BF-8662-9FA4276D94E4}|DataAccessLayer\\DataAccessLayer.csproj|C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\dataaccesslayer\\dbconnection\\sqldataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\subir al repo\\proyecto-POE\\CRM_Definitivo\\crm_definitivo\\forms\\cliente\\requestclientform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\cliente\\requestclientform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\subir al repo\\proyecto-POE\\CRM_Definitivo\\crm_definitivo\\forms\\empleados\\projectemployeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\empleados\\projectemployeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37613FE5-0BD6-40C6-B7C5-E7B4B65545CF}|BusinessLayer\\BusinessLayer.csproj|C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\subir al repo\\proyecto-POE\\CRM_Definitivo\\businesslayer\\services\\interfacesservices\\iproyectsservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{37613FE5-0BD6-40C6-B7C5-E7B4B65545CF}|BusinessLayer\\BusinessLayer.csproj|solutionrelative:businesslayer\\services\\interfacesservices\\iproyectsservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3F7CAD5-8046-41BF-8662-9FA4276D94E4}|DataAccessLayer\\DataAccessLayer.csproj|C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\subir al repo\\proyecto-POE\\CRM_Definitivo\\dataaccesslayer\\repositories\\interfacesrepositories\\iproyectsrepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3F7CAD5-8046-41BF-8662-9FA4276D94E4}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\repositories\\interfacesrepositories\\iproyectsrepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\subir al repo\\proyecto-POE\\CRM_Definitivo\\crm_definitivo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\subir al repo\\proyecto-POE\\CRM_Definitivo\\crm_definitivo\\forms\\menuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\menuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\subir al repo\\proyecto-POE\\CRM_Definitivo\\crm_definitivo\\forms\\admin\\infoprojects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\admin\\infoprojects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3F7CAD5-8046-41BF-8662-9FA4276D94E4}|DataAccessLayer\\DataAccessLayer.csproj|C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\subir al repo\\proyecto-POE\\CRM_Definitivo\\dataaccesslayer\\dbconnection\\sqldataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F3F7CAD5-8046-41BF-8662-9FA4276D94E4}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\dbconnection\\sqldataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -74,7 +74,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 13,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -102,39 +102,37 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ProyectsServices.cs",
-              "DocumentMoniker": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\BusinessLayer\\Services\\ProyectsServices.cs",
-              "RelativeDocumentMoniker": "BusinessLayer\\Services\\ProyectsServices.cs",
-              "ToolTip": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\BusinessLayer\\Services\\ProyectsServices.cs",
-              "RelativeToolTip": "BusinessLayer\\Services\\ProyectsServices.cs",
-              "ViewState": "AQIAACgAAAAAAAAAAAAywDgAAACPAAAA",
+              "DocumentIndex": 6,
+              "Title": "ProyectsForm.cs",
+              "DocumentMoniker": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\subir al repo\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\ProyectsForm.cs",
+              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\Admin\\ProyectsForm.cs",
+              "ToolTip": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\subir al repo\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\ProyectsForm.cs",
+              "RelativeToolTip": "CRM_Definitivo\\Forms\\Admin\\ProyectsForm.cs",
+              "ViewState": "AQIAADUAAAAAAAAAAAAkwHsAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-24T05:09:45.19Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-24T03:48:07.847Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "IProyectsRepositories.cs",
-              "DocumentMoniker": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\DataAccessLayer\\Repositories\\InterfacesRepositories\\IProyectsRepositories.cs",
-              "RelativeDocumentMoniker": "DataAccessLayer\\Repositories\\InterfacesRepositories\\IProyectsRepositories.cs",
-              "ToolTip": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\DataAccessLayer\\Repositories\\InterfacesRepositories\\IProyectsRepositories.cs",
-              "RelativeToolTip": "DataAccessLayer\\Repositories\\InterfacesRepositories\\IProyectsRepositories.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAA2wC4AAABAAAAA",
+              "Title": "RequestClientForm.cs",
+              "DocumentMoniker": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\subir al repo\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Cliente\\RequestClientForm.cs",
+              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\Cliente\\RequestClientForm.cs",
+              "ToolTip": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\subir al repo\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Cliente\\RequestClientForm.cs",
+              "RelativeToolTip": "CRM_Definitivo\\Forms\\Cliente\\RequestClientForm.cs",
+              "ViewState": "AQIAAEMAAAAAAAAAAAAgwGMAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-24T05:37:18.479Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-24T01:29:58.199Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "AnswerProyectClient.cs",
-              "DocumentMoniker": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Cliente\\AnswerProyectClient.cs",
+              "DocumentMoniker": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\subir al repo\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Cliente\\AnswerProyectClient.cs",
               "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\Cliente\\AnswerProyectClient.cs",
-              "ToolTip": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Cliente\\AnswerProyectClient.cs",
+              "ToolTip": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\subir al repo\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Cliente\\AnswerProyectClient.cs",
               "RelativeToolTip": "CRM_Definitivo\\Forms\\Cliente\\AnswerProyectClient.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAQwBoAAAAFAAAA",
+              "ViewState": "AQIAABQAAAAAAAAAAAAwwDUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-24T05:26:24.086Z",
               "EditorCaption": ""
@@ -142,156 +140,148 @@
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "HomeUserClientForm.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Cliente\\HomeUserClientForm.cs",
-              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\Cliente\\HomeUserClientForm.cs",
-              "ToolTip": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Cliente\\HomeUserClientForm.cs [Dise\u00F1o]",
-              "RelativeToolTip": "CRM_Definitivo\\Forms\\Cliente\\HomeUserClientForm.cs [Dise\u00F1o]",
+              "Title": "AssignamentTaskEmployeeForm.cs",
+              "DocumentMoniker": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\subir al repo\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\AssignamentTaskEmployeeForm.cs",
+              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\Admin\\AssignamentTaskEmployeeForm.cs",
+              "ToolTip": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\subir al repo\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\AssignamentTaskEmployeeForm.cs",
+              "RelativeToolTip": "CRM_Definitivo\\Forms\\Admin\\AssignamentTaskEmployeeForm.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAgwBkAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-24T05:24:34.404Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2024-11-25T07:29:45.61Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "ProyectsRepositories.cs",
-              "DocumentMoniker": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\DataAccessLayer\\Repositories\\ProyectsRepositories.cs",
-              "RelativeDocumentMoniker": "DataAccessLayer\\Repositories\\ProyectsRepositories.cs",
-              "ToolTip": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\DataAccessLayer\\Repositories\\ProyectsRepositories.cs",
-              "RelativeToolTip": "DataAccessLayer\\Repositories\\ProyectsRepositories.cs",
-              "ViewState": "AQIAACsBAAAAAAAAAAAowEQBAAAvAAAA",
+              "Title": "AssignamentTaskEmployeeForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\subir al repo\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\AssignamentTaskEmployeeForm.cs",
+              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\Admin\\AssignamentTaskEmployeeForm.cs",
+              "ToolTip": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\AssignamentTaskEmployeeForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "..\\..\\..\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\AssignamentTaskEmployeeForm.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-24T04:31:17.289Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "RequestClientForm.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Cliente\\RequestClientForm.cs",
-              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\Cliente\\RequestClientForm.cs",
-              "ToolTip": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Cliente\\RequestClientForm.cs [Dise\u00F1o]",
-              "RelativeToolTip": "CRM_Definitivo\\Forms\\Cliente\\RequestClientForm.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-24T01:26:55.814Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "RequestClientForm.cs",
-              "DocumentMoniker": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Cliente\\RequestClientForm.cs",
-              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\Cliente\\RequestClientForm.cs",
-              "ToolTip": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Cliente\\RequestClientForm.cs",
-              "RelativeToolTip": "CRM_Definitivo\\Forms\\Cliente\\RequestClientForm.cs",
-              "ViewState": "AQIAADAAAAAAAAAAAAAowEwAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-24T01:29:58.199Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Program.cs",
-              "RelativeDocumentMoniker": "CRM_Definitivo\\Program.cs",
-              "ToolTip": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Program.cs",
-              "RelativeToolTip": "CRM_Definitivo\\Program.cs",
-              "ViewState": "AQIAADMAAAAAAAAAAAAowEEAAABBAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-24T05:57:11.085Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-25T07:29:43.618Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "MenuForm.cs",
-              "DocumentMoniker": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\MenuForm.cs",
-              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\MenuForm.cs",
-              "ToolTip": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\MenuForm.cs",
-              "RelativeToolTip": "CRM_Definitivo\\Forms\\MenuForm.cs",
-              "ViewState": "AQIAAMUAAAAAAAAAAAAQwNwAAAAMAAAA",
+              "Title": "ProjectEmployeeForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\subir al repo\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Empleados\\ProjectEmployeeForm.cs",
+              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\Empleados\\ProjectEmployeeForm.cs",
+              "ToolTip": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Empleados\\ProjectEmployeeForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "..\\..\\..\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Empleados\\ProjectEmployeeForm.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-24T05:56:49.453Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-25T05:44:16.764Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AnswerProyectClient.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\subir al repo\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Cliente\\AnswerProyectClient.cs",
+              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\Cliente\\AnswerProyectClient.cs",
+              "ToolTip": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Cliente\\AnswerProyectClient.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Cliente\\AnswerProyectClient.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-24T04:49:13.893Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProyectsForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\subir al repo\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\ProyectsForm.cs",
+              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\Admin\\ProyectsForm.cs",
+              "ToolTip": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\ProyectsForm.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\ProyectsForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-24T03:48:05.077Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "AnswerProyectClient.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Cliente\\AnswerProyectClient.cs",
-              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\Cliente\\AnswerProyectClient.cs",
-              "ToolTip": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Cliente\\AnswerProyectClient.cs [Dise\u00F1o]",
-              "RelativeToolTip": "CRM_Definitivo\\Forms\\Cliente\\AnswerProyectClient.cs [Dise\u00F1o]",
+              "Title": "ProjectEmployeeForm.cs",
+              "DocumentMoniker": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\subir al repo\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Empleados\\ProjectEmployeeForm.cs",
+              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\Empleados\\ProjectEmployeeForm.cs",
+              "ToolTip": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\subir al repo\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Empleados\\ProjectEmployeeForm.cs",
+              "RelativeToolTip": "CRM_Definitivo\\Forms\\Empleados\\ProjectEmployeeForm.cs",
+              "ViewState": "AQIAAGIAAAAAAAAAAAAIwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-24T04:49:13.893Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2024-11-25T05:44:20.199Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "RequestClientForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\subir al repo\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Cliente\\RequestClientForm.cs",
+              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\Cliente\\RequestClientForm.cs",
+              "ToolTip": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Cliente\\RequestClientForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "..\\..\\..\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Cliente\\RequestClientForm.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-24T01:26:55.814Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IProyectsRepositories.cs",
+              "DocumentMoniker": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\subir al repo\\proyecto-POE\\CRM_Definitivo\\DataAccessLayer\\Repositories\\InterfacesRepositories\\IProyectsRepositories.cs",
+              "RelativeDocumentMoniker": "DataAccessLayer\\Repositories\\InterfacesRepositories\\IProyectsRepositories.cs",
+              "ToolTip": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\subir al repo\\proyecto-POE\\CRM_Definitivo\\DataAccessLayer\\Repositories\\InterfacesRepositories\\IProyectsRepositories.cs",
+              "RelativeToolTip": "DataAccessLayer\\Repositories\\InterfacesRepositories\\IProyectsRepositories.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAywDMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-24T05:37:18.479Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
               "Title": "IProyectsServices.cs",
-              "DocumentMoniker": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\BusinessLayer\\Services\\InterfacesServices\\IProyectsServices.cs",
+              "DocumentMoniker": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\subir al repo\\proyecto-POE\\CRM_Definitivo\\BusinessLayer\\Services\\InterfacesServices\\IProyectsServices.cs",
               "RelativeDocumentMoniker": "BusinessLayer\\Services\\InterfacesServices\\IProyectsServices.cs",
-              "ToolTip": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\BusinessLayer\\Services\\InterfacesServices\\IProyectsServices.cs",
+              "ToolTip": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\subir al repo\\proyecto-POE\\CRM_Definitivo\\BusinessLayer\\Services\\InterfacesServices\\IProyectsServices.cs",
               "RelativeToolTip": "BusinessLayer\\Services\\InterfacesServices\\IProyectsServices.cs",
-              "ViewState": "AQIAACEAAAAAAAAAAAAiwCoAAAAAAAAA",
+              "ViewState": "AQIAACMAAAAAAAAAAAAqwDUAAABAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-24T05:39:43.499Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "ProyectsForm.cs",
-              "DocumentMoniker": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\ProyectsForm.cs",
-              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\Admin\\ProyectsForm.cs",
-              "ToolTip": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\ProyectsForm.cs",
-              "RelativeToolTip": "CRM_Definitivo\\Forms\\Admin\\ProyectsForm.cs",
-              "ViewState": "AQIAAGcAAAAAAAAAAAAcwJEAAAAJAAAA",
+              "Title": "MenuForm.cs",
+              "DocumentMoniker": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\subir al repo\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\MenuForm.cs",
+              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\MenuForm.cs",
+              "ToolTip": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\subir al repo\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\MenuForm.cs",
+              "RelativeToolTip": "CRM_Definitivo\\Forms\\MenuForm.cs",
+              "ViewState": "AQIAAM0AAAAAAAAAAAAgwNwAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-24T03:48:07.847Z"
+              "WhenOpened": "2024-11-24T05:56:49.453Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\subir al repo\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Program.cs",
+              "RelativeDocumentMoniker": "CRM_Definitivo\\Program.cs",
+              "ToolTip": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\subir al repo\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Program.cs",
+              "RelativeToolTip": "CRM_Definitivo\\Program.cs",
+              "ViewState": "AQIAADMAAAAAAAAAAAAowEEAAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-24T05:57:11.085Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "infoProjects.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\infoProjects.cs",
+              "DocumentMoniker": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\subir al repo\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\infoProjects.cs",
               "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\Admin\\infoProjects.cs",
               "ToolTip": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\infoProjects.cs [Dise\u00F1o]",
-              "RelativeToolTip": "CRM_Definitivo\\Forms\\Admin\\infoProjects.cs [Dise\u00F1o]",
+              "RelativeToolTip": "..\\..\\..\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\infoProjects.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-24T03:56:18.444Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "infoProjects.cs",
-              "DocumentMoniker": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\infoProjects.cs",
-              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\Admin\\infoProjects.cs",
-              "ToolTip": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\infoProjects.cs",
-              "RelativeToolTip": "CRM_Definitivo\\Forms\\Admin\\infoProjects.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAQwCEAAAAxAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-24T03:56:20.456Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ProyectsForm.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\ProyectsForm.cs",
-              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\Admin\\ProyectsForm.cs",
-              "ToolTip": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\ProyectsForm.cs [Dise\u00F1o]",
-              "RelativeToolTip": "CRM_Definitivo\\Forms\\Admin\\ProyectsForm.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-24T03:48:05.077Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 15,
               "Title": "SqlDataAccess.cs",
-              "DocumentMoniker": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\DataAccessLayer\\DbConnection\\SqlDataAccess.cs",
+              "DocumentMoniker": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\subir al repo\\proyecto-POE\\CRM_Definitivo\\DataAccessLayer\\DbConnection\\SqlDataAccess.cs",
               "RelativeDocumentMoniker": "DataAccessLayer\\DbConnection\\SqlDataAccess.cs",
-              "ToolTip": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\proyecto poe\\proyecto-POE\\CRM_Definitivo\\DataAccessLayer\\DbConnection\\SqlDataAccess.cs",
+              "ToolTip": "C:\\Users\\blanc_ma7kouo\\Desktop\\PutakUnivo\\proogra\\subir al repo\\proyecto-POE\\CRM_Definitivo\\DataAccessLayer\\DbConnection\\SqlDataAccess.cs",
               "RelativeToolTip": "DataAccessLayer\\DbConnection\\SqlDataAccess.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

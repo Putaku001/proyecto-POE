@@ -117,10 +117,12 @@ namespace DataAccessLayer.Repositories
         {
             using (var connection = _dbConnection.GetConnection())
             {
-                string query = @"SELECT p.codeProject, rp.reason, rp.reasonForRejection, sp.statusproyect FROM RefusedProject rp
-                                LEFT JOIN RequestProjectClient p on p.idProject = rp.idProject
-                                LEFT JOIN statusProyect sp on sp.idStatusProyect = p.idStatusProject
-                                WHERE sp.statusproyect = 'Rechazado'";
+                string query = @"SELECT r.codeProject, u.UserAccount, r.nameProject, r.descriptionProject, r.[file], st.statusproyect, r.dateInit, r.dateEnd, r.dateRegistration FROM RequestProjectClient r
+                                    LEFT JOIN RefusedProject rf on rf.idRefused = r.idRefused
+                                    LEFT JOIN Clients c on c.idCliente = r.idClient
+                                    LEFT JOIN Users u on u.idUser = c.idUser
+                                    LEFT JOIN statusProyect st on st.idStatusProyect = r.idStatusProject
+                                WHERE st.statusproyect = 'Rechazado'";
 
                 return connection.Query<Projects>(query);
             }
@@ -140,8 +142,8 @@ namespace DataAccessLayer.Repositories
             }
         }
 
-
-        public void ProjectRedo(string codeProject,int idStatusProject)
+        //uno de estos 2 se eliminaran ya que hacen lo mismo (linea 143 - 167)
+        public void ProjectRedo(string codeProject,int idStatusProject) 
         {
             using(var connection = _dbConnection.GetConnection())
             {
@@ -256,6 +258,15 @@ namespace DataAccessLayer.Repositories
             }
         }
 
+        public byte[] getProjectInDB(string codeProject)
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = @"SELECT [file] FROM RequestProjectClient WHERE codeProject = @codeProject";
+
+                return connection.QueryFirstOrDefault<byte[]>(query, new { codeProject });
+            }
+        }
         //Metodos para Admin
 
 
@@ -304,7 +315,7 @@ namespace DataAccessLayer.Repositories
             }
         }
 
-        public IEnumerable<RequestProjects> GetProjectsByIdStatus(int idStatus)
+        public IEnumerable<RequestProjects> GetProjectsByIdStatus(IEnumerable<int> idStatus)
         {
             using (var connection = _dbConnection.GetConnection())
             {
@@ -322,7 +333,7 @@ namespace DataAccessLayer.Repositories
             LEFT JOIN 
                 statusProyect st ON st.idStatusProyect = r.idStatusProject
             WHERE 
-                r.idStatusProject = @idStatus";
+               r.idStatusProject IN @idStatus";
 
                 return connection.Query<RequestProjects>(query, new { idStatus });
             }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             gbAñadirNuevosProyectos = new GroupBox();
             descriptionLabel = new Label();
             textBoxDescription = new TextBox();
@@ -40,6 +41,7 @@
             tabPage2 = new TabPage();
             dataGridView1 = new DataGridView();
             SelectPf = new DataGridViewButtonColumn();
+            downloadProject = new DataGridViewLinkColumn();
             gbAñadirNuevosProyectos.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPageRequestProject.SuspendLayout();
@@ -60,7 +62,7 @@
             gbAñadirNuevosProyectos.Margin = new Padding(3, 2, 3, 2);
             gbAñadirNuevosProyectos.Name = "gbAñadirNuevosProyectos";
             gbAñadirNuevosProyectos.Padding = new Padding(3, 2, 3, 2);
-            gbAñadirNuevosProyectos.Size = new Size(508, 565);
+            gbAñadirNuevosProyectos.Size = new Size(408, 565);
             gbAñadirNuevosProyectos.TabIndex = 8;
             gbAñadirNuevosProyectos.TabStop = false;
             gbAñadirNuevosProyectos.Text = "Añadir nuevos proyectos:";
@@ -81,7 +83,7 @@
             textBoxDescription.Margin = new Padding(3, 2, 3, 2);
             textBoxDescription.Multiline = true;
             textBoxDescription.Name = "textBoxDescription";
-            textBoxDescription.Size = new Size(280, 88);
+            textBoxDescription.Size = new Size(180, 88);
             textBoxDescription.TabIndex = 27;
             // 
             // iconButtonGuardarNP
@@ -99,7 +101,7 @@
             iconButtonGuardarNP.Location = new Point(108, 308);
             iconButtonGuardarNP.Margin = new Padding(3, 2, 3, 2);
             iconButtonGuardarNP.Name = "iconButtonGuardarNP";
-            iconButtonGuardarNP.Size = new Size(279, 22);
+            iconButtonGuardarNP.Size = new Size(178, 22);
             iconButtonGuardarNP.TabIndex = 23;
             iconButtonGuardarNP.Text = "Solicitar";
             iconButtonGuardarNP.UseVisualStyleBackColor = false;
@@ -121,7 +123,7 @@
             txtNombreProyectoAñadir.Margin = new Padding(3, 2, 3, 2);
             txtNombreProyectoAñadir.Multiline = true;
             txtNombreProyectoAñadir.Name = "txtNombreProyectoAñadir";
-            txtNombreProyectoAñadir.Size = new Size(280, 21);
+            txtNombreProyectoAñadir.Size = new Size(180, 21);
             txtNombreProyectoAñadir.TabIndex = 1;
             // 
             // tabControl1
@@ -129,11 +131,11 @@
             tabControl1.Controls.Add(tabPageRequestProject);
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Dock = DockStyle.Right;
-            tabControl1.Location = new Point(513, 0);
+            tabControl1.Location = new Point(414, 0);
             tabControl1.Margin = new Padding(3, 2, 3, 2);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(523, 566);
+            tabControl1.Size = new Size(622, 566);
             tabControl1.TabIndex = 9;
             // 
             // tabPageRequestProject
@@ -169,7 +171,7 @@
             tabPage2.Margin = new Padding(3, 2, 3, 2);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3, 2, 3, 2);
-            tabPage2.Size = new Size(515, 538);
+            tabPage2.Size = new Size(614, 538);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Proyectos en curso";
             tabPage2.UseVisualStyleBackColor = true;
@@ -177,13 +179,13 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { SelectPf });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { SelectPf, downloadProject });
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(3, 2);
             dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(509, 534);
+            dataGridView1.Size = new Size(608, 534);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -194,6 +196,23 @@
             SelectPf.MinimumWidth = 6;
             SelectPf.Name = "SelectPf";
             SelectPf.Width = 70;
+            // 
+            // downloadProject
+            // 
+            downloadProject.ActiveLinkColor = Color.Transparent;
+            downloadProject.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = Color.Transparent;
+            dataGridViewCellStyle1.SelectionForeColor = Color.Black;
+            downloadProject.DefaultCellStyle = dataGridViewCellStyle1;
+            downloadProject.HeaderText = "Descargar";
+            downloadProject.Name = "downloadProject";
+            downloadProject.Text = "Download";
+            downloadProject.UseColumnTextForLinkValue = true;
+            downloadProject.VisitedLinkColor = Color.Black;
             // 
             // RequestClientForm
             // 
@@ -230,5 +249,6 @@
         private TabPage tabPage2;
         private DataGridView dataGridView1;
         private DataGridViewButtonColumn SelectPf;
+        private DataGridViewLinkColumn downloadProject;
     }
 }
