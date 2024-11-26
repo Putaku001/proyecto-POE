@@ -23,17 +23,18 @@ namespace PresentationLayer.Forms
             _user = user;
         }
 
-        private void iconButtonChangePassword_Click(object sender, EventArgs e)
+        private void changePasswordButton_Click(object sender, EventArgs e)
         {
-            if(CaptureData.Password == textBoxCurrentPassword.Text)
+
+            if (CaptureData.Password == currentPasswordTextBox.Text)
             {
-                if(textBoxNewPassword.Text == textBoxNewPasswordConfirm.Text)
+                if (newPasswordTextBox.Text == confirmPasswordTextBox.Text)
                 {
                     _user.IdUser = AuthUser.idUser;
-                    _user.passworduser = textBoxNewPassword.Text;
+                    _user.passworduser = newPasswordTextBox.Text;
                     _services.ChangePassword(_user);
 
-                    CaptureData.Password = textBoxNewPasswordConfirm.Text;
+                    CaptureData.Password = confirmPasswordTextBox.Text;
 
                     MessageBox.Show("Se he cambiado la contraseña correctamente!");
                     this.Close();

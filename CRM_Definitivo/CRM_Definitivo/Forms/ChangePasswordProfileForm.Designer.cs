@@ -28,99 +28,111 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBoxCurrentPassword = new TextBox();
-            textBoxNewPassword = new TextBox();
-            textBoxNewPasswordConfirm = new TextBox();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            iconButtonChangePassword = new FontAwesome.Sharp.IconButton();
+            currentPasswordTextBox = new TextBox();
+            newPasswordTextBox = new TextBox();
+            confirmPasswordTextBox = new TextBox();
+            currentPasswordLabel = new Label();
+            newPasswordLabel = new Label();
+            confimPasswordLabel = new Label();
+            changePasswordButton = new FontAwesome.Sharp.IconButton();
             menuStrip1 = new MenuStrip();
             cambiarContraseñaToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
-            // textBoxCurrentPassword
+            // currentPasswordTextBox
             // 
-            textBoxCurrentPassword.Location = new Point(62, 101);
-            textBoxCurrentPassword.Name = "textBoxCurrentPassword";
-            textBoxCurrentPassword.Size = new Size(528, 27);
-            textBoxCurrentPassword.TabIndex = 0;
-            textBoxCurrentPassword.UseSystemPasswordChar = true;
+            currentPasswordTextBox.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            currentPasswordTextBox.Location = new Point(136, 143);
+            currentPasswordTextBox.Margin = new Padding(4, 4, 4, 4);
+            currentPasswordTextBox.Name = "currentPasswordTextBox";
+            currentPasswordTextBox.Size = new Size(526, 34);
+            currentPasswordTextBox.TabIndex = 0;
+            currentPasswordTextBox.UseSystemPasswordChar = true;
             // 
-            // textBoxNewPassword
+            // newPasswordTextBox
             // 
-            textBoxNewPassword.Location = new Point(62, 216);
-            textBoxNewPassword.Name = "textBoxNewPassword";
-            textBoxNewPassword.Size = new Size(528, 27);
-            textBoxNewPassword.TabIndex = 1;
-            textBoxNewPassword.UseSystemPasswordChar = true;
+            newPasswordTextBox.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            newPasswordTextBox.Location = new Point(136, 270);
+            newPasswordTextBox.Margin = new Padding(4, 4, 4, 4);
+            newPasswordTextBox.Name = "newPasswordTextBox";
+            newPasswordTextBox.Size = new Size(526, 34);
+            newPasswordTextBox.TabIndex = 1;
+            newPasswordTextBox.UseSystemPasswordChar = true;
             // 
-            // textBoxNewPasswordConfirm
+            // confirmPasswordTextBox
             // 
-            textBoxNewPasswordConfirm.Location = new Point(62, 292);
-            textBoxNewPasswordConfirm.Name = "textBoxNewPasswordConfirm";
-            textBoxNewPasswordConfirm.Size = new Size(528, 27);
-            textBoxNewPasswordConfirm.TabIndex = 2;
-            textBoxNewPasswordConfirm.UseSystemPasswordChar = true;
+            confirmPasswordTextBox.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            confirmPasswordTextBox.Location = new Point(136, 404);
+            confirmPasswordTextBox.Margin = new Padding(4, 4, 4, 4);
+            confirmPasswordTextBox.Name = "confirmPasswordTextBox";
+            confirmPasswordTextBox.Size = new Size(526, 34);
+            confirmPasswordTextBox.TabIndex = 2;
+            confirmPasswordTextBox.UseSystemPasswordChar = true;
             // 
-            // label1
+            // currentPasswordLabel
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold | FontStyle.Italic);
-            label1.Location = new Point(62, 77);
-            label1.Name = "label1";
-            label1.Size = new Size(252, 21);
-            label1.TabIndex = 4;
-            label1.Text = "Coloce su contraseña actual:";
+            currentPasswordLabel.AutoSize = true;
+            currentPasswordLabel.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            currentPasswordLabel.Location = new Point(136, 93);
+            currentPasswordLabel.Margin = new Padding(4, 0, 4, 0);
+            currentPasswordLabel.Name = "currentPasswordLabel";
+            currentPasswordLabel.Size = new Size(298, 23);
+            currentPasswordLabel.TabIndex = 4;
+            currentPasswordLabel.Text = "Coloce su contraseña actual";
             // 
-            // label2
+            // newPasswordLabel
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold | FontStyle.Italic);
-            label2.Location = new Point(62, 194);
-            label2.Name = "label2";
-            label2.Size = new Size(166, 21);
-            label2.TabIndex = 5;
-            label2.Text = "Contraseña nueva:";
+            newPasswordLabel.AutoSize = true;
+            newPasswordLabel.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            newPasswordLabel.Location = new Point(136, 222);
+            newPasswordLabel.Margin = new Padding(4, 0, 4, 0);
+            newPasswordLabel.Name = "newPasswordLabel";
+            newPasswordLabel.Size = new Size(195, 23);
+            newPasswordLabel.TabIndex = 5;
+            newPasswordLabel.Text = "Contraseña nueva";
             // 
-            // label3
+            // confimPasswordLabel
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold | FontStyle.Italic);
-            label3.Location = new Point(62, 270);
-            label3.Name = "label3";
-            label3.Size = new Size(192, 21);
-            label3.TabIndex = 6;
-            label3.Text = "Confirmar contraseña:";
+            confimPasswordLabel.AutoSize = true;
+            confimPasswordLabel.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            confimPasswordLabel.Location = new Point(136, 360);
+            confimPasswordLabel.Margin = new Padding(4, 0, 4, 0);
+            confimPasswordLabel.Name = "confimPasswordLabel";
+            confimPasswordLabel.Size = new Size(223, 23);
+            confimPasswordLabel.TabIndex = 6;
+            confimPasswordLabel.Text = "Confirmar contraseña";
             // 
-            // iconButtonChangePassword
+            // changePasswordButton
             // 
-            iconButtonChangePassword.BackColor = Color.LimeGreen;
-            iconButtonChangePassword.FlatStyle = FlatStyle.Flat;
-            iconButtonChangePassword.ForeColor = Color.White;
-            iconButtonChangePassword.IconChar = FontAwesome.Sharp.IconChar.Save;
-            iconButtonChangePassword.IconColor = Color.White;
-            iconButtonChangePassword.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButtonChangePassword.IconSize = 34;
-            iconButtonChangePassword.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButtonChangePassword.Location = new Point(221, 362);
-            iconButtonChangePassword.Name = "iconButtonChangePassword";
-            iconButtonChangePassword.Size = new Size(250, 39);
-            iconButtonChangePassword.TabIndex = 7;
-            iconButtonChangePassword.Text = "Guardar contraseña";
-            iconButtonChangePassword.UseVisualStyleBackColor = false;
-            iconButtonChangePassword.Click += iconButtonChangePassword_Click;
+            changePasswordButton.BackColor = Color.ForestGreen;
+            changePasswordButton.FlatStyle = FlatStyle.Flat;
+            changePasswordButton.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            changePasswordButton.ForeColor = Color.White;
+            changePasswordButton.IconChar = FontAwesome.Sharp.IconChar.Save;
+            changePasswordButton.IconColor = Color.White;
+            changePasswordButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            changePasswordButton.IconSize = 34;
+            changePasswordButton.ImageAlign = ContentAlignment.MiddleLeft;
+            changePasswordButton.Location = new Point(255, 504);
+            changePasswordButton.Margin = new Padding(4, 4, 4, 4);
+            changePasswordButton.Name = "changePasswordButton";
+            changePasswordButton.Size = new Size(325, 70);
+            changePasswordButton.TabIndex = 7;
+            changePasswordButton.Text = "Guardar contraseña";
+            changePasswordButton.UseVisualStyleBackColor = false;
+            changePasswordButton.Click += changePasswordButton_Click;
             // 
             // menuStrip1
             // 
-            menuStrip1.BackColor = Color.Turquoise;
-            menuStrip1.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            menuStrip1.BackColor = Color.DodgerBlue;
+            menuStrip1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             menuStrip1.ImageScalingSize = new Size(20, 20);
             menuStrip1.Items.AddRange(new ToolStripItem[] { cambiarContraseñaToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(724, 31);
+            menuStrip1.Padding = new Padding(8, 2, 0, 2);
+            menuStrip1.Size = new Size(809, 38);
             menuStrip1.TabIndex = 8;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -128,23 +140,25 @@
             // 
             cambiarContraseñaToolStripMenuItem.ForeColor = Color.White;
             cambiarContraseñaToolStripMenuItem.Name = "cambiarContraseñaToolStripMenuItem";
-            cambiarContraseñaToolStripMenuItem.Size = new Size(225, 27);
+            cambiarContraseñaToolStripMenuItem.Size = new Size(276, 34);
             cambiarContraseñaToolStripMenuItem.Text = "Cambiar contraseña";
             // 
             // ChangePasswordProfileForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(724, 450);
-            Controls.Add(iconButtonChangePassword);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(textBoxNewPasswordConfirm);
-            Controls.Add(textBoxNewPassword);
-            Controls.Add(textBoxCurrentPassword);
+            ClientSize = new Size(809, 675);
+            Controls.Add(changePasswordButton);
+            Controls.Add(confimPasswordLabel);
+            Controls.Add(newPasswordLabel);
+            Controls.Add(currentPasswordLabel);
+            Controls.Add(confirmPasswordTextBox);
+            Controls.Add(newPasswordTextBox);
+            Controls.Add(currentPasswordTextBox);
             Controls.Add(menuStrip1);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             MainMenuStrip = menuStrip1;
+            Margin = new Padding(4, 4, 4, 4);
             Name = "ChangePasswordProfileForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cambiar Contraseña";
@@ -156,13 +170,13 @@
 
         #endregion
 
-        private TextBox textBoxCurrentPassword;
-        private TextBox textBoxNewPassword;
-        private TextBox textBoxNewPasswordConfirm;
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private FontAwesome.Sharp.IconButton iconButtonChangePassword;
+        private TextBox currentPasswordTextBox;
+        private TextBox newPasswordTextBox;
+        private TextBox confirmPasswordTextBox;
+        private Label currentPasswordLabel;
+        private Label newPasswordLabel;
+        private Label confimPasswordLabel;
+        private FontAwesome.Sharp.IconButton changePasswordButton;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem cambiarContraseñaToolStripMenuItem;
     }
