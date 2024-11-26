@@ -30,242 +30,275 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
-            gbLogin = new GroupBox();
-            pictureBoxMostrar = new PictureBox();
-            pictureBoxOcultar = new PictureBox();
-            lblCrearCuenta = new Label();
-            label4 = new Label();
-            pictureBox1 = new PictureBox();
-            fotgotPassLabel = new Label();
-            txtPassword = new TextBox();
-            label2 = new Label();
-            btnLogin = new Button();
-            txtUser = new TextBox();
-            label1 = new Label();
-            pictureBoxMinimize = new PictureBox();
-            pictureBoxClosed = new PictureBox();
+            loginComboBox = new GroupBox();
+            showPictureBox = new PictureBox();
+            hidePictureBox = new PictureBox();
+            createAccountLabel = new Label();
+            createLabel = new Label();
+            fortgotPasswordLabel = new Label();
+            passwordTextBox = new TextBox();
+            passwordLabel = new Label();
+            loginButton = new Button();
+            userTextBox = new TextBox();
+            userLabel = new Label();
+            minimizePictureBox = new PictureBox();
+            closedPictureBox = new PictureBox();
             toolTip1 = new ToolTip(components);
-            gbLogin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxMostrar).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxOcultar).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxMinimize).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxClosed).BeginInit();
+            pictureLogoPanel = new Panel();
+            logoPictureBox = new PictureBox();
+            loginComboBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)showPictureBox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)hidePictureBox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)minimizePictureBox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)closedPictureBox).BeginInit();
+            pictureLogoPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)logoPictureBox).BeginInit();
             SuspendLayout();
             // 
-            // gbLogin
+            // loginComboBox
             // 
-            gbLogin.Anchor = AnchorStyles.None;
-            gbLogin.BackColor = Color.Transparent;
-            gbLogin.Controls.Add(pictureBoxMostrar);
-            gbLogin.Controls.Add(pictureBoxOcultar);
-            gbLogin.Controls.Add(lblCrearCuenta);
-            gbLogin.Controls.Add(label4);
-            gbLogin.Controls.Add(pictureBox1);
-            gbLogin.Controls.Add(fotgotPassLabel);
-            gbLogin.Controls.Add(txtPassword);
-            gbLogin.Controls.Add(label2);
-            gbLogin.Controls.Add(btnLogin);
-            gbLogin.Controls.Add(txtUser);
-            gbLogin.Controls.Add(label1);
-            gbLogin.FlatStyle = FlatStyle.Flat;
-            gbLogin.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            gbLogin.ForeColor = Color.White;
-            gbLogin.Location = new Point(432, 141);
-            gbLogin.Name = "gbLogin";
-            gbLogin.Size = new Size(533, 376);
-            gbLogin.TabIndex = 1;
-            gbLogin.TabStop = false;
-            gbLogin.Text = "Inicio de sesion";
+            loginComboBox.Anchor = AnchorStyles.None;
+            loginComboBox.BackColor = Color.Transparent;
+            loginComboBox.Controls.Add(showPictureBox);
+            loginComboBox.Controls.Add(hidePictureBox);
+            loginComboBox.Controls.Add(createAccountLabel);
+            loginComboBox.Controls.Add(createLabel);
+            loginComboBox.Controls.Add(fortgotPasswordLabel);
+            loginComboBox.Controls.Add(passwordTextBox);
+            loginComboBox.Controls.Add(passwordLabel);
+            loginComboBox.Controls.Add(loginButton);
+            loginComboBox.Controls.Add(userTextBox);
+            loginComboBox.Controls.Add(userLabel);
+            loginComboBox.FlatStyle = FlatStyle.Flat;
+            loginComboBox.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            loginComboBox.ForeColor = Color.White;
+            loginComboBox.Location = new Point(629, 67);
+            loginComboBox.Margin = new Padding(4);
+            loginComboBox.Name = "loginComboBox";
+            loginComboBox.Padding = new Padding(4);
+            loginComboBox.Size = new Size(614, 549);
+            loginComboBox.TabIndex = 1;
+            loginComboBox.TabStop = false;
+            loginComboBox.Text = "Inicio de sesion";
             // 
-            // pictureBoxMostrar
+            // showPictureBox
             // 
-            pictureBoxMostrar.Image = PresentationLayer.Properties.Resources._3844476_eye_see_show_view_watch_110339;
-            pictureBoxMostrar.Location = new Point(425, 207);
-            pictureBoxMostrar.Name = "pictureBoxMostrar";
-            pictureBoxMostrar.Size = new Size(26, 27);
-            pictureBoxMostrar.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxMostrar.TabIndex = 11;
-            pictureBoxMostrar.TabStop = false;
-            pictureBoxMostrar.Click += pictureBoxMostrar_Click;
-            pictureBoxMostrar.MouseHover += pictureBoxMostrar_MouseHover;
+            showPictureBox.Image = PresentationLayer.Properties.Resources.ojo_de_forma_de_bloqueo;
+            showPictureBox.Location = new Point(534, 261);
+            showPictureBox.Margin = new Padding(4);
+            showPictureBox.Name = "showPictureBox";
+            showPictureBox.Size = new Size(32, 34);
+            showPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            showPictureBox.TabIndex = 11;
+            showPictureBox.TabStop = false;
+            showPictureBox.Click += showPictureBox_Click;
+            showPictureBox.MouseHover += showPictureBox_MouseHover;
             // 
-            // pictureBoxOcultar
+            // hidePictureBox
             // 
-            pictureBoxOcultar.Image = PresentationLayer.Properties.Resources._3844477_disable_eye_inactive_see_show_view_watch_110343;
-            pictureBoxOcultar.Location = new Point(425, 207);
-            pictureBoxOcultar.Name = "pictureBoxOcultar";
-            pictureBoxOcultar.Size = new Size(26, 27);
-            pictureBoxOcultar.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxOcultar.TabIndex = 10;
-            pictureBoxOcultar.TabStop = false;
-            pictureBoxOcultar.Click += pictureBoxOcultar_Click;
-            pictureBoxOcultar.MouseHover += pictureBoxOcultar_MouseHover;
+            hidePictureBox.Image = PresentationLayer.Properties.Resources.ojo;
+            hidePictureBox.Location = new Point(534, 261);
+            hidePictureBox.Margin = new Padding(4);
+            hidePictureBox.Name = "hidePictureBox";
+            hidePictureBox.Size = new Size(32, 34);
+            hidePictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            hidePictureBox.TabIndex = 10;
+            hidePictureBox.TabStop = false;
+            hidePictureBox.Click += hidePictureBox_Click;
+            hidePictureBox.MouseHover += hidePictureBox_MouseHover;
             // 
-            // lblCrearCuenta
+            // createAccountLabel
             // 
-            lblCrearCuenta.AutoSize = true;
-            lblCrearCuenta.Cursor = Cursors.Hand;
-            lblCrearCuenta.Font = new Font("Century Gothic", 9F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
-            lblCrearCuenta.ForeColor = Color.DarkCyan;
-            lblCrearCuenta.Location = new Point(315, 339);
-            lblCrearCuenta.Name = "lblCrearCuenta";
-            lblCrearCuenta.Size = new Size(116, 18);
-            lblCrearCuenta.TabIndex = 9;
-            lblCrearCuenta.Text = "create una ya!";
-            lblCrearCuenta.Click += lblCrearCuenta_Click;
+            createAccountLabel.AutoSize = true;
+            createAccountLabel.Cursor = Cursors.Hand;
+            createAccountLabel.Font = new Font("Century Gothic", 9F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
+            createAccountLabel.ForeColor = Color.LightSkyBlue;
+            createAccountLabel.Location = new Point(253, 504);
+            createAccountLabel.Margin = new Padding(4, 0, 4, 0);
+            createAccountLabel.Name = "createAccountLabel";
+            createAccountLabel.Size = new Size(130, 22);
+            createAccountLabel.TabIndex = 9;
+            createAccountLabel.Text = "¡Crea una ya!";
+            createAccountLabel.Click += createAccountLabel_Click;
             // 
-            // label4
+            // createLabel
             // 
-            label4.AutoSize = true;
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(117, 339);
-            label4.Name = "label4";
-            label4.Size = new Size(203, 18);
-            label4.TabIndex = 7;
-            label4.Text = "Aun no tienes una cuenta?";
+            createLabel.AutoSize = true;
+            createLabel.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            createLabel.ForeColor = Color.White;
+            createLabel.Location = new Point(188, 469);
+            createLabel.Margin = new Padding(4, 0, 4, 0);
+            createLabel.Name = "createLabel";
+            createLabel.Size = new Size(287, 23);
+            createLabel.TabIndex = 7;
+            createLabel.Text = "¿Aún no tienes una cuenta?";
             // 
-            // pictureBox1
+            // fortgotPasswordLabel
             // 
-            pictureBox1.Image = PresentationLayer.Properties.Resources.projects_icon_142976;
-            pictureBox1.Location = new Point(238, 25);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(93, 97);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 6;
-            pictureBox1.TabStop = false;
+            fortgotPasswordLabel.AutoSize = true;
+            fortgotPasswordLabel.Cursor = Cursors.Hand;
+            fortgotPasswordLabel.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            fortgotPasswordLabel.ForeColor = Color.Gray;
+            fortgotPasswordLabel.Location = new Point(197, 348);
+            fortgotPasswordLabel.Margin = new Padding(4, 0, 4, 0);
+            fortgotPasswordLabel.Name = "fortgotPasswordLabel";
+            fortgotPasswordLabel.Size = new Size(244, 21);
+            fortgotPasswordLabel.TabIndex = 5;
+            fortgotPasswordLabel.Text = "¿Olvidaste tu contraseña?";
+            fortgotPasswordLabel.Click += fortgotPasswordLabel_Click;
             // 
-            // fotgotPassLabel
+            // passwordTextBox
             // 
-            fotgotPassLabel.AutoSize = true;
-            fotgotPassLabel.Cursor = Cursors.Hand;
-            fotgotPassLabel.ForeColor = Color.Gray;
-            fotgotPassLabel.Location = new Point(279, 236);
-            fotgotPassLabel.Name = "fotgotPassLabel";
-            fotgotPassLabel.Size = new Size(149, 18);
-            fotgotPassLabel.TabIndex = 5;
-            fotgotPassLabel.Text = "Forgot a password?";
-            fotgotPassLabel.Click += fotgotPassLabel_Click;
+            passwordTextBox.Location = new Point(131, 261);
+            passwordTextBox.Margin = new Padding(4);
+            passwordTextBox.Name = "passwordTextBox";
+            passwordTextBox.Size = new Size(374, 42);
+            passwordTextBox.TabIndex = 4;
+            passwordTextBox.UseSystemPasswordChar = true;
             // 
-            // txtPassword
+            // passwordLabel
             // 
-            txtPassword.Location = new Point(128, 207);
-            txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(300, 26);
-            txtPassword.TabIndex = 4;
-            txtPassword.UseSystemPasswordChar = true;
+            passwordLabel.AutoSize = true;
+            passwordLabel.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            passwordLabel.ForeColor = Color.White;
+            passwordLabel.Location = new Point(131, 227);
+            passwordLabel.Margin = new Padding(4, 0, 4, 0);
+            passwordLabel.Name = "passwordLabel";
+            passwordLabel.Size = new Size(152, 30);
+            passwordLabel.TabIndex = 3;
+            passwordLabel.Text = "Contraseña";
             // 
-            // label2
+            // loginButton
             // 
-            label2.AutoSize = true;
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(128, 176);
-            label2.Name = "label2";
-            label2.Size = new Size(97, 18);
-            label2.TabIndex = 3;
-            label2.Text = "Contraseña:";
+            loginButton.BackColor = Color.DodgerBlue;
+            loginButton.Cursor = Cursors.Hand;
+            loginButton.FlatStyle = FlatStyle.Popup;
+            loginButton.ForeColor = Color.White;
+            loginButton.Location = new Point(131, 396);
+            loginButton.Margin = new Padding(4);
+            loginButton.Name = "loginButton";
+            loginButton.Size = new Size(374, 52);
+            loginButton.TabIndex = 2;
+            loginButton.Text = "Ingresar";
+            loginButton.UseVisualStyleBackColor = false;
+            loginButton.Click += loginButton_Click;
             // 
-            // btnLogin
+            // userTextBox
             // 
-            btnLogin.BackColor = Color.Turquoise;
-            btnLogin.Cursor = Cursors.Hand;
-            btnLogin.FlatStyle = FlatStyle.Flat;
-            btnLogin.ForeColor = Color.White;
-            btnLogin.Location = new Point(128, 291);
-            btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(299, 29);
-            btnLogin.TabIndex = 2;
-            btnLogin.Text = "Ingresar";
-            btnLogin.UseVisualStyleBackColor = false;
-            btnLogin.Click += btnLogin_Click;
+            userTextBox.Location = new Point(131, 131);
+            userTextBox.Margin = new Padding(4);
+            userTextBox.Name = "userTextBox";
+            userTextBox.Size = new Size(374, 42);
+            userTextBox.TabIndex = 1;
             // 
-            // txtUser
+            // userLabel
             // 
-            txtUser.Location = new Point(128, 147);
-            txtUser.Name = "txtUser";
-            txtUser.Size = new Size(300, 26);
-            txtUser.TabIndex = 1;
+            userLabel.AutoSize = true;
+            userLabel.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            userLabel.ForeColor = Color.White;
+            userLabel.Location = new Point(131, 97);
+            userLabel.Margin = new Padding(4, 0, 4, 0);
+            userLabel.Name = "userLabel";
+            userLabel.Size = new Size(99, 30);
+            userLabel.TabIndex = 0;
+            userLabel.Text = "Usuario";
             // 
-            // label1
+            // minimizePictureBox
             // 
-            label1.AutoSize = true;
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(128, 116);
-            label1.Name = "label1";
-            label1.Size = new Size(66, 18);
-            label1.TabIndex = 0;
-            label1.Text = "Usuario:";
+            minimizePictureBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            minimizePictureBox.BackColor = Color.Transparent;
+            minimizePictureBox.Cursor = Cursors.Hand;
+            minimizePictureBox.Image = PresentationLayer.Properties.Resources.minimizar;
+            minimizePictureBox.Location = new Point(1224, 13);
+            minimizePictureBox.Margin = new Padding(4);
+            minimizePictureBox.Name = "minimizePictureBox";
+            minimizePictureBox.Size = new Size(31, 34);
+            minimizePictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            minimizePictureBox.TabIndex = 5;
+            minimizePictureBox.TabStop = false;
+            minimizePictureBox.Click += minimizePictureBox_Click;
+            minimizePictureBox.MouseHover += minimizePictureBox_MouseHover;
             // 
-            // pictureBoxMinimize
+            // closedPictureBox
             // 
-            pictureBoxMinimize.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            pictureBoxMinimize.BackColor = Color.Transparent;
-            pictureBoxMinimize.Cursor = Cursors.Hand;
-            pictureBoxMinimize.Image = (Image)resources.GetObject("pictureBoxMinimize.Image");
-            pictureBoxMinimize.Location = new Point(1299, 12);
-            pictureBoxMinimize.Name = "pictureBoxMinimize";
-            pictureBoxMinimize.Size = new Size(35, 35);
-            pictureBoxMinimize.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxMinimize.TabIndex = 5;
-            pictureBoxMinimize.TabStop = false;
-            pictureBoxMinimize.Click += pictureBoxMinimize_Click;
-            pictureBoxMinimize.MouseHover += pictureBoxMinimize_MouseHover;
+            closedPictureBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            closedPictureBox.BackColor = Color.Transparent;
+            closedPictureBox.Cursor = Cursors.Hand;
+            closedPictureBox.Image = PresentationLayer.Properties.Resources.cerrar__2_;
+            closedPictureBox.Location = new Point(1263, 15);
+            closedPictureBox.Margin = new Padding(4);
+            closedPictureBox.Name = "closedPictureBox";
+            closedPictureBox.Size = new Size(28, 32);
+            closedPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            closedPictureBox.TabIndex = 4;
+            closedPictureBox.TabStop = false;
+            closedPictureBox.Click += closedPictureBox_Click;
+            closedPictureBox.MouseHover += closedPictureBox_MouseHover;
             // 
-            // pictureBoxClosed
+            // pictureLogoPanel
             // 
-            pictureBoxClosed.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            pictureBoxClosed.BackColor = Color.Transparent;
-            pictureBoxClosed.Cursor = Cursors.Hand;
-            pictureBoxClosed.Image = (Image)resources.GetObject("pictureBoxClosed.Image");
-            pictureBoxClosed.Location = new Point(1350, 12);
-            pictureBoxClosed.Name = "pictureBoxClosed";
-            pictureBoxClosed.Size = new Size(35, 35);
-            pictureBoxClosed.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxClosed.TabIndex = 4;
-            pictureBoxClosed.TabStop = false;
-            pictureBoxClosed.Click += pictureBoxClosed_Click;
-            pictureBoxClosed.MouseHover += pictureBoxClosed_MouseHover;
+            pictureLogoPanel.BackColor = Color.LightGray;
+            pictureLogoPanel.Controls.Add(logoPictureBox);
+            pictureLogoPanel.Location = new Point(0, 0);
+            pictureLogoPanel.Name = "pictureLogoPanel";
+            pictureLogoPanel.Size = new Size(571, 667);
+            pictureLogoPanel.TabIndex = 6;
+            // 
+            // logoPictureBox
+            // 
+            logoPictureBox.Image = PresentationLayer.Properties.Resources.CRM_logo__1_;
+            logoPictureBox.Location = new Point(146, 251);
+            logoPictureBox.Name = "logoPictureBox";
+            logoPictureBox.Size = new Size(289, 119);
+            logoPictureBox.TabIndex = 0;
+            logoPictureBox.TabStop = false;
             // 
             // LoginForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = PresentationLayer.Properties.Resources._377721;
-            ClientSize = new Size(1397, 660);
-            Controls.Add(pictureBoxMinimize);
-            Controls.Add(pictureBoxClosed);
-            Controls.Add(gbLogin);
+            BackColor = Color.Black;
+            ClientSize = new Size(1305, 665);
+            Controls.Add(pictureLogoPanel);
+            Controls.Add(minimizePictureBox);
+            Controls.Add(closedPictureBox);
+            Controls.Add(loginComboBox);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(4);
             Name = "LoginForm";
+            Opacity = 0.98D;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
-            WindowState = FormWindowState.Maximized;
-            gbLogin.ResumeLayout(false);
-            gbLogin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxMostrar).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxOcultar).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxMinimize).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxClosed).EndInit();
+            FormClosing += LoginForm_FormClosing;
+            loginComboBox.ResumeLayout(false);
+            loginComboBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)showPictureBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)hidePictureBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)minimizePictureBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)closedPictureBox).EndInit();
+            pictureLogoPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)logoPictureBox).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private GroupBox gbLogin;
-        private Label lblCrearCuenta;
-        private Label label4;
-        private PictureBox pictureBox1;
-        private Label fotgotPassLabel;
-        private TextBox txtPassword;
-        private Label label2;
-        private Button btnLogin;
-        private TextBox txtUser;
-        private Label label1;
-        private PictureBox pictureBoxMinimize;
-        private PictureBox pictureBoxClosed;
+        private GroupBox loginComboBox;
+        private Label createAccountLabel;
+        private Label createLabel;
+        private Label fortgotPasswordLabel;
+        private TextBox passwordTextBox;
+        private Label passwordLabel;
+        private Button loginButton;
+        private TextBox userTextBox;
+        private Label userLabel;
+        private PictureBox minimizePictureBox;
+        private PictureBox closedPictureBox;
         private ToolTip toolTip1;
-        private PictureBox pictureBoxMostrar;
-        private PictureBox pictureBoxOcultar;
+        private PictureBox showPictureBox;
+        private PictureBox hidePictureBox;
+        private Panel pictureLogoPanel;
+        private PictureBox logoPictureBox;
     }
 }

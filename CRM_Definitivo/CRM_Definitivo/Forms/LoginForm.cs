@@ -31,7 +31,7 @@ namespace CRM_Definitivo
 
         public LoginForm(IServiceProvider serviceProvider, IUsersRepositories _usuarioRepositories, IUsersServices _usuarioServices, IRolServices rolServices, IProyectsServices _proyectoServices, IUserReports userReports, EmailSettings emailSettings)
         {
-            InitializeComponent();           
+            InitializeComponent();
             usuarioRepositories = _usuarioRepositories;
             usuarioServices = _usuarioServices;
             _rolServices = rolServices;
@@ -42,73 +42,67 @@ namespace CRM_Definitivo
 
         }
 
-        private void pictureBoxClosed_Click(object sender, EventArgs e)
+        private void closedPictureBox_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
-        private void pictureBoxClosed_MouseHover(object sender, EventArgs e)
+        private void closedPictureBox_MouseHover(object sender, EventArgs e)
         {
-            toolTip1.SetToolTip(pictureBoxClosed, "Cerrar aplicación");
+            toolTip1.SetToolTip(closedPictureBox, "Cerrar aplicación");
         }
 
-        private void pictureBoxMinimize_Click(object sender, EventArgs e)
+        private void minimizePictureBox_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip(minimizePictureBox, "Minimizar aplicación");
+        }
+
+        private void minimizePictureBox_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
-        private void pictureBoxMinimize_MouseHover(object sender, EventArgs e)
+        private void hidePictureBox_Click(object sender, EventArgs e)
         {
-            toolTip1.SetToolTip(pictureBoxMinimize, "Minimizar aplicación");
+            hidePictureBox.Hide();
+            passwordTextBox.UseSystemPasswordChar = true;
+            showPictureBox.Show();
         }
 
-        private void pictureBoxOcultar_MouseHover(object sender, EventArgs e)
+        private void hidePictureBox_MouseHover(object sender, EventArgs e)
         {
-            toolTip1.SetToolTip(pictureBoxOcultar, "Ocultar contraseña");
+            toolTip1.SetToolTip(hidePictureBox, "Ocultar contraseña");
+        }
+        private void showPictureBox_Click(object sender, EventArgs e)
+        {
+            showPictureBox.Hide();
+            passwordTextBox.UseSystemPasswordChar = false;
+            hidePictureBox.Show();
         }
 
-        private void pictureBoxOcultar_Click(object sender, EventArgs e)
+        private void showPictureBox_MouseHover(object sender, EventArgs e)
         {
-            pictureBoxOcultar.Hide();
-            txtPassword.UseSystemPasswordChar = true;
-            pictureBoxMostrar.Show();
+            toolTip1.SetToolTip(showPictureBox, "Mostrar contraseña");
         }
-
-        private void pictureBoxMostrar_MouseHover(object sender, EventArgs e)
+        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            toolTip1.SetToolTip(pictureBoxMostrar, "Mostrar contraseña");
-        }
-
-        private void pictureBoxMostrar_Click(object sender, EventArgs e)
-        {
-            pictureBoxMostrar.Hide();
-            txtPassword.UseSystemPasswordChar = false;
-            pictureBoxOcultar.Show();
-        }
-
-        private void frm_closing(object sender, FormClosingEventArgs e)
-        {
-            txtUser.Text = "";
-            txtPassword.Text = "";
+            userTextBox.Text = "";
+            passwordTextBox.Text = "";
 
             this.Show();
         }
-
-        private void lblCrearCuenta_Click(object sender, EventArgs e)
+        private void createAccountLabel_Click(object sender, EventArgs e)
         {
-            NewAccountForm crearCuenta = new NewAccountForm(usuarioServices);
-            crearCuenta.FormClosing += CrearCuenta_FormClosing;
-            crearCuenta.ShowDialog();
+            NewAccountForm createAccount = new NewAccountForm(usuarioServices);
+            createAccount.FormClosing += createAccount_FormClosing;
+            createAccount.ShowDialog();
         }
 
-        private void CrearCuenta_FormClosing(object sender, FormClosingEventArgs e)
+        private void createAccount_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Show();
         }
-
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void loginButton_Click(object sender, EventArgs e)
         {
-            var user = usuarioServices.Login(txtUser.Text, txtPassword.Text);
+            var user = usuarioServices.Login(userTextBox.Text, passwordTextBox.Text);
 
             if (user != null)
             {
@@ -129,7 +123,7 @@ namespace CRM_Definitivo
                 CaptureData.City = user.City;
                 CaptureData.Password = user.passworduser;
 
-                
+
                 var menuForm = _serviceProvider.GetRequiredService<MenuForm>();
                 this.Hide();
                 menuForm.ShowDialog();
@@ -138,15 +132,14 @@ namespace CRM_Definitivo
             {
                 MessageBox.Show("Usuario o contraseña incorrecta, vuelva a intentarlo");
             }
-
         }
 
-        private void fotgotPassLabel_Click(object sender, EventArgs e)
+        private void fortgotPasswordLabel_Click(object sender, EventArgs e)
         {
             // Obtener el usuario desde la base de datos
-            var user = usuarioServices.UserSearch(txtUser.Text).FirstOrDefault();
+            var user = usuarioServices.UserSearch(userTextBox.Text).FirstOrDefault();
 
-            string idUserVerification = txtUser.Text;
+            string idUserVerification = userTextBox.Text;
             if (user != null)
             {
                 // Generar un código de verificación de 6 dígitos
@@ -160,7 +153,7 @@ namespace CRM_Definitivo
                 user.VerificationCode = verificationCode;
 
                 // Redirigir al formulario de verificación
-                VerificationForm verificationForm = new VerificationForm(user, _emailSettings , usuarioServices, idUserVerification);
+                VerificationForm verificationForm = new VerificationForm(user, _emailSettings, usuarioServices, idUserVerification);
                 verificationForm.ShowDialog();
             }
             else
@@ -168,6 +161,7 @@ namespace CRM_Definitivo
                 MessageBox.Show("Usuario no encontrado.");
             }
         }
+
         private void SendVerificationCode(string phoneNumber, string code)
         {
             try
@@ -199,5 +193,7 @@ namespace CRM_Definitivo
                 Console.WriteLine("Error inesperado: " + ex.Message);
             }
         }
+
+        
     }
 }
