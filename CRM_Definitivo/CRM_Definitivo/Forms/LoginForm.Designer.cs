@@ -257,7 +257,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Black;
+            BackColor = Color.FromArgb(46, 54, 61);
             ClientSize = new Size(1305, 665);
             Controls.Add(pictureLogoPanel);
             Controls.Add(minimizePictureBox);

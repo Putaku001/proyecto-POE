@@ -44,7 +44,7 @@
             // 
             currentPasswordTextBox.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             currentPasswordTextBox.Location = new Point(136, 143);
-            currentPasswordTextBox.Margin = new Padding(4, 4, 4, 4);
+            currentPasswordTextBox.Margin = new Padding(4);
             currentPasswordTextBox.Name = "currentPasswordTextBox";
             currentPasswordTextBox.Size = new Size(526, 34);
             currentPasswordTextBox.TabIndex = 0;
@@ -54,7 +54,7 @@
             // 
             newPasswordTextBox.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             newPasswordTextBox.Location = new Point(136, 270);
-            newPasswordTextBox.Margin = new Padding(4, 4, 4, 4);
+            newPasswordTextBox.Margin = new Padding(4);
             newPasswordTextBox.Name = "newPasswordTextBox";
             newPasswordTextBox.Size = new Size(526, 34);
             newPasswordTextBox.TabIndex = 1;
@@ -64,7 +64,7 @@
             // 
             confirmPasswordTextBox.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             confirmPasswordTextBox.Location = new Point(136, 404);
-            confirmPasswordTextBox.Margin = new Padding(4, 4, 4, 4);
+            confirmPasswordTextBox.Margin = new Padding(4);
             confirmPasswordTextBox.Name = "confirmPasswordTextBox";
             confirmPasswordTextBox.Size = new Size(526, 34);
             confirmPasswordTextBox.TabIndex = 2;
@@ -115,7 +115,7 @@
             changePasswordButton.IconSize = 34;
             changePasswordButton.ImageAlign = ContentAlignment.MiddleLeft;
             changePasswordButton.Location = new Point(255, 504);
-            changePasswordButton.Margin = new Padding(4, 4, 4, 4);
+            changePasswordButton.Margin = new Padding(4);
             changePasswordButton.Name = "changePasswordButton";
             changePasswordButton.Size = new Size(325, 70);
             changePasswordButton.TabIndex = 7;
@@ -126,13 +126,13 @@
             // menuStrip1
             // 
             menuStrip1.BackColor = Color.DodgerBlue;
-            menuStrip1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            menuStrip1.Font = new Font("Century Gothic", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             menuStrip1.ImageScalingSize = new Size(20, 20);
             menuStrip1.Items.AddRange(new ToolStripItem[] { cambiarContraseñaToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(8, 2, 0, 2);
-            menuStrip1.Size = new Size(809, 38);
+            menuStrip1.Size = new Size(809, 42);
             menuStrip1.TabIndex = 8;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -147,6 +147,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.LightGray;
             ClientSize = new Size(809, 675);
             Controls.Add(changePasswordButton);
             Controls.Add(confimPasswordLabel);
@@ -158,7 +159,7 @@
             Controls.Add(menuStrip1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MainMenuStrip = menuStrip1;
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "ChangePasswordProfileForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cambiar Contraseña";
