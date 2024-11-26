@@ -359,8 +359,6 @@ namespace PresentationLayer.Forms
             var iconMenuItemRequest = _provider.GetRequiredService<RequestClientForm>();
             AbrirFormulario(iconMenuItemRequest);
         }
-
-        
     }
 
 }

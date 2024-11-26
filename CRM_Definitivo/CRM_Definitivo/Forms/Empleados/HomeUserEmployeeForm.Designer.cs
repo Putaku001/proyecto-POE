@@ -28,206 +28,111 @@
         /// </summary>
         private void InitializeComponent()
         {
-            groupBox1 = new GroupBox();
-            labelUserAccount = new Label();
-            panel1 = new Panel();
-            panel9 = new Panel();
-            panel7 = new Panel();
-            panel6 = new Panel();
-            labelByUser = new Label();
-            label2 = new Label();
-            panel10 = new Panel();
-            lblHoraUsuario = new Label();
-            panelUsersView = new Panel();
-            pictureBox2 = new PictureBox();
-            label6 = new Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeUserEmployeeForm));
+            introductionGroupBox = new GroupBox();
+            userAccountLabel = new Label();
+            timeLabel = new Label();
+            usersViewPanel = new Panel();
+            logoPictureBox = new PictureBox();
+            nameGroupLabel = new Label();
             label7 = new Label();
-            label1 = new Label();
-            panel8 = new Panel();
-            label11 = new Label();
-            panelInfoUsers = new Panel();
-            iconButtonUserClients = new FontAwesome.Sharp.IconButton();
-            iconButtonUserEmployee = new FontAwesome.Sharp.IconButton();
-            panelPrijectsAssignament = new Panel();
-            pictureBox1 = new PictureBox();
-            label5 = new Label();
-            labelProjectsPendings = new Label();
-            label3 = new Label();
-            groupBox1.SuspendLayout();
-            panel1.SuspendLayout();
-            panelUsersView.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            panel8.SuspendLayout();
-            panelInfoUsers.SuspendLayout();
-            panelPrijectsAssignament.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            welcomeLabel = new Label();
+            informationUsersPanel = new Panel();
+            iconUserClientsButton = new FontAwesome.Sharp.IconButton();
+            iconUserEmployeeButton = new FontAwesome.Sharp.IconButton();
+            projectsAssignamentPanel = new Panel();
+            taskPictureBox = new PictureBox();
+            motivationLabel = new Label();
+            projectsPendingsLabel = new Label();
+            completedTaskLabel = new Label();
+            introductionGroupBox.SuspendLayout();
+            usersViewPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)logoPictureBox).BeginInit();
+            informationUsersPanel.SuspendLayout();
+            projectsAssignamentPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)taskPictureBox).BeginInit();
             SuspendLayout();
             // 
-            // groupBox1
+            // introductionGroupBox
             // 
-            groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            groupBox1.Controls.Add(labelUserAccount);
-            groupBox1.Controls.Add(panel1);
-            groupBox1.Controls.Add(panel10);
-            groupBox1.Controls.Add(lblHoraUsuario);
-            groupBox1.Controls.Add(panelUsersView);
-            groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(panel8);
-            groupBox1.Controls.Add(panelInfoUsers);
-            groupBox1.Controls.Add(panelPrijectsAssignament);
-            groupBox1.Location = new Point(10, 10);
-            groupBox1.Margin = new Padding(4, 4, 4, 4);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(4, 4, 4, 4);
-            groupBox1.Size = new Size(1822, 1325);
-            groupBox1.TabIndex = 8;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Inicio";
+            introductionGroupBox.Controls.Add(userAccountLabel);
+            introductionGroupBox.Controls.Add(timeLabel);
+            introductionGroupBox.Controls.Add(usersViewPanel);
+            introductionGroupBox.Controls.Add(welcomeLabel);
+            introductionGroupBox.Controls.Add(informationUsersPanel);
+            introductionGroupBox.Controls.Add(projectsAssignamentPanel);
+            introductionGroupBox.Dock = DockStyle.Fill;
+            introductionGroupBox.Location = new Point(0, 0);
+            introductionGroupBox.Margin = new Padding(4);
+            introductionGroupBox.Name = "introductionGroupBox";
+            introductionGroupBox.Padding = new Padding(4);
+            introductionGroupBox.Size = new Size(1281, 970);
+            introductionGroupBox.TabIndex = 8;
+            introductionGroupBox.TabStop = false;
+            introductionGroupBox.Text = "Inicio";
             // 
-            // labelUserAccount
+            // userAccountLabel
             // 
-            labelUserAccount.AutoSize = true;
-            labelUserAccount.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold);
-            labelUserAccount.Location = new Point(328, 26);
-            labelUserAccount.Margin = new Padding(4, 0, 4, 0);
-            labelUserAccount.Name = "labelUserAccount";
-            labelUserAccount.Size = new Size(151, 34);
-            labelUserAccount.TabIndex = 1;
-            labelUserAccount.Text = "nameUser";
+            userAccountLabel.AutoSize = true;
+            userAccountLabel.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold);
+            userAccountLabel.Location = new Point(361, 30);
+            userAccountLabel.Margin = new Padding(4, 0, 4, 0);
+            userAccountLabel.Name = "userAccountLabel";
+            userAccountLabel.Size = new Size(114, 34);
+            userAccountLabel.TabIndex = 1;
+            userAccountLabel.Text = "Usuario";
             // 
-            // panel1
+            // timeLabel
             // 
-            panel1.BackColor = Color.MediumTurquoise;
-            panel1.Controls.Add(panel9);
-            panel1.Controls.Add(panel7);
-            panel1.Controls.Add(panel6);
-            panel1.Controls.Add(labelByUser);
-            panel1.Controls.Add(label2);
-            panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(963, 28);
-            panel1.Margin = new Padding(4, 4, 4, 4);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(489, 1238);
-            panel1.TabIndex = 25;
+            timeLabel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            timeLabel.AutoSize = true;
+            timeLabel.BackColor = Color.Transparent;
+            timeLabel.Font = new Font("Century Gothic", 12F);
+            timeLabel.ForeColor = Color.Black;
+            timeLabel.Location = new Point(753, 34);
+            timeLabel.Margin = new Padding(4, 0, 4, 0);
+            timeLabel.Name = "timeLabel";
+            timeLabel.Size = new Size(68, 30);
+            timeLabel.TabIndex = 5;
+            timeLabel.Text = "Hora";
             // 
-            // panel9
+            // usersViewPanel
             // 
-            panel9.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panel9.BackColor = Color.MintCream;
-            panel9.BorderStyle = BorderStyle.Fixed3D;
-            panel9.Location = new Point(22, 578);
-            panel9.Margin = new Padding(4, 4, 4, 4);
-            panel9.Name = "panel9";
-            panel9.Size = new Size(438, 122);
-            panel9.TabIndex = 27;
+            usersViewPanel.BackColor = Color.LightGray;
+            usersViewPanel.Controls.Add(logoPictureBox);
+            usersViewPanel.Controls.Add(nameGroupLabel);
+            usersViewPanel.Controls.Add(label7);
+            usersViewPanel.Dock = DockStyle.Right;
+            usersViewPanel.Location = new Point(994, 28);
+            usersViewPanel.Margin = new Padding(4);
+            usersViewPanel.Name = "usersViewPanel";
+            usersViewPanel.Size = new Size(283, 938);
+            usersViewPanel.TabIndex = 6;
             // 
-            // panel7
+            // logoPictureBox
             // 
-            panel7.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panel7.BackColor = Color.MintCream;
-            panel7.BorderStyle = BorderStyle.Fixed3D;
-            panel7.Location = new Point(22, 378);
-            panel7.Margin = new Padding(4, 4, 4, 4);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(438, 110);
-            panel7.TabIndex = 26;
+            logoPictureBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            logoPictureBox.Image = Properties.Resources.CRM_logo__1_;
+            logoPictureBox.Location = new Point(22, 25);
+            logoPictureBox.Margin = new Padding(4);
+            logoPictureBox.Name = "logoPictureBox";
+            logoPictureBox.Size = new Size(234, 222);
+            logoPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            logoPictureBox.TabIndex = 31;
+            logoPictureBox.TabStop = false;
             // 
-            // panel6
+            // nameGroupLabel
             // 
-            panel6.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panel6.BackColor = Color.MintCream;
-            panel6.BorderStyle = BorderStyle.Fixed3D;
-            panel6.Location = new Point(22, 180);
-            panel6.Margin = new Padding(4, 4, 4, 4);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(438, 103);
-            panel6.TabIndex = 25;
-            // 
-            // labelByUser
-            // 
-            labelByUser.AutoSize = true;
-            labelByUser.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            labelByUser.ForeColor = Color.White;
-            labelByUser.Location = new Point(22, 88);
-            labelByUser.Margin = new Padding(4, 0, 4, 0);
-            labelByUser.Name = "labelByUser";
-            labelByUser.Size = new Size(363, 40);
-            labelByUser.TabIndex = 28;
-            labelByUser.Text = "Proyectos pendientes";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Century Gothic", 12F);
-            label2.ForeColor = Color.Black;
-            label2.Location = new Point(160, 120);
-            label2.Margin = new Padding(4, 0, 4, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(20, 30);
-            label2.TabIndex = 19;
-            label2.Text = ",";
-            // 
-            // panel10
-            // 
-            panel10.BackColor = Color.DarkCyan;
-            panel10.BorderStyle = BorderStyle.Fixed3D;
-            panel10.Dock = DockStyle.Bottom;
-            panel10.Location = new Point(4, 1266);
-            panel10.Margin = new Padding(4, 4, 4, 4);
-            panel10.Name = "panel10";
-            panel10.Size = new Size(1448, 55);
-            panel10.TabIndex = 29;
-            // 
-            // lblHoraUsuario
-            // 
-            lblHoraUsuario.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            lblHoraUsuario.AutoSize = true;
-            lblHoraUsuario.BackColor = Color.Transparent;
-            lblHoraUsuario.Font = new Font("Century Gothic", 12F);
-            lblHoraUsuario.ForeColor = Color.Black;
-            lblHoraUsuario.Location = new Point(750, 30);
-            lblHoraUsuario.Margin = new Padding(4, 0, 4, 0);
-            lblHoraUsuario.Name = "lblHoraUsuario";
-            lblHoraUsuario.Size = new Size(182, 30);
-            lblHoraUsuario.TabIndex = 5;
-            lblHoraUsuario.Text = "lblHoraUsuario";
-            // 
-            // panelUsersView
-            // 
-            panelUsersView.BackColor = Color.DarkSlateGray;
-            panelUsersView.Controls.Add(pictureBox2);
-            panelUsersView.Controls.Add(label6);
-            panelUsersView.Controls.Add(label7);
-            panelUsersView.Dock = DockStyle.Right;
-            panelUsersView.Location = new Point(1452, 28);
-            panelUsersView.Margin = new Padding(4, 4, 4, 4);
-            panelUsersView.Name = "panelUsersView";
-            panelUsersView.Size = new Size(366, 1293);
-            panelUsersView.TabIndex = 6;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            pictureBox2.Image = Properties.Resources.projects_icon_142976;
-            pictureBox2.Location = new Point(62, 440);
-            pictureBox2.Margin = new Padding(4, 4, 4, 4);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(234, 222);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 31;
-            pictureBox2.TabStop = false;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.White;
-            label6.Location = new Point(50, 682);
-            label6.Margin = new Padding(4, 0, 4, 0);
-            label6.Name = "label6";
-            label6.Size = new Size(267, 40);
-            label6.TabIndex = 30;
-            label6.Text = "Los Tilinizasos77";
+            nameGroupLabel.AutoSize = true;
+            nameGroupLabel.BackColor = Color.Transparent;
+            nameGroupLabel.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            nameGroupLabel.ForeColor = Color.DimGray;
+            nameGroupLabel.Location = new Point(12, 273);
+            nameGroupLabel.Margin = new Padding(4, 0, 4, 0);
+            nameGroupLabel.Name = "nameGroupLabel";
+            nameGroupLabel.Size = new Size(267, 40);
+            nameGroupLabel.TabIndex = 30;
+            nameGroupLabel.Text = "Los Tilinizasos77";
             // 
             // label7
             // 
@@ -241,198 +146,167 @@
             label7.TabIndex = 19;
             label7.Text = ",";
             // 
-            // label1
+            // welcomeLabel
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold);
-            label1.Location = new Point(24, 26);
-            label1.Margin = new Padding(4, 0, 4, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(311, 34);
-            label1.TabIndex = 0;
-            label1.Text = "Bienvenido de vuelta ";
+            welcomeLabel.AutoSize = true;
+            welcomeLabel.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold);
+            welcomeLabel.Location = new Point(24, 30);
+            welcomeLabel.Margin = new Padding(4, 0, 4, 0);
+            welcomeLabel.Name = "welcomeLabel";
+            welcomeLabel.Size = new Size(311, 34);
+            welcomeLabel.TabIndex = 0;
+            welcomeLabel.Text = "Bienvenido de vuelta ";
             // 
-            // panel8
+            // informationUsersPanel
             // 
-            panel8.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panel8.BorderStyle = BorderStyle.Fixed3D;
-            panel8.Controls.Add(label11);
-            panel8.Location = new Point(24, 725);
-            panel8.Margin = new Padding(4, 4, 4, 4);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(913, 270);
-            panel8.TabIndex = 3;
+            informationUsersPanel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            informationUsersPanel.BorderStyle = BorderStyle.Fixed3D;
+            informationUsersPanel.Controls.Add(iconUserClientsButton);
+            informationUsersPanel.Controls.Add(iconUserEmployeeButton);
+            informationUsersPanel.Location = new Point(24, 285);
+            informationUsersPanel.Margin = new Padding(4);
+            informationUsersPanel.Name = "informationUsersPanel";
+            informationUsersPanel.Size = new Size(938, 436);
+            informationUsersPanel.TabIndex = 3;
             // 
-            // label11
+            // iconUserClientsButton
             // 
-            label11.Location = new Point(161, 59);
-            label11.Margin = new Padding(4, 0, 4, 0);
-            label11.Name = "label11";
-            label11.Size = new Size(465, 101);
-            label11.TabIndex = 0;
-            label11.Text = "Aca lo mas probable que vaya graficas y estadisticas sobre los proyectos que mas piden los clientes y eso si es que no me da huevaxd";
+            iconUserClientsButton.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            iconUserClientsButton.BackColor = Color.DodgerBlue;
+            iconUserClientsButton.Cursor = Cursors.Hand;
+            iconUserClientsButton.FlatStyle = FlatStyle.Flat;
+            iconUserClientsButton.ForeColor = Color.White;
+            iconUserClientsButton.IconChar = FontAwesome.Sharp.IconChar.Uber;
+            iconUserClientsButton.IconColor = Color.White;
+            iconUserClientsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconUserClientsButton.ImageAlign = ContentAlignment.MiddleLeft;
+            iconUserClientsButton.Location = new Point(51, 162);
+            iconUserClientsButton.Margin = new Padding(4);
+            iconUserClientsButton.Name = "iconUserClientsButton";
+            iconUserClientsButton.Size = new Size(369, 78);
+            iconUserClientsButton.TabIndex = 6;
+            iconUserClientsButton.Text = "Mis proyectos finalizados";
+            iconUserClientsButton.UseVisualStyleBackColor = false;
             // 
-            // panelInfoUsers
+            // iconUserEmployeeButton
             // 
-            panelInfoUsers.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panelInfoUsers.BorderStyle = BorderStyle.Fixed3D;
-            panelInfoUsers.Controls.Add(iconButtonUserClients);
-            panelInfoUsers.Controls.Add(iconButtonUserEmployee);
-            panelInfoUsers.Location = new Point(24, 285);
-            panelInfoUsers.Margin = new Padding(4, 4, 4, 4);
-            panelInfoUsers.Name = "panelInfoUsers";
-            panelInfoUsers.Size = new Size(913, 386);
-            panelInfoUsers.TabIndex = 3;
+            iconUserEmployeeButton.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            iconUserEmployeeButton.BackColor = Color.DodgerBlue;
+            iconUserEmployeeButton.Cursor = Cursors.Hand;
+            iconUserEmployeeButton.FlatStyle = FlatStyle.Flat;
+            iconUserEmployeeButton.ForeColor = Color.White;
+            iconUserEmployeeButton.IconChar = FontAwesome.Sharp.IconChar.Uber;
+            iconUserEmployeeButton.IconColor = Color.White;
+            iconUserEmployeeButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconUserEmployeeButton.ImageAlign = ContentAlignment.MiddleLeft;
+            iconUserEmployeeButton.Location = new Point(51, 48);
+            iconUserEmployeeButton.Margin = new Padding(4);
+            iconUserEmployeeButton.Name = "iconUserEmployeeButton";
+            iconUserEmployeeButton.Size = new Size(369, 85);
+            iconUserEmployeeButton.TabIndex = 4;
+            iconUserEmployeeButton.Text = "Mis proyectos pendientes";
+            iconUserEmployeeButton.UseVisualStyleBackColor = false;
             // 
-            // iconButtonUserClients
+            // projectsAssignamentPanel
             // 
-            iconButtonUserClients.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            iconButtonUserClients.BackColor = Color.LightSeaGreen;
-            iconButtonUserClients.Cursor = Cursors.Hand;
-            iconButtonUserClients.FlatStyle = FlatStyle.Flat;
-            iconButtonUserClients.ForeColor = Color.White;
-            iconButtonUserClients.IconChar = FontAwesome.Sharp.IconChar.Uber;
-            iconButtonUserClients.IconColor = Color.White;
-            iconButtonUserClients.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButtonUserClients.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButtonUserClients.Location = new Point(232, 239);
-            iconButtonUserClients.Margin = new Padding(4, 4, 4, 4);
-            iconButtonUserClients.Name = "iconButtonUserClients";
-            iconButtonUserClients.Size = new Size(411, 72);
-            iconButtonUserClients.TabIndex = 6;
-            iconButtonUserClients.Text = "Mis proyectos finalizados";
-            iconButtonUserClients.UseVisualStyleBackColor = false;
+            projectsAssignamentPanel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            projectsAssignamentPanel.BorderStyle = BorderStyle.Fixed3D;
+            projectsAssignamentPanel.Controls.Add(taskPictureBox);
+            projectsAssignamentPanel.Controls.Add(motivationLabel);
+            projectsAssignamentPanel.Controls.Add(projectsPendingsLabel);
+            projectsAssignamentPanel.Controls.Add(completedTaskLabel);
+            projectsAssignamentPanel.Location = new Point(24, 95);
+            projectsAssignamentPanel.Margin = new Padding(4);
+            projectsAssignamentPanel.Name = "projectsAssignamentPanel";
+            projectsAssignamentPanel.Size = new Size(938, 155);
+            projectsAssignamentPanel.TabIndex = 2;
             // 
-            // iconButtonUserEmployee
+            // taskPictureBox
             // 
-            iconButtonUserEmployee.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            iconButtonUserEmployee.BackColor = Color.LightSeaGreen;
-            iconButtonUserEmployee.Cursor = Cursors.Hand;
-            iconButtonUserEmployee.FlatStyle = FlatStyle.Flat;
-            iconButtonUserEmployee.ForeColor = Color.White;
-            iconButtonUserEmployee.IconChar = FontAwesome.Sharp.IconChar.Uber;
-            iconButtonUserEmployee.IconColor = Color.White;
-            iconButtonUserEmployee.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButtonUserEmployee.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButtonUserEmployee.Location = new Point(232, 75);
-            iconButtonUserEmployee.Margin = new Padding(4, 4, 4, 4);
-            iconButtonUserEmployee.Name = "iconButtonUserEmployee";
-            iconButtonUserEmployee.Size = new Size(411, 72);
-            iconButtonUserEmployee.TabIndex = 4;
-            iconButtonUserEmployee.Text = "Mis proyectos pendientes";
-            iconButtonUserEmployee.UseVisualStyleBackColor = false;
+            taskPictureBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            taskPictureBox.Image = (Image)resources.GetObject("taskPictureBox.Image");
+            taskPictureBox.Location = new Point(776, 19);
+            taskPictureBox.Margin = new Padding(4);
+            taskPictureBox.Name = "taskPictureBox";
+            taskPictureBox.Size = new Size(134, 128);
+            taskPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            taskPictureBox.TabIndex = 4;
+            taskPictureBox.TabStop = false;
             // 
-            // panelPrijectsAssignament
+            // motivationLabel
             // 
-            panelPrijectsAssignament.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panelPrijectsAssignament.BorderStyle = BorderStyle.Fixed3D;
-            panelPrijectsAssignament.Controls.Add(pictureBox1);
-            panelPrijectsAssignament.Controls.Add(label5);
-            panelPrijectsAssignament.Controls.Add(labelProjectsPendings);
-            panelPrijectsAssignament.Controls.Add(label3);
-            panelPrijectsAssignament.Location = new Point(24, 95);
-            panelPrijectsAssignament.Margin = new Padding(4, 4, 4, 4);
-            panelPrijectsAssignament.Name = "panelPrijectsAssignament";
-            panelPrijectsAssignament.Size = new Size(913, 155);
-            panelPrijectsAssignament.TabIndex = 2;
+            motivationLabel.AutoSize = true;
+            motivationLabel.Font = new Font("Century Gothic", 10.2F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            motivationLabel.Location = new Point(18, 74);
+            motivationLabel.Margin = new Padding(4, 0, 4, 0);
+            motivationLabel.Name = "motivationLabel";
+            motivationLabel.Size = new Size(431, 24);
+            motivationLabel.TabIndex = 3;
+            motivationLabel.Text = "¿A qué esperas? ¡Ponte manos a la obra!";
             // 
-            // pictureBox1
+            // projectsPendingsLabel
             // 
-            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            pictureBox1.Image = Properties.Resources.pendiente;
-            pictureBox1.Location = new Point(724, 19);
-            pictureBox1.Margin = new Padding(4, 4, 4, 4);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(160, 114);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 4;
-            pictureBox1.TabStop = false;
+            projectsPendingsLabel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            projectsPendingsLabel.AutoSize = true;
+            projectsPendingsLabel.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            projectsPendingsLabel.Location = new Point(680, 19);
+            projectsPendingsLabel.Margin = new Padding(4, 0, 4, 0);
+            projectsPendingsLabel.Name = "projectsPendingsLabel";
+            projectsPendingsLabel.Size = new Size(39, 43);
+            projectsPendingsLabel.TabIndex = 2;
+            projectsPendingsLabel.Text = "0";
             // 
-            // label5
+            // completedTaskLabel
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Century Gothic", 10.2F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label5.Location = new Point(44, 75);
-            label5.Margin = new Padding(4, 0, 4, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(263, 24);
-            label5.TabIndex = 3;
-            label5.Text = "Que esperas? chambea!";
-            // 
-            // labelProjectsPendings
-            // 
-            labelProjectsPendings.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            labelProjectsPendings.AutoSize = true;
-            labelProjectsPendings.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelProjectsPendings.Location = new Point(654, 58);
-            labelProjectsPendings.Margin = new Padding(4, 0, 4, 0);
-            labelProjectsPendings.Name = "labelProjectsPendings";
-            labelProjectsPendings.Size = new Size(43, 43);
-            labelProjectsPendings.TabIndex = 2;
-            labelProjectsPendings.Text = "p";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(28, 46);
-            label3.Margin = new Padding(4, 0, 4, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(414, 28);
-            label3.TabIndex = 1;
-            label3.Text = "Tienes varias tareas por completar";
+            completedTaskLabel.AutoSize = true;
+            completedTaskLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            completedTaskLabel.Location = new Point(35, 19);
+            completedTaskLabel.Margin = new Padding(4, 0, 4, 0);
+            completedTaskLabel.Name = "completedTaskLabel";
+            completedTaskLabel.Size = new Size(266, 28);
+            completedTaskLabel.TabIndex = 1;
+            completedTaskLabel.Text = "Tareas por Completar";
             // 
             // HomeUserEmployeeForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1848, 1350);
-            Controls.Add(groupBox1);
-            FormBorderStyle = FormBorderStyle.FixedDialog;
-            Margin = new Padding(4, 4, 4, 4);
+            BackColor = Color.White;
+            ClientSize = new Size(1281, 970);
+            Controls.Add(introductionGroupBox);
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4);
             Name = "HomeUserEmployeeForm";
             Text = "HomeUserEmployeeForm";
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            panelUsersView.ResumeLayout(false);
-            panelUsersView.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            panel8.ResumeLayout(false);
-            panelInfoUsers.ResumeLayout(false);
-            panelPrijectsAssignament.ResumeLayout(false);
-            panelPrijectsAssignament.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            introductionGroupBox.ResumeLayout(false);
+            introductionGroupBox.PerformLayout();
+            usersViewPanel.ResumeLayout(false);
+            usersViewPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)logoPictureBox).EndInit();
+            informationUsersPanel.ResumeLayout(false);
+            projectsAssignamentPanel.ResumeLayout(false);
+            projectsAssignamentPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)taskPictureBox).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private GroupBox groupBox1;
-        private Label lblHoraUsuario;
-        private Panel panelUsersView;
+        private GroupBox introductionGroupBox;
+        private Label timeLabel;
+        private Panel usersViewPanel;
         private Label label7;
-        private Label label1;
-        private Panel panel8;
-        private Label label11;
-        private Panel panelInfoUsers;
-        private FontAwesome.Sharp.IconButton iconButtonUserClients;
-        private FontAwesome.Sharp.IconButton iconButtonUserEmployee;
-        private Label labelUserAccount;
-        private Panel panelPrijectsAssignament;
-        private Panel panel1;
-        private Label label2;
-        private Panel panel10;
-        private Panel panel9;
-        private Panel panel7;
-        private Panel panel6;
-        private Label labelByUser;
-        private Label label3;
-        private PictureBox pictureBox1;
-        private Label label5;
-        private Label labelProjectsPendings;
-        private PictureBox pictureBox2;
-        private Label label6;
+        private Label welcomeLabel;
+        private Panel informationUsersPanel;
+        private FontAwesome.Sharp.IconButton iconUserClientsButton;
+        private FontAwesome.Sharp.IconButton iconUserEmployeeButton;
+        private Label userAccountLabel;
+        private Panel projectsAssignamentPanel;
+        private Label completedTaskLabel;
+        private PictureBox taskPictureBox;
+        private Label motivationLabel;
+        private Label projectsPendingsLabel;
+        private PictureBox logoPictureBox;
+        private Label nameGroupLabel;
     }
 }

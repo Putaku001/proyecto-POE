@@ -29,12 +29,12 @@ namespace PresentationLayer.Forms.Empleados
 
         private void LoadData()
         {
-            labelUserAccount.Text = AuthUser.UserAccount;
-            lblHoraUsuario.Text = DateTime.Now.ToString("g");
+            userAccountLabel.Text = AuthUser.UserAccount;
+            timeLabel.Text = DateTime.Now.ToString("g");
 
             var getidClient = _usersServices.GetClients().Where(id => id.idUser == idUser).Select(select => select.idCliente).FirstOrDefault();
             var projectsCount = _proyectsServices.GetProjectsByIdClient(getidClient).Count();
-            labelProjectsPendings.Text = projectsCount.ToString();
+            projectsPendingsLabel.Text = projectsCount.ToString();
         }
     }
 }

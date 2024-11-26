@@ -455,10 +455,7 @@
       "System.Threading.Tasks.Extensions/4.5.4": {},
       "CommonLayer/1.0.0": {
         "runtime": {
-          "CommonLayer.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "CommonLayer.dll": {}
         }
       },
       "DataAccessLayer/1.0.0": {
@@ -469,10 +466,7 @@
           "Microsoft.Extensions.Configuration.Abstractions": "8.0.0"
         },
         "runtime": {
-          "DataAccessLayer.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "DataAccessLayer.dll": {}
         }
       }
     }

@@ -43,22 +43,24 @@
             nameTaskLabel = new Label();
             projectPanel = new Panel();
             projectsAssignamentLabel = new Label();
+            admistrationTaskPanel = new Panel();
             ((System.ComponentModel.ISupportInitialize)projectsEmployeeDataGridView).BeginInit();
             informationProjectPanel.SuspendLayout();
             projectInformationGroupBox.SuspendLayout();
             flowLayoutLinkFilePanel.SuspendLayout();
             projectPanel.SuspendLayout();
+            admistrationTaskPanel.SuspendLayout();
             SuspendLayout();
             // 
             // projectsEmployeeDataGridView
             // 
-            projectsEmployeeDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             projectsEmployeeDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             projectsEmployeeDataGridView.Columns.AddRange(new DataGridViewColumn[] { Select });
-            projectsEmployeeDataGridView.Location = new Point(653, 68);
+            projectsEmployeeDataGridView.Dock = DockStyle.Right;
+            projectsEmployeeDataGridView.Location = new Point(657, 0);
             projectsEmployeeDataGridView.Name = "projectsEmployeeDataGridView";
             projectsEmployeeDataGridView.RowHeadersWidth = 51;
-            projectsEmployeeDataGridView.Size = new Size(759, 787);
+            projectsEmployeeDataGridView.Size = new Size(759, 833);
             projectsEmployeeDataGridView.TabIndex = 2;
             projectsEmployeeDataGridView.CellClick += projectsEmployeeDataGridView_CellClick;
             // 
@@ -75,9 +77,10 @@
             informationProjectPanel.BackColor = Color.DodgerBlue;
             informationProjectPanel.Controls.Add(projectInformationGroupBox);
             informationProjectPanel.Controls.Add(nameTaskLabel);
-            informationProjectPanel.Location = new Point(12, 68);
+            informationProjectPanel.Dock = DockStyle.Left;
+            informationProjectPanel.Location = new Point(0, 0);
             informationProjectPanel.Name = "informationProjectPanel";
-            informationProjectPanel.Size = new Size(624, 787);
+            informationProjectPanel.Size = new Size(624, 833);
             informationProjectPanel.TabIndex = 3;
             // 
             // projectInformationGroupBox
@@ -94,7 +97,7 @@
             projectInformationGroupBox.ForeColor = Color.White;
             projectInformationGroupBox.Location = new Point(37, 34);
             projectInformationGroupBox.Name = "projectInformationGroupBox";
-            projectInformationGroupBox.Size = new Size(556, 720);
+            projectInformationGroupBox.Size = new Size(556, 766);
             projectInformationGroupBox.TabIndex = 12;
             projectInformationGroupBox.TabStop = false;
             projectInformationGroupBox.Tag = "label";
@@ -200,13 +203,13 @@
             // 
             // projectPanel
             // 
-            projectPanel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             projectPanel.BackColor = Color.FromArgb(46, 54, 61);
             projectPanel.Controls.Add(projectsAssignamentLabel);
+            projectPanel.Dock = DockStyle.Top;
             projectPanel.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
             projectPanel.Location = new Point(0, 0);
             projectPanel.Name = "projectPanel";
-            projectPanel.Size = new Size(1423, 62);
+            projectPanel.Size = new Size(1416, 62);
             projectPanel.TabIndex = 4;
             // 
             // projectsAssignamentLabel
@@ -220,18 +223,28 @@
             projectsAssignamentLabel.TabIndex = 13;
             projectsAssignamentLabel.Text = "Tareas Asignadas";
             // 
+            // admistrationTaskPanel
+            // 
+            admistrationTaskPanel.Controls.Add(projectsEmployeeDataGridView);
+            admistrationTaskPanel.Controls.Add(informationProjectPanel);
+            admistrationTaskPanel.Dock = DockStyle.Fill;
+            admistrationTaskPanel.Location = new Point(0, 62);
+            admistrationTaskPanel.Name = "admistrationTaskPanel";
+            admistrationTaskPanel.Size = new Size(1416, 833);
+            admistrationTaskPanel.TabIndex = 5;
+            // 
             // ProjectEmployeeForm
             // 
             AutoScaleDimensions = new SizeF(11F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.LightGray;
-            ClientSize = new Size(1424, 873);
+            BackColor = Color.White;
+            ClientSize = new Size(1416, 895);
+            Controls.Add(admistrationTaskPanel);
             Controls.Add(projectPanel);
-            Controls.Add(informationProjectPanel);
-            Controls.Add(projectsEmployeeDataGridView);
             Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "ProjectEmployeeForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Tareas Asignadas";
             ((System.ComponentModel.ISupportInitialize)projectsEmployeeDataGridView).EndInit();
             informationProjectPanel.ResumeLayout(false);
@@ -242,6 +255,7 @@
             flowLayoutLinkFilePanel.PerformLayout();
             projectPanel.ResumeLayout(false);
             projectPanel.PerformLayout();
+            admistrationTaskPanel.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -263,5 +277,6 @@
         private Panel projectPanel;
         private Label projectsAssignamentLabel;
         private ComboBox taskStatusComboBox;
+        private Panel admistrationTaskPanel;
     }
 }
