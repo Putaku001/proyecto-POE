@@ -38,11 +38,68 @@ namespace PresentationLayer.Forms
             return random.Next(100000, 999999).ToString();
         }
 
-
-
-        private void linkLabelVerificationEmail_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        public void HabilitarCambioContraseña()
         {
-                        
+            if (verificationCodeTexBox.Text == _emailSettings.codigoVerificacion)
+            {
+
+                SetTimeVerificationGmail(_emailSettings.codigoVerificacion);
+            }
+        }
+
+        public bool SetTimeVerificationGmail(string codeIngresado)
+        {
+            if (DateTime.Now - _codeTime > TimeSpan.FromMinutes(10))
+            {
+                MessageBox.Show("El codigo ha expirado, ha excedido el limite de 10 minutos establecido, mande una nueva solicitud");
+                return false;
+            }
+            else if (codeIngresado != verificationCodeTexBox.Text)
+            {
+                Console.WriteLine("El código ingresado es incorrecto.");
+                return false;
+            }
+
+            else
+            {
+                MessageBox.Show("Código correcto. Formulario de cambio de contraseña habilitado.");
+                ChangePasswordForm changePasswordForm = new ChangePasswordForm(_user, _usuarioServices);
+                changePasswordForm.ShowDialog();
+                this.Close();
+                return true;
+            }
+
+        }
+
+
+        private void iconVerifyButton_Click(object sender, EventArgs e)
+        {
+            if (_emailSettings.metodoVerificacion == "Correo")
+            {
+                HabilitarCambioContraseña();
+            }
+            else
+            {
+                if (DateTime.Now - _codeTime > TimeSpan.FromMinutes(10))
+                {
+                    MessageBox.Show("El codigo ha expirado, ha excedido el limite de 10 minutos establecido, mande una nueva solicitud");
+
+                }
+                else if (verificationCodeTexBox.Text == _user.VerificationCode.ToString())
+                {
+                    ChangePasswordForm changePasswordForm = new ChangePasswordForm(_user, _usuarioServices);
+                    changePasswordForm.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Código incorrecto. Inténtalo de nuevo.");
+                }
+            }
+        }
+
+        private void linkVerificationEmailLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
             _emailSettings.metodoVerificacion = "Correo";
 
             _emailSettings.codigoVerificacion = GenerateCodeVerification();
@@ -94,67 +151,5 @@ namespace PresentationLayer.Forms
 
             MessageBox.Show("Se le ha enviado correctamente el correo para restablecer la conraseña", "Restablecer contraseña", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-
-
-        public void HabilitarCambioContraseña()
-        {
-            if (verificationCodeTexBox.Text == _emailSettings.codigoVerificacion)
-            {
-
-                SetTimeVerificationGmail(_emailSettings.codigoVerificacion);
-            }
-        }
-
-        public bool SetTimeVerificationGmail(string codeIngresado)
-        {
-            if (DateTime.Now - _codeTime > TimeSpan.FromMinutes(10))
-            {
-                MessageBox.Show("El codigo ha expirado, ha excedido el limite de 10 minutos establecido, mande una nueva solicitud");
-                return false;
-            }
-            else if (codeIngresado != verificationCodeTexBox.Text)
-            {
-                Console.WriteLine("El código ingresado es incorrecto.");
-                return false;
-            }
-
-            else
-            {
-                MessageBox.Show("Código correcto. Formulario de cambio de contraseña habilitado.");
-                ChangePasswordForm changePasswordForm = new ChangePasswordForm(_user, _usuarioServices);
-                changePasswordForm.ShowDialog();
-                this.Close();
-                return true;
-            }
-
-        }
-
-        private void iconButtonVerify_Click(object sender, EventArgs e)
-        {
-            if(_emailSettings.metodoVerificacion == "Correo")
-            {
-                HabilitarCambioContraseña();
-            }
-            else
-            {
-                if (DateTime.Now - _codeTime > TimeSpan.FromMinutes(10))
-                {
-                    MessageBox.Show("El codigo ha expirado, ha excedido el limite de 10 minutos establecido, mande una nueva solicitud");
-
-                }
-                else if (verificationCodeTexBox.Text == _user.VerificationCode.ToString())
-                {
-                    ChangePasswordForm changePasswordForm = new ChangePasswordForm(_user, _usuarioServices);
-                    changePasswordForm.ShowDialog();
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Código incorrecto. Inténtalo de nuevo.");
-                }
-            }
-        }
-
-        
     }
 }

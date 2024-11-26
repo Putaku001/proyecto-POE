@@ -32,20 +32,20 @@
             recuperarContraseñaToolStripMenuItem = new ToolStripMenuItem();
             verificationCodeTexBox = new TextBox();
             messageLabel = new Label();
-            iconButtonVerify = new FontAwesome.Sharp.IconButton();
-            linkLabelVerificationEmail = new LinkLabel();
+            iconVerifyButton = new FontAwesome.Sharp.IconButton();
+            linkVerificationEmailLabel = new LinkLabel();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.BackColor = Color.Turquoise;
+            menuStrip1.BackColor = Color.DodgerBlue;
             menuStrip1.ImageScalingSize = new Size(20, 20);
             menuStrip1.Items.AddRange(new ToolStripItem[] { recuperarContraseñaToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(7, 2, 0, 2);
-            menuStrip1.Size = new Size(653, 31);
+            menuStrip1.Size = new Size(716, 36);
             menuStrip1.TabIndex = 4;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -54,73 +54,76 @@
             recuperarContraseñaToolStripMenuItem.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             recuperarContraseñaToolStripMenuItem.ForeColor = Color.White;
             recuperarContraseñaToolStripMenuItem.Name = "recuperarContraseñaToolStripMenuItem";
-            recuperarContraseñaToolStripMenuItem.Size = new Size(241, 27);
+            recuperarContraseñaToolStripMenuItem.Size = new Size(287, 32);
             recuperarContraseñaToolStripMenuItem.Text = "Recuperar contraseña";
             // 
             // verificationCodeTexBox
             // 
             verificationCodeTexBox.BackColor = Color.White;
             verificationCodeTexBox.BorderStyle = BorderStyle.None;
+            verificationCodeTexBox.Font = new Font("Century Gothic", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             verificationCodeTexBox.ForeColor = Color.Black;
-            verificationCodeTexBox.Location = new Point(216, 163);
+            verificationCodeTexBox.Location = new Point(232, 160);
             verificationCodeTexBox.Margin = new Padding(3, 4, 3, 4);
             verificationCodeTexBox.Name = "verificationCodeTexBox";
-            verificationCodeTexBox.Size = new Size(258, 19);
+            verificationCodeTexBox.Size = new Size(258, 27);
             verificationCodeTexBox.TabIndex = 0;
             verificationCodeTexBox.TextAlign = HorizontalAlignment.Center;
             // 
             // messageLabel
             // 
             messageLabel.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 161);
-            messageLabel.ForeColor = Color.White;
-            messageLabel.Location = new Point(97, 93);
+            messageLabel.ForeColor = Color.Black;
+            messageLabel.Location = new Point(113, 90);
             messageLabel.Name = "messageLabel";
             messageLabel.Size = new Size(483, 50);
             messageLabel.TabIndex = 2;
             messageLabel.Text = "Introduce el codigo de 6 digitos que se te ha enviado al numero de telefono asociado a su cuenta en Tilinazos77";
             // 
-            // iconButtonVerify
+            // iconVerifyButton
             // 
-            iconButtonVerify.BackColor = Color.LimeGreen;
-            iconButtonVerify.FlatStyle = FlatStyle.Flat;
-            iconButtonVerify.ForeColor = Color.White;
-            iconButtonVerify.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
-            iconButtonVerify.IconColor = Color.White;
-            iconButtonVerify.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButtonVerify.IconSize = 34;
-            iconButtonVerify.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButtonVerify.Location = new Point(258, 207);
-            iconButtonVerify.Name = "iconButtonVerify";
-            iconButtonVerify.Size = new Size(175, 33);
-            iconButtonVerify.TabIndex = 5;
-            iconButtonVerify.Text = "Verificar";
-            iconButtonVerify.UseVisualStyleBackColor = false;
-            iconButtonVerify.Click += iconButtonVerify_Click;
+            iconVerifyButton.BackColor = Color.ForestGreen;
+            iconVerifyButton.FlatStyle = FlatStyle.Flat;
+            iconVerifyButton.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            iconVerifyButton.ForeColor = Color.White;
+            iconVerifyButton.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
+            iconVerifyButton.IconColor = Color.White;
+            iconVerifyButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconVerifyButton.IconSize = 34;
+            iconVerifyButton.ImageAlign = ContentAlignment.MiddleLeft;
+            iconVerifyButton.Location = new Point(253, 228);
+            iconVerifyButton.Name = "iconVerifyButton";
+            iconVerifyButton.Size = new Size(196, 46);
+            iconVerifyButton.TabIndex = 5;
+            iconVerifyButton.Text = "Verificar";
+            iconVerifyButton.UseVisualStyleBackColor = false;
+            iconVerifyButton.Click += iconVerifyButton_Click;
             // 
-            // linkLabelVerificationEmail
+            // linkVerificationEmailLabel
             // 
-            linkLabelVerificationEmail.AutoSize = true;
-            linkLabelVerificationEmail.Font = new Font("Century Gothic", 7.20000029F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            linkLabelVerificationEmail.Location = new Point(176, 295);
-            linkLabelVerificationEmail.Name = "linkLabelVerificationEmail";
-            linkLabelVerificationEmail.Size = new Size(331, 17);
-            linkLabelVerificationEmail.TabIndex = 6;
-            linkLabelVerificationEmail.TabStop = true;
-            linkLabelVerificationEmail.Text = "Recuperar mi contraseña con mi correo asociado";
-            linkLabelVerificationEmail.LinkClicked += linkLabelVerificationEmail_LinkClicked;
+            linkVerificationEmailLabel.AutoSize = true;
+            linkVerificationEmailLabel.Font = new Font("Century Gothic", 7.20000029F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            linkVerificationEmailLabel.Location = new Point(177, 312);
+            linkVerificationEmailLabel.Name = "linkVerificationEmailLabel";
+            linkVerificationEmailLabel.Size = new Size(375, 20);
+            linkVerificationEmailLabel.TabIndex = 6;
+            linkVerificationEmailLabel.TabStop = true;
+            linkVerificationEmailLabel.Text = "Recuperar mi contraseña con mi correo asociado";
+            linkVerificationEmailLabel.LinkClicked += linkVerificationEmailLabel_LinkClicked;
             // 
             // VerificationForm
             // 
-            AutoScaleDimensions = new SizeF(9F, 20F);
+            AutoScaleDimensions = new SizeF(11F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ControlDark;
-            ClientSize = new Size(653, 321);
-            Controls.Add(linkLabelVerificationEmail);
-            Controls.Add(iconButtonVerify);
+            BackColor = Color.LightGray;
+            ClientSize = new Size(716, 354);
+            Controls.Add(linkVerificationEmailLabel);
+            Controls.Add(iconVerifyButton);
             Controls.Add(messageLabel);
             Controls.Add(verificationCodeTexBox);
             Controls.Add(menuStrip1);
             Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             MainMenuStrip = menuStrip1;
             Margin = new Padding(3, 4, 3, 4);
             Name = "VerificationForm";
@@ -137,7 +140,7 @@
         private ToolStripMenuItem recuperarContraseñaToolStripMenuItem;
         private TextBox verificationCodeTexBox;
         private Label messageLabel;
-        private FontAwesome.Sharp.IconButton iconButtonVerify;
-        private LinkLabel linkLabelVerificationEmail;
+        private FontAwesome.Sharp.IconButton iconVerifyButton;
+        private LinkLabel linkVerificationEmailLabel;
     }
 }
