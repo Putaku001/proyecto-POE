@@ -37,33 +37,33 @@ namespace PresentationLayer.Forms.Cliente
         {
             int idUser = CaptureData.idUser;
             var idClientByID = Convert.ToInt32(_usersServices.GetClients().Where(u => u.idUser == idUser).Select(e => e.idCliente).FirstOrDefault());
-            dataGridViewRequestProject.DataSource = _proyectsServices.GetProjectsByIdClient(idClientByID);
+            requestProjectDataGridView.DataSource = _proyectsServices.GetProjectsByIdClient(idClientByID);
 
-            dataGridViewRequestProject.Columns["idClient"].Visible = false;
-            dataGridViewRequestProject.Columns["UserAccount"].Visible = false;
-            dataGridViewRequestProject.Columns["file"].Visible = false;
-            dataGridViewRequestProject.Columns["statusproyect"].Visible = false;
-            dataGridViewRequestProject.Columns["codeProject"].HeaderText = "Codigo";
-            dataGridViewRequestProject.Columns["nameProject"].HeaderText = "Proyecto";
-            dataGridViewRequestProject.Columns["descriptionProject"].HeaderText = "Descripcion";
+            requestProjectDataGridView.Columns["idClient"].Visible = false;
+            requestProjectDataGridView.Columns["UserAccount"].Visible = false;
+            requestProjectDataGridView.Columns["file"].Visible = false;
+            requestProjectDataGridView.Columns["statusproyect"].Visible = false;
+            requestProjectDataGridView.Columns["codeProject"].HeaderText = "Codigo";
+            requestProjectDataGridView.Columns["nameProject"].HeaderText = "Proyecto";
+            requestProjectDataGridView.Columns["descriptionProject"].HeaderText = "Descripcion";
 
             var pendingStatusId = new List<int> { 7, 6 };
-            dataGridView1.DataSource = _proyectsServices.GetProjectsByIdStatus(pendingStatusId);
+            listProjectDataGridView.DataSource = _proyectsServices.GetProjectsByIdStatus(pendingStatusId);
 
-            dataGridView1.Columns["idClient"].Visible = false;
-            dataGridView1.Columns["UserAccount"].Visible = false;
-            dataGridView1.Columns["file"].Visible = false;
-            dataGridView1.Columns["codeProject"].HeaderText = "Codigo";
-            dataGridView1.Columns["nameProject"].HeaderText = "Proyecto";
-            dataGridView1.Columns["descriptionProject"].HeaderText = "Descripcion";
-            dataGridView1.Columns["statusproyect"].HeaderText = "Estado";
+            listProjectDataGridView.Columns["idClient"].Visible = false;
+            listProjectDataGridView.Columns["UserAccount"].Visible = false;
+            listProjectDataGridView.Columns["file"].Visible = false;
+            listProjectDataGridView.Columns["codeProject"].HeaderText = "Codigo";
+            listProjectDataGridView.Columns["nameProject"].HeaderText = "Proyecto";
+            listProjectDataGridView.Columns["descriptionProject"].HeaderText = "Descripcion";
+            listProjectDataGridView.Columns["statusproyect"].HeaderText = "Estado";
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && dataGridView1.Columns[e.ColumnIndex].Name == "SelectPf")
+            if (e.RowIndex >= 0 && listProjectDataGridView.Columns[e.ColumnIndex].Name == "SelectPf")
             {
-                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                DataGridViewRow row = listProjectDataGridView.Rows[e.RowIndex];
                 string codeProject = row.Cells["codeProject"].Value.ToString();
                 string nameProject = row.Cells["nameProject"].Value.ToString();
                 string Description = row.Cells["descriptionProject"].Value.ToString();
@@ -79,7 +79,7 @@ namespace PresentationLayer.Forms.Cliente
                 }
                 else
                 {
-                    var openInfoProjects = _serviceProvider.GetRequiredService<AnswerProyectClient>();
+                    var openInfoProjects = _serviceProvider.GetRequiredService<AnswerProjectClient>();
                     openInfoProjects.codeProyect = codeProject;
                     openInfoProjects.nameProject = nameProject;
                     openInfoProjects.Description = Description;
@@ -90,9 +90,9 @@ namespace PresentationLayer.Forms.Cliente
 
                 }
             }
-            else if (e.RowIndex >= 0 && dataGridView1.Columns[e.ColumnIndex].Name == "downloadProject")
+            else if (e.RowIndex >= 0 && listProjectDataGridView.Columns[e.ColumnIndex].Name == "downloadProject")
             {
-                if (dataGridView1.Rows[e.RowIndex].Cells["statusproyect"].Value.ToString() == "En progreso")
+                if (listProjectDataGridView.Rows[e.RowIndex].Cells["statusproyect"].Value.ToString() == "En progreso")
                 {
                     MessageBox.Show($"El proyecto no esta listo y no puede descargarse",
                                    "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -102,7 +102,7 @@ namespace PresentationLayer.Forms.Cliente
                     
                     try
                     {
-                        string codeProject = dataGridView1.Rows[e.RowIndex].Cells["codeProject"].Value.ToString();
+                        string codeProject = listProjectDataGridView.Rows[e.RowIndex].Cells["codeProject"].Value.ToString();
                         byte[] content = _proyectsServices.getProjectInDB(codeProject);
 
                         SaveFileDialog saveFileDialog = new SaveFileDialog
@@ -129,7 +129,7 @@ namespace PresentationLayer.Forms.Cliente
 
         private void iconButtonGuardarNP_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtNombreProyectoAñadir.Text) || string.IsNullOrWhiteSpace(textBoxDescription.Text))
+            if (string.IsNullOrWhiteSpace(nameNewProyectTextBox.Text) || string.IsNullOrWhiteSpace(descriptionProjectTextBox.Text))
             {
                 MessageBox.Show("Por favor, complete todos los campos.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -143,8 +143,8 @@ namespace PresentationLayer.Forms.Cliente
             {
                 codeProject = GenerateProjectCode(),
                 idClient = idClient,
-                nameProject = txtNombreProyectoAñadir.Text, 
-                descriptionProject = textBoxDescription.Text 
+                nameProject = nameNewProyectTextBox.Text, 
+                descriptionProject = descriptionProjectTextBox.Text 
             };
 
             var status = new StatusProjects
@@ -155,10 +155,10 @@ namespace PresentationLayer.Forms.Cliente
             _proyectsServices.AddNewProject(newProject.codeProject, newProject.idClient, newProject.nameProject, newProject.descriptionProject);
             _proyectsServices.StatusProject(newProject.codeProject , status.idStatusProyect);
 
-            dataGridViewRequestProject.DataSource = _proyectsServices.GetProjectsByIdClient(Convert.ToInt32(_usersServices.GetClients().Where(u => u.idUser == idUser).Select(e => e.idCliente).FirstOrDefault()));
+            requestProjectDataGridView.DataSource = _proyectsServices.GetProjectsByIdClient(Convert.ToInt32(_usersServices.GetClients().Where(u => u.idUser == idUser).Select(e => e.idCliente).FirstOrDefault()));
             MessageBox.Show("Se ha añadido el proyecto!");
-            txtNombreProyectoAñadir.Clear();
-            textBoxDescription.Clear();
+            nameNewProyectTextBox.Clear();
+            descriptionProjectTextBox.Clear();
         }
 
         private string GenerateProjectCode()

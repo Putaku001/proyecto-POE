@@ -14,11 +14,11 @@ using System.Windows.Forms;
 
 namespace PresentationLayer.Forms
 {
-    public partial class ProyectsForm : Form
+    public partial class ProjectsForm : Form
     {
         private readonly IProyectsServices _proyectoServices;
         private readonly IServiceProvider _serviceProvider;
-        public ProyectsForm(IProyectsServices proyectoServices, IServiceProvider serviceProvider)
+        public ProjectsForm(IProyectsServices proyectoServices, IServiceProvider serviceProvider)
         {
             InitializeComponent();
             _proyectoServices = proyectoServices;

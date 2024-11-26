@@ -1,6 +1,6 @@
 ﻿namespace PresentationLayer.Forms
 {
-    partial class ProyectsForm
+    partial class ProjectsForm
     {
         /// <summary>
         /// Required designer variable.

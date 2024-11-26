@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace PresentationLayer.Forms.Cliente
 {
-    public partial class AnswerProyectClient : Form
+    public partial class AnswerProjectClient : Form
     {
         public string codeProyect { get; set; }
         public string Description { get; set; }
@@ -20,7 +20,7 @@ namespace PresentationLayer.Forms.Cliente
 
         private readonly IServiceProvider _servicesProvider;
         private readonly IProyectsServices _proyectsServices;
-        public AnswerProyectClient(IServiceProvider serviceProvider, IProyectsServices _proyectServices)
+        public AnswerProjectClient(IServiceProvider serviceProvider, IProyectsServices _proyectServices)
         {
             InitializeComponent();
             _servicesProvider = serviceProvider;
