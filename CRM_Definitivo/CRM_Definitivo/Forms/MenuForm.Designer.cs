@@ -36,15 +36,15 @@
             logoutLabel = new Label();
             menu = new MenuStrip();
             iconMenuItemHome = new FontAwesome.Sharp.IconMenuItem();
-            iconMenuUsersForm = new FontAwesome.Sharp.IconMenuItem();
-            iconMenuProyectsForm = new FontAwesome.Sharp.IconMenuItem();
-            iconMenuItemRequestClientProjects = new FontAwesome.Sharp.IconMenuItem();
-            iconMenuItemProjectsEmployee = new FontAwesome.Sharp.IconMenuItem();
+            IconMenuUsersForm = new FontAwesome.Sharp.IconMenuItem();
+            IconMenuProyectsForm = new FontAwesome.Sharp.IconMenuItem();
+            IconMenuItemRequestClientProjects = new FontAwesome.Sharp.IconMenuItem();
+            IconMenuItemProjectsEmployee = new FontAwesome.Sharp.IconMenuItem();
             toolStripSeparator1 = new ToolStripSeparator();
-            iconMenuRecordForm = new FontAwesome.Sharp.IconMenuItem();
-            iconMenusSettingsForm = new FontAwesome.Sharp.IconMenuItem();
-            iconMenuAccountForm = new FontAwesome.Sharp.IconMenuItem();
-            iconMenuItemMenus = new FontAwesome.Sharp.IconMenuItem();
+            IconMenuRecordForm = new FontAwesome.Sharp.IconMenuItem();
+            IconMenusSettingsForm = new FontAwesome.Sharp.IconMenuItem();
+            IconMenuAccountForm = new FontAwesome.Sharp.IconMenuItem();
+            IconMenuItemMenus = new FontAwesome.Sharp.IconMenuItem();
             timer1 = new System.Windows.Forms.Timer(components);
             containerPanel = new Panel();
             menuGroupBox = new GroupBox();
@@ -130,9 +130,9 @@
             timeUserLabel.BackColor = Color.White;
             timeUserLabel.Font = new Font("Century Gothic", 12F);
             timeUserLabel.ForeColor = Color.Black;
-            timeUserLabel.Location = new Point(959, 26);
+            timeUserLabel.Location = new Point(892, 26);
             timeUserLabel.Name = "timeUserLabel";
-            timeUserLabel.Size = new Size(68, 30);
+            timeUserLabel.Size = new Size(57, 23);
             timeUserLabel.TabIndex = 5;
             timeUserLabel.Text = "Hora";
             // 
@@ -145,7 +145,7 @@
             menuPerfilPanel.Dock = DockStyle.Left;
             menuPerfilPanel.Location = new Point(0, 0);
             menuPerfilPanel.Name = "menuPerfilPanel";
-            menuPerfilPanel.Size = new Size(284, 1108);
+            menuPerfilPanel.Size = new Size(284, 1055);
             menuPerfilPanel.TabIndex = 4;
             // 
             // logoutLabel
@@ -157,7 +157,7 @@
             logoutLabel.ForeColor = Color.FromArgb(46, 54, 61);
             logoutLabel.Location = new Point(61, 749);
             logoutLabel.Name = "logoutLabel";
-            logoutLabel.Size = new Size(151, 26);
+            logoutLabel.Size = new Size(126, 22);
             logoutLabel.TabIndex = 6;
             logoutLabel.Text = "Cerrar sesion";
             logoutLabel.Click += logoutLabel_Click;
@@ -170,11 +170,11 @@
             menu.Dock = DockStyle.None;
             menu.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
             menu.ImageScalingSize = new Size(60, 60);
-            menu.Items.AddRange(new ToolStripItem[] { iconMenuItemHome, iconMenuUsersForm, iconMenuProyectsForm, iconMenuItemRequestClientProjects, iconMenuItemProjectsEmployee, iconMenuRecordForm, iconMenusSettingsForm, iconMenuAccountForm, iconMenuItemMenus });
+            menu.Items.AddRange(new ToolStripItem[] { iconMenuItemHome, IconMenuUsersForm, IconMenuProyectsForm, IconMenuItemRequestClientProjects, IconMenuItemProjectsEmployee, IconMenuRecordForm, IconMenusSettingsForm, IconMenuAccountForm, IconMenuItemMenus });
             menu.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
             menu.Location = new Point(9, 176);
             menu.Name = "menu";
-            menu.Size = new Size(268, 531);
+            menu.Size = new Size(272, 492);
             menu.TabIndex = 9;
             // 
             // iconMenuItemHome
@@ -191,168 +191,168 @@
             iconMenuItemHome.Margin = new Padding(0, 20, 0, 0);
             iconMenuItemHome.Name = "iconMenuItemHome";
             iconMenuItemHome.RightToLeft = RightToLeft.No;
-            iconMenuItemHome.Size = new Size(261, 34);
+            iconMenuItemHome.Size = new Size(265, 34);
             iconMenuItemHome.Text = "Menú Principal";
             iconMenuItemHome.TextImageRelation = TextImageRelation.Overlay;
             iconMenuItemHome.Click += iconMenuItemHome_Click;
             // 
-            // iconMenuUsersForm
+            // IconMenuUsersForm
             // 
-            iconMenuUsersForm.BackgroundImageLayout = ImageLayout.None;
-            iconMenuUsersForm.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            iconMenuUsersForm.ForeColor = Color.White;
-            iconMenuUsersForm.IconChar = FontAwesome.Sharp.IconChar.User;
-            iconMenuUsersForm.IconColor = Color.White;
-            iconMenuUsersForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconMenuUsersForm.IconSize = 30;
-            iconMenuUsersForm.ImageAlign = ContentAlignment.MiddleLeft;
-            iconMenuUsersForm.ImageScaling = ToolStripItemImageScaling.None;
-            iconMenuUsersForm.Margin = new Padding(0, 20, 0, 0);
-            iconMenuUsersForm.Name = "iconMenuUsersForm";
-            iconMenuUsersForm.Size = new Size(261, 34);
-            iconMenuUsersForm.Text = "Menú Usuario";
-            iconMenuUsersForm.TextImageRelation = TextImageRelation.Overlay;
-            iconMenuUsersForm.Click += iconMenuUsersForm_Click;
+            IconMenuUsersForm.BackgroundImageLayout = ImageLayout.None;
+            IconMenuUsersForm.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            IconMenuUsersForm.ForeColor = Color.White;
+            IconMenuUsersForm.IconChar = FontAwesome.Sharp.IconChar.User;
+            IconMenuUsersForm.IconColor = Color.White;
+            IconMenuUsersForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            IconMenuUsersForm.IconSize = 30;
+            IconMenuUsersForm.ImageAlign = ContentAlignment.MiddleLeft;
+            IconMenuUsersForm.ImageScaling = ToolStripItemImageScaling.None;
+            IconMenuUsersForm.Margin = new Padding(0, 20, 0, 0);
+            IconMenuUsersForm.Name = "IconMenuUsersForm";
+            IconMenuUsersForm.Size = new Size(265, 34);
+            IconMenuUsersForm.Text = "Menú Usuario";
+            IconMenuUsersForm.TextImageRelation = TextImageRelation.Overlay;
+            IconMenuUsersForm.Click += iconMenuUsersForm_Click;
             // 
-            // iconMenuProyectsForm
+            // IconMenuProyectsForm
             // 
-            iconMenuProyectsForm.BackgroundImageLayout = ImageLayout.None;
-            iconMenuProyectsForm.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            iconMenuProyectsForm.ForeColor = Color.White;
-            iconMenuProyectsForm.IconChar = FontAwesome.Sharp.IconChar.Inbox;
-            iconMenuProyectsForm.IconColor = Color.White;
-            iconMenuProyectsForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconMenuProyectsForm.IconSize = 30;
-            iconMenuProyectsForm.ImageAlign = ContentAlignment.MiddleLeft;
-            iconMenuProyectsForm.ImageScaling = ToolStripItemImageScaling.None;
-            iconMenuProyectsForm.Margin = new Padding(0, 20, 0, 0);
-            iconMenuProyectsForm.Name = "iconMenuProyectsForm";
-            iconMenuProyectsForm.Size = new Size(261, 34);
-            iconMenuProyectsForm.Text = "Menú Proyectos";
-            iconMenuProyectsForm.TextImageRelation = TextImageRelation.Overlay;
-            iconMenuProyectsForm.Click += iconMenuProyectsForm_Click_1;
+            IconMenuProyectsForm.BackgroundImageLayout = ImageLayout.None;
+            IconMenuProyectsForm.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            IconMenuProyectsForm.ForeColor = Color.White;
+            IconMenuProyectsForm.IconChar = FontAwesome.Sharp.IconChar.Inbox;
+            IconMenuProyectsForm.IconColor = Color.White;
+            IconMenuProyectsForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            IconMenuProyectsForm.IconSize = 30;
+            IconMenuProyectsForm.ImageAlign = ContentAlignment.MiddleLeft;
+            IconMenuProyectsForm.ImageScaling = ToolStripItemImageScaling.None;
+            IconMenuProyectsForm.Margin = new Padding(0, 20, 0, 0);
+            IconMenuProyectsForm.Name = "IconMenuProyectsForm";
+            IconMenuProyectsForm.Size = new Size(265, 34);
+            IconMenuProyectsForm.Text = "Menú Proyectos";
+            IconMenuProyectsForm.TextImageRelation = TextImageRelation.Overlay;
+            IconMenuProyectsForm.Click += iconMenuProyectsForm_Click_1;
             // 
-            // iconMenuItemRequestClientProjects
+            // IconMenuItemRequestClientProjects
             // 
-            iconMenuItemRequestClientProjects.BackgroundImageLayout = ImageLayout.None;
-            iconMenuItemRequestClientProjects.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            iconMenuItemRequestClientProjects.ForeColor = Color.White;
-            iconMenuItemRequestClientProjects.IconChar = FontAwesome.Sharp.IconChar.Receipt;
-            iconMenuItemRequestClientProjects.IconColor = Color.White;
-            iconMenuItemRequestClientProjects.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconMenuItemRequestClientProjects.IconSize = 30;
-            iconMenuItemRequestClientProjects.ImageAlign = ContentAlignment.MiddleLeft;
-            iconMenuItemRequestClientProjects.ImageScaling = ToolStripItemImageScaling.None;
-            iconMenuItemRequestClientProjects.Margin = new Padding(0, 20, 0, 0);
-            iconMenuItemRequestClientProjects.Name = "iconMenuItemRequestClientProjects";
-            iconMenuItemRequestClientProjects.Size = new Size(261, 34);
-            iconMenuItemRequestClientProjects.Text = "Menú Cliente";
-            iconMenuItemRequestClientProjects.TextImageRelation = TextImageRelation.Overlay;
-            iconMenuItemRequestClientProjects.Click += iconMenuItemRequestClientProjects_Click;
+            IconMenuItemRequestClientProjects.BackgroundImageLayout = ImageLayout.None;
+            IconMenuItemRequestClientProjects.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            IconMenuItemRequestClientProjects.ForeColor = Color.White;
+            IconMenuItemRequestClientProjects.IconChar = FontAwesome.Sharp.IconChar.Receipt;
+            IconMenuItemRequestClientProjects.IconColor = Color.White;
+            IconMenuItemRequestClientProjects.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            IconMenuItemRequestClientProjects.IconSize = 30;
+            IconMenuItemRequestClientProjects.ImageAlign = ContentAlignment.MiddleLeft;
+            IconMenuItemRequestClientProjects.ImageScaling = ToolStripItemImageScaling.None;
+            IconMenuItemRequestClientProjects.Margin = new Padding(0, 20, 0, 0);
+            IconMenuItemRequestClientProjects.Name = "IconMenuItemRequestClientProjects";
+            IconMenuItemRequestClientProjects.Size = new Size(265, 34);
+            IconMenuItemRequestClientProjects.Text = "Menú Cliente";
+            IconMenuItemRequestClientProjects.TextImageRelation = TextImageRelation.Overlay;
+            IconMenuItemRequestClientProjects.Click += iconMenuItemRequestClientProjects_Click;
             // 
-            // iconMenuItemProjectsEmployee
+            // IconMenuItemProjectsEmployee
             // 
-            iconMenuItemProjectsEmployee.BackgroundImageLayout = ImageLayout.None;
-            iconMenuItemProjectsEmployee.DropDownItems.AddRange(new ToolStripItem[] { toolStripSeparator1 });
-            iconMenuItemProjectsEmployee.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            iconMenuItemProjectsEmployee.ForeColor = Color.White;
-            iconMenuItemProjectsEmployee.IconChar = FontAwesome.Sharp.IconChar.Book;
-            iconMenuItemProjectsEmployee.IconColor = Color.White;
-            iconMenuItemProjectsEmployee.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconMenuItemProjectsEmployee.IconSize = 30;
-            iconMenuItemProjectsEmployee.ImageAlign = ContentAlignment.MiddleLeft;
-            iconMenuItemProjectsEmployee.ImageScaling = ToolStripItemImageScaling.None;
-            iconMenuItemProjectsEmployee.Margin = new Padding(0, 20, 0, 0);
-            iconMenuItemProjectsEmployee.Name = "iconMenuItemProjectsEmployee";
-            iconMenuItemProjectsEmployee.Size = new Size(261, 34);
-            iconMenuItemProjectsEmployee.Text = "Menú Empleado";
-            iconMenuItemProjectsEmployee.TextImageRelation = TextImageRelation.Overlay;
-            iconMenuItemProjectsEmployee.Click += iconMenuItemProjectsEmployee_Click;
+            IconMenuItemProjectsEmployee.BackgroundImageLayout = ImageLayout.None;
+            IconMenuItemProjectsEmployee.DropDownItems.AddRange(new ToolStripItem[] { toolStripSeparator1 });
+            IconMenuItemProjectsEmployee.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            IconMenuItemProjectsEmployee.ForeColor = Color.White;
+            IconMenuItemProjectsEmployee.IconChar = FontAwesome.Sharp.IconChar.Book;
+            IconMenuItemProjectsEmployee.IconColor = Color.White;
+            IconMenuItemProjectsEmployee.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            IconMenuItemProjectsEmployee.IconSize = 30;
+            IconMenuItemProjectsEmployee.ImageAlign = ContentAlignment.MiddleLeft;
+            IconMenuItemProjectsEmployee.ImageScaling = ToolStripItemImageScaling.None;
+            IconMenuItemProjectsEmployee.Margin = new Padding(0, 20, 0, 0);
+            IconMenuItemProjectsEmployee.Name = "IconMenuItemProjectsEmployee";
+            IconMenuItemProjectsEmployee.Size = new Size(265, 34);
+            IconMenuItemProjectsEmployee.Text = "Menú Empleado";
+            IconMenuItemProjectsEmployee.TextImageRelation = TextImageRelation.Overlay;
+            IconMenuItemProjectsEmployee.Click += iconMenuItemProjectsEmployee_Click;
             // 
             // toolStripSeparator1
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(87, 6);
+            toolStripSeparator1.Size = new Size(71, 6);
             // 
-            // iconMenuRecordForm
+            // IconMenuRecordForm
             // 
-            iconMenuRecordForm.BackgroundImageLayout = ImageLayout.None;
-            iconMenuRecordForm.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            iconMenuRecordForm.ForeColor = Color.White;
-            iconMenuRecordForm.IconChar = FontAwesome.Sharp.IconChar.Poll;
-            iconMenuRecordForm.IconColor = Color.White;
-            iconMenuRecordForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconMenuRecordForm.IconSize = 30;
-            iconMenuRecordForm.ImageAlign = ContentAlignment.MiddleLeft;
-            iconMenuRecordForm.ImageScaling = ToolStripItemImageScaling.None;
-            iconMenuRecordForm.Margin = new Padding(0, 20, 0, 0);
-            iconMenuRecordForm.Name = "iconMenuRecordForm";
-            iconMenuRecordForm.Size = new Size(261, 34);
-            iconMenuRecordForm.Text = "Registro";
-            iconMenuRecordForm.TextImageRelation = TextImageRelation.Overlay;
-            iconMenuRecordForm.Click += iconMenuRecordForm_Click;
+            IconMenuRecordForm.BackgroundImageLayout = ImageLayout.None;
+            IconMenuRecordForm.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            IconMenuRecordForm.ForeColor = Color.White;
+            IconMenuRecordForm.IconChar = FontAwesome.Sharp.IconChar.Poll;
+            IconMenuRecordForm.IconColor = Color.White;
+            IconMenuRecordForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            IconMenuRecordForm.IconSize = 30;
+            IconMenuRecordForm.ImageAlign = ContentAlignment.MiddleLeft;
+            IconMenuRecordForm.ImageScaling = ToolStripItemImageScaling.None;
+            IconMenuRecordForm.Margin = new Padding(0, 20, 0, 0);
+            IconMenuRecordForm.Name = "IconMenuRecordForm";
+            IconMenuRecordForm.Size = new Size(265, 34);
+            IconMenuRecordForm.Text = "Registro";
+            IconMenuRecordForm.TextImageRelation = TextImageRelation.Overlay;
+            IconMenuRecordForm.Click += iconMenuRecordForm_Click;
             // 
-            // iconMenusSettingsForm
+            // IconMenusSettingsForm
             // 
-            iconMenusSettingsForm.BackgroundImageLayout = ImageLayout.None;
-            iconMenusSettingsForm.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            iconMenusSettingsForm.ForeColor = Color.White;
-            iconMenusSettingsForm.IconChar = FontAwesome.Sharp.IconChar.Wrench;
-            iconMenusSettingsForm.IconColor = Color.White;
-            iconMenusSettingsForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconMenusSettingsForm.IconSize = 30;
-            iconMenusSettingsForm.ImageAlign = ContentAlignment.MiddleLeft;
-            iconMenusSettingsForm.ImageScaling = ToolStripItemImageScaling.None;
-            iconMenusSettingsForm.Margin = new Padding(0, 20, 0, 0);
-            iconMenusSettingsForm.Name = "iconMenusSettingsForm";
-            iconMenusSettingsForm.Size = new Size(261, 34);
-            iconMenusSettingsForm.Text = "Ajustes";
-            iconMenusSettingsForm.TextImageRelation = TextImageRelation.Overlay;
-            iconMenusSettingsForm.Click += iconMenusSettingsForm_Click;
+            IconMenusSettingsForm.BackgroundImageLayout = ImageLayout.None;
+            IconMenusSettingsForm.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            IconMenusSettingsForm.ForeColor = Color.White;
+            IconMenusSettingsForm.IconChar = FontAwesome.Sharp.IconChar.Wrench;
+            IconMenusSettingsForm.IconColor = Color.White;
+            IconMenusSettingsForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            IconMenusSettingsForm.IconSize = 30;
+            IconMenusSettingsForm.ImageAlign = ContentAlignment.MiddleLeft;
+            IconMenusSettingsForm.ImageScaling = ToolStripItemImageScaling.None;
+            IconMenusSettingsForm.Margin = new Padding(0, 20, 0, 0);
+            IconMenusSettingsForm.Name = "IconMenusSettingsForm";
+            IconMenusSettingsForm.Size = new Size(265, 34);
+            IconMenusSettingsForm.Text = "Ajustes";
+            IconMenusSettingsForm.TextImageRelation = TextImageRelation.Overlay;
+            IconMenusSettingsForm.Click += iconMenusSettingsForm_Click;
             // 
-            // iconMenuAccountForm
+            // IconMenuAccountForm
             // 
-            iconMenuAccountForm.BackgroundImageLayout = ImageLayout.None;
-            iconMenuAccountForm.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            iconMenuAccountForm.ForeColor = Color.White;
-            iconMenuAccountForm.IconChar = FontAwesome.Sharp.IconChar.Vcard;
-            iconMenuAccountForm.IconColor = Color.White;
-            iconMenuAccountForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconMenuAccountForm.IconSize = 30;
-            iconMenuAccountForm.ImageAlign = ContentAlignment.MiddleLeft;
-            iconMenuAccountForm.ImageScaling = ToolStripItemImageScaling.None;
-            iconMenuAccountForm.Margin = new Padding(0, 20, 0, 0);
-            iconMenuAccountForm.Name = "iconMenuAccountForm";
-            iconMenuAccountForm.Size = new Size(261, 34);
-            iconMenuAccountForm.Text = "Cuenta";
-            iconMenuAccountForm.TextImageRelation = TextImageRelation.Overlay;
-            iconMenuAccountForm.Click += iconMenuAccountForm_Click;
+            IconMenuAccountForm.BackgroundImageLayout = ImageLayout.None;
+            IconMenuAccountForm.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            IconMenuAccountForm.ForeColor = Color.White;
+            IconMenuAccountForm.IconChar = FontAwesome.Sharp.IconChar.Vcard;
+            IconMenuAccountForm.IconColor = Color.White;
+            IconMenuAccountForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            IconMenuAccountForm.IconSize = 30;
+            IconMenuAccountForm.ImageAlign = ContentAlignment.MiddleLeft;
+            IconMenuAccountForm.ImageScaling = ToolStripItemImageScaling.None;
+            IconMenuAccountForm.Margin = new Padding(0, 20, 0, 0);
+            IconMenuAccountForm.Name = "IconMenuAccountForm";
+            IconMenuAccountForm.Size = new Size(265, 34);
+            IconMenuAccountForm.Text = "Cuenta";
+            IconMenuAccountForm.TextImageRelation = TextImageRelation.Overlay;
+            IconMenuAccountForm.Click += iconMenuAccountForm_Click;
             // 
-            // iconMenuItemMenus
+            // IconMenuItemMenus
             // 
-            iconMenuItemMenus.BackgroundImageLayout = ImageLayout.None;
-            iconMenuItemMenus.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            iconMenuItemMenus.ForeColor = Color.White;
-            iconMenuItemMenus.IconChar = FontAwesome.Sharp.IconChar.LayerGroup;
-            iconMenuItemMenus.IconColor = Color.White;
-            iconMenuItemMenus.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconMenuItemMenus.IconSize = 30;
-            iconMenuItemMenus.ImageAlign = ContentAlignment.MiddleLeft;
-            iconMenuItemMenus.ImageScaling = ToolStripItemImageScaling.None;
-            iconMenuItemMenus.Margin = new Padding(0, 20, 0, 0);
-            iconMenuItemMenus.Name = "iconMenuItemMenus";
-            iconMenuItemMenus.Size = new Size(261, 34);
-            iconMenuItemMenus.Text = "Menú";
-            iconMenuItemMenus.TextImageRelation = TextImageRelation.Overlay;
-            iconMenuItemMenus.Click += iconMenuItemMenus_Click;
+            IconMenuItemMenus.BackgroundImageLayout = ImageLayout.None;
+            IconMenuItemMenus.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            IconMenuItemMenus.ForeColor = Color.White;
+            IconMenuItemMenus.IconChar = FontAwesome.Sharp.IconChar.LayerGroup;
+            IconMenuItemMenus.IconColor = Color.White;
+            IconMenuItemMenus.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            IconMenuItemMenus.IconSize = 30;
+            IconMenuItemMenus.ImageAlign = ContentAlignment.MiddleLeft;
+            IconMenuItemMenus.ImageScaling = ToolStripItemImageScaling.None;
+            IconMenuItemMenus.Margin = new Padding(0, 20, 0, 0);
+            IconMenuItemMenus.Name = "IconMenuItemMenus";
+            IconMenuItemMenus.Size = new Size(265, 34);
+            IconMenuItemMenus.Text = "Menú";
+            IconMenuItemMenus.TextImageRelation = TextImageRelation.Overlay;
+            IconMenuItemMenus.Click += iconMenuItemMenus_Click;
             // 
             // containerPanel
             // 
             containerPanel.BackColor = Color.WhiteSmoke;
             containerPanel.Controls.Add(menuGroupBox);
-            containerPanel.Location = new Point(310, 113);
+            containerPanel.Location = new Point(284, 95);
             containerPanel.Name = "containerPanel";
-            containerPanel.Size = new Size(1707, 995);
+            containerPanel.Size = new Size(1640, 960);
             containerPanel.TabIndex = 0;
             // 
             // menuGroupBox
@@ -367,7 +367,7 @@
             menuGroupBox.Controls.Add(projectAssignamentPanel);
             menuGroupBox.Location = new Point(22, 15);
             menuGroupBox.Name = "menuGroupBox";
-            menuGroupBox.Size = new Size(1666, 963);
+            menuGroupBox.Size = new Size(1599, 928);
             menuGroupBox.TabIndex = 7;
             menuGroupBox.TabStop = false;
             menuGroupBox.Text = "Inicio";
@@ -378,7 +378,7 @@
             userAccountLabel.Font = new Font("Century Gothic", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             userAccountLabel.Location = new Point(343, 21);
             userAccountLabel.Name = "userAccountLabel";
-            userAccountLabel.Size = new Size(121, 34);
+            userAccountLabel.Size = new Size(103, 28);
             userAccountLabel.TabIndex = 1;
             userAccountLabel.Text = "nombre";
             // 
@@ -394,9 +394,9 @@
             panelUsersView.Controls.Add(selectedUserPictureBox);
             panelUsersView.Controls.Add(idUserLabel);
             panelUsersView.Dock = DockStyle.Right;
-            panelUsersView.Location = new Point(1198, 26);
+            panelUsersView.Location = new Point(1131, 22);
             panelUsersView.Name = "panelUsersView";
-            panelUsersView.Size = new Size(465, 934);
+            panelUsersView.Size = new Size(465, 903);
             panelUsersView.TabIndex = 6;
             panelUsersView.Visible = false;
             // 
@@ -407,7 +407,7 @@
             panel10.BorderStyle = BorderStyle.Fixed3D;
             panel10.Location = new Point(17, 661);
             panel10.Name = "panel10";
-            panel10.Size = new Size(437, 262);
+            panel10.Size = new Size(437, 231);
             panel10.TabIndex = 24;
             // 
             // informationPanel
@@ -434,7 +434,7 @@
             registrationLabel.ForeColor = Color.White;
             registrationLabel.Location = new Point(264, 436);
             registrationLabel.Name = "registrationLabel";
-            registrationLabel.Size = new Size(81, 23);
+            registrationLabel.Size = new Size(68, 19);
             registrationLabel.TabIndex = 25;
             registrationLabel.Text = "registro";
             // 
@@ -445,7 +445,7 @@
             numberPhoneLabel.ForeColor = Color.White;
             numberPhoneLabel.Location = new Point(141, 157);
             numberPhoneLabel.Name = "numberPhoneLabel";
-            numberPhoneLabel.Size = new Size(77, 23);
+            numberPhoneLabel.Size = new Size(65, 19);
             numberPhoneLabel.TabIndex = 24;
             numberPhoneLabel.Text = "celular";
             // 
@@ -456,7 +456,7 @@
             emailIdUserLabel.ForeColor = Color.White;
             emailIdUserLabel.Location = new Point(141, 113);
             emailIdUserLabel.Name = "emailIdUserLabel";
-            emailIdUserLabel.Size = new Size(77, 23);
+            emailIdUserLabel.Size = new Size(65, 19);
             emailIdUserLabel.TabIndex = 23;
             emailIdUserLabel.Text = "Correo";
             // 
@@ -467,7 +467,7 @@
             dateCreateLabel.ForeColor = Color.White;
             dateCreateLabel.Location = new Point(18, 435);
             dateCreateLabel.Name = "dateCreateLabel";
-            dateCreateLabel.Size = new Size(240, 28);
+            dateCreateLabel.Size = new Size(203, 23);
             dateCreateLabel.TabIndex = 22;
             dateCreateLabel.Text = "Fecha de creacion:";
             // 
@@ -478,7 +478,7 @@
             phoneNumberLabel.ForeColor = Color.White;
             phoneNumberLabel.Location = new Point(18, 151);
             phoneNumberLabel.Name = "phoneNumberLabel";
-            phoneNumberLabel.Size = new Size(117, 30);
+            phoneNumberLabel.Size = new Size(99, 23);
             phoneNumberLabel.TabIndex = 21;
             phoneNumberLabel.Text = "Telefono:";
             // 
@@ -489,7 +489,7 @@
             emailLabel.ForeColor = Color.White;
             emailLabel.Location = new Point(28, 108);
             emailLabel.Name = "emailLabel";
-            emailLabel.Size = new Size(99, 28);
+            emailLabel.Size = new Size(83, 23);
             emailLabel.TabIndex = 20;
             emailLabel.Text = "Correo:";
             // 
@@ -500,7 +500,7 @@
             userInformationIdLabel.ForeColor = Color.White;
             userInformationIdLabel.Location = new Point(60, 19);
             userInformationIdLabel.Name = "userInformationIdLabel";
-            userInformationIdLabel.Size = new Size(287, 28);
+            userInformationIdLabel.Size = new Size(241, 23);
             userInformationIdLabel.TabIndex = 20;
             userInformationIdLabel.Text = "Informacion del usuario";
             // 
@@ -511,7 +511,7 @@
             nameUserLabel.ForeColor = Color.White;
             nameUserLabel.Location = new Point(99, 68);
             nameUserLabel.Name = "nameUserLabel";
-            nameUserLabel.Size = new Size(107, 28);
+            nameUserLabel.Size = new Size(89, 23);
             nameUserLabel.TabIndex = 18;
             nameUserLabel.Text = "Nombre";
             // 
@@ -523,7 +523,7 @@
             cityLabel.ForeColor = Color.White;
             cityLabel.Location = new Point(342, 100);
             cityLabel.Name = "cityLabel";
-            cityLabel.Size = new Size(99, 28);
+            cityLabel.Size = new Size(82, 23);
             cityLabel.TabIndex = 16;
             cityLabel.Text = "Ciudad";
             // 
@@ -535,7 +535,7 @@
             countryUserLabel.ForeColor = Color.White;
             countryUserLabel.Location = new Point(207, 100);
             countryUserLabel.Name = "countryUserLabel";
-            countryUserLabel.Size = new Size(58, 28);
+            countryUserLabel.Size = new Size(48, 23);
             countryUserLabel.TabIndex = 12;
             countryUserLabel.Text = "Pais";
             // 
@@ -547,7 +547,7 @@
             ageUserLabel.ForeColor = Color.White;
             ageUserLabel.Location = new Point(95, 100);
             ageUserLabel.Name = "ageUserLabel";
-            ageUserLabel.Size = new Size(59, 28);
+            ageUserLabel.Size = new Size(49, 23);
             ageUserLabel.TabIndex = 11;
             ageUserLabel.Text = "age";
             // 
@@ -571,7 +571,7 @@
             idUserLabel.ForeColor = Color.White;
             idUserLabel.Location = new Point(17, 22);
             idUserLabel.Name = "idUserLabel";
-            idUserLabel.Size = new Size(129, 38);
+            idUserLabel.Size = new Size(110, 32);
             idUserLabel.TabIndex = 9;
             idUserLabel.Text = "Usuario";
             // 
@@ -592,7 +592,7 @@
             projectPanel.Controls.Add(assignedProjectPanel);
             projectPanel.Location = new Point(19, 621);
             projectPanel.Name = "projectPanel";
-            projectPanel.Size = new Size(1168, 317);
+            projectPanel.Size = new Size(1101, 317);
             projectPanel.TabIndex = 3;
             // 
             // requestProjectPanel
@@ -624,10 +624,10 @@
             requestProjectListBox.BorderStyle = BorderStyle.None;
             requestProjectListBox.Font = new Font("Century Gothic", 9F, FontStyle.Italic);
             requestProjectListBox.FormattingEnabled = true;
-            requestProjectListBox.ItemHeight = 21;
+            requestProjectListBox.ItemHeight = 18;
             requestProjectListBox.Location = new Point(109, 45);
             requestProjectListBox.Name = "requestProjectListBox";
-            requestProjectListBox.Size = new Size(406, 210);
+            requestProjectListBox.Size = new Size(406, 198);
             requestProjectListBox.TabIndex = 21;
             // 
             // projectRequestedLabel
@@ -637,7 +637,7 @@
             projectRequestedLabel.ForeColor = Color.White;
             projectRequestedLabel.Location = new Point(109, 12);
             projectRequestedLabel.Name = "projectRequestedLabel";
-            projectRequestedLabel.Size = new Size(256, 28);
+            projectRequestedLabel.Size = new Size(216, 23);
             projectRequestedLabel.TabIndex = 20;
             projectRequestedLabel.Text = "Proyectos solicitados";
             // 
@@ -670,10 +670,10 @@
             assignedProjectListBox.BorderStyle = BorderStyle.None;
             assignedProjectListBox.Font = new Font("Century Gothic", 9F, FontStyle.Italic);
             assignedProjectListBox.FormattingEnabled = true;
-            assignedProjectListBox.ItemHeight = 21;
+            assignedProjectListBox.ItemHeight = 18;
             assignedProjectListBox.Location = new Point(109, 45);
             assignedProjectListBox.Name = "assignedProjectListBox";
-            assignedProjectListBox.Size = new Size(407, 210);
+            assignedProjectListBox.Size = new Size(407, 198);
             assignedProjectListBox.TabIndex = 20;
             // 
             // assignedProjectLabel
@@ -683,7 +683,7 @@
             assignedProjectLabel.ForeColor = Color.White;
             assignedProjectLabel.Location = new Point(109, 6);
             assignedProjectLabel.Name = "assignedProjectLabel";
-            assignedProjectLabel.Size = new Size(253, 28);
+            assignedProjectLabel.Size = new Size(212, 23);
             assignedProjectLabel.TabIndex = 19;
             assignedProjectLabel.Text = "Proyectos asignados";
             // 
@@ -697,7 +697,7 @@
             informationUserPanel.Controls.Add(employeeUserButton);
             informationUserPanel.Location = new Point(19, 252);
             informationUserPanel.Name = "informationUserPanel";
-            informationUserPanel.Size = new Size(1173, 352);
+            informationUserPanel.Size = new Size(1106, 352);
             informationUserPanel.TabIndex = 3;
             // 
             // userDataGridView
@@ -710,7 +710,7 @@
             userDataGridView.Location = new Point(293, 0);
             userDataGridView.Name = "userDataGridView";
             userDataGridView.RowHeadersWidth = 51;
-            userDataGridView.Size = new Size(873, 350);
+            userDataGridView.Size = new Size(806, 350);
             userDataGridView.TabIndex = 7;
             userDataGridView.CellClick += userDataGridView_CellClick;
             // 
@@ -785,7 +785,7 @@
             projectAssignamentPanel.Controls.Add(logoPictureBox);
             projectAssignamentPanel.Location = new Point(19, 79);
             projectAssignamentPanel.Name = "projectAssignamentPanel";
-            projectAssignamentPanel.Size = new Size(1168, 158);
+            projectAssignamentPanel.Size = new Size(1101, 158);
             projectAssignamentPanel.TabIndex = 2;
             // 
             // userPictureBox
@@ -794,7 +794,7 @@
             userPictureBox.BackColor = Color.LightGray;
             userPictureBox.Location = new Point(0, 0);
             userPictureBox.Name = "userPictureBox";
-            userPictureBox.Size = new Size(871, 154);
+            userPictureBox.Size = new Size(804, 154);
             userPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             userPictureBox.TabIndex = 1;
             userPictureBox.TabStop = false;
@@ -803,7 +803,7 @@
             // 
             logoPictureBox.Dock = DockStyle.Right;
             logoPictureBox.Image = Properties.Resources.CRM_logo__1_;
-            logoPictureBox.Location = new Point(914, 0);
+            logoPictureBox.Location = new Point(847, 0);
             logoPictureBox.Name = "logoPictureBox";
             logoPictureBox.Size = new Size(250, 154);
             logoPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
@@ -817,7 +817,7 @@
             nameUserIdLabel.ForeColor = Color.White;
             nameUserIdLabel.Location = new Point(30, 26);
             nameUserIdLabel.Name = "nameUserIdLabel";
-            nameUserIdLabel.Size = new Size(203, 30);
+            nameUserIdLabel.Size = new Size(165, 23);
             nameUserIdLabel.TabIndex = 4;
             nameUserIdLabel.Text = "Nombre Usuario";
             // 
@@ -826,7 +826,7 @@
             closedPictureBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             closedPictureBox.Cursor = Cursors.Hand;
             closedPictureBox.Image = Properties.Resources.cerrar__2_;
-            closedPictureBox.Location = new Point(1736, 3);
+            closedPictureBox.Location = new Point(1598, 3);
             closedPictureBox.Name = "closedPictureBox";
             closedPictureBox.Size = new Size(30, 44);
             closedPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
@@ -839,10 +839,10 @@
             // 
             minimizarPictureBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             minimizarPictureBox.Cursor = Cursors.Hand;
-            minimizarPictureBox.Image = Properties.Resources.minimizar;
-            minimizarPictureBox.Location = new Point(1685, 3);
+            minimizarPictureBox.Image = (Image)resources.GetObject("minimizarPictureBox.Image");
+            minimizarPictureBox.Location = new Point(1523, 4);
             minimizarPictureBox.Name = "minimizarPictureBox";
-            minimizarPictureBox.Size = new Size(30, 44);
+            minimizarPictureBox.Size = new Size(51, 44);
             minimizarPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             minimizarPictureBox.TabIndex = 8;
             minimizarPictureBox.TabStop = false;
@@ -855,17 +855,18 @@
             nameUserPanel.Controls.Add(minimizarPictureBox);
             nameUserPanel.Controls.Add(closedPictureBox);
             nameUserPanel.Controls.Add(nameUserIdLabel);
-            nameUserPanel.Location = new Point(280, 0);
+            nameUserPanel.Dock = DockStyle.Top;
+            nameUserPanel.Location = new Point(284, 0);
             nameUserPanel.Name = "nameUserPanel";
-            nameUserPanel.Size = new Size(1778, 95);
+            nameUserPanel.Size = new Size(1640, 95);
             nameUserPanel.TabIndex = 2;
             // 
             // MenuForm
             // 
-            AutoScaleDimensions = new SizeF(11F, 21F);
+            AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(2057, 1108);
+            ClientSize = new Size(1924, 1055);
             Controls.Add(containerPanel);
             Controls.Add(nameUserPanel);
             Controls.Add(menuPerfilPanel);
@@ -876,7 +877,6 @@
             Name = "MenuForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ProyectosSV";
-            WindowState = FormWindowState.Maximized;
             Load += MenuForm_Load;
             ((System.ComponentModel.ISupportInitialize)idUserPictureBox).EndInit();
             menuPerfilPanel.ResumeLayout(false);
@@ -917,14 +917,14 @@
         private Panel containerPanel;
         private ToolTip toolTip1;
         private MenuStrip menu;
-        private FontAwesome.Sharp.IconMenuItem iconMenuUsersForm;
-        private FontAwesome.Sharp.IconMenuItem iconMenuProyectsForm;
-        private FontAwesome.Sharp.IconMenuItem iconMenuRecordForm;
-        private FontAwesome.Sharp.IconMenuItem iconMenusSettingsForm;
-        private FontAwesome.Sharp.IconMenuItem iconMenuAccountForm;
-        private FontAwesome.Sharp.IconMenuItem iconMenuItemProjectsEmployee;
-        private FontAwesome.Sharp.IconMenuItem iconMenuItemRequestClientProjects;
-        private FontAwesome.Sharp.IconMenuItem iconMenuItemMenus;
+        private FontAwesome.Sharp.IconMenuItem IconMenuUsersForm;
+        private FontAwesome.Sharp.IconMenuItem IconMenuProyectsForm;
+        private FontAwesome.Sharp.IconMenuItem IconMenuRecordForm;
+        private FontAwesome.Sharp.IconMenuItem IconMenusSettingsForm;
+        private FontAwesome.Sharp.IconMenuItem IconMenuAccountForm;
+        private FontAwesome.Sharp.IconMenuItem IconMenuItemProjectsEmployee;
+        private FontAwesome.Sharp.IconMenuItem IconMenuItemRequestClientProjects;
+        private FontAwesome.Sharp.IconMenuItem IconMenuItemMenus;
         private Label welcomeLabel;
         private Panel projectAssignamentPanel;
         private Label userAccountLabel;
