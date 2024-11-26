@@ -73,7 +73,7 @@
           }
         }
       },
-      "FluentValidation/11.10.0": {
+      "FluentValidation/11.11.0": {
         "type": "package",
         "compile": {
           "lib/net8.0/FluentValidation.dll": {
@@ -1706,16 +1706,16 @@
         "readme.md"
       ]
     },
-    "FluentValidation/11.10.0": {
-      "sha512": "qsJGSJDdZ8qiG+lVJ70PZfJHcEdq8UQZ/tZDXoj78/iHKG6lVKtMJsD11zyyv/IPc7rwqGqnFoFLTNzpo3IPYg==",
+    "FluentValidation/11.11.0": {
+      "sha512": "cyIVdQBwSipxWG8MA3Rqox7iNbUNUTK5bfJi9tIdm4CAfH71Oo5ABLP4/QyrUwuakqpUEPGtE43BDddvEehuYw==",
       "type": "package",
-      "path": "fluentvalidation/11.10.0",
+      "path": "fluentvalidation/11.11.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "README.md",
         "fluent-validation-icon.png",
-        "fluentvalidation.11.10.0.nupkg.sha512",
+        "fluentvalidation.11.11.0.nupkg.sha512",
         "fluentvalidation.nuspec",
         "lib/net5.0/FluentValidation.dll",
         "lib/net5.0/FluentValidation.xml",
@@ -4859,7 +4859,7 @@
       "BusinessLayer >= 1.0.0",
       "CommonLayer >= 1.0.0",
       "DataAccessLayer >= 1.0.0",
-      "FluentValidation >= 11.10.0",
+      "FluentValidation >= 11.11.0",
       "FontAwesome.Sharp >= 6.6.0",
       "MailKit >= 4.8.0",
       "Microsoft.Extensions.DependencyInjection >= 8.0.1",
@@ -4929,7 +4929,7 @@
         "dependencies": {
           "FluentValidation": {
             "target": "Package",
-            "version": "[11.10.0, )"
+            "version": "[11.11.0, )"
           },
           "FontAwesome.Sharp": {
             "target": "Package",
