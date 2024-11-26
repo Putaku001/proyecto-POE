@@ -48,7 +48,7 @@ namespace CRM_Definitivo
                         services.AddTransient<UsersForm>();
                         services.AddTransient<LoginForm>();
                         services.AddTransient<MenuForm>();
-                        services.AddTransient<ProyectsForm>();
+                        services.AddTransient<ProjectsForm>();
                         services.AddTransient<EditUsersForm>();
                         services.AddTransient<AddUsersForm>();
                         services.AddTransient<ProfileUserAccountForm>();
@@ -63,7 +63,7 @@ namespace CRM_Definitivo
                         services.AddTransient<AssignamentTaskEmployeeForm>();
                         services.AddTransient<SendProjectForm>();
                         services.AddTransient<infoProjects>();
-                        services.AddTransient<AnswerProyectClient>();
+                        services.AddTransient<AnswerProjectClient>();
 
 
                         //BUSISNESSLAYER

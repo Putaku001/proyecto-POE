@@ -203,7 +203,7 @@ namespace PresentationLayer.Forms
 
         private void iconMenuProyectsForm_Click_1(object sender, EventArgs e)
         {
-            var IconMenuProyectsForm = _provider.GetRequiredService<ProyectsForm>();
+            var IconMenuProyectsForm = _provider.GetRequiredService<ProjectsForm>();
             AbrirFormulario(IconMenuProyectsForm);
         }
         private void iconMenuRecordForm_Click(object sender, EventArgs e)

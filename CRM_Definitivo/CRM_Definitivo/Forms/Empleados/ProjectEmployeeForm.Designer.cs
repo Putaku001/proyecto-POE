@@ -28,39 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridViewProjectsEmployee = new DataGridView();
+            projectsEmployeeDataGridView = new DataGridView();
             Select = new DataGridViewButtonColumn();
-            panelInformationProject = new Panel();
-            groupBoxProjectsInfo = new GroupBox();
-            comboBoxTaskStatus = new ComboBox();
-            flowLayoutPanelLinkFile = new FlowLayoutPanel();
+            informationProjectPanel = new Panel();
+            projectInformationGroupBox = new GroupBox();
+            taskStatusComboBox = new ComboBox();
+            flowLayoutLinkFilePanel = new FlowLayoutPanel();
             labelLinkFile = new Label();
-            iconButtonSubmit = new FontAwesome.Sharp.IconButton();
-            textBoxDescriptionTask = new TextBox();
-            labelProjectName = new Label();
-            linkLabelFile = new LinkLabel();
-            labelDescription = new Label();
-            labelNameTask = new Label();
-            panelProjects = new Panel();
-            labelProjectsAssignament = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewProjectsEmployee).BeginInit();
-            panelInformationProject.SuspendLayout();
-            groupBoxProjectsInfo.SuspendLayout();
-            flowLayoutPanelLinkFile.SuspendLayout();
-            panelProjects.SuspendLayout();
+            submiButton = new FontAwesome.Sharp.IconButton();
+            descriptionTaskTextBox = new TextBox();
+            projectNameLabel = new Label();
+            linkFileLabel = new LinkLabel();
+            descriptionLabel = new Label();
+            nameTaskLabel = new Label();
+            projectPanel = new Panel();
+            projectsAssignamentLabel = new Label();
+            ((System.ComponentModel.ISupportInitialize)projectsEmployeeDataGridView).BeginInit();
+            informationProjectPanel.SuspendLayout();
+            projectInformationGroupBox.SuspendLayout();
+            flowLayoutLinkFilePanel.SuspendLayout();
+            projectPanel.SuspendLayout();
             SuspendLayout();
             // 
-            // dataGridViewProjectsEmployee
+            // projectsEmployeeDataGridView
             // 
-            dataGridViewProjectsEmployee.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridViewProjectsEmployee.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewProjectsEmployee.Columns.AddRange(new DataGridViewColumn[] { Select });
-            dataGridViewProjectsEmployee.Location = new Point(6, 46);
-            dataGridViewProjectsEmployee.Name = "dataGridViewProjectsEmployee";
-            dataGridViewProjectsEmployee.RowHeadersWidth = 51;
-            dataGridViewProjectsEmployee.Size = new Size(617, 613);
-            dataGridViewProjectsEmployee.TabIndex = 2;
-            dataGridViewProjectsEmployee.CellClick += dataGridViewProjectsEmployee_CellClick;
+            projectsEmployeeDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            projectsEmployeeDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            projectsEmployeeDataGridView.Columns.AddRange(new DataGridViewColumn[] { Select });
+            projectsEmployeeDataGridView.Location = new Point(653, 68);
+            projectsEmployeeDataGridView.Name = "projectsEmployeeDataGridView";
+            projectsEmployeeDataGridView.RowHeadersWidth = 51;
+            projectsEmployeeDataGridView.Size = new Size(759, 787);
+            projectsEmployeeDataGridView.TabIndex = 2;
+            projectsEmployeeDataGridView.CellClick += projectsEmployeeDataGridView_CellClick;
             // 
             // Select
             // 
@@ -70,51 +70,52 @@
             Select.Name = "Select";
             Select.Width = 70;
             // 
-            // panelInformationProject
+            // informationProjectPanel
             // 
-            panelInformationProject.BackColor = SystemColors.ActiveCaption;
-            panelInformationProject.Controls.Add(groupBoxProjectsInfo);
-            panelInformationProject.Controls.Add(labelNameTask);
-            panelInformationProject.Dock = DockStyle.Right;
-            panelInformationProject.Location = new Point(623, 0);
-            panelInformationProject.Name = "panelInformationProject";
-            panelInformationProject.Size = new Size(566, 660);
-            panelInformationProject.TabIndex = 3;
+            informationProjectPanel.BackColor = Color.DodgerBlue;
+            informationProjectPanel.Controls.Add(projectInformationGroupBox);
+            informationProjectPanel.Controls.Add(nameTaskLabel);
+            informationProjectPanel.Location = new Point(12, 68);
+            informationProjectPanel.Name = "informationProjectPanel";
+            informationProjectPanel.Size = new Size(624, 787);
+            informationProjectPanel.TabIndex = 3;
             // 
-            // groupBoxProjectsInfo
+            // projectInformationGroupBox
             // 
-            groupBoxProjectsInfo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            groupBoxProjectsInfo.Controls.Add(comboBoxTaskStatus);
-            groupBoxProjectsInfo.Controls.Add(flowLayoutPanelLinkFile);
-            groupBoxProjectsInfo.Controls.Add(iconButtonSubmit);
-            groupBoxProjectsInfo.Controls.Add(textBoxDescriptionTask);
-            groupBoxProjectsInfo.Controls.Add(labelProjectName);
-            groupBoxProjectsInfo.Controls.Add(linkLabelFile);
-            groupBoxProjectsInfo.Controls.Add(labelDescription);
-            groupBoxProjectsInfo.ForeColor = Color.White;
-            groupBoxProjectsInfo.Location = new Point(38, 34);
-            groupBoxProjectsInfo.Name = "groupBoxProjectsInfo";
-            groupBoxProjectsInfo.Size = new Size(493, 593);
-            groupBoxProjectsInfo.TabIndex = 12;
-            groupBoxProjectsInfo.TabStop = false;
-            groupBoxProjectsInfo.Text = "Proyecto";
+            projectInformationGroupBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            projectInformationGroupBox.Controls.Add(taskStatusComboBox);
+            projectInformationGroupBox.Controls.Add(flowLayoutLinkFilePanel);
+            projectInformationGroupBox.Controls.Add(submiButton);
+            projectInformationGroupBox.Controls.Add(descriptionTaskTextBox);
+            projectInformationGroupBox.Controls.Add(projectNameLabel);
+            projectInformationGroupBox.Controls.Add(linkFileLabel);
+            projectInformationGroupBox.Controls.Add(descriptionLabel);
+            projectInformationGroupBox.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            projectInformationGroupBox.ForeColor = Color.White;
+            projectInformationGroupBox.Location = new Point(37, 34);
+            projectInformationGroupBox.Name = "projectInformationGroupBox";
+            projectInformationGroupBox.Size = new Size(556, 720);
+            projectInformationGroupBox.TabIndex = 12;
+            projectInformationGroupBox.TabStop = false;
+            projectInformationGroupBox.Tag = "label";
+            projectInformationGroupBox.Text = "Proyecto";
             // 
-            // comboBoxTaskStatus
+            // taskStatusComboBox
             // 
-            comboBoxTaskStatus.FormattingEnabled = true;
-            comboBoxTaskStatus.Location = new Point(191, 422);
-            comboBoxTaskStatus.Name = "comboBoxTaskStatus";
-            comboBoxTaskStatus.Size = new Size(151, 25);
-            comboBoxTaskStatus.TabIndex = 14;
+            taskStatusComboBox.FormattingEnabled = true;
+            taskStatusComboBox.Location = new Point(92, 375);
+            taskStatusComboBox.Name = "taskStatusComboBox";
+            taskStatusComboBox.Size = new Size(349, 38);
+            taskStatusComboBox.TabIndex = 14;
             // 
-            // flowLayoutPanelLinkFile
+            // flowLayoutLinkFilePanel
             // 
-            flowLayoutPanelLinkFile.BackColor = Color.White;
-            flowLayoutPanelLinkFile.Controls.Add(labelLinkFile);
-            flowLayoutPanelLinkFile.Location = new Point(13, 470);
-            flowLayoutPanelLinkFile.Name = "flowLayoutPanelLinkFile";
-            flowLayoutPanelLinkFile.Size = new Size(474, 43);
-            flowLayoutPanelLinkFile.TabIndex = 12;
+            flowLayoutLinkFilePanel.BackColor = Color.White;
+            flowLayoutLinkFilePanel.Controls.Add(labelLinkFile);
+            flowLayoutLinkFilePanel.Location = new Point(17, 451);
+            flowLayoutLinkFilePanel.Name = "flowLayoutLinkFilePanel";
+            flowLayoutLinkFilePanel.Size = new Size(526, 135);
+            flowLayoutLinkFilePanel.TabIndex = 12;
             // 
             // labelLinkFile
             // 
@@ -124,136 +125,143 @@
             labelLinkFile.ForeColor = SystemColors.ControlDarkDark;
             labelLinkFile.Location = new Point(3, 0);
             labelLinkFile.Name = "labelLinkFile";
-            labelLinkFile.Size = new Size(42, 16);
+            labelLinkFile.Size = new Size(64, 21);
             labelLinkFile.TabIndex = 11;
             labelLinkFile.Text = "label3";
             // 
-            // iconButtonSubmit
+            // submiButton
             // 
-            iconButtonSubmit.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconButtonSubmit.IconColor = Color.Black;
-            iconButtonSubmit.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButtonSubmit.Location = new Point(214, 545);
-            iconButtonSubmit.Name = "iconButtonSubmit";
-            iconButtonSubmit.Size = new Size(94, 29);
-            iconButtonSubmit.TabIndex = 2;
-            iconButtonSubmit.Text = "Enviar";
-            iconButtonSubmit.UseVisualStyleBackColor = true;
-            iconButtonSubmit.Click += iconButtonSubmit_Click;
+            submiButton.BackColor = Color.FromArgb(255, 128, 0);
+            submiButton.FlatStyle = FlatStyle.Popup;
+            submiButton.IconChar = FontAwesome.Sharp.IconChar.None;
+            submiButton.IconColor = Color.Black;
+            submiButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            submiButton.Location = new Point(187, 629);
+            submiButton.Name = "submiButton";
+            submiButton.Size = new Size(166, 57);
+            submiButton.TabIndex = 2;
+            submiButton.Text = "Enviar";
+            submiButton.UseVisualStyleBackColor = false;
+            submiButton.Click += submiButton_Click;
             // 
-            // textBoxDescriptionTask
+            // descriptionTaskTextBox
             // 
-            textBoxDescriptionTask.BorderStyle = BorderStyle.None;
-            textBoxDescriptionTask.Location = new Point(101, 87);
-            textBoxDescriptionTask.Multiline = true;
-            textBoxDescriptionTask.Name = "textBoxDescriptionTask";
-            textBoxDescriptionTask.ReadOnly = true;
-            textBoxDescriptionTask.Size = new Size(331, 148);
-            textBoxDescriptionTask.TabIndex = 6;
+            descriptionTaskTextBox.BorderStyle = BorderStyle.None;
+            descriptionTaskTextBox.Location = new Point(17, 105);
+            descriptionTaskTextBox.Multiline = true;
+            descriptionTaskTextBox.Name = "descriptionTaskTextBox";
+            descriptionTaskTextBox.ReadOnly = true;
+            descriptionTaskTextBox.Size = new Size(526, 199);
+            descriptionTaskTextBox.TabIndex = 6;
             // 
-            // labelProjectName
+            // projectNameLabel
             // 
-            labelProjectName.AutoSize = true;
-            labelProjectName.Font = new Font("Century Gothic", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            labelProjectName.Location = new Point(13, 29);
-            labelProjectName.Name = "labelProjectName";
-            labelProjectName.Size = new Size(112, 21);
-            labelProjectName.TabIndex = 0;
-            labelProjectName.Text = "NameProject";
+            projectNameLabel.AutoSize = true;
+            projectNameLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            projectNameLabel.Location = new Point(13, 29);
+            projectNameLabel.Name = "projectNameLabel";
+            projectNameLabel.Size = new Size(260, 28);
+            projectNameLabel.TabIndex = 0;
+            projectNameLabel.Text = "Nombre del Proyecto";
             // 
-            // linkLabelFile
+            // linkFileLabel
             // 
-            linkLabelFile.AutoSize = true;
-            linkLabelFile.Location = new Point(160, 385);
-            linkLabelFile.Name = "linkLabelFile";
-            linkLabelFile.Size = new Size(199, 17);
-            linkLabelFile.TabIndex = 3;
-            linkLabelFile.TabStop = true;
-            linkLabelFile.Text = "En este apartado subira su tarea";
-            linkLabelFile.LinkClicked += linkLabelFile_LinkClicked;
+            linkFileLabel.AutoSize = true;
+            linkFileLabel.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            linkFileLabel.LinkColor = Color.White;
+            linkFileLabel.Location = new Point(110, 320);
+            linkFileLabel.Name = "linkFileLabel";
+            linkFileLabel.Size = new Size(331, 23);
+            linkFileLabel.TabIndex = 3;
+            linkFileLabel.TabStop = true;
+            linkFileLabel.Text = "En este apartado subira su tarea";
+            linkFileLabel.LinkClicked += linkFileLabel_LinkClicked;
             // 
-            // labelDescription
+            // descriptionLabel
             // 
-            labelDescription.AutoSize = true;
-            labelDescription.Font = new Font("Century Gothic", 10.2F);
-            labelDescription.Location = new Point(214, 63);
-            labelDescription.Name = "labelDescription";
-            labelDescription.Size = new Size(93, 19);
-            labelDescription.TabIndex = 5;
-            labelDescription.Text = "Descripcion:";
+            descriptionLabel.AutoSize = true;
+            descriptionLabel.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            descriptionLabel.Location = new Point(17, 68);
+            descriptionLabel.Name = "descriptionLabel";
+            descriptionLabel.Size = new Size(123, 23);
+            descriptionLabel.TabIndex = 5;
+            descriptionLabel.Text = "Descripcion";
             // 
-            // labelNameTask
+            // nameTaskLabel
             // 
-            labelNameTask.AutoSize = true;
-            labelNameTask.Font = new Font("Century Gothic", 10.2F);
-            labelNameTask.Location = new Point(252, 9);
-            labelNameTask.Name = "labelNameTask";
-            labelNameTask.Size = new Size(47, 19);
-            labelNameTask.TabIndex = 7;
-            labelNameTask.Text = "Tarea";
+            nameTaskLabel.AutoSize = true;
+            nameTaskLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            nameTaskLabel.ForeColor = Color.White;
+            nameTaskLabel.Location = new Point(301, 7);
+            nameTaskLabel.Name = "nameTaskLabel";
+            nameTaskLabel.Size = new Size(77, 28);
+            nameTaskLabel.TabIndex = 7;
+            nameTaskLabel.Text = "Tarea";
             // 
-            // panelProjects
+            // projectPanel
             // 
-            panelProjects.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panelProjects.BackColor = Color.MediumTurquoise;
-            panelProjects.Controls.Add(labelProjectsAssignament);
-            panelProjects.Location = new Point(0, 0);
-            panelProjects.Name = "panelProjects";
-            panelProjects.Size = new Size(623, 40);
-            panelProjects.TabIndex = 4;
+            projectPanel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            projectPanel.BackColor = Color.FromArgb(46, 54, 61);
+            projectPanel.Controls.Add(projectsAssignamentLabel);
+            projectPanel.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            projectPanel.Location = new Point(0, 0);
+            projectPanel.Name = "projectPanel";
+            projectPanel.Size = new Size(1423, 62);
+            projectPanel.TabIndex = 4;
             // 
-            // labelProjectsAssignament
+            // projectsAssignamentLabel
             // 
-            labelProjectsAssignament.AutoSize = true;
-            labelProjectsAssignament.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            labelProjectsAssignament.ForeColor = Color.White;
-            labelProjectsAssignament.Location = new Point(6, 9);
-            labelProjectsAssignament.Name = "labelProjectsAssignament";
-            labelProjectsAssignament.Size = new Size(173, 23);
-            labelProjectsAssignament.TabIndex = 13;
-            labelProjectsAssignament.Text = "Tareas Asignadas";
+            projectsAssignamentLabel.AutoSize = true;
+            projectsAssignamentLabel.Font = new Font("Century Gothic", 22F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            projectsAssignamentLabel.ForeColor = Color.White;
+            projectsAssignamentLabel.Location = new Point(572, 0);
+            projectsAssignamentLabel.Name = "projectsAssignamentLabel";
+            projectsAssignamentLabel.Size = new Size(395, 51);
+            projectsAssignamentLabel.TabIndex = 13;
+            projectsAssignamentLabel.Text = "Tareas Asignadas";
             // 
             // ProjectEmployeeForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 17F);
+            AutoScaleDimensions = new SizeF(11F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1189, 660);
-            Controls.Add(panelProjects);
-            Controls.Add(panelInformationProject);
-            Controls.Add(dataGridViewProjectsEmployee);
+            BackColor = Color.LightGray;
+            ClientSize = new Size(1424, 873);
+            Controls.Add(projectPanel);
+            Controls.Add(informationProjectPanel);
+            Controls.Add(projectsEmployeeDataGridView);
             Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "ProjectEmployeeForm";
-            Text = "ProjectEmployeeForm";
-            ((System.ComponentModel.ISupportInitialize)dataGridViewProjectsEmployee).EndInit();
-            panelInformationProject.ResumeLayout(false);
-            panelInformationProject.PerformLayout();
-            groupBoxProjectsInfo.ResumeLayout(false);
-            groupBoxProjectsInfo.PerformLayout();
-            flowLayoutPanelLinkFile.ResumeLayout(false);
-            flowLayoutPanelLinkFile.PerformLayout();
-            panelProjects.ResumeLayout(false);
-            panelProjects.PerformLayout();
+            Text = "Tareas Asignadas";
+            ((System.ComponentModel.ISupportInitialize)projectsEmployeeDataGridView).EndInit();
+            informationProjectPanel.ResumeLayout(false);
+            informationProjectPanel.PerformLayout();
+            projectInformationGroupBox.ResumeLayout(false);
+            projectInformationGroupBox.PerformLayout();
+            flowLayoutLinkFilePanel.ResumeLayout(false);
+            flowLayoutLinkFilePanel.PerformLayout();
+            projectPanel.ResumeLayout(false);
+            projectPanel.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private DataGridView dataGridViewProjectsEmployee;
-        private Panel panelInformationProject;
-        private FontAwesome.Sharp.IconButton iconButtonSubmit;
-        private Label labelProjectName;
+        private DataGridView projectsEmployeeDataGridView;
+        private Panel informationProjectPanel;
+        private FontAwesome.Sharp.IconButton submiButton;
+        private Label projectNameLabel;
         private TextBox textBox3;
-        private Label labelNameTask;
-        private TextBox textBoxDescriptionTask;
-        private Label labelDescription;
-        private LinkLabel linkLabelFile;
+        private Label nameTaskLabel;
+        private TextBox descriptionTaskTextBox;
+        private Label descriptionLabel;
+        private LinkLabel linkFileLabel;
         private Label labelLinkFile;
-        private GroupBox groupBoxProjectsInfo;
-        private FlowLayoutPanel flowLayoutPanelLinkFile;
+        private GroupBox projectInformationGroupBox;
+        private FlowLayoutPanel flowLayoutLinkFilePanel;
         private DataGridViewButtonColumn Select;
-        private Panel panelProjects;
-        private Label labelProjectsAssignament;
-        private ComboBox comboBoxTaskStatus;
+        private Panel projectPanel;
+        private Label projectsAssignamentLabel;
+        private ComboBox taskStatusComboBox;
     }
 }

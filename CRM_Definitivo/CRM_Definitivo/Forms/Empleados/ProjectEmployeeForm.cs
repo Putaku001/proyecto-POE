@@ -26,15 +26,15 @@ namespace PresentationLayer.Forms.Empleados
             _usersService = usersServices;
             _listProyectsServices = listProyectsServices;
             LoadData();
-            panelInformationProject.Visible = false;
+            informationProjectPanel.Visible = false;
         }
 
         public void LoadData()
         {
-            comboBoxTaskStatus.DataSource = _listProyectsServices.GetStatusTaskEmployees();
-            comboBoxTaskStatus.DisplayMember = "statusTask";
-            comboBoxTaskStatus.ValueMember = "idStatusTask";
-            comboBoxTaskStatus.SelectedIndex = 1;
+            taskStatusComboBox.DataSource = _listProyectsServices.GetStatusTaskEmployees();
+            taskStatusComboBox.DisplayMember = "statusTask";
+            taskStatusComboBox.ValueMember = "idStatusTask";
+            taskStatusComboBox.SelectedIndex = 1;
             var idEmployee = _usersService.GetEmployees()
                 .Where(u => u.idUser == CaptureData.idUser)
                 .Select(e => e.idEmployee)
@@ -42,16 +42,16 @@ namespace PresentationLayer.Forms.Empleados
 
             if (idEmployee > 0)
             {
-                dataGridViewProjectsEmployee.DataSource = _listProyectsServices.GetsProjects(idEmployee);
-                dataGridViewProjectsEmployee.Columns["fileTask"].Visible = false;
-                dataGridViewProjectsEmployee.Columns["idStatusTask"].Visible = false;
-                dataGridViewProjectsEmployee.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                dataGridViewProjectsEmployee.DefaultCellStyle.BackColor = Color.WhiteSmoke;
-                dataGridViewProjectsEmployee.DefaultCellStyle.ForeColor = Color.Black;
-                dataGridViewProjectsEmployee.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
-                dataGridViewProjectsEmployee.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkSlateGray;
-                dataGridViewProjectsEmployee.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-                dataGridViewProjectsEmployee.EnableHeadersVisualStyles = false;
+                projectsEmployeeDataGridView.DataSource = _listProyectsServices.GetsProjects(idEmployee);
+                projectsEmployeeDataGridView.Columns["fileTask"].Visible = false;
+                projectsEmployeeDataGridView.Columns["idStatusTask"].Visible = false;
+                projectsEmployeeDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                projectsEmployeeDataGridView.DefaultCellStyle.BackColor = Color.WhiteSmoke;
+                projectsEmployeeDataGridView.DefaultCellStyle.ForeColor = Color.Black;
+                projectsEmployeeDataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
+                projectsEmployeeDataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkSlateGray;
+                projectsEmployeeDataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                projectsEmployeeDataGridView.EnableHeadersVisualStyles = false;
             }
             else
             {
@@ -60,36 +60,34 @@ namespace PresentationLayer.Forms.Empleados
 
         }
 
-
-
-        private void dataGridViewProjectsEmployee_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void projectsEmployeeDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex >= 0)
+            if (e.RowIndex >= 0)
             {
-                panelInformationProject.Visible = true;
+                informationProjectPanel.Visible = true;
                 var idEmployee = _usersService.GetEmployees()
                 .Where(u => u.idUser == CaptureData.idUser)
                 .Select(e => e.idEmployee)
                 .FirstOrDefault();
 
-                int idTask = Convert.ToInt32(dataGridViewProjectsEmployee.CurrentRow.Cells["idTask"].Value);
+                int idTask = Convert.ToInt32(projectsEmployeeDataGridView.CurrentRow.Cells["idTask"].Value);
                 var idem = _listProyectsServices.GetByIdTaskEmployee(idEmployee);
                 var selectedTask = idem.FirstOrDefault(id => id.idTask == idTask);
                 if (selectedTask != null)
                 {
-                    textBoxDescriptionTask.Text = selectedTask.descriptionTask;
-                    labelNameTask.Text = selectedTask.nameTask;
-                    labelProjectName.Text = selectedTask.codeProject;
+                    descriptionTaskTextBox.Text = selectedTask.descriptionTask;
+                    nameTaskLabel.Text = selectedTask.nameTask;
+                    projectNameLabel.Text = selectedTask.codeProject;
                 }
                 else
                 {
                     MessageBox.Show("No se encontró el proyecto seleccionado", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                
+
             }
         }
 
-        private void linkLabelFile_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void linkFileLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             OpenFileDialog openFileEmployee = new OpenFileDialog();
             openFileEmployee.Filter = "Todos los archivos (*.*) | *.*";
@@ -111,10 +109,10 @@ namespace PresentationLayer.Forms.Empleados
             }
         }
 
-        private void iconButtonSubmit_Click(object sender, EventArgs e)
+        private void submiButton_Click(object sender, EventArgs e)
         {
-            int idTask = int.Parse(dataGridViewProjectsEmployee.CurrentRow.Cells[1].Value.ToString());
-            int updateStatus = Convert.ToInt32(comboBoxTaskStatus.SelectedValue);
+            int idTask = int.Parse(projectsEmployeeDataGridView.CurrentRow.Cells[1].Value.ToString());
+            int updateStatus = Convert.ToInt32(taskStatusComboBox.SelectedValue);
             byte[] updateFile = fileByte;
 
             _listProyectsServices.UpdateTaskEmployee(idTask, updateFile, updateStatus);
