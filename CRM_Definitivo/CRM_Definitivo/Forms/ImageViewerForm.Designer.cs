@@ -37,22 +37,24 @@
             // 
             pictureBoxView.Dock = DockStyle.Fill;
             pictureBoxView.Location = new Point(0, 0);
+            pictureBoxView.Margin = new Padding(4, 4, 4, 4);
             pictureBoxView.Name = "pictureBoxView";
-            pictureBoxView.Size = new Size(243, 198);
+            pictureBoxView.Size = new Size(304, 248);
             pictureBoxView.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxView.TabIndex = 0;
             pictureBoxView.TabStop = false;
             // 
             // ImageViewerForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(243, 198);
+            ClientSize = new Size(304, 248);
             Controls.Add(pictureBoxView);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(4, 4, 4, 4);
             Name = "ImageViewerForm";
-            Text = "ImageViewerForm";
+            Text = "Ver Foto de Perfil";
             ((System.ComponentModel.ISupportInitialize)pictureBoxView).EndInit();
             ResumeLayout(false);
         }

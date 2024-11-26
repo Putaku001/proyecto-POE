@@ -50,41 +50,41 @@ namespace PresentationLayer.Forms
             proyectoServices = _proyectoServices;
             _userReports = userReports;
             LoadImageProfileUser(AuthUser.idUser);
-            loadPermisos();
+            loadPermission();
             timer = new System.Windows.Forms.Timer();
             timer.Interval = 1000;
             timer.Tick += Timer_tick;
             timer.Start();
 
-            fechayhora();
+            Dateandtime();
 
             System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
             System.Drawing.Drawing2D.GraphicsPath pathSelectedUser = new System.Drawing.Drawing2D.GraphicsPath();
-            path.AddEllipse(0, 0, pictureBoxImageByIdUser.Width, pictureBoxImageByIdUser.Height);
-            pathSelectedUser.AddEllipse(0, 0, pictureBoxSelectedUser.Width, pictureBoxSelectedUser.Height);
+            path.AddEllipse(0, 0, idUserPictureBox.Width, idUserPictureBox.Height);
+            pathSelectedUser.AddEllipse(0, 0, selectedUserPictureBox.Width, selectedUserPictureBox.Height);
 
-            pictureBoxImageByIdUser.Region = new Region(path);
-            pictureBoxSelectedUser.Region = new Region(pathSelectedUser);
+            idUserPictureBox.Region = new Region(path);
+            selectedUserPictureBox.Region = new Region(pathSelectedUser);
 
         }
 
-        public void loadPermisos()
+        public void loadPermission()
         {
-            groupBox1.Visible = false;
+            menuGroupBox.Visible = false;
 
             if (CaptureData.IdRol == 1)
             {
-                groupBox1.Visible = true;
+                menuGroupBox.Visible = true;
             }
             else if (CaptureData.IdRol == 2)
             {
-                groupBox1.Controls.Clear();
+                menuGroupBox.Controls.Clear();
                 var HomeUserEmployeeForm = _provider.GetRequiredService<HomeUserEmployeeForm>();
                 AbrirFormulario(HomeUserEmployeeForm);
             }
             else if (CaptureData.IdRol == 4)
             {
-                groupBox1.Controls.Clear();
+                menuGroupBox.Controls.Clear();
                 var HomeUserClientForm = _provider.GetRequiredService<HomeUserClientForm>();
                 AbrirFormulario(HomeUserClientForm);
             }
@@ -101,13 +101,13 @@ namespace PresentationLayer.Forms
             {
                 using (var memoryStream = new MemoryStream(imagebyte))
                 {
-                    pictureBoxImageByIdUser.Image = Image.FromStream(memoryStream);
+                    idUserPictureBox.Image = Image.FromStream(memoryStream);
 
                 }
             }
             else
             {
-                pictureBoxImageByIdUser.Image = null;
+                idUserPictureBox.Image = null;
             }
         }
 
@@ -115,18 +115,18 @@ namespace PresentationLayer.Forms
 
         private void LoadData()
         {
-            dataGridViewUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            userDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
-        private void fechayhora()
+        private void Dateandtime()
         {
-            lblHoraUsuario.Text = DateTime.Now.ToString("dd/mm/yyyy hh:mm:ss");
-            labelUserAccount.Text = AuthUser.UserAccount;
+            timeUserLabel.Text = DateTime.Now.ToString("dd/mm/yyyy hh:mm:ss");
+            userAccountLabel.Text = AuthUser.UserAccount;
         }
 
         private void Timer_tick(object sender, EventArgs e)
         {
-            fechayhora();
+            Dateandtime();
         }
 
         private List<Control> controlesIniciales;
@@ -134,10 +134,10 @@ namespace PresentationLayer.Forms
         private void MenuForm_Load(object sender, EventArgs e)
         {
 
-            lblNombreUsuario.Text = AuthUser.UserAccount;
+            nameUserIdLabel.Text = AuthUser.UserAccount;
 
             controlesIniciales = new List<Control>();
-            foreach (Control control in contenedor.Controls)
+            foreach (Control control in containerPanel.Controls)
             {
                 controlesIniciales.Add(control);
             }
@@ -156,7 +156,7 @@ namespace PresentationLayer.Forms
             }
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void logoutLabel_Click(object sender, EventArgs e)
         {
             Application.Restart();
         }
@@ -164,68 +164,62 @@ namespace PresentationLayer.Forms
         private void AbrirFormulario(Form formulario)
         {
 
-            if (this.contenedor.Controls.Count > 0)
-                this.contenedor.Controls.RemoveAt(0);
+            if (this.containerPanel.Controls.Count > 0)
+                this.containerPanel.Controls.RemoveAt(0);
 
             formulario.TopLevel = false;
             formulario.FormBorderStyle = FormBorderStyle.None;
             formulario.Dock = DockStyle.Fill;
 
-            this.contenedor.Controls.Add(formulario);
-            this.contenedor.Tag = formulario;
+            this.containerPanel.Controls.Add(formulario);
+            this.containerPanel.Tag = formulario;
 
             formulario.Show();
         }
-
-        private void pbEliminar_Click(object sender, EventArgs e)
+        private void closedPictureBox_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
-        private void pbEliminar_MouseHover(object sender, EventArgs e)
+        private void closedPictureBox_MouseHover(object sender, EventArgs e)
         {
-            toolTip1.SetToolTip(pbEliminar, "Cerrar Aplicacion");
+            toolTip1.SetToolTip(closedPictureBox, "Cerrar Aplicacion");
         }
 
-        private void pbMinimizar_Click(object sender, EventArgs e)
+        private void minimizarPictureBox_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void pbMinimizar_MouseHover(object sender, EventArgs e)
+        private void minimizarPictureBox_MouseHover(object sender, EventArgs e)
         {
-            toolTip1.SetToolTip(pbMinimizar, "Minimizar aplicacion");
+            toolTip1.SetToolTip(minimizarPictureBox, "Minimizar aplicacion");
         }
 
-        private void IconMenuUsersForm_Click(object sender, EventArgs e)
+        private void iconMenuUsersForm_Click(object sender, EventArgs e)
         {
-
             var IconMenuUsersForm = _provider.GetRequiredService<UsersForm>();
             AbrirFormulario(IconMenuUsersForm);
-
         }
 
-        private void IconMenuProyectsForm_Click(object sender, EventArgs e)
+        private void iconMenuProyectsForm_Click_1(object sender, EventArgs e)
         {
             var IconMenuProyectsForm = _provider.GetRequiredService<ProyectsForm>();
             AbrirFormulario(IconMenuProyectsForm);
         }
-
-        private void IconMenuRecordForm_Click(object sender, EventArgs e)
+        private void iconMenuRecordForm_Click(object sender, EventArgs e)
         {
-            
-        }
 
-        private void IconMenusSettingsForm_Click(object sender, EventArgs e)
+        }
+        private void iconMenusSettingsForm_Click(object sender, EventArgs e)
         {
-            
-        }
 
-        private void IconMenuAccountForm_Click(object sender, EventArgs e)
+        }
+        private void iconMenuAccountForm_Click(object sender, EventArgs e)
         {
             var IconMenuAccountForm = _provider.GetRequiredService<ProfileUserAccountForm>();
             AbrirFormulario(IconMenuAccountForm);
         }
+
 
         private void iconMenuItemMenus_Click(object sender, EventArgs e)
         {
@@ -233,52 +227,51 @@ namespace PresentationLayer.Forms
             AbrirFormulario(iconMenuItemMenus);
         }
 
-        private void RestaurarControlesIniciales()
+        private void RestoreInitialControls()
         {
-            this.contenedor.Controls.Clear();
+            this.containerPanel.Controls.Clear();
 
             foreach (Control control in controlesIniciales)
             {
-                this.contenedor.Controls.Add(control);
+                this.containerPanel.Controls.Add(control);
             }
         }
 
         private void iconMenuItemHome_Click(object sender, EventArgs e)
         {
-            RestaurarControlesIniciales();
+            RestoreInitialControls();
         }
 
-        private void iconButtonUserAdministrator_Click(object sender, EventArgs e)
+        private void administratorUserButton_Click(object sender, EventArgs e)
         {
-            dataGridViewUsers.DataSource = usuarioServices.GetAdmins();
-            dataGridViewUsers.Columns["idUser"].Visible = false;
-            panelAssignamentProject.Visible = false;
-            panelRequestProjects.Visible = false;
+            userDataGridView.DataSource = usuarioServices.GetAdmins();
+            userDataGridView.Columns["idUser"].Visible = false;
+            assignedProjectPanel.Visible = false;
+            requestProjectPanel.Visible = false;
         }
-
-        private void iconButtonUserEmployee_Click(object sender, EventArgs e)
+        private void employeeUserButton_Click(object sender, EventArgs e)
         {
-            dataGridViewUsers.DataSource = usuarioServices.GetEmployees();
-            dataGridViewUsers.Columns["idUser"].Visible = false;
-            panelRequestProjects.Visible = false;
-            panelAssignamentProject.Visible = true;
+            userDataGridView.DataSource = usuarioServices.GetEmployees();
+            userDataGridView.Columns["idUser"].Visible = false;
+            requestProjectPanel.Visible = false;
+            assignedProjectPanel.Visible = true;
         }
 
-        private void iconButtonUserClients_Click(object sender, EventArgs e)
+        private void clientUserButton_Click(object sender, EventArgs e)
         {
-            dataGridViewUsers.DataSource = usuarioServices.GetClients();
-            dataGridViewUsers.Columns["idUser"].Visible = false;
-            panelAssignamentProject.Visible = false;
-            panelRequestProjects.Visible = true;    
+            userDataGridView.DataSource = usuarioServices.GetClients();
+            userDataGridView.Columns["idUser"].Visible = false;
+            assignedProjectPanel.Visible = false;
+            requestProjectPanel.Visible = true;
         }
 
-        private void dataGridViewUsers_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void userDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-                int idUser = int.Parse(dataGridViewUsers.CurrentRow.Cells[2].Value.ToString());
+                int idUser = int.Parse(userDataGridView.CurrentRow.Cells[2].Value.ToString());
 
-                
+
 
                 panelUsersView.Visible = true;
                 var users = usuarioServices.GetByIdUser(idUser);
@@ -302,31 +295,31 @@ namespace PresentationLayer.Forms
                             edad--;
                         }
 
-                        labelByUser.Text = user.UserAccount;
-                        labelByAgeUser.Text = Convert.ToString(edad);
-                        labelCity.Text = user.City;
-                        labelnameUser.Text = user.NameUser;
-                        labelEmail.Text = user.Email;
-                        labelNumberPhone.Text = user.NumberPhone;
-                        labelRegistration.Text = Convert.ToString(user.DateRegistration);
-                        labelCountryByUser.Text = user.Country;
+                        idUserLabel.Text = user.UserAccount;
+                        ageUserLabel.Text = Convert.ToString(edad);
+                        cityLabel.Text = user.City;
+                        nameUserLabel.Text = user.NameUser;
+                        emailIdUserLabel.Text = user.Email;
+                        numberPhoneLabel.Text = user.NumberPhone;
+                        registrationLabel.Text = Convert.ToString(user.DateRegistration);
+                        countryUserLabel.Text = user.Country;
 
-                        if(panelAssignamentProject.Visible == true)
+                        if (assignedProjectPanel.Visible == true)
                         {
                             var GetidEmployee = usuarioServices.GetEmployees().Where(id => id.idUser == idUser).Select(e => e.idEmployee).FirstOrDefault();
-                            listBoxProjectsAsignamment.DataSource = proyectoServices.GetTasksByEmployees(GetidEmployee).ToList();
+                            assignedProjectListBox.DataSource = proyectoServices.GetTasksByEmployees(GetidEmployee).ToList();
                         }
-                        else if(panelRequestProjects.Visible == true)
+                        else if (requestProjectPanel.Visible == true)
                         {
-                            var GetIdClient = Convert.ToInt32(usuarioServices.GetClients().Where( id => id.idUser == idUser ).Select(id => id.idCliente).FirstOrDefault());
-                            listBoxRequestProjects.DataSource = proyectoServices.GetRequestProyectsByIdClient(GetIdClient).ToList();
+                            var GetIdClient = Convert.ToInt32(usuarioServices.GetClients().Where(id => id.idUser == idUser).Select(id => id.idCliente).FirstOrDefault());
+                            requestProjectListBox.DataSource = proyectoServices.GetRequestProyectsByIdClient(GetIdClient).ToList();
                         }
 
                         if (imageBytes != null && imageBytes.Length > 0)
                         {
                             using (var memoryStream = new MemoryStream(imageBytes))
                             {
-                                pictureBoxSelectedUser.Image = Image.FromStream(memoryStream);
+                                selectedUserPictureBox.Image = Image.FromStream(memoryStream);
                             }
                         }
                         else
@@ -345,15 +338,15 @@ namespace PresentationLayer.Forms
                 MessageBox.Show("No se ha seleccionado a un usuario ");
             }
         }
-
-        private void pictureBoxSelectedUser_Click(object sender, EventArgs e)
+        private void selectedUserPictureBox_Click(object sender, EventArgs e)
         {
             var ImageViewerForm = _provider.GetRequiredService<ImageViewerForm>();
-            ImageViewerForm.pictureBoxView.Image = pictureBoxSelectedUser.Image;
+            ImageViewerForm.pictureBoxView.Image = selectedUserPictureBox.Image;
 
             ImageViewerForm.StartPosition = FormStartPosition.CenterScreen;
             ImageViewerForm.ShowDialog();
         }
+
 
         private void iconMenuItemProjectsEmployee_Click(object sender, EventArgs e)
         {
@@ -366,6 +359,8 @@ namespace PresentationLayer.Forms
             var iconMenuItemRequest = _provider.GetRequiredService<RequestClientForm>();
             AbrirFormulario(iconMenuItemRequest);
         }
+
+        
     }
 
 }

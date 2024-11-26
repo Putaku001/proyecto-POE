@@ -151,9 +151,6 @@
   <data name="pendiente" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pendiente.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="3844476-eye-see-show-view-watch_110339" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3844476-eye-see-show-view-watch_110339.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="fondo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fondo.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -163,6 +160,12 @@
   <data name="añadir_usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\añadir_usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ojo-de-forma-de-bloqueo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ojo-de-forma-de-bloqueo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gestion-de-proyectos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gestion-de-proyectos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="377721" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\377721.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -171,6 +174,9 @@
   </data>
   <data name="historial" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\historial.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="usuario (5)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\usuario (5).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CRM logo (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CRM logo (4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -190,6 +196,9 @@
   <data name="CRM logo (6)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CRM logo (6).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="usuario (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\usuario (4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="close_remove_delete_icon_148989" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close_remove_delete_icon_148989.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -205,14 +214,17 @@
   <data name="icon-permissions" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-permissions.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="cheque" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cheque.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="CRM logo (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CRM logo (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="calendario1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\calendario1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Proyecto" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Proyecto.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="3844476-eye-see-show-view-watch_110339" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3844476-eye-see-show-view-watch_110339.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="round-account-button-with-user-inside_icon-icons1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\round-account-button-with-user-inside_icon-icons.com_725961.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -226,10 +238,16 @@
   <data name="CRM logo (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CRM logo (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Proyecto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Proyecto.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="editar_Usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\editar_Usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ojo-de-forma-de-bloqueo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ojo-de-forma-de-bloqueo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="usuario (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\usuario (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="proyecto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\proyecto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
