@@ -422,3 +422,8 @@ Thumbs.db
 # Directorios binarios
 bin/
 obj/
+
+# Ignorar archivos generados automáticamente por Visual Studio
+CRM_Definitivo/CRM_Definitivo/obj/
+CRM_Definitivo/CRM_Definitivo/bin/
+
