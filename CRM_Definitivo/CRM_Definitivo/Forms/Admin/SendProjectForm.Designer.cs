@@ -28,184 +28,215 @@
         /// </summary>
         private void InitializeComponent()
         {
-            iconButtonSendProject = new FontAwesome.Sharp.IconButton();
-            labelUserAccount = new Label();
-            labelClient = new Label();
-            labelNameProject = new Label();
-            groupBoxProject = new GroupBox();
-            labelCodeProject = new Label();
-            linkLabelFileProject = new LinkLabel();
-            textBoxDescription = new TextBox();
-            label1 = new Label();
-            labelEnd = new Label();
-            flowLayoutPanel1 = new FlowLayoutPanel();
-            checkedListBoxGetEmployees = new CheckedListBox();
-            groupBoxProject.SuspendLayout();
-            flowLayoutPanel1.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SendProjectForm));
+            sendProjectIconButton = new FontAwesome.Sharp.IconButton();
+            nameUserLabel = new Label();
+            clientLabel = new Label();
+            nameProjectLabel = new Label();
+            projectGroupBox = new GroupBox();
+            codeProjectLabel = new Label();
+            fileProjectLinkLabel = new LinkLabel();
+            descriptionTextBox = new TextBox();
+            descriptionLabel = new Label();
+            dateLabel = new Label();
+            employeeFlowLayoutPanel = new FlowLayoutPanel();
+            getEmployeesCheckedListBox = new CheckedListBox();
+            uploadFilePictureBox = new PictureBox();
+            projectGroupBox.SuspendLayout();
+            employeeFlowLayoutPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)uploadFilePictureBox).BeginInit();
             SuspendLayout();
             // 
-            // iconButtonSendProject
+            // sendProjectIconButton
             // 
-            iconButtonSendProject.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconButtonSendProject.IconColor = Color.Black;
-            iconButtonSendProject.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButtonSendProject.Location = new Point(178, 218);
-            iconButtonSendProject.Name = "iconButtonSendProject";
-            iconButtonSendProject.Size = new Size(209, 29);
-            iconButtonSendProject.TabIndex = 24;
-            iconButtonSendProject.Text = "Enviar proyecto";
-            iconButtonSendProject.UseVisualStyleBackColor = true;
-            iconButtonSendProject.Click += iconButtonSendProject_Click;
+            sendProjectIconButton.IconChar = FontAwesome.Sharp.IconChar.None;
+            sendProjectIconButton.IconColor = Color.Black;
+            sendProjectIconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            sendProjectIconButton.Location = new Point(271, 323);
+            sendProjectIconButton.Margin = new Padding(4);
+            sendProjectIconButton.Name = "sendProjectIconButton";
+            sendProjectIconButton.Size = new Size(261, 36);
+            sendProjectIconButton.TabIndex = 24;
+            sendProjectIconButton.Text = "Enviar proyecto";
+            sendProjectIconButton.UseVisualStyleBackColor = true;
+            sendProjectIconButton.Click += iconButtonSendProject_Click;
             // 
-            // labelUserAccount
+            // nameUserLabel
             // 
-            labelUserAccount.AutoSize = true;
-            labelUserAccount.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelUserAccount.Location = new Point(98, 54);
-            labelUserAccount.Name = "labelUserAccount";
-            labelUserAccount.Size = new Size(103, 21);
-            labelUserAccount.TabIndex = 20;
-            labelUserAccount.Text = "labelClient";
+            nameUserLabel.AutoSize = true;
+            nameUserLabel.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            nameUserLabel.Location = new Point(141, 103);
+            nameUserLabel.Margin = new Padding(4, 0, 4, 0);
+            nameUserLabel.Name = "nameUserLabel";
+            nameUserLabel.Size = new Size(180, 25);
+            nameUserLabel.TabIndex = 20;
+            nameUserLabel.Text = "nombre Cliente";
             // 
-            // labelClient
+            // clientLabel
             // 
-            labelClient.AutoSize = true;
-            labelClient.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelClient.Location = new Point(14, 54);
-            labelClient.Name = "labelClient";
-            labelClient.Size = new Size(78, 21);
-            labelClient.TabIndex = 19;
-            labelClient.Text = "Cliente:";
+            clientLabel.AutoSize = true;
+            clientLabel.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            clientLabel.Location = new Point(23, 103);
+            clientLabel.Margin = new Padding(4, 0, 4, 0);
+            clientLabel.Name = "clientLabel";
+            clientLabel.Size = new Size(95, 25);
+            clientLabel.TabIndex = 19;
+            clientLabel.Text = "Cliente:";
             // 
-            // labelNameProject
+            // nameProjectLabel
             // 
-            labelNameProject.BackColor = SystemColors.ActiveCaption;
-            labelNameProject.Dock = DockStyle.Top;
-            labelNameProject.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            labelNameProject.ForeColor = Color.White;
-            labelNameProject.Location = new Point(0, 0);
-            labelNameProject.Name = "labelNameProject";
-            labelNameProject.Size = new Size(607, 33);
-            labelNameProject.TabIndex = 18;
-            labelNameProject.Text = "nameProject";
+            nameProjectLabel.BackColor = Color.DodgerBlue;
+            nameProjectLabel.Dock = DockStyle.Top;
+            nameProjectLabel.Font = new Font("Century Gothic", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            nameProjectLabel.ForeColor = Color.White;
+            nameProjectLabel.Location = new Point(0, 0);
+            nameProjectLabel.Margin = new Padding(4, 0, 4, 0);
+            nameProjectLabel.Name = "nameProjectLabel";
+            nameProjectLabel.Size = new Size(839, 58);
+            nameProjectLabel.TabIndex = 18;
+            nameProjectLabel.Text = "Nombre Proyecto";
+            nameProjectLabel.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // groupBoxProject
+            // projectGroupBox
             // 
-            groupBoxProject.Controls.Add(labelCodeProject);
-            groupBoxProject.Controls.Add(iconButtonSendProject);
-            groupBoxProject.Controls.Add(linkLabelFileProject);
-            groupBoxProject.Controls.Add(textBoxDescription);
-            groupBoxProject.Controls.Add(label1);
-            groupBoxProject.Location = new Point(12, 88);
-            groupBoxProject.Name = "groupBoxProject";
-            groupBoxProject.Size = new Size(571, 278);
-            groupBoxProject.TabIndex = 23;
-            groupBoxProject.TabStop = false;
-            groupBoxProject.Text = "Proyecto";
+            projectGroupBox.Controls.Add(uploadFilePictureBox);
+            projectGroupBox.Controls.Add(codeProjectLabel);
+            projectGroupBox.Controls.Add(sendProjectIconButton);
+            projectGroupBox.Controls.Add(fileProjectLinkLabel);
+            projectGroupBox.Controls.Add(descriptionTextBox);
+            projectGroupBox.Controls.Add(descriptionLabel);
+            projectGroupBox.Location = new Point(4, 151);
+            projectGroupBox.Margin = new Padding(4);
+            projectGroupBox.Name = "projectGroupBox";
+            projectGroupBox.Padding = new Padding(4);
+            projectGroupBox.Size = new Size(822, 400);
+            projectGroupBox.TabIndex = 23;
+            projectGroupBox.TabStop = false;
+            projectGroupBox.Text = "Proyecto";
             // 
-            // labelCodeProject
+            // codeProjectLabel
             // 
-            labelCodeProject.AutoSize = true;
-            labelCodeProject.Font = new Font("Century Gothic", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            labelCodeProject.ForeColor = SystemColors.AppWorkspace;
-            labelCodeProject.Location = new Point(6, 253);
-            labelCodeProject.Name = "labelCodeProject";
-            labelCodeProject.Size = new Size(70, 22);
-            labelCodeProject.TabIndex = 25;
-            labelCodeProject.Text = "u24123";
+            codeProjectLabel.AutoSize = true;
+            codeProjectLabel.Font = new Font("Century Gothic", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            codeProjectLabel.ForeColor = SystemColors.AppWorkspace;
+            codeProjectLabel.Location = new Point(8, 357);
+            codeProjectLabel.Margin = new Padding(4, 0, 4, 0);
+            codeProjectLabel.Name = "codeProjectLabel";
+            codeProjectLabel.Size = new Size(85, 27);
+            codeProjectLabel.TabIndex = 25;
+            codeProjectLabel.Text = "u24123";
             // 
-            // linkLabelFileProject
+            // fileProjectLinkLabel
             // 
-            linkLabelFileProject.AutoSize = true;
-            linkLabelFileProject.Location = new Point(226, 161);
-            linkLabelFileProject.Name = "linkLabelFileProject";
-            linkLabelFileProject.Size = new Size(111, 20);
-            linkLabelFileProject.TabIndex = 25;
-            linkLabelFileProject.TabStop = true;
-            linkLabelFileProject.Text = "Subir el archivo";
-            linkLabelFileProject.LinkClicked += linkLabelFileProject_LinkClicked;
+            fileProjectLinkLabel.AutoSize = true;
+            fileProjectLinkLabel.Location = new Point(321, 261);
+            fileProjectLinkLabel.Margin = new Padding(4, 0, 4, 0);
+            fileProjectLinkLabel.Name = "fileProjectLinkLabel";
+            fileProjectLinkLabel.Size = new Size(133, 25);
+            fileProjectLinkLabel.TabIndex = 25;
+            fileProjectLinkLabel.TabStop = true;
+            fileProjectLinkLabel.Text = "Subir el archivo";
+            fileProjectLinkLabel.LinkClicked += linkLabelFileProject_LinkClicked;
             // 
-            // textBoxDescription
+            // descriptionTextBox
             // 
-            textBoxDescription.Location = new Point(15, 51);
-            textBoxDescription.Multiline = true;
-            textBoxDescription.Name = "textBoxDescription";
-            textBoxDescription.Size = new Size(533, 74);
-            textBoxDescription.TabIndex = 1;
+            descriptionTextBox.Location = new Point(19, 64);
+            descriptionTextBox.Margin = new Padding(4);
+            descriptionTextBox.Multiline = true;
+            descriptionTextBox.Name = "descriptionTextBox";
+            descriptionTextBox.Size = new Size(792, 111);
+            descriptionTextBox.TabIndex = 1;
             // 
-            // label1
+            // descriptionLabel
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(17, 28);
-            label1.Name = "label1";
-            label1.Size = new Size(90, 20);
-            label1.TabIndex = 0;
-            label1.Text = "Descripcion:";
+            descriptionLabel.AutoSize = true;
+            descriptionLabel.Location = new Point(21, 35);
+            descriptionLabel.Margin = new Padding(4, 0, 4, 0);
+            descriptionLabel.Name = "descriptionLabel";
+            descriptionLabel.Size = new Size(108, 25);
+            descriptionLabel.TabIndex = 0;
+            descriptionLabel.Text = "Descripcion:";
             // 
-            // labelEnd
+            // dateLabel
             // 
-            labelEnd.BackColor = SystemColors.AppWorkspace;
-            labelEnd.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelEnd.ForeColor = Color.White;
-            labelEnd.Image = Properties.Resources.calendario1;
-            labelEnd.ImageAlign = ContentAlignment.TopLeft;
-            labelEnd.Location = new Point(462, 7);
-            labelEnd.Name = "labelEnd";
-            labelEnd.Size = new Size(122, 21);
-            labelEnd.TabIndex = 24;
-            labelEnd.Text = "2024-11-12";
-            labelEnd.TextAlign = ContentAlignment.TopRight;
+            dateLabel.BackColor = Color.DodgerBlue;
+            dateLabel.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dateLabel.ForeColor = Color.White;
+            dateLabel.Image = (Image)resources.GetObject("dateLabel.Image");
+            dateLabel.ImageAlign = ContentAlignment.MiddleLeft;
+            dateLabel.Location = new Point(631, 9);
+            dateLabel.Margin = new Padding(4, 0, 4, 0);
+            dateLabel.Name = "dateLabel";
+            dateLabel.Size = new Size(184, 35);
+            dateLabel.TabIndex = 24;
+            dateLabel.Text = "2024-11-12";
+            dateLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // flowLayoutPanel1
+            // employeeFlowLayoutPanel
             // 
-            flowLayoutPanel1.Controls.Add(checkedListBoxGetEmployees);
-            flowLayoutPanel1.Location = new Point(227, 31);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(357, 51);
-            flowLayoutPanel1.TabIndex = 25;
+            employeeFlowLayoutPanel.Controls.Add(getEmployeesCheckedListBox);
+            employeeFlowLayoutPanel.Location = new Point(393, 79);
+            employeeFlowLayoutPanel.Margin = new Padding(4);
+            employeeFlowLayoutPanel.Name = "employeeFlowLayoutPanel";
+            employeeFlowLayoutPanel.Size = new Size(446, 64);
+            employeeFlowLayoutPanel.TabIndex = 25;
             // 
-            // checkedListBoxGetEmployees
+            // getEmployeesCheckedListBox
             // 
-            checkedListBoxGetEmployees.FormattingEnabled = true;
-            checkedListBoxGetEmployees.Location = new Point(3, 3);
-            checkedListBoxGetEmployees.Name = "checkedListBoxGetEmployees";
-            checkedListBoxGetEmployees.Size = new Size(353, 48);
-            checkedListBoxGetEmployees.TabIndex = 0;
+            getEmployeesCheckedListBox.FormattingEnabled = true;
+            getEmployeesCheckedListBox.Location = new Point(4, 4);
+            getEmployeesCheckedListBox.Margin = new Padding(4);
+            getEmployeesCheckedListBox.Name = "getEmployeesCheckedListBox";
+            getEmployeesCheckedListBox.Size = new Size(440, 32);
+            getEmployeesCheckedListBox.TabIndex = 0;
+            // 
+            // uploadFilePictureBox
+            // 
+            uploadFilePictureBox.Image = (Image)resources.GetObject("uploadFilePictureBox.Image");
+            uploadFilePictureBox.Location = new Point(340, 192);
+            uploadFilePictureBox.Name = "uploadFilePictureBox";
+            uploadFilePictureBox.Size = new Size(94, 54);
+            uploadFilePictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            uploadFilePictureBox.TabIndex = 26;
+            uploadFilePictureBox.TabStop = false;
             // 
             // SendProjectForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(607, 384);
-            Controls.Add(flowLayoutPanel1);
-            Controls.Add(labelEnd);
-            Controls.Add(labelUserAccount);
-            Controls.Add(labelClient);
-            Controls.Add(labelNameProject);
-            Controls.Add(groupBoxProject);
+            ClientSize = new Size(839, 564);
+            Controls.Add(employeeFlowLayoutPanel);
+            Controls.Add(dateLabel);
+            Controls.Add(nameUserLabel);
+            Controls.Add(clientLabel);
+            Controls.Add(nameProjectLabel);
+            Controls.Add(projectGroupBox);
+            Margin = new Padding(4);
             Name = "SendProjectForm";
             Text = "SendProjectForm";
             Load += SendProjectForm_Load;
-            groupBoxProject.ResumeLayout(false);
-            groupBoxProject.PerformLayout();
-            flowLayoutPanel1.ResumeLayout(false);
+            projectGroupBox.ResumeLayout(false);
+            projectGroupBox.PerformLayout();
+            employeeFlowLayoutPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)uploadFilePictureBox).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private FontAwesome.Sharp.IconButton iconButtonSendProject;
-        private Label labelUserAccount;
-        private Label labelClient;
-        private Label labelNameProject;
-        private GroupBox groupBoxProject;
-        private LinkLabel linkLabelFileProject;
-        private TextBox textBoxDescription;
-        private Label label1;
-        private Label labelEnd;
-        private Label labelCodeProject;
-        private FlowLayoutPanel flowLayoutPanel1;
-        private CheckedListBox checkedListBoxGetEmployees;
+        private FontAwesome.Sharp.IconButton sendProjectIconButton;
+        private Label nameUserLabel;
+        private Label clientLabel;
+        private Label nameProjectLabel;
+        private GroupBox projectGroupBox;
+        private LinkLabel fileProjectLinkLabel;
+        private TextBox descriptionTextBox;
+        private Label descriptionLabel;
+        private Label dateLabel;
+        private Label codeProjectLabel;
+        private FlowLayoutPanel employeeFlowLayoutPanel;
+        private CheckedListBox getEmployeesCheckedListBox;
+        private PictureBox uploadFilePictureBox;
     }
 }

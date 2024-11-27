@@ -33,13 +33,13 @@ namespace PresentationLayer.Forms.Admin
 
         private void SendProjectForm_Load(object sender, EventArgs e)
         {
-            labelCodeProject.Text = CodeProject;
-            textBoxDescription.Text = DescriptionProject;
-            labelUserAccount.Text = Client;
-            labelNameProject.Text = NameProject;
-            labelEnd.Text = DateEnd.ToString();
+            codeProjectLabel.Text = CodeProject;
+            descriptionTextBox.Text = DescriptionProject;
+            nameUserLabel.Text = Client;
+            nameProjectLabel.Text = NameProject;
+            dateLabel.Text = DateEnd.ToString();
 
-            checkedListBoxGetEmployees.Items.Clear();
+            getEmployeesCheckedListBox.Items.Clear();
         }
 
         private void linkLabelFileProject_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
