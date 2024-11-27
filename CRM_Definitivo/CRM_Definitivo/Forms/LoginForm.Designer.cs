@@ -208,7 +208,7 @@
             minimizePictureBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             minimizePictureBox.BackColor = Color.Transparent;
             minimizePictureBox.Cursor = Cursors.Hand;
-            minimizePictureBox.Image = PresentationLayer.Properties.Resources.minimizar;
+            minimizePictureBox.Image = (Image)resources.GetObject("minimizePictureBox.Image");
             minimizePictureBox.Location = new Point(1224, 13);
             minimizePictureBox.Margin = new Padding(4);
             minimizePictureBox.Name = "minimizePictureBox";

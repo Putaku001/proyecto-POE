@@ -32,38 +32,38 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewAccountForm));
             pictureBoxMinimize = new PictureBox();
             pictureBoxClosed = new PictureBox();
-            lblCrearCuenta = new Label();
-            gbRegistrar = new GroupBox();
-            labelSelectedImageUser = new Label();
-            pictureBoxPhotoNewUser = new PictureBox();
+            titleLabel = new Label();
+            registerGroupBox = new GroupBox();
+            selectImageUserLabel = new Label();
+            photoNewUserPictureBox = new PictureBox();
             emailLabel = new Label();
             emailTextBox = new TextBox();
             userLabel = new Label();
-            txtUserName = new TextBox();
-            label7 = new Label();
-            lblLogin = new Label();
-            label1 = new Label();
-            btnNewAccount = new FontAwesome.Sharp.IconButton();
-            label8 = new Label();
-            cboListCity = new ComboBox();
-            cboListCountrys = new ComboBox();
-            label6 = new Label();
-            dtpBirthDate = new DateTimePicker();
-            label10 = new Label();
-            txtNumberPhone = new TextBox();
-            label9 = new Label();
-            txtPassword = new TextBox();
-            label2 = new Label();
+            userNameTextBox = new TextBox();
+            privacyLabel = new Label();
+            loginLabel = new Label();
+            existingAccountLabel = new Label();
+            registerSaveButton = new FontAwesome.Sharp.IconButton();
+            cityLabel = new Label();
+            listCityComboBox = new ComboBox();
+            listCountrysComboBox = new ComboBox();
+            countryLabel = new Label();
+            BirthdayDataTimePicker = new DateTimePicker();
+            phoneNumberLabel = new Label();
+            numberPhoneTextBox = new TextBox();
+            passwordLabel = new Label();
+            passwordTextBox = new TextBox();
+            nameLabel = new Label();
             nameTexBox = new TextBox();
-            label3 = new Label();
-            label4 = new Label();
+            birthdayLabel = new Label();
+            lastNameLabel = new Label();
             lastNameTexBox = new TextBox();
             toolTip1 = new ToolTip(components);
             notifyIcon1 = new NotifyIcon(components);
             ((System.ComponentModel.ISupportInitialize)pictureBoxMinimize).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxClosed).BeginInit();
-            gbRegistrar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxPhotoNewUser).BeginInit();
+            registerGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)photoNewUserPictureBox).BeginInit();
             SuspendLayout();
             // 
             // pictureBoxMinimize
@@ -72,7 +72,7 @@
             pictureBoxMinimize.BackColor = Color.Transparent;
             pictureBoxMinimize.Cursor = Cursors.Hand;
             pictureBoxMinimize.Image = (Image)resources.GetObject("pictureBoxMinimize.Image");
-            pictureBoxMinimize.Location = new Point(567, 11);
+            pictureBoxMinimize.Location = new Point(602, 11);
             pictureBoxMinimize.Name = "pictureBoxMinimize";
             pictureBoxMinimize.Size = new Size(39, 32);
             pictureBoxMinimize.SizeMode = PictureBoxSizeMode.Zoom;
@@ -86,8 +86,8 @@
             pictureBoxClosed.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBoxClosed.BackColor = Color.Transparent;
             pictureBoxClosed.Cursor = Cursors.Hand;
-            pictureBoxClosed.Image = (Image)resources.GetObject("pictureBoxClosed.Image");
-            pictureBoxClosed.Location = new Point(612, 11);
+            pictureBoxClosed.Image = Properties.Resources.cerrar__2_;
+            pictureBoxClosed.Location = new Point(647, 11);
             pictureBoxClosed.Name = "pictureBoxClosed";
             pictureBoxClosed.Size = new Size(39, 32);
             pictureBoxClosed.SizeMode = PictureBoxSizeMode.Zoom;
@@ -96,267 +96,271 @@
             pictureBoxClosed.Click += pictureBoxClosed_Click;
             pictureBoxClosed.MouseHover += pictureBoxClosed_MouseHover;
             // 
-            // lblCrearCuenta
+            // titleLabel
             // 
-            lblCrearCuenta.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblCrearCuenta.Location = new Point(54, 53);
-            lblCrearCuenta.Name = "lblCrearCuenta";
-            lblCrearCuenta.Size = new Size(412, 30);
-            lblCrearCuenta.TabIndex = 8;
-            lblCrearCuenta.Text = "Registrarse";
-            lblCrearCuenta.TextAlign = ContentAlignment.MiddleCenter;
+            titleLabel.BackColor = Color.DodgerBlue;
+            titleLabel.Dock = DockStyle.Top;
+            titleLabel.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            titleLabel.ForeColor = Color.White;
+            titleLabel.Location = new Point(3, 26);
+            titleLabel.Name = "titleLabel";
+            titleLabel.Size = new Size(645, 44);
+            titleLabel.TabIndex = 8;
+            titleLabel.Text = "Registrarse";
+            titleLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // gbRegistrar
+            // registerGroupBox
             // 
-            gbRegistrar.BackColor = Color.White;
-            gbRegistrar.Controls.Add(labelSelectedImageUser);
-            gbRegistrar.Controls.Add(pictureBoxPhotoNewUser);
-            gbRegistrar.Controls.Add(emailLabel);
-            gbRegistrar.Controls.Add(emailTextBox);
-            gbRegistrar.Controls.Add(userLabel);
-            gbRegistrar.Controls.Add(txtUserName);
-            gbRegistrar.Controls.Add(label7);
-            gbRegistrar.Controls.Add(lblLogin);
-            gbRegistrar.Controls.Add(label1);
-            gbRegistrar.Controls.Add(lblCrearCuenta);
-            gbRegistrar.Controls.Add(btnNewAccount);
-            gbRegistrar.Controls.Add(label8);
-            gbRegistrar.Controls.Add(cboListCity);
-            gbRegistrar.Controls.Add(cboListCountrys);
-            gbRegistrar.Controls.Add(label6);
-            gbRegistrar.Controls.Add(dtpBirthDate);
-            gbRegistrar.Controls.Add(label10);
-            gbRegistrar.Controls.Add(txtNumberPhone);
-            gbRegistrar.Controls.Add(label9);
-            gbRegistrar.Controls.Add(txtPassword);
-            gbRegistrar.Controls.Add(label2);
-            gbRegistrar.Controls.Add(nameTexBox);
-            gbRegistrar.Controls.Add(label3);
-            gbRegistrar.Controls.Add(label4);
-            gbRegistrar.Controls.Add(lastNameTexBox);
-            gbRegistrar.Location = new Point(91, 76);
-            gbRegistrar.Name = "gbRegistrar";
-            gbRegistrar.Size = new Size(481, 825);
-            gbRegistrar.TabIndex = 9;
-            gbRegistrar.TabStop = false;
+            registerGroupBox.BackColor = Color.LightGray;
+            registerGroupBox.Controls.Add(selectImageUserLabel);
+            registerGroupBox.Controls.Add(photoNewUserPictureBox);
+            registerGroupBox.Controls.Add(emailLabel);
+            registerGroupBox.Controls.Add(emailTextBox);
+            registerGroupBox.Controls.Add(userLabel);
+            registerGroupBox.Controls.Add(userNameTextBox);
+            registerGroupBox.Controls.Add(privacyLabel);
+            registerGroupBox.Controls.Add(loginLabel);
+            registerGroupBox.Controls.Add(existingAccountLabel);
+            registerGroupBox.Controls.Add(titleLabel);
+            registerGroupBox.Controls.Add(registerSaveButton);
+            registerGroupBox.Controls.Add(cityLabel);
+            registerGroupBox.Controls.Add(listCityComboBox);
+            registerGroupBox.Controls.Add(listCountrysComboBox);
+            registerGroupBox.Controls.Add(countryLabel);
+            registerGroupBox.Controls.Add(BirthdayDataTimePicker);
+            registerGroupBox.Controls.Add(phoneNumberLabel);
+            registerGroupBox.Controls.Add(numberPhoneTextBox);
+            registerGroupBox.Controls.Add(passwordLabel);
+            registerGroupBox.Controls.Add(passwordTextBox);
+            registerGroupBox.Controls.Add(nameLabel);
+            registerGroupBox.Controls.Add(nameTexBox);
+            registerGroupBox.Controls.Add(birthdayLabel);
+            registerGroupBox.Controls.Add(lastNameLabel);
+            registerGroupBox.Controls.Add(lastNameTexBox);
+            registerGroupBox.Location = new Point(21, 49);
+            registerGroupBox.Name = "registerGroupBox";
+            registerGroupBox.Size = new Size(651, 963);
+            registerGroupBox.TabIndex = 9;
+            registerGroupBox.TabStop = false;
             // 
-            // labelSelectedImageUser
+            // selectImageUserLabel
             // 
-            labelSelectedImageUser.AutoSize = true;
-            labelSelectedImageUser.Font = new Font("Century Gothic", 9F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
-            labelSelectedImageUser.ForeColor = Color.SteelBlue;
-            labelSelectedImageUser.Location = new Point(148, 248);
-            labelSelectedImageUser.Name = "labelSelectedImageUser";
-            labelSelectedImageUser.Size = new Size(222, 18);
-            labelSelectedImageUser.TabIndex = 45;
-            labelSelectedImageUser.Text = "Seleccione una foto de perfil";
-            labelSelectedImageUser.Click += labelSelectedImageUser_Click;
+            selectImageUserLabel.AutoSize = true;
+            selectImageUserLabel.Font = new Font("Century Gothic", 9F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
+            selectImageUserLabel.ForeColor = Color.SteelBlue;
+            selectImageUserLabel.Location = new Point(183, 222);
+            selectImageUserLabel.Name = "selectImageUserLabel";
+            selectImageUserLabel.Size = new Size(265, 22);
+            selectImageUserLabel.TabIndex = 45;
+            selectImageUserLabel.Text = "Seleccione una foto de perfil";
+            selectImageUserLabel.Click += labelSelectedImageUser_Click;
             // 
-            // pictureBoxPhotoNewUser
+            // photoNewUserPictureBox
             // 
-            pictureBoxPhotoNewUser.BorderStyle = BorderStyle.Fixed3D;
-            pictureBoxPhotoNewUser.Location = new Point(197, 149);
-            pictureBoxPhotoNewUser.Name = "pictureBoxPhotoNewUser";
-            pictureBoxPhotoNewUser.Size = new Size(125, 78);
-            pictureBoxPhotoNewUser.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxPhotoNewUser.TabIndex = 44;
-            pictureBoxPhotoNewUser.TabStop = false;
+            photoNewUserPictureBox.BorderStyle = BorderStyle.Fixed3D;
+            photoNewUserPictureBox.Location = new Point(253, 87);
+            photoNewUserPictureBox.Name = "photoNewUserPictureBox";
+            photoNewUserPictureBox.Size = new Size(154, 122);
+            photoNewUserPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            photoNewUserPictureBox.TabIndex = 44;
+            photoNewUserPictureBox.TabStop = false;
             // 
             // emailLabel
             // 
             emailLabel.AutoSize = true;
-            emailLabel.Location = new Point(42, 421);
+            emailLabel.Location = new Point(66, 443);
             emailLabel.Name = "emailLabel";
-            emailLabel.Size = new Size(52, 18);
+            emailLabel.Size = new Size(181, 22);
             emailLabel.TabIndex = 42;
-            emailLabel.Text = "Email:";
+            emailLabel.Text = "Correo Electronico:";
             // 
             // emailTextBox
             // 
-            emailTextBox.Location = new Point(122, 418);
+            emailTextBox.Location = new Point(253, 440);
             emailTextBox.Name = "emailTextBox";
-            emailTextBox.Size = new Size(299, 26);
+            emailTextBox.Size = new Size(332, 30);
             emailTextBox.TabIndex = 43;
             // 
             // userLabel
             // 
             userLabel.AutoSize = true;
-            userLabel.Location = new Point(42, 290);
+            userLabel.Location = new Point(161, 256);
             userLabel.Name = "userLabel";
-            userLabel.Size = new Size(66, 18);
+            userLabel.Size = new Size(80, 22);
             userLabel.TabIndex = 38;
             userLabel.Text = "Usuario:";
             // 
-            // txtUserName
+            // userNameTextBox
             // 
-            txtUserName.Location = new Point(122, 288);
-            txtUserName.Name = "txtUserName";
-            txtUserName.Size = new Size(299, 26);
-            txtUserName.TabIndex = 39;
+            userNameTextBox.Location = new Point(253, 256);
+            userNameTextBox.Name = "userNameTextBox";
+            userNameTextBox.Size = new Size(332, 30);
+            userNameTextBox.TabIndex = 39;
             // 
-            // label7
+            // privacyLabel
             // 
-            label7.Font = new Font("Century Gothic", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.ForeColor = SystemColors.AppWorkspace;
-            label7.Location = new Point(-3, 708);
-            label7.Name = "label7";
-            label7.Size = new Size(469, 80);
-            label7.TabIndex = 37;
-            label7.Text = "*Al registrarse, aceptas nuestros Terminos De Servicios, Politica de Privacidad y recibir  actualizaciones por parte de los InsanosSV";
-            label7.TextAlign = ContentAlignment.MiddleCenter;
+            privacyLabel.BackColor = Color.Transparent;
+            privacyLabel.Font = new Font("Century Gothic", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            privacyLabel.ForeColor = Color.DimGray;
+            privacyLabel.Location = new Point(40, 838);
+            privacyLabel.Name = "privacyLabel";
+            privacyLabel.Size = new Size(548, 80);
+            privacyLabel.TabIndex = 37;
+            privacyLabel.Text = "*Al registrarse, aceptas nuestros Terminos De Servicios, Politica de Privacidad y recibir  actualizaciones por parte de los InsanosSV";
+            privacyLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // lblLogin
+            // loginLabel
             // 
-            lblLogin.Cursor = Cursors.Hand;
-            lblLogin.Font = new Font("Century Gothic", 9F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            lblLogin.ForeColor = Color.Turquoise;
-            lblLogin.Location = new Point(315, 102);
-            lblLogin.Name = "lblLogin";
-            lblLogin.Size = new Size(81, 30);
-            lblLogin.TabIndex = 36;
-            lblLogin.Text = "Ingresar";
-            lblLogin.TextAlign = ContentAlignment.MiddleLeft;
-            lblLogin.Click += lblLogin_Click;
+            loginLabel.Cursor = Cursors.Hand;
+            loginLabel.Font = new Font("Century Gothic", 9F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            loginLabel.ForeColor = Color.DodgerBlue;
+            loginLabel.Location = new Point(365, 918);
+            loginLabel.Name = "loginLabel";
+            loginLabel.Size = new Size(81, 30);
+            loginLabel.TabIndex = 36;
+            loginLabel.Text = "Ingresar";
+            loginLabel.TextAlign = ContentAlignment.MiddleLeft;
+            loginLabel.Click += lblLogin_Click;
             // 
-            // label1
+            // existingAccountLabel
             // 
-            label1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.ControlDark;
-            label1.Location = new Point(148, 102);
-            label1.Name = "label1";
-            label1.Size = new Size(174, 30);
-            label1.TabIndex = 35;
-            label1.Text = "ya tienes una cuenta? ";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
+            existingAccountLabel.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            existingAccountLabel.ForeColor = Color.Black;
+            existingAccountLabel.Location = new Point(93, 918);
+            existingAccountLabel.Name = "existingAccountLabel";
+            existingAccountLabel.Size = new Size(236, 30);
+            existingAccountLabel.TabIndex = 35;
+            existingAccountLabel.Text = "¿Ya tienes una cuenta? ";
+            existingAccountLabel.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // btnNewAccount
+            // registerSaveButton
             // 
-            btnNewAccount.BackColor = Color.Turquoise;
-            btnNewAccount.FlatStyle = FlatStyle.Flat;
-            btnNewAccount.ForeColor = Color.White;
-            btnNewAccount.IconChar = FontAwesome.Sharp.IconChar.None;
-            btnNewAccount.IconColor = Color.Black;
-            btnNewAccount.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnNewAccount.Location = new Point(122, 670);
-            btnNewAccount.Name = "btnNewAccount";
-            btnNewAccount.Size = new Size(248, 35);
-            btnNewAccount.TabIndex = 34;
-            btnNewAccount.Text = "Registrarse";
-            btnNewAccount.UseVisualStyleBackColor = false;
-            btnNewAccount.Click += btnNewAccount_Click;
+            registerSaveButton.BackColor = Color.DodgerBlue;
+            registerSaveButton.FlatStyle = FlatStyle.Popup;
+            registerSaveButton.ForeColor = Color.White;
+            registerSaveButton.IconChar = FontAwesome.Sharp.IconChar.None;
+            registerSaveButton.IconColor = Color.Black;
+            registerSaveButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            registerSaveButton.Location = new Point(198, 791);
+            registerSaveButton.Name = "registerSaveButton";
+            registerSaveButton.Size = new Size(248, 35);
+            registerSaveButton.TabIndex = 34;
+            registerSaveButton.Text = "Registrarse";
+            registerSaveButton.UseVisualStyleBackColor = false;
+            registerSaveButton.Click += btnNewAccount_Click;
             // 
-            // label8
+            // cityLabel
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(41, 635);
-            label8.Name = "label8";
-            label8.Size = new Size(67, 18);
-            label8.TabIndex = 33;
-            label8.Text = "Ciudad:";
+            cityLabel.AutoSize = true;
+            cityLabel.Location = new Point(167, 737);
+            cityLabel.Name = "cityLabel";
+            cityLabel.Size = new Size(80, 22);
+            cityLabel.TabIndex = 33;
+            cityLabel.Text = "Ciudad:";
             // 
-            // cboListCity
+            // listCityComboBox
             // 
-            cboListCity.FormattingEnabled = true;
-            cboListCity.Location = new Point(124, 632);
-            cboListCity.Name = "cboListCity";
-            cboListCity.Size = new Size(299, 26);
-            cboListCity.TabIndex = 32;
+            listCityComboBox.FormattingEnabled = true;
+            listCityComboBox.Location = new Point(253, 729);
+            listCityComboBox.Name = "listCityComboBox";
+            listCityComboBox.Size = new Size(332, 30);
+            listCityComboBox.TabIndex = 32;
             // 
-            // cboListCountrys
+            // listCountrysComboBox
             // 
-            cboListCountrys.FormattingEnabled = true;
-            cboListCountrys.Location = new Point(124, 587);
-            cboListCountrys.Name = "cboListCountrys";
-            cboListCountrys.Size = new Size(299, 26);
-            cboListCountrys.TabIndex = 30;
+            listCountrysComboBox.FormattingEnabled = true;
+            listCountrysComboBox.Location = new Point(253, 666);
+            listCountrysComboBox.Name = "listCountrysComboBox";
+            listCountrysComboBox.Size = new Size(332, 30);
+            listCountrysComboBox.TabIndex = 30;
             // 
-            // label6
+            // countryLabel
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(41, 590);
-            label6.Name = "label6";
-            label6.Size = new Size(40, 18);
-            label6.TabIndex = 31;
-            label6.Text = "Pais:";
+            countryLabel.AutoSize = true;
+            countryLabel.Location = new Point(195, 669);
+            countryLabel.Name = "countryLabel";
+            countryLabel.Size = new Size(49, 22);
+            countryLabel.TabIndex = 31;
+            countryLabel.Text = "Pais:";
             // 
-            // dtpBirthDate
+            // BirthdayDataTimePicker
             // 
-            dtpBirthDate.Location = new Point(124, 463);
-            dtpBirthDate.Name = "dtpBirthDate";
-            dtpBirthDate.Size = new Size(301, 26);
-            dtpBirthDate.TabIndex = 29;
+            BirthdayDataTimePicker.Location = new Point(253, 505);
+            BirthdayDataTimePicker.Name = "BirthdayDataTimePicker";
+            BirthdayDataTimePicker.Size = new Size(332, 30);
+            BirthdayDataTimePicker.TabIndex = 29;
             // 
-            // label10
+            // phoneNumberLabel
             // 
-            label10.AutoSize = true;
-            label10.Location = new Point(44, 508);
-            label10.Name = "label10";
-            label10.Size = new Size(75, 18);
-            label10.TabIndex = 27;
-            label10.Text = "Telefono:";
+            phoneNumberLabel.AutoSize = true;
+            phoneNumberLabel.Location = new Point(150, 559);
+            phoneNumberLabel.Name = "phoneNumberLabel";
+            phoneNumberLabel.Size = new Size(91, 22);
+            phoneNumberLabel.TabIndex = 27;
+            phoneNumberLabel.Text = "Telefono:";
             // 
-            // txtNumberPhone
+            // numberPhoneTextBox
             // 
-            txtNumberPhone.Location = new Point(124, 505);
-            txtNumberPhone.Name = "txtNumberPhone";
-            txtNumberPhone.Size = new Size(299, 26);
-            txtNumberPhone.TabIndex = 28;
+            numberPhoneTextBox.Location = new Point(253, 556);
+            numberPhoneTextBox.Name = "numberPhoneTextBox";
+            numberPhoneTextBox.Size = new Size(332, 30);
+            numberPhoneTextBox.TabIndex = 28;
             // 
-            // label9
+            // passwordLabel
             // 
-            label9.AutoSize = true;
-            label9.Location = new Point(44, 551);
-            label9.Name = "label9";
-            label9.Size = new Size(56, 18);
-            label9.TabIndex = 25;
-            label9.Text = "Clave:";
+            passwordLabel.AutoSize = true;
+            passwordLabel.Location = new Point(123, 614);
+            passwordLabel.Name = "passwordLabel";
+            passwordLabel.Size = new Size(118, 22);
+            passwordLabel.TabIndex = 25;
+            passwordLabel.Text = "Contraseña:";
             // 
-            // txtPassword
+            // passwordTextBox
             // 
-            txtPassword.Location = new Point(124, 549);
-            txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(299, 26);
-            txtPassword.TabIndex = 26;
+            passwordTextBox.Location = new Point(253, 614);
+            passwordTextBox.Name = "passwordTextBox";
+            passwordTextBox.Size = new Size(332, 30);
+            passwordTextBox.TabIndex = 26;
             // 
-            // label2
+            // nameLabel
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(44, 335);
-            label2.Name = "label2";
-            label2.Size = new Size(72, 18);
-            label2.TabIndex = 20;
-            label2.Text = "Nombre:";
+            nameLabel.AutoSize = true;
+            nameLabel.Location = new Point(154, 316);
+            nameLabel.Name = "nameLabel";
+            nameLabel.Size = new Size(87, 22);
+            nameLabel.TabIndex = 20;
+            nameLabel.Text = "Nombre:";
             // 
             // nameTexBox
             // 
-            nameTexBox.Location = new Point(122, 332);
+            nameTexBox.Location = new Point(253, 316);
             nameTexBox.Name = "nameTexBox";
-            nameTexBox.Size = new Size(299, 26);
+            nameTexBox.Size = new Size(332, 30);
             nameTexBox.TabIndex = 21;
             // 
-            // label3
+            // birthdayLabel
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(13, 469);
-            label3.Name = "label3";
-            label3.Size = new Size(106, 18);
-            label3.TabIndex = 22;
-            label3.Text = "Cumpleaños:";
+            birthdayLabel.AutoSize = true;
+            birthdayLabel.Location = new Point(34, 511);
+            birthdayLabel.Name = "birthdayLabel";
+            birthdayLabel.Size = new Size(207, 22);
+            birthdayLabel.TabIndex = 22;
+            birthdayLabel.Text = "Fecha de Nacimiento:";
             // 
-            // label4
+            // lastNameLabel
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(42, 377);
-            label4.Name = "label4";
-            label4.Size = new Size(75, 18);
-            label4.TabIndex = 23;
-            label4.Text = "Apellido:";
+            lastNameLabel.AutoSize = true;
+            lastNameLabel.Location = new Point(156, 384);
+            lastNameLabel.Name = "lastNameLabel";
+            lastNameLabel.Size = new Size(88, 22);
+            lastNameLabel.TabIndex = 23;
+            lastNameLabel.Text = "Apellido:";
             // 
             // lastNameTexBox
             // 
-            lastNameTexBox.Location = new Point(122, 374);
+            lastNameTexBox.Location = new Point(253, 376);
             lastNameTexBox.Name = "lastNameTexBox";
-            lastNameTexBox.Size = new Size(299, 26);
+            lastNameTexBox.Size = new Size(332, 30);
             lastNameTexBox.TabIndex = 24;
             // 
             // notifyIcon1
@@ -367,10 +371,11 @@
             // 
             // NewAccountForm
             // 
-            AutoScaleDimensions = new SizeF(9F, 18F);
+            AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(665, 926);
-            Controls.Add(gbRegistrar);
+            BackColor = Color.FromArgb(46, 54, 61);
+            ClientSize = new Size(700, 1032);
+            Controls.Add(registerGroupBox);
             Controls.Add(pictureBoxMinimize);
             Controls.Add(pictureBoxClosed);
             Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -380,9 +385,9 @@
             Text = "CrearCuentaForm";
             ((System.ComponentModel.ISupportInitialize)pictureBoxMinimize).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxClosed).EndInit();
-            gbRegistrar.ResumeLayout(false);
-            gbRegistrar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxPhotoNewUser).EndInit();
+            registerGroupBox.ResumeLayout(false);
+            registerGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)photoNewUserPictureBox).EndInit();
             ResumeLayout(false);
         }
 
@@ -390,33 +395,33 @@
 
         private PictureBox pictureBoxMinimize;
         private PictureBox pictureBoxClosed;
-        private Label lblCrearCuenta;
-        private GroupBox gbRegistrar;
-        private DateTimePicker dtpBirthDate;
-        private Label label10;
-        private TextBox txtNumberPhone;
-        private Label label9;
-        private TextBox txtPassword;
-        private Label label2;
+        private Label titleLabel;
+        private GroupBox registerGroupBox;
+        private DateTimePicker BirthdayDataTimePicker;
+        private Label phoneNumberLabel;
+        private TextBox numberPhoneTextBox;
+        private Label passwordLabel;
+        private TextBox passwordTextBox;
+        private Label nameLabel;
         private TextBox nameTexBox;
-        private Label label3;
-        private Label label4;
+        private Label birthdayLabel;
+        private Label lastNameLabel;
         private TextBox lastNameTexBox;
-        private FontAwesome.Sharp.IconButton btnNewAccount;
-        private Label label8;
-        private ComboBox cboListCity;
-        private ComboBox cboListCountrys;
-        private Label label6;
+        private FontAwesome.Sharp.IconButton registerSaveButton;
+        private Label cityLabel;
+        private ComboBox listCityComboBox;
+        private ComboBox listCountrysComboBox;
+        private Label countryLabel;
         private ToolTip toolTip1;
-        private Label label7;
-        private Label lblLogin;
-        private Label label1;
+        private Label privacyLabel;
+        private Label loginLabel;
+        private Label existingAccountLabel;
         private Label userLabel;
-        private TextBox txtUserName;
+        private TextBox userNameTextBox;
         private Label emailLabel;
         private TextBox emailTextBox;
         private NotifyIcon notifyIcon1;
-        private Label labelSelectedImageUser;
-        private PictureBox pictureBoxPhotoNewUser;
+        private Label selectImageUserLabel;
+        private PictureBox photoNewUserPictureBox;
     }
 }

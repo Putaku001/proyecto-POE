@@ -502,7 +502,7 @@
             cityLabel.BackColor = Color.Transparent;
             cityLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             cityLabel.ForeColor = Color.White;
-            cityLabel.Location = new Point(283, 100);
+            cityLabel.Location = new Point(311, 100);
             cityLabel.Name = "cityLabel";
             cityLabel.Size = new Size(99, 28);
             cityLabel.TabIndex = 16;

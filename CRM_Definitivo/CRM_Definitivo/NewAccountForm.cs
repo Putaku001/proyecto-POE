@@ -40,8 +40,8 @@ namespace PresentationLayer
 
             };
 
-            cboListCountrys.DataSource = ListaPaises;
-            cboListCountrys.SelectedIndex = -1;
+            listCountrysComboBox.DataSource = ListaPaises;
+            listCountrysComboBox.SelectedIndex = -1;
             List<string> ListaCiudad = new List<string>
             {
                 "Ahuachapán",
@@ -59,19 +59,19 @@ namespace PresentationLayer
                 "Morazán",
                 "La Unión"
             };
-            cboListCity.DataSource = ListaCiudad;
-            cboListCity.SelectedIndex = -1;
+            listCityComboBox.DataSource = ListaCiudad;
+            listCityComboBox.SelectedIndex = -1;
         }
 
         private void CleanFields()
         {
             nameTexBox.Text = "";
             lastNameTexBox.Text = "";
-            dtpBirthDate.Value = DateTime.Now;
-            txtNumberPhone.Text = "";
-            txtPassword.Text = "";
-            cboListCountrys.SelectedIndex = -1;
-            cboListCity.SelectedIndex = -1;
+            BirthdayDataTimePicker.Value = DateTime.Now;
+            numberPhoneTextBox.Text = "";
+            passwordTextBox.Text = "";
+            listCountrysComboBox.SelectedIndex = -1;
+            listCityComboBox.SelectedIndex = -1;
         }
 
         private void pictureBoxClosed_Click(object sender, EventArgs e)
@@ -106,7 +106,7 @@ namespace PresentationLayer
                         return;
                     }
 
-                    string password = txtPassword.Text;
+                    string password = passwordTextBox.Text;
                     if (password.Length < 8)
                     {
                         MessageBox.Show("La contraseña debe tener al menos 8 caracteres.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -117,16 +117,16 @@ namespace PresentationLayer
                     
                     User newAccount = new User
                     {
-                        UserAccount = txtUserName.Text,
+                        UserAccount = userNameTextBox.Text,
                         idRol = 4,
                         NameUser = nameTexBox.Text,
                         LastName = lastNameTexBox.Text,
                         Email = emailTextBox.Text,
-                        Birthdate = dtpBirthDate.Value,
-                        NumberPhone = txtNumberPhone.Text,
+                        Birthdate = BirthdayDataTimePicker.Value,
+                        NumberPhone = numberPhoneTextBox.Text,
                         passworduser = HashPassword(password),
-                        Country = (string)cboListCountrys.SelectedValue,
-                        City = (string)cboListCity.SelectedValue,
+                        Country = (string)listCountrysComboBox.SelectedValue,
+                        City = (string)listCityComboBox.SelectedValue,
                         Statususer = "Activo",
                         Image = imageBytes,
                         DateRegistration = DateTime.Now,
@@ -137,7 +137,7 @@ namespace PresentationLayer
 
                     MessageBox.Show("La cuenta se ha creado con éxito.");
 
-                    notifyIcon1.BalloonTipTitle = $"Bienvenido {txtUserName.Text}, usted se ha registrado correctamente a los Tilinazos77";
+                    notifyIcon1.BalloonTipTitle = $"Bienvenido {userNameTextBox.Text}, usted se ha registrado correctamente a los Tilinazos77";
                     notifyIcon1.BalloonTipText = "Ver detalles";
                     notifyIcon1.Icon = SystemIcons.Information;
                     notifyIcon1.ShowBalloonTip(3000);
@@ -160,10 +160,10 @@ namespace PresentationLayer
             return !string.IsNullOrWhiteSpace(nameTexBox.Text) &&
                    !string.IsNullOrWhiteSpace(lastNameTexBox.Text) &&
                    !string.IsNullOrWhiteSpace(emailTextBox.Text) &&
-                   !string.IsNullOrWhiteSpace(txtNumberPhone.Text) &&
-                   !string.IsNullOrWhiteSpace(txtPassword.Text) &&
-                   cboListCountrys.SelectedIndex != 1 &&
-                   cboListCity.SelectedIndex != -1;
+                   !string.IsNullOrWhiteSpace(numberPhoneTextBox.Text) &&
+                   !string.IsNullOrWhiteSpace(passwordTextBox.Text) &&
+                   listCountrysComboBox.SelectedIndex != 1 &&
+                   listCityComboBox.SelectedIndex != -1;
         }
         private bool IsValidEmail(string email)
         {
@@ -215,13 +215,13 @@ namespace PresentationLayer
 
             if(photoUser.ShowDialog() == DialogResult.OK)
             {
-                pictureBoxPhotoNewUser.Image = System.Drawing.Image.FromFile(photoUser.FileName);
+                photoNewUserPictureBox.Image = System.Drawing.Image.FromFile(photoUser.FileName);
 
-                if (pictureBoxPhotoNewUser.Image != null)
+                if (photoNewUserPictureBox.Image != null)
                 {
                     using (MemoryStream memoryStream = new MemoryStream())
                     {
-                        pictureBoxPhotoNewUser.Image.Save(memoryStream, System.Drawing.Imaging.ImageFormat.Png);
+                        photoNewUserPictureBox.Image.Save(memoryStream, System.Drawing.Imaging.ImageFormat.Png);
                         imageBytes = memoryStream.ToArray();
                     }
                 }
