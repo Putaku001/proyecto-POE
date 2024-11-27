@@ -30,8 +30,8 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewAccountForm));
-            pictureBoxMinimize = new PictureBox();
-            pictureBoxClosed = new PictureBox();
+            minimizePictureBox = new PictureBox();
+            closedPictureBox = new PictureBox();
             titleLabel = new Label();
             registerGroupBox = new GroupBox();
             selectImageUserLabel = new Label();
@@ -60,41 +60,52 @@
             lastNameTexBox = new TextBox();
             toolTip1 = new ToolTip(components);
             notifyIcon1 = new NotifyIcon(components);
-            ((System.ComponentModel.ISupportInitialize)pictureBoxMinimize).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxClosed).BeginInit();
+            errorValidation = new ErrorProvider(components);
+            errorUserLabel = new Label();
+            errorUserNameLabel = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            label5 = new Label();
+            label6 = new Label();
+            label7 = new Label();
+            label8 = new Label();
+            label9 = new Label();
+            ((System.ComponentModel.ISupportInitialize)minimizePictureBox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)closedPictureBox).BeginInit();
             registerGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)photoNewUserPictureBox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorValidation).BeginInit();
             SuspendLayout();
             // 
-            // pictureBoxMinimize
+            // minimizePictureBox
             // 
-            pictureBoxMinimize.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            pictureBoxMinimize.BackColor = Color.Transparent;
-            pictureBoxMinimize.Cursor = Cursors.Hand;
-            pictureBoxMinimize.Image = (Image)resources.GetObject("pictureBoxMinimize.Image");
-            pictureBoxMinimize.Location = new Point(602, 11);
-            pictureBoxMinimize.Name = "pictureBoxMinimize";
-            pictureBoxMinimize.Size = new Size(39, 32);
-            pictureBoxMinimize.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxMinimize.TabIndex = 7;
-            pictureBoxMinimize.TabStop = false;
-            pictureBoxMinimize.Click += pictureBoxMinimize_Click;
-            pictureBoxMinimize.MouseHover += pictureBoxMinimize_MouseHover;
+            minimizePictureBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            minimizePictureBox.BackColor = Color.Transparent;
+            minimizePictureBox.Cursor = Cursors.Hand;
+            minimizePictureBox.Image = (Image)resources.GetObject("minimizePictureBox.Image");
+            minimizePictureBox.Location = new Point(602, 11);
+            minimizePictureBox.Name = "minimizePictureBox";
+            minimizePictureBox.Size = new Size(39, 32);
+            minimizePictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            minimizePictureBox.TabIndex = 7;
+            minimizePictureBox.TabStop = false;
+            minimizePictureBox.Click += minimizePictureBox_Click;
+            minimizePictureBox.MouseHover += minimizePictureBox_MouseHover;
             // 
-            // pictureBoxClosed
+            // closedPictureBox
             // 
-            pictureBoxClosed.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            pictureBoxClosed.BackColor = Color.Transparent;
-            pictureBoxClosed.Cursor = Cursors.Hand;
-            pictureBoxClosed.Image = Properties.Resources.cerrar__2_;
-            pictureBoxClosed.Location = new Point(647, 11);
-            pictureBoxClosed.Name = "pictureBoxClosed";
-            pictureBoxClosed.Size = new Size(39, 32);
-            pictureBoxClosed.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxClosed.TabIndex = 6;
-            pictureBoxClosed.TabStop = false;
-            pictureBoxClosed.Click += pictureBoxClosed_Click;
-            pictureBoxClosed.MouseHover += pictureBoxClosed_MouseHover;
+            closedPictureBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            closedPictureBox.BackColor = Color.Transparent;
+            closedPictureBox.Cursor = Cursors.Hand;
+            closedPictureBox.Image = Properties.Resources.cerrar__2_;
+            closedPictureBox.Location = new Point(647, 11);
+            closedPictureBox.Name = "closedPictureBox";
+            closedPictureBox.Size = new Size(39, 32);
+            closedPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            closedPictureBox.TabIndex = 6;
+            closedPictureBox.TabStop = false;
+            closedPictureBox.Click += closedPictureBox_Click;
+            closedPictureBox.MouseHover += closedPictureBox_MouseHover;
             // 
             // titleLabel
             // 
@@ -112,6 +123,15 @@
             // registerGroupBox
             // 
             registerGroupBox.BackColor = Color.LightGray;
+            registerGroupBox.Controls.Add(label9);
+            registerGroupBox.Controls.Add(label8);
+            registerGroupBox.Controls.Add(label7);
+            registerGroupBox.Controls.Add(label6);
+            registerGroupBox.Controls.Add(label5);
+            registerGroupBox.Controls.Add(label4);
+            registerGroupBox.Controls.Add(label3);
+            registerGroupBox.Controls.Add(errorUserNameLabel);
+            registerGroupBox.Controls.Add(errorUserLabel);
             registerGroupBox.Controls.Add(selectImageUserLabel);
             registerGroupBox.Controls.Add(photoNewUserPictureBox);
             registerGroupBox.Controls.Add(emailLabel);
@@ -153,7 +173,7 @@
             selectImageUserLabel.Size = new Size(265, 22);
             selectImageUserLabel.TabIndex = 45;
             selectImageUserLabel.Text = "Seleccione una foto de perfil";
-            selectImageUserLabel.Click += labelSelectedImageUser_Click;
+            selectImageUserLabel.Click += selectImageUserLabel_Click;
             // 
             // photoNewUserPictureBox
             // 
@@ -220,7 +240,7 @@
             loginLabel.TabIndex = 36;
             loginLabel.Text = "Ingresar";
             loginLabel.TextAlign = ContentAlignment.MiddleLeft;
-            loginLabel.Click += lblLogin_Click;
+            loginLabel.Click += loginLabel_Click;
             // 
             // existingAccountLabel
             // 
@@ -247,7 +267,7 @@
             registerSaveButton.TabIndex = 34;
             registerSaveButton.Text = "Registrarse";
             registerSaveButton.UseVisualStyleBackColor = false;
-            registerSaveButton.Click += btnNewAccount_Click;
+            registerSaveButton.Click += registerSaveButton_Click;
             // 
             // cityLabel
             // 
@@ -269,7 +289,7 @@
             // listCountrysComboBox
             // 
             listCountrysComboBox.FormattingEnabled = true;
-            listCountrysComboBox.Location = new Point(253, 666);
+            listCountrysComboBox.Location = new Point(253, 668);
             listCountrysComboBox.Name = "listCountrysComboBox";
             listCountrysComboBox.Size = new Size(332, 30);
             listCountrysComboBox.TabIndex = 30;
@@ -285,7 +305,7 @@
             // 
             // BirthdayDataTimePicker
             // 
-            BirthdayDataTimePicker.Location = new Point(253, 505);
+            BirthdayDataTimePicker.Location = new Point(253, 503);
             BirthdayDataTimePicker.Name = "BirthdayDataTimePicker";
             BirthdayDataTimePicker.Size = new Size(332, 30);
             BirthdayDataTimePicker.TabIndex = 29;
@@ -369,6 +389,109 @@
             notifyIcon1.Visible = true;
             notifyIcon1.BalloonTipClicked += notifyIcon1_BalloonTipClicked;
             // 
+            // errorValidation
+            // 
+            errorValidation.ContainerControl = this;
+            // 
+            // errorUserLabel
+            // 
+            errorUserLabel.AutoSize = true;
+            errorUserLabel.Font = new Font("Century Gothic", 8F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            errorUserLabel.ForeColor = Color.Red;
+            errorUserLabel.Location = new Point(253, 289);
+            errorUserLabel.Name = "errorUserLabel";
+            errorUserLabel.Size = new Size(58, 19);
+            errorUserLabel.TabIndex = 46;
+            errorUserLabel.Text = "label1";
+            // 
+            // errorUserNameLabel
+            // 
+            errorUserNameLabel.AutoSize = true;
+            errorUserNameLabel.Font = new Font("Century Gothic", 8F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            errorUserNameLabel.ForeColor = Color.Red;
+            errorUserNameLabel.Location = new Point(253, 349);
+            errorUserNameLabel.Name = "errorUserNameLabel";
+            errorUserNameLabel.Size = new Size(58, 19);
+            errorUserNameLabel.TabIndex = 47;
+            errorUserNameLabel.Text = "label2";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Century Gothic", 8F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.Red;
+            label3.Location = new Point(253, 418);
+            label3.Name = "label3";
+            label3.Size = new Size(58, 19);
+            label3.TabIndex = 48;
+            label3.Text = "label3";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Century Gothic", 8F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.Red;
+            label4.Location = new Point(253, 478);
+            label4.Name = "label4";
+            label4.Size = new Size(58, 19);
+            label4.TabIndex = 49;
+            label4.Text = "label4";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Century Gothic", 8F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.Red;
+            label5.Location = new Point(253, 534);
+            label5.Name = "label5";
+            label5.Size = new Size(58, 19);
+            label5.TabIndex = 50;
+            label5.Text = "label5";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Century Gothic", 8F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.Red;
+            label6.Location = new Point(253, 589);
+            label6.Name = "label6";
+            label6.Size = new Size(58, 19);
+            label6.TabIndex = 51;
+            label6.Text = "label6";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Century Gothic", 8F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.Red;
+            label7.Location = new Point(253, 645);
+            label7.Name = "label7";
+            label7.Size = new Size(58, 19);
+            label7.TabIndex = 52;
+            label7.Text = "label7";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Century Gothic", 8F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label8.ForeColor = Color.Red;
+            label8.Location = new Point(253, 703);
+            label8.Name = "label8";
+            label8.Size = new Size(58, 19);
+            label8.TabIndex = 53;
+            label8.Text = "label8";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Century Gothic", 8F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label9.ForeColor = Color.Red;
+            label9.Location = new Point(253, 762);
+            label9.Name = "label9";
+            label9.Size = new Size(58, 19);
+            label9.TabIndex = 54;
+            label9.Text = "label9";
+            // 
             // NewAccountForm
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
@@ -376,25 +499,26 @@
             BackColor = Color.FromArgb(46, 54, 61);
             ClientSize = new Size(700, 1032);
             Controls.Add(registerGroupBox);
-            Controls.Add(pictureBoxMinimize);
-            Controls.Add(pictureBoxClosed);
+            Controls.Add(minimizePictureBox);
+            Controls.Add(closedPictureBox);
             Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Name = "NewAccountForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "CrearCuentaForm";
-            ((System.ComponentModel.ISupportInitialize)pictureBoxMinimize).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxClosed).EndInit();
+            ((System.ComponentModel.ISupportInitialize)minimizePictureBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)closedPictureBox).EndInit();
             registerGroupBox.ResumeLayout(false);
             registerGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)photoNewUserPictureBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorValidation).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private PictureBox pictureBoxMinimize;
-        private PictureBox pictureBoxClosed;
+        private PictureBox minimizePictureBox;
+        private PictureBox closedPictureBox;
         private Label titleLabel;
         private GroupBox registerGroupBox;
         private DateTimePicker BirthdayDataTimePicker;
@@ -423,5 +547,15 @@
         private NotifyIcon notifyIcon1;
         private Label selectImageUserLabel;
         private PictureBox photoNewUserPictureBox;
+        private ErrorProvider errorValidation;
+        private Label label9;
+        private Label label8;
+        private Label label7;
+        private Label label6;
+        private Label label5;
+        private Label label4;
+        private Label label3;
+        private Label errorUserNameLabel;
+        private Label errorUserLabel;
     }
 }

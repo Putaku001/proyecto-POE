@@ -16,11 +16,13 @@ using System.Windows.Controls;
 using System.Drawing;
 
 
+
 namespace PresentationLayer
 {
     public partial class NewAccountForm : Form
     {
         private IUsersServices _usersServices;
+        bool isEditing = false;
         byte[] imageBytes;
 
 
@@ -73,28 +75,26 @@ namespace PresentationLayer
             listCountrysComboBox.SelectedIndex = -1;
             listCityComboBox.SelectedIndex = -1;
         }
-
-        private void pictureBoxClosed_Click(object sender, EventArgs e)
+        private void closedPictureBox_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void pictureBoxMinimize_Click(object sender, EventArgs e)
+        private void closedPictureBox_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip(closedPictureBox, "Cerrar ventana");
+        }
+
+
+        private void minimizePictureBox_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
-        private void pictureBoxClosed_MouseHover(object sender, EventArgs e)
+        private void minimizePictureBox_MouseHover(object sender, EventArgs e)
         {
-            toolTip1.SetToolTip(pictureBoxClosed, "Cerrar ventana");
+            toolTip1.SetToolTip(minimizePictureBox, "Minimizar ventana");
         }
-
-        private void pictureBoxMinimize_MouseHover(object sender, EventArgs e)
-        {
-            toolTip1.SetToolTip(pictureBoxMinimize, "Minimizar ventana");
-        }
-
-        private void btnNewAccount_Click(object sender, EventArgs e)
+        private void registerSaveButton_Click(object sender, EventArgs e)
         {
             try
             {
@@ -113,8 +113,8 @@ namespace PresentationLayer
                         return;
                     }
 
-                    
-                    
+
+
                     User newAccount = new User
                     {
                         UserAccount = userNameTextBox.Text,
@@ -182,11 +182,11 @@ namespace PresentationLayer
         {
             return password;
         }
-
-        private void lblLogin_Click(object sender, EventArgs e)
+        private void loginLabel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
 
         private void notifyIcon1_BalloonTipClicked(object sender, EventArgs e)
         {
@@ -208,12 +208,13 @@ namespace PresentationLayer
 
         }
 
-        private void labelSelectedImageUser_Click(object sender, EventArgs e)
+        private void selectImageUserLabel_Click(object sender, EventArgs e)
         {
+
             OpenFileDialog photoUser = new OpenFileDialog();
             photoUser.Filter = "Archivos de imagenes (*.png; *.jpg; *.jpeg; *.WEBP) | *.png; *.jpg; *.jpeg; *.WEBP";
 
-            if(photoUser.ShowDialog() == DialogResult.OK)
+            if (photoUser.ShowDialog() == DialogResult.OK)
             {
                 photoNewUserPictureBox.Image = System.Drawing.Image.FromFile(photoUser.FileName);
 
@@ -227,5 +228,30 @@ namespace PresentationLayer
                 }
             }
         }
+
+
+        //private void DisplayValidationErrors(ValidationResult result)
+        //{
+        //    errorValidation.Clear();
+
+        //    foreach (var error in result.Errors)
+        //    {
+        //        switch (error.PropertyName)
+        //        {
+        //            case nameof(User.UserAccount):
+        //                errorValidation.SetError(userNameTextBox, error.ErrorMessage);
+        //                errorUserLabel.Text = error.ErrorMessage;
+        //                break;
+        //            case nameof(User.NameUser):
+        //                errorValidation.SetError(nameTexBox, error.ErrorMessage);
+        //                errorUserNameLabel.Text = error.ErrorMessage;
+        //                break;
+        //            default:
+        //                Console.WriteLine($"Error en un campo no reconocido: {error.PropertyName}");
+        //                break;
+        //        }
+        //    }
+        //}
+
     }
 }   
