@@ -26,25 +26,25 @@ namespace PresentationLayer.Forms.Admin
         
         private void infoProjects_Load(object sender, EventArgs e)
         {
-            dataGridViewGetTask.DataSource = _proyectsServices.GetTasksByCode(codeProject);
-            dataGridViewGetTask.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewGetTask.Columns["idTask"].Visible = false;
-            dataGridViewGetTask.Columns["idStatusTask"].Visible = false;
-            dataGridViewGetTask.Columns["dateEnd"].Visible = false;
-            dataGridViewGetTask.Columns["fileTask"].Visible = false;
+            getTaskDataGridView.DataSource = _proyectsServices.GetTasksByCode(codeProject);
+            getTaskDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            getTaskDataGridView.Columns["idTask"].Visible = false;
+            getTaskDataGridView.Columns["idStatusTask"].Visible = false;
+            getTaskDataGridView.Columns["dateEnd"].Visible = false;
+            getTaskDataGridView.Columns["fileTask"].Visible = false;
         }
 
         private void dataGridViewGetTask_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-                textBoxDescription.Text = dataGridViewGetTask.Rows[e.RowIndex].Cells["descriptionTask"].Value.ToString();
-                textBoxTask.Text = dataGridViewGetTask.Rows[e.RowIndex].Cells["nameTask"].Value.ToString();
+                descriptionTextBox.Text = getTaskDataGridView.Rows[e.RowIndex].Cells["descriptionTask"].Value.ToString();
+                taskTextBox.Text = getTaskDataGridView.Rows[e.RowIndex].Cells["nameTask"].Value.ToString();
 
-                linkLabelDownloadTask.Visible = true;
+                downloadTaskLinkLabel.Visible = true;
             }
 
-            var idtaskSelected = dataGridViewGetTask.Rows[e.RowIndex].Cells["idTask"].Value.ToString();
+            var idtaskSelected = getTaskDataGridView.Rows[e.RowIndex].Cells["idTask"].Value.ToString();
             idTasks = Convert.ToInt32(idtaskSelected);
         }
 

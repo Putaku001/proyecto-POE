@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddUsersForm));
-            lblAñadirUsuarios = new Label();
+            addUserLabel = new Label();
             nameLabel = new Label();
             nameTextBox = new TextBox();
             rolComboBox = new ComboBox();
@@ -63,17 +63,17 @@
             informationPanel.SuspendLayout();
             SuspendLayout();
             // 
-            // lblAñadirUsuarios
+            // addUserLabel
             // 
-            lblAñadirUsuarios.BackColor = SystemColors.HotTrack;
-            lblAñadirUsuarios.Dock = DockStyle.Top;
-            lblAñadirUsuarios.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblAñadirUsuarios.Location = new Point(0, 0);
-            lblAñadirUsuarios.Name = "lblAñadirUsuarios";
-            lblAñadirUsuarios.Size = new Size(1293, 59);
-            lblAñadirUsuarios.TabIndex = 0;
-            lblAñadirUsuarios.Text = "Añadir";
-            lblAñadirUsuarios.TextAlign = ContentAlignment.TopCenter;
+            addUserLabel.BackColor = Color.DodgerBlue;
+            addUserLabel.Dock = DockStyle.Top;
+            addUserLabel.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            addUserLabel.Location = new Point(0, 0);
+            addUserLabel.Name = "addUserLabel";
+            addUserLabel.Size = new Size(1293, 59);
+            addUserLabel.TabIndex = 0;
+            addUserLabel.Text = "Añadir";
+            addUserLabel.TextAlign = ContentAlignment.TopCenter;
             // 
             // nameLabel
             // 
@@ -377,7 +377,7 @@
             BackColor = Color.White;
             ClientSize = new Size(1293, 794);
             Controls.Add(informationPanel);
-            Controls.Add(lblAñadirUsuarios);
+            Controls.Add(addUserLabel);
             Font = new Font("Century Gothic", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             ForeColor = Color.White;
             FormBorderStyle = FormBorderStyle.Fixed3D;
@@ -396,7 +396,7 @@
 
         #endregion
 
-        private Label lblAñadirUsuarios;
+        private Label addUserLabel;
         private Label nameLabel;
         private TextBox nameTextBox;
         private ComboBox rolComboBox;

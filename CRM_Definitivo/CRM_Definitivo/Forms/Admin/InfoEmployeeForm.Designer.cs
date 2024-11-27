@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InfoEmployeeForm));
-            this.professionLabel = new Label();
-            this.professionsTextBox = new TextBox();
+            this.professionLabel = new System.Windows.Forms.Label(); // Corrección
+            this.professionsTextBox = new System.Windows.Forms.TextBox(); // Corrección
             this.iconSaveInformationButton = new FontAwesome.Sharp.IconButton();
-            this.workStationLabel = new Label();
-            workStationTextBox = new TextBox();
+            this.workStationLabel = new System.Windows.Forms.Label(); // Corrección
+            this.workStationTextBox = new System.Windows.Forms.TextBox(); // Corrección
+
             SuspendLayout();
             // 
             // professionLabel
@@ -45,7 +46,7 @@
             this.professionLabel.Name = "professionLabel";
             this.professionLabel.Size = new Size(128, 30);
             this.professionLabel.TabIndex = 3;
-            this.professionLabel.Text = "Profesion:";
+            this.professionLabel.Text = "Profesión:";
             // 
             // professionsTextBox
             // 
@@ -84,10 +85,10 @@
             // 
             // workStationTextBox
             // 
-            workStationTextBox.Location = new Point(163, 216);
-            workStationTextBox.Name = "workStationTextBox";
-            workStationTextBox.Size = new Size(397, 30);
-            workStationTextBox.TabIndex = 7;
+            this.workStationTextBox.Location = new Point(163, 216);
+            this.workStationTextBox.Name = "workStationTextBox";
+            this.workStationTextBox.Size = new Size(397, 30);
+            this.workStationTextBox.TabIndex = 7;
             // 
             // InfoEmployeeForm
             // 
@@ -97,7 +98,7 @@
             ClientSize = new Size(709, 372);
             Controls.Add(this.iconSaveInformationButton);
             Controls.Add(this.workStationLabel);
-            Controls.Add(workStationTextBox);
+            Controls.Add(this.workStationTextBox); // Corrección
             Controls.Add(this.professionLabel);
             Controls.Add(this.professionsTextBox);
             Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -110,11 +111,10 @@
 
         #endregion
 
-        private Label labelInfo;
-        private TextBox textBoxProfession;
-        private Panel panelSaveInfo;
-        private FontAwesome.Sharp.IconButton iconButtonSaveInfoAditional;
-        private Label labelInfo2;
-        private TextBox workStationTextBox;
+        private System.Windows.Forms.Label professionLabel;
+        private System.Windows.Forms.TextBox professionsTextBox;
+        private System.Windows.Forms.TextBox workStationTextBox;
+        private System.Windows.Forms.Label workStationLabel;
+        private FontAwesome.Sharp.IconButton iconSaveInformationButton;
     }
 }

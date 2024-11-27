@@ -81,7 +81,7 @@ namespace PresentationLayer.Forms
                 saveButton.Visible = false;
                 editButton.Visible = true;
 
-                lblAñadirUsuarios.Text = "Editar Usuario";
+                addUserLabel.Text = "Editar Usuario";
             }
             else
             {
