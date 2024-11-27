@@ -23,7 +23,7 @@ namespace PresentationLayer.Forms.Admin
             InitializeComponent();
         }
 
-        
+
         private void infoProjects_Load(object sender, EventArgs e)
         {
             getTaskDataGridView.DataSource = _proyectsServices.GetTasksByCode(codeProject);
@@ -34,7 +34,7 @@ namespace PresentationLayer.Forms.Admin
             getTaskDataGridView.Columns["fileTask"].Visible = false;
         }
 
-        private void dataGridViewGetTask_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void getTaskDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
@@ -49,10 +49,10 @@ namespace PresentationLayer.Forms.Admin
         }
 
 
-        private void linkLabelDownloadTask_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void downloadTaskLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             try
-            {            
+            {
                 int idTask = idTasks;
                 byte[] content = _proyectsServices.DownloadTask(idTask);
 
@@ -62,7 +62,7 @@ namespace PresentationLayer.Forms.Admin
                     Filter = "Todos los archivos|*.*"
                 };
 
-                if(saveFileDialog.ShowDialog() == DialogResult.OK)
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     string filePath = saveFileDialog.FileName;
                     File.WriteAllBytes(filePath, content);
@@ -70,10 +70,10 @@ namespace PresentationLayer.Forms.Admin
                     MessageBox.Show("Tarea descargada correctamente");
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error en la descargar la tarea: " + ex.Message);
             }
-        }        
+        }
     }
 }
