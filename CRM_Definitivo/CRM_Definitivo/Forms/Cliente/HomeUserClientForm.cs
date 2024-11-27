@@ -21,8 +21,8 @@ namespace PresentationLayer.Forms.Cliente
 
         private void LoadData()
         {
-            labelUserAccount.Text = AuthUser.UserAccount;
-            lblHoraUsuario.Text = DateTime.Now.ToString("g");
+            userAccountLabel.Text = AuthUser.UserAccount;
+            timeLabel.Text = DateTime.Now.ToString("g");
         }
     }
 }

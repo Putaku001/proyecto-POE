@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             newProjectGroupBox = new GroupBox();
             descriptionProjectLabel = new Label();
             descriptionProjectTextBox = new TextBox();
@@ -206,13 +206,13 @@
             // 
             downloadProject.ActiveLinkColor = Color.Transparent;
             downloadProject.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = Color.Transparent;
-            dataGridViewCellStyle3.SelectionForeColor = Color.Black;
-            downloadProject.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = Color.Transparent;
+            dataGridViewCellStyle1.SelectionForeColor = Color.Black;
+            downloadProject.DefaultCellStyle = dataGridViewCellStyle1;
             downloadProject.HeaderText = "Descargar";
             downloadProject.MinimumWidth = 8;
             downloadProject.Name = "downloadProject";
@@ -229,8 +229,9 @@
             ClientSize = new Size(1480, 840);
             Controls.Add(projectTabControl);
             Controls.Add(newProjectGroupBox);
-            FormBorderStyle = FormBorderStyle.FixedDialog;
+            FormBorderStyle = FormBorderStyle.None;
             Name = "RequestClientForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Proyectos";
             Load += RequestClientForm_Load;
             newProjectGroupBox.ResumeLayout(false);
