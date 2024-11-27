@@ -28,39 +28,35 @@ namespace PresentationLayer.Forms
 
         private void LoadProyecto()
         {
-            dataGridViewRequestProjects.DataSource = _proyectoServices.GetRequestProjects();
-            dataGridViewRequestProjects.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewProjectsInProgress.DataSource = _proyectoServices.GetRequestProjectsProgress();
-            dataGridViewProjectsInProgress.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewProjectsEnd.DataSource = _proyectoServices.GetRequestProjectsFinish();
-            dataGridViewProjectsEnd.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewProjectsRefused.DataSource = _proyectoServices.GetRequestProjectsRefused();
-            dataGridViewProjectsRefused.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewProjectsWaitingResponse.DataSource = _proyectoServices.GetProjectsWaitingReponse();
-            dataGridViewProjectsWaitingResponse.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            requestProjectsDataGridView.DataSource = _proyectoServices.GetRequestProjects();
+            requestProjectsDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            projectProgressDataGridView.DataSource = _proyectoServices.GetRequestProjectsProgress();
+            projectProgressDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            projectsEndDataGridView.DataSource = _proyectoServices.GetRequestProjectsFinish();
+            projectsEndDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            projectsRefusedDataGridView.DataSource = _proyectoServices.GetRequestProjectsRefused();
+            projectsRefusedDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            projectsWaitingResponseDataGridView.DataSource = _proyectoServices.GetProjectsWaitingReponse();
+            projectsWaitingResponseDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-            dataGridViewProjectsWaitingResponse.Columns["file"].Visible = false;
-            dataGridViewProjectsRefused.Columns["file"].Visible = false;
-            dataGridViewProjectsEnd.Columns["file"].Visible = false;
-            dataGridViewRequestProjects.Columns["file"].Visible = false;
-            dataGridViewRequestProjects.Columns["idClient"].Visible = false;
-            dataGridViewProjectsInProgress.Columns["file"].Visible = false;
-
-        }
-
-        private void tpListaProyectos_Click(object sender, EventArgs e)
-        {
+            projectsWaitingResponseDataGridView.Columns["file"].Visible = false;
+            projectsRefusedDataGridView.Columns["file"].Visible = false;
+            projectsEndDataGridView.Columns["file"].Visible = false;
+            requestProjectsDataGridView.Columns["file"].Visible = false;
+            requestProjectsDataGridView.Columns["idClient"].Visible = false;
+            projectProgressDataGridView.Columns["file"].Visible = false;
 
         }
 
-        private void dataGridViewRequestProjects_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+        private void requestProjectsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == dataGridViewRequestProjects.Columns["SelectPr"].Index)
+            if (e.ColumnIndex == requestProjectsDataGridView.Columns["SelectPr"].Index)
             {
-                string CodeProject = dataGridViewRequestProjects.Rows[e.RowIndex].Cells["codeProject"].Value.ToString();
-                string NameProject = dataGridViewRequestProjects.Rows[e.RowIndex].Cells["nameProject"].Value.ToString();
-                string Client = dataGridViewRequestProjects.Rows[e.RowIndex].Cells["userAccount"].Value.ToString();
-                string DescriptionProject = dataGridViewRequestProjects.Rows[e.RowIndex].Cells["descriptionProject"].Value.ToString();
+                string CodeProject = requestProjectsDataGridView.Rows[e.RowIndex].Cells["codeProject"].Value.ToString();
+                string NameProject = requestProjectsDataGridView.Rows[e.RowIndex].Cells["nameProject"].Value.ToString();
+                string Client = requestProjectsDataGridView.Rows[e.RowIndex].Cells["userAccount"].Value.ToString();
+                string DescriptionProject = requestProjectsDataGridView.Rows[e.RowIndex].Cells["descriptionProject"].Value.ToString();
 
                 var assignamentTaskEmployeeForm = _serviceProvider.GetRequiredService<AssignamentTaskEmployeeForm>();
                 assignamentTaskEmployeeForm.Client = Client;
@@ -81,16 +77,15 @@ namespace PresentationLayer.Forms
                 LoadProyecto();
             }
         }
-
-        private void dataGridViewProjectsInProgress_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void projectProgressDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-                string CodeProject = dataGridViewProjectsInProgress.Rows[e.RowIndex].Cells["codeProject"].Value.ToString();
-                string NameProject = dataGridViewProjectsInProgress.Rows[e.RowIndex].Cells["nameProject"].Value.ToString();
-                string Client = dataGridViewProjectsInProgress.Rows[e.RowIndex].Cells["userAccount"].Value.ToString();
-                string DescriptionProject = dataGridViewProjectsInProgress.Rows[e.RowIndex].Cells["descriptionProject"].Value.ToString();
-                DateTime dateEnd = Convert.ToDateTime(dataGridViewProjectsInProgress.Rows[e.RowIndex].Cells["dateEnd"].Value.ToString());
+                string CodeProject = projectProgressDataGridView.Rows[e.RowIndex].Cells["codeProject"].Value.ToString();
+                string NameProject = projectProgressDataGridView.Rows[e.RowIndex].Cells["nameProject"].Value.ToString();
+                string Client = projectProgressDataGridView.Rows[e.RowIndex].Cells["userAccount"].Value.ToString();
+                string DescriptionProject = projectProgressDataGridView.Rows[e.RowIndex].Cells["descriptionProject"].Value.ToString();
+                DateTime dateEnd = Convert.ToDateTime(projectProgressDataGridView.Rows[e.RowIndex].Cells["dateEnd"].Value.ToString());
 
                 var SendProjectForm = _serviceProvider.GetRequiredService<SendProjectForm>();
                 SendProjectForm.CodeProject = CodeProject;
@@ -105,21 +100,22 @@ namespace PresentationLayer.Forms
             }
         }
 
-        private void dataGridViewProjectsEnd_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+        private void projectsEndDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
-        private void dataGridViewProjectsRefused_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void projectsRefusedDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == dataGridViewProjectsRefused.Columns["selectRp"].Index)
+            if (e.RowIndex == projectsRefusedDataGridView.Columns["selectRp"].Index)
             {
                 var mensaje = MessageBox.Show("Desea reahacer el proyecto?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 var ConfirmMessage = MessageBox.Show("Esta seguro?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (ConfirmMessage == DialogResult.Yes)
                 {
-                    string CodeProject = dataGridViewProjectsRefused.Rows[e.RowIndex].Cells["codeProject"].Value.ToString();
+                    string CodeProject = projectsRefusedDataGridView.Rows[e.RowIndex].Cells["codeProject"].Value.ToString();
 
                     _proyectoServices.ProjectRedo(CodeProject, 4);
                     LoadProyecto();
@@ -127,22 +123,25 @@ namespace PresentationLayer.Forms
             }
         }
 
-        private void dataGridViewProjectsWaitingResponse_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void projectsWaitingResponseDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
-        private void dataGridViewProjectsInProgress_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+
+        private void projectProgressDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex >= 0)
+            if (e.RowIndex >= 0)
             {
-                var CodeProject = dataGridViewProjectsInProgress.Rows[e.RowIndex].Cells["codeProject"].Value.ToString();
+                var CodeProject = projectProgressDataGridView.Rows[e.RowIndex].Cells["codeProject"].Value.ToString();
 
                 var OpenInfoProjects = _serviceProvider.GetRequiredService<infoProjects>();
                 OpenInfoProjects.codeProject = CodeProject;
                 OpenInfoProjects.ShowDialog();
-                
+
             }
         }
+
+
     }
 }

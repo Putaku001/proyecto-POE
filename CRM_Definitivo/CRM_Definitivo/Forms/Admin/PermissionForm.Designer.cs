@@ -85,7 +85,7 @@
             menuDataGridView.Location = new Point(3, 294);
             menuDataGridView.Name = "menuDataGridView";
             menuDataGridView.RowHeadersWidth = 51;
-            menuDataGridView.Size = new Size(1411, 439);
+            menuDataGridView.Size = new Size(1411, 443);
             menuDataGridView.TabIndex = 0;
             // 
             // controlMenuGroupBox
