@@ -28,229 +28,248 @@
         /// </summary>
         private void InitializeComponent()
         {
-            labelDescription = new Label();
-            textBoxDescription = new TextBox();
-            labelEmployee = new Label();
-            textBoxTask = new TextBox();
-            labelTask = new Label();
-            labelNameProject = new Label();
-            label6 = new Label();
-            labelUserAccount = new Label();
-            comboBoxEmployee = new ComboBox();
-            dataGridViewAssignamentTasks = new DataGridView();
-            dateTimePickerEnd = new DateTimePicker();
-            labelDateEnd = new Label();
-            groupBoxDate = new GroupBox();
-            groupBoxAssignamentTask = new GroupBox();
-            iconButtonAssignamentTask = new FontAwesome.Sharp.IconButton();
-            labelCodeProject = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewAssignamentTasks).BeginInit();
-            groupBoxDate.SuspendLayout();
-            groupBoxAssignamentTask.SuspendLayout();
+            descriptionLabel = new Label();
+            descriptionTextBox = new TextBox();
+            employeeLabel = new Label();
+            taskTextBox = new TextBox();
+            taskLabel = new Label();
+            nameProjectLabel = new Label();
+            clientLabel = new Label();
+            clientUserLabel = new Label();
+            employeeComboBox = new ComboBox();
+            assignamentTasksDataGridView = new DataGridView();
+            timeEndDateTimePicker = new DateTimePicker();
+            dateEndLabel = new Label();
+            dateGroupBox = new GroupBox();
+            assignamentTaskGroupBox = new GroupBox();
+            iconAssignamentTaskButton = new FontAwesome.Sharp.IconButton();
+            codeProjectLabel = new Label();
+            controlPanel = new Panel();
+            ((System.ComponentModel.ISupportInitialize)assignamentTasksDataGridView).BeginInit();
+            dateGroupBox.SuspendLayout();
+            assignamentTaskGroupBox.SuspendLayout();
+            controlPanel.SuspendLayout();
             SuspendLayout();
             // 
-            // labelDescription
+            // descriptionLabel
             // 
-            labelDescription.AutoSize = true;
-            labelDescription.Location = new Point(17, 28);
-            labelDescription.Name = "labelDescription";
-            labelDescription.Size = new Size(100, 20);
-            labelDescription.TabIndex = 0;
-            labelDescription.Text = "Descripcion:";
+            descriptionLabel.AutoSize = true;
+            descriptionLabel.Location = new Point(17, 28);
+            descriptionLabel.Name = "descriptionLabel";
+            descriptionLabel.Size = new Size(117, 21);
+            descriptionLabel.TabIndex = 0;
+            descriptionLabel.Text = "Descripcion:";
             // 
-            // textBoxDescription
+            // descriptionTextBox
             // 
-            textBoxDescription.Location = new Point(15, 51);
-            textBoxDescription.Multiline = true;
-            textBoxDescription.Name = "textBoxDescription";
-            textBoxDescription.Size = new Size(361, 74);
-            textBoxDescription.TabIndex = 1;
+            descriptionTextBox.Location = new Point(15, 51);
+            descriptionTextBox.Multiline = true;
+            descriptionTextBox.Name = "descriptionTextBox";
+            descriptionTextBox.Size = new Size(505, 121);
+            descriptionTextBox.TabIndex = 1;
             // 
-            // labelEmployee
+            // employeeLabel
             // 
-            labelEmployee.AutoSize = true;
-            labelEmployee.Location = new Point(15, 190);
-            labelEmployee.Name = "labelEmployee";
-            labelEmployee.Size = new Size(176, 20);
-            labelEmployee.TabIndex = 2;
-            labelEmployee.Text = "Seleccionar empleado";
+            employeeLabel.AutoSize = true;
+            employeeLabel.Location = new Point(17, 325);
+            employeeLabel.Name = "employeeLabel";
+            employeeLabel.Size = new Size(210, 21);
+            employeeLabel.TabIndex = 2;
+            employeeLabel.Text = "Seleccionar empleado";
             // 
-            // textBoxTask
+            // taskTextBox
             // 
-            textBoxTask.Location = new Point(15, 151);
-            textBoxTask.Name = "textBoxTask";
-            textBoxTask.Size = new Size(361, 26);
-            textBoxTask.TabIndex = 5;
+            taskTextBox.Location = new Point(16, 253);
+            taskTextBox.Name = "taskTextBox";
+            taskTextBox.Size = new Size(361, 30);
+            taskTextBox.TabIndex = 5;
             // 
-            // labelTask
+            // taskLabel
             // 
-            labelTask.AutoSize = true;
-            labelTask.Location = new Point(15, 128);
-            labelTask.Name = "labelTask";
-            labelTask.Size = new Size(49, 20);
-            labelTask.TabIndex = 4;
-            labelTask.Text = "Tarea";
+            taskLabel.AutoSize = true;
+            taskLabel.Location = new Point(15, 216);
+            taskLabel.Name = "taskLabel";
+            taskLabel.Size = new Size(59, 21);
+            taskLabel.TabIndex = 4;
+            taskLabel.Text = "Tarea";
             // 
-            // labelNameProject
+            // nameProjectLabel
             // 
-            labelNameProject.BackColor = SystemColors.ActiveCaption;
-            labelNameProject.Dock = DockStyle.Top;
-            labelNameProject.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            labelNameProject.ForeColor = Color.White;
-            labelNameProject.Location = new Point(0, 0);
-            labelNameProject.Name = "labelNameProject";
-            labelNameProject.Size = new Size(900, 33);
-            labelNameProject.TabIndex = 8;
-            labelNameProject.Text = "nameProject";
+            nameProjectLabel.BackColor = Color.DodgerBlue;
+            nameProjectLabel.Dock = DockStyle.Top;
+            nameProjectLabel.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            nameProjectLabel.ForeColor = Color.White;
+            nameProjectLabel.Location = new Point(0, 0);
+            nameProjectLabel.Name = "nameProjectLabel";
+            nameProjectLabel.Size = new Size(1120, 53);
+            nameProjectLabel.TabIndex = 8;
+            nameProjectLabel.Text = "Nombre Proyecto";
             // 
-            // label6
+            // clientLabel
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(14, 54);
-            label6.Name = "label6";
-            label6.Size = new Size(78, 21);
-            label6.TabIndex = 9;
-            label6.Text = "Cliente:";
+            clientLabel.AutoSize = true;
+            clientLabel.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            clientLabel.Location = new Point(28, 19);
+            clientLabel.Name = "clientLabel";
+            clientLabel.Size = new Size(95, 25);
+            clientLabel.TabIndex = 9;
+            clientLabel.Text = "Cliente:";
             // 
-            // labelUserAccount
+            // clientUserLabel
             // 
-            labelUserAccount.AutoSize = true;
-            labelUserAccount.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelUserAccount.Location = new Point(98, 54);
-            labelUserAccount.Name = "labelUserAccount";
-            labelUserAccount.Size = new Size(103, 21);
-            labelUserAccount.TabIndex = 10;
-            labelUserAccount.Text = "labelClient";
+            clientUserLabel.AutoSize = true;
+            clientUserLabel.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            clientUserLabel.Location = new Point(141, 19);
+            clientUserLabel.Name = "clientUserLabel";
+            clientUserLabel.Size = new Size(224, 25);
+            clientUserLabel.TabIndex = 10;
+            clientUserLabel.Text = "Nombre del Cliente";
             // 
-            // comboBoxEmployee
+            // employeeComboBox
             // 
-            comboBoxEmployee.FormattingEnabled = true;
-            comboBoxEmployee.Location = new Point(15, 213);
-            comboBoxEmployee.Name = "comboBoxEmployee";
-            comboBoxEmployee.Size = new Size(360, 28);
-            comboBoxEmployee.TabIndex = 11;
+            employeeComboBox.FormattingEnabled = true;
+            employeeComboBox.Location = new Point(17, 362);
+            employeeComboBox.Name = "employeeComboBox";
+            employeeComboBox.Size = new Size(360, 29);
+            employeeComboBox.TabIndex = 11;
             // 
-            // dataGridViewAssignamentTasks
+            // assignamentTasksDataGridView
             // 
-            dataGridViewAssignamentTasks.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewAssignamentTasks.Dock = DockStyle.Bottom;
-            dataGridViewAssignamentTasks.Location = new Point(0, 450);
-            dataGridViewAssignamentTasks.Name = "dataGridViewAssignamentTasks";
-            dataGridViewAssignamentTasks.RowHeadersWidth = 51;
-            dataGridViewAssignamentTasks.Size = new Size(900, 200);
-            dataGridViewAssignamentTasks.TabIndex = 12;
+            assignamentTasksDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            assignamentTasksDataGridView.Dock = DockStyle.Bottom;
+            assignamentTasksDataGridView.Location = new Point(0, 650);
+            assignamentTasksDataGridView.Name = "assignamentTasksDataGridView";
+            assignamentTasksDataGridView.RowHeadersWidth = 51;
+            assignamentTasksDataGridView.Size = new Size(1120, 242);
+            assignamentTasksDataGridView.TabIndex = 12;
             // 
-            // dateTimePickerEnd
+            // timeEndDateTimePicker
             // 
-            dateTimePickerEnd.Location = new Point(68, 132);
-            dateTimePickerEnd.Name = "dateTimePickerEnd";
-            dateTimePickerEnd.Size = new Size(304, 26);
-            dateTimePickerEnd.TabIndex = 13;
+            timeEndDateTimePicker.Location = new Point(31, 109);
+            timeEndDateTimePicker.Name = "timeEndDateTimePicker";
+            timeEndDateTimePicker.Size = new Size(409, 30);
+            timeEndDateTimePicker.TabIndex = 13;
             // 
-            // labelDateEnd
+            // dateEndLabel
             // 
-            labelDateEnd.AutoSize = true;
-            labelDateEnd.Location = new Point(68, 109);
-            labelDateEnd.Name = "labelDateEnd";
-            labelDateEnd.Size = new Size(146, 20);
-            labelDateEnd.TabIndex = 14;
-            labelDateEnd.Text = "Fecha de entrega:";
+            dateEndLabel.AutoSize = true;
+            dateEndLabel.Location = new Point(31, 54);
+            dateEndLabel.Name = "dateEndLabel";
+            dateEndLabel.Size = new Size(176, 21);
+            dateEndLabel.TabIndex = 14;
+            dateEndLabel.Text = "Fecha de entrega:";
             // 
-            // groupBoxDate
+            // dateGroupBox
             // 
-            groupBoxDate.Controls.Add(labelDateEnd);
-            groupBoxDate.Controls.Add(dateTimePickerEnd);
-            groupBoxDate.Location = new Point(484, 79);
-            groupBoxDate.Name = "groupBoxDate";
-            groupBoxDate.Size = new Size(404, 287);
-            groupBoxDate.TabIndex = 15;
-            groupBoxDate.TabStop = false;
-            groupBoxDate.Text = "Fecha";
+            dateGroupBox.Controls.Add(dateEndLabel);
+            dateGroupBox.Controls.Add(timeEndDateTimePicker);
+            dateGroupBox.Location = new Point(602, 78);
+            dateGroupBox.Name = "dateGroupBox";
+            dateGroupBox.Size = new Size(486, 425);
+            dateGroupBox.TabIndex = 15;
+            dateGroupBox.TabStop = false;
+            dateGroupBox.Text = "Fecha";
             // 
-            // groupBoxAssignamentTask
+            // assignamentTaskGroupBox
             // 
-            groupBoxAssignamentTask.Controls.Add(textBoxDescription);
-            groupBoxAssignamentTask.Controls.Add(comboBoxEmployee);
-            groupBoxAssignamentTask.Controls.Add(labelDescription);
-            groupBoxAssignamentTask.Controls.Add(labelEmployee);
-            groupBoxAssignamentTask.Controls.Add(labelTask);
-            groupBoxAssignamentTask.Controls.Add(textBoxTask);
-            groupBoxAssignamentTask.Location = new Point(12, 88);
-            groupBoxAssignamentTask.Name = "groupBoxAssignamentTask";
-            groupBoxAssignamentTask.Size = new Size(394, 278);
-            groupBoxAssignamentTask.TabIndex = 16;
-            groupBoxAssignamentTask.TabStop = false;
-            groupBoxAssignamentTask.Text = "Asignar tareas";
+            assignamentTaskGroupBox.Controls.Add(descriptionTextBox);
+            assignamentTaskGroupBox.Controls.Add(employeeComboBox);
+            assignamentTaskGroupBox.Controls.Add(descriptionLabel);
+            assignamentTaskGroupBox.Controls.Add(employeeLabel);
+            assignamentTaskGroupBox.Controls.Add(taskLabel);
+            assignamentTaskGroupBox.Controls.Add(taskTextBox);
+            assignamentTaskGroupBox.Location = new Point(28, 78);
+            assignamentTaskGroupBox.Name = "assignamentTaskGroupBox";
+            assignamentTaskGroupBox.Size = new Size(548, 425);
+            assignamentTaskGroupBox.TabIndex = 16;
+            assignamentTaskGroupBox.TabStop = false;
+            assignamentTaskGroupBox.Text = "Asignar tareas";
             // 
-            // iconButtonAssignamentTask
+            // iconAssignamentTaskButton
             // 
-            iconButtonAssignamentTask.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconButtonAssignamentTask.IconColor = Color.Black;
-            iconButtonAssignamentTask.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButtonAssignamentTask.Location = new Point(328, 395);
-            iconButtonAssignamentTask.Name = "iconButtonAssignamentTask";
-            iconButtonAssignamentTask.Size = new Size(209, 29);
-            iconButtonAssignamentTask.TabIndex = 17;
-            iconButtonAssignamentTask.Text = "Asignar";
-            iconButtonAssignamentTask.UseVisualStyleBackColor = true;
-            iconButtonAssignamentTask.Click += iconButtonAssignamentTask_Click;
+            iconAssignamentTaskButton.BackColor = Color.FromArgb(255, 128, 0);
+            iconAssignamentTaskButton.FlatStyle = FlatStyle.Popup;
+            iconAssignamentTaskButton.ForeColor = Color.White;
+            iconAssignamentTaskButton.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconAssignamentTaskButton.IconColor = Color.Black;
+            iconAssignamentTaskButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconAssignamentTaskButton.Location = new Point(464, 522);
+            iconAssignamentTaskButton.Name = "iconAssignamentTaskButton";
+            iconAssignamentTaskButton.Size = new Size(209, 43);
+            iconAssignamentTaskButton.TabIndex = 17;
+            iconAssignamentTaskButton.Text = "Asignar";
+            iconAssignamentTaskButton.UseVisualStyleBackColor = false;
+            iconAssignamentTaskButton.Click += iconAssignamentTaskButton_Click;
             // 
-            // labelCodeProject
+            // codeProjectLabel
             // 
-            labelCodeProject.AutoSize = true;
-            labelCodeProject.BackColor = SystemColors.ActiveCaption;
-            labelCodeProject.Font = new Font("Century Gothic", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            labelCodeProject.ForeColor = Color.White;
-            labelCodeProject.Location = new Point(817, 7);
-            labelCodeProject.Name = "labelCodeProject";
-            labelCodeProject.Size = new Size(70, 22);
-            labelCodeProject.TabIndex = 18;
-            labelCodeProject.Text = "u24123";
+            codeProjectLabel.AutoSize = true;
+            codeProjectLabel.BackColor = Color.DodgerBlue;
+            codeProjectLabel.Font = new Font("Century Gothic", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            codeProjectLabel.ForeColor = Color.White;
+            codeProjectLabel.Location = new Point(978, 9);
+            codeProjectLabel.Name = "codeProjectLabel";
+            codeProjectLabel.Size = new Size(85, 27);
+            codeProjectLabel.TabIndex = 18;
+            codeProjectLabel.Text = "u24123";
+            // 
+            // controlPanel
+            // 
+            controlPanel.BackColor = Color.White;
+            controlPanel.Controls.Add(iconAssignamentTaskButton);
+            controlPanel.Controls.Add(assignamentTaskGroupBox);
+            controlPanel.Controls.Add(dateGroupBox);
+            controlPanel.Controls.Add(clientLabel);
+            controlPanel.Controls.Add(clientUserLabel);
+            controlPanel.Dock = DockStyle.Fill;
+            controlPanel.Location = new Point(0, 53);
+            controlPanel.Name = "controlPanel";
+            controlPanel.Size = new Size(1120, 597);
+            controlPanel.TabIndex = 19;
             // 
             // AssignamentTaskEmployeeForm
             // 
-            AutoScaleDimensions = new SizeF(9F, 20F);
+            AutoScaleDimensions = new SizeF(11F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(900, 650);
-            Controls.Add(labelCodeProject);
-            Controls.Add(iconButtonAssignamentTask);
-            Controls.Add(dataGridViewAssignamentTasks);
-            Controls.Add(labelUserAccount);
-            Controls.Add(label6);
-            Controls.Add(labelNameProject);
-            Controls.Add(groupBoxDate);
-            Controls.Add(groupBoxAssignamentTask);
+            BackColor = Color.White;
+            ClientSize = new Size(1120, 892);
+            Controls.Add(controlPanel);
+            Controls.Add(codeProjectLabel);
+            Controls.Add(assignamentTasksDataGridView);
+            Controls.Add(nameProjectLabel);
             Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Name = "AssignamentTaskEmployeeForm";
-            Text = "AssignamentTaskEmployeeForm";
+            Text = "Asignar Tareas";
             Load += AssignamentTaskEmployeeForm_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridViewAssignamentTasks).EndInit();
-            groupBoxDate.ResumeLayout(false);
-            groupBoxDate.PerformLayout();
-            groupBoxAssignamentTask.ResumeLayout(false);
-            groupBoxAssignamentTask.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)assignamentTasksDataGridView).EndInit();
+            dateGroupBox.ResumeLayout(false);
+            dateGroupBox.PerformLayout();
+            assignamentTaskGroupBox.ResumeLayout(false);
+            assignamentTaskGroupBox.PerformLayout();
+            controlPanel.ResumeLayout(false);
+            controlPanel.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label labelDescription;
-        private TextBox textBoxDescription;
-        private Label labelEmployee;
-        private TextBox textBoxTask;
-        private Label labelTask;
-        private Label labelNameProject;
-        private Label label6;
-        private Label labelUserAccount;
-        private ComboBox comboBoxEmployee;
-        private DataGridView dataGridViewAssignamentTasks;
-        private DateTimePicker dateTimePickerEnd;
-        private Label labelDateEnd;
-        private GroupBox groupBoxDate;
-        private GroupBox groupBoxAssignamentTask;
-        private FontAwesome.Sharp.IconButton iconButtonAssignamentTask;
-        private Label labelCodeProject;
+        private Label descriptionLabel;
+        private TextBox descriptionTextBox;
+        private Label employeeLabel;
+        private TextBox taskTextBox;
+        private Label taskLabel;
+        private Label nameProjectLabel;
+        private Label clientLabel;
+        private Label clientUserLabel;
+        private ComboBox employeeComboBox;
+        private DataGridView assignamentTasksDataGridView;
+        private DateTimePicker timeEndDateTimePicker;
+        private Label dateEndLabel;
+        private GroupBox dateGroupBox;
+        private GroupBox assignamentTaskGroupBox;
+        private FontAwesome.Sharp.IconButton iconAssignamentTaskButton;
+        private Label codeProjectLabel;
+        private Panel controlPanel;
     }
 }

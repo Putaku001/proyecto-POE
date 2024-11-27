@@ -29,94 +29,81 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InfoEmployeeForm));
-            labelInfo = new Label();
-            textBoxProfession = new TextBox();
-            panelSaveInfo = new Panel();
-            labelInfo2 = new Label();
-            textBoxWorkStation = new TextBox();
-            iconButtonSaveInfoAditional = new FontAwesome.Sharp.IconButton();
-            panelSaveInfo.SuspendLayout();
+            this.professionLabel = new Label();
+            this.professionsTextBox = new TextBox();
+            this.iconSaveInformationButton = new FontAwesome.Sharp.IconButton();
+            this.workStationLabel = new Label();
+            workStationTextBox = new TextBox();
             SuspendLayout();
             // 
-            // labelInfo
+            // professionLabel
             // 
-            labelInfo.AutoSize = true;
-            labelInfo.Font = new Font("Century Gothic", 9F, FontStyle.Bold);
-            labelInfo.ForeColor = Color.White;
-            labelInfo.Location = new Point(225, 27);
-            labelInfo.Name = "labelInfo";
-            labelInfo.Size = new Size(78, 18);
-            labelInfo.TabIndex = 3;
-            labelInfo.Text = "Profesion:";
+            this.professionLabel.AutoSize = true;
+            this.professionLabel.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            this.professionLabel.ForeColor = Color.White;
+            this.professionLabel.Location = new Point(279, 21);
+            this.professionLabel.Name = "professionLabel";
+            this.professionLabel.Size = new Size(128, 30);
+            this.professionLabel.TabIndex = 3;
+            this.professionLabel.Text = "Profesion:";
             // 
-            // textBoxProfession
+            // professionsTextBox
             // 
-            textBoxProfession.Location = new Point(53, 50);
-            textBoxProfession.Multiline = true;
-            textBoxProfession.Name = "textBoxProfession";
-            textBoxProfession.Size = new Size(397, 59);
-            textBoxProfession.TabIndex = 4;
+            this.professionsTextBox.Location = new Point(151, 63);
+            this.professionsTextBox.Multiline = true;
+            this.professionsTextBox.Name = "professionsTextBox";
+            this.professionsTextBox.Size = new Size(409, 76);
+            this.professionsTextBox.TabIndex = 4;
             // 
-            // panelSaveInfo
+            // iconSaveInformationButton
             // 
-            panelSaveInfo.BackColor = Color.MediumSpringGreen;
-            panelSaveInfo.Controls.Add(iconButtonSaveInfoAditional);
-            panelSaveInfo.Dock = DockStyle.Right;
-            panelSaveInfo.Location = new Point(484, 0);
-            panelSaveInfo.Name = "panelSaveInfo";
-            panelSaveInfo.Size = new Size(225, 266);
-            panelSaveInfo.TabIndex = 5;
+            this.iconSaveInformationButton.BackColor = Color.DodgerBlue;
+            this.iconSaveInformationButton.Cursor = Cursors.Hand;
+            this.iconSaveInformationButton.FlatStyle = FlatStyle.Popup;
+            this.iconSaveInformationButton.ForeColor = Color.White;
+            this.iconSaveInformationButton.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconSaveInformationButton.IconColor = Color.DarkTurquoise;
+            this.iconSaveInformationButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconSaveInformationButton.Location = new Point(253, 294);
+            this.iconSaveInformationButton.Name = "iconSaveInformationButton";
+            this.iconSaveInformationButton.Size = new Size(197, 46);
+            this.iconSaveInformationButton.TabIndex = 0;
+            this.iconSaveInformationButton.Text = "Guardar";
+            this.iconSaveInformationButton.UseVisualStyleBackColor = false;
             // 
-            // labelInfo2
+            // workStationLabel
             // 
-            labelInfo2.AutoSize = true;
-            labelInfo2.Font = new Font("Century Gothic", 9F, FontStyle.Bold);
-            labelInfo2.ForeColor = Color.White;
-            labelInfo2.Location = new Point(180, 133);
-            labelInfo2.Name = "labelInfo2";
-            labelInfo2.Size = new Size(140, 18);
-            labelInfo2.TabIndex = 6;
-            labelInfo2.Text = "Puesto de trabajo:";
+            this.workStationLabel.AutoSize = true;
+            this.workStationLabel.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            this.workStationLabel.ForeColor = Color.White;
+            this.workStationLabel.Location = new Point(235, 173);
+            this.workStationLabel.Name = "workStationLabel";
+            this.workStationLabel.Size = new Size(229, 30);
+            this.workStationLabel.TabIndex = 6;
+            this.workStationLabel.Text = "Puesto de trabajo:";
             // 
-            // textBoxWorkStation
+            // workStationTextBox
             // 
-            textBoxWorkStation.Location = new Point(53, 156);
-            textBoxWorkStation.Name = "textBoxWorkStation";
-            textBoxWorkStation.Size = new Size(397, 26);
-            textBoxWorkStation.TabIndex = 7;
-            // 
-            // iconButtonSaveInfoAditional
-            // 
-            iconButtonSaveInfoAditional.BackColor = Color.DarkGreen;
-            iconButtonSaveInfoAditional.Cursor = Cursors.Hand;
-            iconButtonSaveInfoAditional.FlatStyle = FlatStyle.Flat;
-            iconButtonSaveInfoAditional.ForeColor = Color.White;
-            iconButtonSaveInfoAditional.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconButtonSaveInfoAditional.IconColor = Color.DarkTurquoise;
-            iconButtonSaveInfoAditional.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButtonSaveInfoAditional.Location = new Point(16, 112);
-            iconButtonSaveInfoAditional.Name = "iconButtonSaveInfoAditional";
-            iconButtonSaveInfoAditional.Size = new Size(197, 39);
-            iconButtonSaveInfoAditional.TabIndex = 0;
-            iconButtonSaveInfoAditional.Text = "Guardar";
-            iconButtonSaveInfoAditional.UseVisualStyleBackColor = false;
+            workStationTextBox.Location = new Point(163, 216);
+            workStationTextBox.Name = "workStationTextBox";
+            workStationTextBox.Size = new Size(397, 30);
+            workStationTextBox.TabIndex = 7;
             // 
             // InfoEmployeeForm
             // 
-            AutoScaleDimensions = new SizeF(9F, 20F);
+            AutoScaleDimensions = new SizeF(11F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveCaption;
-            ClientSize = new Size(709, 266);
-            Controls.Add(labelInfo2);
-            Controls.Add(textBoxWorkStation);
-            Controls.Add(labelInfo);
-            Controls.Add(textBoxProfession);
-            Controls.Add(panelSaveInfo);
+            BackColor = Color.FromArgb(46, 54, 61);
+            ClientSize = new Size(709, 372);
+            Controls.Add(this.iconSaveInformationButton);
+            Controls.Add(this.workStationLabel);
+            Controls.Add(workStationTextBox);
+            Controls.Add(this.professionLabel);
+            Controls.Add(this.professionsTextBox);
             Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "InfoEmployeeForm";
             Text = "Informacion";
-            panelSaveInfo.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -128,6 +115,6 @@
         private Panel panelSaveInfo;
         private FontAwesome.Sharp.IconButton iconButtonSaveInfoAditional;
         private Label labelInfo2;
-        private TextBox textBoxWorkStation;
+        private TextBox workStationTextBox;
     }
 }

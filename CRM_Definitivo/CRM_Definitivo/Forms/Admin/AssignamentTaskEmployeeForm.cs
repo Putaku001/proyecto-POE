@@ -32,41 +32,38 @@ namespace PresentationLayer.Forms.Admin
 
         public void LoadEmployee()
         {
-            comboBoxEmployee.DataSource = _usersServices.GetEmployees();
-            comboBoxEmployee.DisplayMember = "UserAccount";
-            comboBoxEmployee.ValueMember = "idEmployee";
+            employeeComboBox.DataSource = _usersServices.GetEmployees();
+            employeeComboBox.DisplayMember = "UserAccount";
+            employeeComboBox.ValueMember = "idEmployee";
         }
 
         private void AssignamentTaskEmployeeForm_Load(object sender, EventArgs e)
         {
-            dataGridViewAssignamentTasks.DataSource = _proyectsServices.GetTaskEmployees();
-            dataGridViewAssignamentTasks.Columns["idStatusTask"].Visible = false;
+            assignamentTasksDataGridView.DataSource = _proyectsServices.GetTaskEmployees();
+            assignamentTasksDataGridView.Columns["idStatusTask"].Visible = false;
 
-            labelUserAccount.Text = Client;
-            labelCodeProject.Text = CodeProject;
-            labelNameProject.Text = NameProject;
-            textBoxDescription.Text = DescriptionProject;
+            clientUserLabel.Text = Client;
+            codeProjectLabel.Text = CodeProject;
+            nameProjectLabel.Text = NameProject;
+            descriptionTextBox.Text = DescriptionProject;
         }
 
-        private void iconButtonAssignamentTask_Click(object sender, EventArgs e)
+        private void iconAssignamentTaskButton_Click(object sender, EventArgs e)
         {
             TaskEmployees AssignamentTaskEmployees = new TaskEmployees();
-            AssignamentTaskEmployees.codeProject = labelCodeProject.Text;
-            AssignamentTaskEmployees.nameTask = textBoxTask.Text;
-            AssignamentTaskEmployees.descriptionTask = textBoxDescription.Text;
-            AssignamentTaskEmployees.idEmployee = Convert.ToInt32(comboBoxEmployee.SelectedValue);
+            AssignamentTaskEmployees.codeProject = codeProjectLabel.Text;
+            AssignamentTaskEmployees.nameTask = taskTextBox.Text;
+            AssignamentTaskEmployees.descriptionTask = descriptionTextBox.Text;
+            AssignamentTaskEmployees.idEmployee = Convert.ToInt32(employeeComboBox.SelectedValue);
             AssignamentTaskEmployees.idStatusTask = 1;
-            AssignamentTaskEmployees.dateEnd = dateTimePickerEnd.Value;
+            AssignamentTaskEmployees.dateEnd = timeEndDateTimePicker.Value;
 
-            var dateEnd = dateTimePickerEnd.Value;
+            var dateEnd = timeEndDateTimePicker.Value;
             _proyectsServices.DateEnd(CodeProject, dateEnd);
 
             _proyectsServices.AddTasksEmployees(AssignamentTaskEmployees);
             MessageBox.Show("La tarea se ha agregado exitosamente!");
             LoadEmployee();
-
-
-
         }
     }
 }

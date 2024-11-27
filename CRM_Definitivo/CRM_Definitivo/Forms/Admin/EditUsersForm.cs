@@ -22,15 +22,11 @@ namespace PresentationLayer.Forms
             InitializeComponent();
 
             _users = user;
-            IsEditing = user != null; 
+            IsEditing = user != null;
 
         }
 
 
         public event EventHandler EditUserHandler;
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
