@@ -28,206 +28,208 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dgvUsuarios = new DataGridView();
-            panelUsuarios = new Panel();
-            iconButton2 = new FontAwesome.Sharp.IconButton();
-            btnSearchUser = new FontAwesome.Sharp.IconButton();
-            lblBuscar = new Label();
-            txtSearchUsers = new TextBox();
-            panel1 = new Panel();
-            pbImprimir = new PictureBox();
-            btnUsersPdf = new PictureBox();
-            pbEliminarUsuario = new PictureBox();
-            pbEditarUsuario = new PictureBox();
-            pbAñadirUsuario = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)dgvUsuarios).BeginInit();
-            panelUsuarios.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pbImprimir).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnUsersPdf).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbEliminarUsuario).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbEditarUsuario).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbAñadirUsuario).BeginInit();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsersForm));
+            userDataGridView = new DataGridView();
+            userPanel = new Panel();
+            cleanSearchUserIconButton = new FontAwesome.Sharp.IconButton();
+            searchUserIconButton = new FontAwesome.Sharp.IconButton();
+            searchUserLabel = new Label();
+            searchUserTextBox = new TextBox();
+            printPictureBox = new PictureBox();
+            PdfUserPictureBox = new PictureBox();
+            deleteUserPictureBox = new PictureBox();
+            editUserPictureBox = new PictureBox();
+            addUserPictureBox = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)userDataGridView).BeginInit();
+            userPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)printPictureBox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PdfUserPictureBox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)deleteUserPictureBox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)editUserPictureBox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)addUserPictureBox).BeginInit();
             SuspendLayout();
             // 
-            // dgvUsuarios
+            // userDataGridView
             // 
-            dgvUsuarios.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dgvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvUsuarios.Location = new Point(42, 70);
-            dgvUsuarios.Name = "dgvUsuarios";
-            dgvUsuarios.RowHeadersWidth = 51;
-            dgvUsuarios.Size = new Size(1251, 635);
-            dgvUsuarios.TabIndex = 0;
+            userDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            userDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            userDataGridView.Location = new Point(52, 88);
+            userDataGridView.Margin = new Padding(4);
+            userDataGridView.Name = "userDataGridView";
+            userDataGridView.RowHeadersWidth = 51;
+            userDataGridView.Size = new Size(1564, 794);
+            userDataGridView.TabIndex = 0;
             // 
-            // panelUsuarios
+            // userPanel
             // 
-            panelUsuarios.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panelUsuarios.BackColor = Color.White;
-            panelUsuarios.Controls.Add(iconButton2);
-            panelUsuarios.Controls.Add(btnSearchUser);
-            panelUsuarios.Controls.Add(lblBuscar);
-            panelUsuarios.Controls.Add(txtSearchUsers);
-            panelUsuarios.Controls.Add(panel1);
-            panelUsuarios.Controls.Add(pbImprimir);
-            panelUsuarios.Controls.Add(btnUsersPdf);
-            panelUsuarios.Controls.Add(pbEliminarUsuario);
-            panelUsuarios.Controls.Add(pbEditarUsuario);
-            panelUsuarios.Controls.Add(pbAñadirUsuario);
-            panelUsuarios.Location = new Point(45, 3);
-            panelUsuarios.Name = "panelUsuarios";
-            panelUsuarios.Size = new Size(1251, 61);
-            panelUsuarios.TabIndex = 1;
+            userPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            userPanel.BackColor = SystemColors.Control;
+            userPanel.Controls.Add(cleanSearchUserIconButton);
+            userPanel.Controls.Add(searchUserIconButton);
+            userPanel.Controls.Add(searchUserLabel);
+            userPanel.Controls.Add(searchUserTextBox);
+            userPanel.Controls.Add(printPictureBox);
+            userPanel.Controls.Add(PdfUserPictureBox);
+            userPanel.Controls.Add(deleteUserPictureBox);
+            userPanel.Controls.Add(editUserPictureBox);
+            userPanel.Controls.Add(addUserPictureBox);
+            userPanel.Location = new Point(56, 4);
+            userPanel.Margin = new Padding(4);
+            userPanel.Name = "userPanel";
+            userPanel.Size = new Size(1564, 76);
+            userPanel.TabIndex = 1;
             // 
-            // iconButton2
+            // cleanSearchUserIconButton
             // 
-            iconButton2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            iconButton2.FlatStyle = FlatStyle.Flat;
-            iconButton2.IconChar = FontAwesome.Sharp.IconChar.Broom;
-            iconButton2.IconColor = Color.Black;
-            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton2.IconSize = 25;
-            iconButton2.Location = new Point(1211, 16);
-            iconButton2.Name = "iconButton2";
-            iconButton2.Size = new Size(37, 29);
-            iconButton2.TabIndex = 10;
-            iconButton2.UseVisualStyleBackColor = true;
+            cleanSearchUserIconButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            cleanSearchUserIconButton.FlatStyle = FlatStyle.Flat;
+            cleanSearchUserIconButton.IconChar = FontAwesome.Sharp.IconChar.Broom;
+            cleanSearchUserIconButton.IconColor = Color.Black;
+            cleanSearchUserIconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            cleanSearchUserIconButton.IconSize = 25;
+            cleanSearchUserIconButton.Location = new Point(716, 25);
+            cleanSearchUserIconButton.Margin = new Padding(4);
+            cleanSearchUserIconButton.Name = "cleanSearchUserIconButton";
+            cleanSearchUserIconButton.Size = new Size(46, 36);
+            cleanSearchUserIconButton.TabIndex = 10;
+            cleanSearchUserIconButton.UseVisualStyleBackColor = true;
             // 
-            // btnSearchUser
+            // searchUserIconButton
             // 
-            btnSearchUser.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnSearchUser.FlatStyle = FlatStyle.Flat;
-            btnSearchUser.IconChar = FontAwesome.Sharp.IconChar.Search;
-            btnSearchUser.IconColor = Color.Black;
-            btnSearchUser.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnSearchUser.IconSize = 25;
-            btnSearchUser.Location = new Point(1171, 16);
-            btnSearchUser.Name = "btnSearchUser";
-            btnSearchUser.Size = new Size(37, 29);
-            btnSearchUser.TabIndex = 9;
-            btnSearchUser.UseVisualStyleBackColor = true;
-            btnSearchUser.Click += btnSearchUser_Click;
+            searchUserIconButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            searchUserIconButton.FlatStyle = FlatStyle.Flat;
+            searchUserIconButton.IconChar = FontAwesome.Sharp.IconChar.Search;
+            searchUserIconButton.IconColor = Color.Black;
+            searchUserIconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            searchUserIconButton.IconSize = 25;
+            searchUserIconButton.Location = new Point(666, 25);
+            searchUserIconButton.Margin = new Padding(4);
+            searchUserIconButton.Name = "searchUserIconButton";
+            searchUserIconButton.Size = new Size(46, 36);
+            searchUserIconButton.TabIndex = 9;
+            searchUserIconButton.UseVisualStyleBackColor = true;
+            searchUserIconButton.Click += searchUserIconButton_Click;
             // 
-            // lblBuscar
+            // searchUserLabel
             // 
-            lblBuscar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            lblBuscar.AutoSize = true;
-            lblBuscar.Location = new Point(881, 20);
-            lblBuscar.Name = "lblBuscar";
-            lblBuscar.Size = new Size(52, 20);
-            lblBuscar.TabIndex = 8;
-            lblBuscar.Text = "Buscar";
+            searchUserLabel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            searchUserLabel.AutoSize = true;
+            searchUserLabel.Location = new Point(303, 30);
+            searchUserLabel.Margin = new Padding(4, 0, 4, 0);
+            searchUserLabel.Name = "searchUserLabel";
+            searchUserLabel.Size = new Size(63, 25);
+            searchUserLabel.TabIndex = 8;
+            searchUserLabel.Text = "Buscar";
             // 
-            // txtSearchUsers
+            // searchUserTextBox
             // 
-            txtSearchUsers.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            txtSearchUsers.Location = new Point(939, 17);
-            txtSearchUsers.Name = "txtSearchUsers";
-            txtSearchUsers.Size = new Size(230, 27);
-            txtSearchUsers.TabIndex = 7;
+            searchUserTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            searchUserTextBox.Location = new Point(376, 26);
+            searchUserTextBox.Margin = new Padding(4);
+            searchUserTextBox.Name = "searchUserTextBox";
+            searchUserTextBox.Size = new Size(286, 31);
+            searchUserTextBox.TabIndex = 7;
             // 
-            // panel1
+            // printPictureBox
             // 
-            panel1.BackColor = Color.DarkGray;
-            panel1.Location = new Point(217, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(10, 61);
-            panel1.TabIndex = 6;
+            printPictureBox.Cursor = Cursors.Hand;
+            printPictureBox.Image = Properties.Resources.imprimir;
+            printPictureBox.Location = new Point(1481, 9);
+            printPictureBox.Margin = new Padding(4);
+            printPictureBox.Name = "printPictureBox";
+            printPictureBox.Size = new Size(52, 48);
+            printPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            printPictureBox.TabIndex = 5;
+            printPictureBox.TabStop = false;
             // 
-            // pbImprimir
+            // PdfUserPictureBox
             // 
-            pbImprimir.Cursor = Cursors.Hand;
-            pbImprimir.Image = Properties.Resources.imprimir;
-            pbImprimir.Location = new Point(311, 12);
-            pbImprimir.Name = "pbImprimir";
-            pbImprimir.Size = new Size(42, 38);
-            pbImprimir.SizeMode = PictureBoxSizeMode.Zoom;
-            pbImprimir.TabIndex = 5;
-            pbImprimir.TabStop = false;
+            PdfUserPictureBox.Cursor = Cursors.Hand;
+            PdfUserPictureBox.Image = (Image)resources.GetObject("PdfUserPictureBox.Image");
+            PdfUserPictureBox.Location = new Point(1415, 9);
+            PdfUserPictureBox.Margin = new Padding(4);
+            PdfUserPictureBox.Name = "PdfUserPictureBox";
+            PdfUserPictureBox.Size = new Size(41, 48);
+            PdfUserPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            PdfUserPictureBox.TabIndex = 4;
+            PdfUserPictureBox.TabStop = false;
+            PdfUserPictureBox.Click += PdfUserPictureBox_Click;
             // 
-            // btnUsersPdf
+            // deleteUserPictureBox
             // 
-            btnUsersPdf.Cursor = Cursors.Hand;
-            btnUsersPdf.Image = Properties.Resources.pdf;
-            btnUsersPdf.Location = new Point(246, 12);
-            btnUsersPdf.Name = "btnUsersPdf";
-            btnUsersPdf.Size = new Size(42, 38);
-            btnUsersPdf.SizeMode = PictureBoxSizeMode.Zoom;
-            btnUsersPdf.TabIndex = 4;
-            btnUsersPdf.TabStop = false;
-            btnUsersPdf.Click += btnUsersPdf_Click;
+            deleteUserPictureBox.Cursor = Cursors.Hand;
+            deleteUserPictureBox.Image = Properties.Resources.eliminar_Usuario;
+            deleteUserPictureBox.Location = new Point(195, 15);
+            deleteUserPictureBox.Margin = new Padding(4);
+            deleteUserPictureBox.Name = "deleteUserPictureBox";
+            deleteUserPictureBox.Size = new Size(52, 48);
+            deleteUserPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            deleteUserPictureBox.TabIndex = 3;
+            deleteUserPictureBox.TabStop = false;
+            deleteUserPictureBox.Click += deleteUserPictureBox_Click;
             // 
-            // pbEliminarUsuario
+            // editUserPictureBox
             // 
-            pbEliminarUsuario.Cursor = Cursors.Hand;
-            pbEliminarUsuario.Image = Properties.Resources.eliminar_Usuario;
-            pbEliminarUsuario.Location = new Point(156, 12);
-            pbEliminarUsuario.Name = "pbEliminarUsuario";
-            pbEliminarUsuario.Size = new Size(42, 38);
-            pbEliminarUsuario.SizeMode = PictureBoxSizeMode.Zoom;
-            pbEliminarUsuario.TabIndex = 3;
-            pbEliminarUsuario.TabStop = false;
-            pbEliminarUsuario.Click += pbEliminarUsuario_Click;
+            editUserPictureBox.Cursor = Cursors.Hand;
+            editUserPictureBox.Image = Properties.Resources.editar_Usuario;
+            editUserPictureBox.Location = new Point(104, 15);
+            editUserPictureBox.Margin = new Padding(4);
+            editUserPictureBox.Name = "editUserPictureBox";
+            editUserPictureBox.Size = new Size(52, 48);
+            editUserPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            editUserPictureBox.TabIndex = 2;
+            editUserPictureBox.TabStop = false;
+            editUserPictureBox.Click += editUserPictureBox_Click;
             // 
-            // pbEditarUsuario
+            // addUserPictureBox
             // 
-            pbEditarUsuario.Cursor = Cursors.Hand;
-            pbEditarUsuario.Image = Properties.Resources.editar_Usuario;
-            pbEditarUsuario.Location = new Point(83, 12);
-            pbEditarUsuario.Name = "pbEditarUsuario";
-            pbEditarUsuario.Size = new Size(42, 38);
-            pbEditarUsuario.SizeMode = PictureBoxSizeMode.Zoom;
-            pbEditarUsuario.TabIndex = 2;
-            pbEditarUsuario.TabStop = false;
-            pbEditarUsuario.Click += pbEditarUsuario_Click;
-            // 
-            // pbAñadirUsuario
-            // 
-            pbAñadirUsuario.Cursor = Cursors.Hand;
-            pbAñadirUsuario.Image = Properties.Resources.añadir_usuario;
-            pbAñadirUsuario.Location = new Point(12, 12);
-            pbAñadirUsuario.Name = "pbAñadirUsuario";
-            pbAñadirUsuario.Size = new Size(42, 38);
-            pbAñadirUsuario.SizeMode = PictureBoxSizeMode.Zoom;
-            pbAñadirUsuario.TabIndex = 1;
-            pbAñadirUsuario.TabStop = false;
-            pbAñadirUsuario.Click += pbAñadirUsuario_Click;
+            addUserPictureBox.Cursor = Cursors.Hand;
+            addUserPictureBox.Image = Properties.Resources.añadir_usuario;
+            addUserPictureBox.Location = new Point(15, 15);
+            addUserPictureBox.Margin = new Padding(4);
+            addUserPictureBox.Name = "addUserPictureBox";
+            addUserPictureBox.Size = new Size(52, 48);
+            addUserPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            addUserPictureBox.TabIndex = 1;
+            addUserPictureBox.TabStop = false;
+            addUserPictureBox.Click += addUserPictureBox_Click;
             // 
             // UsersForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             BackColor = Color.White;
-            ClientSize = new Size(1355, 744);
-            Controls.Add(dgvUsuarios);
-            Controls.Add(panelUsuarios);
+            ClientSize = new Size(1694, 930);
+            Controls.Add(userDataGridView);
+            Controls.Add(userPanel);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4);
             Name = "UsersForm";
             Text = "Usuarios";
-            ((System.ComponentModel.ISupportInitialize)dgvUsuarios).EndInit();
-            panelUsuarios.ResumeLayout(false);
-            panelUsuarios.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pbImprimir).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnUsersPdf).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbEliminarUsuario).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbEditarUsuario).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbAñadirUsuario).EndInit();
+            ((System.ComponentModel.ISupportInitialize)userDataGridView).EndInit();
+            userPanel.ResumeLayout(false);
+            userPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)printPictureBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PdfUserPictureBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)deleteUserPictureBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)editUserPictureBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)addUserPictureBox).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private DataGridView dgvUsuarios;
-        private Panel panelUsuarios;
-        private PictureBox pbAñadirUsuario;
-        private Label lblBuscar;
-        private TextBox txtSearchUsers;
-        private Panel panel1;
-        private PictureBox pbImprimir;
-        private PictureBox btnUsersPdf;
-        private PictureBox pbEliminarUsuario;
-        private PictureBox pbEditarUsuario;
-        private FontAwesome.Sharp.IconButton iconButton2;
-        private FontAwesome.Sharp.IconButton btnSearchUser;
+        private DataGridView userDataGridView;
+        private Panel userPanel;
+        private PictureBox addUserPictureBox;
+        private Label searchUserLabel;
+        private TextBox searchUserTextBox;
+        private PictureBox printPictureBox;
+        private PictureBox PdfUserPictureBox;
+        private PictureBox deleteUserPictureBox;
+        private PictureBox editUserPictureBox;
+        private FontAwesome.Sharp.IconButton cleanSearchUserIconButton;
+        private FontAwesome.Sharp.IconButton searchUserIconButton;
     }
 }

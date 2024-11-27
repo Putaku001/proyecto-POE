@@ -38,20 +38,20 @@ namespace PresentationLayer.Forms
 
         private void LoadData()
         {
-            dgvUsuarios.DataSource = _usuersservices.GetUsers();
-            dgvUsuarios.DefaultCellStyle.BackColor = Color.WhiteSmoke;
-            dgvUsuarios.DefaultCellStyle.ForeColor = Color.Black;
-            dgvUsuarios.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
-            dgvUsuarios.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkSlateGray;
-            dgvUsuarios.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dgvUsuarios.EnableHeadersVisualStyles = false;
+            userDataGridView.DataSource = _usuersservices.GetUsers();
+            userDataGridView.DefaultCellStyle.BackColor = Color.WhiteSmoke;
+            userDataGridView.DefaultCellStyle.ForeColor = Color.Black;
+            userDataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
+            userDataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkSlateGray;
+            userDataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            userDataGridView.EnableHeadersVisualStyles = false;
 
-            dgvUsuarios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvUsuarios.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            userDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            userDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
-            dgvUsuarios.Columns["idUser"].Visible = false;
-            dgvUsuarios.Columns["Image"].Visible = false ;
-            dgvUsuarios.Columns["idRol"].Visible = false;
+            userDataGridView.Columns["idUser"].Visible = false;
+            userDataGridView.Columns["Image"].Visible = false;
+            userDataGridView.Columns["idRol"].Visible = false;
 
 
         }
@@ -61,7 +61,7 @@ namespace PresentationLayer.Forms
             formulario.Show();
         }
 
-        private void pbAñadirUsuario_Click(object sender, EventArgs e)
+        private void addUserPictureBox_Click(object sender, EventArgs e)
         {
             AddUsersForm formularioAñadir = new AddUsersForm(_usuersservices, _rolservices);
             //var formularioAñadir = _serviceProvider.GetRequiredService<AddUsersForm>();
@@ -72,19 +72,17 @@ namespace PresentationLayer.Forms
             };
 
             AbrirFormulario(formularioAñadir);
-
         }
-
-        private void pbEditarUsuario_Click(object sender, EventArgs e)
+        private void editUserPictureBox_Click(object sender, EventArgs e)
         {
-            if (dgvUsuarios.SelectedRows.Count == 0)
+            if (userDataGridView.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Debe seleccionar un usuario para editar.", "Advertencia",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            DataGridViewRow filaSeleccionada = dgvUsuarios.SelectedRows[0];
+            DataGridViewRow filaSeleccionada = userDataGridView.SelectedRows[0];
             User usuarioSeleccionado = new User
             {
                 IdUser = Convert.ToInt32(filaSeleccionada.Cells["idUser"].Value),
@@ -109,9 +107,9 @@ namespace PresentationLayer.Forms
             AbrirFormulario(editarUsuarioForm);
         }
 
-        private void pbEliminarUsuario_Click(object sender, EventArgs e)
+        private void deleteUserPictureBox_Click(object sender, EventArgs e)
         {
-            if (dgvUsuarios.SelectedRows.Count == 0)
+            if (userDataGridView.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Debe seleccionar un usuario para eliminar.", "Advertencia",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -124,29 +122,29 @@ namespace PresentationLayer.Forms
 
             if (eliminarConfirmar == DialogResult.Yes)
             {
-                int idUser = Convert.ToInt32(dgvUsuarios.CurrentRow.Cells["idUser"].Value);
+                int idUser = Convert.ToInt32(userDataGridView.CurrentRow.Cells["idUser"].Value);
                 _usuersservices.DeleteUsers(idUser);
                 LoadData();
             }
         }
 
-        private void btnUsersPdf_Click(object sender, EventArgs e)
+        private void PdfUserPictureBox_Click(object sender, EventArgs e)
         {
             _userReports.GenerateReports();
         }
 
-        private void btnSearchUser_Click(object sender, EventArgs e)
+        private void searchUserIconButton_Click(object sender, EventArgs e)
         {
-            if (txtSearchUsers.Text.IsNullOrEmpty())
+            if (searchUserTextBox.Text.IsNullOrEmpty())
             {
                 LoadData();
             }
             else
             {
-                string search = txtSearchUsers.Text;
+                string search = searchUserTextBox.Text;
                 var users = _usuersservices.UserSearch(search);
 
-                dgvUsuarios.DataSource = users;
+                userDataGridView.DataSource = users;
             }
         }
     }
