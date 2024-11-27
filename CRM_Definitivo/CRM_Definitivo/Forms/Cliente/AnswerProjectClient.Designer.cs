@@ -28,135 +28,136 @@
         /// </summary>
         private void InitializeComponent()
         {
-            IconButtonApprovedProject = new FontAwesome.Sharp.IconButton();
-            labelDescription = new Label();
-            textBoxDescriptionProject = new TextBox();
-            iconButtonRefusedProject = new FontAwesome.Sharp.IconButton();
-            groupBoxInfo = new GroupBox();
-            labelNameProject = new Label();
-            labelCodeProject = new Label();
-            groupBoxInfo.SuspendLayout();
+            iconApprovedProjectButton = new FontAwesome.Sharp.IconButton();
+            descriptionLabel = new Label();
+            descriptionProjectTextBox = new TextBox();
+            iconRefusedProjectButton = new FontAwesome.Sharp.IconButton();
+            informationGroupBox = new GroupBox();
+            nameProjectLabel = new Label();
+            codeProjectLabel = new Label();
+            informationGroupBox.SuspendLayout();
             SuspendLayout();
             // 
-            // IconButtonApprovedProject
+            // iconApprovedProjectButton
             // 
-            IconButtonApprovedProject.BackColor = Color.ForestGreen;
-            IconButtonApprovedProject.Cursor = Cursors.Hand;
-            IconButtonApprovedProject.FlatAppearance.BorderColor = Color.Black;
-            IconButtonApprovedProject.FlatStyle = FlatStyle.Flat;
-            IconButtonApprovedProject.ForeColor = Color.White;
-            IconButtonApprovedProject.IconChar = FontAwesome.Sharp.IconChar.Save;
-            IconButtonApprovedProject.IconColor = Color.White;
-            IconButtonApprovedProject.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            IconButtonApprovedProject.IconSize = 22;
-            IconButtonApprovedProject.ImageAlign = ContentAlignment.MiddleLeft;
-            IconButtonApprovedProject.Location = new Point(27, 274);
-            IconButtonApprovedProject.Name = "IconButtonApprovedProject";
-            IconButtonApprovedProject.Size = new Size(296, 29);
-            IconButtonApprovedProject.TabIndex = 24;
-            IconButtonApprovedProject.Text = "Aprobar";
-            IconButtonApprovedProject.UseVisualStyleBackColor = false;
-            IconButtonApprovedProject.Click += IconButtonApprovedProject_Click;
+            iconApprovedProjectButton.BackColor = Color.ForestGreen;
+            iconApprovedProjectButton.Cursor = Cursors.Hand;
+            iconApprovedProjectButton.FlatAppearance.BorderColor = Color.Black;
+            iconApprovedProjectButton.FlatStyle = FlatStyle.Flat;
+            iconApprovedProjectButton.ForeColor = Color.White;
+            iconApprovedProjectButton.IconChar = FontAwesome.Sharp.IconChar.Save;
+            iconApprovedProjectButton.IconColor = Color.White;
+            iconApprovedProjectButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconApprovedProjectButton.IconSize = 22;
+            iconApprovedProjectButton.ImageAlign = ContentAlignment.MiddleLeft;
+            iconApprovedProjectButton.Location = new Point(44, 417);
+            iconApprovedProjectButton.Name = "iconApprovedProjectButton";
+            iconApprovedProjectButton.Size = new Size(296, 47);
+            iconApprovedProjectButton.TabIndex = 24;
+            iconApprovedProjectButton.Text = "Aprobar";
+            iconApprovedProjectButton.UseVisualStyleBackColor = false;
+            iconApprovedProjectButton.Click += iconApprovedProjectButton_Click;
             // 
-            // labelDescription
+            // descriptionLabel
             // 
-            labelDescription.AutoSize = true;
-            labelDescription.Location = new Point(222, 22);
-            labelDescription.Name = "labelDescription";
-            labelDescription.Size = new Size(159, 17);
-            labelDescription.TabIndex = 25;
-            labelDescription.Text = "Descripcion del proyecto";
+            descriptionLabel.AutoSize = true;
+            descriptionLabel.Location = new Point(225, 36);
+            descriptionLabel.Name = "descriptionLabel";
+            descriptionLabel.Size = new Size(232, 21);
+            descriptionLabel.TabIndex = 25;
+            descriptionLabel.Text = "Descripcion del proyecto";
             // 
-            // textBoxDescriptionProject
+            // descriptionProjectTextBox
             // 
-            textBoxDescriptionProject.Location = new Point(147, 45);
-            textBoxDescriptionProject.Multiline = true;
-            textBoxDescriptionProject.Name = "textBoxDescriptionProject";
-            textBoxDescriptionProject.Size = new Size(349, 130);
-            textBoxDescriptionProject.TabIndex = 26;
+            descriptionProjectTextBox.Location = new Point(49, 78);
+            descriptionProjectTextBox.Multiline = true;
+            descriptionProjectTextBox.Name = "descriptionProjectTextBox";
+            descriptionProjectTextBox.Size = new Size(621, 231);
+            descriptionProjectTextBox.TabIndex = 26;
             // 
-            // iconButtonRefusedProject
+            // iconRefusedProjectButton
             // 
-            iconButtonRefusedProject.BackColor = Color.Red;
-            iconButtonRefusedProject.Cursor = Cursors.Hand;
-            iconButtonRefusedProject.FlatAppearance.BorderColor = Color.Black;
-            iconButtonRefusedProject.FlatStyle = FlatStyle.Flat;
-            iconButtonRefusedProject.ForeColor = Color.White;
-            iconButtonRefusedProject.IconChar = FontAwesome.Sharp.IconChar.DeleteLeft;
-            iconButtonRefusedProject.IconColor = Color.White;
-            iconButtonRefusedProject.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButtonRefusedProject.IconSize = 22;
-            iconButtonRefusedProject.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButtonRefusedProject.Location = new Point(367, 274);
-            iconButtonRefusedProject.Name = "iconButtonRefusedProject";
-            iconButtonRefusedProject.Size = new Size(296, 29);
-            iconButtonRefusedProject.TabIndex = 27;
-            iconButtonRefusedProject.Text = "Rechazar";
-            iconButtonRefusedProject.UseVisualStyleBackColor = false;
-            iconButtonRefusedProject.Click += iconButtonRefusedProject_Click;
+            iconRefusedProjectButton.BackColor = Color.Red;
+            iconRefusedProjectButton.Cursor = Cursors.Hand;
+            iconRefusedProjectButton.FlatAppearance.BorderColor = Color.Black;
+            iconRefusedProjectButton.FlatStyle = FlatStyle.Flat;
+            iconRefusedProjectButton.ForeColor = Color.White;
+            iconRefusedProjectButton.IconChar = FontAwesome.Sharp.IconChar.DeleteLeft;
+            iconRefusedProjectButton.IconColor = Color.White;
+            iconRefusedProjectButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconRefusedProjectButton.IconSize = 22;
+            iconRefusedProjectButton.ImageAlign = ContentAlignment.MiddleLeft;
+            iconRefusedProjectButton.Location = new Point(446, 417);
+            iconRefusedProjectButton.Name = "iconRefusedProjectButton";
+            iconRefusedProjectButton.Size = new Size(296, 47);
+            iconRefusedProjectButton.TabIndex = 27;
+            iconRefusedProjectButton.Text = "Rechazar";
+            iconRefusedProjectButton.UseVisualStyleBackColor = false;
+            iconRefusedProjectButton.Click += iconRefusedProjectButton_Click;
             // 
-            // groupBoxInfo
+            // informationGroupBox
             // 
-            groupBoxInfo.Controls.Add(textBoxDescriptionProject);
-            groupBoxInfo.Controls.Add(labelDescription);
-            groupBoxInfo.Location = new Point(27, 54);
-            groupBoxInfo.Name = "groupBoxInfo";
-            groupBoxInfo.Size = new Size(636, 196);
-            groupBoxInfo.TabIndex = 28;
-            groupBoxInfo.TabStop = false;
-            groupBoxInfo.Text = "Informacion";
+            informationGroupBox.Controls.Add(descriptionProjectTextBox);
+            informationGroupBox.Controls.Add(descriptionLabel);
+            informationGroupBox.Location = new Point(27, 54);
+            informationGroupBox.Name = "informationGroupBox";
+            informationGroupBox.Size = new Size(715, 335);
+            informationGroupBox.TabIndex = 28;
+            informationGroupBox.TabStop = false;
+            informationGroupBox.Text = "Informacion";
             // 
-            // labelNameProject
+            // nameProjectLabel
             // 
-            labelNameProject.AutoSize = true;
-            labelNameProject.Font = new Font("Century Gothic", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            labelNameProject.Location = new Point(14, 9);
-            labelNameProject.Name = "labelNameProject";
-            labelNameProject.Size = new Size(109, 21);
-            labelNameProject.TabIndex = 27;
-            labelNameProject.Text = "nameProject";
+            nameProjectLabel.AutoSize = true;
+            nameProjectLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            nameProjectLabel.Location = new Point(14, 9);
+            nameProjectLabel.Name = "nameProjectLabel";
+            nameProjectLabel.Size = new Size(216, 28);
+            nameProjectLabel.TabIndex = 27;
+            nameProjectLabel.Text = "Nombre Proyecto";
             // 
-            // labelCodeProject
+            // codeProjectLabel
             // 
-            labelCodeProject.AutoSize = true;
-            labelCodeProject.Font = new Font("Century Gothic", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            labelCodeProject.ForeColor = SystemColors.ButtonShadow;
-            labelCodeProject.Location = new Point(606, 13);
-            labelCodeProject.Name = "labelCodeProject";
-            labelCodeProject.Size = new Size(49, 16);
-            labelCodeProject.TabIndex = 27;
-            labelCodeProject.Text = "u24123";
+            codeProjectLabel.AutoSize = true;
+            codeProjectLabel.Font = new Font("Century Gothic", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            codeProjectLabel.ForeColor = SystemColors.ButtonShadow;
+            codeProjectLabel.Location = new Point(603, 15);
+            codeProjectLabel.Name = "codeProjectLabel";
+            codeProjectLabel.Size = new Size(70, 22);
+            codeProjectLabel.TabIndex = 27;
+            codeProjectLabel.Text = "u24123";
             // 
-            // AnswerProyectClient
+            // AnswerProjectClient
             // 
-            AutoScaleDimensions = new SizeF(7F, 17F);
+            AutoScaleDimensions = new SizeF(11F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(679, 348);
-            Controls.Add(labelCodeProject);
-            Controls.Add(labelNameProject);
-            Controls.Add(iconButtonRefusedProject);
-            Controls.Add(IconButtonApprovedProject);
-            Controls.Add(groupBoxInfo);
+            BackColor = Color.LightGray;
+            ClientSize = new Size(778, 510);
+            Controls.Add(codeProjectLabel);
+            Controls.Add(nameProjectLabel);
+            Controls.Add(iconRefusedProjectButton);
+            Controls.Add(iconApprovedProjectButton);
+            Controls.Add(informationGroupBox);
             Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             MaximizeBox = false;
-            Name = "AnswerProyectClient";
+            Name = "AnswerProjectClient";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Informacion";
             Load += AnswerProyectClient_Load;
-            groupBoxInfo.ResumeLayout(false);
-            groupBoxInfo.PerformLayout();
+            informationGroupBox.ResumeLayout(false);
+            informationGroupBox.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private FontAwesome.Sharp.IconButton IconButtonApprovedProject;
-        private Label labelDescription;
-        private TextBox textBoxDescriptionProject;
-        private FontAwesome.Sharp.IconButton iconButtonRefusedProject;
-        private GroupBox groupBoxInfo;
-        private Label labelNameProject;
-        private Label labelCodeProject;
+        private FontAwesome.Sharp.IconButton iconApprovedProjectButton;
+        private Label descriptionLabel;
+        private TextBox descriptionProjectTextBox;
+        private FontAwesome.Sharp.IconButton iconRefusedProjectButton;
+        private GroupBox informationGroupBox;
+        private Label nameProjectLabel;
+        private Label codeProjectLabel;
     }
 }

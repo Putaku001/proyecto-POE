@@ -25,29 +25,33 @@ namespace PresentationLayer.Forms.Cliente
             InitializeComponent();
             _servicesProvider = serviceProvider;
             _proyectsServices = _proyectServices;
-            
+
         }
         private void AnswerProyectClient_Load(object sender, EventArgs e)
         {
-            textBoxDescriptionProject.Text = Description;
-            labelCodeProject.Text = codeProyect;
-            labelNameProject.Text = nameProject;
-        }
-       
-        private void iconButtonRefusedProject_Click(object sender, EventArgs e)
-        {
-            _proyectsServices.StatusProject(codeProyect, 8);
-            MessageBox.Show($"El Proyecto '{nameProject}' a sido Rechazado");
-            this.Close();
+            descriptionProjectTextBox.Text = Description;
+            codeProjectLabel.Text = codeProyect;
+            nameProjectLabel.Text = nameProject;
         }
 
-        private void IconButtonApprovedProject_Click(object sender, EventArgs e)
+        private void iconButtonRefusedProject_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+
+        private void iconApprovedProjectButton_Click(object sender, EventArgs e)
         {
             _proyectsServices.StatusProject(codeProyect, 9);
             MessageBox.Show($"El Proyecto '{nameProject}' a sido Aceptado");
             this.Close();
         }
 
-        
+        private void iconRefusedProjectButton_Click(object sender, EventArgs e)
+        {
+            _proyectsServices.StatusProject(codeProyect, 8);
+            MessageBox.Show($"El Proyecto '{nameProject}' a sido Rechazado");
+            this.Close();
+        }
     }
 }
