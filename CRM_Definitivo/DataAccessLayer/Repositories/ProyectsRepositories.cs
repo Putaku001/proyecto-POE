@@ -228,7 +228,7 @@ namespace DataAccessLayer.Repositories
         {
             using(var connection = _dbConnection.GetConnection())
             {
-                string query = @"SELECT t.codeProject, t.idEmployee, t.nameTask, t.descriptionTask, t.idStatusTask , te.statusTask, t.fileTask FROM taskProjects t
+                string query = @"SELECT t.idTask, t.codeProject, t.idEmployee, t.nameTask, t.descriptionTask, t.idStatusTask , te.statusTask, t.fileTask FROM taskProjects t
                                 INNER JOIN taskEmployeesStatus te ON te.idStatusTask = t.idStatusTask
                                 INNER JOIN employee e ON e.idEmployee = t.idEmployee
                                 WHERE t.codeProject = @codeProject";
@@ -267,6 +267,7 @@ namespace DataAccessLayer.Repositories
                 return connection.QueryFirstOrDefault<byte[]>(query, new { codeProject });
             }
         }
+
         //Metodos para Admin
 
 

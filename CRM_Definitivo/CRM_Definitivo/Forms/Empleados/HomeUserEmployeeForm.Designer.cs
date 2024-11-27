@@ -30,13 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeUserEmployeeForm));
             introductionGroupBox = new GroupBox();
+            welcomeLabel = new Label();
             userAccountLabel = new Label();
             timeLabel = new Label();
             usersViewPanel = new Panel();
             logoPictureBox = new PictureBox();
             nameGroupLabel = new Label();
-            label7 = new Label();
-            welcomeLabel = new Label();
             informationUsersPanel = new Panel();
             iconUserClientsButton = new FontAwesome.Sharp.IconButton();
             iconUserEmployeeButton = new FontAwesome.Sharp.IconButton();
@@ -55,30 +54,37 @@
             // 
             // introductionGroupBox
             // 
+            introductionGroupBox.Controls.Add(welcomeLabel);
             introductionGroupBox.Controls.Add(userAccountLabel);
             introductionGroupBox.Controls.Add(timeLabel);
             introductionGroupBox.Controls.Add(usersViewPanel);
-            introductionGroupBox.Controls.Add(welcomeLabel);
             introductionGroupBox.Controls.Add(informationUsersPanel);
             introductionGroupBox.Controls.Add(projectsAssignamentPanel);
             introductionGroupBox.Dock = DockStyle.Fill;
             introductionGroupBox.Location = new Point(0, 0);
-            introductionGroupBox.Margin = new Padding(4);
             introductionGroupBox.Name = "introductionGroupBox";
-            introductionGroupBox.Padding = new Padding(4);
-            introductionGroupBox.Size = new Size(1281, 970);
+            introductionGroupBox.Size = new Size(1025, 776);
             introductionGroupBox.TabIndex = 8;
             introductionGroupBox.TabStop = false;
             introductionGroupBox.Text = "Inicio";
+            // 
+            // welcomeLabel
+            // 
+            welcomeLabel.AutoSize = true;
+            welcomeLabel.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold);
+            welcomeLabel.Location = new Point(19, 24);
+            welcomeLabel.Name = "welcomeLabel";
+            welcomeLabel.Size = new Size(250, 27);
+            welcomeLabel.TabIndex = 7;
+            welcomeLabel.Text = "Bienvenido de vuelta";
             // 
             // userAccountLabel
             // 
             userAccountLabel.AutoSize = true;
             userAccountLabel.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold);
-            userAccountLabel.Location = new Point(361, 30);
-            userAccountLabel.Margin = new Padding(4, 0, 4, 0);
+            userAccountLabel.Location = new Point(268, 24);
             userAccountLabel.Name = "userAccountLabel";
-            userAccountLabel.Size = new Size(114, 34);
+            userAccountLabel.Size = new Size(94, 27);
             userAccountLabel.TabIndex = 1;
             userAccountLabel.Text = "Usuario";
             // 
@@ -89,34 +95,30 @@
             timeLabel.BackColor = Color.Transparent;
             timeLabel.Font = new Font("Century Gothic", 12F);
             timeLabel.ForeColor = Color.Black;
-            timeLabel.Location = new Point(753, 34);
-            timeLabel.Margin = new Padding(4, 0, 4, 0);
+            timeLabel.Location = new Point(572, 27);
             timeLabel.Name = "timeLabel";
-            timeLabel.Size = new Size(68, 30);
+            timeLabel.Size = new Size(198, 23);
             timeLabel.TabIndex = 5;
-            timeLabel.Text = "Hora";
+            timeLabel.Text = "06/12/2024 00:00:00";
             // 
             // usersViewPanel
             // 
             usersViewPanel.BackColor = Color.LightGray;
             usersViewPanel.Controls.Add(logoPictureBox);
             usersViewPanel.Controls.Add(nameGroupLabel);
-            usersViewPanel.Controls.Add(label7);
             usersViewPanel.Dock = DockStyle.Right;
-            usersViewPanel.Location = new Point(994, 28);
-            usersViewPanel.Margin = new Padding(4);
+            usersViewPanel.Location = new Point(796, 23);
             usersViewPanel.Name = "usersViewPanel";
-            usersViewPanel.Size = new Size(283, 938);
+            usersViewPanel.Size = new Size(226, 750);
             usersViewPanel.TabIndex = 6;
             // 
             // logoPictureBox
             // 
             logoPictureBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             logoPictureBox.Image = Properties.Resources.CRM_logo__1_;
-            logoPictureBox.Location = new Point(22, 25);
-            logoPictureBox.Margin = new Padding(4);
+            logoPictureBox.Location = new Point(18, 20);
             logoPictureBox.Name = "logoPictureBox";
-            logoPictureBox.Size = new Size(234, 222);
+            logoPictureBox.Size = new Size(187, 178);
             logoPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             logoPictureBox.TabIndex = 31;
             logoPictureBox.TabStop = false;
@@ -127,35 +129,11 @@
             nameGroupLabel.BackColor = Color.Transparent;
             nameGroupLabel.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             nameGroupLabel.ForeColor = Color.DimGray;
-            nameGroupLabel.Location = new Point(12, 273);
-            nameGroupLabel.Margin = new Padding(4, 0, 4, 0);
+            nameGroupLabel.Location = new Point(10, 218);
             nameGroupLabel.Name = "nameGroupLabel";
-            nameGroupLabel.Size = new Size(267, 40);
+            nameGroupLabel.Size = new Size(227, 34);
             nameGroupLabel.TabIndex = 30;
             nameGroupLabel.Text = "Los Tilinizasos77";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Century Gothic", 12F);
-            label7.ForeColor = Color.Black;
-            label7.Location = new Point(160, 120);
-            label7.Margin = new Padding(4, 0, 4, 0);
-            label7.Name = "label7";
-            label7.Size = new Size(20, 30);
-            label7.TabIndex = 19;
-            label7.Text = ",";
-            // 
-            // welcomeLabel
-            // 
-            welcomeLabel.AutoSize = true;
-            welcomeLabel.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold);
-            welcomeLabel.Location = new Point(24, 30);
-            welcomeLabel.Margin = new Padding(4, 0, 4, 0);
-            welcomeLabel.Name = "welcomeLabel";
-            welcomeLabel.Size = new Size(311, 34);
-            welcomeLabel.TabIndex = 0;
-            welcomeLabel.Text = "Bienvenido de vuelta ";
             // 
             // informationUsersPanel
             // 
@@ -163,10 +141,9 @@
             informationUsersPanel.BorderStyle = BorderStyle.Fixed3D;
             informationUsersPanel.Controls.Add(iconUserClientsButton);
             informationUsersPanel.Controls.Add(iconUserEmployeeButton);
-            informationUsersPanel.Location = new Point(24, 285);
-            informationUsersPanel.Margin = new Padding(4);
+            informationUsersPanel.Location = new Point(19, 228);
             informationUsersPanel.Name = "informationUsersPanel";
-            informationUsersPanel.Size = new Size(938, 436);
+            informationUsersPanel.Size = new Size(751, 350);
             informationUsersPanel.TabIndex = 3;
             // 
             // iconUserClientsButton
@@ -180,10 +157,9 @@
             iconUserClientsButton.IconColor = Color.White;
             iconUserClientsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconUserClientsButton.ImageAlign = ContentAlignment.MiddleLeft;
-            iconUserClientsButton.Location = new Point(51, 162);
-            iconUserClientsButton.Margin = new Padding(4);
+            iconUserClientsButton.Location = new Point(227, 207);
             iconUserClientsButton.Name = "iconUserClientsButton";
-            iconUserClientsButton.Size = new Size(369, 78);
+            iconUserClientsButton.Size = new Size(295, 48);
             iconUserClientsButton.TabIndex = 6;
             iconUserClientsButton.Text = "Mis proyectos finalizados";
             iconUserClientsButton.UseVisualStyleBackColor = false;
@@ -199,13 +175,13 @@
             iconUserEmployeeButton.IconColor = Color.White;
             iconUserEmployeeButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconUserEmployeeButton.ImageAlign = ContentAlignment.MiddleLeft;
-            iconUserEmployeeButton.Location = new Point(51, 48);
-            iconUserEmployeeButton.Margin = new Padding(4);
+            iconUserEmployeeButton.Location = new Point(227, 96);
             iconUserEmployeeButton.Name = "iconUserEmployeeButton";
-            iconUserEmployeeButton.Size = new Size(369, 85);
+            iconUserEmployeeButton.Size = new Size(295, 48);
             iconUserEmployeeButton.TabIndex = 4;
             iconUserEmployeeButton.Text = "Mis proyectos pendientes";
             iconUserEmployeeButton.UseVisualStyleBackColor = false;
+            iconUserEmployeeButton.Click += iconUserEmployeeButton_Click_1;
             // 
             // projectsAssignamentPanel
             // 
@@ -215,20 +191,18 @@
             projectsAssignamentPanel.Controls.Add(motivationLabel);
             projectsAssignamentPanel.Controls.Add(projectsPendingsLabel);
             projectsAssignamentPanel.Controls.Add(completedTaskLabel);
-            projectsAssignamentPanel.Location = new Point(24, 95);
-            projectsAssignamentPanel.Margin = new Padding(4);
+            projectsAssignamentPanel.Location = new Point(19, 76);
             projectsAssignamentPanel.Name = "projectsAssignamentPanel";
-            projectsAssignamentPanel.Size = new Size(938, 155);
+            projectsAssignamentPanel.Size = new Size(751, 125);
             projectsAssignamentPanel.TabIndex = 2;
             // 
             // taskPictureBox
             // 
             taskPictureBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             taskPictureBox.Image = (Image)resources.GetObject("taskPictureBox.Image");
-            taskPictureBox.Location = new Point(776, 19);
-            taskPictureBox.Margin = new Padding(4);
+            taskPictureBox.Location = new Point(601, 15);
             taskPictureBox.Name = "taskPictureBox";
-            taskPictureBox.Size = new Size(134, 128);
+            taskPictureBox.Size = new Size(107, 86);
             taskPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             taskPictureBox.TabIndex = 4;
             taskPictureBox.TabStop = false;
@@ -237,10 +211,9 @@
             // 
             motivationLabel.AutoSize = true;
             motivationLabel.Font = new Font("Century Gothic", 10.2F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            motivationLabel.Location = new Point(18, 74);
-            motivationLabel.Margin = new Padding(4, 0, 4, 0);
+            motivationLabel.Location = new Point(37, 80);
             motivationLabel.Name = "motivationLabel";
-            motivationLabel.Size = new Size(431, 24);
+            motivationLabel.Size = new Size(359, 21);
             motivationLabel.TabIndex = 3;
             motivationLabel.Text = "¿A qué esperas? ¡Ponte manos a la obra!";
             // 
@@ -249,10 +222,9 @@
             projectsPendingsLabel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             projectsPendingsLabel.AutoSize = true;
             projectsPendingsLabel.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            projectsPendingsLabel.Location = new Point(680, 19);
-            projectsPendingsLabel.Margin = new Padding(4, 0, 4, 0);
+            projectsPendingsLabel.Location = new Point(546, 41);
             projectsPendingsLabel.Name = "projectsPendingsLabel";
-            projectsPendingsLabel.Size = new Size(39, 43);
+            projectsPendingsLabel.Size = new Size(34, 37);
             projectsPendingsLabel.TabIndex = 2;
             projectsPendingsLabel.Text = "0";
             // 
@@ -260,22 +232,20 @@
             // 
             completedTaskLabel.AutoSize = true;
             completedTaskLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            completedTaskLabel.Location = new Point(35, 19);
-            completedTaskLabel.Margin = new Padding(4, 0, 4, 0);
+            completedTaskLabel.Location = new Point(34, 29);
             completedTaskLabel.Name = "completedTaskLabel";
-            completedTaskLabel.Size = new Size(266, 28);
+            completedTaskLabel.Size = new Size(220, 23);
             completedTaskLabel.TabIndex = 1;
             completedTaskLabel.Text = "Tareas por Completar";
             // 
             // HomeUserEmployeeForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1281, 970);
+            ClientSize = new Size(1025, 776);
             Controls.Add(introductionGroupBox);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4);
             Name = "HomeUserEmployeeForm";
             Text = "HomeUserEmployeeForm";
             introductionGroupBox.ResumeLayout(false);

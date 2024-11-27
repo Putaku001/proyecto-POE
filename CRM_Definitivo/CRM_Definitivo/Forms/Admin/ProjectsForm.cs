@@ -32,8 +32,6 @@ namespace PresentationLayer.Forms
             requestProjectsDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             projectProgressDataGridView.DataSource = _proyectoServices.GetRequestProjectsProgress();
             projectProgressDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            projectsEndDataGridView.DataSource = _proyectoServices.GetRequestProjectsFinish();
-            projectsEndDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             projectsRefusedDataGridView.DataSource = _proyectoServices.GetRequestProjectsRefused();
             projectsRefusedDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             projectsWaitingResponseDataGridView.DataSource = _proyectoServices.GetProjectsWaitingReponse();
@@ -41,7 +39,6 @@ namespace PresentationLayer.Forms
 
             projectsWaitingResponseDataGridView.Columns["file"].Visible = false;
             projectsRefusedDataGridView.Columns["file"].Visible = false;
-            projectsEndDataGridView.Columns["file"].Visible = false;
             requestProjectsDataGridView.Columns["file"].Visible = false;
             requestProjectsDataGridView.Columns["idClient"].Visible = false;
             projectProgressDataGridView.Columns["file"].Visible = false;
@@ -64,6 +61,8 @@ namespace PresentationLayer.Forms
                 assignamentTaskEmployeeForm.NameProject = NameProject;
                 assignamentTaskEmployeeForm.DescriptionProject = DescriptionProject;
                 assignamentTaskEmployeeForm.ShowDialog();
+
+                
 
                 Projects dateInit = new Projects();
                 var dateInitial = dateInit.dateInit = DateTime.Now;
@@ -100,12 +99,6 @@ namespace PresentationLayer.Forms
             }
         }
 
-
-        private void projectsEndDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void projectsRefusedDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex == projectsRefusedDataGridView.Columns["selectRp"].Index)
@@ -123,12 +116,6 @@ namespace PresentationLayer.Forms
             }
         }
 
-        private void projectsWaitingResponseDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-
         private void projectProgressDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -141,7 +128,6 @@ namespace PresentationLayer.Forms
 
             }
         }
-
 
     }
 }

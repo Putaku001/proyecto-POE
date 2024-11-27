@@ -28,7 +28,6 @@ namespace PresentationLayer.Forms.Admin
         {
             getTaskDataGridView.DataSource = _proyectsServices.GetTasksByCode(codeProject);
             getTaskDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            getTaskDataGridView.Columns["idTask"].Visible = false;
             getTaskDataGridView.Columns["idStatusTask"].Visible = false;
             getTaskDataGridView.Columns["dateEnd"].Visible = false;
             getTaskDataGridView.Columns["fileTask"].Visible = false;

@@ -1,6 +1,7 @@
 ﻿using BusinessLayer.Services.Interfaces;
 using BusinessLayer.Services.InterfacesServices;
 using CommonLayer.Entities;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,12 +18,14 @@ namespace PresentationLayer.Forms.Empleados
     {
         private readonly IProyectsServices _proyectsServices;
         private readonly IUsersServices _usersServices;
+        private readonly IServiceProvider _serviceProvider;
         int idUser;
-        public HomeUserEmployeeForm(IProyectsServices proyectsServices, IUsersServices usersServices)
+        public HomeUserEmployeeForm(IProyectsServices proyectsServices, IUsersServices usersServices, IServiceProvider serviceProvider)
         {
             InitializeComponent();
             _proyectsServices = proyectsServices;
             _usersServices = usersServices;
+            _serviceProvider = serviceProvider;
             idUser = CaptureData.idUser;
             LoadData();
         }
@@ -35,6 +38,13 @@ namespace PresentationLayer.Forms.Empleados
             var getidClient = _usersServices.GetClients().Where(id => id.idUser == idUser).Select(select => select.idCliente).FirstOrDefault();
             var projectsCount = _proyectsServices.GetProjectsByIdClient(getidClient).Count();
             projectsPendingsLabel.Text = projectsCount.ToString();
+        }
+
+        private void iconUserEmployeeButton_Click_1(object sender, EventArgs e)
+        {
+            var openForm = _serviceProvider.GetRequiredService<RecordProjectsEmployeeForm>();
+            openForm.ShowDialog();
+
         }
     }
 }

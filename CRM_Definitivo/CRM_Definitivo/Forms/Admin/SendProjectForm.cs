@@ -21,6 +21,7 @@ namespace PresentationLayer.Forms.Admin
         public string Client { get; set; }
         public DateTime DateEnd { get; set; }
         byte[] fileByte;
+
         private readonly IProyectsServices _proyectsServices;
         private readonly IUsersServices _usersServices;
 
@@ -39,7 +40,6 @@ namespace PresentationLayer.Forms.Admin
             nameProjectLabel.Text = NameProject;
             dateLabel.Text = DateEnd.ToString();
 
-            getEmployeesCheckedListBox.Items.Clear();
         }
 
         private void linkLabelFileProject_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -58,7 +58,7 @@ namespace PresentationLayer.Forms.Admin
                     {
                         file.CopyTo(ms);
                         fileByte = ms.ToArray();
-                        //linkLabelFileProject.Text = filePath;
+                        selectedFileLabel.Text = filePath;
                     }
                 }
             }

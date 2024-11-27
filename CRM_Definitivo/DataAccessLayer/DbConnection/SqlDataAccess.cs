@@ -14,9 +14,9 @@ namespace DataAccessLayer.DbSqlDataAccess
     {
         private readonly string _connectionString;
 
-        public SqlDataAccess(IConfiguration configuration)
+        public SqlDataAccess()
         {
-            _connectionString = "Data Source=DESKTOP-JDM7JV2\\MSSQLSERVER01;Initial Catalog=SistemaProyectosDB;Integrated Security=True;Encrypt=False";
+            _connectionString = "Data Source=LAPTOP-PHCFNULN\\SQLEXPRESS;Initial Catalog=SistemaProyectosDB;Integrated Security=True;Encrypt=False;Trust Server Certificate=True";
         }
 
         public SqlConnection GetConnection()

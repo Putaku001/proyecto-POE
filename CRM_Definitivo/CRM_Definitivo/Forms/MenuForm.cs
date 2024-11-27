@@ -208,7 +208,8 @@ namespace PresentationLayer.Forms
         }
         private void iconMenuRecordForm_Click(object sender, EventArgs e)
         {
-
+            var iconMenuRecordForm = _provider.GetRequiredService<RecordProjectsEmployeeForm>();
+            AbrirFormulario(iconMenuRecordForm);
         }
         private void iconMenusSettingsForm_Click(object sender, EventArgs e)
         {

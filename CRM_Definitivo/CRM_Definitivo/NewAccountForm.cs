@@ -12,8 +12,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using Twilio.TwiML.Voice;
-using System.Windows.Controls;
+//using System.Windows.Controls;
+using FluentValidation.Results;
 using System.Drawing;
+//using System.ComponentModel.DataAnnotations;
+using PresentationLayer.Validations;
+using Microsoft.Extensions.DependencyInjection;
 
 
 
@@ -21,7 +25,7 @@ namespace PresentationLayer
 {
     public partial class NewAccountForm : Form
     {
-        private IUsersServices _usersServices;
+        private readonly IUsersServices _usersServices;
         bool isEditing = false;
         byte[] imageBytes;
 
@@ -112,8 +116,6 @@ namespace PresentationLayer
                         MessageBox.Show("La contraseña debe tener al menos 8 caracteres.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
-
-
 
                     User newAccount = new User
                     {
@@ -229,29 +231,28 @@ namespace PresentationLayer
             }
         }
 
-
-        //private void DisplayValidationErrors(ValidationResult result)
-        //{
-        //    errorValidation.Clear();
-
-        //    foreach (var error in result.Errors)
-        //    {
-        //        switch (error.PropertyName)
-        //        {
-        //            case nameof(User.UserAccount):
-        //                errorValidation.SetError(userNameTextBox, error.ErrorMessage);
-        //                errorUserLabel.Text = error.ErrorMessage;
-        //                break;
-        //            case nameof(User.NameUser):
-        //                errorValidation.SetError(nameTexBox, error.ErrorMessage);
-        //                errorUserNameLabel.Text = error.ErrorMessage;
-        //                break;
-        //            default:
-        //                Console.WriteLine($"Error en un campo no reconocido: {error.PropertyName}");
-        //                break;
-        //        }
-        //    }
-        //}
+        private void DisplayValidationErrors(ValidationResult result)
+        {
+            errorValidation.Clear();
+            //Te daba error aca por el tema de la ambiguedad, tenias como 3 librerias que ocupaban la propiedad result.Errors causando un ambiguedad entre ellos
+            foreach (var error in result.Errors)
+            {
+                switch (error.PropertyName)
+                {
+                    case nameof(User.UserAccount):
+                        errorValidation.SetError(userNameTextBox, error.ErrorMessage);
+                        errorUserLabel.Text = error.ErrorMessage;
+                        break;
+                    case nameof(User.NameUser):
+                        errorValidation.SetError(nameTexBox, error.ErrorMessage);
+                        errorUserNameLabel.Text = error.ErrorMessage;
+                        break;
+                    default:
+                        Console.WriteLine($"Error en un campo no reconocido: {error.PropertyName}");
+                        break;
+                }
+            }
+        }
 
     }
 }   
