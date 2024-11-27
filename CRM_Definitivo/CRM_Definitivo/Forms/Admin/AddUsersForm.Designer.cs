@@ -30,323 +30,354 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddUsersForm));
             lblAñadirUsuarios = new Label();
-            label2 = new Label();
-            txtName = new TextBox();
-            cboRol = new ComboBox();
-            label5 = new Label();
-            gbDetallesUsuarios = new GroupBox();
-            label11 = new Label();
-            textBoxEmail = new TextBox();
-            lblUserAccount = new Label();
-            txtUserAccount = new TextBox();
-            dtpBirthDate = new DateTimePicker();
-            label10 = new Label();
-            txtNumberPhone = new TextBox();
-            cboStates = new ComboBox();
-            label1 = new Label();
-            label9 = new Label();
-            txtPassword = new TextBox();
-            label3 = new Label();
-            label4 = new Label();
-            txtLastName = new TextBox();
-            gbProvincia = new GroupBox();
-            dtmFechaRegistro = new DateTimePicker();
-            label8 = new Label();
-            cboListCity = new ComboBox();
-            cboListCountrys = new ComboBox();
-            label6 = new Label();
-            btnGuardar = new FontAwesome.Sharp.IconButton();
-            btnEditar = new FontAwesome.Sharp.IconButton();
-            gbDetallesUsuarios.SuspendLayout();
-            gbProvincia.SuspendLayout();
+            nameLabel = new Label();
+            nameTextBox = new TextBox();
+            rolComboBox = new ComboBox();
+            rolLabel = new Label();
+            detailsUserGroupBox = new GroupBox();
+            emailLabel = new Label();
+            emailTextBox = new TextBox();
+            nameUserLabel = new Label();
+            nameUserTextBox = new TextBox();
+            birthdateDateTimePicker = new DateTimePicker();
+            numberPhoneLabel = new Label();
+            numberPhoneTextBox = new TextBox();
+            statusComboBox = new ComboBox();
+            statusLabel = new Label();
+            passwordLabel = new Label();
+            passwordTextBox = new TextBox();
+            dateLabel = new Label();
+            lastNameLabel = new Label();
+            lasNameTextBox = new TextBox();
+            countryGroupBox = new GroupBox();
+            dateRegistreDateTimePicker = new DateTimePicker();
+            editButton = new FontAwesome.Sharp.IconButton();
+            cityLabel = new Label();
+            cityListComboBox = new ComboBox();
+            saveButton = new FontAwesome.Sharp.IconButton();
+            countrysComboBox = new ComboBox();
+            countryUserLabel = new Label();
+            informationPanel = new Panel();
+            detailsUserGroupBox.SuspendLayout();
+            countryGroupBox.SuspendLayout();
+            informationPanel.SuspendLayout();
             SuspendLayout();
             // 
             // lblAñadirUsuarios
             // 
             lblAñadirUsuarios.BackColor = SystemColors.HotTrack;
+            lblAñadirUsuarios.Dock = DockStyle.Top;
             lblAñadirUsuarios.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblAñadirUsuarios.Location = new Point(-2, 9);
+            lblAñadirUsuarios.Location = new Point(0, 0);
             lblAñadirUsuarios.Name = "lblAñadirUsuarios";
-            lblAñadirUsuarios.Size = new Size(477, 39);
+            lblAñadirUsuarios.Size = new Size(1293, 59);
             lblAñadirUsuarios.TabIndex = 0;
             lblAñadirUsuarios.Text = "Añadir";
             lblAñadirUsuarios.TextAlign = ContentAlignment.TopCenter;
             // 
-            // label2
+            // nameLabel
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(32, 178);
-            label2.Name = "label2";
-            label2.Size = new Size(81, 19);
-            label2.TabIndex = 1;
-            label2.Text = "Nombre:";
+            nameLabel.AutoSize = true;
+            nameLabel.ForeColor = Color.Black;
+            nameLabel.Location = new Point(133, 241);
+            nameLabel.Name = "nameLabel";
+            nameLabel.Size = new Size(95, 23);
+            nameLabel.TabIndex = 1;
+            nameLabel.Text = "Nombre:";
             // 
-            // txtName
+            // nameTextBox
             // 
-            txtName.Location = new Point(112, 175);
-            txtName.Name = "txtName";
-            txtName.Size = new Size(248, 28);
-            txtName.TabIndex = 2;
+            nameTextBox.Location = new Point(264, 238);
+            nameTextBox.Name = "nameTextBox";
+            nameTextBox.Size = new Size(346, 32);
+            nameTextBox.TabIndex = 2;
             // 
-            // cboRol
+            // rolComboBox
             // 
-            cboRol.FormattingEnabled = true;
-            cboRol.Location = new Point(112, 129);
-            cboRol.Name = "cboRol";
-            cboRol.Size = new Size(248, 27);
-            cboRol.TabIndex = 7;
-            cboRol.SelectedIndexChanged += cboRol_SelectedIndexChanged;
+            rolComboBox.FormattingEnabled = true;
+            rolComboBox.Location = new Point(266, 172);
+            rolComboBox.Name = "rolComboBox";
+            rolComboBox.Size = new Size(344, 31);
+            rolComboBox.TabIndex = 7;
+            rolComboBox.SelectedIndexChanged += rolComboBox_SelectedIndexChanged;
             // 
-            // label5
+            // rolLabel
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(32, 132);
-            label5.Name = "label5";
-            label5.Size = new Size(39, 19);
-            label5.TabIndex = 8;
-            label5.Text = "Rol:";
+            rolLabel.AutoSize = true;
+            rolLabel.ForeColor = Color.Black;
+            rolLabel.Location = new Point(183, 180);
+            rolLabel.Name = "rolLabel";
+            rolLabel.Size = new Size(45, 23);
+            rolLabel.TabIndex = 8;
+            rolLabel.Text = "Rol:";
             // 
-            // gbDetallesUsuarios
+            // detailsUserGroupBox
             // 
-            gbDetallesUsuarios.Controls.Add(label11);
-            gbDetallesUsuarios.Controls.Add(textBoxEmail);
-            gbDetallesUsuarios.Controls.Add(lblUserAccount);
-            gbDetallesUsuarios.Controls.Add(txtUserAccount);
-            gbDetallesUsuarios.Controls.Add(dtpBirthDate);
-            gbDetallesUsuarios.Controls.Add(label10);
-            gbDetallesUsuarios.Controls.Add(txtNumberPhone);
-            gbDetallesUsuarios.Controls.Add(cboStates);
-            gbDetallesUsuarios.Controls.Add(cboRol);
-            gbDetallesUsuarios.Controls.Add(label1);
-            gbDetallesUsuarios.Controls.Add(label9);
-            gbDetallesUsuarios.Controls.Add(label5);
-            gbDetallesUsuarios.Controls.Add(txtPassword);
-            gbDetallesUsuarios.Controls.Add(label2);
-            gbDetallesUsuarios.Controls.Add(txtName);
-            gbDetallesUsuarios.Controls.Add(label3);
-            gbDetallesUsuarios.Controls.Add(label4);
-            gbDetallesUsuarios.Controls.Add(txtLastName);
-            gbDetallesUsuarios.Location = new Point(13, 74);
-            gbDetallesUsuarios.Name = "gbDetallesUsuarios";
-            gbDetallesUsuarios.Size = new Size(462, 487);
-            gbDetallesUsuarios.TabIndex = 15;
-            gbDetallesUsuarios.TabStop = false;
-            gbDetallesUsuarios.Text = "Datos Del Usuario";
+            detailsUserGroupBox.Controls.Add(emailLabel);
+            detailsUserGroupBox.Controls.Add(emailTextBox);
+            detailsUserGroupBox.Controls.Add(nameUserLabel);
+            detailsUserGroupBox.Controls.Add(nameUserTextBox);
+            detailsUserGroupBox.Controls.Add(birthdateDateTimePicker);
+            detailsUserGroupBox.Controls.Add(numberPhoneLabel);
+            detailsUserGroupBox.Controls.Add(numberPhoneTextBox);
+            detailsUserGroupBox.Controls.Add(statusComboBox);
+            detailsUserGroupBox.Controls.Add(rolComboBox);
+            detailsUserGroupBox.Controls.Add(statusLabel);
+            detailsUserGroupBox.Controls.Add(passwordLabel);
+            detailsUserGroupBox.Controls.Add(rolLabel);
+            detailsUserGroupBox.Controls.Add(passwordTextBox);
+            detailsUserGroupBox.Controls.Add(nameLabel);
+            detailsUserGroupBox.Controls.Add(nameTextBox);
+            detailsUserGroupBox.Controls.Add(dateLabel);
+            detailsUserGroupBox.Controls.Add(lastNameLabel);
+            detailsUserGroupBox.Controls.Add(lasNameTextBox);
+            detailsUserGroupBox.Dock = DockStyle.Left;
+            detailsUserGroupBox.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            detailsUserGroupBox.Location = new Point(0, 0);
+            detailsUserGroupBox.Name = "detailsUserGroupBox";
+            detailsUserGroupBox.Size = new Size(642, 735);
+            detailsUserGroupBox.TabIndex = 15;
+            detailsUserGroupBox.TabStop = false;
+            detailsUserGroupBox.Text = "Datos Del Usuario";
             // 
-            // label11
+            // emailLabel
             // 
-            label11.AutoSize = true;
-            label11.Location = new Point(30, 89);
-            label11.Name = "label11";
-            label11.Size = new Size(70, 19);
-            label11.TabIndex = 22;
-            label11.Text = "Correo:";
+            emailLabel.AutoSize = true;
+            emailLabel.ForeColor = Color.Black;
+            emailLabel.Location = new Point(31, 101);
+            emailLabel.Name = "emailLabel";
+            emailLabel.Size = new Size(197, 23);
+            emailLabel.TabIndex = 22;
+            emailLabel.Text = "Correo Electronico:";
             // 
-            // textBoxEmail
+            // emailTextBox
             // 
-            textBoxEmail.Location = new Point(112, 86);
-            textBoxEmail.Name = "textBoxEmail";
-            textBoxEmail.Size = new Size(248, 28);
-            textBoxEmail.TabIndex = 23;
+            emailTextBox.Location = new Point(266, 98);
+            emailTextBox.Name = "emailTextBox";
+            emailTextBox.Size = new Size(344, 32);
+            emailTextBox.TabIndex = 23;
             // 
-            // lblUserAccount
+            // nameUserLabel
             // 
-            lblUserAccount.AutoSize = true;
-            lblUserAccount.Location = new Point(30, 43);
-            lblUserAccount.Name = "lblUserAccount";
-            lblUserAccount.Size = new Size(73, 19);
-            lblUserAccount.TabIndex = 20;
-            lblUserAccount.Text = "Usuario:";
+            nameUserLabel.AutoSize = true;
+            nameUserLabel.ForeColor = Color.Black;
+            nameUserLabel.Location = new Point(144, 43);
+            nameUserLabel.Name = "nameUserLabel";
+            nameUserLabel.Size = new Size(84, 23);
+            nameUserLabel.TabIndex = 20;
+            nameUserLabel.Text = "Usuario:";
             // 
-            // txtUserAccount
+            // nameUserTextBox
             // 
-            txtUserAccount.Location = new Point(112, 40);
-            txtUserAccount.Name = "txtUserAccount";
-            txtUserAccount.Size = new Size(248, 28);
-            txtUserAccount.TabIndex = 21;
+            nameUserTextBox.Location = new Point(266, 43);
+            nameUserTextBox.Name = "nameUserTextBox";
+            nameUserTextBox.Size = new Size(346, 32);
+            nameUserTextBox.TabIndex = 21;
             // 
-            // dtpBirthDate
+            // birthdateDateTimePicker
             // 
-            dtpBirthDate.Location = new Point(112, 270);
-            dtpBirthDate.Name = "dtpBirthDate";
-            dtpBirthDate.Size = new Size(250, 28);
-            dtpBirthDate.TabIndex = 19;
+            birthdateDateTimePicker.Location = new Point(262, 380);
+            birthdateDateTimePicker.Name = "birthdateDateTimePicker";
+            birthdateDateTimePicker.Size = new Size(346, 32);
+            birthdateDateTimePicker.TabIndex = 19;
             // 
-            // label10
+            // numberPhoneLabel
             // 
-            label10.AutoSize = true;
-            label10.Location = new Point(32, 315);
-            label10.Name = "label10";
-            label10.Size = new Size(84, 19);
-            label10.TabIndex = 17;
-            label10.Text = "Telefono:";
+            numberPhoneLabel.AutoSize = true;
+            numberPhoneLabel.ForeColor = Color.Black;
+            numberPhoneLabel.Location = new Point(130, 458);
+            numberPhoneLabel.Name = "numberPhoneLabel";
+            numberPhoneLabel.Size = new Size(98, 23);
+            numberPhoneLabel.TabIndex = 17;
+            numberPhoneLabel.Text = "Telefono:";
             // 
-            // txtNumberPhone
+            // numberPhoneTextBox
             // 
-            txtNumberPhone.Location = new Point(112, 312);
-            txtNumberPhone.Name = "txtNumberPhone";
-            txtNumberPhone.Size = new Size(248, 28);
-            txtNumberPhone.TabIndex = 18;
+            numberPhoneTextBox.Location = new Point(262, 449);
+            numberPhoneTextBox.Name = "numberPhoneTextBox";
+            numberPhoneTextBox.Size = new Size(346, 32);
+            numberPhoneTextBox.TabIndex = 18;
             // 
-            // cboStates
+            // statusComboBox
             // 
-            cboStates.FormattingEnabled = true;
-            cboStates.Location = new Point(112, 409);
-            cboStates.Name = "cboStates";
-            cboStates.Size = new Size(248, 27);
-            cboStates.TabIndex = 15;
+            statusComboBox.FormattingEnabled = true;
+            statusComboBox.Location = new Point(262, 592);
+            statusComboBox.Name = "statusComboBox";
+            statusComboBox.Size = new Size(346, 31);
+            statusComboBox.TabIndex = 15;
             // 
-            // label1
+            // statusLabel
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(32, 412);
-            label1.Name = "label1";
-            label1.Size = new Size(68, 19);
-            label1.TabIndex = 16;
-            label1.Text = "Estado:";
+            statusLabel.AutoSize = true;
+            statusLabel.ForeColor = Color.Black;
+            statusLabel.Location = new Point(133, 595);
+            statusLabel.Name = "statusLabel";
+            statusLabel.Size = new Size(82, 23);
+            statusLabel.TabIndex = 16;
+            statusLabel.Text = "Estado:";
             // 
-            // label9
+            // passwordLabel
             // 
-            label9.AutoSize = true;
-            label9.Location = new Point(32, 364);
-            label9.Name = "label9";
-            label9.Size = new Size(63, 19);
-            label9.TabIndex = 7;
-            label9.Text = "Clave:";
+            passwordLabel.AutoSize = true;
+            passwordLabel.ForeColor = Color.Black;
+            passwordLabel.Location = new Point(98, 522);
+            passwordLabel.Name = "passwordLabel";
+            passwordLabel.Size = new Size(130, 23);
+            passwordLabel.TabIndex = 7;
+            passwordLabel.Text = "Contraseña:";
             // 
-            // txtPassword
+            // passwordTextBox
             // 
-            txtPassword.Location = new Point(112, 362);
-            txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(248, 28);
-            txtPassword.TabIndex = 8;
+            passwordTextBox.Location = new Point(262, 519);
+            passwordTextBox.Name = "passwordTextBox";
+            passwordTextBox.Size = new Size(346, 32);
+            passwordTextBox.TabIndex = 8;
             // 
-            // label3
+            // dateLabel
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(32, 270);
-            label3.Name = "label3";
-            label3.Size = new Size(60, 19);
-            label3.TabIndex = 3;
-            label3.Text = "Fecha";
+            dateLabel.AutoSize = true;
+            dateLabel.ForeColor = Color.Black;
+            dateLabel.Location = new Point(156, 389);
+            dateLabel.Name = "dateLabel";
+            dateLabel.Size = new Size(72, 23);
+            dateLabel.TabIndex = 3;
+            dateLabel.Text = "Fecha";
             // 
-            // label4
+            // lastNameLabel
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(32, 226);
-            label4.Name = "label4";
-            label4.Size = new Size(83, 19);
-            label4.TabIndex = 5;
-            label4.Text = "Apellido:";
+            lastNameLabel.AutoSize = true;
+            lastNameLabel.ForeColor = Color.Black;
+            lastNameLabel.Location = new Point(131, 321);
+            lastNameLabel.Name = "lastNameLabel";
+            lastNameLabel.Size = new Size(97, 23);
+            lastNameLabel.TabIndex = 5;
+            lastNameLabel.Text = "Apellido:";
             // 
-            // txtLastName
+            // lasNameTextBox
             // 
-            txtLastName.Location = new Point(112, 223);
-            txtLastName.Name = "txtLastName";
-            txtLastName.Size = new Size(248, 28);
-            txtLastName.TabIndex = 6;
+            lasNameTextBox.Location = new Point(264, 318);
+            lasNameTextBox.Name = "lasNameTextBox";
+            lasNameTextBox.Size = new Size(344, 32);
+            lasNameTextBox.TabIndex = 6;
             // 
-            // gbProvincia
+            // countryGroupBox
             // 
-            gbProvincia.Controls.Add(dtmFechaRegistro);
-            gbProvincia.Controls.Add(label8);
-            gbProvincia.Controls.Add(cboListCity);
-            gbProvincia.Controls.Add(cboListCountrys);
-            gbProvincia.Controls.Add(label6);
-            gbProvincia.Location = new Point(527, 74);
-            gbProvincia.Name = "gbProvincia";
-            gbProvincia.Size = new Size(462, 332);
-            gbProvincia.TabIndex = 16;
-            gbProvincia.TabStop = false;
-            gbProvincia.Text = "Provinencia";
+            countryGroupBox.Controls.Add(dateRegistreDateTimePicker);
+            countryGroupBox.Controls.Add(editButton);
+            countryGroupBox.Controls.Add(cityLabel);
+            countryGroupBox.Controls.Add(cityListComboBox);
+            countryGroupBox.Controls.Add(saveButton);
+            countryGroupBox.Controls.Add(countrysComboBox);
+            countryGroupBox.Controls.Add(countryUserLabel);
+            countryGroupBox.Dock = DockStyle.Right;
+            countryGroupBox.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            countryGroupBox.ForeColor = Color.Black;
+            countryGroupBox.Location = new Point(665, 0);
+            countryGroupBox.Name = "countryGroupBox";
+            countryGroupBox.Size = new Size(628, 735);
+            countryGroupBox.TabIndex = 16;
+            countryGroupBox.TabStop = false;
+            countryGroupBox.Text = "Provinencia";
             // 
-            // dtmFechaRegistro
+            // dateRegistreDateTimePicker
             // 
-            dtmFechaRegistro.Enabled = false;
-            dtmFechaRegistro.Location = new Point(43, 226);
-            dtmFechaRegistro.Name = "dtmFechaRegistro";
-            dtmFechaRegistro.Size = new Size(380, 28);
-            dtmFechaRegistro.TabIndex = 15;
+            dateRegistreDateTimePicker.Enabled = false;
+            dateRegistreDateTimePicker.Location = new Point(162, 210);
+            dateRegistreDateTimePicker.Name = "dateRegistreDateTimePicker";
+            dateRegistreDateTimePicker.Size = new Size(380, 32);
+            dateRegistreDateTimePicker.TabIndex = 15;
             // 
-            // label8
+            // editButton
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(27, 146);
-            label8.Name = "label8";
-            label8.Size = new Size(74, 19);
-            label8.TabIndex = 14;
-            label8.Text = "Ciudad:";
+            editButton.BackColor = SystemColors.HotTrack;
+            editButton.FlatAppearance.BorderSize = 0;
+            editButton.FlatStyle = FlatStyle.Popup;
+            editButton.ForeColor = Color.White;
+            editButton.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            editButton.IconColor = Color.White;
+            editButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            editButton.IconSize = 28;
+            editButton.ImageAlign = ContentAlignment.MiddleLeft;
+            editButton.Location = new Point(341, 380);
+            editButton.Name = "editButton";
+            editButton.Size = new Size(215, 46);
+            editButton.TabIndex = 18;
+            editButton.Text = "Editar";
+            editButton.UseVisualStyleBackColor = false;
+            editButton.Click += editButton_Click;
             // 
-            // cboListCity
+            // cityLabel
             // 
-            cboListCity.FormattingEnabled = true;
-            cboListCity.Location = new Point(159, 146);
-            cboListCity.Name = "cboListCity";
-            cboListCity.Size = new Size(248, 27);
-            cboListCity.TabIndex = 13;
+            cityLabel.AutoSize = true;
+            cityLabel.Location = new Point(24, 129);
+            cityLabel.Name = "cityLabel";
+            cityLabel.Size = new Size(88, 23);
+            cityLabel.TabIndex = 14;
+            cityLabel.Text = "Ciudad:";
             // 
-            // cboListCountrys
+            // cityListComboBox
             // 
-            cboListCountrys.FormattingEnabled = true;
-            cboListCountrys.Location = new Point(159, 101);
-            cboListCountrys.Name = "cboListCountrys";
-            cboListCountrys.Size = new Size(248, 27);
-            cboListCountrys.TabIndex = 9;
+            cityListComboBox.FormattingEnabled = true;
+            cityListComboBox.Location = new Point(159, 121);
+            cityListComboBox.Name = "cityListComboBox";
+            cityListComboBox.Size = new Size(383, 31);
+            cityListComboBox.TabIndex = 13;
             // 
-            // label6
+            // saveButton
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(27, 101);
-            label6.Name = "label6";
-            label6.Size = new Size(47, 19);
-            label6.TabIndex = 10;
-            label6.Text = "Pais:";
+            saveButton.BackColor = Color.Green;
+            saveButton.FlatAppearance.BorderSize = 0;
+            saveButton.FlatStyle = FlatStyle.Popup;
+            saveButton.ForeColor = Color.White;
+            saveButton.IconChar = FontAwesome.Sharp.IconChar.Save;
+            saveButton.IconColor = Color.White;
+            saveButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            saveButton.IconSize = 28;
+            saveButton.ImageAlign = ContentAlignment.MiddleLeft;
+            saveButton.Location = new Point(38, 380);
+            saveButton.Name = "saveButton";
+            saveButton.Size = new Size(215, 46);
+            saveButton.TabIndex = 17;
+            saveButton.Text = "Añadir";
+            saveButton.UseVisualStyleBackColor = false;
+            saveButton.Click += saveButton_Click;
             // 
-            // btnGuardar
+            // countrysComboBox
             // 
-            btnGuardar.BackColor = Color.Green;
-            btnGuardar.FlatAppearance.BorderSize = 0;
-            btnGuardar.IconChar = FontAwesome.Sharp.IconChar.Save;
-            btnGuardar.IconColor = Color.White;
-            btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnGuardar.IconSize = 28;
-            btnGuardar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnGuardar.Location = new Point(527, 453);
-            btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(215, 46);
-            btnGuardar.TabIndex = 17;
-            btnGuardar.Text = "Añadir";
-            btnGuardar.UseVisualStyleBackColor = false;
-            btnGuardar.Click += btnGuardar_Click;
+            countrysComboBox.FormattingEnabled = true;
+            countrysComboBox.Location = new Point(159, 44);
+            countrysComboBox.Name = "countrysComboBox";
+            countrysComboBox.Size = new Size(383, 31);
+            countrysComboBox.TabIndex = 9;
             // 
-            // btnEditar
+            // countryUserLabel
             // 
-            btnEditar.BackColor = SystemColors.HotTrack;
-            btnEditar.FlatAppearance.BorderSize = 0;
-            btnEditar.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            btnEditar.IconColor = Color.White;
-            btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnEditar.IconSize = 28;
-            btnEditar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEditar.Location = new Point(527, 505);
-            btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(215, 46);
-            btnEditar.TabIndex = 18;
-            btnEditar.Text = "Editar";
-            btnEditar.UseVisualStyleBackColor = false;
-            btnEditar.Click += btnEditar_Click;
+            countryUserLabel.AutoSize = true;
+            countryUserLabel.Location = new Point(60, 46);
+            countryUserLabel.Name = "countryUserLabel";
+            countryUserLabel.Size = new Size(52, 23);
+            countryUserLabel.TabIndex = 10;
+            countryUserLabel.Text = "Pais:";
+            // 
+            // informationPanel
+            // 
+            informationPanel.BackColor = Color.LightGray;
+            informationPanel.Controls.Add(detailsUserGroupBox);
+            informationPanel.Controls.Add(countryGroupBox);
+            informationPanel.Dock = DockStyle.Fill;
+            informationPanel.Location = new Point(0, 59);
+            informationPanel.Name = "informationPanel";
+            informationPanel.Size = new Size(1293, 735);
+            informationPanel.TabIndex = 19;
             // 
             // AddUsersForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 19F);
+            AutoScaleDimensions = new SizeF(12F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.CadetBlue;
-            ClientSize = new Size(1000, 620);
-            Controls.Add(btnEditar);
-            Controls.Add(btnGuardar);
-            Controls.Add(gbProvincia);
+            BackColor = Color.White;
+            ClientSize = new Size(1293, 794);
+            Controls.Add(informationPanel);
             Controls.Add(lblAñadirUsuarios);
-            Controls.Add(gbDetallesUsuarios);
             Font = new Font("Century Gothic", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             ForeColor = Color.White;
             FormBorderStyle = FormBorderStyle.Fixed3D;
@@ -354,45 +385,47 @@
             Name = "AddUsersForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Añadir Usuarios";
-            Load += AñadirUsuariosForm_Load;
-            gbDetallesUsuarios.ResumeLayout(false);
-            gbDetallesUsuarios.PerformLayout();
-            gbProvincia.ResumeLayout(false);
-            gbProvincia.PerformLayout();
+            Load += AddUsersForm_Load;
+            detailsUserGroupBox.ResumeLayout(false);
+            detailsUserGroupBox.PerformLayout();
+            countryGroupBox.ResumeLayout(false);
+            countryGroupBox.PerformLayout();
+            informationPanel.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
         private Label lblAñadirUsuarios;
-        private Label label2;
-        private TextBox txtName;
-        private ComboBox cboRol;
-        private Label label5;
+        private Label nameLabel;
+        private TextBox nameTextBox;
+        private ComboBox rolComboBox;
+        private Label rolLabel;
         private Label label7;
         private ComboBox c;
-        private GroupBox gbDetallesUsuarios;
-        private Label label9;
-        private TextBox txtPassword;
-        private GroupBox gbProvincia;
-        private FontAwesome.Sharp.IconButton btnGuardar;
-        private ComboBox cboStates;
-        private Label label1;
-        private FontAwesome.Sharp.IconButton btnEditar;
-        private DateTimePicker dtmFechaRegistro;
-        private Label label10;
-        private TextBox txtNumberPhone;
-        private Label label3;
-        private Label label4;
-        private TextBox txtLastName;
-        private DateTimePicker dtpBirthDate;
-        private Label label8;
-        private ComboBox cboListCity;
-        private ComboBox cboListCountrys;
-        private Label label6;
-        private Label lblUserAccount;
-        private TextBox txtUserAccount;
-        private Label label11;
-        private TextBox textBoxEmail;
+        private GroupBox detailsUserGroupBox;
+        private Label passwordLabel;
+        private TextBox passwordTextBox;
+        private GroupBox countryGroupBox;
+        private FontAwesome.Sharp.IconButton saveButton;
+        private ComboBox statusComboBox;
+        private Label statusLabel;
+        private FontAwesome.Sharp.IconButton editButton;
+        private DateTimePicker dateRegistreDateTimePicker;
+        private Label numberPhoneLabel;
+        private TextBox numberPhoneTextBox;
+        private Label dateLabel;
+        private Label lastNameLabel;
+        private TextBox lasNameTextBox;
+        private DateTimePicker birthdateDateTimePicker;
+        private Label cityLabel;
+        private ComboBox cityListComboBox;
+        private ComboBox countrysComboBox;
+        private Label countryUserLabel;
+        private Label nameUserLabel;
+        private TextBox nameUserTextBox;
+        private Label emailLabel;
+        private TextBox emailTextBox;
+        private Panel informationPanel;
     }
 }

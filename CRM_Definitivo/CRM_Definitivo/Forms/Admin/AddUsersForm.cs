@@ -11,6 +11,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -36,7 +37,7 @@ namespace PresentationLayer.Forms
             rolServices = _rolServices;
             LoadProvincias();
 
-            ConfigurarFormulario();
+            ConfigureForm();
 
             // En el constructor o inicializador del formulario
             //cboRol.SelectedIndexChanged += cboRol_SelectedIndexChanged;
@@ -44,63 +45,63 @@ namespace PresentationLayer.Forms
 
         }
 
-        private void ConfigurarFormulario()
+        private void ConfigureForm()
         {
-            cboRol.DataSource = rolServices.GetRol();
-            cboRol.DisplayMember = "Rol";
-            cboRol.ValueMember = "idRol";
+            rolComboBox.DataSource = rolServices.GetRol();
+            rolComboBox.DisplayMember = "Rol";
+            rolComboBox.ValueMember = "idRol";
 
             if (IsEditing)
             {
-                
-
-                cboRol.SelectedValue = _usuario.idRol;
 
 
-                txtUserAccount.Text = _usuario.UserAccount;
-                textBoxEmail.Text = _usuario.Email;
-                txtName.Text = _usuario.NameUser;
-                txtLastName.Text = _usuario.LastName;
-                dtpBirthDate.Value = _usuario.Birthdate;
-                txtNumberPhone.Text = _usuario.NumberPhone;
-                txtPassword.Text = _usuario.passworduser;
+                rolComboBox.SelectedValue = _usuario.idRol;
 
-                if (cboListCountrys.Items.Count > 0)
+
+                nameUserTextBox.Text = _usuario.UserAccount;
+                emailTextBox.Text = _usuario.Email;
+                nameTextBox.Text = _usuario.NameUser;
+                lasNameTextBox.Text = _usuario.LastName;
+                birthdateDateTimePicker.Value = _usuario.Birthdate;
+                numberPhoneTextBox.Text = _usuario.NumberPhone;
+                passwordTextBox.Text = _usuario.passworduser;
+
+                if (countrysComboBox.Items.Count > 0)
                 {
-                    cboListCountrys.SelectedItem = _usuario.Country;
+                    countrysComboBox.SelectedItem = _usuario.Country;
                 }
 
-                if (cboListCity.Items.Count > 0)
+                if (cityListComboBox.Items.Count > 0)
                 {
-                    cboListCity.SelectedItem = _usuario.City;
+                    cityListComboBox.SelectedItem = _usuario.City;
                 }
 
-                cboStates.SelectedItem = _usuario.Statususer;
+                statusComboBox.SelectedItem = _usuario.Statususer;
 
-                btnGuardar.Visible = false;
-                btnEditar.Visible = true;
+                saveButton.Visible = false;
+                editButton.Visible = true;
 
                 lblAñadirUsuarios.Text = "Editar Usuario";
             }
             else
             {
-                btnGuardar.Visible = true;
-                btnEditar.Visible = false;
+                saveButton.Visible = true;
+                editButton.Visible = false;
             }
         }
 
-        private void LimpiarCampos()
+        private void ClearFields()
         {
-            txtUserAccount.Clear();
-            txtName.Clear();
-            txtLastName.Clear();
-            txtNumberPhone.Clear();
-            txtPassword.Clear();
+            nameUserTextBox.Clear();
+            nameTextBox.Clear();
+            lasNameTextBox.Clear();
+            numberPhoneTextBox.Clear();
+            passwordTextBox.Clear();
 
-            cboListCountrys.SelectedIndex = -1;
-            cboListCity.SelectedIndex = -1;
-            cboStates.SelectedIndex = -1;
-            cboRol.SelectedIndex = -1;
+            countrysComboBox.SelectedIndex = -1;
+            cityListComboBox.SelectedIndex = -1;
+            statusComboBox.SelectedIndex = -1;
+            rolComboBox.SelectedIndex = -1;
         }
 
 
@@ -113,16 +114,16 @@ namespace PresentationLayer.Forms
                 "Inactivo"
             };
 
-            cboStates.DataSource = Estado;
-            cboStates.SelectedIndex = -1;
+            statusComboBox.DataSource = Estado;
+            statusComboBox.SelectedIndex = -1;
 
             List<string> ListaPaises = new List<string>()
             {
                 "El Salvador"
             };
 
-            cboListCountrys.DataSource = ListaPaises;
-            cboListCountrys.SelectedIndex = -1;
+            countrysComboBox.DataSource = ListaPaises;
+            countrysComboBox.SelectedIndex = -1;
 
 
 
@@ -145,12 +146,11 @@ namespace PresentationLayer.Forms
 
             };
 
-            cboListCity.DataSource = ListaCiudad;
-            cboListCity.SelectedIndex = -1;
+            cityListComboBox.DataSource = ListaCiudad;
+            cityListComboBox.SelectedIndex = -1;
         }
 
-
-        private void AñadirUsuariosForm_Load(object sender, EventArgs e)
+        private void AddUsersForm_Load(object sender, EventArgs e)
         {
 
         }
@@ -158,22 +158,21 @@ namespace PresentationLayer.Forms
         public event EventHandler AddUsuario;
         public event EventHandler EditUsuariosHandler;
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private void saveButton_Click(object sender, EventArgs e)
         {
-
             User usuario = new User()
             {
-                UserAccount = txtUserAccount.Text,
-                Email = textBoxEmail.Text,
-                idRol = Convert.ToInt32(cboRol.SelectedValue),
-                NameUser = txtName.Text,
-                LastName = txtLastName.Text,
-                Birthdate = dtpBirthDate.Value,
-                NumberPhone = txtNumberPhone.Text,
-                passworduser = txtPassword.Text,
-                Country = (string)cboListCountrys.SelectedValue,
-                City = (string)cboListCity.SelectedValue,
-                Statususer = (string)cboStates.SelectedValue,
+                UserAccount = nameUserTextBox.Text,
+                Email = emailTextBox.Text,
+                idRol = Convert.ToInt32(rolComboBox.SelectedValue),
+                NameUser = nameTextBox.Text,
+                LastName = lasNameTextBox.Text,
+                Birthdate = birthdateDateTimePicker.Value,
+                NumberPhone = numberPhoneTextBox.Text,
+                passworduser = passwordTextBox.Text,
+                Country = (string)countrysComboBox.SelectedValue,
+                City = (string)cityListComboBox.SelectedValue,
+                Statususer = (string)statusComboBox.SelectedValue,
                 DateRegistration = DateTime.Now,
             };
 
@@ -181,45 +180,49 @@ namespace PresentationLayer.Forms
 
             LoadProvincias();
             AddUsuario?.Invoke(this, EventArgs.Empty);
-            LimpiarCampos();
+            ClearFields();
             this.Close();
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
+
+
+        private void editButton_Click(object sender, EventArgs e)
         {
-            _usuario.UserAccount = txtUserAccount.Text;
-            _usuario.Email = textBoxEmail.Text;
-            _usuario.idRol = Convert.ToInt32(cboRol.SelectedValue);
-            _usuario.NameUser = txtName.Text;
-            _usuario.Birthdate = dtpBirthDate.Value;
-            _usuario.NumberPhone = txtNumberPhone.Text;
-            _usuario.passworduser = txtPassword.Text;
-            _usuario.Country = (string)cboListCountrys.SelectedValue;
-            _usuario.City = (string)cboListCity.SelectedValue;
-            _usuario.Statususer = (string)cboStates.SelectedValue;
+            _usuario.UserAccount = nameUserTextBox.Text;
+            _usuario.Email = emailTextBox.Text;
+            _usuario.idRol = Convert.ToInt32(rolComboBox.SelectedValue);
+            _usuario.NameUser = nameTextBox.Text;
+            _usuario.Birthdate = birthdateDateTimePicker.Value;
+            _usuario.NumberPhone = numberPhoneTextBox.Text;
+            _usuario.passworduser = passwordTextBox.Text;
+            _usuario.Country = (string)countrysComboBox.SelectedValue;
+            _usuario.City = (string)cityListComboBox.SelectedValue;
+            _usuario.Statususer = (string)statusComboBox.SelectedValue;
             _usuario.DateRegistration = DateTime.Now;
 
             _usuersservices.EditUsers(_usuario);
             MessageBox.Show("Usuario editado correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             EditUsuariosHandler?.Invoke(this, EventArgs.Empty);
-            LimpiarCampos();
+            ClearFields();
             this.Close();
         }
 
-        private void cboRol_SelectedIndexChanged(object sender, EventArgs e)
+        private void rolComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selecteRol = cboRol.Text;
+            string selecteRol = rolComboBox.Text;
 
-            switch(selecteRol)
+            switch (selecteRol)
             {
                 case "Empleado":
                     var inforemployeeform = new InfoEmployeeForm();
                     inforemployeeform.ShowDialog();
                     break;
-                //default:
-                //    MessageBox.Show("Seleccion no valida");
-                //    break;
+                    //default:
+                    //    MessageBox.Show("Seleccion no valida");
+                    //    break;
             }
         }
+
+
     }
 }
