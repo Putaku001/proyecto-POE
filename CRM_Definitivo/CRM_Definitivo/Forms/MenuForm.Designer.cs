@@ -35,7 +35,7 @@
             menuPerfilPanel = new Panel();
             logoutLabel = new Label();
             menu = new MenuStrip();
-            iconMenuItemHome = new FontAwesome.Sharp.IconMenuItem();
+            IconMenuItemHome = new FontAwesome.Sharp.IconMenuItem();
             IconMenuUsersForm = new FontAwesome.Sharp.IconMenuItem();
             IconMenuProyectsForm = new FontAwesome.Sharp.IconMenuItem();
             IconMenuItemRequestClientProjects = new FontAwesome.Sharp.IconMenuItem();
@@ -148,7 +148,7 @@
             logoutLabel.Cursor = Cursors.Hand;
             logoutLabel.Font = new Font("Century Gothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             logoutLabel.ForeColor = Color.FromArgb(46, 54, 61);
-            logoutLabel.Location = new Point(61, 749);
+            logoutLabel.Location = new Point(56, 770);
             logoutLabel.Name = "logoutLabel";
             logoutLabel.Size = new Size(151, 26);
             logoutLabel.TabIndex = 6;
@@ -163,31 +163,31 @@
             menu.Dock = DockStyle.None;
             menu.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
             menu.ImageScalingSize = new Size(60, 60);
-            menu.Items.AddRange(new ToolStripItem[] { iconMenuItemHome, IconMenuUsersForm, IconMenuProyectsForm, IconMenuItemRequestClientProjects, IconMenuItemProjectsEmployee, IconMenuRecordForm, IconMenusSettingsForm, IconMenuAccountForm, IconMenuItemMenus });
+            menu.Items.AddRange(new ToolStripItem[] { IconMenuItemHome, IconMenuUsersForm, IconMenuProyectsForm, IconMenuItemRequestClientProjects, IconMenuItemProjectsEmployee, IconMenuRecordForm, IconMenusSettingsForm, IconMenuAccountForm, IconMenuItemMenus });
             menu.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
             menu.Location = new Point(9, 176);
             menu.Name = "menu";
-            menu.Size = new Size(272, 315);
+            menu.Size = new Size(272, 572);
             menu.TabIndex = 9;
             // 
-            // iconMenuItemHome
+            // IconMenuItemHome
             // 
-            iconMenuItemHome.BackgroundImageLayout = ImageLayout.None;
-            iconMenuItemHome.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            iconMenuItemHome.ForeColor = Color.White;
-            iconMenuItemHome.IconChar = FontAwesome.Sharp.IconChar.House;
-            iconMenuItemHome.IconColor = Color.White;
-            iconMenuItemHome.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconMenuItemHome.IconSize = 30;
-            iconMenuItemHome.ImageAlign = ContentAlignment.MiddleLeft;
-            iconMenuItemHome.ImageScaling = ToolStripItemImageScaling.None;
-            iconMenuItemHome.Margin = new Padding(0, 20, 0, 0);
-            iconMenuItemHome.Name = "iconMenuItemHome";
-            iconMenuItemHome.RightToLeft = RightToLeft.No;
-            iconMenuItemHome.Size = new Size(265, 34);
-            iconMenuItemHome.Text = "Menú Principal";
-            iconMenuItemHome.TextImageRelation = TextImageRelation.Overlay;
-            iconMenuItemHome.Click += iconMenuItemHome_Click;
+            IconMenuItemHome.BackgroundImageLayout = ImageLayout.None;
+            IconMenuItemHome.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            IconMenuItemHome.ForeColor = Color.White;
+            IconMenuItemHome.IconChar = FontAwesome.Sharp.IconChar.House;
+            IconMenuItemHome.IconColor = Color.White;
+            IconMenuItemHome.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            IconMenuItemHome.IconSize = 30;
+            IconMenuItemHome.ImageAlign = ContentAlignment.MiddleLeft;
+            IconMenuItemHome.ImageScaling = ToolStripItemImageScaling.None;
+            IconMenuItemHome.Margin = new Padding(0, 20, 0, 0);
+            IconMenuItemHome.Name = "IconMenuItemHome";
+            IconMenuItemHome.RightToLeft = RightToLeft.No;
+            IconMenuItemHome.Size = new Size(265, 34);
+            IconMenuItemHome.Text = "Menú Principal";
+            IconMenuItemHome.TextImageRelation = TextImageRelation.Overlay;
+            IconMenuItemHome.Click += iconMenuItemHome_Click;
             // 
             // IconMenuUsersForm
             // 
@@ -871,7 +871,7 @@
         private FontAwesome.Sharp.IconMenuItem IconMenuItemMenus;
         private Label welcomeLabel;
         private Label userAccountLabel;
-        private FontAwesome.Sharp.IconMenuItem iconMenuItemHome;
+        private FontAwesome.Sharp.IconMenuItem IconMenuItemHome;
         private Panel projectPanel;
         private Panel informationUserPanel;
         private Panel panelUsersView;

@@ -35,7 +35,7 @@
             taskStatusComboBox = new ComboBox();
             flowLayoutLinkFilePanel = new FlowLayoutPanel();
             labelLinkFile = new Label();
-            submiButton = new FontAwesome.Sharp.IconButton();
+            submitButton = new FontAwesome.Sharp.IconButton();
             descriptionTaskTextBox = new TextBox();
             projectNameLabel = new Label();
             linkFileLabel = new LinkLabel();
@@ -80,7 +80,7 @@
             informationProjectPanel.Dock = DockStyle.Left;
             informationProjectPanel.Location = new Point(0, 0);
             informationProjectPanel.Name = "informationProjectPanel";
-            informationProjectPanel.Size = new Size(624, 833);
+            informationProjectPanel.Size = new Size(659, 833);
             informationProjectPanel.TabIndex = 3;
             // 
             // projectInformationGroupBox
@@ -88,14 +88,14 @@
             projectInformationGroupBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             projectInformationGroupBox.Controls.Add(taskStatusComboBox);
             projectInformationGroupBox.Controls.Add(flowLayoutLinkFilePanel);
-            projectInformationGroupBox.Controls.Add(submiButton);
+            projectInformationGroupBox.Controls.Add(submitButton);
             projectInformationGroupBox.Controls.Add(descriptionTaskTextBox);
             projectInformationGroupBox.Controls.Add(projectNameLabel);
             projectInformationGroupBox.Controls.Add(linkFileLabel);
             projectInformationGroupBox.Controls.Add(descriptionLabel);
             projectInformationGroupBox.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             projectInformationGroupBox.ForeColor = Color.White;
-            projectInformationGroupBox.Location = new Point(37, 34);
+            projectInformationGroupBox.Location = new Point(65, 34);
             projectInformationGroupBox.Name = "projectInformationGroupBox";
             projectInformationGroupBox.Size = new Size(556, 766);
             projectInformationGroupBox.TabIndex = 12;
@@ -132,20 +132,20 @@
             labelLinkFile.TabIndex = 11;
             labelLinkFile.Text = "label3";
             // 
-            // submiButton
+            // submitButton
             // 
-            submiButton.BackColor = Color.FromArgb(255, 128, 0);
-            submiButton.FlatStyle = FlatStyle.Popup;
-            submiButton.IconChar = FontAwesome.Sharp.IconChar.None;
-            submiButton.IconColor = Color.Black;
-            submiButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            submiButton.Location = new Point(187, 629);
-            submiButton.Name = "submiButton";
-            submiButton.Size = new Size(166, 57);
-            submiButton.TabIndex = 2;
-            submiButton.Text = "Enviar";
-            submiButton.UseVisualStyleBackColor = false;
-            submiButton.Click += submiButton_Click;
+            submitButton.BackColor = Color.FromArgb(255, 128, 0);
+            submitButton.FlatStyle = FlatStyle.Popup;
+            submitButton.IconChar = FontAwesome.Sharp.IconChar.None;
+            submitButton.IconColor = Color.Black;
+            submitButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            submitButton.Location = new Point(187, 629);
+            submitButton.Name = "submitButton";
+            submitButton.Size = new Size(166, 57);
+            submitButton.TabIndex = 2;
+            submitButton.Text = "Enviar";
+            submitButton.UseVisualStyleBackColor = false;
+            submitButton.Click += submitButton_Click;
             // 
             // descriptionTaskTextBox
             // 
@@ -195,7 +195,7 @@
             nameTaskLabel.AutoSize = true;
             nameTaskLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             nameTaskLabel.ForeColor = Color.White;
-            nameTaskLabel.Location = new Point(301, 7);
+            nameTaskLabel.Location = new Point(313, 3);
             nameTaskLabel.Name = "nameTaskLabel";
             nameTaskLabel.Size = new Size(77, 28);
             nameTaskLabel.TabIndex = 7;
@@ -263,7 +263,7 @@
 
         private DataGridView projectsEmployeeDataGridView;
         private Panel informationProjectPanel;
-        private FontAwesome.Sharp.IconButton submiButton;
+        private FontAwesome.Sharp.IconButton submitButton;
         private Label projectNameLabel;
         private TextBox textBox3;
         private Label nameTaskLabel;

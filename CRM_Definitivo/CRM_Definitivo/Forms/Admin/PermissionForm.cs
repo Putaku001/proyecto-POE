@@ -29,79 +29,79 @@ namespace PresentationLayer.Forms.Admin
 
         private void LoadData()
         {
-            dataGridViewMenu.DataSource = _permissionServices.GetByMenu();
-            dataGridViewMenu.Columns["idMenu"].Visible = false;
-            dataGridViewPermission.DataSource = _permissionServices.GetPermissions();
-            dataGridViewPermission.Columns["idMenu"].Visible = false;
-            dataGridViewPermission.Columns["idPermission"].Visible = false;
-            dataGridViewrolPermission.DataSource = _permissionServices.GetByRolPermissions();
-            dataGridViewrolPermission.Columns["idRolPermission"].Visible = false;
-            dataGridViewrolPermission.Columns["idPermission"].Visible = false;
+            menuDataGridView.DataSource = _permissionServices.GetByMenu();
+            menuDataGridView.Columns["idMenu"].Visible = false;
+            permissionDataGridView.DataSource = _permissionServices.GetPermissions();
+            permissionDataGridView.Columns["idMenu"].Visible = false;
+            permissionDataGridView.Columns["idPermission"].Visible = false;
+            rolPermissionDataGridView.DataSource = _permissionServices.GetByRolPermissions();
+            rolPermissionDataGridView.Columns["idRolPermission"].Visible = false;
+            rolPermissionDataGridView.Columns["idPermission"].Visible = false;
 
 
 
-            dataGridViewMenu.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewPermission.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewrolPermission.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            menuDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            permissionDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            rolPermissionDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             //Diseño para dgv menu
-            dataGridViewMenu.DefaultCellStyle.BackColor = Color.WhiteSmoke;
-            dataGridViewMenu.DefaultCellStyle.ForeColor = Color.Black;
-            dataGridViewMenu.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
-            dataGridViewMenu.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkSlateGray;
-            dataGridViewMenu.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dataGridViewMenu.EnableHeadersVisualStyles = false;
+            menuDataGridView.DefaultCellStyle.BackColor = Color.WhiteSmoke;
+            menuDataGridView.DefaultCellStyle.ForeColor = Color.Black;
+            menuDataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
+            menuDataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkSlateGray;
+            menuDataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            menuDataGridView.EnableHeadersVisualStyles = false;
 
-            dataGridViewMenu.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewMenu.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            menuDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            menuDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
             //Diseño para dgvPermission
-            dataGridViewPermission.DefaultCellStyle.BackColor = Color.WhiteSmoke;
-            dataGridViewPermission.DefaultCellStyle.ForeColor = Color.Black;
-            dataGridViewPermission.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
-            dataGridViewPermission.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkSlateGray;
-            dataGridViewPermission.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dataGridViewPermission.EnableHeadersVisualStyles = false;
+            permissionDataGridView.DefaultCellStyle.BackColor = Color.WhiteSmoke;
+            permissionDataGridView.DefaultCellStyle.ForeColor = Color.Black;
+            permissionDataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
+            permissionDataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkSlateGray;
+            permissionDataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            permissionDataGridView.EnableHeadersVisualStyles = false;
 
-            dataGridViewPermission.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewPermission.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            permissionDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            permissionDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
             //Diseño para dgvRolPermission
-            dataGridViewrolPermission.DefaultCellStyle.BackColor = Color.WhiteSmoke;
-            dataGridViewrolPermission.DefaultCellStyle.ForeColor = Color.Black;
-            dataGridViewrolPermission.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
-            dataGridViewrolPermission.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkSlateGray;
-            dataGridViewrolPermission.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dataGridViewrolPermission.EnableHeadersVisualStyles = false;
+            rolPermissionDataGridView.DefaultCellStyle.BackColor = Color.WhiteSmoke;
+            rolPermissionDataGridView.DefaultCellStyle.ForeColor = Color.Black;
+            rolPermissionDataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
+            rolPermissionDataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkSlateGray;
+            rolPermissionDataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            rolPermissionDataGridView.EnableHeadersVisualStyles = false;
 
-            dataGridViewrolPermission.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewrolPermission.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            rolPermissionDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            rolPermissionDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
             //DATASOURCE DEL MENU 
-            comboBoxMenu.DataSource = _permissionServices.GetByMenu();
-            comboBoxMenu.DisplayMember = "nameForm";
-            comboBoxMenu.ValueMember = "idMenu";
+            selectMenuComboBox.DataSource = _permissionServices.GetByMenu();
+            selectMenuComboBox.DisplayMember = "nameForm";
+            selectMenuComboBox.ValueMember = "idMenu";
 
             //DATASOURCE DE PERMISSIONS
-            comboBoxidPermission.DataSource = _permissionServices.GetPermissions();
-            comboBoxidPermission.DisplayMember = "nameForm";
-            comboBoxidPermission.ValueMember = "idPermission";
+            permissionIdComboBox.DataSource = _permissionServices.GetPermissions();
+            permissionIdComboBox.DisplayMember = "nameForm";
+            permissionIdComboBox.ValueMember = "idPermission";
 
             //DATASOURCE DE ROLPERMISSIONS
-            comboBoxidRol.DataSource = _rolservices.GetRol();
-            comboBoxidRol.DisplayMember = "Rol";
-            comboBoxidRol.ValueMember = "idRol";
+            rolUserComboBox.DataSource = _rolservices.GetRol();
+            rolUserComboBox.DisplayMember = "Rol";
+            rolUserComboBox.ValueMember = "idRol";
         }
 
-        private void iconButtonSave_Click(object sender, EventArgs e)
+        private void iconSaveMenusButton_Click(object sender, EventArgs e)
         {
             var menu = new Menu();
 
             if (isEditing)
             {
-                menu.idMenu = int.Parse(dataGridViewMenu.CurrentRow.Cells[0].Value.ToString());
-                menu.name = textBoxNameMenu.Text;
-                menu.NameForm = textBoxNameMenuForm.Text;
+                menu.idMenu = int.Parse(menuDataGridView.CurrentRow.Cells[0].Value.ToString());
+                menu.name = nameMenuTextBox.Text;
+                menu.NameForm = nameObjectTextBox.Text;
 
                 _permissionServices.EditMenu(menu);
 
@@ -112,8 +112,8 @@ namespace PresentationLayer.Forms.Admin
             }
             else
             {
-                menu.name = textBoxNameMenu.Text;
-                menu.NameForm = textBoxNameMenuForm.Text;
+                menu.name = nameMenuTextBox.Text;
+                menu.NameForm = nameObjectTextBox.Text;
 
                 _permissionServices.AddMenu(menu);
                 MessageBox.Show("El nuevo menu se ha agregado correctamente!");
@@ -121,30 +121,30 @@ namespace PresentationLayer.Forms.Admin
             }
         }
 
-        private void iconButtonEditMenus_Click(object sender, EventArgs e)
+        private void iconEditMenusButton_Click(object sender, EventArgs e)
         {
-            if (dataGridViewMenu.SelectedRows.Count > 0)
+            if (menuDataGridView.SelectedRows.Count > 0)
             {
-                textBoxNameMenu.Text = dataGridViewMenu.CurrentRow.Cells[1].Value.ToString();
-                textBoxNameMenuForm.Text = dataGridViewMenu.CurrentRow.Cells[2].Value.ToString();
+                nameMenuTextBox.Text = menuDataGridView.CurrentRow.Cells[1].Value.ToString();
+                nameObjectTextBox.Text = menuDataGridView.CurrentRow.Cells[2].Value.ToString();
                 isEditing = true;
             }
         }
 
-        private void iconButtonSaveMenu_Click(object sender, EventArgs e)
+        private void iconSaveMenuButton_Click(object sender, EventArgs e)
         {
             var permission = new Permissions();
 
             if (isEditing)
             {
-                permission.idPermission = int.Parse(dataGridViewMenu.CurrentRow.Cells[0].Value.ToString());
+                permission.idPermission = int.Parse(menuDataGridView.CurrentRow.Cells[0].Value.ToString());
                 _permissionServices.EditPermissions(permission);
                 LoadData();
                 isEditing = false;
             }
             else
             {
-                permission.idMenu = Convert.ToInt32(comboBoxMenu.SelectedValue);
+                permission.idMenu = Convert.ToInt32(selectMenuComboBox.SelectedValue);
 
                 _permissionServices.AddPermissions(permission);
                 LoadData();
@@ -152,11 +152,11 @@ namespace PresentationLayer.Forms.Admin
             }
         }
 
-        private void iconButtonEditMenu_Click(object sender, EventArgs e)
+        private void iconEditMenuButton_Click(object sender, EventArgs e)
         {
-            if (dataGridViewPermission.SelectedRows.Count > 0)
+            if (permissionDataGridView.SelectedRows.Count > 0)
             {
-                comboBoxMenu.SelectedValue = Convert.ToInt32(dataGridViewPermission.CurrentRow.Cells[1].Value.ToString());
+                selectMenuComboBox.SelectedValue = Convert.ToInt32(permissionDataGridView.CurrentRow.Cells[1].Value.ToString());
                 isEditing = true;
             }
             else
@@ -165,9 +165,9 @@ namespace PresentationLayer.Forms.Admin
             }
         }
 
-        private void iconButtonDeleteMenus_Click(object sender, EventArgs e)
+        private void iconDeleteMenusButton_Click(object sender, EventArgs e)
         {
-            if(dataGridViewMenu.SelectedRows.Count == 0)
+            if (menuDataGridView.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Debe seleccionar un menu para eliminar.", "Advertencia",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -177,23 +177,23 @@ namespace PresentationLayer.Forms.Admin
                 "¿Está seguro de que desea eliminar este menu?",
                 "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            if(eliminarConfirmar == DialogResult.Yes)
+            if (eliminarConfirmar == DialogResult.Yes)
             {
-                int idMenu = Convert.ToInt32(dataGridViewMenu.CurrentRow.Cells["idMenu"].Value);
+                int idMenu = Convert.ToInt32(menuDataGridView.CurrentRow.Cells["idMenu"].Value);
                 _permissionServices.DeleteMenu(idMenu);
                 LoadData();
             }
         }
 
-        private void iconButtonSaveRolPermission_Click(object sender, EventArgs e)
+        private void iconSaveRolPermissionButton_Click(object sender, EventArgs e)
         {
             var rolPermission = new RolPermission();
 
             if (isEditing)
             {
-                rolPermission.idRolPermission = int.Parse(dataGridViewrolPermission.CurrentRow.Cells[0].Value.ToString());
-                rolPermission.idRoles = Convert.ToInt32(comboBoxidRol.SelectedValue);
-                rolPermission.idPermission = Convert.ToInt32(comboBoxidPermission.SelectedValue);
+                rolPermission.idRolPermission = int.Parse(rolPermissionDataGridView.CurrentRow.Cells[0].Value.ToString());
+                rolPermission.idRoles = Convert.ToInt32(rolUserComboBox.SelectedValue);
+                rolPermission.idPermission = Convert.ToInt32(permissionIdComboBox.SelectedValue);
 
                 _permissionServices.EditRolPermission(rolPermission);
 
@@ -204,23 +204,24 @@ namespace PresentationLayer.Forms.Admin
             }
             else
             {
-                rolPermission.idRoles = Convert.ToInt32(comboBoxidRol.SelectedValue);
-                rolPermission.idPermission = Convert.ToInt32(comboBoxidPermission.SelectedValue);
+                rolPermission.idRoles = Convert.ToInt32(rolUserComboBox.SelectedValue);
+                rolPermission.idPermission = Convert.ToInt32(permissionIdComboBox.SelectedValue);
 
                 _permissionServices.AddRolPermission(rolPermission);
 
-                MessageBox.Show($"Se ha asignado un nuevo permiso a los {comboBoxidRol.SelectedValue} correctamente!");
+                MessageBox.Show($"Se ha asignado un nuevo permiso a los {rolUserComboBox.SelectedValue} correctamente!");
                 LoadData();
             }
-
         }
 
-        private void iconButtonEditRolPermission_Click(object sender, EventArgs e)
+
+
+        private void iconEditRolPermissionButton_Click(object sender, EventArgs e)
         {
-            if (dataGridViewrolPermission.SelectedRows.Count > 0)
+            if (rolPermissionDataGridView.SelectedRows.Count > 0)
             {
-                comboBoxidRol.Text = dataGridViewrolPermission.CurrentRow.Cells["idRoles"].Value.ToString();
-                comboBoxidPermission.Text = dataGridViewrolPermission.CurrentRow.Cells["nameForm"].Value.ToString();
+                rolUserComboBox.Text = rolPermissionDataGridView.CurrentRow.Cells["idRoles"].Value.ToString();
+                permissionIdComboBox.Text = rolPermissionDataGridView.CurrentRow.Cells["nameForm"].Value.ToString();
                 isEditing = true;
             }
             else
@@ -229,6 +230,6 @@ namespace PresentationLayer.Forms.Admin
             }
         }
 
-        
+
     }
 }

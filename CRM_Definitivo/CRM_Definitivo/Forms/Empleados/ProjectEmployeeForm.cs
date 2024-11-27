@@ -109,7 +109,8 @@ namespace PresentationLayer.Forms.Empleados
             }
         }
 
-        private void submiButton_Click(object sender, EventArgs e)
+
+        private void submitButton_Click(object sender, EventArgs e)
         {
             int idTask = int.Parse(projectsEmployeeDataGridView.CurrentRow.Cells[1].Value.ToString());
             int updateStatus = Convert.ToInt32(taskStatusComboBox.SelectedValue);

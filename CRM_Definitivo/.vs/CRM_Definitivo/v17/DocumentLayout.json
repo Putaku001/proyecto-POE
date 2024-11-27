@@ -3,40 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|c:\\users\\melissa\\source\\repos\\proyecto-poe\\crm_definitivo\\crm_definitivo\\forms\\admin\\infoprojects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\admin\\infoprojects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|c:\\users\\melissa\\source\\repos\\proyecto-poe\\crm_definitivo\\crm_definitivo\\forms\\empleados\\projectemployeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\empleados\\projectemployeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|c:\\users\\melissa\\source\\repos\\proyecto-poe\\crm_definitivo\\crm_definitivo\\forms\\admin\\infoemployeeform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\admin\\infoemployeeform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\crm_definitivo\\forms\\changepasswordform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\changepasswordform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|c:\\users\\melissa\\source\\repos\\proyecto-poe\\crm_definitivo\\crm_definitivo\\forms\\admin\\infoemployeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\admin\\infoemployeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\crm_definitivo\\forms\\changepasswordprofileform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\changepasswordprofileform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|c:\\users\\melissa\\source\\repos\\proyecto-poe\\crm_definitivo\\crm_definitivo\\forms\\admin\\permissionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\admin\\permissionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\crm_definitivo\\forms\\imageviewerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\imageviewerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|c:\\users\\melissa\\source\\repos\\proyecto-poe\\crm_definitivo\\crm_definitivo\\forms\\admin\\projectsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\admin\\projectsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\crm_definitivo\\forms\\verificationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\verificationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|c:\\users\\melissa\\source\\repos\\proyecto-poe\\crm_definitivo\\crm_definitivo\\forms\\admin\\sendprojectform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\admin\\sendprojectform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|c:\\users\\melissa\\source\\repos\\proyecto-poe\\crm_definitivo\\crm_definitivo\\forms\\empleados\\projectemployeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\empleados\\projectemployeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|c:\\users\\melissa\\source\\repos\\proyecto-poe\\crm_definitivo\\crm_definitivo\\forms\\admin\\usersform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\admin\\usersform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\crm_definitivo\\forms\\empleados\\homeuseremployeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\empleados\\homeuseremployeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\crm_definitivo\\forms\\admin\\addusersform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\admin\\addusersform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|c:\\users\\melissa\\source\\repos\\proyecto-poe\\crm_definitivo\\crm_definitivo\\forms\\admin\\assignamenttaskemployeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\crm_definitivo\\forms\\admin\\assignamenttaskemployeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\admin\\assignamenttaskemployeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\crm_definitivo\\forms\\menuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\menuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\crm_definitivo\\forms\\profileuseraccountform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\profileuseraccountform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\crm_definitivo\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -47,8 +51,28 @@
       "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\cliente\\requestclientform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|c:\\users\\melissa\\source\\repos\\proyecto-poe\\crm_definitivo\\crm_definitivo\\forms\\admin\\assignamenttaskemployeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\admin\\assignamenttaskemployeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\crm_definitivo\\forms\\cliente\\homeuserclientform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\cliente\\homeuserclientform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\crm_definitivo\\forms\\admin\\sendprojectform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\admin\\sendprojectform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\crm_definitivo\\forms\\admin\\usersform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\admin\\usersform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\crm_definitivo\\forms\\admin\\projectsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\admin\\projectsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\crm_definitivo\\forms\\admin\\permissionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\admin\\permissionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\crm_definitivo\\forms\\admin\\addusersform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\admin\\addusersform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,7 +82,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 17,
+          "SelectedChildIndex": 16,
           "Children": [
             {
               "$type": "Bookmark",
@@ -106,150 +130,204 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "InfoEmployeeForm.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\InfoEmployeeForm.Designer.cs",
-              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\Admin\\InfoEmployeeForm.Designer.cs",
-              "ToolTip": "C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\InfoEmployeeForm.Designer.cs",
-              "RelativeToolTip": "CRM_Definitivo\\Forms\\Admin\\InfoEmployeeForm.Designer.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAHgAAAAAAAAA",
+              "DocumentIndex": 5,
+              "Title": "ProjectEmployeeForm.cs",
+              "DocumentMoniker": "C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Empleados\\ProjectEmployeeForm.cs",
+              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\Empleados\\ProjectEmployeeForm.cs",
+              "ToolTip": "C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Empleados\\ProjectEmployeeForm.cs",
+              "RelativeToolTip": "CRM_Definitivo\\Forms\\Empleados\\ProjectEmployeeForm.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABYAAAALAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T04:46:02.394Z",
+              "WhenOpened": "2024-11-27T05:22:08.585Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "VerificationForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\VerificationForm.cs",
+              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\VerificationForm.cs",
+              "ToolTip": "C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\VerificationForm.cs [Design]",
+              "RelativeToolTip": "CRM_Definitivo\\Forms\\VerificationForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T05:12:48.469Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ImageViewerForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\ImageViewerForm.cs",
+              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\ImageViewerForm.cs",
+              "ToolTip": "C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\ImageViewerForm.cs [Design]",
+              "RelativeToolTip": "CRM_Definitivo\\Forms\\ImageViewerForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T05:12:43.345Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "InfoEmployeeForm.cs",
-              "DocumentMoniker": "C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\InfoEmployeeForm.cs",
-              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\Admin\\InfoEmployeeForm.cs",
-              "ToolTip": "C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\InfoEmployeeForm.cs",
-              "RelativeToolTip": "CRM_Definitivo\\Forms\\Admin\\InfoEmployeeForm.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
+              "Title": "ChangePasswordProfileForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\ChangePasswordProfileForm.cs",
+              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\ChangePasswordProfileForm.cs",
+              "ToolTip": "C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\ChangePasswordProfileForm.cs [Design]",
+              "RelativeToolTip": "CRM_Definitivo\\Forms\\ChangePasswordProfileForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T04:44:55.878Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-27T05:12:42.346Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ChangePasswordForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\ChangePasswordForm.cs",
+              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\ChangePasswordForm.cs",
+              "ToolTip": "C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\ChangePasswordForm.cs [Design]",
+              "RelativeToolTip": "CRM_Definitivo\\Forms\\ChangePasswordForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T05:12:41.5Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProjectEmployeeForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Empleados\\ProjectEmployeeForm.cs",
+              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\Empleados\\ProjectEmployeeForm.cs",
+              "ToolTip": "C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Empleados\\ProjectEmployeeForm.cs [Design]",
+              "RelativeToolTip": "CRM_Definitivo\\Forms\\Empleados\\ProjectEmployeeForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T05:12:40.205Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "HomeUserEmployeeForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Empleados\\HomeUserEmployeeForm.cs",
+              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\Empleados\\HomeUserEmployeeForm.cs",
+              "ToolTip": "C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Empleados\\HomeUserEmployeeForm.cs [Design]",
+              "RelativeToolTip": "CRM_Definitivo\\Forms\\Empleados\\HomeUserEmployeeForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T05:12:38.893Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "HomeUserClientForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Cliente\\HomeUserClientForm.cs",
+              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\Cliente\\HomeUserClientForm.cs",
+              "ToolTip": "C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Cliente\\HomeUserClientForm.cs [Design]",
+              "RelativeToolTip": "CRM_Definitivo\\Forms\\Cliente\\HomeUserClientForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T05:12:36.036Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ProfileUserAccountForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\ProfileUserAccountForm.cs",
+              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\ProfileUserAccountForm.cs",
+              "ToolTip": "C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\ProfileUserAccountForm.cs [Design]",
+              "RelativeToolTip": "CRM_Definitivo\\Forms\\ProfileUserAccountForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T05:12:30.753Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MenuForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\MenuForm.cs",
+              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\MenuForm.cs",
+              "ToolTip": "C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\MenuForm.cs [Design]",
+              "RelativeToolTip": "CRM_Definitivo\\Forms\\MenuForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T05:12:24.258Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "UsersForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\UsersForm.cs",
               "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\Admin\\UsersForm.cs",
               "ToolTip": "C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\UsersForm.cs [Design]",
               "RelativeToolTip": "CRM_Definitivo\\Forms\\Admin\\UsersForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T03:05:18.8Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-11-27T03:05:18.8Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 13,
               "Title": "SendProjectForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\SendProjectForm.cs",
               "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\Admin\\SendProjectForm.cs",
               "ToolTip": "C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\SendProjectForm.cs [Design]",
               "RelativeToolTip": "CRM_Definitivo\\Forms\\Admin\\SendProjectForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T03:05:15.432Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-11-27T03:05:15.432Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 15,
               "Title": "ProjectsForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\ProjectsForm.cs",
               "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\Admin\\ProjectsForm.cs",
               "ToolTip": "C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\ProjectsForm.cs [Design]",
               "RelativeToolTip": "CRM_Definitivo\\Forms\\Admin\\ProjectsForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T03:05:13.083Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-11-27T03:05:13.083Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 16,
               "Title": "PermissionForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\PermissionForm.cs",
               "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\Admin\\PermissionForm.cs",
               "ToolTip": "C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\PermissionForm.cs [Design]",
               "RelativeToolTip": "CRM_Definitivo\\Forms\\Admin\\PermissionForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T03:05:11.085Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-11-27T03:05:11.085Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "infoProjects.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\infoProjects.cs",
-              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\Admin\\infoProjects.cs",
-              "ToolTip": "C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\infoProjects.cs [Design]",
-              "RelativeToolTip": "CRM_Definitivo\\Forms\\Admin\\infoProjects.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T03:05:08.587Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "AssignamentTaskEmployeeForm.cs",
-              "DocumentMoniker": "C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\AssignamentTaskEmployeeForm.cs",
-              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\Admin\\AssignamentTaskEmployeeForm.cs",
-              "ToolTip": "C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\AssignamentTaskEmployeeForm.cs",
-              "RelativeToolTip": "CRM_Definitivo\\Forms\\Admin\\AssignamentTaskEmployeeForm.cs",
-              "ViewState": "AQIAACYAAAAAAAAAAAAswDAAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T02:59:46.239Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "AssignamentTaskEmployeeForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\AssignamentTaskEmployeeForm.cs",
               "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\Admin\\AssignamentTaskEmployeeForm.cs",
               "ToolTip": "C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\AssignamentTaskEmployeeForm.cs [Design]",
               "RelativeToolTip": "CRM_Definitivo\\Forms\\Admin\\AssignamentTaskEmployeeForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T01:04:28.931Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-11-27T01:04:28.931Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 17,
               "Title": "AddUsersForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\AddUsersForm.cs",
               "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\Admin\\AddUsersForm.cs",
               "ToolTip": "C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\AddUsersForm.cs [Design]",
               "RelativeToolTip": "CRM_Definitivo\\Forms\\Admin\\AddUsersForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T00:25:20.104Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-11-27T00:25:20.104Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "LoginForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\LoginForm.cs",
               "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\LoginForm.cs",
               "ToolTip": "C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\LoginForm.cs [Design]",
               "RelativeToolTip": "CRM_Definitivo\\Forms\\LoginForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T23:02:32.237Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-11-25T23:02:32.237Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "RequestClientForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Cliente\\RequestClientForm.cs",
               "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\Cliente\\RequestClientForm.cs",
               "ToolTip": "C:\\Users\\Melissa\\source\\repos\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Cliente\\RequestClientForm.cs [Design]",
               "RelativeToolTip": "CRM_Definitivo\\Forms\\Cliente\\RequestClientForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-24T01:26:55.814Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-11-24T01:26:55.814Z"
             }
           ]
         }

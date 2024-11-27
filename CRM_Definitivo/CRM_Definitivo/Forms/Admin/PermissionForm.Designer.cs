@@ -28,387 +28,409 @@
         /// </summary>
         private void InitializeComponent()
         {
-            tabPage2 = new TabPage();
-            dataGridViewMenu = new DataGridView();
-            groupBox3 = new GroupBox();
-            textBoxNameMenuForm = new TextBox();
-            label2 = new Label();
-            textBoxNameMenu = new TextBox();
-            label1 = new Label();
-            iconButtonEditMenus = new FontAwesome.Sharp.IconButton();
-            iconButtonSaveMenus = new FontAwesome.Sharp.IconButton();
-            iconButtonDeleteMenus = new FontAwesome.Sharp.IconButton();
-            tabControlPermission = new TabControl();
-            tabPagePermission = new TabPage();
-            groupBox1 = new GroupBox();
-            comboBoxidRol = new ComboBox();
-            iconButtonEditRolPermission = new FontAwesome.Sharp.IconButton();
-            comboBoxidPermission = new ComboBox();
-            iconButtonSaveRolPermission = new FontAwesome.Sharp.IconButton();
-            label3 = new Label();
-            label6 = new Label();
-            dataGridViewrolPermission = new DataGridView();
-            groupBox2 = new GroupBox();
-            comboBoxMenu = new ComboBox();
-            iconButtonEditMenu = new FontAwesome.Sharp.IconButton();
-            iconButtonSaveMenu = new FontAwesome.Sharp.IconButton();
-            label4 = new Label();
-            dataGridViewPermission = new DataGridView();
-            tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewMenu).BeginInit();
-            groupBox3.SuspendLayout();
-            tabControlPermission.SuspendLayout();
-            tabPagePermission.SuspendLayout();
-            groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewrolPermission).BeginInit();
-            groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewPermission).BeginInit();
+            menuTabPage = new TabPage();
+            menuDataGridView = new DataGridView();
+            controlMenuGroupBox = new GroupBox();
+            nameObjectTextBox = new TextBox();
+            nameMenuLabel = new Label();
+            nameMenuTextBox = new TextBox();
+            nameObjectLabel = new Label();
+            iconEditMenusButton = new FontAwesome.Sharp.IconButton();
+            iconSaveMenusButton = new FontAwesome.Sharp.IconButton();
+            iconDeleteMenusButton = new FontAwesome.Sharp.IconButton();
+            permissionTabControl = new TabControl();
+            permissionTabPage = new TabPage();
+            accessGroupBox = new GroupBox();
+            rolUserComboBox = new ComboBox();
+            iconEditRolPermissionButton = new FontAwesome.Sharp.IconButton();
+            permissionIdComboBox = new ComboBox();
+            iconSaveRolPermissionButton = new FontAwesome.Sharp.IconButton();
+            permissionIdLabel = new Label();
+            rolUserLabel = new Label();
+            rolPermissionDataGridView = new DataGridView();
+            permissionGroupBox = new GroupBox();
+            selectMenuComboBox = new ComboBox();
+            iconEditMenuButton = new FontAwesome.Sharp.IconButton();
+            iconSaveMenuButton = new FontAwesome.Sharp.IconButton();
+            selectMenuLabel = new Label();
+            permissionDataGridView = new DataGridView();
+            menuTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)menuDataGridView).BeginInit();
+            controlMenuGroupBox.SuspendLayout();
+            permissionTabControl.SuspendLayout();
+            permissionTabPage.SuspendLayout();
+            accessGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)rolPermissionDataGridView).BeginInit();
+            permissionGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)permissionDataGridView).BeginInit();
             SuspendLayout();
             // 
-            // tabPage2
+            // menuTabPage
             // 
-            tabPage2.Controls.Add(dataGridViewMenu);
-            tabPage2.Controls.Add(groupBox3);
-            tabPage2.Location = new Point(4, 29);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1417, 720);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "Menus";
-            tabPage2.UseVisualStyleBackColor = true;
+            menuTabPage.Controls.Add(menuDataGridView);
+            menuTabPage.Controls.Add(controlMenuGroupBox);
+            menuTabPage.Location = new Point(4, 30);
+            menuTabPage.Name = "menuTabPage";
+            menuTabPage.Padding = new Padding(3);
+            menuTabPage.Size = new Size(1417, 719);
+            menuTabPage.TabIndex = 1;
+            menuTabPage.Text = "Menus";
+            menuTabPage.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewMenu
+            // menuDataGridView
             // 
-            dataGridViewMenu.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridViewMenu.BackgroundColor = Color.White;
-            dataGridViewMenu.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewMenu.Location = new Point(3, 212);
-            dataGridViewMenu.Name = "dataGridViewMenu";
-            dataGridViewMenu.RowHeadersWidth = 51;
-            dataGridViewMenu.Size = new Size(1411, 505);
-            dataGridViewMenu.TabIndex = 0;
+            menuDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            menuDataGridView.BackgroundColor = Color.LightGray;
+            menuDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            menuDataGridView.Location = new Point(3, 294);
+            menuDataGridView.Name = "menuDataGridView";
+            menuDataGridView.RowHeadersWidth = 51;
+            menuDataGridView.Size = new Size(1411, 439);
+            menuDataGridView.TabIndex = 0;
             // 
-            // groupBox3
+            // controlMenuGroupBox
             // 
-            groupBox3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            groupBox3.Controls.Add(textBoxNameMenuForm);
-            groupBox3.Controls.Add(label2);
-            groupBox3.Controls.Add(textBoxNameMenu);
-            groupBox3.Controls.Add(label1);
-            groupBox3.Controls.Add(iconButtonEditMenus);
-            groupBox3.Controls.Add(iconButtonSaveMenus);
-            groupBox3.Controls.Add(iconButtonDeleteMenus);
-            groupBox3.Location = new Point(6, 6);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(1406, 200);
-            groupBox3.TabIndex = 8;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "Agregar nuevos menus";
+            controlMenuGroupBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            controlMenuGroupBox.BackColor = SystemColors.Control;
+            controlMenuGroupBox.Controls.Add(nameObjectTextBox);
+            controlMenuGroupBox.Controls.Add(nameMenuLabel);
+            controlMenuGroupBox.Controls.Add(nameMenuTextBox);
+            controlMenuGroupBox.Controls.Add(nameObjectLabel);
+            controlMenuGroupBox.Controls.Add(iconEditMenusButton);
+            controlMenuGroupBox.Controls.Add(iconSaveMenusButton);
+            controlMenuGroupBox.Controls.Add(iconDeleteMenusButton);
+            controlMenuGroupBox.Location = new Point(6, 6);
+            controlMenuGroupBox.Name = "controlMenuGroupBox";
+            controlMenuGroupBox.Size = new Size(1406, 269);
+            controlMenuGroupBox.TabIndex = 8;
+            controlMenuGroupBox.TabStop = false;
+            controlMenuGroupBox.Text = "Agregar nuevos menus";
             // 
-            // textBoxNameMenuForm
+            // nameObjectTextBox
             // 
-            textBoxNameMenuForm.Location = new Point(30, 97);
-            textBoxNameMenuForm.Name = "textBoxNameMenuForm";
-            textBoxNameMenuForm.Size = new Size(436, 26);
-            textBoxNameMenuForm.TabIndex = 7;
+            nameObjectTextBox.Location = new Point(40, 148);
+            nameObjectTextBox.Name = "nameObjectTextBox";
+            nameObjectTextBox.Size = new Size(436, 30);
+            nameObjectTextBox.TabIndex = 7;
             // 
-            // label2
+            // nameMenuLabel
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(28, 22);
-            label2.Name = "label2";
-            label2.Size = new Size(144, 20);
-            label2.TabIndex = 6;
-            label2.Text = "Nombre del menu:";
+            nameMenuLabel.AutoSize = true;
+            nameMenuLabel.Location = new Point(40, 26);
+            nameMenuLabel.Name = "nameMenuLabel";
+            nameMenuLabel.Size = new Size(174, 21);
+            nameMenuLabel.TabIndex = 6;
+            nameMenuLabel.Text = "Nombre del menu:";
             // 
-            // textBoxNameMenu
+            // nameMenuTextBox
             // 
-            textBoxNameMenu.Location = new Point(30, 45);
-            textBoxNameMenu.Name = "textBoxNameMenu";
-            textBoxNameMenu.Size = new Size(436, 26);
-            textBoxNameMenu.TabIndex = 2;
+            nameMenuTextBox.Location = new Point(40, 58);
+            nameMenuTextBox.Name = "nameMenuTextBox";
+            nameMenuTextBox.Size = new Size(436, 30);
+            nameMenuTextBox.TabIndex = 2;
             // 
-            // label1
+            // nameObjectLabel
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(28, 74);
-            label1.Name = "label1";
-            label1.Size = new Size(240, 20);
-            label1.TabIndex = 1;
-            label1.Text = "Nombre del el objeto a mostrar:";
+            nameObjectLabel.AutoSize = true;
+            nameObjectLabel.Location = new Point(40, 124);
+            nameObjectLabel.Name = "nameObjectLabel";
+            nameObjectLabel.Size = new Size(288, 21);
+            nameObjectLabel.TabIndex = 1;
+            nameObjectLabel.Text = "Nombre del el objeto a mostrar:";
             // 
-            // iconButtonEditMenus
+            // iconEditMenusButton
             // 
-            iconButtonEditMenus.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconButtonEditMenus.IconColor = Color.Black;
-            iconButtonEditMenus.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButtonEditMenus.Location = new Point(181, 148);
-            iconButtonEditMenus.Name = "iconButtonEditMenus";
-            iconButtonEditMenus.Size = new Size(133, 29);
-            iconButtonEditMenus.TabIndex = 3;
-            iconButtonEditMenus.Text = "Editar";
-            iconButtonEditMenus.UseVisualStyleBackColor = true;
-            iconButtonEditMenus.Click += iconButtonEditMenus_Click;
+            iconEditMenusButton.BackColor = Color.FromArgb(255, 128, 0);
+            iconEditMenusButton.FlatStyle = FlatStyle.Popup;
+            iconEditMenusButton.ForeColor = Color.White;
+            iconEditMenusButton.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconEditMenusButton.IconColor = Color.Black;
+            iconEditMenusButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconEditMenusButton.Location = new Point(206, 212);
+            iconEditMenusButton.Name = "iconEditMenusButton";
+            iconEditMenusButton.Size = new Size(133, 38);
+            iconEditMenusButton.TabIndex = 3;
+            iconEditMenusButton.Text = "Editar";
+            iconEditMenusButton.UseVisualStyleBackColor = false;
+            iconEditMenusButton.Click += iconEditMenusButton_Click;
             // 
-            // iconButtonSaveMenus
+            // iconSaveMenusButton
             // 
-            iconButtonSaveMenus.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconButtonSaveMenus.IconColor = Color.Black;
-            iconButtonSaveMenus.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButtonSaveMenus.Location = new Point(29, 148);
-            iconButtonSaveMenus.Name = "iconButtonSaveMenus";
-            iconButtonSaveMenus.Size = new Size(133, 29);
-            iconButtonSaveMenus.TabIndex = 5;
-            iconButtonSaveMenus.Text = "Agregar";
-            iconButtonSaveMenus.UseVisualStyleBackColor = true;
-            iconButtonSaveMenus.Click += iconButtonSave_Click;
+            iconSaveMenusButton.BackColor = Color.FromArgb(0, 192, 0);
+            iconSaveMenusButton.FlatStyle = FlatStyle.Popup;
+            iconSaveMenusButton.ForeColor = Color.White;
+            iconSaveMenusButton.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconSaveMenusButton.IconColor = Color.Black;
+            iconSaveMenusButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconSaveMenusButton.Location = new Point(40, 212);
+            iconSaveMenusButton.Name = "iconSaveMenusButton";
+            iconSaveMenusButton.Size = new Size(133, 38);
+            iconSaveMenusButton.TabIndex = 5;
+            iconSaveMenusButton.Text = "Agregar";
+            iconSaveMenusButton.UseVisualStyleBackColor = false;
+            iconSaveMenusButton.Click += iconSaveMenusButton_Click;
             // 
-            // iconButtonDeleteMenus
+            // iconDeleteMenusButton
             // 
-            iconButtonDeleteMenus.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconButtonDeleteMenus.IconColor = Color.Black;
-            iconButtonDeleteMenus.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButtonDeleteMenus.Location = new Point(333, 148);
-            iconButtonDeleteMenus.Name = "iconButtonDeleteMenus";
-            iconButtonDeleteMenus.Size = new Size(133, 29);
-            iconButtonDeleteMenus.TabIndex = 4;
-            iconButtonDeleteMenus.Text = "Eliminar";
-            iconButtonDeleteMenus.UseVisualStyleBackColor = true;
-            iconButtonDeleteMenus.Click += iconButtonDeleteMenus_Click;
+            iconDeleteMenusButton.BackColor = Color.Red;
+            iconDeleteMenusButton.FlatStyle = FlatStyle.Popup;
+            iconDeleteMenusButton.ForeColor = Color.White;
+            iconDeleteMenusButton.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconDeleteMenusButton.IconColor = Color.Black;
+            iconDeleteMenusButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconDeleteMenusButton.Location = new Point(385, 212);
+            iconDeleteMenusButton.Name = "iconDeleteMenusButton";
+            iconDeleteMenusButton.Size = new Size(133, 38);
+            iconDeleteMenusButton.TabIndex = 4;
+            iconDeleteMenusButton.Text = "Eliminar";
+            iconDeleteMenusButton.UseVisualStyleBackColor = false;
+            iconDeleteMenusButton.Click += iconDeleteMenusButton_Click;
             // 
-            // tabControlPermission
+            // permissionTabControl
             // 
-            tabControlPermission.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            tabControlPermission.Controls.Add(tabPagePermission);
-            tabControlPermission.Controls.Add(tabPage2);
-            tabControlPermission.Location = new Point(0, 0);
-            tabControlPermission.Name = "tabControlPermission";
-            tabControlPermission.SelectedIndex = 0;
-            tabControlPermission.Size = new Size(1425, 753);
-            tabControlPermission.TabIndex = 0;
+            permissionTabControl.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            permissionTabControl.Controls.Add(permissionTabPage);
+            permissionTabControl.Controls.Add(menuTabPage);
+            permissionTabControl.Location = new Point(0, 0);
+            permissionTabControl.Name = "permissionTabControl";
+            permissionTabControl.SelectedIndex = 0;
+            permissionTabControl.Size = new Size(1425, 753);
+            permissionTabControl.TabIndex = 0;
             // 
-            // tabPagePermission
+            // permissionTabPage
             // 
-            tabPagePermission.Controls.Add(groupBox1);
-            tabPagePermission.Controls.Add(dataGridViewrolPermission);
-            tabPagePermission.Controls.Add(groupBox2);
-            tabPagePermission.Controls.Add(dataGridViewPermission);
-            tabPagePermission.Location = new Point(4, 29);
-            tabPagePermission.Name = "tabPagePermission";
-            tabPagePermission.Padding = new Padding(3);
-            tabPagePermission.Size = new Size(1417, 720);
-            tabPagePermission.TabIndex = 2;
-            tabPagePermission.Text = "Permisos";
-            tabPagePermission.UseVisualStyleBackColor = true;
+            permissionTabPage.BackColor = SystemColors.Control;
+            permissionTabPage.Controls.Add(accessGroupBox);
+            permissionTabPage.Controls.Add(rolPermissionDataGridView);
+            permissionTabPage.Controls.Add(permissionGroupBox);
+            permissionTabPage.Controls.Add(permissionDataGridView);
+            permissionTabPage.Location = new Point(4, 30);
+            permissionTabPage.Name = "permissionTabPage";
+            permissionTabPage.Padding = new Padding(3);
+            permissionTabPage.Size = new Size(1417, 719);
+            permissionTabPage.TabIndex = 2;
+            permissionTabPage.Text = "Permisos";
             // 
-            // groupBox1
+            // accessGroupBox
             // 
-            groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            groupBox1.Controls.Add(comboBoxidRol);
-            groupBox1.Controls.Add(iconButtonEditRolPermission);
-            groupBox1.Controls.Add(comboBoxidPermission);
-            groupBox1.Controls.Add(iconButtonSaveRolPermission);
-            groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(label6);
-            groupBox1.Location = new Point(758, 21);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(653, 182);
-            groupBox1.TabIndex = 6;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Dar acceso:";
+            accessGroupBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            accessGroupBox.Controls.Add(rolUserComboBox);
+            accessGroupBox.Controls.Add(iconEditRolPermissionButton);
+            accessGroupBox.Controls.Add(permissionIdComboBox);
+            accessGroupBox.Controls.Add(iconSaveRolPermissionButton);
+            accessGroupBox.Controls.Add(permissionIdLabel);
+            accessGroupBox.Controls.Add(rolUserLabel);
+            accessGroupBox.Location = new Point(730, 22);
+            accessGroupBox.Name = "accessGroupBox";
+            accessGroupBox.Size = new Size(681, 218);
+            accessGroupBox.TabIndex = 6;
+            accessGroupBox.TabStop = false;
+            accessGroupBox.Text = "Dar acceso:";
             // 
-            // comboBoxidRol
+            // rolUserComboBox
             // 
-            comboBoxidRol.FormattingEnabled = true;
-            comboBoxidRol.Location = new Point(23, 54);
-            comboBoxidRol.Name = "comboBoxidRol";
-            comboBoxidRol.Size = new Size(379, 28);
-            comboBoxidRol.TabIndex = 9;
+            rolUserComboBox.FormattingEnabled = true;
+            rolUserComboBox.Location = new Point(23, 56);
+            rolUserComboBox.Name = "rolUserComboBox";
+            rolUserComboBox.Size = new Size(379, 29);
+            rolUserComboBox.TabIndex = 9;
             // 
-            // iconButtonEditRolPermission
+            // iconEditRolPermissionButton
             // 
-            iconButtonEditRolPermission.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconButtonEditRolPermission.IconColor = Color.Black;
-            iconButtonEditRolPermission.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButtonEditRolPermission.Location = new Point(455, 90);
-            iconButtonEditRolPermission.Name = "iconButtonEditRolPermission";
-            iconButtonEditRolPermission.Size = new Size(160, 29);
-            iconButtonEditRolPermission.TabIndex = 5;
-            iconButtonEditRolPermission.Text = "Editar";
-            iconButtonEditRolPermission.UseVisualStyleBackColor = true;
-            iconButtonEditRolPermission.Click += iconButtonEditRolPermission_Click;
+            iconEditRolPermissionButton.BackColor = Color.DodgerBlue;
+            iconEditRolPermissionButton.FlatStyle = FlatStyle.Popup;
+            iconEditRolPermissionButton.ForeColor = Color.White;
+            iconEditRolPermissionButton.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconEditRolPermissionButton.IconColor = Color.Black;
+            iconEditRolPermissionButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconEditRolPermissionButton.Location = new Point(455, 128);
+            iconEditRolPermissionButton.Name = "iconEditRolPermissionButton";
+            iconEditRolPermissionButton.Size = new Size(160, 37);
+            iconEditRolPermissionButton.TabIndex = 5;
+            iconEditRolPermissionButton.Text = "Editar";
+            iconEditRolPermissionButton.UseVisualStyleBackColor = false;
+            iconEditRolPermissionButton.Click += iconEditRolPermissionButton_Click;
             // 
-            // comboBoxidPermission
+            // permissionIdComboBox
             // 
-            comboBoxidPermission.FormattingEnabled = true;
-            comboBoxidPermission.Location = new Point(23, 108);
-            comboBoxidPermission.Name = "comboBoxidPermission";
-            comboBoxidPermission.Size = new Size(379, 28);
-            comboBoxidPermission.TabIndex = 8;
+            permissionIdComboBox.FormattingEnabled = true;
+            permissionIdComboBox.Location = new Point(23, 152);
+            permissionIdComboBox.Name = "permissionIdComboBox";
+            permissionIdComboBox.Size = new Size(379, 29);
+            permissionIdComboBox.TabIndex = 8;
             // 
-            // iconButtonSaveRolPermission
+            // iconSaveRolPermissionButton
             // 
-            iconButtonSaveRolPermission.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconButtonSaveRolPermission.IconColor = Color.Black;
-            iconButtonSaveRolPermission.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButtonSaveRolPermission.Location = new Point(455, 55);
-            iconButtonSaveRolPermission.Name = "iconButtonSaveRolPermission";
-            iconButtonSaveRolPermission.Size = new Size(160, 29);
-            iconButtonSaveRolPermission.TabIndex = 4;
-            iconButtonSaveRolPermission.Text = "Agregar";
-            iconButtonSaveRolPermission.UseVisualStyleBackColor = true;
-            iconButtonSaveRolPermission.Click += iconButtonSaveRolPermission_Click;
+            iconSaveRolPermissionButton.BackColor = Color.FromArgb(0, 192, 0);
+            iconSaveRolPermissionButton.FlatStyle = FlatStyle.Popup;
+            iconSaveRolPermissionButton.ForeColor = Color.White;
+            iconSaveRolPermissionButton.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconSaveRolPermissionButton.IconColor = Color.Black;
+            iconSaveRolPermissionButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconSaveRolPermissionButton.Location = new Point(455, 67);
+            iconSaveRolPermissionButton.Name = "iconSaveRolPermissionButton";
+            iconSaveRolPermissionButton.Size = new Size(160, 38);
+            iconSaveRolPermissionButton.TabIndex = 4;
+            iconSaveRolPermissionButton.Text = "Agregar";
+            iconSaveRolPermissionButton.UseVisualStyleBackColor = false;
+            iconSaveRolPermissionButton.Click += iconSaveRolPermissionButton_Click;
             // 
-            // label3
+            // permissionIdLabel
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(23, 85);
-            label3.Name = "label3";
-            label3.Size = new Size(190, 20);
-            label3.TabIndex = 2;
-            label3.Text = "Coloce el id del permiso:";
+            permissionIdLabel.AutoSize = true;
+            permissionIdLabel.Location = new Point(23, 128);
+            permissionIdLabel.Name = "permissionIdLabel";
+            permissionIdLabel.Size = new Size(226, 21);
+            permissionIdLabel.TabIndex = 2;
+            permissionIdLabel.Text = "Coloce el id del permiso:";
             // 
-            // label6
+            // rolUserLabel
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(23, 33);
-            label6.Name = "label6";
-            label6.Size = new Size(190, 20);
-            label6.TabIndex = 0;
-            label6.Text = "Coloce el rol del usuario:";
+            rolUserLabel.AutoSize = true;
+            rolUserLabel.Location = new Point(23, 33);
+            rolUserLabel.Name = "rolUserLabel";
+            rolUserLabel.Size = new Size(224, 21);
+            rolUserLabel.TabIndex = 0;
+            rolUserLabel.Text = "Coloce el rol del usuario:";
             // 
-            // dataGridViewrolPermission
+            // rolPermissionDataGridView
             // 
-            dataGridViewrolPermission.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridViewrolPermission.BackgroundColor = Color.White;
-            dataGridViewrolPermission.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewrolPermission.Location = new Point(762, 246);
-            dataGridViewrolPermission.Name = "dataGridViewrolPermission";
-            dataGridViewrolPermission.RowHeadersWidth = 51;
-            dataGridViewrolPermission.Size = new Size(649, 468);
-            dataGridViewrolPermission.TabIndex = 5;
+            rolPermissionDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            rolPermissionDataGridView.BackgroundColor = Color.LightGray;
+            rolPermissionDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            rolPermissionDataGridView.Location = new Point(730, 246);
+            rolPermissionDataGridView.Name = "rolPermissionDataGridView";
+            rolPermissionDataGridView.RowHeadersWidth = 51;
+            rolPermissionDataGridView.Size = new Size(681, 468);
+            rolPermissionDataGridView.TabIndex = 5;
             // 
-            // groupBox2
+            // permissionGroupBox
             // 
-            groupBox2.Controls.Add(comboBoxMenu);
-            groupBox2.Controls.Add(iconButtonEditMenu);
-            groupBox2.Controls.Add(iconButtonSaveMenu);
-            groupBox2.Controls.Add(label4);
-            groupBox2.Location = new Point(10, 34);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(653, 182);
-            groupBox2.TabIndex = 4;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Permisos:";
+            permissionGroupBox.Controls.Add(selectMenuComboBox);
+            permissionGroupBox.Controls.Add(iconEditMenuButton);
+            permissionGroupBox.Controls.Add(iconSaveMenuButton);
+            permissionGroupBox.Controls.Add(selectMenuLabel);
+            permissionGroupBox.Location = new Point(10, 22);
+            permissionGroupBox.Name = "permissionGroupBox";
+            permissionGroupBox.Size = new Size(697, 218);
+            permissionGroupBox.TabIndex = 4;
+            permissionGroupBox.TabStop = false;
+            permissionGroupBox.Text = "Permisos:";
             // 
-            // comboBoxMenu
+            // selectMenuComboBox
             // 
-            comboBoxMenu.FormattingEnabled = true;
-            comboBoxMenu.Location = new Point(23, 77);
-            comboBoxMenu.Name = "comboBoxMenu";
-            comboBoxMenu.Size = new Size(379, 28);
-            comboBoxMenu.TabIndex = 7;
+            selectMenuComboBox.FormattingEnabled = true;
+            selectMenuComboBox.Location = new Point(23, 77);
+            selectMenuComboBox.Name = "selectMenuComboBox";
+            selectMenuComboBox.Size = new Size(379, 29);
+            selectMenuComboBox.TabIndex = 7;
             // 
-            // iconButtonEditMenu
+            // iconEditMenuButton
             // 
-            iconButtonEditMenu.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconButtonEditMenu.IconColor = Color.Black;
-            iconButtonEditMenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButtonEditMenu.Location = new Point(455, 90);
-            iconButtonEditMenu.Name = "iconButtonEditMenu";
-            iconButtonEditMenu.Size = new Size(160, 29);
-            iconButtonEditMenu.TabIndex = 5;
-            iconButtonEditMenu.Text = "Editar";
-            iconButtonEditMenu.UseVisualStyleBackColor = true;
-            iconButtonEditMenu.Click += iconButtonEditMenu_Click;
+            iconEditMenuButton.BackColor = Color.DodgerBlue;
+            iconEditMenuButton.FlatStyle = FlatStyle.Popup;
+            iconEditMenuButton.ForeColor = Color.White;
+            iconEditMenuButton.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconEditMenuButton.IconColor = Color.Black;
+            iconEditMenuButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconEditMenuButton.Location = new Point(455, 108);
+            iconEditMenuButton.Name = "iconEditMenuButton";
+            iconEditMenuButton.Size = new Size(160, 29);
+            iconEditMenuButton.TabIndex = 5;
+            iconEditMenuButton.Text = "Editar";
+            iconEditMenuButton.UseVisualStyleBackColor = false;
+            iconEditMenuButton.Click += iconEditMenuButton_Click;
             // 
-            // iconButtonSaveMenu
+            // iconSaveMenuButton
             // 
-            iconButtonSaveMenu.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconButtonSaveMenu.IconColor = Color.Black;
-            iconButtonSaveMenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButtonSaveMenu.Location = new Point(455, 55);
-            iconButtonSaveMenu.Name = "iconButtonSaveMenu";
-            iconButtonSaveMenu.Size = new Size(160, 29);
-            iconButtonSaveMenu.TabIndex = 4;
-            iconButtonSaveMenu.Text = "Agregar";
-            iconButtonSaveMenu.UseVisualStyleBackColor = true;
-            iconButtonSaveMenu.Click += iconButtonSaveMenu_Click;
+            iconSaveMenuButton.BackColor = Color.FromArgb(0, 192, 0);
+            iconSaveMenuButton.FlatStyle = FlatStyle.Popup;
+            iconSaveMenuButton.ForeColor = Color.White;
+            iconSaveMenuButton.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconSaveMenuButton.IconColor = Color.Black;
+            iconSaveMenuButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconSaveMenuButton.Location = new Point(455, 52);
+            iconSaveMenuButton.Name = "iconSaveMenuButton";
+            iconSaveMenuButton.Size = new Size(160, 35);
+            iconSaveMenuButton.TabIndex = 4;
+            iconSaveMenuButton.Text = "Agregar";
+            iconSaveMenuButton.UseVisualStyleBackColor = false;
+            iconSaveMenuButton.Click += iconSaveMenuButton_Click;
             // 
-            // label4
+            // selectMenuLabel
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(23, 49);
-            label4.Name = "label4";
-            label4.Size = new Size(162, 20);
-            label4.TabIndex = 0;
-            label4.Text = "Seleccionar el menu:";
+            selectMenuLabel.AutoSize = true;
+            selectMenuLabel.Location = new Point(23, 49);
+            selectMenuLabel.Name = "selectMenuLabel";
+            selectMenuLabel.Size = new Size(194, 21);
+            selectMenuLabel.TabIndex = 0;
+            selectMenuLabel.Text = "Seleccionar el menu:";
             // 
-            // dataGridViewPermission
+            // permissionDataGridView
             // 
-            dataGridViewPermission.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            dataGridViewPermission.BackgroundColor = Color.White;
-            dataGridViewPermission.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewPermission.Location = new Point(8, 246);
-            dataGridViewPermission.Name = "dataGridViewPermission";
-            dataGridViewPermission.RowHeadersWidth = 51;
-            dataGridViewPermission.Size = new Size(655, 468);
-            dataGridViewPermission.TabIndex = 2;
+            permissionDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            permissionDataGridView.BackgroundColor = Color.LightGray;
+            permissionDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            permissionDataGridView.Location = new Point(8, 246);
+            permissionDataGridView.Name = "permissionDataGridView";
+            permissionDataGridView.RowHeadersWidth = 51;
+            permissionDataGridView.Size = new Size(699, 468);
+            permissionDataGridView.TabIndex = 2;
             // 
             // PermissionForm
             // 
-            AutoScaleDimensions = new SizeF(9F, 20F);
+            AutoScaleDimensions = new SizeF(11F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1428, 753);
-            Controls.Add(tabControlPermission);
+            Controls.Add(permissionTabControl);
             Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Name = "PermissionForm";
-            Text = "PermissionForm";
-            tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridViewMenu).EndInit();
-            groupBox3.ResumeLayout(false);
-            groupBox3.PerformLayout();
-            tabControlPermission.ResumeLayout(false);
-            tabPagePermission.ResumeLayout(false);
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewrolPermission).EndInit();
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewPermission).EndInit();
+            Text = "Permisos ";
+            menuTabPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)menuDataGridView).EndInit();
+            controlMenuGroupBox.ResumeLayout(false);
+            controlMenuGroupBox.PerformLayout();
+            permissionTabControl.ResumeLayout(false);
+            permissionTabPage.ResumeLayout(false);
+            accessGroupBox.ResumeLayout(false);
+            accessGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)rolPermissionDataGridView).EndInit();
+            permissionGroupBox.ResumeLayout(false);
+            permissionGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)permissionDataGridView).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private TabPage tabPage2;
-        private TextBox textBoxNameMenuForm;
-        private TextBox textBoxNameMenu;
-        private Label label2;
-        private FontAwesome.Sharp.IconButton iconButtonSaveMenus;
-        private FontAwesome.Sharp.IconButton iconButtonDeleteMenus;
-        private FontAwesome.Sharp.IconButton iconButtonEditMenus;
-        private Label label1;
-        private DataGridView dataGridViewMenu;
-        private TabControl tabControlPermission;
-        private TabPage tabPagePermission;
-        private GroupBox groupBox2;
+        private TabPage menuTabPage;
+        private TextBox nameObjectTextBox;
+        private TextBox nameMenuTextBox;
+        private Label nameMenuLabel;
+        private FontAwesome.Sharp.IconButton iconSaveMenusButton;
+        private FontAwesome.Sharp.IconButton iconDeleteMenusButton;
+        private FontAwesome.Sharp.IconButton iconEditMenusButton;
+        private Label nameObjectLabel;
+        private DataGridView menuDataGridView;
+        private TabControl permissionTabControl;
+        private TabPage permissionTabPage;
+        private GroupBox permissionGroupBox;
         private TextBox textBoxidPermission;
         private Label label5;
         private TextBox textBoxidRol;
-        private Label label4;
-        private DataGridView dataGridViewPermission;
-        private FontAwesome.Sharp.IconButton iconButtonEditMenu;
-        private FontAwesome.Sharp.IconButton iconButtonSaveMenu;
-        private GroupBox groupBox1;
-        private FontAwesome.Sharp.IconButton iconButtonEditRolPermission;
-        private FontAwesome.Sharp.IconButton iconButtonSaveRolPermission;
-        private Label label3;
-        private Label label6;
-        private DataGridView dataGridViewrolPermission;
-        private GroupBox groupBox3;
-        private ComboBox comboBoxMenu;
-        private ComboBox comboBoxidRol;
-        private ComboBox comboBoxidPermission;
+        private Label selectMenuLabel;
+        private DataGridView permissionDataGridView;
+        private FontAwesome.Sharp.IconButton iconEditMenuButton;
+        private FontAwesome.Sharp.IconButton iconSaveMenuButton;
+        private GroupBox accessGroupBox;
+        private FontAwesome.Sharp.IconButton iconEditRolPermissionButton;
+        private FontAwesome.Sharp.IconButton iconSaveRolPermissionButton;
+        private Label permissionIdLabel;
+        private Label rolUserLabel;
+        private DataGridView rolPermissionDataGridView;
+        private GroupBox controlMenuGroupBox;
+        private ComboBox selectMenuComboBox;
+        private ComboBox rolUserComboBox;
+        private ComboBox permissionIdComboBox;
     }
 }
