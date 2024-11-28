@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             newProjectGroupBox = new GroupBox();
+            errorDescriptionLabel = new Label();
+            errorNameProjectLabel = new Label();
             descriptionProjectLabel = new Label();
             descriptionProjectTextBox = new TextBox();
             saveProjectButton = new FontAwesome.Sharp.IconButton();
@@ -42,18 +45,22 @@
             listProjectDataGridView = new DataGridView();
             SelectPf = new DataGridViewButtonColumn();
             downloadProject = new DataGridViewLinkColumn();
+            errorValidation = new ErrorProvider(components);
             newProjectGroupBox.SuspendLayout();
             projectTabControl.SuspendLayout();
             tabPageRequestProject.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)requestProjectDataGridView).BeginInit();
             tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)listProjectDataGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorValidation).BeginInit();
             SuspendLayout();
             // 
             // newProjectGroupBox
             // 
             newProjectGroupBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             newProjectGroupBox.BackColor = Color.DodgerBlue;
+            newProjectGroupBox.Controls.Add(errorDescriptionLabel);
+            newProjectGroupBox.Controls.Add(errorNameProjectLabel);
             newProjectGroupBox.Controls.Add(descriptionProjectLabel);
             newProjectGroupBox.Controls.Add(descriptionProjectTextBox);
             newProjectGroupBox.Controls.Add(saveProjectButton);
@@ -70,6 +77,26 @@
             newProjectGroupBox.TabStop = false;
             newProjectGroupBox.Text = "Añadir nuevos proyectos:";
             // 
+            // errorDescriptionLabel
+            // 
+            errorDescriptionLabel.AutoSize = true;
+            errorDescriptionLabel.Font = new Font("Century Gothic", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            errorDescriptionLabel.ForeColor = Color.Red;
+            errorDescriptionLabel.Location = new Point(52, 497);
+            errorDescriptionLabel.Name = "errorDescriptionLabel";
+            errorDescriptionLabel.Size = new Size(0, 21);
+            errorDescriptionLabel.TabIndex = 29;
+            // 
+            // errorNameProjectLabel
+            // 
+            errorNameProjectLabel.AutoSize = true;
+            errorNameProjectLabel.Font = new Font("Century Gothic", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            errorNameProjectLabel.ForeColor = Color.Red;
+            errorNameProjectLabel.Location = new Point(52, 172);
+            errorNameProjectLabel.Name = "errorNameProjectLabel";
+            errorNameProjectLabel.Size = new Size(0, 21);
+            errorNameProjectLabel.TabIndex = 28;
+            // 
             // descriptionProjectLabel
             // 
             descriptionProjectLabel.AutoSize = true;
@@ -83,6 +110,7 @@
             // descriptionProjectTextBox
             // 
             descriptionProjectTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            descriptionProjectTextBox.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             descriptionProjectTextBox.Location = new Point(56, 256);
             descriptionProjectTextBox.Margin = new Padding(4, 3, 4, 3);
             descriptionProjectTextBox.Multiline = true;
@@ -124,6 +152,7 @@
             // nameNewProyectTextBox
             // 
             nameNewProyectTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            nameNewProyectTextBox.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             nameNewProyectTextBox.Location = new Point(56, 124);
             nameNewProyectTextBox.Margin = new Padding(4, 3, 4, 3);
             nameNewProyectTextBox.Multiline = true;
@@ -158,7 +187,7 @@
             // requestProjectDataGridView
             // 
             requestProjectDataGridView.AllowUserToAddRows = false;
-            requestProjectDataGridView.BackgroundColor = Color.White;
+            requestProjectDataGridView.BackgroundColor = Color.LightGray;
             requestProjectDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             requestProjectDataGridView.Dock = DockStyle.Fill;
             requestProjectDataGridView.Location = new Point(4, 3);
@@ -221,11 +250,15 @@
             downloadProject.VisitedLinkColor = Color.Black;
             downloadProject.Width = 150;
             // 
+            // errorValidation
+            // 
+            errorValidation.ContainerControl = this;
+            // 
             // RequestClientForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.LightGray;
+            BackColor = Color.White;
             ClientSize = new Size(1480, 840);
             Controls.Add(projectTabControl);
             Controls.Add(newProjectGroupBox);
@@ -241,6 +274,7 @@
             ((System.ComponentModel.ISupportInitialize)requestProjectDataGridView).EndInit();
             tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)listProjectDataGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorValidation).EndInit();
             ResumeLayout(false);
         }
 
@@ -259,5 +293,8 @@
         private DataGridView listProjectDataGridView;
         private DataGridViewButtonColumn SelectPf;
         private DataGridViewLinkColumn downloadProject;
+        private Label errorNameProjectLabel;
+        private ErrorProvider errorValidation;
+        private Label errorDescriptionLabel;
     }
 }

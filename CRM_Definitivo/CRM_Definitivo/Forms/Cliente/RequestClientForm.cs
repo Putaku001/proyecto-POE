@@ -2,7 +2,10 @@
 using BusinessLayer.Services.Interfaces;
 using BusinessLayer.Services.InterfacesServices;
 using CommonLayer.Entities;
+using FluentValidation;
+using FluentValidation.Results;
 using Microsoft.Extensions.DependencyInjection;
+using PresentationLayer.Validations;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -127,38 +130,72 @@ namespace PresentationLayer.Forms.Cliente
             }
         }
 
+
         private void iconButtonGuardarNP_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(nameNewProyectTextBox.Text) || string.IsNullOrWhiteSpace(descriptionProjectTextBox.Text))
+            try
             {
-                MessageBox.Show("Por favor, complete todos los campos.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+
+                int idUser = CaptureData.idUser;
+
+                int idClient = _usersServices.GetClients()
+                    .Where(U => U.idUser == idUser)
+                    .Select(c => c.idCliente)
+                    .FirstOrDefault();
+
+                if (idClient == 0)
+                {
+                    MessageBox.Show("No se pudo encontrar un cliente asociado al usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                var newProject = new RequestProjects
+                {
+                    codeProject = GenerateProjectCode(),
+                    idClient = idClient,
+                    nameProject = nameNewProyectTextBox.Text,
+                    descriptionProject = descriptionProjectTextBox.Text
+                };
+
+                RequestClientValidation projectValidation = new RequestClientValidation();
+                ValidationResult validationResult = projectValidation.Validate(newProject);
+
+                if (!validationResult.IsValid)
+                {
+                    DisplayValidationErrors(validationResult);
+                    return;
+                }
+
+                var status = new StatusProjects
+                {
+                    idStatusProyect = 4
+                };
+
+
+                _proyectsServices.AddNewProject(newProject.codeProject, newProject.idClient, newProject.nameProject, newProject.descriptionProject);
+
+                _proyectsServices.StatusProject(newProject.codeProject, status.idStatusProyect);
+
+                requestProjectDataGridView.DataSource = _proyectsServices.GetProjectsByIdClient(
+                    Convert.ToInt32(_usersServices.GetClients()
+                        .Where(u => u.idUser == idUser)
+                        .Select(e => e.idCliente)
+                        .FirstOrDefault())
+                );
+
+                MessageBox.Show("Se ha añadido el proyecto!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                nameNewProyectTextBox.Clear();
+                descriptionProjectTextBox.Clear();
             }
-
-
-            int idUser = CaptureData.idUser;
-            int idClient = _usersServices.GetClients().Where( U => U.idUser == idUser).Select(c => c.idCliente).FirstOrDefault();
-
-            var newProject = new RequestProjects
+            catch (ValidationException ex)
             {
-                codeProject = GenerateProjectCode(),
-                idClient = idClient,
-                nameProject = nameNewProyectTextBox.Text, 
-                descriptionProject = descriptionProjectTextBox.Text 
-            };
-
-            var status = new StatusProjects
+                MessageBox.Show($"Error de validación: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
             {
-                idStatusProyect = 4
-            };
-
-            _proyectsServices.AddNewProject(newProject.codeProject, newProject.idClient, newProject.nameProject, newProject.descriptionProject);
-            _proyectsServices.StatusProject(newProject.codeProject , status.idStatusProyect);
-
-            requestProjectDataGridView.DataSource = _proyectsServices.GetProjectsByIdClient(Convert.ToInt32(_usersServices.GetClients().Where(u => u.idUser == idUser).Select(e => e.idCliente).FirstOrDefault()));
-            MessageBox.Show("Se ha añadido el proyecto!");
-            nameNewProyectTextBox.Clear();
-            descriptionProjectTextBox.Clear();
+                MessageBox.Show($"Ocurrió un error inesperado: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private string GenerateProjectCode()
@@ -171,6 +208,39 @@ namespace PresentationLayer.Forms.Cliente
             string projectCode = $"U{year}{randomNumber}";
 
             return projectCode;
+        }
+
+        private void DisplayValidationErrors(ValidationResult result)
+        {
+            errorValidation.Clear();
+            ResetErrorLabels();
+
+            foreach (var error in result.Errors)
+            {
+                switch (error.PropertyName)
+                {
+                    case nameof(RequestProjects.nameProject):
+                        errorValidation.SetError(nameNewProyectTextBox, error.ErrorMessage);
+                        errorNameProjectLabel.Text = error.ErrorMessage;
+                        break;
+                    case nameof(RequestProjects.descriptionProject):
+                        errorValidation.SetError(descriptionProjectTextBox, error.ErrorMessage);
+                        errorDescriptionLabel.Text = error.ErrorMessage;
+                        break;
+                    default:
+                        Console.WriteLine($"Error en un campo no reconocido: {error.PropertyName}");
+                        break;
+                }
+            }
+        }
+
+        private void ResetErrorLabels()
+        {
+            errorNameProjectLabel.Text = string.Empty;
+            errorDescriptionLabel.Text = string.Empty;
+
+            errorValidation.SetError(nameNewProyectTextBox, string.Empty);
+            errorValidation.SetError(descriptionProjectTextBox, string.Empty);
         }
     }
 }
