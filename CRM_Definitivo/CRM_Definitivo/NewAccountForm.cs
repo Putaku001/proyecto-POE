@@ -26,7 +26,6 @@ namespace PresentationLayer
     public partial class NewAccountForm : Form
     {
         private readonly IUsersServices _usersServices;
-        bool isEditing = false;
         byte[] imageBytes;
 
 
@@ -35,8 +34,8 @@ namespace PresentationLayer
             InitializeComponent();
             _usersServices = usersServices;
             LoadProvincias();
-        }
 
+        }
 
         private void LoadProvincias()
         {
@@ -89,7 +88,6 @@ namespace PresentationLayer
             toolTip1.SetToolTip(closedPictureBox, "Cerrar ventana");
         }
 
-
         private void minimizePictureBox_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -102,53 +100,38 @@ namespace PresentationLayer
         {
             try
             {
-                if (ValidateFields())
+                User newAccount = new User
                 {
-                    if (!IsValidEmail(emailTextBox.Text))
-                    {
-                        MessageBox.Show("El formato del correo electrónico no es válido.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                    }
+                    UserAccount = userNameTextBox.Text,
+                    idRol = 4,
+                    NameUser = nameTexBox.Text,
+                    LastName = lastNameTexBox.Text,
+                    Email = emailTextBox.Text,
+                    Birthdate = BirthdayDataTimePicker.Value,
+                    NumberPhone = numberPhoneTextBox.Text,
+                    passworduser = HashPassword(passwordTextBox.Text),
+                    Country = (string)listCountrysComboBox.SelectedValue,
+                    City = (string)listCityComboBox.SelectedValue,
+                    Statususer = "Activo",
+                    Image = imageBytes,
+                    DateRegistration = DateTime.Now,
+                };
 
-                    string password = passwordTextBox.Text;
-                    if (password.Length < 8)
-                    {
-                        MessageBox.Show("La contraseña debe tener al menos 8 caracteres.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                    }
+                NewAccountValidation newAccountValidation = new NewAccountValidation();
+                ValidationResult result = newAccountValidation.Validate(newAccount);
 
-                    User newAccount = new User
-                    {
-                        UserAccount = userNameTextBox.Text,
-                        idRol = 4,
-                        NameUser = nameTexBox.Text,
-                        LastName = lastNameTexBox.Text,
-                        Email = emailTextBox.Text,
-                        Birthdate = BirthdayDataTimePicker.Value,
-                        NumberPhone = numberPhoneTextBox.Text,
-                        passworduser = HashPassword(password),
-                        Country = (string)listCountrysComboBox.SelectedValue,
-                        City = (string)listCityComboBox.SelectedValue,
-                        Statususer = "Activo",
-                        Image = imageBytes,
-                        DateRegistration = DateTime.Now,
-                    };
-
-                    _usersServices.AddUsers(newAccount);
-                    CleanFields();
-
-                    MessageBox.Show("La cuenta se ha creado con éxito.");
-
-                    notifyIcon1.BalloonTipTitle = $"Bienvenido {userNameTextBox.Text}, usted se ha registrado correctamente a los Tilinazos77";
-                    notifyIcon1.BalloonTipText = "Ver detalles";
-                    notifyIcon1.Icon = SystemIcons.Information;
-                    notifyIcon1.ShowBalloonTip(3000);
-
-                    this.Close();
+                if (!result.IsValid)
+                {
+                    DisplayValidationErrors(result);
+                    return;
                 }
                 else
                 {
-                    MessageBox.Show("Por favor, completa todos los campos requeridos.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    _usersServices.AddUsers(newAccount);
+                    CleanFields();
+                    ShowSuccessNotification(newAccount.UserAccount);
+                    MessageBox.Show("La cuenta se ha creado con éxito.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
                 }
             }
             catch (Exception ex)
@@ -157,27 +140,12 @@ namespace PresentationLayer
             }
         }
 
-        private bool ValidateFields()
+        private void ShowSuccessNotification(string userName)
         {
-            return !string.IsNullOrWhiteSpace(nameTexBox.Text) &&
-                   !string.IsNullOrWhiteSpace(lastNameTexBox.Text) &&
-                   !string.IsNullOrWhiteSpace(emailTextBox.Text) &&
-                   !string.IsNullOrWhiteSpace(numberPhoneTextBox.Text) &&
-                   !string.IsNullOrWhiteSpace(passwordTextBox.Text) &&
-                   listCountrysComboBox.SelectedIndex != 1 &&
-                   listCityComboBox.SelectedIndex != -1;
-        }
-        private bool IsValidEmail(string email)
-        {
-            try
-            {
-                var addr = new System.Net.Mail.MailAddress(email);
-                return addr.Address == email;
-            }
-            catch
-            {
-                return false;
-            }
+            notifyIcon1.BalloonTipTitle = $"Bienvenido {userName}, usted se ha registrado correctamente a los Tilinazos77";
+            notifyIcon1.BalloonTipText = "Ver detalles";
+            notifyIcon1.Icon = SystemIcons.Information;
+            notifyIcon1.ShowBalloonTip(3000);
         }
 
         private string HashPassword(string password)
@@ -234,7 +202,9 @@ namespace PresentationLayer
         private void DisplayValidationErrors(ValidationResult result)
         {
             errorValidation.Clear();
-            //Te daba error aca por el tema de la ambiguedad, tenias como 3 librerias que ocupaban la propiedad result.Errors causando un ambiguedad entre ellos
+
+            ResetErrorLabels();
+
             foreach (var error in result.Errors)
             {
                 switch (error.PropertyName)
@@ -247,11 +217,68 @@ namespace PresentationLayer
                         errorValidation.SetError(nameTexBox, error.ErrorMessage);
                         errorUserNameLabel.Text = error.ErrorMessage;
                         break;
+                    case nameof(User.LastName):
+                        errorValidation.SetError(lastNameTexBox, error.ErrorMessage);
+                        errorLastNameLabel.Text = error.ErrorMessage;
+                        break;
+                    case nameof(User.Email):
+                        errorValidation.SetError(emailTextBox, error.ErrorMessage);
+                        errorEmailLabel.Text = error.ErrorMessage;
+                        break;
+                    case nameof(User.Birthdate):
+                        errorValidation.SetError(BirthdayDataTimePicker, error.ErrorMessage);
+                        errorBirthDayLabel.Text = error.ErrorMessage;
+                        break;
+                    case nameof(User.passworduser):
+                        errorValidation.SetError(passwordTextBox, error.ErrorMessage);
+                        errorPasswordLabel.Text = error.ErrorMessage;
+                        break;
+                    case nameof(User.NumberPhone):
+                        errorValidation.SetError(numberPhoneTextBox, error.ErrorMessage);
+                        errorPhoneNumberLabel.Text = error.ErrorMessage;
+                        break;
+                    case nameof(User.Country):
+                        errorValidation.SetError(listCountrysComboBox, error.ErrorMessage);
+                        errorCountryLabel.Text = error.ErrorMessage;
+                        break;
+                    case nameof(User.City):
+                        errorValidation.SetError(listCityComboBox, error.ErrorMessage);
+                        errorCityLabel.Text = error.ErrorMessage;
+                        break;
+                    case nameof(User.Image):
+                        errorValidation.SetError(selectImageUserLabel, error.ErrorMessage);
+                        errorSelectImagen.Text = error.ErrorMessage;
+                        break;
                     default:
                         Console.WriteLine($"Error en un campo no reconocido: {error.PropertyName}");
                         break;
                 }
             }
+        }
+
+        private void ResetErrorLabels()
+        {
+            errorUserLabel.Text = string.Empty;
+            errorUserNameLabel.Text = string.Empty;
+            errorLastNameLabel.Text = string.Empty;
+            errorEmailLabel.Text = string.Empty;
+            errorBirthDayLabel.Text = string.Empty;
+            errorPasswordLabel.Text = string.Empty;
+            errorPhoneNumberLabel.Text = string.Empty;
+            errorCountryLabel.Text = string.Empty;
+            errorCityLabel.Text = string.Empty;
+            errorSelectImagen.Text = string.Empty;
+
+            errorValidation.SetError(userNameTextBox, string.Empty);
+            errorValidation.SetError(nameTexBox, string.Empty);
+            errorValidation.SetError(lastNameTexBox, string.Empty);
+            errorValidation.SetError(emailTextBox, string.Empty);
+            errorValidation.SetError(BirthdayDataTimePicker, string.Empty);
+            errorValidation.SetError(passwordTextBox, string.Empty);
+            errorValidation.SetError(numberPhoneTextBox, string.Empty);
+            errorValidation.SetError(listCountrysComboBox, string.Empty);
+            errorValidation.SetError(listCityComboBox, string.Empty);
+            errorValidation.SetError(selectImageUserLabel, string.Empty);
         }
 
     }
