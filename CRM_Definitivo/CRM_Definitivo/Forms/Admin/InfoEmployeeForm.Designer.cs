@@ -28,67 +28,98 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InfoEmployeeForm));
-            this.professionLabel = new System.Windows.Forms.Label(); // Corrección
-            this.professionsTextBox = new System.Windows.Forms.TextBox(); // Corrección
-            this.iconSaveInformationButton = new FontAwesome.Sharp.IconButton();
-            this.workStationLabel = new System.Windows.Forms.Label(); // Corrección
-            this.workStationTextBox = new System.Windows.Forms.TextBox(); // Corrección
-
+            professionLabel = new Label();
+            professionsTextBox = new TextBox();
+            iconSaveInformationButton = new FontAwesome.Sharp.IconButton();
+            workStationLabel = new Label();
+            workStationTextBox = new TextBox();
+            errorValidation = new ErrorProvider(components);
+            errorProfessionLabel = new Label();
+            errorWorkStationLabel = new Label();
+            ((System.ComponentModel.ISupportInitialize)errorValidation).BeginInit();
             SuspendLayout();
             // 
             // professionLabel
             // 
-            this.professionLabel.AutoSize = true;
-            this.professionLabel.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            this.professionLabel.ForeColor = Color.White;
-            this.professionLabel.Location = new Point(279, 21);
-            this.professionLabel.Name = "professionLabel";
-            this.professionLabel.Size = new Size(128, 30);
-            this.professionLabel.TabIndex = 3;
-            this.professionLabel.Text = "Profesión:";
+            professionLabel.AutoSize = true;
+            professionLabel.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            professionLabel.ForeColor = Color.White;
+            professionLabel.Location = new Point(279, 21);
+            professionLabel.Name = "professionLabel";
+            professionLabel.Size = new Size(128, 30);
+            professionLabel.TabIndex = 3;
+            professionLabel.Text = "Profesión:";
             // 
             // professionsTextBox
             // 
-            this.professionsTextBox.Location = new Point(151, 63);
-            this.professionsTextBox.Multiline = true;
-            this.professionsTextBox.Name = "professionsTextBox";
-            this.professionsTextBox.Size = new Size(409, 76);
-            this.professionsTextBox.TabIndex = 4;
+            professionsTextBox.Location = new Point(151, 63);
+            professionsTextBox.Multiline = true;
+            professionsTextBox.Name = "professionsTextBox";
+            professionsTextBox.Size = new Size(409, 76);
+            professionsTextBox.TabIndex = 4;
             // 
             // iconSaveInformationButton
             // 
-            this.iconSaveInformationButton.BackColor = Color.DodgerBlue;
-            this.iconSaveInformationButton.Cursor = Cursors.Hand;
-            this.iconSaveInformationButton.FlatStyle = FlatStyle.Popup;
-            this.iconSaveInformationButton.ForeColor = Color.White;
-            this.iconSaveInformationButton.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconSaveInformationButton.IconColor = Color.DarkTurquoise;
-            this.iconSaveInformationButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconSaveInformationButton.Location = new Point(253, 294);
-            this.iconSaveInformationButton.Name = "iconSaveInformationButton";
-            this.iconSaveInformationButton.Size = new Size(197, 46);
-            this.iconSaveInformationButton.TabIndex = 0;
-            this.iconSaveInformationButton.Text = "Guardar";
-            this.iconSaveInformationButton.UseVisualStyleBackColor = false;
+            iconSaveInformationButton.BackColor = Color.DodgerBlue;
+            iconSaveInformationButton.Cursor = Cursors.Hand;
+            iconSaveInformationButton.FlatStyle = FlatStyle.Popup;
+            iconSaveInformationButton.ForeColor = Color.White;
+            iconSaveInformationButton.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconSaveInformationButton.IconColor = Color.DarkTurquoise;
+            iconSaveInformationButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconSaveInformationButton.Location = new Point(253, 294);
+            iconSaveInformationButton.Name = "iconSaveInformationButton";
+            iconSaveInformationButton.Size = new Size(197, 46);
+            iconSaveInformationButton.TabIndex = 0;
+            iconSaveInformationButton.Text = "Guardar";
+            iconSaveInformationButton.UseVisualStyleBackColor = false;
+            iconSaveInformationButton.Click += iconSaveInformationButton_Click;
             // 
             // workStationLabel
             // 
-            this.workStationLabel.AutoSize = true;
-            this.workStationLabel.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            this.workStationLabel.ForeColor = Color.White;
-            this.workStationLabel.Location = new Point(235, 173);
-            this.workStationLabel.Name = "workStationLabel";
-            this.workStationLabel.Size = new Size(229, 30);
-            this.workStationLabel.TabIndex = 6;
-            this.workStationLabel.Text = "Puesto de trabajo:";
+            workStationLabel.AutoSize = true;
+            workStationLabel.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            workStationLabel.ForeColor = Color.White;
+            workStationLabel.Location = new Point(235, 173);
+            workStationLabel.Name = "workStationLabel";
+            workStationLabel.Size = new Size(229, 30);
+            workStationLabel.TabIndex = 6;
+            workStationLabel.Text = "Puesto de trabajo:";
             // 
             // workStationTextBox
             // 
-            this.workStationTextBox.Location = new Point(163, 216);
-            this.workStationTextBox.Name = "workStationTextBox";
-            this.workStationTextBox.Size = new Size(397, 30);
-            this.workStationTextBox.TabIndex = 7;
+            workStationTextBox.Location = new Point(163, 216);
+            workStationTextBox.Name = "workStationTextBox";
+            workStationTextBox.Size = new Size(397, 30);
+            workStationTextBox.TabIndex = 7;
+            // 
+            // errorValidation
+            // 
+            errorValidation.ContainerControl = this;
+            // 
+            // errorProfessionLabel
+            // 
+            errorProfessionLabel.AutoSize = true;
+            errorProfessionLabel.Font = new Font("Century Gothic", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            errorProfessionLabel.ForeColor = Color.Red;
+            errorProfessionLabel.Location = new Point(154, 145);
+            errorProfessionLabel.Name = "errorProfessionLabel";
+            errorProfessionLabel.Size = new Size(64, 21);
+            errorProfessionLabel.TabIndex = 8;
+            errorProfessionLabel.Text = "label1";
+            // 
+            // errorWorkStationLabel
+            // 
+            errorWorkStationLabel.AutoSize = true;
+            errorWorkStationLabel.Font = new Font("Century Gothic", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            errorWorkStationLabel.ForeColor = Color.Red;
+            errorWorkStationLabel.Location = new Point(163, 249);
+            errorWorkStationLabel.Name = "errorWorkStationLabel";
+            errorWorkStationLabel.Size = new Size(64, 21);
+            errorWorkStationLabel.TabIndex = 9;
+            errorWorkStationLabel.Text = "label2";
             // 
             // InfoEmployeeForm
             // 
@@ -96,15 +127,18 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 54, 61);
             ClientSize = new Size(709, 372);
-            Controls.Add(this.iconSaveInformationButton);
-            Controls.Add(this.workStationLabel);
-            Controls.Add(this.workStationTextBox); // Corrección
-            Controls.Add(this.professionLabel);
-            Controls.Add(this.professionsTextBox);
+            Controls.Add(errorWorkStationLabel);
+            Controls.Add(errorProfessionLabel);
+            Controls.Add(iconSaveInformationButton);
+            Controls.Add(workStationLabel);
+            Controls.Add(workStationTextBox);
+            Controls.Add(professionLabel);
+            Controls.Add(professionsTextBox);
             Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "InfoEmployeeForm";
             Text = "Informacion";
+            ((System.ComponentModel.ISupportInitialize)errorValidation).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -116,5 +150,8 @@
         private System.Windows.Forms.TextBox workStationTextBox;
         private System.Windows.Forms.Label workStationLabel;
         private FontAwesome.Sharp.IconButton iconSaveInformationButton;
+        private ErrorProvider errorValidation;
+        private Label errorWorkStationLabel;
+        private Label errorProfessionLabel;
     }
 }

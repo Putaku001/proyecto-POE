@@ -16,7 +16,8 @@ namespace PresentationLayer.Validations
 
             RuleFor(project => project.nameProject)
                 .NotEmpty().WithMessage("El nombre del proyecto no puede estar vacío.")
-                .Length(5, 20).WithMessage("El nombre del proyecto debe tener entre 5 y 20 caracteres.");
+                .Length(5, 20).WithMessage("El nombre del proyecto debe tener entre 5 y 20 caracteres.")
+                .Matches("^[a-zA-ZÀ-ÿ\\s]+$").WithMessage("El nombre solo puede contener letras y espacios.");
 
             RuleFor(project => project.descriptionProject)
                 .NotEmpty().WithMessage("La descripción del proyecto no puede estar vacía.")
