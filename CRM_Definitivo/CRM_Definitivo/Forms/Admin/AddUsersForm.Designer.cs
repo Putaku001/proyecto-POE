@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddUsersForm));
             addUserLabel = new Label();
             nameLabel = new Label();
@@ -35,6 +36,15 @@
             rolComboBox = new ComboBox();
             rolLabel = new Label();
             detailsUserGroupBox = new GroupBox();
+            errorStatusLabel = new Label();
+            errorPasswordLabel = new Label();
+            errorPhoneNumberLabel = new Label();
+            errorBirthdayLabel = new Label();
+            errorLastNameLabel = new Label();
+            errorNameLabel = new Label();
+            errorRolLabel = new Label();
+            errorEmailLabel = new Label();
+            errorUserNameLabel = new Label();
             emailLabel = new Label();
             emailTextBox = new TextBox();
             nameUserLabel = new Label();
@@ -48,8 +58,13 @@
             passwordTextBox = new TextBox();
             dateLabel = new Label();
             lastNameLabel = new Label();
-            lasNameTextBox = new TextBox();
+            lastNameTextBox = new TextBox();
             countryGroupBox = new GroupBox();
+            errorSelectImagenLabel = new Label();
+            profileLinkLabel = new LinkLabel();
+            profilePictureBox = new PictureBox();
+            errorCityLabel = new Label();
+            errorCountryLabel = new Label();
             dateRegistreDateTimePicker = new DateTimePicker();
             editButton = new FontAwesome.Sharp.IconButton();
             cityLabel = new Label();
@@ -58,9 +73,12 @@
             countrysComboBox = new ComboBox();
             countryUserLabel = new Label();
             informationPanel = new Panel();
+            errorValidation = new ErrorProvider(components);
             detailsUserGroupBox.SuspendLayout();
             countryGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)profilePictureBox).BeginInit();
             informationPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errorValidation).BeginInit();
             SuspendLayout();
             // 
             // addUserLabel
@@ -113,6 +131,15 @@
             // 
             // detailsUserGroupBox
             // 
+            detailsUserGroupBox.Controls.Add(errorStatusLabel);
+            detailsUserGroupBox.Controls.Add(errorPasswordLabel);
+            detailsUserGroupBox.Controls.Add(errorPhoneNumberLabel);
+            detailsUserGroupBox.Controls.Add(errorBirthdayLabel);
+            detailsUserGroupBox.Controls.Add(errorLastNameLabel);
+            detailsUserGroupBox.Controls.Add(errorNameLabel);
+            detailsUserGroupBox.Controls.Add(errorRolLabel);
+            detailsUserGroupBox.Controls.Add(errorEmailLabel);
+            detailsUserGroupBox.Controls.Add(errorUserNameLabel);
             detailsUserGroupBox.Controls.Add(emailLabel);
             detailsUserGroupBox.Controls.Add(emailTextBox);
             detailsUserGroupBox.Controls.Add(nameUserLabel);
@@ -130,7 +157,7 @@
             detailsUserGroupBox.Controls.Add(nameTextBox);
             detailsUserGroupBox.Controls.Add(dateLabel);
             detailsUserGroupBox.Controls.Add(lastNameLabel);
-            detailsUserGroupBox.Controls.Add(lasNameTextBox);
+            detailsUserGroupBox.Controls.Add(lastNameTextBox);
             detailsUserGroupBox.Dock = DockStyle.Left;
             detailsUserGroupBox.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             detailsUserGroupBox.Location = new Point(0, 0);
@@ -139,6 +166,105 @@
             detailsUserGroupBox.TabIndex = 15;
             detailsUserGroupBox.TabStop = false;
             detailsUserGroupBox.Text = "Datos Del Usuario";
+            // 
+            // errorStatusLabel
+            // 
+            errorStatusLabel.AutoSize = true;
+            errorStatusLabel.BackColor = Color.Transparent;
+            errorStatusLabel.Font = new Font("Century Gothic", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            errorStatusLabel.ForeColor = Color.Red;
+            errorStatusLabel.Location = new Point(144, 643);
+            errorStatusLabel.Name = "errorStatusLabel";
+            errorStatusLabel.Size = new Size(0, 21);
+            errorStatusLabel.TabIndex = 32;
+            // 
+            // errorPasswordLabel
+            // 
+            errorPasswordLabel.AutoSize = true;
+            errorPasswordLabel.BackColor = Color.Transparent;
+            errorPasswordLabel.Font = new Font("Century Gothic", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            errorPasswordLabel.ForeColor = Color.Red;
+            errorPasswordLabel.Location = new Point(144, 564);
+            errorPasswordLabel.Name = "errorPasswordLabel";
+            errorPasswordLabel.Size = new Size(0, 21);
+            errorPasswordLabel.TabIndex = 31;
+            // 
+            // errorPhoneNumberLabel
+            // 
+            errorPhoneNumberLabel.AutoSize = true;
+            errorPhoneNumberLabel.BackColor = Color.Transparent;
+            errorPhoneNumberLabel.Font = new Font("Century Gothic", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            errorPhoneNumberLabel.ForeColor = Color.Red;
+            errorPhoneNumberLabel.Location = new Point(140, 495);
+            errorPhoneNumberLabel.Name = "errorPhoneNumberLabel";
+            errorPhoneNumberLabel.Size = new Size(0, 21);
+            errorPhoneNumberLabel.TabIndex = 30;
+            // 
+            // errorBirthdayLabel
+            // 
+            errorBirthdayLabel.AutoSize = true;
+            errorBirthdayLabel.BackColor = Color.Transparent;
+            errorBirthdayLabel.Font = new Font("Century Gothic", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            errorBirthdayLabel.ForeColor = Color.Red;
+            errorBirthdayLabel.Location = new Point(144, 425);
+            errorBirthdayLabel.Name = "errorBirthdayLabel";
+            errorBirthdayLabel.Size = new Size(0, 21);
+            errorBirthdayLabel.TabIndex = 29;
+            // 
+            // errorLastNameLabel
+            // 
+            errorLastNameLabel.AutoSize = true;
+            errorLastNameLabel.BackColor = Color.Transparent;
+            errorLastNameLabel.Font = new Font("Century Gothic", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            errorLastNameLabel.ForeColor = Color.Red;
+            errorLastNameLabel.Location = new Point(144, 358);
+            errorLastNameLabel.Name = "errorLastNameLabel";
+            errorLastNameLabel.Size = new Size(0, 21);
+            errorLastNameLabel.TabIndex = 28;
+            // 
+            // errorNameLabel
+            // 
+            errorNameLabel.AutoSize = true;
+            errorNameLabel.BackColor = Color.Transparent;
+            errorNameLabel.Font = new Font("Century Gothic", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            errorNameLabel.ForeColor = Color.Red;
+            errorNameLabel.Location = new Point(144, 287);
+            errorNameLabel.Name = "errorNameLabel";
+            errorNameLabel.Size = new Size(0, 21);
+            errorNameLabel.TabIndex = 27;
+            // 
+            // errorRolLabel
+            // 
+            errorRolLabel.AutoSize = true;
+            errorRolLabel.BackColor = Color.Transparent;
+            errorRolLabel.Font = new Font("Century Gothic", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            errorRolLabel.ForeColor = Color.Red;
+            errorRolLabel.Location = new Point(140, 210);
+            errorRolLabel.Name = "errorRolLabel";
+            errorRolLabel.Size = new Size(0, 21);
+            errorRolLabel.TabIndex = 26;
+            // 
+            // errorEmailLabel
+            // 
+            errorEmailLabel.AutoSize = true;
+            errorEmailLabel.BackColor = Color.Transparent;
+            errorEmailLabel.Font = new Font("Century Gothic", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            errorEmailLabel.ForeColor = Color.Red;
+            errorEmailLabel.Location = new Point(140, 141);
+            errorEmailLabel.Name = "errorEmailLabel";
+            errorEmailLabel.Size = new Size(0, 21);
+            errorEmailLabel.TabIndex = 25;
+            // 
+            // errorUserNameLabel
+            // 
+            errorUserNameLabel.AutoSize = true;
+            errorUserNameLabel.BackColor = Color.Transparent;
+            errorUserNameLabel.Font = new Font("Century Gothic", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            errorUserNameLabel.ForeColor = Color.Red;
+            errorUserNameLabel.Location = new Point(140, 74);
+            errorUserNameLabel.Name = "errorUserNameLabel";
+            errorUserNameLabel.Size = new Size(0, 21);
+            errorUserNameLabel.TabIndex = 24;
             // 
             // emailLabel
             // 
@@ -237,11 +363,11 @@
             // 
             dateLabel.AutoSize = true;
             dateLabel.ForeColor = Color.Black;
-            dateLabel.Location = new Point(156, 389);
+            dateLabel.Location = new Point(0, 389);
             dateLabel.Name = "dateLabel";
-            dateLabel.Size = new Size(72, 23);
+            dateLabel.Size = new Size(228, 23);
             dateLabel.TabIndex = 3;
-            dateLabel.Text = "Fecha";
+            dateLabel.Text = "Fecha de Nacimiento:";
             // 
             // lastNameLabel
             // 
@@ -253,15 +379,20 @@
             lastNameLabel.TabIndex = 5;
             lastNameLabel.Text = "Apellido:";
             // 
-            // lasNameTextBox
+            // lastNameTextBox
             // 
-            lasNameTextBox.Location = new Point(264, 318);
-            lasNameTextBox.Name = "lasNameTextBox";
-            lasNameTextBox.Size = new Size(344, 32);
-            lasNameTextBox.TabIndex = 6;
+            lastNameTextBox.Location = new Point(264, 318);
+            lastNameTextBox.Name = "lastNameTextBox";
+            lastNameTextBox.Size = new Size(344, 32);
+            lastNameTextBox.TabIndex = 6;
             // 
             // countryGroupBox
             // 
+            countryGroupBox.Controls.Add(errorSelectImagenLabel);
+            countryGroupBox.Controls.Add(profileLinkLabel);
+            countryGroupBox.Controls.Add(profilePictureBox);
+            countryGroupBox.Controls.Add(errorCityLabel);
+            countryGroupBox.Controls.Add(errorCountryLabel);
             countryGroupBox.Controls.Add(dateRegistreDateTimePicker);
             countryGroupBox.Controls.Add(editButton);
             countryGroupBox.Controls.Add(cityLabel);
@@ -278,6 +409,59 @@
             countryGroupBox.TabIndex = 16;
             countryGroupBox.TabStop = false;
             countryGroupBox.Text = "Provinencia";
+            // 
+            // errorSelectImagenLabel
+            // 
+            errorSelectImagenLabel.AutoSize = true;
+            errorSelectImagenLabel.BackColor = Color.Transparent;
+            errorSelectImagenLabel.Font = new Font("Century Gothic", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            errorSelectImagenLabel.ForeColor = Color.Red;
+            errorSelectImagenLabel.Location = new Point(60, 509);
+            errorSelectImagenLabel.Name = "errorSelectImagenLabel";
+            errorSelectImagenLabel.Size = new Size(0, 21);
+            errorSelectImagenLabel.TabIndex = 36;
+            // 
+            // profileLinkLabel
+            // 
+            profileLinkLabel.AutoSize = true;
+            profileLinkLabel.Location = new Point(159, 476);
+            profileLinkLabel.Name = "profileLinkLabel";
+            profileLinkLabel.Size = new Size(293, 23);
+            profileLinkLabel.TabIndex = 35;
+            profileLinkLabel.TabStop = true;
+            profileLinkLabel.Text = "Seleccione una foto de perfil";
+            profileLinkLabel.LinkClicked += profileLinkLabel_LinkClicked;
+            // 
+            // profilePictureBox
+            // 
+            profilePictureBox.BackColor = Color.White;
+            profilePictureBox.Location = new Point(189, 287);
+            profilePictureBox.Name = "profilePictureBox";
+            profilePictureBox.Size = new Size(224, 173);
+            profilePictureBox.TabIndex = 34;
+            profilePictureBox.TabStop = false;
+            // 
+            // errorCityLabel
+            // 
+            errorCityLabel.AutoSize = true;
+            errorCityLabel.BackColor = Color.Transparent;
+            errorCityLabel.Font = new Font("Century Gothic", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            errorCityLabel.ForeColor = Color.Red;
+            errorCityLabel.Location = new Point(60, 172);
+            errorCityLabel.Name = "errorCityLabel";
+            errorCityLabel.Size = new Size(0, 21);
+            errorCityLabel.TabIndex = 33;
+            // 
+            // errorCountryLabel
+            // 
+            errorCountryLabel.AutoSize = true;
+            errorCountryLabel.BackColor = Color.Transparent;
+            errorCountryLabel.Font = new Font("Century Gothic", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            errorCountryLabel.ForeColor = Color.Red;
+            errorCountryLabel.Location = new Point(60, 86);
+            errorCountryLabel.Name = "errorCountryLabel";
+            errorCountryLabel.Size = new Size(0, 21);
+            errorCountryLabel.TabIndex = 32;
             // 
             // dateRegistreDateTimePicker
             // 
@@ -298,7 +482,7 @@
             editButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             editButton.IconSize = 28;
             editButton.ImageAlign = ContentAlignment.MiddleLeft;
-            editButton.Location = new Point(341, 380);
+            editButton.Location = new Point(327, 618);
             editButton.Name = "editButton";
             editButton.Size = new Size(215, 46);
             editButton.TabIndex = 18;
@@ -334,7 +518,7 @@
             saveButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             saveButton.IconSize = 28;
             saveButton.ImageAlign = ContentAlignment.MiddleLeft;
-            saveButton.Location = new Point(38, 380);
+            saveButton.Location = new Point(24, 618);
             saveButton.Name = "saveButton";
             saveButton.Size = new Size(215, 46);
             saveButton.TabIndex = 17;
@@ -370,6 +554,10 @@
             informationPanel.Size = new Size(1293, 735);
             informationPanel.TabIndex = 19;
             // 
+            // errorValidation
+            // 
+            errorValidation.ContainerControl = this;
+            // 
             // AddUsersForm
             // 
             AutoScaleDimensions = new SizeF(12F, 23F);
@@ -390,7 +578,9 @@
             detailsUserGroupBox.PerformLayout();
             countryGroupBox.ResumeLayout(false);
             countryGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)profilePictureBox).EndInit();
             informationPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)errorValidation).EndInit();
             ResumeLayout(false);
         }
 
@@ -401,7 +591,7 @@
         private TextBox nameTextBox;
         private ComboBox rolComboBox;
         private Label rolLabel;
-        private Label label7;
+        private Label errorPhoneNumberLabel;
         private ComboBox c;
         private GroupBox detailsUserGroupBox;
         private Label passwordLabel;
@@ -416,7 +606,7 @@
         private TextBox numberPhoneTextBox;
         private Label dateLabel;
         private Label lastNameLabel;
-        private TextBox lasNameTextBox;
+        private TextBox lastNameTextBox;
         private DateTimePicker birthdateDateTimePicker;
         private Label cityLabel;
         private ComboBox cityListComboBox;
@@ -427,5 +617,19 @@
         private Label emailLabel;
         private TextBox emailTextBox;
         private Panel informationPanel;
+        private Label errorUserNameLabel;
+        private ErrorProvider errorValidation;
+        private Label errorPasswordLabel;
+        private Label errorBirthdayLabel;
+        private Label errorLastNameLabel;
+        private Label errorNameLabel;
+        private Label errorRolLabel;
+        private Label errorEmailLabel;
+        private Label errorCityLabel;
+        private Label errorCountryLabel;
+        private Label errorStatusLabel;
+        private PictureBox profilePictureBox;
+        private LinkLabel profileLinkLabel;
+        private Label errorSelectImagenLabel;
     }
 }

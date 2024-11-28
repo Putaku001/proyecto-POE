@@ -2,9 +2,11 @@
 using BusinessLayer.Services.Interfaces;
 using BusinessLayer.Services.InterfacesServices;
 using CommonLayer.Entities;
+using FluentValidation.Results;
 using Microsoft.Extensions.DependencyInjection;
 using PresentationLayer.Forms.Admin;
 using PresentationLayer.Resources;
+using PresentationLayer.Validations;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,6 +26,7 @@ namespace PresentationLayer.Forms
         private IRolServices rolServices;
         private UsersForm _formularioPrincipal;
         bool IsEditing = false;
+        byte[] imageBytes;
         private User _usuario;
 
         public AddUsersForm(IUsersServices _usuersServices, IRolServices _rolServices, User usuario = null)
@@ -53,18 +56,25 @@ namespace PresentationLayer.Forms
 
             if (IsEditing)
             {
-
-
                 rolComboBox.SelectedValue = _usuario.idRol;
-
-
                 nameUserTextBox.Text = _usuario.UserAccount;
                 emailTextBox.Text = _usuario.Email;
                 nameTextBox.Text = _usuario.NameUser;
-                lasNameTextBox.Text = _usuario.LastName;
+                lastNameTextBox.Text = _usuario.LastName;
                 birthdateDateTimePicker.Value = _usuario.Birthdate;
                 numberPhoneTextBox.Text = _usuario.NumberPhone;
                 passwordTextBox.Text = _usuario.passworduser;
+                imageBytes = _usuario.Image;
+
+
+                if (imageBytes != null)
+                {
+                    using (MemoryStream ms = new MemoryStream(imageBytes))
+                    {
+                        profilePictureBox.Image = Image.FromStream(ms);
+                    }
+                }
+
 
                 if (countrysComboBox.Items.Count > 0)
                 {
@@ -94,7 +104,7 @@ namespace PresentationLayer.Forms
         {
             nameUserTextBox.Clear();
             nameTextBox.Clear();
-            lasNameTextBox.Clear();
+            lastNameTextBox.Clear();
             numberPhoneTextBox.Clear();
             passwordTextBox.Clear();
 
@@ -160,52 +170,104 @@ namespace PresentationLayer.Forms
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            User usuario = new User()
+            try
             {
-                UserAccount = nameUserTextBox.Text,
-                Email = emailTextBox.Text,
-                idRol = Convert.ToInt32(rolComboBox.SelectedValue),
-                NameUser = nameTextBox.Text,
-                LastName = lasNameTextBox.Text,
-                Birthdate = birthdateDateTimePicker.Value,
-                NumberPhone = numberPhoneTextBox.Text,
-                passworduser = passwordTextBox.Text,
-                Country = (string)countrysComboBox.SelectedValue,
-                City = (string)cityListComboBox.SelectedValue,
-                Statususer = (string)statusComboBox.SelectedValue,
-                DateRegistration = DateTime.Now,
-            };
+                User newAccount = new User()
+                {
+                    UserAccount = nameUserTextBox.Text,
+                    Email = emailTextBox.Text,
+                    idRol = Convert.ToInt32(rolComboBox.SelectedValue),
+                    NameUser = nameTextBox.Text,
+                    LastName = lastNameTextBox.Text,
+                    Birthdate = birthdateDateTimePicker.Value,
+                    NumberPhone = numberPhoneTextBox.Text,
+                    passworduser = passwordTextBox.Text,
+                    Country = (string)countrysComboBox.SelectedValue,
+                    City = (string)cityListComboBox.SelectedValue,
+                    Statususer = (string)statusComboBox.SelectedValue,
+                    Image = imageBytes,
+                    DateRegistration = DateTime.Now
+                };
 
-            _usuersservices.AddUsers(usuario);
+                AddUserValidation newAccountValidation = new AddUserValidation();
+                ValidationResult result = newAccountValidation.Validate(newAccount);
 
-            LoadProvincias();
-            AddUsuario?.Invoke(this, EventArgs.Empty);
-            ClearFields();
-            this.Close();
+                if (!result.IsValid)
+                {
+                    DisplayValidationErrors(result);
+                    return;
+                }
+
+                _usuersservices.AddUsers(newAccount);
+                MessageBox.Show("La cuenta se ha creado con éxito.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadProvincias();
+                AddUsuario?.Invoke(this, EventArgs.Empty);
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al crear la cuenta: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
 
 
 
         private void editButton_Click(object sender, EventArgs e)
         {
-            _usuario.UserAccount = nameUserTextBox.Text;
-            _usuario.Email = emailTextBox.Text;
-            _usuario.idRol = Convert.ToInt32(rolComboBox.SelectedValue);
-            _usuario.NameUser = nameTextBox.Text;
-            _usuario.Birthdate = birthdateDateTimePicker.Value;
-            _usuario.NumberPhone = numberPhoneTextBox.Text;
-            _usuario.passworduser = passwordTextBox.Text;
-            _usuario.Country = (string)countrysComboBox.SelectedValue;
-            _usuario.City = (string)cityListComboBox.SelectedValue;
-            _usuario.Statususer = (string)statusComboBox.SelectedValue;
-            _usuario.DateRegistration = DateTime.Now;
+            try
+            {
+                if (rolComboBox.SelectedValue == null || Convert.ToInt32(rolComboBox.SelectedValue) <= 0)
+                {
+                    MessageBox.Show("Debe seleccionar un rol válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return; 
+                }
 
-            _usuersservices.EditUsers(_usuario);
-            MessageBox.Show("Usuario editado correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            EditUsuariosHandler?.Invoke(this, EventArgs.Empty);
-            ClearFields();
-            this.Close();
+                _usuario.UserAccount = nameUserTextBox.Text;
+                _usuario.Email = emailTextBox.Text;
+                _usuario.idRol = Convert.ToInt32(rolComboBox.SelectedValue); 
+                _usuario.NameUser = nameTextBox.Text;
+                _usuario.LastName = lastNameTextBox.Text;
+                _usuario.Birthdate = birthdateDateTimePicker.Value;
+                _usuario.NumberPhone = numberPhoneTextBox.Text;
+                _usuario.passworduser = passwordTextBox.Text;
+                _usuario.Country = (string)countrysComboBox.SelectedValue;
+                _usuario.City = (string)cityListComboBox.SelectedValue;
+                _usuario.Statususer = (string)statusComboBox.SelectedValue;
+
+
+         
+                if (imageBytes != null)
+                {
+                    _usuario.Image = imageBytes;
+                }
+
+                _usuario.DateRegistration = DateTime.Now; 
+
+                AddUserValidation newAccountValidation = new AddUserValidation();
+                ValidationResult result = newAccountValidation.Validate(_usuario);
+
+                if (!result.IsValid)
+                {
+                    DisplayValidationErrors(result);
+                    return;
+                }
+
+                _usuersservices.EditUsers(_usuario);
+
+                MessageBox.Show("Usuario editado correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                EditUsuariosHandler?.Invoke(this, EventArgs.Empty);
+
+                ClearFields();
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al editar el usuario: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
 
         private void rolComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -223,6 +285,119 @@ namespace PresentationLayer.Forms
             }
         }
 
+        private void DisplayValidationErrors(ValidationResult result)
+        {
+            errorValidation.Clear();
 
+            ResetErrorLabels();
+
+            foreach (var error in result.Errors)
+            {
+                switch (error.PropertyName)
+                {
+                    case nameof(User.UserAccount):
+                        errorValidation.SetError(nameUserTextBox, error.ErrorMessage);
+                        errorUserNameLabel.Text = error.ErrorMessage;
+                        break;
+                    case nameof(User.NameUser):
+                        errorValidation.SetError(nameTextBox, error.ErrorMessage);
+                        errorNameLabel.Text = error.ErrorMessage;
+                        break;
+                    case nameof(User.LastName):
+                        errorValidation.SetError(lastNameTextBox, error.ErrorMessage);
+                        errorLastNameLabel.Text = error.ErrorMessage;
+                        break;
+                    case nameof(User.Email):
+                        errorValidation.SetError(emailTextBox, error.ErrorMessage);
+                        errorEmailLabel.Text = error.ErrorMessage;
+                        break;
+                    case nameof(User.Birthdate):
+                        errorValidation.SetError(birthdateDateTimePicker, error.ErrorMessage);
+                        errorBirthdayLabel.Text = error.ErrorMessage;
+                        break;
+                    case nameof(User.passworduser):
+                        errorValidation.SetError(passwordTextBox, error.ErrorMessage);
+                        errorPasswordLabel.Text = error.ErrorMessage;
+                        break;
+                    case nameof(User.NumberPhone):
+                        errorValidation.SetError(numberPhoneTextBox, error.ErrorMessage);
+                        errorPhoneNumberLabel.Text = error.ErrorMessage;
+                        break;
+                    case nameof(User.Country):
+                        errorValidation.SetError(countrysComboBox, error.ErrorMessage);
+                        errorCountryLabel.Text = error.ErrorMessage;
+                        break;
+                    case nameof(User.City):
+                        errorValidation.SetError(cityListComboBox, error.ErrorMessage);
+                        errorCityLabel.Text = error.ErrorMessage;
+                        break;
+                    case nameof(User.Rol):
+                        errorValidation.SetError(rolComboBox, error.ErrorMessage);
+                        errorRolLabel.Text = error.ErrorMessage;
+                        break;
+                    case nameof(User.Statususer):
+                        errorValidation.SetError(statusComboBox, error.ErrorMessage);
+                        errorStatusLabel.Text = error.ErrorMessage;
+                        break;
+                    case nameof(User.Image):
+                        errorValidation.SetError(profileLinkLabel, error.ErrorMessage);
+                        errorSelectImagenLabel.Text = error.ErrorMessage;
+                        break;
+                    default:
+                        Console.WriteLine($"Error en un campo no reconocido: {error.PropertyName}");
+                        break;
+                }
+            }
+        }
+
+        private void ResetErrorLabels()
+        {
+            errorNameLabel.Text = string.Empty;
+            errorUserNameLabel.Text = string.Empty;
+            errorLastNameLabel.Text = string.Empty;
+            errorEmailLabel.Text = string.Empty;
+            errorBirthdayLabel.Text = string.Empty;
+            errorPasswordLabel.Text = string.Empty;
+            errorPhoneNumberLabel.Text = string.Empty;
+            errorCountryLabel.Text = string.Empty;
+            errorCityLabel.Text = string.Empty;
+            errorRolLabel.Text = string.Empty;
+            errorStatusLabel.Text = string.Empty;
+            errorSelectImagenLabel.Text = string.Empty;
+
+
+            errorValidation.SetError(nameUserTextBox, string.Empty);
+            errorValidation.SetError(nameTextBox, string.Empty);
+            errorValidation.SetError(lastNameTextBox, string.Empty);
+            errorValidation.SetError(emailTextBox, string.Empty);
+            errorValidation.SetError(birthdateDateTimePicker, string.Empty);
+            errorValidation.SetError(passwordTextBox, string.Empty);
+            errorValidation.SetError(numberPhoneTextBox, string.Empty);
+            errorValidation.SetError(countrysComboBox, string.Empty);
+            errorValidation.SetError(cityListComboBox, string.Empty);
+            errorValidation.SetError(rolComboBox, string.Empty);
+            errorValidation.SetError(statusComboBox, string.Empty);
+            errorValidation.SetError(profileLinkLabel, string.Empty);
+        }
+
+        private void profileLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            OpenFileDialog photoUser = new OpenFileDialog();
+            photoUser.Filter = "Archivos de imagenes (*.png; *.jpg; *.jpeg; *.WEBP) | *.png; *.jpg; *.jpeg; *.WEBP";
+
+            if (photoUser.ShowDialog() == DialogResult.OK)
+            {
+                profilePictureBox.Image = System.Drawing.Image.FromFile(photoUser.FileName);
+
+                if (profilePictureBox.Image != null)
+                {
+                    using (MemoryStream memoryStream = new MemoryStream())
+                    {
+                        profilePictureBox.Image.Save(memoryStream, System.Drawing.Imaging.ImageFormat.Png);
+                        imageBytes = memoryStream.ToArray();
+                    }
+                }
+            }
+        }
     }
 }
