@@ -28,16 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             newPasswordTexBox = new TextBox();
             confirmPasswordTexBox = new TextBox();
             changePasswordGroupBox = new GroupBox();
+            errorPasswordChangeLabel = new Label();
             changePasswordButton = new FontAwesome.Sharp.IconButton();
             confirmPasswordLabel = new Label();
             newPasswordLabel = new Label();
             menuStrip1 = new MenuStrip();
             restablecerLaContraseñaToolStripMenuItem = new ToolStripMenuItem();
+            errorValidation = new ErrorProvider(components);
             changePasswordGroupBox.SuspendLayout();
             menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errorValidation).BeginInit();
             SuspendLayout();
             // 
             // newPasswordTexBox
@@ -62,6 +66,7 @@
             // 
             // changePasswordGroupBox
             // 
+            changePasswordGroupBox.Controls.Add(errorPasswordChangeLabel);
             changePasswordGroupBox.Controls.Add(changePasswordButton);
             changePasswordGroupBox.Controls.Add(confirmPasswordLabel);
             changePasswordGroupBox.Controls.Add(newPasswordLabel);
@@ -76,6 +81,17 @@
             changePasswordGroupBox.TabIndex = 3;
             changePasswordGroupBox.TabStop = false;
             changePasswordGroupBox.Text = "Nueva Contraseña";
+            // 
+            // errorPasswordChangeLabel
+            // 
+            errorPasswordChangeLabel.AutoSize = true;
+            errorPasswordChangeLabel.BackColor = Color.Transparent;
+            errorPasswordChangeLabel.Font = new Font("Century Gothic", 8F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            errorPasswordChangeLabel.ForeColor = Color.Red;
+            errorPasswordChangeLabel.Location = new Point(43, 148);
+            errorPasswordChangeLabel.Name = "errorPasswordChangeLabel";
+            errorPasswordChangeLabel.Size = new Size(0, 19);
+            errorPasswordChangeLabel.TabIndex = 56;
             // 
             // changePasswordButton
             // 
@@ -134,6 +150,10 @@
             restablecerLaContraseñaToolStripMenuItem.Size = new Size(385, 38);
             restablecerLaContraseñaToolStripMenuItem.Text = "Restablecer la contraseña";
             // 
+            // errorValidation
+            // 
+            errorValidation.ContainerControl = this;
+            // 
             // ChangePasswordForm
             // 
             AutoScaleDimensions = new SizeF(11F, 21F);
@@ -152,6 +172,7 @@
             changePasswordGroupBox.PerformLayout();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)errorValidation).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -166,5 +187,7 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem restablecerLaContraseñaToolStripMenuItem;
         private FontAwesome.Sharp.IconButton changePasswordButton;
+        private Label errorPasswordChangeLabel;
+        private ErrorProvider errorValidation;
     }
 }

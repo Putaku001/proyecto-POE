@@ -58,7 +58,7 @@
             listCityComboBox = new ComboBox();
             listCountrysComboBox = new ComboBox();
             countryLabel = new Label();
-            BirthdayDataTimePicker = new DateTimePicker();
+            birthdayDateTimePicker = new DateTimePicker();
             phoneNumberLabel = new Label();
             numberPhoneTextBox = new TextBox();
             passwordLabel = new Label();
@@ -149,7 +149,7 @@
             registerGroupBox.Controls.Add(listCityComboBox);
             registerGroupBox.Controls.Add(listCountrysComboBox);
             registerGroupBox.Controls.Add(countryLabel);
-            registerGroupBox.Controls.Add(BirthdayDataTimePicker);
+            registerGroupBox.Controls.Add(birthdayDateTimePicker);
             registerGroupBox.Controls.Add(phoneNumberLabel);
             registerGroupBox.Controls.Add(numberPhoneTextBox);
             registerGroupBox.Controls.Add(passwordLabel);
@@ -415,12 +415,12 @@
             countryLabel.TabIndex = 31;
             countryLabel.Text = "Pais:";
             // 
-            // BirthdayDataTimePicker
+            // birthdayDateTimePicker
             // 
-            BirthdayDataTimePicker.Location = new Point(253, 546);
-            BirthdayDataTimePicker.Name = "BirthdayDataTimePicker";
-            BirthdayDataTimePicker.Size = new Size(332, 30);
-            BirthdayDataTimePicker.TabIndex = 5;
+            birthdayDateTimePicker.Location = new Point(253, 546);
+            birthdayDateTimePicker.Name = "birthdayDateTimePicker";
+            birthdayDateTimePicker.Size = new Size(332, 30);
+            birthdayDateTimePicker.TabIndex = 5;
             // 
             // phoneNumberLabel
             // 
@@ -534,7 +534,7 @@
         private PictureBox closedPictureBox;
         private Label titleLabel;
         private GroupBox registerGroupBox;
-        private DateTimePicker BirthdayDataTimePicker;
+        private DateTimePicker birthdayDateTimePicker;
         private Label phoneNumberLabel;
         private TextBox numberPhoneTextBox;
         private Label passwordLabel;

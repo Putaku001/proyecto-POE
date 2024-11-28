@@ -28,33 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             pictureBoxProfileUser = new PictureBox();
-            lblPhotoProfileChangeUser = new Label();
+            photoProfileChangeUserLabel = new Label();
             informationUserGroupBox = new GroupBox();
-            datetimeDateUser = new DateTimePicker();
-            label5 = new Label();
-            textboxLastNameUser = new TextBox();
-            label4 = new Label();
-            textboxNumberphoneUser = new TextBox();
-            label3 = new Label();
-            textboxNameUser = new TextBox();
-            label2 = new Label();
-            gbResidenceUser = new GroupBox();
-            iconButtonSaveProfile = new FontAwesome.Sharp.IconButton();
-            comboboxCityUser = new ComboBox();
-            comboboxCountryUser = new ComboBox();
-            label9 = new Label();
-            label7 = new Label();
-            gbAccountUser = new GroupBox();
-            textBoxUserAccount = new TextBox();
-            label1 = new Label();
-            labelChangePasswordProfile = new Label();
-            textboxPasswordChangeUser = new TextBox();
-            label8 = new Label();
+            errorBirthdayLabel = new Label();
+            errorPhoneNumberLabel = new Label();
+            errorLastNameLabel = new Label();
+            errorNameLabel = new Label();
+            birthdayDateTimePicker = new DateTimePicker();
+            birthdayLabel = new Label();
+            lastNameTextBox = new TextBox();
+            lastNameLabel = new Label();
+            phoneNumberTextBox = new TextBox();
+            phoneNumberLabel = new Label();
+            nameTextBox = new TextBox();
+            nameLabel = new Label();
+            residenceUserGroupBox = new GroupBox();
+            errorCityLabel = new Label();
+            errorCountryLabel = new Label();
+            listCityComboBox = new ComboBox();
+            listCountryComboBox = new ComboBox();
+            countryLabel = new Label();
+            listCityLabel = new Label();
+            saveProfileButton = new FontAwesome.Sharp.IconButton();
+            accountUserGroupBox = new GroupBox();
+            errorUserNameLabel = new Label();
+            userNameTextBox = new TextBox();
+            userNameLabel = new Label();
+            changePasswordProfileLabel = new Label();
+            passwordChangeUserTextBox = new TextBox();
+            passwordLabel = new Label();
+            errorValidation = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)pictureBoxProfileUser).BeginInit();
             informationUserGroupBox.SuspendLayout();
-            gbResidenceUser.SuspendLayout();
-            gbAccountUser.SuspendLayout();
+            residenceUserGroupBox.SuspendLayout();
+            accountUserGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errorValidation).BeginInit();
             SuspendLayout();
             // 
             // pictureBoxProfileUser
@@ -68,31 +78,35 @@
             pictureBoxProfileUser.TabIndex = 0;
             pictureBoxProfileUser.TabStop = false;
             // 
-            // lblPhotoProfileChangeUser
+            // photoProfileChangeUserLabel
             // 
-            lblPhotoProfileChangeUser.AutoSize = true;
-            lblPhotoProfileChangeUser.BackColor = Color.Transparent;
-            lblPhotoProfileChangeUser.Cursor = Cursors.Hand;
-            lblPhotoProfileChangeUser.Font = new Font("Century Gothic", 9F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            lblPhotoProfileChangeUser.ForeColor = Color.Black;
-            lblPhotoProfileChangeUser.Location = new Point(59, 289);
-            lblPhotoProfileChangeUser.Name = "lblPhotoProfileChangeUser";
-            lblPhotoProfileChangeUser.Size = new Size(203, 21);
-            lblPhotoProfileChangeUser.TabIndex = 1;
-            lblPhotoProfileChangeUser.Text = "Cambiar foto de perfil";
-            lblPhotoProfileChangeUser.Click += lblPhotoProfileChangeUser_Click;
+            photoProfileChangeUserLabel.AutoSize = true;
+            photoProfileChangeUserLabel.BackColor = Color.Transparent;
+            photoProfileChangeUserLabel.Cursor = Cursors.Hand;
+            photoProfileChangeUserLabel.Font = new Font("Century Gothic", 9F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            photoProfileChangeUserLabel.ForeColor = Color.Black;
+            photoProfileChangeUserLabel.Location = new Point(59, 289);
+            photoProfileChangeUserLabel.Name = "photoProfileChangeUserLabel";
+            photoProfileChangeUserLabel.Size = new Size(203, 21);
+            photoProfileChangeUserLabel.TabIndex = 1;
+            photoProfileChangeUserLabel.Text = "Cambiar foto de perfil";
+            photoProfileChangeUserLabel.Click += photoProfileChangeUserLabel_Click;
             // 
             // informationUserGroupBox
             // 
             informationUserGroupBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            informationUserGroupBox.Controls.Add(datetimeDateUser);
-            informationUserGroupBox.Controls.Add(label5);
-            informationUserGroupBox.Controls.Add(textboxLastNameUser);
-            informationUserGroupBox.Controls.Add(label4);
-            informationUserGroupBox.Controls.Add(textboxNumberphoneUser);
-            informationUserGroupBox.Controls.Add(label3);
-            informationUserGroupBox.Controls.Add(textboxNameUser);
-            informationUserGroupBox.Controls.Add(label2);
+            informationUserGroupBox.Controls.Add(errorBirthdayLabel);
+            informationUserGroupBox.Controls.Add(errorPhoneNumberLabel);
+            informationUserGroupBox.Controls.Add(errorLastNameLabel);
+            informationUserGroupBox.Controls.Add(errorNameLabel);
+            informationUserGroupBox.Controls.Add(birthdayDateTimePicker);
+            informationUserGroupBox.Controls.Add(birthdayLabel);
+            informationUserGroupBox.Controls.Add(lastNameTextBox);
+            informationUserGroupBox.Controls.Add(lastNameLabel);
+            informationUserGroupBox.Controls.Add(phoneNumberTextBox);
+            informationUserGroupBox.Controls.Add(phoneNumberLabel);
+            informationUserGroupBox.Controls.Add(nameTextBox);
+            informationUserGroupBox.Controls.Add(nameLabel);
             informationUserGroupBox.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             informationUserGroupBox.Location = new Point(314, 24);
             informationUserGroupBox.Name = "informationUserGroupBox";
@@ -101,208 +115,292 @@
             informationUserGroupBox.TabStop = false;
             informationUserGroupBox.Text = "Informacion";
             // 
-            // datetimeDateUser
+            // errorBirthdayLabel
             // 
-            datetimeDateUser.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            datetimeDateUser.Location = new Point(127, 265);
-            datetimeDateUser.Name = "datetimeDateUser";
-            datetimeDateUser.Size = new Size(389, 32);
-            datetimeDateUser.TabIndex = 7;
+            errorBirthdayLabel.AutoSize = true;
+            errorBirthdayLabel.BackColor = Color.Transparent;
+            errorBirthdayLabel.Font = new Font("Century Gothic", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            errorBirthdayLabel.ForeColor = Color.Red;
+            errorBirthdayLabel.Location = new Point(13, 296);
+            errorBirthdayLabel.Name = "errorBirthdayLabel";
+            errorBirthdayLabel.Size = new Size(0, 21);
+            errorBirthdayLabel.TabIndex = 11;
             // 
-            // label5
+            // errorPhoneNumberLabel
             // 
-            label5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            label5.AutoSize = true;
-            label5.Location = new Point(34, 263);
-            label5.Name = "label5";
-            label5.Size = new Size(77, 23);
-            label5.TabIndex = 6;
-            label5.Text = "Fecha:";
+            errorPhoneNumberLabel.AutoSize = true;
+            errorPhoneNumberLabel.BackColor = Color.Transparent;
+            errorPhoneNumberLabel.Font = new Font("Century Gothic", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            errorPhoneNumberLabel.ForeColor = Color.Red;
+            errorPhoneNumberLabel.Location = new Point(13, 237);
+            errorPhoneNumberLabel.Name = "errorPhoneNumberLabel";
+            errorPhoneNumberLabel.Size = new Size(0, 21);
+            errorPhoneNumberLabel.TabIndex = 10;
             // 
-            // textboxLastNameUser
+            // errorLastNameLabel
             // 
-            textboxLastNameUser.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            textboxLastNameUser.Location = new Point(127, 123);
-            textboxLastNameUser.Name = "textboxLastNameUser";
-            textboxLastNameUser.Size = new Size(389, 32);
-            textboxLastNameUser.TabIndex = 5;
+            errorLastNameLabel.AutoSize = true;
+            errorLastNameLabel.BackColor = Color.Transparent;
+            errorLastNameLabel.Font = new Font("Century Gothic", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            errorLastNameLabel.ForeColor = Color.Red;
+            errorLastNameLabel.Location = new Point(16, 158);
+            errorLastNameLabel.Name = "errorLastNameLabel";
+            errorLastNameLabel.Size = new Size(0, 21);
+            errorLastNameLabel.TabIndex = 9;
             // 
-            // label4
+            // errorNameLabel
             // 
-            label4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            label4.AutoSize = true;
-            label4.Location = new Point(13, 123);
-            label4.Name = "label4";
-            label4.Size = new Size(97, 23);
-            label4.TabIndex = 4;
-            label4.Text = "Apellido:";
+            errorNameLabel.AutoSize = true;
+            errorNameLabel.BackColor = Color.Transparent;
+            errorNameLabel.Font = new Font("Century Gothic", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            errorNameLabel.ForeColor = Color.Red;
+            errorNameLabel.Location = new Point(16, 86);
+            errorNameLabel.Name = "errorNameLabel";
+            errorNameLabel.Size = new Size(0, 21);
+            errorNameLabel.TabIndex = 8;
             // 
-            // textboxNumberphoneUser
+            // birthdayDateTimePicker
             // 
-            textboxNumberphoneUser.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            textboxNumberphoneUser.Location = new Point(127, 197);
-            textboxNumberphoneUser.Name = "textboxNumberphoneUser";
-            textboxNumberphoneUser.Size = new Size(389, 32);
-            textboxNumberphoneUser.TabIndex = 3;
+            birthdayDateTimePicker.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            birthdayDateTimePicker.Location = new Point(127, 265);
+            birthdayDateTimePicker.Name = "birthdayDateTimePicker";
+            birthdayDateTimePicker.Size = new Size(389, 32);
+            birthdayDateTimePicker.TabIndex = 7;
             // 
-            // label3
+            // birthdayLabel
             // 
-            label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            label3.AutoSize = true;
-            label3.Location = new Point(13, 197);
-            label3.Name = "label3";
-            label3.Size = new Size(98, 23);
-            label3.TabIndex = 2;
-            label3.Text = "Telefono:";
+            birthdayLabel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            birthdayLabel.AutoSize = true;
+            birthdayLabel.Location = new Point(34, 263);
+            birthdayLabel.Name = "birthdayLabel";
+            birthdayLabel.Size = new Size(77, 23);
+            birthdayLabel.TabIndex = 6;
+            birthdayLabel.Text = "Fecha:";
             // 
-            // textboxNameUser
+            // lastNameTextBox
             // 
-            textboxNameUser.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            textboxNameUser.Location = new Point(127, 40);
-            textboxNameUser.Name = "textboxNameUser";
-            textboxNameUser.Size = new Size(389, 32);
-            textboxNameUser.TabIndex = 1;
+            lastNameTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            lastNameTextBox.Location = new Point(127, 123);
+            lastNameTextBox.Name = "lastNameTextBox";
+            lastNameTextBox.Size = new Size(389, 32);
+            lastNameTextBox.TabIndex = 5;
             // 
-            // label2
+            // lastNameLabel
             // 
-            label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            label2.AutoSize = true;
-            label2.Location = new Point(16, 40);
-            label2.Name = "label2";
-            label2.Size = new Size(95, 23);
-            label2.TabIndex = 0;
-            label2.Text = "Nombre:";
+            lastNameLabel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            lastNameLabel.AutoSize = true;
+            lastNameLabel.Location = new Point(13, 123);
+            lastNameLabel.Name = "lastNameLabel";
+            lastNameLabel.Size = new Size(97, 23);
+            lastNameLabel.TabIndex = 4;
+            lastNameLabel.Text = "Apellido:";
             // 
-            // gbResidenceUser
+            // phoneNumberTextBox
             // 
-            gbResidenceUser.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            gbResidenceUser.Controls.Add(iconButtonSaveProfile);
-            gbResidenceUser.Controls.Add(comboboxCityUser);
-            gbResidenceUser.Controls.Add(comboboxCountryUser);
-            gbResidenceUser.Controls.Add(label9);
-            gbResidenceUser.Controls.Add(label7);
-            gbResidenceUser.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            gbResidenceUser.Location = new Point(314, 352);
-            gbResidenceUser.Name = "gbResidenceUser";
-            gbResidenceUser.Size = new Size(817, 257);
-            gbResidenceUser.TabIndex = 3;
-            gbResidenceUser.TabStop = false;
-            gbResidenceUser.Text = "Residenncia";
+            phoneNumberTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            phoneNumberTextBox.Location = new Point(127, 197);
+            phoneNumberTextBox.Name = "phoneNumberTextBox";
+            phoneNumberTextBox.Size = new Size(389, 32);
+            phoneNumberTextBox.TabIndex = 3;
             // 
-            // iconButtonSaveProfile
+            // phoneNumberLabel
             // 
-            iconButtonSaveProfile.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconButtonSaveProfile.IconColor = Color.Black;
-            iconButtonSaveProfile.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButtonSaveProfile.Location = new Point(127, 204);
-            iconButtonSaveProfile.Name = "iconButtonSaveProfile";
-            iconButtonSaveProfile.Size = new Size(141, 40);
-            iconButtonSaveProfile.TabIndex = 4;
-            iconButtonSaveProfile.Text = "Guardar";
-            iconButtonSaveProfile.UseVisualStyleBackColor = true;
-            iconButtonSaveProfile.Click += iconButtonSaveProfile_Click;
+            phoneNumberLabel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            phoneNumberLabel.AutoSize = true;
+            phoneNumberLabel.Location = new Point(13, 197);
+            phoneNumberLabel.Name = "phoneNumberLabel";
+            phoneNumberLabel.Size = new Size(98, 23);
+            phoneNumberLabel.TabIndex = 2;
+            phoneNumberLabel.Text = "Telefono:";
             // 
-            // comboboxCityUser
+            // nameTextBox
             // 
-            comboboxCityUser.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            comboboxCityUser.FormattingEnabled = true;
-            comboboxCityUser.Location = new Point(127, 131);
-            comboboxCityUser.Name = "comboboxCityUser";
-            comboboxCityUser.Size = new Size(351, 31);
-            comboboxCityUser.TabIndex = 17;
+            nameTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            nameTextBox.Location = new Point(127, 40);
+            nameTextBox.Name = "nameTextBox";
+            nameTextBox.Size = new Size(389, 32);
+            nameTextBox.TabIndex = 1;
             // 
-            // comboboxCountryUser
+            // nameLabel
             // 
-            comboboxCountryUser.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            comboboxCountryUser.FormattingEnabled = true;
-            comboboxCountryUser.Location = new Point(127, 48);
-            comboboxCountryUser.Name = "comboboxCountryUser";
-            comboboxCountryUser.Size = new Size(351, 31);
-            comboboxCountryUser.TabIndex = 16;
+            nameLabel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            nameLabel.AutoSize = true;
+            nameLabel.Location = new Point(16, 40);
+            nameLabel.Name = "nameLabel";
+            nameLabel.Size = new Size(95, 23);
+            nameLabel.TabIndex = 0;
+            nameLabel.Text = "Nombre:";
             // 
-            // label9
+            // residenceUserGroupBox
             // 
-            label9.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label9.AutoSize = true;
-            label9.Location = new Point(59, 48);
-            label9.Name = "label9";
-            label9.Size = new Size(52, 23);
-            label9.TabIndex = 8;
-            label9.Text = "Pais:";
+            residenceUserGroupBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            residenceUserGroupBox.Controls.Add(errorCityLabel);
+            residenceUserGroupBox.Controls.Add(errorCountryLabel);
+            residenceUserGroupBox.Controls.Add(listCityComboBox);
+            residenceUserGroupBox.Controls.Add(listCountryComboBox);
+            residenceUserGroupBox.Controls.Add(countryLabel);
+            residenceUserGroupBox.Controls.Add(listCityLabel);
+            residenceUserGroupBox.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            residenceUserGroupBox.Location = new Point(314, 352);
+            residenceUserGroupBox.Name = "residenceUserGroupBox";
+            residenceUserGroupBox.Size = new Size(817, 212);
+            residenceUserGroupBox.TabIndex = 3;
+            residenceUserGroupBox.TabStop = false;
+            residenceUserGroupBox.Text = "Residenncia";
             // 
-            // label7
+            // errorCityLabel
             // 
-            label7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label7.AutoSize = true;
-            label7.Location = new Point(23, 131);
-            label7.Name = "label7";
-            label7.Size = new Size(88, 23);
-            label7.TabIndex = 12;
-            label7.Text = "Ciudad:";
+            errorCityLabel.AutoSize = true;
+            errorCityLabel.BackColor = Color.Transparent;
+            errorCityLabel.Font = new Font("Century Gothic", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            errorCityLabel.ForeColor = Color.Red;
+            errorCityLabel.Location = new Point(23, 179);
+            errorCityLabel.Name = "errorCityLabel";
+            errorCityLabel.Size = new Size(0, 21);
+            errorCityLabel.TabIndex = 18;
             // 
-            // gbAccountUser
+            // errorCountryLabel
             // 
-            gbAccountUser.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            gbAccountUser.Controls.Add(textBoxUserAccount);
-            gbAccountUser.Controls.Add(label1);
-            gbAccountUser.Controls.Add(labelChangePasswordProfile);
-            gbAccountUser.Controls.Add(textboxPasswordChangeUser);
-            gbAccountUser.Controls.Add(label8);
-            gbAccountUser.Location = new Point(314, 630);
-            gbAccountUser.Name = "gbAccountUser";
-            gbAccountUser.Size = new Size(817, 230);
-            gbAccountUser.TabIndex = 3;
-            gbAccountUser.TabStop = false;
-            gbAccountUser.Text = "Cuenta";
+            errorCountryLabel.AutoSize = true;
+            errorCountryLabel.BackColor = Color.Transparent;
+            errorCountryLabel.Font = new Font("Century Gothic", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            errorCountryLabel.ForeColor = Color.Red;
+            errorCountryLabel.Location = new Point(23, 91);
+            errorCountryLabel.Name = "errorCountryLabel";
+            errorCountryLabel.Size = new Size(0, 21);
+            errorCountryLabel.TabIndex = 12;
             // 
-            // textBoxUserAccount
+            // listCityComboBox
             // 
-            textBoxUserAccount.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            textBoxUserAccount.Location = new Point(141, 46);
-            textBoxUserAccount.Name = "textBoxUserAccount";
-            textBoxUserAccount.Size = new Size(281, 30);
-            textBoxUserAccount.TabIndex = 9;
+            listCityComboBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            listCityComboBox.FormattingEnabled = true;
+            listCityComboBox.Location = new Point(127, 131);
+            listCityComboBox.Name = "listCityComboBox";
+            listCityComboBox.Size = new Size(351, 31);
+            listCityComboBox.TabIndex = 17;
             // 
-            // label1
+            // listCountryComboBox
             // 
-            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            label1.AutoSize = true;
-            label1.Location = new Point(34, 55);
-            label1.Name = "label1";
-            label1.Size = new Size(77, 21);
-            label1.TabIndex = 8;
-            label1.Text = "Usuario:";
+            listCountryComboBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            listCountryComboBox.FormattingEnabled = true;
+            listCountryComboBox.Location = new Point(127, 48);
+            listCountryComboBox.Name = "listCountryComboBox";
+            listCountryComboBox.Size = new Size(351, 31);
+            listCountryComboBox.TabIndex = 16;
             // 
-            // labelChangePasswordProfile
+            // countryLabel
             // 
-            labelChangePasswordProfile.AutoSize = true;
-            labelChangePasswordProfile.Cursor = Cursors.Hand;
-            labelChangePasswordProfile.Font = new Font("Century Gothic", 9F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            labelChangePasswordProfile.ForeColor = SystemColors.Highlight;
-            labelChangePasswordProfile.Location = new Point(172, 184);
-            labelChangePasswordProfile.Name = "labelChangePasswordProfile";
-            labelChangePasswordProfile.Size = new Size(192, 21);
-            labelChangePasswordProfile.TabIndex = 2;
-            labelChangePasswordProfile.Text = "Cambiar contraseña";
-            labelChangePasswordProfile.Click += labelChangePasswordProfile_Click;
+            countryLabel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            countryLabel.AutoSize = true;
+            countryLabel.Location = new Point(59, 48);
+            countryLabel.Name = "countryLabel";
+            countryLabel.Size = new Size(52, 23);
+            countryLabel.TabIndex = 8;
+            countryLabel.Text = "Pais:";
             // 
-            // textboxPasswordChangeUser
+            // listCityLabel
             // 
-            textboxPasswordChangeUser.Location = new Point(141, 130);
-            textboxPasswordChangeUser.Name = "textboxPasswordChangeUser";
-            textboxPasswordChangeUser.Size = new Size(281, 30);
-            textboxPasswordChangeUser.TabIndex = 11;
-            textboxPasswordChangeUser.Text = "pruebadestacochinada";
-            textboxPasswordChangeUser.UseSystemPasswordChar = true;
+            listCityLabel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            listCityLabel.AutoSize = true;
+            listCityLabel.Location = new Point(23, 131);
+            listCityLabel.Name = "listCityLabel";
+            listCityLabel.Size = new Size(88, 23);
+            listCityLabel.TabIndex = 12;
+            listCityLabel.Text = "Ciudad:";
             // 
-            // label8
+            // saveProfileButton
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(16, 130);
-            label8.Name = "label8";
-            label8.Size = new Size(119, 21);
-            label8.TabIndex = 10;
-            label8.Text = "Contraseña:";
+            saveProfileButton.IconChar = FontAwesome.Sharp.IconChar.None;
+            saveProfileButton.IconColor = Color.Black;
+            saveProfileButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            saveProfileButton.Location = new Point(447, 221);
+            saveProfileButton.Name = "saveProfileButton";
+            saveProfileButton.Size = new Size(141, 40);
+            saveProfileButton.TabIndex = 4;
+            saveProfileButton.Text = "Guardar";
+            saveProfileButton.UseVisualStyleBackColor = true;
+            saveProfileButton.Click += saveProfileButton_Click;
+            // 
+            // accountUserGroupBox
+            // 
+            accountUserGroupBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            accountUserGroupBox.Controls.Add(errorUserNameLabel);
+            accountUserGroupBox.Controls.Add(saveProfileButton);
+            accountUserGroupBox.Controls.Add(userNameTextBox);
+            accountUserGroupBox.Controls.Add(userNameLabel);
+            accountUserGroupBox.Controls.Add(changePasswordProfileLabel);
+            accountUserGroupBox.Controls.Add(passwordChangeUserTextBox);
+            accountUserGroupBox.Controls.Add(passwordLabel);
+            accountUserGroupBox.Location = new Point(314, 587);
+            accountUserGroupBox.Name = "accountUserGroupBox";
+            accountUserGroupBox.Size = new Size(817, 277);
+            accountUserGroupBox.TabIndex = 3;
+            accountUserGroupBox.TabStop = false;
+            accountUserGroupBox.Text = "Cuenta";
+            // 
+            // errorUserNameLabel
+            // 
+            errorUserNameLabel.AutoSize = true;
+            errorUserNameLabel.BackColor = Color.Transparent;
+            errorUserNameLabel.Font = new Font("Century Gothic", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            errorUserNameLabel.ForeColor = Color.Red;
+            errorUserNameLabel.Location = new Point(34, 97);
+            errorUserNameLabel.Name = "errorUserNameLabel";
+            errorUserNameLabel.Size = new Size(0, 21);
+            errorUserNameLabel.TabIndex = 19;
+            // 
+            // userNameTextBox
+            // 
+            userNameTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            userNameTextBox.Location = new Point(141, 46);
+            userNameTextBox.Name = "userNameTextBox";
+            userNameTextBox.Size = new Size(281, 30);
+            userNameTextBox.TabIndex = 9;
+            // 
+            // userNameLabel
+            // 
+            userNameLabel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            userNameLabel.AutoSize = true;
+            userNameLabel.Location = new Point(34, 55);
+            userNameLabel.Name = "userNameLabel";
+            userNameLabel.Size = new Size(77, 21);
+            userNameLabel.TabIndex = 8;
+            userNameLabel.Text = "Usuario:";
+            // 
+            // changePasswordProfileLabel
+            // 
+            changePasswordProfileLabel.AutoSize = true;
+            changePasswordProfileLabel.Cursor = Cursors.Hand;
+            changePasswordProfileLabel.Font = new Font("Century Gothic", 9F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            changePasswordProfileLabel.ForeColor = SystemColors.Highlight;
+            changePasswordProfileLabel.Location = new Point(172, 184);
+            changePasswordProfileLabel.Name = "changePasswordProfileLabel";
+            changePasswordProfileLabel.Size = new Size(192, 21);
+            changePasswordProfileLabel.TabIndex = 2;
+            changePasswordProfileLabel.Text = "Cambiar contraseña";
+            changePasswordProfileLabel.Click += changePasswordProfileLabel_Click;
+            // 
+            // passwordChangeUserTextBox
+            // 
+            passwordChangeUserTextBox.Location = new Point(141, 130);
+            passwordChangeUserTextBox.Name = "passwordChangeUserTextBox";
+            passwordChangeUserTextBox.Size = new Size(281, 30);
+            passwordChangeUserTextBox.TabIndex = 11;
+            passwordChangeUserTextBox.Text = "pruebadestacochinada";
+            passwordChangeUserTextBox.UseSystemPasswordChar = true;
+            // 
+            // passwordLabel
+            // 
+            passwordLabel.AutoSize = true;
+            passwordLabel.Location = new Point(16, 130);
+            passwordLabel.Name = "passwordLabel";
+            passwordLabel.Size = new Size(119, 21);
+            passwordLabel.TabIndex = 10;
+            passwordLabel.Text = "Contraseña:";
+            // 
+            // errorValidation
+            // 
+            errorValidation.ContainerControl = this;
             // 
             // ProfileUserAccountForm
             // 
@@ -310,10 +408,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGray;
             ClientSize = new Size(1271, 933);
-            Controls.Add(lblPhotoProfileChangeUser);
+            Controls.Add(photoProfileChangeUserLabel);
             Controls.Add(pictureBoxProfileUser);
-            Controls.Add(gbAccountUser);
-            Controls.Add(gbResidenceUser);
+            Controls.Add(accountUserGroupBox);
+            Controls.Add(residenceUserGroupBox);
             Controls.Add(informationUserGroupBox);
             Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
@@ -323,10 +421,11 @@
             ((System.ComponentModel.ISupportInitialize)pictureBoxProfileUser).EndInit();
             informationUserGroupBox.ResumeLayout(false);
             informationUserGroupBox.PerformLayout();
-            gbResidenceUser.ResumeLayout(false);
-            gbResidenceUser.PerformLayout();
-            gbAccountUser.ResumeLayout(false);
-            gbAccountUser.PerformLayout();
+            residenceUserGroupBox.ResumeLayout(false);
+            residenceUserGroupBox.PerformLayout();
+            accountUserGroupBox.ResumeLayout(false);
+            accountUserGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)errorValidation).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -334,31 +433,36 @@
         #endregion
 
         private PictureBox pictureBoxProfileUser;
-        private Label lblPhotoProfileChangeUser;
+        private Label photoProfileChangeUserLabel;
         private GroupBox informationUserGroupBox;
-        private Label label5;
-        private TextBox textboxLastNameUser;
-        private Label label4;
-        private TextBox textboxNumberphoneUser;
-        private Label label3;
-        private TextBox textboxNameUser;
-        private Label label2;
-        private GroupBox gbResidenceUser;
-        private GroupBox gbAccountUser;
-        private DateTimePicker datetimeDateUser;
-        private ComboBox comboboxCityUser;
-        private ComboBox comboboxCountryUser;
-        private Label label9;
-        private Label label7;
-        private Label label11;
-        private Label label10;
-        private TextBox textboxPasswordChangeUser;
-        private Label label8;
+        private Label birthdayLabel;
+        private TextBox lastNameTextBox;
+        private Label lastNameLabel;
+        private TextBox phoneNumberTextBox;
+        private Label phoneNumberLabel;
+        private TextBox nameTextBox;
+        private Label nameLabel;
+        private GroupBox residenceUserGroupBox;
+        private GroupBox accountUserGroupBox;
+        private DateTimePicker birthdayDateTimePicker;
+        private ComboBox listCityComboBox;
+        private ComboBox listCountryComboBox;
+        private Label countryLabel;
+        private Label listCityLabel;
+        private Label errorBirthdayLabel;
+        private Label errorPhoneNumberLabel;
+        private TextBox passwordChangeUserTextBox;
+        private Label passwordLabel;
         private TextBox txt;
-        private Label label6;
-        private Label labelChangePasswordProfile;
-        private FontAwesome.Sharp.IconButton iconButtonSaveProfile;
-        private TextBox textBoxUserAccount;
-        private Label label1;
+        private Label errorLastNameLabel;
+        private Label changePasswordProfileLabel;
+        private FontAwesome.Sharp.IconButton saveProfileButton;
+        private TextBox userNameTextBox;
+        private Label userNameLabel;
+        private Label errorNameLabel;
+        private ErrorProvider errorValidation;
+        private Label errorCityLabel;
+        private Label errorCountryLabel;
+        private Label errorUserNameLabel;
     }
 }

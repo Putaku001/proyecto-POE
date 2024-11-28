@@ -72,7 +72,7 @@ namespace PresentationLayer
         {
             nameTexBox.Text = "";
             lastNameTexBox.Text = "";
-            BirthdayDataTimePicker.Value = DateTime.Now;
+            birthdayDateTimePicker.Value = DateTime.Now;
             numberPhoneTextBox.Text = "";
             passwordTextBox.Text = "";
             listCountrysComboBox.SelectedIndex = -1;
@@ -107,7 +107,7 @@ namespace PresentationLayer
                     NameUser = nameTexBox.Text,
                     LastName = lastNameTexBox.Text,
                     Email = emailTextBox.Text,
-                    Birthdate = BirthdayDataTimePicker.Value,
+                    Birthdate = birthdayDateTimePicker.Value,
                     NumberPhone = numberPhoneTextBox.Text,
                     passworduser = HashPassword(passwordTextBox.Text),
                     Country = (string)listCountrysComboBox.SelectedValue,
@@ -226,7 +226,7 @@ namespace PresentationLayer
                         errorEmailLabel.Text = error.ErrorMessage;
                         break;
                     case nameof(User.Birthdate):
-                        errorValidation.SetError(BirthdayDataTimePicker, error.ErrorMessage);
+                        errorValidation.SetError(birthdayDateTimePicker, error.ErrorMessage);
                         errorBirthDayLabel.Text = error.ErrorMessage;
                         break;
                     case nameof(User.passworduser):
@@ -273,7 +273,7 @@ namespace PresentationLayer
             errorValidation.SetError(nameTexBox, string.Empty);
             errorValidation.SetError(lastNameTexBox, string.Empty);
             errorValidation.SetError(emailTextBox, string.Empty);
-            errorValidation.SetError(BirthdayDataTimePicker, string.Empty);
+            errorValidation.SetError(birthdayDateTimePicker, string.Empty);
             errorValidation.SetError(passwordTextBox, string.Empty);
             errorValidation.SetError(numberPhoneTextBox, string.Empty);
             errorValidation.SetError(listCountrysComboBox, string.Empty);

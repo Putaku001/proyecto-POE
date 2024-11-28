@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             currentPasswordTextBox = new TextBox();
             newPasswordTextBox = new TextBox();
             confirmPasswordTextBox = new TextBox();
@@ -37,7 +38,10 @@
             changePasswordButton = new FontAwesome.Sharp.IconButton();
             menuStrip1 = new MenuStrip();
             cambiarContraseñaToolStripMenuItem = new ToolStripMenuItem();
+            errorValidation = new ErrorProvider(components);
+            errorNewPasswordLabel = new Label();
             menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errorValidation).BeginInit();
             SuspendLayout();
             // 
             // currentPasswordTextBox
@@ -140,8 +144,24 @@
             // 
             cambiarContraseñaToolStripMenuItem.ForeColor = Color.White;
             cambiarContraseñaToolStripMenuItem.Name = "cambiarContraseñaToolStripMenuItem";
-            cambiarContraseñaToolStripMenuItem.Size = new Size(276, 34);
+            cambiarContraseñaToolStripMenuItem.Size = new Size(310, 38);
             cambiarContraseñaToolStripMenuItem.Text = "Cambiar contraseña";
+            // 
+            // errorValidation
+            // 
+            errorValidation.ContainerControl = this;
+            // 
+            // errorNewPasswordLabel
+            // 
+            errorNewPasswordLabel.AutoSize = true;
+            errorNewPasswordLabel.BackColor = Color.Transparent;
+            errorNewPasswordLabel.Font = new Font("Century Gothic", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            errorNewPasswordLabel.ForeColor = Color.Red;
+            errorNewPasswordLabel.Location = new Point(110, 314);
+            errorNewPasswordLabel.Name = "errorNewPasswordLabel";
+            errorNewPasswordLabel.Size = new Size(218, 21);
+            errorNewPasswordLabel.TabIndex = 9;
+            errorNewPasswordLabel.Text = "errorNewPasswordLabel";
             // 
             // ChangePasswordProfileForm
             // 
@@ -149,6 +169,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGray;
             ClientSize = new Size(809, 675);
+            Controls.Add(errorNewPasswordLabel);
             Controls.Add(changePasswordButton);
             Controls.Add(confimPasswordLabel);
             Controls.Add(newPasswordLabel);
@@ -165,6 +186,7 @@
             Text = "Cambiar Contraseña";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)errorValidation).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -180,5 +202,7 @@
         private FontAwesome.Sharp.IconButton changePasswordButton;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem cambiarContraseñaToolStripMenuItem;
+        private ErrorProvider errorValidation;
+        private Label errorNewPasswordLabel;
     }
 }
