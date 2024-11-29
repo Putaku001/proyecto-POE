@@ -10,5 +10,6 @@ namespace DataAccessLayer.Repositories.InterfacesRepositories
         byte[] getProjectInDB(string codeProject);
         List<string> GetRequestProyectsByIdClient(int idClient);
         IEnumerable<RequestProjects> GetOnlyProjectsByIdClient(int idUser);
+        void InsertReasonForRejection(reasonForRejection reason);
     }
 }

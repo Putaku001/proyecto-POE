@@ -16,7 +16,7 @@ namespace DataAccessLayer.DbSqlDataAccess
 
         public SqlDataAccess()
         {
-            _connectionString = "";
+            _connectionString = "Data Source=DESKTOP-OKJJS3Y\\SQLEXPRESS;Initial Catalog=SistemaProyectosDB;Integrated Security=True;Encrypt=False";
         }
 
         public SqlConnection GetConnection()

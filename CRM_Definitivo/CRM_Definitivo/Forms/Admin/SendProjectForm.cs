@@ -66,18 +66,21 @@ namespace PresentationLayer.Forms.Admin
 
         private void iconButtonSendProject_Click(object sender, EventArgs e)
         {
+            if (fileByte == null || fileByte.Length == 0)
+            {
+                MessageBox.Show("Por favor, seleccione un archivo antes de enviar el proyecto.", "Archivo requerido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             Projects projects = new Projects();
             var file = projects.file = fileByte;
-            _proyectsServices.SendProjects(CodeProject ,file);
-
+            _proyectsServices.SendProjects(CodeProject, file);
 
             StatusProjects statusProjects = new StatusProjects();
             int idStatusProject = statusProjects.idStatusProyect = 7;
-            _proyectsServices.StatusProject(CodeProject,idStatusProject);
+            _proyectsServices.StatusProject(CodeProject, idStatusProject);
 
             MessageBox.Show("El proyecto ha sido enviado correctamente, estamos en espera de la respuesta del cliente!", "Enviado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
         }
     }
 }

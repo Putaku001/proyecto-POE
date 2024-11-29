@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CommonLayer.Entities
+{
+    public class reasonForRejection
+    {
+        public int idRefused { get; set; }
+        public int idProject { get; set; }
+        public byte[]? ReasonForRejection { get; set; }
+    }
+}

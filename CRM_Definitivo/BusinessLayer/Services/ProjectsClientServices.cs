@@ -24,5 +24,6 @@ namespace BusinessLayer.Services
         public List<string> GetRequestProyectsByIdClient(int idClient) => _projectsClientsRepositories.GetRequestProyectsByIdClient(idClient);
         public IEnumerable<RequestProjects> GetProjectsByIdStatus(int idClient, IEnumerable<int> idStatus) => _projectsClientsRepositories.GetProjectsByIdStatus(idClient, idStatus);
         public byte[] getProjectInDB(string codeProject) => _projectsClientsRepositories.getProjectInDB(codeProject);
+        public void InsertReasonForRejection(reasonForRejection reason) => _projectsClientsRepositories.InsertReasonForRejection(reason);
     }
 }

@@ -33,6 +33,7 @@
             descriptionProjectTextBox = new TextBox();
             iconRefusedProjectButton = new FontAwesome.Sharp.IconButton();
             informationGroupBox = new GroupBox();
+            refusedProjectLinkLabel = new LinkLabel();
             nameProjectLabel = new Label();
             codeProjectLabel = new Label();
             informationGroupBox.SuspendLayout();
@@ -61,9 +62,9 @@
             // descriptionLabel
             // 
             descriptionLabel.AutoSize = true;
-            descriptionLabel.Location = new Point(225, 36);
+            descriptionLabel.Location = new Point(135, 41);
             descriptionLabel.Name = "descriptionLabel";
-            descriptionLabel.Size = new Size(232, 21);
+            descriptionLabel.Size = new Size(159, 17);
             descriptionLabel.TabIndex = 25;
             descriptionLabel.Text = "Descripcion del proyecto";
             // 
@@ -72,7 +73,7 @@
             descriptionProjectTextBox.Location = new Point(49, 78);
             descriptionProjectTextBox.Multiline = true;
             descriptionProjectTextBox.Name = "descriptionProjectTextBox";
-            descriptionProjectTextBox.Size = new Size(621, 231);
+            descriptionProjectTextBox.Size = new Size(335, 231);
             descriptionProjectTextBox.TabIndex = 26;
             // 
             // iconRefusedProjectButton
@@ -97,6 +98,7 @@
             // 
             // informationGroupBox
             // 
+            informationGroupBox.Controls.Add(refusedProjectLinkLabel);
             informationGroupBox.Controls.Add(descriptionProjectTextBox);
             informationGroupBox.Controls.Add(descriptionLabel);
             informationGroupBox.Location = new Point(27, 54);
@@ -106,13 +108,24 @@
             informationGroupBox.TabStop = false;
             informationGroupBox.Text = "Informacion";
             // 
+            // refusedProjectLinkLabel
+            // 
+            refusedProjectLinkLabel.AutoSize = true;
+            refusedProjectLinkLabel.Location = new Point(509, 154);
+            refusedProjectLinkLabel.Name = "refusedProjectLinkLabel";
+            refusedProjectLinkLabel.Size = new Size(116, 17);
+            refusedProjectLinkLabel.TabIndex = 28;
+            refusedProjectLinkLabel.TabStop = true;
+            refusedProjectLinkLabel.Text = "Razon de Rechazo";
+            refusedProjectLinkLabel.LinkClicked += refusedProjectLinkLabel_LinkClicked;
+            // 
             // nameProjectLabel
             // 
             nameProjectLabel.AutoSize = true;
             nameProjectLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             nameProjectLabel.Location = new Point(14, 9);
             nameProjectLabel.Name = "nameProjectLabel";
-            nameProjectLabel.Size = new Size(216, 28);
+            nameProjectLabel.Size = new Size(144, 19);
             nameProjectLabel.TabIndex = 27;
             nameProjectLabel.Text = "Nombre Proyecto";
             // 
@@ -123,13 +136,13 @@
             codeProjectLabel.ForeColor = SystemColors.ButtonShadow;
             codeProjectLabel.Location = new Point(603, 15);
             codeProjectLabel.Name = "codeProjectLabel";
-            codeProjectLabel.Size = new Size(70, 22);
+            codeProjectLabel.Size = new Size(49, 16);
             codeProjectLabel.TabIndex = 27;
             codeProjectLabel.Text = "u24123";
             // 
             // AnswerProjectClient
             // 
-            AutoScaleDimensions = new SizeF(11F, 21F);
+            AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGray;
             ClientSize = new Size(778, 510);
@@ -159,5 +172,6 @@
         private GroupBox informationGroupBox;
         private Label nameProjectLabel;
         private Label codeProjectLabel;
+        private LinkLabel refusedProjectLinkLabel;
     }
 }

@@ -10,5 +10,6 @@ namespace BusinessLayer.Services.InterfacesServices
         IEnumerable<RequestProjects> GetProjectsByIdClient(int idUser);
         IEnumerable<RequestProjects> GetProjectsByIdStatus(int idClient, IEnumerable<int> idStatus);
         List<string> GetRequestProyectsByIdClient(int idClient);
+        void InsertReasonForRejection(reasonForRejection reason);
     }
 }

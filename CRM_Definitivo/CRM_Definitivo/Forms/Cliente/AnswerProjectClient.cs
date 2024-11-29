@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Services.InterfacesServices;
+using CommonLayer.Entities;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,8 @@ namespace PresentationLayer.Forms.Cliente
 
         private readonly IServiceProvider _servicesProvider;
         private readonly IProyectsServices _proyectsServices;
+        private readonly IProjectsClientServices _projectsClientServices;
+        private byte[] fileByte;
         public AnswerProjectClient(IServiceProvider serviceProvider, IProyectsServices _proyectServices)
         {
             InitializeComponent();
@@ -34,12 +37,6 @@ namespace PresentationLayer.Forms.Cliente
             nameProjectLabel.Text = nameProject;
         }
 
-        private void iconButtonRefusedProject_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-
         private void iconApprovedProjectButton_Click(object sender, EventArgs e)
         {
             _proyectsServices.StatusProject(codeProyect, 9);
@@ -49,9 +46,44 @@ namespace PresentationLayer.Forms.Cliente
 
         private void iconRefusedProjectButton_Click(object sender, EventArgs e)
         {
-            _proyectsServices.StatusProject(codeProyect, 8);
-            MessageBox.Show($"El Proyecto '{nameProject}' a sido Rechazado");
+            if (fileByte == null || fileByte.Length == 0)
+            {
+                MessageBox.Show("Por favor, seleccione un archivo antes de rechazar el proyecto.", "Archivo requerido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            Projects projects = new Projects();
+            var file = projects.file = fileByte;
+            _proyectsServices.SendProjects(codeProyect, file);
+
+            StatusProjects statusProjects = new StatusProjects();
+            int idStatusProject = statusProjects.idStatusProyect = 8;
+            _proyectsServices.StatusProject(codeProyect, idStatusProject);
+
+            MessageBox.Show($"El Proyecto '{nameProject}' ha sido rechazado correctamente.", "Rechazado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             this.Close();
+        }
+
+        private void refusedProjectLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Todos los archivos (*.txt)|*.txt";
+            openFileDialog.Title = "Seleccione el archivo a enviar";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = openFileDialog.FileName;
+
+                using (FileStream file = new FileStream(filePath, FileMode.Open, FileAccess.Read))
+                {
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        file.CopyTo(ms);
+                        fileByte = ms.ToArray();
+                    }
+                }
+            }
         }
     }
 }

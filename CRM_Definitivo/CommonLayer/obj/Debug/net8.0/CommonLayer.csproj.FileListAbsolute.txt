@@ -152,3 +152,15 @@ C:\Users\jeffe\OneDrive\Documentos\ING SOFTWARE\CICLO 4\POE\proyecto-POE - copia
 C:\Users\jeffe\OneDrive\Documentos\ING SOFTWARE\CICLO 4\POE\proyecto-POE - copia\CRM_Definitivo\CommonLayer\obj\Debug\net8.0\refint\CommonLayer.dll
 C:\Users\jeffe\OneDrive\Documentos\ING SOFTWARE\CICLO 4\POE\proyecto-POE - copia\CRM_Definitivo\CommonLayer\obj\Debug\net8.0\CommonLayer.pdb
 C:\Users\jeffe\OneDrive\Documentos\ING SOFTWARE\CICLO 4\POE\proyecto-POE - copia\CRM_Definitivo\CommonLayer\obj\Debug\net8.0\ref\CommonLayer.dll
+C:\Users\blanc_ma7kouo\Desktop\PutakUnivo\proogra\proyecto poe\gafsvdx\proyecto-POE\CRM_Definitivo\CommonLayer\bin\Debug\net8.0\CommonLayer.deps.json
+C:\Users\blanc_ma7kouo\Desktop\PutakUnivo\proogra\proyecto poe\gafsvdx\proyecto-POE\CRM_Definitivo\CommonLayer\bin\Debug\net8.0\CommonLayer.dll
+C:\Users\blanc_ma7kouo\Desktop\PutakUnivo\proogra\proyecto poe\gafsvdx\proyecto-POE\CRM_Definitivo\CommonLayer\bin\Debug\net8.0\CommonLayer.pdb
+C:\Users\blanc_ma7kouo\Desktop\PutakUnivo\proogra\proyecto poe\gafsvdx\proyecto-POE\CRM_Definitivo\CommonLayer\obj\Debug\net8.0\CommonLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\blanc_ma7kouo\Desktop\PutakUnivo\proogra\proyecto poe\gafsvdx\proyecto-POE\CRM_Definitivo\CommonLayer\obj\Debug\net8.0\CommonLayer.AssemblyInfoInputs.cache
+C:\Users\blanc_ma7kouo\Desktop\PutakUnivo\proogra\proyecto poe\gafsvdx\proyecto-POE\CRM_Definitivo\CommonLayer\obj\Debug\net8.0\CommonLayer.AssemblyInfo.cs
+C:\Users\blanc_ma7kouo\Desktop\PutakUnivo\proogra\proyecto poe\gafsvdx\proyecto-POE\CRM_Definitivo\CommonLayer\obj\Debug\net8.0\CommonLayer.csproj.CoreCompileInputs.cache
+C:\Users\blanc_ma7kouo\Desktop\PutakUnivo\proogra\proyecto poe\gafsvdx\proyecto-POE\CRM_Definitivo\CommonLayer\obj\Debug\net8.0\CommonLayer.sourcelink.json
+C:\Users\blanc_ma7kouo\Desktop\PutakUnivo\proogra\proyecto poe\gafsvdx\proyecto-POE\CRM_Definitivo\CommonLayer\obj\Debug\net8.0\CommonLayer.dll
+C:\Users\blanc_ma7kouo\Desktop\PutakUnivo\proogra\proyecto poe\gafsvdx\proyecto-POE\CRM_Definitivo\CommonLayer\obj\Debug\net8.0\refint\CommonLayer.dll
+C:\Users\blanc_ma7kouo\Desktop\PutakUnivo\proogra\proyecto poe\gafsvdx\proyecto-POE\CRM_Definitivo\CommonLayer\obj\Debug\net8.0\CommonLayer.pdb
+C:\Users\blanc_ma7kouo\Desktop\PutakUnivo\proogra\proyecto poe\gafsvdx\proyecto-POE\CRM_Definitivo\CommonLayer\obj\Debug\net8.0\ref\CommonLayer.dll

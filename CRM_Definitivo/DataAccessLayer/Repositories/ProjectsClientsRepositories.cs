@@ -23,7 +23,7 @@ namespace DataAccessLayer.Repositories
         {
             using (var connection = _dbConnection.GetConnection())
             {
-                string query = @"SELECT r.codeProject, u.UserAccount, r.nameProject, r.descriptionProject, r.[file], st.statusproyect, r.dateInit, r.dateEnd, rf.reason, rf.reasonForRejection, r.dateRegistration FROM RequestProjectClient r
+                string query = @"SELECT r.codeProject, u.UserAccount, r.nameProject, r.descriptionProject, r.[file], st.statusproyect, r.dateInit, r.dateEnd, r.dateRegistration FROM RequestProjectClient r
                                  LEFT JOIN RefusedProject rf on rf.idRefused = r.idRefused
                                  LEFT JOIN Clients c on c.idCliente = r.idClient
                                  LEFT JOIN Users u on u.idUser = c.idUser
@@ -38,7 +38,7 @@ namespace DataAccessLayer.Repositories
         {
             using (var connection = _dbConnection.GetConnection())
             {
-                string query = @"SELECT r.codeProject, u.UserAccount, r.nameProject, r.descriptionProject, r.[file], st.statusproyect, r.dateInit, r.dateEnd, rf.reason, rf.reasonForRejection, r.dateRegistration FROM RequestProjectClient r
+                string query = @"SELECT r.codeProject, u.UserAccount, r.nameProject, r.descriptionProject, r.[file], st.statusproyect, r.dateInit, r.dateEnd, r.dateRegistration FROM RequestProjectClient r
                                  LEFT JOIN RefusedProject rf on rf.idRefused = r.idRefused
                                  LEFT JOIN Clients c on c.idCliente = r.idClient
                                  LEFT JOIN Users u on u.idUser = c.idUser
@@ -107,6 +107,21 @@ namespace DataAccessLayer.Repositories
                 string query = @"SELECT [file] FROM RequestProjectClient WHERE codeProject = @codeProject";
 
                 return connection.QueryFirstOrDefault<byte[]>(query, new { codeProject });
+            }
+        }
+
+        //metodo para enviar proyecto rechazado
+        public void InsertReasonForRejection(reasonForRejection reason)
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = @"
+                    UPDATE reasonForRejection SET 
+                    fileRefused= @reasonForRejection
+                    WHERE idProject = @idProject";
+
+
+                connection.Query(query, new { reason.idProject, reason.ReasonForRejection });
             }
         }
     }
