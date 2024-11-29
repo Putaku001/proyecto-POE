@@ -6,6 +6,6 @@ namespace BusinessLayer.Services.InterfacesServices
     {
         IEnumerable<TaskEmployees> GetsProjects(int idEmployee);
         IEnumerable<StatusTaskEmployees> GetStatusTaskEmployees();
-        List<string> GetTasksByEmployees(int idEmployee);
+        IEnumerable<TaskEmployees> GetTasksByEmployees(int idEmployee);
     }
 }

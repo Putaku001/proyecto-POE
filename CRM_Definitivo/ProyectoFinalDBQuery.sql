@@ -1,6 +1,14 @@
 CREATE DATABASE SistemaProyectosDB;
 
-	SELECT * FROM users				
+USE SistemaProyectosDB
+GO
+
+SELECT tp.codeProject FROM taskProjects tp WHERE idEmployee = 6 AND idStatusTask = 3
+
+
+
+
+SELECT * FROM users				
 
 
 SELECT r.idRol, m.nameForm , p.idPermission 

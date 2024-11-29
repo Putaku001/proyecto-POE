@@ -18,13 +18,13 @@ namespace DataAccessLayer.Repositories
             _dbConnection = sqlDataAccess;
         }
 
-        public List<string> GetTasksByEmployees(int idEmployee)
+        public IEnumerable<TaskEmployees> GetTasksByEmployees(int idEmployee)
         {
             using (var connection = _dbConnection.GetConnection())
             {
-                string query = @"SELECT tp.codeProject FROM taskProjects tp WHERE idEmployee = @idEmployee AND idStatusTask = 3";
+                string query = @"SELECT tp.idTask, tp.codeProject, tp.nameTask, tp.descriptionTask FROM taskProjects tp WHERE idEmployee = @idEmployee AND idStatusTask = 3";
 
-                return connection.Query<string>(query, new { idEmployee }).ToList();
+                return connection.Query<TaskEmployees>(query, new { idEmployee }).ToList();
             }
         }
 

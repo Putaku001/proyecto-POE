@@ -18,7 +18,7 @@ namespace BusinessLayer.Services
             _employeesRepositories = employeesRepositories;
         }
 
-        public List<string> GetTasksByEmployees(int idEmployee) => _employeesRepositories.GetTasksByEmployees(idEmployee);
+        public IEnumerable<TaskEmployees> GetTasksByEmployees(int idEmployee) => _employeesRepositories.GetTasksByEmployees(idEmployee);
         public IEnumerable<TaskEmployees> GetsProjects(int idEmployee) => _employeesRepositories.GetsProjects(idEmployee);
         public IEnumerable<StatusTaskEmployees> GetStatusTaskEmployees() => _employeesRepositories.GetStatusTaskEmployees();
     }

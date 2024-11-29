@@ -17,14 +17,16 @@ namespace PresentationLayer.Forms.Empleados
     {
         private readonly IProyectsServices _proyectsServices;
         private readonly IProjectsClientServices _projectsClientServices;
+        private readonly IProjectsEmnployeesServices _projectsEmnployeesServices;
         private readonly IUsersServices _usersServices;
         int idUser;
-        public RecordProjectsForm(IProyectsServices proyectsServices, IUsersServices usersServices, IProjectsClientServices projectsClientServices)
+        public RecordProjectsForm(IProyectsServices proyectsServices, IUsersServices usersServices, IProjectsClientServices projectsClientServices, IProjectsEmnployeesServices projectsEmnployeesServices)
         {
             InitializeComponent();
             _proyectsServices = proyectsServices;
             _usersServices = usersServices;
             _projectsClientServices = projectsClientServices;
+            _projectsEmnployeesServices = projectsEmnployeesServices;
             idUser = CaptureData.idUser;
         }
 
@@ -63,10 +65,11 @@ namespace PresentationLayer.Forms.Empleados
             recordsProjectdataGridView.DataSource = _proyectsServices.GetRequestProjectsByStatus("Terminado").ToList();
             HideColumns("file");
         }
+
         //--Falta completar
         private void LoadProjectsForEmployee(int idEmployee)
         {
-            recordsProjectdataGridView.DataSource = _proyectsServices.GetByIdTaskEmployee(idEmployee).ToList();
+            recordsProjectdataGridView.DataSource = _projectsEmnployeesServices.GetTasksByEmployees(idEmployee).ToList();
             HideColumns("idEmployee", "idStatusTask", "statusTask", "fileTask", "dateEnd");
         }
 
@@ -74,7 +77,7 @@ namespace PresentationLayer.Forms.Empleados
         //Completar
         private void LoadProjectsForClient(int idClient)
         {
-            recordsProjectdataGridView.DataSource = _projectsClientServices.GetProjectsByIdClient(idClient).ToList();
+            recordsProjectdataGridView.DataSource = _projectsClientServices.GetOnlyProjectsByIdClient(idClient).ToList();
             HideColumns("idClient", "file");
         }
         //--
