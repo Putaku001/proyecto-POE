@@ -87,7 +87,7 @@ namespace DataAccessLayer.Repositories
             }
         }
 
-
+        //Este metodo se eliminara
         public void EditUser(User user)
         {
             using (var connection = _dbConnection.GetConnection())
@@ -103,10 +103,9 @@ namespace DataAccessLayer.Repositories
                                      passworduser = @passworduser, 
                                      country = @country, 
                                      city = @city, 
-                                     statususer = @statususer,
+                                     statususer = @statususer,                                     
                                      DateRegistration = @DateRegistration 
                                  WHERE idUser = @idUser";
-
                 connection.Query<User>(query, user);
             }
         }
@@ -130,6 +129,17 @@ namespace DataAccessLayer.Repositories
                                  WHERE idUser = @idUser";
 
                 connection.Query<User>(query, user);
+            }
+        }
+
+        public void UpdateStatusUser(int idUser, string statususer)
+        {
+            using(var connection = _dbConnection.GetConnection())
+            {
+                string query = @"UPDATE Users SET
+                                 statususer = @statususer
+                                 WHERE idUser = @idUser";
+                connection.Query<User>(query, new { idUser, statususer });
             }
         }
 
@@ -205,7 +215,7 @@ namespace DataAccessLayer.Repositories
         {
             using(var connection = _dbConnection.GetConnection())
             {
-                string query = "SELECT * FROM Employee WHERE idEmployee = @idEmployee";
+                string query = "SELECT e.idEmployee, e.idUser FROM Employee e LEFT JOIN Users u on e.idUser = u.idUser WHERE e.idUser = @idEmployee";
 
                 return connection.Query<Employees>(query, new { idEmployee });
             }

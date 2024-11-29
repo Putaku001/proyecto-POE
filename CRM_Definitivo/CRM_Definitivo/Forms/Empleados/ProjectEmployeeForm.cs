@@ -18,20 +18,22 @@ namespace PresentationLayer.Forms.Empleados
     {
         private readonly IUsersServices _usersService;
         private readonly IProyectsServices _listProyectsServices;
+        private readonly IProjectsEmnployeesServices _projectsEmnployeesServices;
         byte[] fileByte;
 
-        public ProjectEmployeeForm(IUsersServices usersServices, IProyectsServices listProyectsServices)
+        public ProjectEmployeeForm(IUsersServices usersServices, IProyectsServices listProyectsServices, IProjectsEmnployeesServices projects)
         {
             InitializeComponent();
             _usersService = usersServices;
             _listProyectsServices = listProyectsServices;
+            _projectsEmnployeesServices = projects;
             LoadData();
             informationProjectPanel.Visible = false;
         }
 
         public void LoadData()
         {
-            taskStatusComboBox.DataSource = _listProyectsServices.GetStatusTaskEmployees();
+            taskStatusComboBox.DataSource = _projectsEmnployeesServices.GetStatusTaskEmployees();
             taskStatusComboBox.DisplayMember = "statusTask";
             taskStatusComboBox.ValueMember = "idStatusTask";
             taskStatusComboBox.SelectedIndex = 1;
@@ -42,7 +44,7 @@ namespace PresentationLayer.Forms.Empleados
 
             if (idEmployee > 0)
             {
-                projectsEmployeeDataGridView.DataSource = _listProyectsServices.GetsProjects(idEmployee);
+                projectsEmployeeDataGridView.DataSource = _projectsEmnployeesServices.GetsProjects(idEmployee);
                 projectsEmployeeDataGridView.Columns["fileTask"].Visible = false;
                 projectsEmployeeDataGridView.Columns["idStatusTask"].Visible = false;
                 projectsEmployeeDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;

@@ -45,6 +45,7 @@
             SelectRp = new DataGridViewButtonColumn();
             processProjectTabPage = new TabPage();
             searchPipPanel = new Panel();
+            searProjectProgresstextBox = new TextBox();
             iconCleanProcessButton = new FontAwesome.Sharp.IconButton();
             iconSearchProcessButton = new FontAwesome.Sharp.IconButton();
             searchProcessLabel = new Label();
@@ -240,6 +241,7 @@
             // 
             // searchPipPanel
             // 
+            searchPipPanel.Controls.Add(searProjectProgresstextBox);
             searchPipPanel.Controls.Add(iconCleanProcessButton);
             searchPipPanel.Controls.Add(iconSearchProcessButton);
             searchPipPanel.Controls.Add(searchProcessLabel);
@@ -250,27 +252,36 @@
             searchPipPanel.Size = new Size(1116, 69);
             searchPipPanel.TabIndex = 1;
             // 
+            // searProjectProgresstextBox
+            // 
+            searProjectProgresstextBox.Location = new Point(288, 23);
+            searProjectProgresstextBox.Name = "searProjectProgresstextBox";
+            searProjectProgresstextBox.Size = new Size(177, 27);
+            searProjectProgresstextBox.TabIndex = 4;
+            // 
             // iconCleanProcessButton
             // 
             iconCleanProcessButton.IconChar = FontAwesome.Sharp.IconChar.None;
             iconCleanProcessButton.IconColor = Color.Black;
             iconCleanProcessButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconCleanProcessButton.Location = new Point(326, 21);
+            iconCleanProcessButton.Location = new Point(509, 21);
             iconCleanProcessButton.Name = "iconCleanProcessButton";
             iconCleanProcessButton.Size = new Size(32, 29);
             iconCleanProcessButton.TabIndex = 3;
             iconCleanProcessButton.UseVisualStyleBackColor = true;
+            iconCleanProcessButton.Click += iconCleanProcessButton_Click;
             // 
             // iconSearchProcessButton
             // 
             iconSearchProcessButton.IconChar = FontAwesome.Sharp.IconChar.None;
             iconSearchProcessButton.IconColor = Color.Black;
             iconSearchProcessButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconSearchProcessButton.Location = new Point(288, 21);
+            iconSearchProcessButton.Location = new Point(471, 21);
             iconSearchProcessButton.Name = "iconSearchProcessButton";
             iconSearchProcessButton.Size = new Size(32, 29);
             iconSearchProcessButton.TabIndex = 2;
             iconSearchProcessButton.UseVisualStyleBackColor = true;
+            iconSearchProcessButton.Click += iconSearchProcessButton_Click;
             // 
             // searchProcessLabel
             // 
@@ -415,5 +426,6 @@
         private DataGridView requestProjectsDataGridView;
         private DataGridViewButtonColumn SelectPr;
         private TabControl taskTabControl;
+        private TextBox searProjectProgresstextBox;
     }
 }

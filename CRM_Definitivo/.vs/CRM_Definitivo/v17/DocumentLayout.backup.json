@@ -1,7 +1,12 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\fuent\\Downloads\\proyecto-POE\\CRM_Definitivo\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\fuent\\Downloads\\e\\pichuli\\proyecto-POE\\CRM_Definitivo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|c:\\users\\fuent\\downloads\\e\\pichuli\\proyecto-poe\\crm_definitivo\\crm_definitivo\\forms\\admin\\addusersform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EB31477-138B-4553-AC5A-952263D20B17}|CRM_Definitivo\\PresentationLayer.csproj|solutionrelative:crm_definitivo\\forms\\admin\\addusersform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,6 +59,19 @@
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AddUsersForm.cs",
+              "DocumentMoniker": "C:\\Users\\fuent\\Downloads\\e\\pichuli\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\AddUsersForm.cs",
+              "RelativeDocumentMoniker": "CRM_Definitivo\\Forms\\Admin\\AddUsersForm.cs",
+              "ToolTip": "C:\\Users\\fuent\\Downloads\\e\\pichuli\\proyecto-POE\\CRM_Definitivo\\CRM_Definitivo\\Forms\\Admin\\AddUsersForm.cs",
+              "RelativeToolTip": "CRM_Definitivo\\Forms\\Admin\\AddUsersForm.cs",
+              "ViewState": "AgIAAIYBAAAAAAAAAAA7wEgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T02:48:11.04Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -33,8 +33,6 @@ namespace PresentationLayer.Forms.Cliente
             LoadData();
             LoadImageInPictureBox(AuthUser.idUser);
 
-            //pictureBoxProfileUser.Width = 100;
-            //pictureBoxProfileUser.Height = 100;
             System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
             path.AddEllipse(0, 0, pictureBoxProfileUser.Width, pictureBoxProfileUser.Height);
 
@@ -108,7 +106,7 @@ namespace PresentationLayer.Forms.Cliente
             }
             else
             {
-                pictureBoxProfileUser.Image = null;
+                pictureBoxProfileUser.Image = Properties.Resources.user_icon_icons_com_57997;
             }
         }
 

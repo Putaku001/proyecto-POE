@@ -58,10 +58,8 @@
             introductionGroupBox.Controls.Add(usersViewPanel);
             introductionGroupBox.Dock = DockStyle.Fill;
             introductionGroupBox.Location = new Point(0, 0);
-            introductionGroupBox.Margin = new Padding(4, 4, 4, 4);
             introductionGroupBox.Name = "introductionGroupBox";
-            introductionGroupBox.Padding = new Padding(4, 4, 4, 4);
-            introductionGroupBox.Size = new Size(1293, 756);
+            introductionGroupBox.Size = new Size(1034, 605);
             introductionGroupBox.TabIndex = 9;
             introductionGroupBox.TabStop = false;
             introductionGroupBox.Text = "Inicio";
@@ -70,10 +68,9 @@
             // 
             userAccountLabel.AutoSize = true;
             userAccountLabel.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold);
-            userAccountLabel.Location = new Point(356, 26);
-            userAccountLabel.Margin = new Padding(4, 0, 4, 0);
+            userAccountLabel.Location = new Point(264, 20);
             userAccountLabel.Name = "userAccountLabel";
-            userAccountLabel.Size = new Size(113, 34);
+            userAccountLabel.Size = new Size(93, 27);
             userAccountLabel.TabIndex = 1;
             userAccountLabel.Text = "usuario";
             // 
@@ -84,21 +81,19 @@
             timeLabel.BackColor = Color.Transparent;
             timeLabel.Font = new Font("Century Gothic", 12F);
             timeLabel.ForeColor = Color.Black;
-            timeLabel.Location = new Point(680, 30);
-            timeLabel.Margin = new Padding(4, 0, 4, 0);
+            timeLabel.Location = new Point(567, 24);
             timeLabel.Name = "timeLabel";
-            timeLabel.Size = new Size(68, 30);
+            timeLabel.Size = new Size(198, 23);
             timeLabel.TabIndex = 5;
-            timeLabel.Text = "Hora";
+            timeLabel.Text = "07/06/2024 00:00:00";
             // 
             // welcomeLabel
             // 
             welcomeLabel.AutoSize = true;
             welcomeLabel.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold);
-            welcomeLabel.Location = new Point(24, 26);
-            welcomeLabel.Margin = new Padding(4, 0, 4, 0);
+            welcomeLabel.Location = new Point(19, 21);
             welcomeLabel.Name = "welcomeLabel";
-            welcomeLabel.Size = new Size(311, 34);
+            welcomeLabel.Size = new Size(256, 27);
             welcomeLabel.TabIndex = 0;
             welcomeLabel.Text = "Bienvenido de vuelta ";
             // 
@@ -109,34 +104,30 @@
             projectsAssignamentPanel.Controls.Add(pictureBox1);
             projectsAssignamentPanel.Controls.Add(statusProjectLabel);
             projectsAssignamentPanel.Controls.Add(statusLabel);
-            projectsAssignamentPanel.Location = new Point(24, 91);
-            projectsAssignamentPanel.Margin = new Padding(4, 4, 4, 4);
+            projectsAssignamentPanel.Location = new Point(19, 73);
             projectsAssignamentPanel.Name = "projectsAssignamentPanel";
-            projectsAssignamentPanel.Size = new Size(932, 155);
+            projectsAssignamentPanel.Size = new Size(746, 125);
             projectsAssignamentPanel.TabIndex = 2;
             // 
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(744, 21);
-            pictureBox1.Margin = new Padding(4, 4, 4, 4);
+            pictureBox1.Location = new Point(595, 17);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(160, 114);
+            pictureBox1.Size = new Size(128, 91);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
             // 
             // statusProjectLabel
             // 
-            statusProjectLabel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             statusProjectLabel.AutoSize = true;
             statusProjectLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             statusProjectLabel.ForeColor = Color.DodgerBlue;
-            statusProjectLabel.Location = new Point(28, 66);
-            statusProjectLabel.Margin = new Padding(4, 0, 4, 0);
+            statusProjectLabel.Location = new Point(22, 53);
             statusProjectLabel.Name = "statusProjectLabel";
-            statusProjectLabel.Size = new Size(127, 28);
+            statusProjectLabel.Size = new Size(108, 23);
             statusProjectLabel.TabIndex = 2;
             statusProjectLabel.Text = "Pendiente";
             // 
@@ -144,10 +135,9 @@
             // 
             statusLabel.AutoSize = true;
             statusLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            statusLabel.Location = new Point(28, 21);
-            statusLabel.Margin = new Padding(4, 0, 4, 0);
+            statusLabel.Location = new Point(22, 17);
             statusLabel.Name = "statusLabel";
-            statusLabel.Size = new Size(540, 28);
+            statusLabel.Size = new Size(455, 23);
             statusLabel.TabIndex = 1;
             statusLabel.Text = "El estado actual de su proyecto solicidato es:";
             // 
@@ -157,20 +147,18 @@
             usersViewPanel.Controls.Add(logoPictureBox);
             usersViewPanel.Controls.Add(nameGroupLabel);
             usersViewPanel.Dock = DockStyle.Right;
-            usersViewPanel.Location = new Point(978, 28);
-            usersViewPanel.Margin = new Padding(4, 4, 4, 4);
+            usersViewPanel.Location = new Point(782, 23);
             usersViewPanel.Name = "usersViewPanel";
-            usersViewPanel.Size = new Size(311, 724);
+            usersViewPanel.Size = new Size(249, 579);
             usersViewPanel.TabIndex = 6;
             // 
             // logoPictureBox
             // 
             logoPictureBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             logoPictureBox.Image = Properties.Resources.CRM_logo__1_;
-            logoPictureBox.Location = new Point(44, 34);
-            logoPictureBox.Margin = new Padding(4, 4, 4, 4);
+            logoPictureBox.Location = new Point(35, 27);
             logoPictureBox.Name = "logoPictureBox";
-            logoPictureBox.Size = new Size(234, 222);
+            logoPictureBox.Size = new Size(187, 178);
             logoPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             logoPictureBox.TabIndex = 31;
             logoPictureBox.TabStop = false;
@@ -180,21 +168,19 @@
             nameGroupLabel.AutoSize = true;
             nameGroupLabel.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             nameGroupLabel.ForeColor = Color.DimGray;
-            nameGroupLabel.Location = new Point(23, 304);
-            nameGroupLabel.Margin = new Padding(4, 0, 4, 0);
+            nameGroupLabel.Location = new Point(18, 243);
             nameGroupLabel.Name = "nameGroupLabel";
-            nameGroupLabel.Size = new Size(267, 40);
+            nameGroupLabel.Size = new Size(227, 34);
             nameGroupLabel.TabIndex = 30;
             nameGroupLabel.Text = "Los Tilinizasos77";
             // 
             // HomeUserClientForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1293, 756);
+            ClientSize = new Size(1034, 605);
             Controls.Add(introductionGroupBox);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4, 4, 4, 4);
             Name = "HomeUserClientForm";
             Text = "HomeUserClientForm";
             introductionGroupBox.ResumeLayout(false);

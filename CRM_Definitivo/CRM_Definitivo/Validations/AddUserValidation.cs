@@ -66,10 +66,6 @@ namespace PresentationLayer.Validations
                 .NotEmpty().WithMessage("Debe seleccionar un rol.")
                 .Must(rol => rol > 0).WithMessage("Debe seleccionar un rol válido.");
 
-            RuleFor(user => user.Image)
-                .NotEmpty().WithMessage("Debe cargar una imagen de perfil.")
-                .Must(image => image.Length > 0).WithMessage("La imagen no puede estar vacía.");
-
 
         }
     }

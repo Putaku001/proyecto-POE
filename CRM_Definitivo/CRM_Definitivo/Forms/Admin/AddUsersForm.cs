@@ -24,12 +24,15 @@ namespace PresentationLayer.Forms
     {
         private IUsersServices _usuersservices;
         private IRolServices rolServices;
+        private readonly IProyectsServices _proyectsServices;
+        private readonly IProjectsClientServices _projectsClientServices;
         private UsersForm _formularioPrincipal;
         bool IsEditing = false;
         byte[] imageBytes;
+        int idUser = CaptureData.idUser;
         private User _usuario;
 
-        public AddUsersForm(IUsersServices _usuersServices, IRolServices _rolServices, User usuario = null)
+        public AddUsersForm(IUsersServices _usuersServices, IRolServices _rolServices, IProyectsServices proyectsServices, IProjectsClientServices projectsClientServices, User usuario = null)
         {
             InitializeComponent();
 
@@ -38,14 +41,15 @@ namespace PresentationLayer.Forms
             IsEditing = usuario != null;
             _usuersservices = _usuersServices;
             rolServices = _rolServices;
+            _proyectsServices = proyectsServices;
+            _projectsClientServices = projectsClientServices;
+            
+
             LoadProvincias();
 
             ConfigureForm();
 
-            // En el constructor o inicializador del formulario
-            //cboRol.SelectedIndexChanged += cboRol_SelectedIndexChanged;
-
-
+            profilePictureBox.Image = Properties.Resources.user_icon_icons_com_57997;
         }
 
         private void ConfigureForm()
@@ -220,12 +224,12 @@ namespace PresentationLayer.Forms
                 if (rolComboBox.SelectedValue == null || Convert.ToInt32(rolComboBox.SelectedValue) <= 0)
                 {
                     MessageBox.Show("Debe seleccionar un rol válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return; 
+                    return;
                 }
 
                 _usuario.UserAccount = nameUserTextBox.Text;
                 _usuario.Email = emailTextBox.Text;
-                _usuario.idRol = Convert.ToInt32(rolComboBox.SelectedValue); 
+                _usuario.idRol = Convert.ToInt32(rolComboBox.SelectedValue);
                 _usuario.NameUser = nameTextBox.Text;
                 _usuario.LastName = lastNameTextBox.Text;
                 _usuario.Birthdate = birthdateDateTimePicker.Value;
@@ -235,14 +239,12 @@ namespace PresentationLayer.Forms
                 _usuario.City = (string)cityListComboBox.SelectedValue;
                 _usuario.Statususer = (string)statusComboBox.SelectedValue;
 
-
-         
                 if (imageBytes != null)
                 {
                     _usuario.Image = imageBytes;
                 }
 
-                _usuario.DateRegistration = DateTime.Now; 
+                _usuario.DateRegistration = DateTime.Now;
 
                 AddUserValidation newAccountValidation = new AddUserValidation();
                 ValidationResult result = newAccountValidation.Validate(_usuario);
@@ -339,10 +341,6 @@ namespace PresentationLayer.Forms
                         errorValidation.SetError(statusComboBox, error.ErrorMessage);
                         errorStatusLabel.Text = error.ErrorMessage;
                         break;
-                    case nameof(User.Image):
-                        errorValidation.SetError(profileLinkLabel, error.ErrorMessage);
-                        errorSelectImagenLabel.Text = error.ErrorMessage;
-                        break;
                     default:
                         Console.WriteLine($"Error en un campo no reconocido: {error.PropertyName}");
                         break;
@@ -377,25 +375,63 @@ namespace PresentationLayer.Forms
             errorValidation.SetError(cityListComboBox, string.Empty);
             errorValidation.SetError(rolComboBox, string.Empty);
             errorValidation.SetError(statusComboBox, string.Empty);
-            errorValidation.SetError(profileLinkLabel, string.Empty);
+            //errorValidation.SetError(profileLinkLabel, string.Empty);
         }
 
-        private void profileLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        public int GetidEmployee()
         {
-            OpenFileDialog photoUser = new OpenFileDialog();
-            photoUser.Filter = "Archivos de imagenes (*.png; *.jpg; *.jpeg; *.WEBP) | *.png; *.jpg; *.jpeg; *.WEBP";
+            return Convert.ToInt32(_usuersservices.GetByIdEmployees(_usuario.IdUser).Select(employee => employee.idEmployee).FirstOrDefault());
+        }
 
-            if (photoUser.ShowDialog() == DialogResult.OK)
+        public int GetIdClient()
+        {
+           return Convert.ToInt32(_usuersservices.GetClients().Where(id => id.idUser == _usuario.IdUser).Select(client => client.idCliente).FirstOrDefault());
+        }
+
+        private void DesactiveEmpleoyeeiconButton_Click(object sender, EventArgs e)
+        {            
+            if(_usuario.idRol == 2 )
             {
-                profilePictureBox.Image = System.Drawing.Image.FromFile(photoUser.FileName);
+                int idEmployee = GetidEmployee();
+                var getTasks = _proyectsServices.GetByIdTaskEmployee(idEmployee).ToList();
+                bool taskPending = getTasks.Any(t => t.idStatusTask == 1);
 
-                if (profilePictureBox.Image != null)
+                if (taskPending)
                 {
-                    using (MemoryStream memoryStream = new MemoryStream())
+                    MessageBox.Show($"El usuario {_usuario.UserAccount} aun tiene tareas pendientes");
+                }
+                else
+                {
+                    var Messageconfirm = MessageBox.Show($"Desea desactivar la cuenta de el usuario {_usuario.UserAccount}?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                    if(Messageconfirm == DialogResult.OK)
                     {
-                        profilePictureBox.Image.Save(memoryStream, System.Drawing.Imaging.ImageFormat.Png);
-                        imageBytes = memoryStream.ToArray();
-                    }
+                        int idUser = _usuario.IdUser;
+                        string status = "Desactivado";
+                        _usuersservices.UpdateStatusUser(idUser, status);
+                    }                   
+                }
+            }
+            else if (_usuario.idRol == 4)
+            {
+                var idClient = GetIdClient();
+                var getProjects = _projectsClientServices.GetOnlyProjectsByIdClient(idClient).ToList();
+
+                bool projectsPending = getProjects.Any(status => status.statusproyect == "Terminado");
+
+                if (projectsPending)
+                {
+                    var Messageconfirm = MessageBox.Show($"Desea desactivar la cuenta de el usuario {_usuario.UserAccount}?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);                    int idUser = _usuario.IdUser;
+                    
+                    if(Messageconfirm == DialogResult.OK)
+                    {
+                        string status = "Desactivado";
+                        _usuersservices.UpdateStatusUser(idUser, status);
+                    }                  
+                }
+                else
+                {
+                    MessageBox.Show($"No se puede desactivar el usuario {_usuario.UserAccount}, aun tiene proyectos pendientes");
                 }
             }
         }

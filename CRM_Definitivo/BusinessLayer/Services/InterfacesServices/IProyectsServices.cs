@@ -10,18 +10,12 @@ namespace BusinessLayer.Services.InterfacesServices
 {
     public interface IProyectsServices
     {
-        IEnumerable<RequestProjects> GetRequestProjects();
+        IEnumerable<Projects> GetRequestProjectsByStatus(string statusproject);
         IEnumerable<TaskEmployees> GetTaskEmployees();
-        IEnumerable<Projects> GetRequestProjectsProgress();
-        IEnumerable<Projects> GetProjectsWaitingReponse();
-        IEnumerable<Projects> GetRequestProjectsFinish();
-        IEnumerable<Projects> GetRequestProjectsRefused();
-
 
         IEnumerable<ListProyects> GetLisProyect();
-        List<StatusProjects> GetStatusProjects();
+
         void UpdateTaskEmployee(int idTask, byte[] file, int idStatusTask);
-        void ProjectRedo(string codeProject, int idStatusProject);
         void StatusProject(string codeProject, int idStatusProject);
         void DateInit(string codeProject, DateTime DateInit);
         void DateEnd(string codeProject, DateTime DateEnd);
@@ -38,21 +32,5 @@ namespace BusinessLayer.Services.InterfacesServices
         IEnumerable<TaskEmployees> GetByIdTaskEmployee(int idEmployee);
 
 
-
-
-
-        //Metodos para Clientes
-        IEnumerable<RequestProjects> GetProjectsByIdClient(int idUser);
-        void AddNewProject(string codeProject, int idClient, string nameProject, string descriptionProject);
-        List<string> GetRequestProyectsByIdClient(int idClient);
-        IEnumerable<RequestProjects> GetProjectsByIdStatus(IEnumerable<int> idStatus);
-        byte[] getProjectInDB(string codeProject);
-
-
-        //Metodos para Empleados
-        List<string> GetTasksByEmployees(int idEmployee);
-        IEnumerable<TaskEmployees> GetsProjects(int idEmployee);
-        IEnumerable<StatusTaskEmployees> GetStatusTaskEmployees();
-        
     }
 }

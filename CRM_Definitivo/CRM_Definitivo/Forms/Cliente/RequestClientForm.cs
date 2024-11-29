@@ -22,13 +22,15 @@ namespace PresentationLayer.Forms.Cliente
     {
         private readonly IUsersServices _usersServices;
         private readonly IProyectsServices _proyectsServices;
+        private readonly IProjectsClientServices _projectsClientServices;
         private readonly IServiceProvider _serviceProvider;
         int idClienById;
-        public RequestClientForm(IUsersServices usersServices, IProyectsServices listProyectsServices, IServiceProvider serviceProvider)
+        public RequestClientForm(IUsersServices usersServices, IProyectsServices listProyectsServices, IProjectsClientServices projectsClientServices , IServiceProvider serviceProvider)
         {
             InitializeComponent();
             _usersServices = usersServices;
             _proyectsServices = listProyectsServices;
+            _projectsClientServices = projectsClientServices;
             _serviceProvider = serviceProvider;
         }
 
@@ -40,7 +42,7 @@ namespace PresentationLayer.Forms.Cliente
         {
             int idUser = CaptureData.idUser;
             var idClientByID = Convert.ToInt32(_usersServices.GetClients().Where(u => u.idUser == idUser).Select(e => e.idCliente).FirstOrDefault());
-            requestProjectDataGridView.DataSource = _proyectsServices.GetProjectsByIdClient(idClientByID);
+            requestProjectDataGridView.DataSource = _projectsClientServices.GetProjectsByIdClient(idClientByID);
 
             requestProjectDataGridView.Columns["idClient"].Visible = false;
             requestProjectDataGridView.Columns["UserAccount"].Visible = false;
@@ -51,7 +53,7 @@ namespace PresentationLayer.Forms.Cliente
             requestProjectDataGridView.Columns["descriptionProject"].HeaderText = "Descripcion";
 
             var pendingStatusId = new List<int> { 7, 6 };
-            listProjectDataGridView.DataSource = _proyectsServices.GetProjectsByIdStatus(pendingStatusId);
+            listProjectDataGridView.DataSource = _projectsClientServices.GetProjectsByIdStatus(pendingStatusId);
 
             listProjectDataGridView.Columns["idClient"].Visible = false;
             listProjectDataGridView.Columns["UserAccount"].Visible = false;
@@ -106,7 +108,7 @@ namespace PresentationLayer.Forms.Cliente
                     try
                     {
                         string codeProject = listProjectDataGridView.Rows[e.RowIndex].Cells["codeProject"].Value.ToString();
-                        byte[] content = _proyectsServices.getProjectInDB(codeProject);
+                        byte[] content = _projectsClientServices.getProjectInDB(codeProject);
 
                         SaveFileDialog saveFileDialog = new SaveFileDialog
                         {
@@ -172,11 +174,11 @@ namespace PresentationLayer.Forms.Cliente
                 };
 
 
-                _proyectsServices.AddNewProject(newProject.codeProject, newProject.idClient, newProject.nameProject, newProject.descriptionProject);
+                _projectsClientServices.AddNewProject(newProject.codeProject, newProject.idClient, newProject.nameProject, newProject.descriptionProject);
 
                 _proyectsServices.StatusProject(newProject.codeProject, status.idStatusProyect);
 
-                requestProjectDataGridView.DataSource = _proyectsServices.GetProjectsByIdClient(
+                requestProjectDataGridView.DataSource = _projectsClientServices.GetProjectsByIdClient(
                     Convert.ToInt32(_usersServices.GetClients()
                         .Where(u => u.idUser == idUser)
                         .Select(e => e.idCliente)

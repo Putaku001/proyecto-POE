@@ -54,13 +54,13 @@
             // 
             // projectsEmployeeDataGridView
             // 
+            projectsEmployeeDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             projectsEmployeeDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             projectsEmployeeDataGridView.Columns.AddRange(new DataGridViewColumn[] { Select });
-            projectsEmployeeDataGridView.Dock = DockStyle.Right;
-            projectsEmployeeDataGridView.Location = new Point(657, 0);
+            projectsEmployeeDataGridView.Location = new Point(627, 0);
             projectsEmployeeDataGridView.Name = "projectsEmployeeDataGridView";
             projectsEmployeeDataGridView.RowHeadersWidth = 51;
-            projectsEmployeeDataGridView.Size = new Size(759, 833);
+            projectsEmployeeDataGridView.Size = new Size(789, 833);
             projectsEmployeeDataGridView.TabIndex = 2;
             projectsEmployeeDataGridView.CellClick += projectsEmployeeDataGridView_CellClick;
             // 
@@ -80,7 +80,7 @@
             informationProjectPanel.Dock = DockStyle.Left;
             informationProjectPanel.Location = new Point(0, 0);
             informationProjectPanel.Name = "informationProjectPanel";
-            informationProjectPanel.Size = new Size(659, 833);
+            informationProjectPanel.Size = new Size(624, 833);
             informationProjectPanel.TabIndex = 3;
             // 
             // projectInformationGroupBox
@@ -108,7 +108,7 @@
             taskStatusComboBox.FormattingEnabled = true;
             taskStatusComboBox.Location = new Point(92, 375);
             taskStatusComboBox.Name = "taskStatusComboBox";
-            taskStatusComboBox.Size = new Size(349, 38);
+            taskStatusComboBox.Size = new Size(349, 31);
             taskStatusComboBox.TabIndex = 14;
             // 
             // flowLayoutLinkFilePanel
@@ -128,7 +128,7 @@
             labelLinkFile.ForeColor = SystemColors.ControlDarkDark;
             labelLinkFile.Location = new Point(3, 0);
             labelLinkFile.Name = "labelLinkFile";
-            labelLinkFile.Size = new Size(64, 21);
+            labelLinkFile.Size = new Size(54, 18);
             labelLinkFile.TabIndex = 11;
             labelLinkFile.Text = "label3";
             // 
@@ -163,7 +163,7 @@
             projectNameLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             projectNameLabel.Location = new Point(13, 29);
             projectNameLabel.Name = "projectNameLabel";
-            projectNameLabel.Size = new Size(260, 28);
+            projectNameLabel.Size = new Size(219, 23);
             projectNameLabel.TabIndex = 0;
             projectNameLabel.Text = "Nombre del Proyecto";
             // 
@@ -174,7 +174,7 @@
             linkFileLabel.LinkColor = Color.White;
             linkFileLabel.Location = new Point(110, 320);
             linkFileLabel.Name = "linkFileLabel";
-            linkFileLabel.Size = new Size(331, 23);
+            linkFileLabel.Size = new Size(286, 21);
             linkFileLabel.TabIndex = 3;
             linkFileLabel.TabStop = true;
             linkFileLabel.Text = "En este apartado subira su tarea";
@@ -186,7 +186,7 @@
             descriptionLabel.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             descriptionLabel.Location = new Point(17, 68);
             descriptionLabel.Name = "descriptionLabel";
-            descriptionLabel.Size = new Size(123, 23);
+            descriptionLabel.Size = new Size(107, 21);
             descriptionLabel.TabIndex = 5;
             descriptionLabel.Text = "Descripcion";
             // 
@@ -197,7 +197,7 @@
             nameTaskLabel.ForeColor = Color.White;
             nameTaskLabel.Location = new Point(313, 3);
             nameTaskLabel.Name = "nameTaskLabel";
-            nameTaskLabel.Size = new Size(77, 28);
+            nameTaskLabel.Size = new Size(63, 23);
             nameTaskLabel.TabIndex = 7;
             nameTaskLabel.Text = "Tarea";
             // 
@@ -219,7 +219,7 @@
             projectsAssignamentLabel.ForeColor = Color.White;
             projectsAssignamentLabel.Location = new Point(572, 0);
             projectsAssignamentLabel.Name = "projectsAssignamentLabel";
-            projectsAssignamentLabel.Size = new Size(395, 51);
+            projectsAssignamentLabel.Size = new Size(331, 44);
             projectsAssignamentLabel.TabIndex = 13;
             projectsAssignamentLabel.Text = "Tareas Asignadas";
             // 
@@ -235,7 +235,7 @@
             // 
             // ProjectEmployeeForm
             // 
-            AutoScaleDimensions = new SizeF(11F, 21F);
+            AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1416, 895);

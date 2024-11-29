@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsersForm));
             userDataGridView = new DataGridView();
             userPanel = new Panel();
+            searchUserscomboBox = new ComboBox();
             cleanSearchUserIconButton = new FontAwesome.Sharp.IconButton();
             searchUserIconButton = new FontAwesome.Sharp.IconButton();
             searchUserLabel = new Label();
@@ -53,17 +54,17 @@
             // 
             userDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             userDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            userDataGridView.Location = new Point(52, 88);
-            userDataGridView.Margin = new Padding(4);
+            userDataGridView.Location = new Point(42, 70);
             userDataGridView.Name = "userDataGridView";
             userDataGridView.RowHeadersWidth = 51;
-            userDataGridView.Size = new Size(1564, 794);
+            userDataGridView.Size = new Size(1251, 635);
             userDataGridView.TabIndex = 0;
             // 
             // userPanel
             // 
             userPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             userPanel.BackColor = SystemColors.Control;
+            userPanel.Controls.Add(searchUserscomboBox);
             userPanel.Controls.Add(cleanSearchUserIconButton);
             userPanel.Controls.Add(searchUserIconButton);
             userPanel.Controls.Add(searchUserLabel);
@@ -73,11 +74,19 @@
             userPanel.Controls.Add(deleteUserPictureBox);
             userPanel.Controls.Add(editUserPictureBox);
             userPanel.Controls.Add(addUserPictureBox);
-            userPanel.Location = new Point(56, 4);
-            userPanel.Margin = new Padding(4);
+            userPanel.Location = new Point(45, 3);
             userPanel.Name = "userPanel";
-            userPanel.Size = new Size(1564, 76);
+            userPanel.Size = new Size(1251, 61);
             userPanel.TabIndex = 1;
+            // 
+            // searchUserscomboBox
+            // 
+            searchUserscomboBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            searchUserscomboBox.FormattingEnabled = true;
+            searchUserscomboBox.Location = new Point(300, 21);
+            searchUserscomboBox.Name = "searchUserscomboBox";
+            searchUserscomboBox.Size = new Size(196, 28);
+            searchUserscomboBox.TabIndex = 11;
             // 
             // cleanSearchUserIconButton
             // 
@@ -87,12 +96,12 @@
             cleanSearchUserIconButton.IconColor = Color.Black;
             cleanSearchUserIconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             cleanSearchUserIconButton.IconSize = 25;
-            cleanSearchUserIconButton.Location = new Point(716, 25);
-            cleanSearchUserIconButton.Margin = new Padding(4);
+            cleanSearchUserIconButton.Location = new Point(774, 21);
             cleanSearchUserIconButton.Name = "cleanSearchUserIconButton";
-            cleanSearchUserIconButton.Size = new Size(46, 36);
+            cleanSearchUserIconButton.Size = new Size(37, 29);
             cleanSearchUserIconButton.TabIndex = 10;
             cleanSearchUserIconButton.UseVisualStyleBackColor = true;
+            cleanSearchUserIconButton.Click += cleanSearchUserIconButton_Click;
             // 
             // searchUserIconButton
             // 
@@ -102,10 +111,9 @@
             searchUserIconButton.IconColor = Color.Black;
             searchUserIconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             searchUserIconButton.IconSize = 25;
-            searchUserIconButton.Location = new Point(666, 25);
-            searchUserIconButton.Margin = new Padding(4);
+            searchUserIconButton.Location = new Point(734, 21);
             searchUserIconButton.Name = "searchUserIconButton";
-            searchUserIconButton.Size = new Size(46, 36);
+            searchUserIconButton.Size = new Size(37, 29);
             searchUserIconButton.TabIndex = 9;
             searchUserIconButton.UseVisualStyleBackColor = true;
             searchUserIconButton.Click += searchUserIconButton_Click;
@@ -114,30 +122,27 @@
             // 
             searchUserLabel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             searchUserLabel.AutoSize = true;
-            searchUserLabel.Location = new Point(303, 30);
-            searchUserLabel.Margin = new Padding(4, 0, 4, 0);
+            searchUserLabel.Location = new Point(242, 24);
             searchUserLabel.Name = "searchUserLabel";
-            searchUserLabel.Size = new Size(63, 25);
+            searchUserLabel.Size = new Size(52, 20);
             searchUserLabel.TabIndex = 8;
             searchUserLabel.Text = "Buscar";
             // 
             // searchUserTextBox
             // 
             searchUserTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            searchUserTextBox.Location = new Point(376, 26);
-            searchUserTextBox.Margin = new Padding(4);
+            searchUserTextBox.Location = new Point(502, 22);
             searchUserTextBox.Name = "searchUserTextBox";
-            searchUserTextBox.Size = new Size(286, 31);
+            searchUserTextBox.Size = new Size(230, 27);
             searchUserTextBox.TabIndex = 7;
             // 
             // printPictureBox
             // 
             printPictureBox.Cursor = Cursors.Hand;
             printPictureBox.Image = Properties.Resources.imprimir;
-            printPictureBox.Location = new Point(1481, 9);
-            printPictureBox.Margin = new Padding(4);
+            printPictureBox.Location = new Point(1185, 7);
             printPictureBox.Name = "printPictureBox";
-            printPictureBox.Size = new Size(52, 48);
+            printPictureBox.Size = new Size(42, 38);
             printPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             printPictureBox.TabIndex = 5;
             printPictureBox.TabStop = false;
@@ -146,10 +151,9 @@
             // 
             PdfUserPictureBox.Cursor = Cursors.Hand;
             PdfUserPictureBox.Image = (Image)resources.GetObject("PdfUserPictureBox.Image");
-            PdfUserPictureBox.Location = new Point(1415, 9);
-            PdfUserPictureBox.Margin = new Padding(4);
+            PdfUserPictureBox.Location = new Point(1132, 7);
             PdfUserPictureBox.Name = "PdfUserPictureBox";
-            PdfUserPictureBox.Size = new Size(41, 48);
+            PdfUserPictureBox.Size = new Size(33, 38);
             PdfUserPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             PdfUserPictureBox.TabIndex = 4;
             PdfUserPictureBox.TabStop = false;
@@ -159,10 +163,9 @@
             // 
             deleteUserPictureBox.Cursor = Cursors.Hand;
             deleteUserPictureBox.Image = Properties.Resources.eliminar_Usuario;
-            deleteUserPictureBox.Location = new Point(195, 15);
-            deleteUserPictureBox.Margin = new Padding(4);
+            deleteUserPictureBox.Location = new Point(156, 12);
             deleteUserPictureBox.Name = "deleteUserPictureBox";
-            deleteUserPictureBox.Size = new Size(52, 48);
+            deleteUserPictureBox.Size = new Size(42, 38);
             deleteUserPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             deleteUserPictureBox.TabIndex = 3;
             deleteUserPictureBox.TabStop = false;
@@ -172,10 +175,9 @@
             // 
             editUserPictureBox.Cursor = Cursors.Hand;
             editUserPictureBox.Image = Properties.Resources.editar_Usuario;
-            editUserPictureBox.Location = new Point(104, 15);
-            editUserPictureBox.Margin = new Padding(4);
+            editUserPictureBox.Location = new Point(83, 12);
             editUserPictureBox.Name = "editUserPictureBox";
-            editUserPictureBox.Size = new Size(52, 48);
+            editUserPictureBox.Size = new Size(42, 38);
             editUserPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             editUserPictureBox.TabIndex = 2;
             editUserPictureBox.TabStop = false;
@@ -185,10 +187,9 @@
             // 
             addUserPictureBox.Cursor = Cursors.Hand;
             addUserPictureBox.Image = Properties.Resources.añadir_usuario;
-            addUserPictureBox.Location = new Point(15, 15);
-            addUserPictureBox.Margin = new Padding(4);
+            addUserPictureBox.Location = new Point(12, 12);
             addUserPictureBox.Name = "addUserPictureBox";
-            addUserPictureBox.Size = new Size(52, 48);
+            addUserPictureBox.Size = new Size(42, 38);
             addUserPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             addUserPictureBox.TabIndex = 1;
             addUserPictureBox.TabStop = false;
@@ -196,15 +197,14 @@
             // 
             // UsersForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             BackColor = Color.White;
-            ClientSize = new Size(1694, 930);
+            ClientSize = new Size(1355, 744);
             Controls.Add(userDataGridView);
             Controls.Add(userPanel);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4);
             Name = "UsersForm";
             Text = "Usuarios";
             ((System.ComponentModel.ISupportInitialize)userDataGridView).EndInit();
@@ -231,5 +231,6 @@
         private PictureBox editUserPictureBox;
         private FontAwesome.Sharp.IconButton cleanSearchUserIconButton;
         private FontAwesome.Sharp.IconButton searchUserIconButton;
+        private ComboBox searchUserscomboBox;
     }
 }

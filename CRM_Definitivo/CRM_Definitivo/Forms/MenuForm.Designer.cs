@@ -42,7 +42,6 @@
             IconMenuItemProjectsEmployee = new FontAwesome.Sharp.IconMenuItem();
             toolStripSeparator1 = new ToolStripSeparator();
             IconMenuRecordForm = new FontAwesome.Sharp.IconMenuItem();
-            IconMenusSettingsForm = new FontAwesome.Sharp.IconMenuItem();
             IconMenuAccountForm = new FontAwesome.Sharp.IconMenuItem();
             IconMenuItemMenus = new FontAwesome.Sharp.IconMenuItem();
             timer1 = new System.Windows.Forms.Timer(components);
@@ -50,6 +49,7 @@
             menuGroupBox = new GroupBox();
             userAccountLabel = new Label();
             panelUsersView = new Panel();
+            ageTextlabel = new Label();
             informationPanel = new Panel();
             registrationLabel = new Label();
             numberPhoneLabel = new Label();
@@ -70,13 +70,13 @@
             projectRequestedPictureBox = new PictureBox();
             requestProjectListBox = new ListBox();
             projectRequestedLabel = new Label();
+            informationUserPanel = new Panel();
+            userDataGridView = new DataGridView();
+            viewUser = new DataGridViewButtonColumn();
             assignedProjectPanel = new Panel();
             assignedProjectPictureBox = new PictureBox();
             assignedProjectListBox = new ListBox();
             assignedProjectLabel = new Label();
-            informationUserPanel = new Panel();
-            userDataGridView = new DataGridView();
-            viewUser = new DataGridViewButtonColumn();
             clientUserButton = new FontAwesome.Sharp.IconButton();
             administratorUserButton = new FontAwesome.Sharp.IconButton();
             employeeUserButton = new FontAwesome.Sharp.IconButton();
@@ -96,10 +96,10 @@
             projectPanel.SuspendLayout();
             requestProjectPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)projectRequestedPictureBox).BeginInit();
-            assignedProjectPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)assignedProjectPictureBox).BeginInit();
             informationUserPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)userDataGridView).BeginInit();
+            assignedProjectPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)assignedProjectPictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)closedPictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)minimizarPictureBox).BeginInit();
             nameUserPanel.SuspendLayout();
@@ -123,11 +123,11 @@
             timeUserLabel.BackColor = Color.White;
             timeUserLabel.Font = new Font("Century Gothic", 12F);
             timeUserLabel.ForeColor = Color.Black;
-            timeUserLabel.Location = new Point(892, 26);
+            timeUserLabel.Location = new Point(920, 44);
             timeUserLabel.Name = "timeUserLabel";
-            timeUserLabel.Size = new Size(68, 30);
+            timeUserLabel.Size = new Size(198, 23);
             timeUserLabel.TabIndex = 5;
-            timeUserLabel.Text = "Hora";
+            timeUserLabel.Text = "07/07/2024 00:00:00";
             // 
             // menuPerfilPanel
             // 
@@ -143,16 +143,16 @@
             // 
             // logoutLabel
             // 
-            logoutLabel.AutoSize = true;
-            logoutLabel.BackColor = Color.White;
+            logoutLabel.BackColor = Color.Gray;
             logoutLabel.Cursor = Cursors.Hand;
-            logoutLabel.Font = new Font("Century Gothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            logoutLabel.ForeColor = Color.FromArgb(46, 54, 61);
-            logoutLabel.Location = new Point(56, 770);
+            logoutLabel.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            logoutLabel.ForeColor = Color.Black;
+            logoutLabel.Location = new Point(0, 643);
             logoutLabel.Name = "logoutLabel";
-            logoutLabel.Size = new Size(151, 26);
+            logoutLabel.Size = new Size(284, 38);
             logoutLabel.TabIndex = 6;
             logoutLabel.Text = "Cerrar sesion";
+            logoutLabel.TextAlign = ContentAlignment.TopCenter;
             logoutLabel.Click += logoutLabel_Click;
             // 
             // menu
@@ -163,11 +163,11 @@
             menu.Dock = DockStyle.None;
             menu.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
             menu.ImageScalingSize = new Size(60, 60);
-            menu.Items.AddRange(new ToolStripItem[] { IconMenuItemHome, IconMenuUsersForm, IconMenuProyectsForm, IconMenuItemRequestClientProjects, IconMenuItemProjectsEmployee, IconMenuRecordForm, IconMenusSettingsForm, IconMenuAccountForm, IconMenuItemMenus });
+            menu.Items.AddRange(new ToolStripItem[] { IconMenuItemHome, IconMenuUsersForm, IconMenuProyectsForm, IconMenuItemRequestClientProjects, IconMenuItemProjectsEmployee, IconMenuRecordForm, IconMenuAccountForm, IconMenuItemMenus });
             menu.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
             menu.Location = new Point(9, 176);
             menu.Name = "menu";
-            menu.Size = new Size(272, 572);
+            menu.Size = new Size(272, 457);
             menu.TabIndex = 9;
             // 
             // IconMenuItemHome
@@ -265,7 +265,7 @@
             // toolStripSeparator1
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(87, 6);
+            toolStripSeparator1.Size = new Size(71, 6);
             // 
             // IconMenuRecordForm
             // 
@@ -284,24 +284,6 @@
             IconMenuRecordForm.Text = "Registro";
             IconMenuRecordForm.TextImageRelation = TextImageRelation.Overlay;
             IconMenuRecordForm.Click += iconMenuRecordForm_Click;
-            // 
-            // IconMenusSettingsForm
-            // 
-            IconMenusSettingsForm.BackgroundImageLayout = ImageLayout.None;
-            IconMenusSettingsForm.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            IconMenusSettingsForm.ForeColor = Color.White;
-            IconMenusSettingsForm.IconChar = FontAwesome.Sharp.IconChar.Wrench;
-            IconMenusSettingsForm.IconColor = Color.White;
-            IconMenusSettingsForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            IconMenusSettingsForm.IconSize = 30;
-            IconMenusSettingsForm.ImageAlign = ContentAlignment.MiddleLeft;
-            IconMenusSettingsForm.ImageScaling = ToolStripItemImageScaling.None;
-            IconMenusSettingsForm.Margin = new Padding(0, 20, 0, 0);
-            IconMenusSettingsForm.Name = "IconMenusSettingsForm";
-            IconMenusSettingsForm.Size = new Size(265, 34);
-            IconMenusSettingsForm.Text = "Ajustes";
-            IconMenusSettingsForm.TextImageRelation = TextImageRelation.Overlay;
-            IconMenusSettingsForm.Click += iconMenusSettingsForm_Click;
             // 
             // IconMenuAccountForm
             // 
@@ -343,9 +325,9 @@
             // 
             containerPanel.BackColor = Color.WhiteSmoke;
             containerPanel.Controls.Add(menuGroupBox);
-            containerPanel.Location = new Point(284, 95);
+            containerPanel.Location = new Point(284, 71);
             containerPanel.Name = "containerPanel";
-            containerPanel.Size = new Size(1640, 935);
+            containerPanel.Size = new Size(1640, 959);
             containerPanel.TabIndex = 0;
             // 
             // menuGroupBox
@@ -359,7 +341,7 @@
             menuGroupBox.Controls.Add(informationUserPanel);
             menuGroupBox.Location = new Point(22, 15);
             menuGroupBox.Name = "menuGroupBox";
-            menuGroupBox.Size = new Size(1599, 869);
+            menuGroupBox.Size = new Size(1599, 893);
             menuGroupBox.TabIndex = 7;
             menuGroupBox.TabStop = false;
             menuGroupBox.Text = "Inicio";
@@ -368,15 +350,16 @@
             // 
             userAccountLabel.AutoSize = true;
             userAccountLabel.Font = new Font("Century Gothic", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            userAccountLabel.Location = new Point(343, 21);
+            userAccountLabel.Location = new Point(266, 39);
             userAccountLabel.Name = "userAccountLabel";
-            userAccountLabel.Size = new Size(121, 34);
+            userAccountLabel.Size = new Size(103, 28);
             userAccountLabel.TabIndex = 1;
             userAccountLabel.Text = "nombre";
             // 
             // panelUsersView
             // 
             panelUsersView.BackColor = Color.DodgerBlue;
+            panelUsersView.Controls.Add(ageTextlabel);
             panelUsersView.Controls.Add(informationPanel);
             panelUsersView.Controls.Add(nameUserLabel);
             panelUsersView.Controls.Add(cityLabel);
@@ -385,11 +368,24 @@
             panelUsersView.Controls.Add(selectedUserPictureBox);
             panelUsersView.Controls.Add(idUserLabel);
             panelUsersView.Dock = DockStyle.Right;
-            panelUsersView.Location = new Point(1131, 26);
+            panelUsersView.Location = new Point(1131, 22);
             panelUsersView.Name = "panelUsersView";
-            panelUsersView.Size = new Size(465, 840);
+            panelUsersView.Size = new Size(465, 868);
             panelUsersView.TabIndex = 6;
             panelUsersView.Visible = false;
+            // 
+            // ageTextlabel
+            // 
+            ageTextlabel.AutoSize = true;
+            ageTextlabel.BackColor = Color.Transparent;
+            ageTextlabel.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ageTextlabel.ForeColor = Color.White;
+            ageTextlabel.Location = new Point(121, 103);
+            ageTextlabel.Name = "ageTextlabel";
+            ageTextlabel.Size = new Size(49, 19);
+            ageTextlabel.TabIndex = 19;
+            ageTextlabel.Text = "años";
+            ageTextlabel.TextAlign = ContentAlignment.TopRight;
             // 
             // informationPanel
             // 
@@ -413,9 +409,9 @@
             registrationLabel.AutoSize = true;
             registrationLabel.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             registrationLabel.ForeColor = Color.White;
-            registrationLabel.Location = new Point(18, 256);
+            registrationLabel.Location = new Point(31, 247);
             registrationLabel.Name = "registrationLabel";
-            registrationLabel.Size = new Size(81, 23);
+            registrationLabel.Size = new Size(68, 19);
             registrationLabel.TabIndex = 25;
             registrationLabel.Text = "registro";
             // 
@@ -424,9 +420,9 @@
             numberPhoneLabel.AutoSize = true;
             numberPhoneLabel.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             numberPhoneLabel.ForeColor = Color.White;
-            numberPhoneLabel.Location = new Point(22, 196);
+            numberPhoneLabel.Location = new Point(31, 180);
             numberPhoneLabel.Name = "numberPhoneLabel";
-            numberPhoneLabel.Size = new Size(77, 23);
+            numberPhoneLabel.Size = new Size(65, 19);
             numberPhoneLabel.TabIndex = 24;
             numberPhoneLabel.Text = "celular";
             // 
@@ -435,9 +431,9 @@
             emailIdUserLabel.AutoSize = true;
             emailIdUserLabel.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             emailIdUserLabel.ForeColor = Color.White;
-            emailIdUserLabel.Location = new Point(22, 123);
+            emailIdUserLabel.Location = new Point(31, 115);
             emailIdUserLabel.Name = "emailIdUserLabel";
-            emailIdUserLabel.Size = new Size(77, 23);
+            emailIdUserLabel.Size = new Size(65, 19);
             emailIdUserLabel.TabIndex = 23;
             emailIdUserLabel.Text = "Correo";
             // 
@@ -446,9 +442,9 @@
             dateCreateLabel.AutoSize = true;
             dateCreateLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dateCreateLabel.ForeColor = Color.White;
-            dateCreateLabel.Location = new Point(18, 228);
+            dateCreateLabel.Location = new Point(18, 214);
             dateCreateLabel.Name = "dateCreateLabel";
-            dateCreateLabel.Size = new Size(240, 28);
+            dateCreateLabel.Size = new Size(203, 23);
             dateCreateLabel.TabIndex = 22;
             dateCreateLabel.Text = "Fecha de creacion:";
             // 
@@ -459,7 +455,7 @@
             phoneNumberLabel.ForeColor = Color.White;
             phoneNumberLabel.Location = new Point(18, 151);
             phoneNumberLabel.Name = "phoneNumberLabel";
-            phoneNumberLabel.Size = new Size(116, 28);
+            phoneNumberLabel.Size = new Size(99, 23);
             phoneNumberLabel.TabIndex = 21;
             phoneNumberLabel.Text = "Telefono:";
             // 
@@ -470,7 +466,7 @@
             emailLabel.ForeColor = Color.White;
             emailLabel.Location = new Point(22, 83);
             emailLabel.Name = "emailLabel";
-            emailLabel.Size = new Size(99, 28);
+            emailLabel.Size = new Size(83, 23);
             emailLabel.TabIndex = 20;
             emailLabel.Text = "Correo:";
             // 
@@ -481,7 +477,7 @@
             userInformationIdLabel.ForeColor = Color.White;
             userInformationIdLabel.Location = new Point(60, 19);
             userInformationIdLabel.Name = "userInformationIdLabel";
-            userInformationIdLabel.Size = new Size(287, 28);
+            userInformationIdLabel.Size = new Size(241, 23);
             userInformationIdLabel.TabIndex = 20;
             userInformationIdLabel.Text = "Informacion del usuario";
             // 
@@ -492,7 +488,7 @@
             nameUserLabel.ForeColor = Color.White;
             nameUserLabel.Location = new Point(99, 68);
             nameUserLabel.Name = "nameUserLabel";
-            nameUserLabel.Size = new Size(107, 28);
+            nameUserLabel.Size = new Size(89, 23);
             nameUserLabel.TabIndex = 18;
             nameUserLabel.Text = "Nombre";
             // 
@@ -500,13 +496,14 @@
             // 
             cityLabel.AutoSize = true;
             cityLabel.BackColor = Color.Transparent;
-            cityLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
+            cityLabel.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cityLabel.ForeColor = Color.White;
-            cityLabel.Location = new Point(311, 100);
+            cityLabel.Location = new Point(99, 127);
             cityLabel.Name = "cityLabel";
-            cityLabel.Size = new Size(99, 28);
+            cityLabel.Size = new Size(99, 19);
             cityLabel.TabIndex = 16;
-            cityLabel.Text = "Ciudad";
+            cityLabel.Text = "San Miguel";
+            cityLabel.TextAlign = ContentAlignment.TopRight;
             // 
             // countryUserLabel
             // 
@@ -514,11 +511,11 @@
             countryUserLabel.BackColor = Color.Transparent;
             countryUserLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             countryUserLabel.ForeColor = Color.White;
-            countryUserLabel.Location = new Point(179, 100);
+            countryUserLabel.Location = new Point(337, 20);
             countryUserLabel.Name = "countryUserLabel";
-            countryUserLabel.Size = new Size(58, 28);
+            countryUserLabel.Size = new Size(114, 23);
             countryUserLabel.TabIndex = 12;
-            countryUserLabel.Text = "Pais";
+            countryUserLabel.Text = "El salvador";
             // 
             // ageUserLabel
             // 
@@ -528,9 +525,9 @@
             ageUserLabel.ForeColor = Color.White;
             ageUserLabel.Location = new Point(95, 100);
             ageUserLabel.Name = "ageUserLabel";
-            ageUserLabel.Size = new Size(59, 28);
+            ageUserLabel.Size = new Size(32, 23);
             ageUserLabel.TabIndex = 11;
-            ageUserLabel.Text = "age";
+            ageUserLabel.Text = "18";
             // 
             // selectedUserPictureBox
             // 
@@ -552,14 +549,14 @@
             idUserLabel.ForeColor = Color.White;
             idUserLabel.Location = new Point(17, 22);
             idUserLabel.Name = "idUserLabel";
-            idUserLabel.Size = new Size(129, 38);
+            idUserLabel.Size = new Size(110, 32);
             idUserLabel.TabIndex = 9;
             idUserLabel.Text = "Usuario";
             // 
             // welcomeLabel
             // 
             welcomeLabel.Font = new Font("Century Gothic", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            welcomeLabel.Location = new Point(19, 21);
+            welcomeLabel.Location = new Point(16, 39);
             welcomeLabel.Name = "welcomeLabel";
             welcomeLabel.Size = new Size(318, 34);
             welcomeLabel.TabIndex = 0;
@@ -569,10 +566,9 @@
             // 
             projectPanel.BorderStyle = BorderStyle.Fixed3D;
             projectPanel.Controls.Add(requestProjectPanel);
-            projectPanel.Controls.Add(assignedProjectPanel);
             projectPanel.Location = new Point(8, 462);
             projectPanel.Name = "projectPanel";
-            projectPanel.Size = new Size(1112, 388);
+            projectPanel.Size = new Size(1112, 406);
             projectPanel.TabIndex = 3;
             // 
             // requestProjectPanel
@@ -604,7 +600,7 @@
             requestProjectListBox.BorderStyle = BorderStyle.None;
             requestProjectListBox.Font = new Font("Century Gothic", 9F, FontStyle.Italic);
             requestProjectListBox.FormattingEnabled = true;
-            requestProjectListBox.ItemHeight = 21;
+            requestProjectListBox.ItemHeight = 18;
             requestProjectListBox.Location = new Point(109, 45);
             requestProjectListBox.Name = "requestProjectListBox";
             requestProjectListBox.Size = new Size(406, 252);
@@ -617,9 +613,46 @@
             projectRequestedLabel.ForeColor = Color.White;
             projectRequestedLabel.Location = new Point(109, 12);
             projectRequestedLabel.Name = "projectRequestedLabel";
-            projectRequestedLabel.Size = new Size(256, 28);
+            projectRequestedLabel.Size = new Size(216, 23);
             projectRequestedLabel.TabIndex = 20;
             projectRequestedLabel.Text = "Proyectos solicitados";
+            // 
+            // informationUserPanel
+            // 
+            informationUserPanel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            informationUserPanel.BorderStyle = BorderStyle.Fixed3D;
+            informationUserPanel.Controls.Add(userDataGridView);
+            informationUserPanel.Controls.Add(assignedProjectPanel);
+            informationUserPanel.Controls.Add(clientUserButton);
+            informationUserPanel.Controls.Add(administratorUserButton);
+            informationUserPanel.Controls.Add(employeeUserButton);
+            informationUserPanel.Location = new Point(14, 80);
+            informationUserPanel.Name = "informationUserPanel";
+            informationUserPanel.Size = new Size(1106, 352);
+            informationUserPanel.TabIndex = 3;
+            // 
+            // userDataGridView
+            // 
+            userDataGridView.AllowUserToDeleteRows = false;
+            userDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            userDataGridView.BackgroundColor = Color.White;
+            userDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            userDataGridView.Columns.AddRange(new DataGridViewColumn[] { viewUser });
+            userDataGridView.Location = new Point(293, 0);
+            userDataGridView.Name = "userDataGridView";
+            userDataGridView.RowHeadersWidth = 51;
+            userDataGridView.Size = new Size(344, 350);
+            userDataGridView.TabIndex = 7;
+            userDataGridView.CellClick += userDataGridView_CellClick;
+            // 
+            // viewUser
+            // 
+            viewUser.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            viewUser.HeaderText = "Ver";
+            viewUser.MinimumWidth = 6;
+            viewUser.Name = "viewUser";
+            viewUser.Resizable = DataGridViewTriState.False;
+            viewUser.Width = 50;
             // 
             // assignedProjectPanel
             // 
@@ -628,9 +661,10 @@
             assignedProjectPanel.Controls.Add(assignedProjectPictureBox);
             assignedProjectPanel.Controls.Add(assignedProjectListBox);
             assignedProjectPanel.Controls.Add(assignedProjectLabel);
-            assignedProjectPanel.Location = new Point(575, 22);
+            assignedProjectPanel.Dock = DockStyle.Right;
+            assignedProjectPanel.Location = new Point(643, 0);
             assignedProjectPanel.Name = "assignedProjectPanel";
-            assignedProjectPanel.Size = new Size(541, 342);
+            assignedProjectPanel.Size = new Size(459, 348);
             assignedProjectPanel.TabIndex = 3;
             assignedProjectPanel.Visible = false;
             // 
@@ -650,10 +684,10 @@
             assignedProjectListBox.BorderStyle = BorderStyle.None;
             assignedProjectListBox.Font = new Font("Century Gothic", 9F, FontStyle.Italic);
             assignedProjectListBox.FormattingEnabled = true;
-            assignedProjectListBox.ItemHeight = 21;
-            assignedProjectListBox.Location = new Point(109, 45);
+            assignedProjectListBox.ItemHeight = 18;
+            assignedProjectListBox.Location = new Point(104, 45);
             assignedProjectListBox.Name = "assignedProjectListBox";
-            assignedProjectListBox.Size = new Size(407, 252);
+            assignedProjectListBox.Size = new Size(333, 252);
             assignedProjectListBox.TabIndex = 20;
             // 
             // assignedProjectLabel
@@ -661,47 +695,11 @@
             assignedProjectLabel.AutoSize = true;
             assignedProjectLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             assignedProjectLabel.ForeColor = Color.White;
-            assignedProjectLabel.Location = new Point(109, 6);
+            assignedProjectLabel.Location = new Point(104, 6);
             assignedProjectLabel.Name = "assignedProjectLabel";
-            assignedProjectLabel.Size = new Size(253, 28);
+            assignedProjectLabel.Size = new Size(212, 23);
             assignedProjectLabel.TabIndex = 19;
             assignedProjectLabel.Text = "Proyectos asignados";
-            // 
-            // informationUserPanel
-            // 
-            informationUserPanel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            informationUserPanel.BorderStyle = BorderStyle.Fixed3D;
-            informationUserPanel.Controls.Add(userDataGridView);
-            informationUserPanel.Controls.Add(clientUserButton);
-            informationUserPanel.Controls.Add(administratorUserButton);
-            informationUserPanel.Controls.Add(employeeUserButton);
-            informationUserPanel.Location = new Point(14, 80);
-            informationUserPanel.Name = "informationUserPanel";
-            informationUserPanel.Size = new Size(1106, 352);
-            informationUserPanel.TabIndex = 3;
-            // 
-            // userDataGridView
-            // 
-            userDataGridView.AllowUserToDeleteRows = false;
-            userDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            userDataGridView.BackgroundColor = Color.White;
-            userDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            userDataGridView.Columns.AddRange(new DataGridViewColumn[] { viewUser });
-            userDataGridView.Location = new Point(293, 0);
-            userDataGridView.Name = "userDataGridView";
-            userDataGridView.RowHeadersWidth = 51;
-            userDataGridView.Size = new Size(806, 350);
-            userDataGridView.TabIndex = 7;
-            userDataGridView.CellClick += userDataGridView_CellClick;
-            // 
-            // viewUser
-            // 
-            viewUser.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            viewUser.HeaderText = "Ver";
-            viewUser.MinimumWidth = 6;
-            viewUser.Name = "viewUser";
-            viewUser.Resizable = DataGridViewTriState.False;
-            viewUser.Width = 50;
             // 
             // clientUserButton
             // 
@@ -764,7 +762,7 @@
             nameUserIdLabel.ForeColor = Color.White;
             nameUserIdLabel.Location = new Point(30, 26);
             nameUserIdLabel.Name = "nameUserIdLabel";
-            nameUserIdLabel.Size = new Size(203, 30);
+            nameUserIdLabel.Size = new Size(165, 23);
             nameUserIdLabel.TabIndex = 4;
             nameUserIdLabel.Text = "Nombre Usuario";
             // 
@@ -805,12 +803,12 @@
             nameUserPanel.Dock = DockStyle.Top;
             nameUserPanel.Location = new Point(284, 0);
             nameUserPanel.Name = "nameUserPanel";
-            nameUserPanel.Size = new Size(1640, 95);
+            nameUserPanel.Size = new Size(1640, 65);
             nameUserPanel.TabIndex = 2;
             // 
             // MenuForm
             // 
-            AutoScaleDimensions = new SizeF(11F, 21F);
+            AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1924, 995);
@@ -827,7 +825,6 @@
             Load += MenuForm_Load;
             ((System.ComponentModel.ISupportInitialize)idUserPictureBox).EndInit();
             menuPerfilPanel.ResumeLayout(false);
-            menuPerfilPanel.PerformLayout();
             menu.ResumeLayout(false);
             menu.PerformLayout();
             containerPanel.ResumeLayout(false);
@@ -842,11 +839,11 @@
             requestProjectPanel.ResumeLayout(false);
             requestProjectPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)projectRequestedPictureBox).EndInit();
+            informationUserPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)userDataGridView).EndInit();
             assignedProjectPanel.ResumeLayout(false);
             assignedProjectPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)assignedProjectPictureBox).EndInit();
-            informationUserPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)userDataGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)closedPictureBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)minimizarPictureBox).EndInit();
             nameUserPanel.ResumeLayout(false);
@@ -864,7 +861,6 @@
         private FontAwesome.Sharp.IconMenuItem IconMenuUsersForm;
         private FontAwesome.Sharp.IconMenuItem IconMenuProyectsForm;
         private FontAwesome.Sharp.IconMenuItem IconMenuRecordForm;
-        private FontAwesome.Sharp.IconMenuItem IconMenusSettingsForm;
         private FontAwesome.Sharp.IconMenuItem IconMenuAccountForm;
         private FontAwesome.Sharp.IconMenuItem IconMenuItemProjectsEmployee;
         private FontAwesome.Sharp.IconMenuItem IconMenuItemRequestClientProjects;
@@ -911,5 +907,6 @@
         private Label logoutLabel;
         private Panel nameUserPanel;
         private ToolStripSeparator toolStripSeparator1;
+        private Label ageTextlabel;
     }
 }

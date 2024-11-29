@@ -18,13 +18,15 @@ namespace PresentationLayer.Forms.Empleados
     {
         private readonly IProyectsServices _proyectsServices;
         private readonly IUsersServices _usersServices;
+        private readonly IProjectsClientServices _projectsClientServices;
         private readonly IServiceProvider _serviceProvider;
         int idUser;
-        public HomeUserEmployeeForm(IProyectsServices proyectsServices, IUsersServices usersServices, IServiceProvider serviceProvider)
+        public HomeUserEmployeeForm(IProyectsServices proyectsServices, IUsersServices usersServices, IProjectsClientServices projectsClientServices , IServiceProvider serviceProvider)
         {
             InitializeComponent();
             _proyectsServices = proyectsServices;
             _usersServices = usersServices;
+            _projectsClientServices = projectsClientServices;
             _serviceProvider = serviceProvider;
             idUser = CaptureData.idUser;
             LoadData();
@@ -36,13 +38,13 @@ namespace PresentationLayer.Forms.Empleados
             timeLabel.Text = DateTime.Now.ToString("g");
 
             var getidClient = _usersServices.GetClients().Where(id => id.idUser == idUser).Select(select => select.idCliente).FirstOrDefault();
-            var projectsCount = _proyectsServices.GetProjectsByIdClient(getidClient).Count();
+            var projectsCount = _projectsClientServices.GetProjectsByIdClient(getidClient).Count();
             projectsPendingsLabel.Text = projectsCount.ToString();
         }
 
         private void iconUserEmployeeButton_Click_1(object sender, EventArgs e)
         {
-            var openForm = _serviceProvider.GetRequiredService<RecordProjectsEmployeeForm>();
+            var openForm = _serviceProvider.GetRequiredService<RecordProjectsForm>();
             openForm.ShowDialog();
 
         }

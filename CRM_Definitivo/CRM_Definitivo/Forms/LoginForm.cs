@@ -123,10 +123,16 @@ namespace CRM_Definitivo
                 CaptureData.City = user.City;
                 CaptureData.Password = user.passworduser;
 
-
-                var menuForm = _serviceProvider.GetRequiredService<MenuForm>();
-                this.Hide();
-                menuForm.ShowDialog();
+                if(user.Statususer == "Desactivado")
+                {
+                    MessageBox.Show("Su cuenta ha sido bloqueado/baneado por infligir las normas de la empresa", "Mensaje de sistema", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+                else
+                {
+                    var menuForm = _serviceProvider.GetRequiredService<MenuForm>();
+                    this.Hide();
+                    menuForm.ShowDialog();
+                }              
             }
             else
             {

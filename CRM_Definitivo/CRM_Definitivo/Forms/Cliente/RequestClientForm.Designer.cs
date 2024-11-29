@@ -57,7 +57,7 @@
             // 
             // newProjectGroupBox
             // 
-            newProjectGroupBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            newProjectGroupBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             newProjectGroupBox.BackColor = Color.DodgerBlue;
             newProjectGroupBox.Controls.Add(errorDescriptionLabel);
             newProjectGroupBox.Controls.Add(errorNameProjectLabel);
@@ -68,11 +68,11 @@
             newProjectGroupBox.Controls.Add(nameNewProyectTextBox);
             newProjectGroupBox.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             newProjectGroupBox.ForeColor = Color.White;
-            newProjectGroupBox.Location = new Point(0, 12);
-            newProjectGroupBox.Margin = new Padding(4, 3, 4, 3);
+            newProjectGroupBox.Location = new Point(0, 10);
+            newProjectGroupBox.Margin = new Padding(3, 2, 3, 2);
             newProjectGroupBox.Name = "newProjectGroupBox";
-            newProjectGroupBox.Padding = new Padding(4, 3, 4, 3);
-            newProjectGroupBox.Size = new Size(583, 821);
+            newProjectGroupBox.Padding = new Padding(3, 2, 3, 2);
+            newProjectGroupBox.Size = new Size(466, 657);
             newProjectGroupBox.TabIndex = 8;
             newProjectGroupBox.TabStop = false;
             newProjectGroupBox.Text = "Añadir nuevos proyectos:";
@@ -82,9 +82,10 @@
             errorDescriptionLabel.AutoSize = true;
             errorDescriptionLabel.Font = new Font("Century Gothic", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
             errorDescriptionLabel.ForeColor = Color.Red;
-            errorDescriptionLabel.Location = new Point(52, 497);
+            errorDescriptionLabel.Location = new Point(42, 398);
+            errorDescriptionLabel.Margin = new Padding(2, 0, 2, 0);
             errorDescriptionLabel.Name = "errorDescriptionLabel";
-            errorDescriptionLabel.Size = new Size(0, 21);
+            errorDescriptionLabel.Size = new Size(0, 18);
             errorDescriptionLabel.TabIndex = 29;
             // 
             // errorNameProjectLabel
@@ -92,18 +93,18 @@
             errorNameProjectLabel.AutoSize = true;
             errorNameProjectLabel.Font = new Font("Century Gothic", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
             errorNameProjectLabel.ForeColor = Color.Red;
-            errorNameProjectLabel.Location = new Point(52, 172);
+            errorNameProjectLabel.Location = new Point(42, 138);
+            errorNameProjectLabel.Margin = new Padding(2, 0, 2, 0);
             errorNameProjectLabel.Name = "errorNameProjectLabel";
-            errorNameProjectLabel.Size = new Size(0, 21);
+            errorNameProjectLabel.Size = new Size(0, 18);
             errorNameProjectLabel.TabIndex = 28;
             // 
             // descriptionProjectLabel
             // 
             descriptionProjectLabel.AutoSize = true;
-            descriptionProjectLabel.Location = new Point(56, 200);
-            descriptionProjectLabel.Margin = new Padding(4, 0, 4, 0);
+            descriptionProjectLabel.Location = new Point(45, 160);
             descriptionProjectLabel.Name = "descriptionProjectLabel";
-            descriptionProjectLabel.Size = new Size(157, 28);
+            descriptionProjectLabel.Size = new Size(132, 23);
             descriptionProjectLabel.TabIndex = 26;
             descriptionProjectLabel.Text = "Descripcion:";
             // 
@@ -111,11 +112,11 @@
             // 
             descriptionProjectTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             descriptionProjectTextBox.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            descriptionProjectTextBox.Location = new Point(56, 256);
-            descriptionProjectTextBox.Margin = new Padding(4, 3, 4, 3);
+            descriptionProjectTextBox.Location = new Point(45, 205);
+            descriptionProjectTextBox.Margin = new Padding(3, 2, 3, 2);
             descriptionProjectTextBox.Multiline = true;
             descriptionProjectTextBox.Name = "descriptionProjectTextBox";
-            descriptionProjectTextBox.Size = new Size(444, 227);
+            descriptionProjectTextBox.Size = new Size(356, 182);
             descriptionProjectTextBox.TabIndex = 27;
             // 
             // saveProjectButton
@@ -130,10 +131,10 @@
             saveProjectButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             saveProjectButton.IconSize = 30;
             saveProjectButton.ImageAlign = ContentAlignment.MiddleLeft;
-            saveProjectButton.Location = new Point(145, 546);
-            saveProjectButton.Margin = new Padding(4, 3, 4, 3);
+            saveProjectButton.Location = new Point(116, 437);
+            saveProjectButton.Margin = new Padding(3, 2, 3, 2);
             saveProjectButton.Name = "saveProjectButton";
-            saveProjectButton.Size = new Size(271, 57);
+            saveProjectButton.Size = new Size(217, 46);
             saveProjectButton.TabIndex = 23;
             saveProjectButton.Text = "Solicitar";
             saveProjectButton.UseVisualStyleBackColor = false;
@@ -142,10 +143,9 @@
             // nameProjectLabel
             // 
             nameProjectLabel.AutoSize = true;
-            nameProjectLabel.Location = new Point(52, 83);
-            nameProjectLabel.Margin = new Padding(4, 0, 4, 0);
+            nameProjectLabel.Location = new Point(42, 66);
             nameProjectLabel.Name = "nameProjectLabel";
-            nameProjectLabel.Size = new Size(270, 28);
+            nameProjectLabel.Size = new Size(227, 23);
             nameProjectLabel.TabIndex = 0;
             nameProjectLabel.Text = "Nombre del proyecto:";
             // 
@@ -153,11 +153,11 @@
             // 
             nameNewProyectTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             nameNewProyectTextBox.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            nameNewProyectTextBox.Location = new Point(56, 124);
-            nameNewProyectTextBox.Margin = new Padding(4, 3, 4, 3);
+            nameNewProyectTextBox.Location = new Point(45, 99);
+            nameNewProyectTextBox.Margin = new Padding(3, 2, 3, 2);
             nameNewProyectTextBox.Multiline = true;
             nameNewProyectTextBox.Name = "nameNewProyectTextBox";
-            nameNewProyectTextBox.Size = new Size(444, 32);
+            nameNewProyectTextBox.Size = new Size(356, 26);
             nameNewProyectTextBox.TabIndex = 1;
             // 
             // projectTabControl
@@ -165,21 +165,21 @@
             projectTabControl.Controls.Add(tabPageRequestProject);
             projectTabControl.Controls.Add(tabPage2);
             projectTabControl.Dock = DockStyle.Right;
-            projectTabControl.Location = new Point(591, 0);
-            projectTabControl.Margin = new Padding(4, 3, 4, 3);
+            projectTabControl.Location = new Point(473, 0);
+            projectTabControl.Margin = new Padding(3, 2, 3, 2);
             projectTabControl.Name = "projectTabControl";
             projectTabControl.SelectedIndex = 0;
-            projectTabControl.Size = new Size(889, 840);
+            projectTabControl.Size = new Size(711, 672);
             projectTabControl.TabIndex = 9;
             // 
             // tabPageRequestProject
             // 
             tabPageRequestProject.Controls.Add(requestProjectDataGridView);
-            tabPageRequestProject.Location = new Point(4, 34);
-            tabPageRequestProject.Margin = new Padding(4, 3, 4, 3);
+            tabPageRequestProject.Location = new Point(4, 29);
+            tabPageRequestProject.Margin = new Padding(3, 2, 3, 2);
             tabPageRequestProject.Name = "tabPageRequestProject";
-            tabPageRequestProject.Padding = new Padding(4, 3, 4, 3);
-            tabPageRequestProject.Size = new Size(881, 802);
+            tabPageRequestProject.Padding = new Padding(3, 2, 3, 2);
+            tabPageRequestProject.Size = new Size(703, 639);
             tabPageRequestProject.TabIndex = 0;
             tabPageRequestProject.Text = "Solicitar proyectos";
             tabPageRequestProject.UseVisualStyleBackColor = true;
@@ -190,22 +190,22 @@
             requestProjectDataGridView.BackgroundColor = Color.LightGray;
             requestProjectDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             requestProjectDataGridView.Dock = DockStyle.Fill;
-            requestProjectDataGridView.Location = new Point(4, 3);
-            requestProjectDataGridView.Margin = new Padding(4, 3, 4, 3);
+            requestProjectDataGridView.Location = new Point(3, 2);
+            requestProjectDataGridView.Margin = new Padding(3, 2, 3, 2);
             requestProjectDataGridView.Name = "requestProjectDataGridView";
             requestProjectDataGridView.ReadOnly = true;
             requestProjectDataGridView.RowHeadersWidth = 51;
-            requestProjectDataGridView.Size = new Size(873, 796);
+            requestProjectDataGridView.Size = new Size(697, 635);
             requestProjectDataGridView.TabIndex = 8;
             // 
             // tabPage2
             // 
             tabPage2.Controls.Add(listProjectDataGridView);
-            tabPage2.Location = new Point(4, 34);
-            tabPage2.Margin = new Padding(4, 3, 4, 3);
+            tabPage2.Location = new Point(4, 29);
+            tabPage2.Margin = new Padding(3, 2, 3, 2);
             tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(4, 3, 4, 3);
-            tabPage2.Size = new Size(881, 802);
+            tabPage2.Padding = new Padding(3, 2, 3, 2);
+            tabPage2.Size = new Size(703, 639);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Proyectos en curso";
             tabPage2.UseVisualStyleBackColor = true;
@@ -215,11 +215,11 @@
             listProjectDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             listProjectDataGridView.Columns.AddRange(new DataGridViewColumn[] { SelectPf, downloadProject });
             listProjectDataGridView.Dock = DockStyle.Fill;
-            listProjectDataGridView.Location = new Point(4, 3);
-            listProjectDataGridView.Margin = new Padding(4, 3, 4, 3);
+            listProjectDataGridView.Location = new Point(3, 2);
+            listProjectDataGridView.Margin = new Padding(3, 2, 3, 2);
             listProjectDataGridView.Name = "listProjectDataGridView";
             listProjectDataGridView.RowHeadersWidth = 51;
-            listProjectDataGridView.Size = new Size(873, 796);
+            listProjectDataGridView.Size = new Size(697, 635);
             listProjectDataGridView.TabIndex = 0;
             listProjectDataGridView.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -256,13 +256,14 @@
             // 
             // RequestClientForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1480, 840);
+            ClientSize = new Size(1184, 672);
             Controls.Add(projectTabControl);
             Controls.Add(newProjectGroupBox);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(2, 2, 2, 2);
             Name = "RequestClientForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Proyectos";

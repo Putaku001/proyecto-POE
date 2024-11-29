@@ -34,7 +34,7 @@
     <Compile Update="Forms\Empleados\HomeUserEmployeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\Empleados\RecordProjectsEmployeeForm.cs">
+    <Compile Update="Forms\RecordProjectsForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\ImageViewerForm.cs">
@@ -53,9 +53,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\Admin\AddUsersForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Forms\Admin\EditUsersForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\LoginForm.cs">

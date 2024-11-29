@@ -6,6 +6,7 @@ using DataAccessLayer.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using PresentationLayer.Reports;
+using PresentationLayer.Resources;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,12 +26,16 @@ namespace PresentationLayer.Forms
         private IRolServices _rolservices;
         private IUsersServices _usuersservices;
         private readonly IUserReports _userReports;
+        private readonly IProyectsServices _proyects;
+        private readonly IProjectsClientServices _projectsClient;
 
-        public UsersForm(IUsersServices usuarioServices, IRolServices rolServices, IUserReports userReports)
+        public UsersForm(IUsersServices usuarioServices, IRolServices rolServices, IProyectsServices proyectsServices, IProjectsClientServices projectsClientServices, IUserReports userReports)
         {
             InitializeComponent();
             _usuersservices = usuarioServices;
             _rolservices = rolServices;
+            _proyects = proyectsServices;
+            _projectsClient = projectsClientServices;
             _userReports = userReports;
             LoadData();
 
@@ -53,6 +58,18 @@ namespace PresentationLayer.Forms
             userDataGridView.Columns["Image"].Visible = false;
             userDataGridView.Columns["idRol"].Visible = false;
 
+            foreach (DataGridViewColumn column in userDataGridView.Columns)
+            {
+                if (column.Visible == true && column.Index != 0)
+                {
+                    searchUserscomboBox.Items.Add(new OpcionCombo() { Valor = column.Name, Texto = column.HeaderText });
+                }
+            }
+
+            searchUserscomboBox.DisplayMember = "Texto";
+            searchUserscomboBox.ValueMember = "Valor";
+            searchUserscomboBox.SelectedIndex = 0;
+
 
         }
 
@@ -63,7 +80,7 @@ namespace PresentationLayer.Forms
 
         private void addUserPictureBox_Click(object sender, EventArgs e)
         {
-            AddUsersForm formularioAñadir = new AddUsersForm(_usuersservices, _rolservices);
+            AddUsersForm formularioAñadir = new AddUsersForm(_usuersservices, _rolservices, _proyects, _projectsClient);
             //var formularioAñadir = _serviceProvider.GetRequiredService<AddUsersForm>();
 
             formularioAñadir.AddUsuario += (s, args) =>
@@ -99,7 +116,7 @@ namespace PresentationLayer.Forms
                 Email = filaSeleccionada.Cells["Email"].Value.ToString()
             };
 
-            AddUsersForm editarUsuarioForm = new AddUsersForm(_usuersservices, _rolservices, usuarioSeleccionado);
+            AddUsersForm editarUsuarioForm = new AddUsersForm(_usuersservices, _rolservices, _proyects, _projectsClient , usuarioSeleccionado);
             //var editarUsuarioForm = _serviceProvider.GetRequiredService<AddUsersForm>();
 
             editarUsuarioForm.EditUsuariosHandler += (s, args) => LoadData();
@@ -135,16 +152,55 @@ namespace PresentationLayer.Forms
 
         private void searchUserIconButton_Click(object sender, EventArgs e)
         {
-            if (searchUserTextBox.Text.IsNullOrEmpty())
-            {
-                LoadData();
-            }
-            else
-            {
-                string search = searchUserTextBox.Text;
-                var users = _usuersservices.UserSearch(search);
+            //if (searchUserTextBox.Text.IsNullOrEmpty())
+            //{
+            //    LoadData();
+            //}
+            //else
+            //{
+            //    string search = searchUserTextBox.Text;
+            //    var users = _usuersservices.UserSearch(search);
 
-                userDataGridView.DataSource = users;
+            //    userDataGridView.DataSource = users;
+            //}
+
+            //
+            string columnFilter = ((OpcionCombo)searchUserscomboBox.SelectedItem).Valor.ToString();
+            bool encontrado = false;
+
+            if (userDataGridView.Rows.Count > 0)
+            {
+                // Desactiva momentáneamente la selección actual
+                userDataGridView.CurrentCell = null;
+
+                foreach (DataGridViewRow row in userDataGridView.Rows)
+                {
+                    if (row.Cells[columnFilter].Value != null &&
+                        row.Cells[columnFilter].Value.ToString().Trim().ToUpper().Contains(searchUserTextBox.Text.Trim().ToUpper()))
+                    {
+                        row.Visible = true;
+                        encontrado = true;
+                    }
+                    else
+                    {
+                        row.Visible = false;
+                    }
+                }
+
+                if (!encontrado)
+                {
+                    MessageBox.Show($"No existe un proyecto llamado {searchUserTextBox.Text}", "Búsqueda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        private void cleanSearchUserIconButton_Click(object sender, EventArgs e)
+        {
+            searchUserTextBox.Clear();
+
+            foreach (DataGridViewRow row in userDataGridView.Rows)
+            {
+                row.Visible = true;
             }
         }
     }

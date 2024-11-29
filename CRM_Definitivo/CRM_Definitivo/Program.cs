@@ -49,7 +49,6 @@ namespace CRM_Definitivo
                         services.AddTransient<LoginForm>();
                         services.AddTransient<MenuForm>();
                         services.AddTransient<ProjectsForm>();
-                        services.AddTransient<EditUsersForm>();
                         services.AddTransient<AddUsersForm>();
                         services.AddTransient<ProfileUserAccountForm>();
                         services.AddTransient<ImageViewerForm>();
@@ -64,7 +63,7 @@ namespace CRM_Definitivo
                         services.AddTransient<SendProjectForm>();
                         services.AddTransient<infoProjects>();
                         services.AddTransient<AnswerProjectClient>();
-                        services.AddTransient<RecordProjectsEmployeeForm>();
+                        services.AddTransient<RecordProjectsForm>();
 
 
                         //BUSISNESSLAYER
@@ -72,12 +71,16 @@ namespace CRM_Definitivo
                         services.AddScoped<IPermisoServices, PermissionServices>();
                         services.AddScoped<IRolServices, RolServices>();
                         services.AddScoped<IProyectsServices, ProyectsServices>();
+                        services.AddScoped<IProjectsEmnployeesServices, ProjectsEmnployeesServices>();
+                        services.AddScoped<IProjectsClientServices, ProjectsClientServices>();
 
                         //REPOSITORIES
                         services.AddScoped<IUsersRepositories, UsersRepositories>();
                         services.AddScoped<IPermissionRepositories, PermissionRepositories>();
                         services.AddScoped<IRolRepositories,  RolRepositories>();
                         services.AddScoped<IProyectsRepositories, ProyectsRepositories>();
+                        services.AddScoped<IProjectsEmployeesRepositories, ProjectsEmployeesRepositories>();
+                        services.AddScoped<IProjectsClientsRepositories, ProjectsClientsRepositories>();
 
                         //REPORTS
                         services.AddScoped<IUserReports, UserReports>();

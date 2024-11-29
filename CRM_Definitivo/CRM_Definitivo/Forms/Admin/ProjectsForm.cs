@@ -2,6 +2,7 @@
 using CommonLayer.Entities;
 using Microsoft.Extensions.DependencyInjection;
 using PresentationLayer.Forms.Admin;
+using PresentationLayer.Resources;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,21 +29,67 @@ namespace PresentationLayer.Forms
 
         private void LoadProyecto()
         {
-            requestProjectsDataGridView.DataSource = _proyectoServices.GetRequestProjects();
-            requestProjectsDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            projectProgressDataGridView.DataSource = _proyectoServices.GetRequestProjectsProgress();
-            projectProgressDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            projectsRefusedDataGridView.DataSource = _proyectoServices.GetRequestProjectsRefused();
-            projectsRefusedDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            projectsWaitingResponseDataGridView.DataSource = _proyectoServices.GetProjectsWaitingReponse();
-            projectsWaitingResponseDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            LoadDataProjectProgress();
+            LoadDataRequestProject();
+            LoadDataProjectWaiting();
+            LoadDataProjectRefused();
+            //HideColumns(projectProgressDataGridView, "file");
 
-            projectsWaitingResponseDataGridView.Columns["file"].Visible = false;
-            projectsRefusedDataGridView.Columns["file"].Visible = false;
-            requestProjectsDataGridView.Columns["file"].Visible = false;
-            requestProjectsDataGridView.Columns["idClient"].Visible = false;
-            projectProgressDataGridView.Columns["file"].Visible = false;
+            foreach (DataGridViewColumn column in projectProgressDataGridView.Columns)
+            {
+                if (column.Visible == true && column.Name != "SelectProjectInProgress")
+                {
+                    searchProcessComboBox.Items.Add(new OpcionCombo() { Valor = column.Name, Texto = column.HeaderText });
+                }
+            }
 
+            searchProcessComboBox.DisplayMember = "Texto";
+            searchProcessComboBox.ValueMember = "Valor";
+            searchProcessComboBox.SelectedIndex = 0;
+        }
+
+        private void LoadDataRequestProject()
+        {
+            requestProjectsDataGridView.DataSource = _proyectoServices.GetRequestProjectsByStatus("Pendiente");
+            ConfigureAutoSize(requestProjectsDataGridView);
+            HideColumns(requestProjectsDataGridView, "file", "idClient", "dateInit", "dateEnd");
+
+        }
+
+        private void LoadDataProjectProgress()
+        {
+            projectProgressDataGridView.DataSource = _proyectoServices.GetRequestProjectsByStatus("En progreso");
+            ConfigureAutoSize(projectProgressDataGridView);
+            HideColumns(projectProgressDataGridView, "file");
+        }
+
+        private void LoadDataProjectWaiting()
+        {
+            projectsWaitingResponseDataGridView.DataSource = _proyectoServices.GetRequestProjectsByStatus("esperando aprobacion del cliente");
+            ConfigureAutoSize(projectsWaitingResponseDataGridView);
+            HideColumns(projectsWaitingResponseDataGridView, "file", "dateInit", "dateEnd");
+        }
+
+        private void LoadDataProjectRefused()
+        {
+            projectsRefusedDataGridView.DataSource = _proyectoServices.GetRequestProjectsByStatus("Rechazado");
+            ConfigureAutoSize(projectsRefusedDataGridView);
+        }
+
+        private void ConfigureAutoSize(DataGridView dataGridView)
+        {
+            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        private void HideColumns(DataGridView dataGridView, params string[] columnNames)
+        {
+            foreach (var column in columnNames)
+            {
+                if (dataGridView.Columns[column] != null)
+                {
+                    dataGridView.Columns[column].Visible = false;
+                }
+            }
         }
 
 
@@ -62,7 +109,7 @@ namespace PresentationLayer.Forms
                 assignamentTaskEmployeeForm.DescriptionProject = DescriptionProject;
                 assignamentTaskEmployeeForm.ShowDialog();
 
-                
+
 
                 Projects dateInit = new Projects();
                 var dateInitial = dateInit.dateInit = DateTime.Now;
@@ -110,7 +157,7 @@ namespace PresentationLayer.Forms
                 {
                     string CodeProject = projectsRefusedDataGridView.Rows[e.RowIndex].Cells["codeProject"].Value.ToString();
 
-                    _proyectoServices.ProjectRedo(CodeProject, 4);
+                    _proyectoServices.StatusProject(CodeProject, 4);
                     LoadProyecto();
                 }
             }
@@ -129,5 +176,46 @@ namespace PresentationLayer.Forms
             }
         }
 
+        private void iconSearchProcessButton_Click(object sender, EventArgs e)
+        {
+            //
+            string columnFilter = ((OpcionCombo)searchProcessComboBox.SelectedItem).Valor.ToString();
+            bool encontrado = false;
+
+            if (projectProgressDataGridView.Rows.Count > 0)
+            {
+                // Desactiva momentáneamente la selección actual
+                projectProgressDataGridView.CurrentCell = null;
+
+                foreach (DataGridViewRow row in projectProgressDataGridView.Rows)
+                {
+                    if (row.Cells[columnFilter].Value != null &&
+                        row.Cells[columnFilter].Value.ToString().Trim().ToUpper().Contains(searProjectProgresstextBox.Text.Trim().ToUpper()))
+                    {
+                        row.Visible = true;
+                        encontrado = true;
+                    }
+                    else
+                    {
+                        row.Visible = false;
+                    }
+                }
+
+                if (!encontrado)
+                {
+                    MessageBox.Show($"No existe un proyecto llamado {searProjectProgresstextBox.Text}", "Búsqueda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        private void iconCleanProcessButton_Click(object sender, EventArgs e)
+        {
+            searProjectProgresstextBox.Clear();
+
+            foreach (DataGridViewRow row in projectProgressDataGridView.Rows)
+            {
+                row.Visible = true;
+            }
+        }
     }
 }

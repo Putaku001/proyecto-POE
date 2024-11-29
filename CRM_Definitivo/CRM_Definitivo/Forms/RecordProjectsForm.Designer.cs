@@ -1,6 +1,6 @@
 ﻿namespace PresentationLayer.Forms.Empleados
 {
-    partial class RecordProjectsEmployeeForm
+    partial class RecordProjectsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -35,20 +35,21 @@
             // recordsProjectdataGridView
             // 
             recordsProjectdataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            recordsProjectdataGridView.Dock = DockStyle.Bottom;
-            recordsProjectdataGridView.Location = new Point(0, 85);
+            recordsProjectdataGridView.Dock = DockStyle.Fill;
+            recordsProjectdataGridView.Location = new Point(0, 0);
             recordsProjectdataGridView.Name = "recordsProjectdataGridView";
             recordsProjectdataGridView.RowHeadersWidth = 51;
-            recordsProjectdataGridView.Size = new Size(800, 365);
+            recordsProjectdataGridView.Size = new Size(752, 233);
             recordsProjectdataGridView.TabIndex = 0;
             // 
             // RecordProjectsEmployeeForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(752, 233);
             Controls.Add(recordsProjectdataGridView);
             Name = "RecordProjectsEmployeeForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "RecordProjectsEmployeeForm";
             Load += RecordProjectsEmployeeForm_Load;
             ((System.ComponentModel.ISupportInitialize)recordsProjectdataGridView).EndInit();

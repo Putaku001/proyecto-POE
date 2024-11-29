@@ -23,6 +23,7 @@ using Microsoft.VisualBasic.ApplicationServices;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Diagnostics.Metrics;
 using CRM_Definitivo;
+using BusinessLayer.Services;
 
 namespace PresentationLayer.Forms
 {
@@ -36,9 +37,11 @@ namespace PresentationLayer.Forms
         private readonly IRolServices _rolServices;
         private readonly IServiceProvider _provider;
         private readonly IUserReports _userReports;
+        private readonly IProjectsEmnployeesServices _projectsEmployeesServices;
+        private readonly IProjectsClientServices _projectsClientServices;
         private System.Windows.Forms.Timer timer;
 
-        public MenuForm(IPermisoServices services, IServiceProvider serviceProvider, IUsersServices _usuarioServices, IRolServices rolServices, IProyectsServices _proyectoServices, IUserReports userReports)
+        public MenuForm(IPermisoServices services, IServiceProvider serviceProvider, IUsersServices _usuarioServices, IRolServices rolServices, IProyectsServices _proyectoServices, IProjectsEmnployeesServices projects , IProjectsClientServices projectsClientServices , IUserReports userReports)
         {
 
             InitializeComponent();
@@ -48,6 +51,8 @@ namespace PresentationLayer.Forms
             usuarioServices = _usuarioServices;
             _rolServices = rolServices;
             proyectoServices = _proyectoServices;
+            _projectsEmployeesServices = projects;
+            _projectsClientServices = projectsClientServices;
             _userReports = userReports;
             LoadImageProfileUser(AuthUser.idUser);
             loadPermission();
@@ -107,7 +112,7 @@ namespace PresentationLayer.Forms
             }
             else
             {
-                idUserPictureBox.Image = null;
+                idUserPictureBox.Image = Properties.Resources.user_icon_icons_com_57997;
             }
         }
 
@@ -116,6 +121,7 @@ namespace PresentationLayer.Forms
         private void LoadData()
         {
             userDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            
         }
 
         private void Dateandtime()
@@ -208,7 +214,7 @@ namespace PresentationLayer.Forms
         }
         private void iconMenuRecordForm_Click(object sender, EventArgs e)
         {
-            var iconMenuRecordForm = _provider.GetRequiredService<RecordProjectsEmployeeForm>();
+            var iconMenuRecordForm = _provider.GetRequiredService<RecordProjectsForm>();
             AbrirFormulario(iconMenuRecordForm);
         }
         private void iconMenusSettingsForm_Click(object sender, EventArgs e)
@@ -308,12 +314,12 @@ namespace PresentationLayer.Forms
                         if (assignedProjectPanel.Visible == true)
                         {
                             var GetidEmployee = usuarioServices.GetEmployees().Where(id => id.idUser == idUser).Select(e => e.idEmployee).FirstOrDefault();
-                            assignedProjectListBox.DataSource = proyectoServices.GetTasksByEmployees(GetidEmployee).ToList();
+                            assignedProjectListBox.DataSource = _projectsEmployeesServices.GetTasksByEmployees(GetidEmployee).ToList();
                         }
                         else if (requestProjectPanel.Visible == true)
                         {
                             var GetIdClient = Convert.ToInt32(usuarioServices.GetClients().Where(id => id.idUser == idUser).Select(id => id.idCliente).FirstOrDefault());
-                            requestProjectListBox.DataSource = proyectoServices.GetRequestProyectsByIdClient(GetIdClient).ToList();
+                            requestProjectListBox.DataSource = _projectsClientServices.GetRequestProyectsByIdClient(GetIdClient).ToList();
                         }
 
                         if (imageBytes != null && imageBytes.Length > 0)
