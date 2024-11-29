@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BusinessLayer.Services
+
 {
     public class ProjectsClientServices : IProjectsClientServices
     {
@@ -21,7 +22,7 @@ namespace BusinessLayer.Services
         public IEnumerable<RequestProjects> GetProjectsByIdClient(int idUser) => _projectsClientsRepositories.GetProjectsByIdClient(idUser);
         public void AddNewProject(string codeProject, int idClient, string nameProject, string descriptionProject) => _projectsClientsRepositories.AddNewProject(codeProject, idClient, nameProject, descriptionProject);
         public List<string> GetRequestProyectsByIdClient(int idClient) => _projectsClientsRepositories.GetRequestProyectsByIdClient(idClient);
-        public IEnumerable<RequestProjects> GetProjectsByIdStatus(IEnumerable<int> idStatus) => _projectsClientsRepositories.GetProjectsByIdStatus(idStatus);
+        public IEnumerable<RequestProjects> GetProjectsByIdStatus(int idClient, IEnumerable<int> idStatus) => _projectsClientsRepositories.GetProjectsByIdStatus(idClient, idStatus);
         public byte[] getProjectInDB(string codeProject) => _projectsClientsRepositories.getProjectInDB(codeProject);
     }
 }

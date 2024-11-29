@@ -76,7 +76,7 @@ namespace DataAccessLayer.Repositories
             }
         }
 
-        public IEnumerable<RequestProjects> GetProjectsByIdStatus(IEnumerable<int> idStatus)
+        public IEnumerable<RequestProjects> GetProjectsByIdStatus(int idClient, IEnumerable<int> idStatus)
         {
             using (var connection = _dbConnection.GetConnection())
             {
@@ -94,9 +94,10 @@ namespace DataAccessLayer.Repositories
             LEFT JOIN 
                 statusProyect st ON st.idStatusProyect = r.idStatusProject
             WHERE 
-               r.idStatusProject IN @idStatus";
+                r.idClient = @idClient AND
+                r.idStatusProject IN @idStatus";
 
-                return connection.Query<RequestProjects>(query, new { idStatus });
+                return connection.Query<RequestProjects>(query, new { idClient, idStatus });
             }
         }
         public byte[] getProjectInDB(string codeProject)

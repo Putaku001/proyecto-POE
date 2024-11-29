@@ -53,7 +53,7 @@ namespace PresentationLayer.Forms.Cliente
             requestProjectDataGridView.Columns["descriptionProject"].HeaderText = "Descripcion";
 
             var pendingStatusId = new List<int> { 7, 6 };
-            listProjectDataGridView.DataSource = _projectsClientServices.GetProjectsByIdStatus(pendingStatusId);
+            listProjectDataGridView.DataSource = _projectsClientServices.GetProjectsByIdStatus(idClientByID, pendingStatusId);
 
             listProjectDataGridView.Columns["idClient"].Visible = false;
             listProjectDataGridView.Columns["UserAccount"].Visible = false;
