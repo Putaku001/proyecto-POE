@@ -43,5 +43,9 @@ namespace BusinessLayer.Services
 
         public Byte[] GetProfileImage(int idUser) => _usuariosrepositoriess.GetProfileImage(idUser);
         public void UpdateStatusUser(int idUser, string statususer) => _usuariosrepositoriess.UpdateStatusUser(idUser, statususer);
+
+        public IEnumerable<Employees> GetInfoEmployee(int idUser) => _usuariosrepositoriess.GetInfoEmployee(idUser);
+        public void UpdateWorkstation(Employee employee) => _usuariosrepositoriess.UpdateWorkstation(employee);
+
     }
 }

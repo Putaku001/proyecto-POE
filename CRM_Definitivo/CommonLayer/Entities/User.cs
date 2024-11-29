@@ -37,6 +37,8 @@ namespace CommonLayer.Entities
     {
         public int idEmployee { get; set; }
         public int idUser { get; set; }
+        public string comment {  get; set; }
+        public string workStation { get; set; }
         public string UserAccount { get; set; }
 
     }

@@ -205,7 +205,7 @@ namespace DataAccessLayer.Repositories
         {
             using (var connection = _dbConnection.GetConnection())
             {
-                string query = "select e.idEmployee, e.idUser, u.UserAccount from employee e LEFT JOIN Users u on e.idUser = u.idUser";
+                string query = "select e.idEmployee, e.idUser, e.comment, e.workStation, u.UserAccount from employee e LEFT JOIN Users u on e.idUser = u.idUser";
 
                 return connection.Query<Employees>(query);
             }
@@ -218,6 +218,28 @@ namespace DataAccessLayer.Repositories
                 string query = "SELECT e.idEmployee, e.idUser FROM Employee e LEFT JOIN Users u on e.idUser = u.idUser WHERE e.idUser = @idEmployee";
 
                 return connection.Query<Employees>(query, new { idEmployee });
+            }
+        }
+
+        public IEnumerable<Employees> GetInfoEmployee(int idUser)
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = "SELECT e.idEmployee, e.idUser, e.comment, e.workStattion FROM Employee e LEFT JOIN Users u on e.idUser = u.idUser WHERE e.idUser = @idUser";
+
+                return connection.Query<Employees>(query, new { idUser });
+            }
+        }
+
+        public void UpdateWorkstation(Employee employee)
+        {
+            using(var connection = _dbConnection.GetConnection())
+            {
+                string query = @"UPDATE employee SET
+                                     comment = @comment,
+                                     workStation = @workStation
+                                 WHERE idEmployee = (SELECT MAX(idEmployee) FROM employee)";
+                connection.Query<Employee>(query, employee);
             }
         }
 

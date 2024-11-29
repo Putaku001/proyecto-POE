@@ -35,18 +35,13 @@ namespace PresentationLayer.Forms
         public AddUsersForm(IUsersServices _usuersServices, IRolServices _rolServices, IProyectsServices proyectsServices, IProjectsClientServices projectsClientServices, User usuario = null)
         {
             InitializeComponent();
-
-
             _usuario = usuario;
             IsEditing = usuario != null;
             _usuersservices = _usuersServices;
             rolServices = _rolServices;
             _proyectsServices = proyectsServices;
             _projectsClientServices = projectsClientServices;
-            
-
             LoadProvincias();
-
             ConfigureForm();
 
             profilePictureBox.Image = Properties.Resources.user_icon_icons_com_57997;
@@ -103,6 +98,7 @@ namespace PresentationLayer.Forms
                 editButton.Visible = false;
             }
         }
+
 
         private void ClearFields()
         {
@@ -203,8 +199,19 @@ namespace PresentationLayer.Forms
                 }
 
                 _usuersservices.AddUsers(newAccount);
+
                 MessageBox.Show("La cuenta se ha creado con éxito.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadProvincias();
+                AddUsuario?.Invoke(this, EventArgs.Empty);
+
+                var UpdateWorkstation = new Employee
+                {
+                    workStation = workStationTextBox.Text,
+                    comment = professionsTextBox.Text,
+                };
+
+                _usuersservices.UpdateWorkstation(UpdateWorkstation);
+
                 AddUsuario?.Invoke(this, EventArgs.Empty);
                 this.Close();
             }
@@ -261,6 +268,16 @@ namespace PresentationLayer.Forms
 
                 EditUsuariosHandler?.Invoke(this, EventArgs.Empty);
 
+                //var UpdateWorkstation = new Employee
+                //{
+                //    workStation = workStationTextBox.Text,
+                //    comment = professionsTextBox.Text,
+                //};
+
+                //_usuersservices.UpdateWorkstation(UpdateWorkstation);
+
+                //EditUsuariosHandler?.Invoke(this, EventArgs.Empty);
+
                 ClearFields();
                 this.Close();
             }
@@ -274,17 +291,67 @@ namespace PresentationLayer.Forms
         private void rolComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selecteRol = rolComboBox.Text;
-
-            switch (selecteRol)
+            if (IsEditing == true)
             {
-                case "Empleado":
-                    var inforemployeeform = new InfoEmployeeForm();
-                    inforemployeeform.ShowDialog();
-                    break;
-                    //default:
-                    //    MessageBox.Show("Seleccion no valida");
-                    //    break;
+                if (rolComboBox.SelectedItem != null && rolComboBox.Text == "Empleado")
+                {
+                    professionsTextBox.Visible = true;
+                    workStationTextBox.Visible = true;
+                    professionLabel.Visible = true;
+                    workStationLabel.Visible = true;
+                    iconSaveInformationButton.Visible = true;
+
+                    errorProfessionLabel.Visible = true;
+                    errorWorkStationLabel.Visible = true;
+
+                    var infoEmployee = _usuersservices.GetEmployees().Where(id => id.idUser == _usuario.IdUser).FirstOrDefault();
+
+                    professionsTextBox.Text = infoEmployee.comment;
+                    workStationTextBox.Text = infoEmployee.workStation;
+                }
+                else
+                {
+                    professionsTextBox.Visible = false;
+                    workStationTextBox.Visible = false;
+                    professionLabel.Visible = false;
+                    workStationLabel.Visible = false;
+                    iconSaveInformationButton.Visible = false;
+
+                    errorProfessionLabel.Visible = false;
+                    errorWorkStationLabel.Visible = false;
+                }
             }
+            else
+            {
+                if (rolComboBox.SelectedItem != null && rolComboBox.Text == "Empleado")
+                {
+                    professionsTextBox.Visible = true;
+                    workStationTextBox.Visible = true;
+                    professionLabel.Visible = true;
+                    workStationLabel.Visible = true;
+                    iconSaveInformationButton.Visible = true;
+
+                    errorProfessionLabel.Visible = true;
+                    errorWorkStationLabel.Visible = true;
+                }
+                else
+                {
+                    professionsTextBox.Visible = false;
+                    workStationTextBox.Visible = false;
+                    professionLabel.Visible = false;
+                    workStationLabel.Visible = false;
+                    iconSaveInformationButton.Visible = false;
+
+                    errorProfessionLabel.Visible = false;
+                    errorWorkStationLabel.Visible = false;
+                }
+            }
+
+        }
+
+        private void iconSaveInformationButton_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void DisplayValidationErrors(ValidationResult result)
@@ -385,12 +452,12 @@ namespace PresentationLayer.Forms
 
         public int GetIdClient()
         {
-           return Convert.ToInt32(_usuersservices.GetClients().Where(id => id.idUser == _usuario.IdUser).Select(client => client.idCliente).FirstOrDefault());
+            return Convert.ToInt32(_usuersservices.GetClients().Where(id => id.idUser == _usuario.IdUser).Select(client => client.idCliente).FirstOrDefault());
         }
 
         private void DesactiveEmpleoyeeiconButton_Click(object sender, EventArgs e)
-        {            
-            if(_usuario.idRol == 2 )
+        {
+            if (_usuario.idRol == 2)
             {
                 int idEmployee = GetidEmployee();
                 var getTasks = _proyectsServices.GetByIdTaskEmployee(idEmployee).ToList();
@@ -404,12 +471,12 @@ namespace PresentationLayer.Forms
                 {
                     var Messageconfirm = MessageBox.Show($"Desea desactivar la cuenta de el usuario {_usuario.UserAccount}?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
-                    if(Messageconfirm == DialogResult.OK)
+                    if (Messageconfirm == DialogResult.OK)
                     {
                         int idUser = _usuario.IdUser;
                         string status = "Desactivado";
                         _usuersservices.UpdateStatusUser(idUser, status);
-                    }                   
+                    }
                 }
             }
             else if (_usuario.idRol == 4)
@@ -421,13 +488,13 @@ namespace PresentationLayer.Forms
 
                 if (projectsPending)
                 {
-                    var Messageconfirm = MessageBox.Show($"Desea desactivar la cuenta de el usuario {_usuario.UserAccount}?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);                    int idUser = _usuario.IdUser;
-                    
-                    if(Messageconfirm == DialogResult.OK)
+                    var Messageconfirm = MessageBox.Show($"Desea desactivar la cuenta de el usuario {_usuario.UserAccount}?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Question); int idUser = _usuario.IdUser;
+
+                    if (Messageconfirm == DialogResult.OK)
                     {
                         string status = "Desactivado";
                         _usuersservices.UpdateStatusUser(idUser, status);
-                    }                  
+                    }
                 }
                 else
                 {
@@ -435,5 +502,7 @@ namespace PresentationLayer.Forms
                 }
             }
         }
+
+        
     }
 }

@@ -60,7 +60,13 @@
             lastNameLabel = new Label();
             lastNameTextBox = new TextBox();
             countryGroupBox = new GroupBox();
-            profilePictureBox = new PictureBox();
+            errorWorkStationLabel = new Label();
+            errorProfessionLabel = new Label();
+            iconSaveInformationButton = new FontAwesome.Sharp.IconButton();
+            workStationLabel = new Label();
+            workStationTextBox = new TextBox();
+            professionLabel = new Label();
+            professionsTextBox = new TextBox();
             DesactiveEmpleoyeeiconButton = new FontAwesome.Sharp.IconButton();
             errorSelectImagenLabel = new Label();
             errorCityLabel = new Label();
@@ -72,6 +78,7 @@
             saveButton = new FontAwesome.Sharp.IconButton();
             countrysComboBox = new ComboBox();
             countryUserLabel = new Label();
+            profilePictureBox = new PictureBox();
             informationPanel = new Panel();
             errorValidation = new ErrorProvider(components);
             detailsUserGroupBox.SuspendLayout();
@@ -388,6 +395,13 @@
             // 
             // countryGroupBox
             // 
+            countryGroupBox.Controls.Add(errorWorkStationLabel);
+            countryGroupBox.Controls.Add(errorProfessionLabel);
+            countryGroupBox.Controls.Add(iconSaveInformationButton);
+            countryGroupBox.Controls.Add(workStationLabel);
+            countryGroupBox.Controls.Add(workStationTextBox);
+            countryGroupBox.Controls.Add(professionLabel);
+            countryGroupBox.Controls.Add(professionsTextBox);
             countryGroupBox.Controls.Add(DesactiveEmpleoyeeiconButton);
             countryGroupBox.Controls.Add(errorSelectImagenLabel);
             countryGroupBox.Controls.Add(errorCityLabel);
@@ -409,14 +423,88 @@
             countryGroupBox.TabStop = false;
             countryGroupBox.Text = "Provinencia";
             // 
-            // profilePictureBox
+            // errorWorkStationLabel
             // 
-            profilePictureBox.Location = new Point(12, 0);
-            profilePictureBox.Name = "profilePictureBox";
-            profilePictureBox.Size = new Size(61, 53);
-            profilePictureBox.SizeMode = PictureBoxSizeMode.Zoom;
-            profilePictureBox.TabIndex = 38;
-            profilePictureBox.TabStop = false;
+            errorWorkStationLabel.AutoSize = true;
+            errorWorkStationLabel.Font = new Font("Century Gothic", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            errorWorkStationLabel.ForeColor = Color.Red;
+            errorWorkStationLabel.Location = new Point(151, 439);
+            errorWorkStationLabel.Name = "errorWorkStationLabel";
+            errorWorkStationLabel.Size = new Size(54, 18);
+            errorWorkStationLabel.TabIndex = 44;
+            errorWorkStationLabel.Text = "label2";
+            errorWorkStationLabel.Visible = false;
+            // 
+            // errorProfessionLabel
+            // 
+            errorProfessionLabel.AutoSize = true;
+            errorProfessionLabel.Font = new Font("Century Gothic", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            errorProfessionLabel.ForeColor = Color.Red;
+            errorProfessionLabel.Location = new Point(151, 334);
+            errorProfessionLabel.Name = "errorProfessionLabel";
+            errorProfessionLabel.Size = new Size(54, 18);
+            errorProfessionLabel.TabIndex = 43;
+            errorProfessionLabel.Text = "label1";
+            errorProfessionLabel.Visible = false;
+            // 
+            // iconSaveInformationButton
+            // 
+            iconSaveInformationButton.BackColor = Color.DodgerBlue;
+            iconSaveInformationButton.Cursor = Cursors.Hand;
+            iconSaveInformationButton.FlatStyle = FlatStyle.Popup;
+            iconSaveInformationButton.ForeColor = Color.White;
+            iconSaveInformationButton.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconSaveInformationButton.IconColor = Color.DarkTurquoise;
+            iconSaveInformationButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconSaveInformationButton.Location = new Point(223, 464);
+            iconSaveInformationButton.Name = "iconSaveInformationButton";
+            iconSaveInformationButton.Size = new Size(262, 46);
+            iconSaveInformationButton.TabIndex = 38;
+            iconSaveInformationButton.Text = "Guardar puesto de trabajo";
+            iconSaveInformationButton.UseVisualStyleBackColor = false;
+            iconSaveInformationButton.Visible = false;
+            iconSaveInformationButton.Click += iconSaveInformationButton_Click;
+            // 
+            // workStationLabel
+            // 
+            workStationLabel.AutoSize = true;
+            workStationLabel.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            workStationLabel.ForeColor = Color.White;
+            workStationLabel.Location = new Point(273, 380);
+            workStationLabel.Name = "workStationLabel";
+            workStationLabel.Size = new Size(190, 23);
+            workStationLabel.TabIndex = 41;
+            workStationLabel.Text = "Puesto de trabajo:";
+            workStationLabel.Visible = false;
+            // 
+            // workStationTextBox
+            // 
+            workStationTextBox.Location = new Point(151, 408);
+            workStationTextBox.Name = "workStationTextBox";
+            workStationTextBox.Size = new Size(409, 28);
+            workStationTextBox.TabIndex = 42;
+            workStationTextBox.Visible = false;
+            // 
+            // professionLabel
+            // 
+            professionLabel.AutoSize = true;
+            professionLabel.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            professionLabel.ForeColor = Color.White;
+            professionLabel.Location = new Point(308, 229);
+            professionLabel.Name = "professionLabel";
+            professionLabel.Size = new Size(101, 23);
+            professionLabel.TabIndex = 39;
+            professionLabel.Text = "Profesión:";
+            professionLabel.Visible = false;
+            // 
+            // professionsTextBox
+            // 
+            professionsTextBox.Location = new Point(151, 255);
+            professionsTextBox.Multiline = true;
+            professionsTextBox.Name = "professionsTextBox";
+            professionsTextBox.Size = new Size(409, 76);
+            professionsTextBox.TabIndex = 40;
+            professionsTextBox.Visible = false;
             // 
             // DesactiveEmpleoyeeiconButton
             // 
@@ -429,7 +517,7 @@
             DesactiveEmpleoyeeiconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             DesactiveEmpleoyeeiconButton.IconSize = 28;
             DesactiveEmpleoyeeiconButton.ImageAlign = ContentAlignment.MiddleLeft;
-            DesactiveEmpleoyeeiconButton.Location = new Point(232, 626);
+            DesactiveEmpleoyeeiconButton.Location = new Point(264, 661);
             DesactiveEmpleoyeeiconButton.Name = "DesactiveEmpleoyeeiconButton";
             DesactiveEmpleoyeeiconButton.Size = new Size(215, 46);
             DesactiveEmpleoyeeiconButton.TabIndex = 37;
@@ -473,7 +561,7 @@
             // dateRegistreDateTimePicker
             // 
             dateRegistreDateTimePicker.Enabled = false;
-            dateRegistreDateTimePicker.Location = new Point(163, 209);
+            dateRegistreDateTimePicker.Location = new Point(160, 155);
             dateRegistreDateTimePicker.Name = "dateRegistreDateTimePicker";
             dateRegistreDateTimePicker.Size = new Size(380, 28);
             dateRegistreDateTimePicker.TabIndex = 15;
@@ -490,7 +578,7 @@
             editButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             editButton.IconSize = 28;
             editButton.ImageAlign = ContentAlignment.MiddleLeft;
-            editButton.Location = new Point(232, 564);
+            editButton.Location = new Point(264, 613);
             editButton.Name = "editButton";
             editButton.Size = new Size(215, 46);
             editButton.TabIndex = 18;
@@ -526,7 +614,7 @@
             saveButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             saveButton.IconSize = 28;
             saveButton.ImageAlign = ContentAlignment.MiddleLeft;
-            saveButton.Location = new Point(232, 501);
+            saveButton.Location = new Point(264, 570);
             saveButton.Name = "saveButton";
             saveButton.Size = new Size(215, 46);
             saveButton.TabIndex = 17;
@@ -550,6 +638,15 @@
             countryUserLabel.Size = new Size(47, 21);
             countryUserLabel.TabIndex = 10;
             countryUserLabel.Text = "Pais:";
+            // 
+            // profilePictureBox
+            // 
+            profilePictureBox.Location = new Point(12, 0);
+            profilePictureBox.Name = "profilePictureBox";
+            profilePictureBox.Size = new Size(61, 53);
+            profilePictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            profilePictureBox.TabIndex = 38;
+            profilePictureBox.TabStop = false;
             // 
             // informationPanel
             // 
@@ -640,5 +737,12 @@
         private Label errorSelectImagenLabel;
         private FontAwesome.Sharp.IconButton DesactiveEmpleoyeeiconButton;
         private PictureBox profilePictureBox;
+        private Label errorWorkStationLabel;
+        private Label errorProfessionLabel;
+        private FontAwesome.Sharp.IconButton iconSaveInformationButton;
+        private Label workStationLabel;
+        private TextBox workStationTextBox;
+        private Label professionLabel;
+        private TextBox professionsTextBox;
     }
 }
