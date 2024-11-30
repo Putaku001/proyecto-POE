@@ -63,25 +63,25 @@ namespace PresentationLayer.Forms.Empleados
         private void LoadProjectsForAdmin()
         {
             recordsProjectdataGridView.DataSource = _proyectsServices.GetRequestProjectsByStatus("Terminado").ToList();
+            ConfigureData();
             HideColumns("file");
         }
 
-        //--Falta completar
         private void LoadProjectsForEmployee(int idEmployee)
         {
             recordsProjectdataGridView.DataSource = _projectsEmnployeesServices.GetTasksByEmployees(idEmployee).ToList();
+            ConfigureData();
             HideColumns("idEmployee", "idStatusTask", "statusTask", "fileTask", "dateEnd");
         }
 
-        //--
-        //Completar
+
         private void LoadProjectsForClient(int idClient)
         {
             int idStatusProject = 9;
             recordsProjectdataGridView.DataSource = _projectsClientServices.GetsProjectsByIdClient(idClient, idStatusProject).ToList();
+            ConfigureData();
             HideColumns("idClient", "file");
         }
-        //--
 
         private void HideColumns(params string[] columnNames)
         {
@@ -92,6 +92,68 @@ namespace PresentationLayer.Forms.Empleados
                     recordsProjectdataGridView.Columns[columnName].Visible = false;
                 }
             }
+        }
+
+        private void SetNamesColumns(DataGridView dataGridView, Dictionary<String, string> columNames)
+        {
+            foreach (DataGridViewColumn column in dataGridView.Columns)
+            {
+                if (columNames.ContainsKey(column.Name))
+                {
+                    column.HeaderText = columNames[column.Name];
+                }
+            }
+        }
+
+        private void ConfigureData()
+        {
+            switch (CaptureData.IdRol)
+            {
+                case 1:
+                    var setNamesDGVAdmin = new Dictionary<string, string>()
+                    {
+                        { "idProject" , "ID" },
+                        { "codeProject" , "Codigo" },
+                        { "UserAccount" , "Usuario" },
+                        { "nameProject" , "Nombre" },
+                        { "descriptionProject" , "Descripcion" },
+                        { "statusProject" , "Estado" },
+                        { "dateInit" , "Fecha de inicio" },
+                        { "dateEnd" , "Fecha de entrega" },
+                        { "dateRegistration" , "Registro" }
+                    };
+
+                    SetNamesColumns(recordsProjectdataGridView, setNamesDGVAdmin);
+                    break;
+                case 2:
+                    var setNamesDGVEmployee = new Dictionary<string, string>()
+                    {
+                        { "idProject" , "ID" }, 
+                        { "codeProject" , "Codigo" },
+                        { "UserAccount" , "Usuario" },
+                        { "nameProject" , "Nombre" },
+                        { "descriptionProject" , "Descripcion" },
+                        { "statusProject" , "Estado" },
+                        { "dateRegistration" , "Registro" }
+                    };
+
+                    SetNamesColumns(recordsProjectdataGridView, setNamesDGVEmployee);
+                    break;
+                case 4:
+                    var setNamesDGVClient = new Dictionary<string, string>()
+                    {
+                        { "idProject" , "ID" },
+                        { "codeProject" , "Codigo" },
+                        { "UserAccount" , "Usuario" },
+                        { "nameProject" , "Nombre" },
+                        { "descriptionProject" , "Descripcion" },
+                        { "statusProject" , "Estado" },
+                        { "dateRegistration" , "Registro" }
+                    };
+
+                    SetNamesColumns(recordsProjectdataGridView, setNamesDGVClient);
+                break;
+            }           
         }
     }
 }

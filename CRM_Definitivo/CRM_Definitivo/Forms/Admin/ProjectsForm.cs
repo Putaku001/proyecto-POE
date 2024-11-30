@@ -49,8 +49,9 @@ namespace PresentationLayer.Forms
         }
 
         private void LoadDataRequestProject()
-        {
+        {           
             requestProjectsDataGridView.DataSource = _proyectoServices.GetRequestProjectsByStatus("Pendiente");
+            ConfigureDataGridView();
             ConfigureAutoSize(requestProjectsDataGridView);
             HideColumns(requestProjectsDataGridView, "file", "idClient", "dateInit", "dateEnd");
 
@@ -59,6 +60,7 @@ namespace PresentationLayer.Forms
         private void LoadDataProjectProgress()
         {
             projectProgressDataGridView.DataSource = _proyectoServices.GetRequestProjectsByStatus("En progreso");
+            ConfigureDataGridView();
             ConfigureAutoSize(projectProgressDataGridView);
             HideColumns(projectProgressDataGridView, "file");
         }
@@ -67,13 +69,16 @@ namespace PresentationLayer.Forms
         {
             projectsWaitingResponseDataGridView.DataSource = _proyectoServices.GetRequestProjectsByStatus("esperando aprobacion del cliente");
             ConfigureAutoSize(projectsWaitingResponseDataGridView);
+            ConfigureDataGridView();
             HideColumns(projectsWaitingResponseDataGridView, "file", "dateInit", "dateEnd");
         }
 
         private void LoadDataProjectRefused()
         {
             projectsRefusedDataGridView.DataSource = _proyectoServices.GetRequestProjectsByStatus("Rechazado");
+            ConfigureDataGridView();
             ConfigureAutoSize(projectsRefusedDataGridView);
+            HideColumns(projectsRefusedDataGridView, "file");
         }
 
         private void ConfigureAutoSize(DataGridView dataGridView)
@@ -92,11 +97,55 @@ namespace PresentationLayer.Forms
             }
         }
 
+        private void SetCustomColumnNames(DataGridView dgv, Dictionary<string, string> columnNames)
+        {
+            foreach (DataGridViewColumn column in dgv.Columns)
+            {
+                if (columnNames.ContainsKey(column.Name))
+                {
+                    column.HeaderText = columnNames[column.Name];
+                }
+            }
+        }
+
+
+        private void ConfigureDataGridView()
+        {
+            var columnNamesProjects = new Dictionary<string, string>
+            {
+                { "idProject", "ID" },
+                { "codeProject", "Codigo" },
+                { "UserAccount", "Cliente" },
+                { "nameProject", "Proyecto" },
+                { "descriptionProject", "Descripcion" },
+                { "statusProject", "Estado" },
+                { "dateRegistration", "Registro" }
+            };
+
+            var columnNamesProjecsAndDate = new Dictionary<string, string>
+            {
+                { "idProject", "ID" },
+                { "codeProject", "Codigo" },
+                { "UserAccount", "Cliente" },
+                { "nameProject", "Proyecto" },
+                { "descriptionProject", "Descripcion" },
+                { "statusProject", "Estado" },
+                { "dateRegistration", "Registro" },
+                { "dateInit", "Fecha de Inicio" },
+                { "dateEnd" , "Fecha De Entrega" }
+            };
+
+            SetCustomColumnNames(requestProjectsDataGridView, columnNamesProjects);
+            SetCustomColumnNames(projectsRefusedDataGridView, columnNamesProjecsAndDate);
+            SetCustomColumnNames(projectProgressDataGridView, columnNamesProjecsAndDate);
+            SetCustomColumnNames(projectsWaitingResponseDataGridView, columnNamesProjects);
+        }
 
         private void requestProjectsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            
             if (e.ColumnIndex == requestProjectsDataGridView.Columns["SelectPr"].Index)
-            {
+            {                
                 string CodeProject = requestProjectsDataGridView.Rows[e.RowIndex].Cells["codeProject"].Value.ToString();
                 string NameProject = requestProjectsDataGridView.Rows[e.RowIndex].Cells["nameProject"].Value.ToString();
                 string Client = requestProjectsDataGridView.Rows[e.RowIndex].Cells["userAccount"].Value.ToString();

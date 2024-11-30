@@ -251,6 +251,7 @@ namespace PresentationLayer.Forms
         private void administratorUserButton_Click(object sender, EventArgs e)
         {
             userDataGridView.DataSource = usuarioServices.GetAdmins();
+            ConfigureDataGridView();
             userDataGridView.Columns["idUser"].Visible = false;
             assignedProjectPanel.Visible = false;
             requestProjectPanel.Visible = false;
@@ -258,7 +259,7 @@ namespace PresentationLayer.Forms
         private void employeeUserButton_Click(object sender, EventArgs e)
         {
             userDataGridView.DataSource = usuarioServices.GetEmployees();
-            //userDataGridView.Columns["workStation"].Visible = false;
+            ConfigureDataGridView();
             userDataGridView.Columns["idUser"].Visible = false;
             requestProjectPanel.Visible = false;
             assignedProjectPanel.Visible = true;
@@ -267,6 +268,7 @@ namespace PresentationLayer.Forms
         private void clientUserButton_Click(object sender, EventArgs e)
         {
             userDataGridView.DataSource = usuarioServices.GetClients();
+            ConfigureDataGridView();
             userDataGridView.Columns["idUser"].Visible = false;
             assignedProjectPanel.Visible = false;
             requestProjectPanel.Visible = true;
@@ -289,6 +291,54 @@ namespace PresentationLayer.Forms
             commentEmployeeLabel.Visible = false;
             professionLabel.Visible = false;
 
+        }
+
+        private void SetNamesColumns(DataGridView dataGridView, Dictionary<string, string> columNames)
+        {
+            foreach (DataGridViewColumn column in dataGridView.Columns)
+            {
+                if (columNames.ContainsKey(column.Name))
+                {
+                    column.HeaderText = columNames[column.Name];
+                }
+            }
+        }
+
+        private void ConfigureDataGridView()
+        {
+            if(administratorUserButton_Click != null)
+            {
+                var columnsNewNameAdmin = new Dictionary<string, string>
+                {
+                    { "idAdmin", "ID" },
+                    { "UserAccount", "Usuario" }
+                };
+
+                SetNamesColumns(userDataGridView, columnsNewNameAdmin);
+            }
+            else if (employeeUserButton_Click != null)
+            {
+                var columnsNewNameEmployee = new Dictionary<string, string>
+                {
+                    { "idEmployee", "ID" },
+                    { "UserAccount", "Usuario " },
+                    { "comment", "Profesion" },
+                    { "workStation", "Puesto" }
+                };
+
+                SetNamesColumns(userDataGridView, columnsNewNameEmployee);
+            }
+            else if (clientUserButton_Click != null)
+            {
+                var columnsNewNameClient = new Dictionary<string, string>
+                {
+                    { "idCliente", "ID" },
+                    { "UserAccount", "Usuario" }
+                };
+
+                SetNamesColumns(userDataGridView, columnsNewNameClient);
+            }
+            
         }
 
         private void userDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)

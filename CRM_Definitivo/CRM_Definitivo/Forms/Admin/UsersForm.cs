@@ -44,6 +44,7 @@ namespace PresentationLayer.Forms
         private void LoadData()
         {
             userDataGridView.DataSource = _usuersservices.GetUsers();
+            ConfigureDataGridView();
             userDataGridView.DefaultCellStyle.BackColor = Color.WhiteSmoke;
             userDataGridView.DefaultCellStyle.ForeColor = Color.Black;
             userDataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
@@ -57,6 +58,7 @@ namespace PresentationLayer.Forms
             userDataGridView.Columns["idUser"].Visible = false;
             userDataGridView.Columns["Image"].Visible = false;
             userDataGridView.Columns["idRol"].Visible = false;
+            userDataGridView.Columns["VerificationCode"].Visible = false;
 
             foreach (DataGridViewColumn column in userDataGridView.Columns)
             {
@@ -71,6 +73,37 @@ namespace PresentationLayer.Forms
             searchUserscomboBox.SelectedIndex = 0;
 
 
+        }
+
+        private void SetNamesColumns(DataGridView dataGridView, Dictionary<string, string> columNames)
+        {
+            foreach(DataGridViewColumn column in dataGridView.Columns)
+            {
+                if (columNames.ContainsKey(column.Name))
+                {
+                    column.HeaderText = columNames[column.Name];
+                }
+            }
+        }
+
+        private void ConfigureDataGridView()
+        {
+            var columnsNewName = new Dictionary<string, string>
+            {
+                { "UserAccount", "Usario" },
+                { "Rol", "Rol" },
+                { "NameUser", "Nombre" },
+                { "LastName", "Apellido" },
+                { "Email", "Correo" },
+                { "NumberPhone", "Contacto" },
+                { "passworduser", "Clave" },
+                { "Country", "Pais" },
+                { "City", "Ciudad" },
+                { "Statususer", "Estado" },
+                { "dateRegistration", "Registro" }
+            };
+
+            SetNamesColumns(userDataGridView, columnsNewName);
         }
 
         private void AbrirFormulario(Form formulario)
@@ -152,19 +185,6 @@ namespace PresentationLayer.Forms
 
         private void searchUserIconButton_Click(object sender, EventArgs e)
         {
-            //if (searchUserTextBox.Text.IsNullOrEmpty())
-            //{
-            //    LoadData();
-            //}
-            //else
-            //{
-            //    string search = searchUserTextBox.Text;
-            //    var users = _usuersservices.UserSearch(search);
-
-            //    userDataGridView.DataSource = users;
-            //}
-
-            //
             string columnFilter = ((OpcionCombo)searchUserscomboBox.SelectedItem).Valor.ToString();
             bool encontrado = false;
 

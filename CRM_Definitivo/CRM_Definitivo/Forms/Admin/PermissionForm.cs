@@ -29,12 +29,12 @@ namespace PresentationLayer.Forms.Admin
 
         private void LoadData()
         {
-            menuDataGridView.DataSource = _permissionServices.GetByMenu();
+            DataSources();
             menuDataGridView.Columns["idMenu"].Visible = false;
-            permissionDataGridView.DataSource = _permissionServices.GetPermissions();
+           
             permissionDataGridView.Columns["idMenu"].Visible = false;
             permissionDataGridView.Columns["idPermission"].Visible = false;
-            rolPermissionDataGridView.DataSource = _permissionServices.GetByRolPermissions();
+            
             rolPermissionDataGridView.Columns["idRolPermission"].Visible = false;
             rolPermissionDataGridView.Columns["idPermission"].Visible = false;
 
@@ -77,6 +77,17 @@ namespace PresentationLayer.Forms.Admin
             rolPermissionDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             rolPermissionDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
+            
+        }
+
+        private void DataSources()
+        {
+            menuDataGridView.DataSource = _permissionServices.GetByMenu();
+            permissionDataGridView.DataSource = _permissionServices.GetPermissions();
+            rolPermissionDataGridView.DataSource = _permissionServices.GetByRolPermissions();
+            ConfigureDataGridView();
+
+
             //DATASOURCE DEL MENU 
             selectMenuComboBox.DataSource = _permissionServices.GetByMenu();
             selectMenuComboBox.DisplayMember = "nameForm";
@@ -91,6 +102,41 @@ namespace PresentationLayer.Forms.Admin
             rolUserComboBox.DataSource = _rolservices.GetRol();
             rolUserComboBox.DisplayMember = "Rol";
             rolUserComboBox.ValueMember = "idRol";
+        }
+
+        private void SetNamesColumns(DataGridView dataGridView, Dictionary<string, string> columNames)
+        {
+            foreach (DataGridViewColumn column in dataGridView.Columns)
+            {
+                if (columNames.ContainsKey(column.Name))
+                {
+                    column.HeaderText = columNames[column.Name];
+                }
+            }
+        }
+
+        private void ConfigureDataGridView()
+        {
+            var columnsNewNameMenu = new Dictionary<string, string>
+            {
+                { "name", "Nombre" },
+                { "NameForm", "Nombre del form / objeto a filtrar" }
+
+            };
+
+            var columnsNewNameMenuPermission = new Dictionary<string, string>
+            {
+                { "nameForm", "Nombre del form / objeto a filtrar" },
+                { "idRoles", "Rol del usuario" }
+            };
+
+            var columnsNewNameMenuAccess = new Dictionary<string, string>
+            {
+                { "nameForm", "Nombre Nombre del form / objeto a filtrar" }
+            };
+            SetNamesColumns(menuDataGridView, columnsNewNameMenu);
+            SetNamesColumns(rolPermissionDataGridView, columnsNewNameMenuPermission);
+            SetNamesColumns(permissionDataGridView, columnsNewNameMenuAccess);
         }
 
         private void iconSaveMenusButton_Click(object sender, EventArgs e)

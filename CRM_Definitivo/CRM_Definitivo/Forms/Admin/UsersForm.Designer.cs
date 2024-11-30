@@ -52,10 +52,13 @@
             // 
             // userDataGridView
             // 
+            userDataGridView.AllowUserToAddRows = false;
+            userDataGridView.AllowUserToDeleteRows = false;
             userDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             userDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             userDataGridView.Location = new Point(42, 70);
             userDataGridView.Name = "userDataGridView";
+            userDataGridView.ReadOnly = true;
             userDataGridView.RowHeadersWidth = 51;
             userDataGridView.Size = new Size(1251, 635);
             userDataGridView.TabIndex = 0;

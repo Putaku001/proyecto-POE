@@ -40,12 +40,41 @@ namespace PresentationLayer.Forms.Admin
         private void AssignamentTaskEmployeeForm_Load(object sender, EventArgs e)
         {
             assignamentTasksDataGridView.DataSource = _proyectsServices.GetTaskEmployees();
+            ConfigureData();
             assignamentTasksDataGridView.Columns["idStatusTask"].Visible = false;
+            assignamentTasksDataGridView.Columns["fileTask"].Visible = false;
 
             clientUserLabel.Text = Client;
             codeProjectLabel.Text = CodeProject;
             nameProjectLabel.Text = NameProject;
             descriptionTextBox.Text = DescriptionProject;
+        }
+
+        private void SetNamesColumns(DataGridView dataGridView, Dictionary<String, string> columNames)
+        {
+            foreach(DataGridViewColumn column in dataGridView.Columns)
+            {
+                if (columNames.ContainsKey(column.Name))
+                {
+                    column.HeaderText = columNames[column.Name];
+                }
+            }
+        }
+
+        private void ConfigureData()
+        {
+            var setNamesDGV = new Dictionary<string, string>()
+            {
+                { "idTask" , "ID" },
+                { "idEmployee" , "IdEmpleado" },
+                { "codeProject" , "Codigo" },
+                { "nameTask" , "Tarea" },
+                { "descriptionTask" , "Descripcion" },
+                { "statusTask" , "Estado" },
+                { "dateEnd" , "Fecha de entrega" },
+            };
+
+            SetNamesColumns(assignamentTasksDataGridView, setNamesDGV);
         }
 
         private void iconAssignamentTaskButton_Click(object sender, EventArgs e)

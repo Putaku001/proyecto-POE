@@ -34,6 +34,7 @@
             timeLabel = new Label();
             welcomeLabel = new Label();
             projectsAssignamentPanel = new Panel();
+            nameProjectLabel = new Label();
             pictureBox1 = new PictureBox();
             statusProjectLabel = new Label();
             statusLabel = new Label();
@@ -101,19 +102,32 @@
             // 
             projectsAssignamentPanel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             projectsAssignamentPanel.BorderStyle = BorderStyle.Fixed3D;
+            projectsAssignamentPanel.Controls.Add(nameProjectLabel);
             projectsAssignamentPanel.Controls.Add(pictureBox1);
             projectsAssignamentPanel.Controls.Add(statusProjectLabel);
             projectsAssignamentPanel.Controls.Add(statusLabel);
-            projectsAssignamentPanel.Location = new Point(19, 73);
+            projectsAssignamentPanel.Location = new Point(19, 68);
             projectsAssignamentPanel.Name = "projectsAssignamentPanel";
-            projectsAssignamentPanel.Size = new Size(746, 125);
+            projectsAssignamentPanel.Size = new Size(746, 130);
             projectsAssignamentPanel.TabIndex = 2;
+            // 
+            // nameProjectLabel
+            // 
+            nameProjectLabel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            nameProjectLabel.AutoSize = true;
+            nameProjectLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            nameProjectLabel.ForeColor = Color.DodgerBlue;
+            nameProjectLabel.Location = new Point(471, 65);
+            nameProjectLabel.Name = "nameProjectLabel";
+            nameProjectLabel.Size = new Size(134, 23);
+            nameProjectLabel.TabIndex = 5;
+            nameProjectLabel.Text = "nameProject";
             // 
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(595, 17);
+            pictureBox1.Location = new Point(611, 21);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(128, 91);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -125,7 +139,7 @@
             statusProjectLabel.AutoSize = true;
             statusProjectLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             statusProjectLabel.ForeColor = Color.DodgerBlue;
-            statusProjectLabel.Location = new Point(22, 53);
+            statusProjectLabel.Location = new Point(16, 68);
             statusProjectLabel.Name = "statusProjectLabel";
             statusProjectLabel.Size = new Size(108, 23);
             statusProjectLabel.TabIndex = 2;
@@ -133,13 +147,12 @@
             // 
             // statusLabel
             // 
-            statusLabel.AutoSize = true;
             statusLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            statusLabel.Location = new Point(22, 17);
+            statusLabel.Location = new Point(16, 12);
             statusLabel.Name = "statusLabel";
-            statusLabel.Size = new Size(455, 23);
+            statusLabel.Size = new Size(320, 56);
             statusLabel.TabIndex = 1;
-            statusLabel.Text = "El estado actual de su proyecto solicidato es:";
+            statusLabel.Text = "El estado actual de su proyecto mas reciente es:";
             // 
             // usersViewPanel
             // 
@@ -207,5 +220,6 @@
         private PictureBox pictureBox1;
         private Label statusProjectLabel;
         private Label statusLabel;
+        private Label nameProjectLabel;
     }
 }

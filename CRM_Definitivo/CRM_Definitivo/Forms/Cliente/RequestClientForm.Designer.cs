@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             newProjectGroupBox = new GroupBox();
             errorDescriptionLabel = new Label();
             errorNameProjectLabel = new Label();
@@ -187,6 +187,7 @@
             // requestProjectDataGridView
             // 
             requestProjectDataGridView.AllowUserToAddRows = false;
+            requestProjectDataGridView.AllowUserToDeleteRows = false;
             requestProjectDataGridView.BackgroundColor = Color.LightGray;
             requestProjectDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             requestProjectDataGridView.Dock = DockStyle.Fill;
@@ -235,13 +236,13 @@
             // 
             downloadProject.ActiveLinkColor = Color.Transparent;
             downloadProject.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.White;
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = Color.Transparent;
-            dataGridViewCellStyle1.SelectionForeColor = Color.Black;
-            downloadProject.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = Color.Transparent;
+            dataGridViewCellStyle2.SelectionForeColor = Color.Black;
+            downloadProject.DefaultCellStyle = dataGridViewCellStyle2;
             downloadProject.HeaderText = "Descargar";
             downloadProject.MinimumWidth = 8;
             downloadProject.Name = "downloadProject";
@@ -263,7 +264,7 @@
             Controls.Add(projectTabControl);
             Controls.Add(newProjectGroupBox);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "RequestClientForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Proyectos";

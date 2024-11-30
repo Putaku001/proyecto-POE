@@ -25,7 +25,7 @@ namespace PresentationLayer.Forms.Cliente
         private readonly IProjectsClientServices _projectsClientServices;
         private readonly IServiceProvider _serviceProvider;
         int idClienById;
-        public RequestClientForm(IUsersServices usersServices, IProjectsServices listProyectsServices, IProjectsClientServices projectsClientServices , IServiceProvider serviceProvider)
+        public RequestClientForm(IUsersServices usersServices, IProjectsServices listProyectsServices, IProjectsClientServices projectsClientServices, IServiceProvider serviceProvider)
         {
             InitializeComponent();
             _usersServices = usersServices;
@@ -36,7 +36,7 @@ namespace PresentationLayer.Forms.Cliente
 
         private void RequestClientForm_Load(object sender, EventArgs e)
         {
-           loadData();
+            loadData();
         }
         public void loadData()
         {
@@ -71,14 +71,15 @@ namespace PresentationLayer.Forms.Cliente
             if (e.RowIndex >= 0 && listProjectDataGridView.Columns[e.ColumnIndex].Name == "SelectPf")
             {
                 DataGridViewRow row = listProjectDataGridView.Rows[e.RowIndex];
+                int idProject = Convert.ToInt32(row.Cells["idProject"].Value.ToString());
                 string codeProject = row.Cells["codeProject"].Value.ToString();
                 string nameProject = row.Cells["nameProject"].Value.ToString();
                 string Description = row.Cells["descriptionProject"].Value.ToString();
-                string projectStatusId = row.Cells["statusProject"].Value.ToString(); 
-                string progressStatusId = "En progreso"; 
+                string projectStatusId = row.Cells["statusProject"].Value.ToString();
+                string progressStatusId = "En progreso";
 
-                
- 
+
+
                 if (projectStatusId == progressStatusId)
                 {
                     MessageBox.Show($"El proyecto '{nameProject}' (Código: {codeProject}) está en progreso, aun no esta listo.",
@@ -87,11 +88,12 @@ namespace PresentationLayer.Forms.Cliente
                 else
                 {
                     var openInfoProjects = _serviceProvider.GetRequiredService<AnswerProjectClient>();
+                    openInfoProjects.idProject = idProject;
                     openInfoProjects.codeProyect = codeProject;
                     openInfoProjects.nameProject = nameProject;
                     openInfoProjects.Description = Description;
-                    
-                    
+
+
                     openInfoProjects.ShowDialog();
                     loadData();
 
@@ -106,7 +108,7 @@ namespace PresentationLayer.Forms.Cliente
                 }
                 else
                 {
-                    
+
                     try
                     {
                         string codeProject = listProjectDataGridView.Rows[e.RowIndex].Cells["codeProject"].Value.ToString();
@@ -207,7 +209,7 @@ namespace PresentationLayer.Forms.Cliente
             string year = "24";
 
             Random random = new Random();
-            int randomNumber = random.Next(100, 1000); 
+            int randomNumber = random.Next(100, 1000);
 
             string projectCode = $"U{year}{randomNumber}";
 

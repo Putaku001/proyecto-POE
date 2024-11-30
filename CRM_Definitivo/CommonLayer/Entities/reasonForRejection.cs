@@ -10,6 +10,6 @@ namespace CommonLayer.Entities
     {
         public int idRefused { get; set; }
         public int idProject { get; set; }
-        public byte[]? ReasonForRejection { get; set; }
+        public byte[]? fileRefused { get; set; }
     }
 }

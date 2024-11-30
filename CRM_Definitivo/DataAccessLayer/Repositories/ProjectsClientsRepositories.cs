@@ -77,6 +77,7 @@ namespace DataAccessLayer.Repositories
             {
                 string query = @"
             SELECT 
+                r.idProject,
                 r.codeProject,  
                 r.nameProject, 
                 r.descriptionProject, 
@@ -110,13 +111,12 @@ namespace DataAccessLayer.Repositories
         {
             using (var connection = _dbConnection.GetConnection())
             {
-                string query = @"
-                    UPDATE reasonForRejection SET 
-                    fileRefused= @reasonForRejection
-                    WHERE idProject = @idProject";
+                string query = @"UPDATE RefusedProject SET 
+                                    fileRefused= @fileRefused
+                                WHERE idProject = @idProject";
 
 
-                connection.Query(query, new { reason.idProject, reason.ReasonForRejection });
+                connection.Query<reasonForRejection>(query, reason);
             }
         }
     }

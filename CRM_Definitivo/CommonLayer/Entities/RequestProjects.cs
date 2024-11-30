@@ -8,6 +8,7 @@ namespace CommonLayer.Entities
 {
     public class RequestProjects
     {
+        public int idProject { get; set; }
         public string codeProject {  get; set; }
         public string UserAccount { get; set; }
         public int idClient { get; set; }

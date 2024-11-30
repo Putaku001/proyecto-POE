@@ -54,11 +54,14 @@
             // 
             // projectsEmployeeDataGridView
             // 
+            projectsEmployeeDataGridView.AllowUserToAddRows = false;
+            projectsEmployeeDataGridView.AllowUserToDeleteRows = false;
             projectsEmployeeDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             projectsEmployeeDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             projectsEmployeeDataGridView.Columns.AddRange(new DataGridViewColumn[] { Select });
             projectsEmployeeDataGridView.Location = new Point(627, 0);
             projectsEmployeeDataGridView.Name = "projectsEmployeeDataGridView";
+            projectsEmployeeDataGridView.ReadOnly = true;
             projectsEmployeeDataGridView.RowHeadersWidth = 51;
             projectsEmployeeDataGridView.Size = new Size(789, 833);
             projectsEmployeeDataGridView.TabIndex = 2;
@@ -70,6 +73,7 @@
             Select.HeaderText = "Select";
             Select.MinimumWidth = 6;
             Select.Name = "Select";
+            Select.ReadOnly = true;
             Select.Width = 70;
             // 
             // informationProjectPanel
