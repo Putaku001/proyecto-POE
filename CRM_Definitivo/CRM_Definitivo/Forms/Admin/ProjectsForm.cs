@@ -1,4 +1,5 @@
-﻿using BusinessLayer.Services.InterfacesServices;
+﻿using BusinessLayer.Services;
+using BusinessLayer.Services.InterfacesServices;
 using CommonLayer.Entities;
 using Microsoft.Extensions.DependencyInjection;
 using PresentationLayer.Forms.Admin;
@@ -17,9 +18,9 @@ namespace PresentationLayer.Forms
 {
     public partial class ProjectsForm : Form
     {
-        private readonly IProyectsServices _proyectoServices;
+        private readonly IProjectsServices _proyectoServices;
         private readonly IServiceProvider _serviceProvider;
-        public ProjectsForm(IProyectsServices proyectoServices, IServiceProvider serviceProvider)
+        public ProjectsForm(IProjectsServices proyectoServices, IServiceProvider serviceProvider)
         {
             InitializeComponent();
             _proyectoServices = proyectoServices;
@@ -33,7 +34,6 @@ namespace PresentationLayer.Forms
             LoadDataRequestProject();
             LoadDataProjectWaiting();
             LoadDataProjectRefused();
-            //HideColumns(projectProgressDataGridView, "file");
 
             foreach (DataGridViewColumn column in projectProgressDataGridView.Columns)
             {
@@ -114,7 +114,7 @@ namespace PresentationLayer.Forms
                 Projects dateInit = new Projects();
                 var dateInitial = dateInit.dateInit = DateTime.Now;
 
-                _proyectoServices.DateInit(CodeProject, dateInitial);
+                _proyectoServices.UpdateDates(CodeProject, dateInitial);
 
                 StatusProjects statusProjects = new StatusProjects();
                 int status = statusProjects.idStatusProyect = 6;
@@ -148,7 +148,7 @@ namespace PresentationLayer.Forms
 
         private void projectsRefusedDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == projectsRefusedDataGridView.Columns["selectRp"].Index)
+            if (e.RowIndex >= 0 && e.ColumnIndex == projectsRefusedDataGridView.Columns["selectRp"].Index)
             {
                 var mensaje = MessageBox.Show("Desea reahacer el proyecto?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 var ConfirmMessage = MessageBox.Show("Esta seguro?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -159,6 +159,34 @@ namespace PresentationLayer.Forms
 
                     _proyectoServices.StatusProject(CodeProject, 4);
                     LoadProyecto();
+                }
+                
+            }
+            else if (e.RowIndex >= 0 && projectsRefusedDataGridView.Columns[e.ColumnIndex].Name == "Rechazo")
+            {
+                try
+                {
+                    int selectIdProject = Convert.ToInt32(projectsRefusedDataGridView.Rows[e.RowIndex].Cells["idProject"].Value);
+                    string codeProject = projectsRefusedDataGridView.Rows[e.RowIndex].Cells["codeProject"].Value.ToString();
+                    byte[] content = _proyectoServices.GetFileProjectsRefusedInDB(selectIdProject);
+
+                    SaveFileDialog saveFileDialog = new SaveFileDialog
+                    {
+                        FileName = "Motivo de rechazo",
+                        Filter = "Todos los archivos|*.*"
+                    };
+
+                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        string filePath = saveFileDialog.FileName;
+                        File.WriteAllBytes(filePath, content);
+
+                        MessageBox.Show("Proyecto descargada correctamente");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error en la descargar la tarea: " + ex.Message);
                 }
             }
         }

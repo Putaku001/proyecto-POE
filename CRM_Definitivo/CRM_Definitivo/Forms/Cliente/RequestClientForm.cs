@@ -21,11 +21,11 @@ namespace PresentationLayer.Forms.Cliente
     public partial class RequestClientForm : Form
     {
         private readonly IUsersServices _usersServices;
-        private readonly IProyectsServices _proyectsServices;
+        private readonly IProjectsServices _proyectsServices;
         private readonly IProjectsClientServices _projectsClientServices;
         private readonly IServiceProvider _serviceProvider;
         int idClienById;
-        public RequestClientForm(IUsersServices usersServices, IProyectsServices listProyectsServices, IProjectsClientServices projectsClientServices , IServiceProvider serviceProvider)
+        public RequestClientForm(IUsersServices usersServices, IProjectsServices listProyectsServices, IProjectsClientServices projectsClientServices , IServiceProvider serviceProvider)
         {
             InitializeComponent();
             _usersServices = usersServices;
@@ -42,12 +42,13 @@ namespace PresentationLayer.Forms.Cliente
         {
             int idUser = CaptureData.idUser;
             var idClientByID = Convert.ToInt32(_usersServices.GetClients().Where(u => u.idUser == idUser).Select(e => e.idCliente).FirstOrDefault());
-            requestProjectDataGridView.DataSource = _projectsClientServices.GetsProjectsByIdClient(idClientByID);
+            requestProjectDataGridView.DataSource = _projectsClientServices.GetsProjectsByIdClient(idClientByID, 1);
 
+            requestProjectDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             requestProjectDataGridView.Columns["idClient"].Visible = false;
             requestProjectDataGridView.Columns["UserAccount"].Visible = false;
             requestProjectDataGridView.Columns["file"].Visible = false;
-            requestProjectDataGridView.Columns["statusproyect"].Visible = false;
+            requestProjectDataGridView.Columns["statusProject"].Visible = false;
             requestProjectDataGridView.Columns["codeProject"].HeaderText = "Codigo";
             requestProjectDataGridView.Columns["nameProject"].HeaderText = "Proyecto";
             requestProjectDataGridView.Columns["descriptionProject"].HeaderText = "Descripcion";
@@ -55,13 +56,14 @@ namespace PresentationLayer.Forms.Cliente
             var pendingStatusId = new List<int> { 7, 6 };
             listProjectDataGridView.DataSource = _projectsClientServices.GetProjectsByIdStatus(idClientByID, pendingStatusId);
 
+            listProjectDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             listProjectDataGridView.Columns["idClient"].Visible = false;
             listProjectDataGridView.Columns["UserAccount"].Visible = false;
             listProjectDataGridView.Columns["file"].Visible = false;
             listProjectDataGridView.Columns["codeProject"].HeaderText = "Codigo";
             listProjectDataGridView.Columns["nameProject"].HeaderText = "Proyecto";
             listProjectDataGridView.Columns["descriptionProject"].HeaderText = "Descripcion";
-            listProjectDataGridView.Columns["statusproyect"].HeaderText = "Estado";
+            listProjectDataGridView.Columns["statusProject"].HeaderText = "Estado";
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -72,7 +74,7 @@ namespace PresentationLayer.Forms.Cliente
                 string codeProject = row.Cells["codeProject"].Value.ToString();
                 string nameProject = row.Cells["nameProject"].Value.ToString();
                 string Description = row.Cells["descriptionProject"].Value.ToString();
-                string projectStatusId = row.Cells["statusproyect"].Value.ToString(); 
+                string projectStatusId = row.Cells["statusProject"].Value.ToString(); 
                 string progressStatusId = "En progreso"; 
 
                 
@@ -97,7 +99,7 @@ namespace PresentationLayer.Forms.Cliente
             }
             else if (e.RowIndex >= 0 && listProjectDataGridView.Columns[e.ColumnIndex].Name == "downloadProject")
             {
-                if (listProjectDataGridView.Rows[e.RowIndex].Cells["statusproyect"].Value.ToString() == "En progreso")
+                if (listProjectDataGridView.Rows[e.RowIndex].Cells["statusProject"].Value.ToString() == "En progreso")
                 {
                     MessageBox.Show($"El proyecto no esta listo y no puede descargarse",
                                    "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);

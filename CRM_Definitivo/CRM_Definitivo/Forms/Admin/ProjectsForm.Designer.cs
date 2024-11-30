@@ -42,7 +42,6 @@
             searchDismissedLabel = new Label();
             searchDismissedComboBox = new ComboBox();
             projectsRefusedDataGridView = new DataGridView();
-            SelectRp = new DataGridViewButtonColumn();
             processProjectTabPage = new TabPage();
             searchPipPanel = new Panel();
             searProjectProgresstextBox = new TextBox();
@@ -56,6 +55,8 @@
             requestProjectsDataGridView = new DataGridView();
             SelectPr = new DataGridViewButtonColumn();
             taskTabControl = new TabControl();
+            SelectRp = new DataGridViewButtonColumn();
+            Rechazo = new DataGridViewLinkColumn();
             waitClientTabPage.SuspendLayout();
             searchWaitPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)projectsWaitingResponseDataGridView).BeginInit();
@@ -208,24 +209,17 @@
             // 
             // projectsRefusedDataGridView
             // 
+            projectsRefusedDataGridView.AllowUserToDeleteRows = false;
             projectsRefusedDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             projectsRefusedDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            projectsRefusedDataGridView.Columns.AddRange(new DataGridViewColumn[] { SelectRp });
+            projectsRefusedDataGridView.Columns.AddRange(new DataGridViewColumn[] { SelectRp, Rechazo });
             projectsRefusedDataGridView.Location = new Point(3, 78);
             projectsRefusedDataGridView.Name = "projectsRefusedDataGridView";
+            projectsRefusedDataGridView.ReadOnly = true;
             projectsRefusedDataGridView.RowHeadersWidth = 51;
             projectsRefusedDataGridView.Size = new Size(1116, 480);
             projectsRefusedDataGridView.TabIndex = 4;
             projectsRefusedDataGridView.CellContentClick += projectsRefusedDataGridView_CellContentClick;
-            // 
-            // SelectRp
-            // 
-            SelectRp.HeaderText = "Select";
-            SelectRp.MinimumWidth = 6;
-            SelectRp.Name = "SelectRp";
-            SelectRp.Resizable = DataGridViewTriState.True;
-            SelectRp.SortMode = DataGridViewColumnSortMode.Automatic;
-            SelectRp.Width = 70;
             // 
             // processProjectTabPage
             // 
@@ -371,6 +365,26 @@
             taskTabControl.Size = new Size(1130, 594);
             taskTabControl.TabIndex = 0;
             // 
+            // SelectRp
+            // 
+            SelectRp.HeaderText = "Select";
+            SelectRp.MinimumWidth = 6;
+            SelectRp.Name = "SelectRp";
+            SelectRp.ReadOnly = true;
+            SelectRp.Resizable = DataGridViewTriState.True;
+            SelectRp.SortMode = DataGridViewColumnSortMode.Automatic;
+            SelectRp.Width = 70;
+            // 
+            // Rechazo
+            // 
+            Rechazo.HeaderText = "Rechazo";
+            Rechazo.MinimumWidth = 6;
+            Rechazo.Name = "Rechazo";
+            Rechazo.ReadOnly = true;
+            Rechazo.Text = "Rechazo";
+            Rechazo.UseColumnTextForLinkValue = true;
+            Rechazo.Width = 125;
+            // 
             // ProjectsForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -413,7 +427,6 @@
         private Label searchDismissedLabel;
         private ComboBox searchDismissedComboBox;
         private DataGridView projectsRefusedDataGridView;
-        private DataGridViewButtonColumn SelectRp;
         private TabPage processProjectTabPage;
         private Panel searchPipPanel;
         private FontAwesome.Sharp.IconButton iconCleanProcessButton;
@@ -427,5 +440,7 @@
         private DataGridViewButtonColumn SelectPr;
         private TabControl taskTabControl;
         private TextBox searProjectProgresstextBox;
+        private DataGridViewButtonColumn SelectRp;
+        private DataGridViewLinkColumn Rechazo;
     }
 }

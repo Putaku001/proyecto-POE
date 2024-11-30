@@ -22,10 +22,10 @@ namespace PresentationLayer.Forms.Admin
         public DateTime DateEnd { get; set; }
         byte[] fileByte;
 
-        private readonly IProyectsServices _proyectsServices;
+        private readonly IProjectsServices _proyectsServices;
         private readonly IUsersServices _usersServices;
 
-        public SendProjectForm(IProyectsServices proyectsServices, IUsersServices usersServices)
+        public SendProjectForm(IProjectsServices proyectsServices, IUsersServices usersServices)
         {
             _proyectsServices = proyectsServices;
             _usersServices = usersServices;

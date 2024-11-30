@@ -16,8 +16,8 @@ namespace PresentationLayer.Forms.Admin
         public string codeProject { get; set; }
         private int idTasks;
 
-        private readonly IProyectsServices _proyectsServices;
-        public infoProjects(IProyectsServices proyectsServices)
+        private readonly IProjectsServices _proyectsServices;
+        public infoProjects(IProjectsServices proyectsServices)
         {
             _proyectsServices = proyectsServices;
             InitializeComponent();

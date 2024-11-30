@@ -20,9 +20,9 @@ namespace PresentationLayer.Forms.Admin
         public string NameProject { get; set; }
         public string DescriptionProject { get; set; }
         public string Client { get; set; }
-        private readonly IProyectsServices _proyectsServices;
+        private readonly IProjectsServices _proyectsServices;
         private readonly IUsersServices _usersServices;
-        public AssignamentTaskEmployeeForm(IProyectsServices proyectsServices, IUsersServices usersServices)
+        public AssignamentTaskEmployeeForm(IProjectsServices proyectsServices, IUsersServices usersServices)
         {
             InitializeComponent();
             _proyectsServices = proyectsServices;
@@ -59,7 +59,7 @@ namespace PresentationLayer.Forms.Admin
             AssignamentTaskEmployees.dateEnd = timeEndDateTimePicker.Value;
 
             var dateEnd = timeEndDateTimePicker.Value;
-            _proyectsServices.DateEnd(CodeProject, dateEnd);
+            _proyectsServices.UpdateDates(CodeProject, dateEnd);
 
             _proyectsServices.AddTasksEmployees(AssignamentTaskEmployees);
             MessageBox.Show("La tarea se ha agregado exitosamente!");

@@ -20,6 +20,7 @@ namespace CommonLayer.Entities
 
     public class Projects
     {
+        public int idProject { get; set; }
         public string codeProject { get; set; }
         public string UserAccount { get; set; }
         public string nameProject { get; set; }

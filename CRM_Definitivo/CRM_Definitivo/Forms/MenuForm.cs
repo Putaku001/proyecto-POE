@@ -31,7 +31,7 @@ namespace PresentationLayer.Forms
         private static IconMenuItem MenuActivo = null;
         private static Form FormularioActivo = null;
         private readonly IPermisoServices _permisosServices;
-        private readonly IProyectsServices proyectoServices;
+        private readonly IProjectsServices proyectoServices;
         private readonly IUsersServices usuarioServices;
         private readonly IRolServices _rolServices;
         private readonly IServiceProvider _provider;
@@ -40,7 +40,7 @@ namespace PresentationLayer.Forms
         private readonly IProjectsClientServices _projectsClientServices;
         private System.Windows.Forms.Timer timer;
 
-        public MenuForm(IPermisoServices services, IServiceProvider serviceProvider, IUsersServices _usuarioServices, IRolServices rolServices, IProyectsServices _proyectoServices, IProjectsEmnployeesServices projects , IProjectsClientServices projectsClientServices , IUserReports userReports)
+        public MenuForm(IPermisoServices services, IServiceProvider serviceProvider, IUsersServices _usuarioServices, IRolServices rolServices, IProjectsServices _proyectoServices, IProjectsEmnployeesServices projects , IProjectsClientServices projectsClientServices , IUserReports userReports)
         {
 
             InitializeComponent();
@@ -258,7 +258,7 @@ namespace PresentationLayer.Forms
         private void employeeUserButton_Click(object sender, EventArgs e)
         {
             userDataGridView.DataSource = usuarioServices.GetEmployees();
-            userDataGridView.Columns["workStation"].Visible = false;
+            //userDataGridView.Columns["workStation"].Visible = false;
             userDataGridView.Columns["idUser"].Visible = false;
             requestProjectPanel.Visible = false;
             assignedProjectPanel.Visible = true;
@@ -272,6 +272,25 @@ namespace PresentationLayer.Forms
             requestProjectPanel.Visible = true;
         }
 
+        private void ShowInfoEmployees()
+        {
+            infoEmployeelabel.Visible = true;
+            professionEmployeeLabel.Visible = true;
+            puestoLabel.Visible = true;
+            commentEmployeeLabel.Visible = true;
+            professionLabel.Visible = true;
+            
+        }
+        private void HideInfoEmployees()
+        {
+            infoEmployeelabel.Visible = false;
+            professionEmployeeLabel.Visible = false;
+            puestoLabel.Visible = false;
+            commentEmployeeLabel.Visible = false;
+            professionLabel.Visible = false;
+
+        }
+
         private void userDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -279,7 +298,7 @@ namespace PresentationLayer.Forms
                 int idUser = int.Parse(userDataGridView.CurrentRow.Cells[2].Value.ToString());
 
 
-
+                HideInfoEmployees();
                 panelUsersView.Visible = true;
                 var users = usuarioServices.GetByIdUser(idUser);
                 var image = usuarioServices.GetProfileImage(idUser);
@@ -313,11 +332,23 @@ namespace PresentationLayer.Forms
 
                         if (assignedProjectPanel.Visible == true)
                         {
+                            ShowInfoEmployees();
+                            var profession = userDataGridView.Rows[e.RowIndex].Cells["workStation"].Value?.ToString();
+                            professionEmployeeLabel.Text = profession ?? "No tiene profesion";
+
+                            var comment = userDataGridView.Rows[e.RowIndex].Cells["comment"].Value?.ToString();
+                            commentEmployeeLabel.Text = comment ?? "No tiene profesion";
+
                             var GetidEmployee = usuarioServices.GetEmployees().Where(id => id.idUser == idUser).Select(e => e.idEmployee).FirstOrDefault();
-                            assignedProjectListBox.DataSource = _projectsEmployeesServices.GetTasksByEmployees(GetidEmployee).ToList();
+                            var tasks = assignedProjectListBox.DataSource = _projectsEmployeesServices.GetTasksByEmployees(GetidEmployee).ToList();
+
+                            assignedProjectListBox.DataSource = tasks;
+                            assignedProjectListBox.DisplayMember = "nameTask"; 
+                            assignedProjectListBox.ValueMember = "idTask";
                         }
                         else if (requestProjectPanel.Visible == true)
                         {
+                            HideInfoEmployees();
                             var GetIdClient = Convert.ToInt32(usuarioServices.GetClients().Where(id => id.idUser == idUser).Select(id => id.idCliente).FirstOrDefault());
                             requestProjectListBox.DataSource = _projectsClientServices.GetRequestProyectsByIdClient(GetIdClient).ToList();
                         }

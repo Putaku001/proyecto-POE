@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Repositories.InterfacesRepositories
 {
-    public interface IProyectsRepositories
+    public interface IProjectsRepositories
     {
 
         IEnumerable<ListProyects> GetLisProyect();
@@ -18,8 +18,7 @@ namespace DataAccessLayer.Repositories.InterfacesRepositories
         IEnumerable<Projects> GetRequestProjectsByStatus(string statusProject);
         IEnumerable<TaskEmployees> GetTaskEmployees();
         void StatusProject(string codeProject, int idStatusProject);
-        void DateInit(string codeProject, DateTime dateInit);
-        void DateEnd(string codeProject, DateTime dateEnd);
+        void UpdateDates(string codeProject, DateTime? dateInit = null, DateTime? dateEnd = null);
         void SendProjects(string codeProject, byte[] file);
 
 
@@ -30,6 +29,7 @@ namespace DataAccessLayer.Repositories.InterfacesRepositories
         void AddTasksEmployees(TaskEmployees taskEmployees);
         IEnumerable<TaskEmployees> GetTasksByCode(string codeProject);
         byte[] DownloadTask(int idTask);
-        IEnumerable<TaskEmployees> GetByIdTaskEmployee(int idEmployee);
+        IEnumerable<TaskEmployees> GetByIdTaskEmployee(int idEmployee, int? idStatusTask = null);
+        byte[] getFileProjectsRefusedInDB(int idProject);
     }
 }

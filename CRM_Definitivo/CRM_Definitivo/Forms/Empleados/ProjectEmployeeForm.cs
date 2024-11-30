@@ -17,11 +17,11 @@ namespace PresentationLayer.Forms.Empleados
     public partial class ProjectEmployeeForm : Form
     {
         private readonly IUsersServices _usersService;
-        private readonly IProyectsServices _listProyectsServices;
+        private readonly IProjectsServices _listProyectsServices;
         private readonly IProjectsEmnployeesServices _projectsEmnployeesServices;
         byte[] fileByte;
 
-        public ProjectEmployeeForm(IUsersServices usersServices, IProyectsServices listProyectsServices, IProjectsEmnployeesServices projects)
+        public ProjectEmployeeForm(IUsersServices usersServices, IProjectsServices listProyectsServices, IProjectsEmnployeesServices projects)
         {
             InitializeComponent();
             _usersService = usersServices;

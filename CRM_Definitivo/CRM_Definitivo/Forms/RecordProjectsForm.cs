@@ -15,12 +15,12 @@ namespace PresentationLayer.Forms.Empleados
 {
     public partial class RecordProjectsForm : Form
     {
-        private readonly IProyectsServices _proyectsServices;
+        private readonly IProjectsServices _proyectsServices;
         private readonly IProjectsClientServices _projectsClientServices;
         private readonly IProjectsEmnployeesServices _projectsEmnployeesServices;
         private readonly IUsersServices _usersServices;
         int idUser;
-        public RecordProjectsForm(IProyectsServices proyectsServices, IUsersServices usersServices, IProjectsClientServices projectsClientServices, IProjectsEmnployeesServices projectsEmnployeesServices)
+        public RecordProjectsForm(IProjectsServices proyectsServices, IUsersServices usersServices, IProjectsClientServices projectsClientServices, IProjectsEmnployeesServices projectsEmnployeesServices)
         {
             InitializeComponent();
             _proyectsServices = proyectsServices;

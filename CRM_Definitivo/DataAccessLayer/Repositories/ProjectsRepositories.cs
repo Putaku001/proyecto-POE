@@ -13,11 +13,11 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Repositories
 {
-    public class ProyectsRepositories : IProyectsRepositories
+    public class ProjectsRepositories : IProjectsRepositories
     {
         private readonly ISqlDataAccess _dbConnection;
 
-        public ProyectsRepositories(ISqlDataAccess dbConnection)
+        public ProjectsRepositories(ISqlDataAccess dbConnection)
         {
             _dbConnection = dbConnection;
         }
@@ -45,25 +45,13 @@ namespace DataAccessLayer.Repositories
             }
         }
 
-        //STATUS PROJECTS
-        public List<StatusProjects> GetStatusProjects()
-        {
-            using(var connection = _dbConnection.GetConnection())
-            {
-                string query = @"SELECT idStatusProyect, statusproyect FROM statusProyect";
-
-                return connection.Query<StatusProjects>(query).ToList();
-            }
-        }
-
-
         //METODOS PARA PROYECTOS
 
         public IEnumerable<Projects> GetRequestProjectsByStatus(string statusProject)
         {
             using (var connection = _dbConnection.GetConnection())
             {
-                string query = @"SELECT r.codeProject ,u.UserAccount, r.nameProject, r.descriptionProject, st.statusproject, r.dateInit, r.dateEnd, r.dateRegistration FROM RequestProjectClient r
+                string query = @"SELECT r.idProject, r.codeProject ,u.UserAccount, r.nameProject, r.descriptionProject, st.statusproject, r.dateInit, r.dateEnd, r.dateRegistration FROM RequestProjectClient r
                                 LEFT JOIN Clients c on c.idCliente = r.idClient
                                 LEFT JOIN Users u on u.idUser = c.idUser
                                 LEFT JOIN statusProject st on st.idStatusProject = r.idStatusProject
@@ -99,27 +87,26 @@ namespace DataAccessLayer.Repositories
             }
         }
 
-        public void DateInit(string codeProject,DateTime dateInit)
+        public void UpdateDates(string codeProject, DateTime? dateInit = null , DateTime? dateEnd = null)
         {
             using (var connection = _dbConnection.GetConnection())
             {
-                string query = @"UPDATE RequestProjectClient SET 
-                                dateInit = @dateInit
-                                WHERE codeProject = @codeProject";
+                var updates = new List<String>();
 
-                connection.Query<Projects>(query, new { codeProject, dateInit });
-            }
-        }
+                if (dateInit.HasValue)
+                {
+                    updates.Add("dateInit = @dateInit");
+                }
+                if (dateEnd.HasValue)
+                {
+                    updates.Add("dateEnd = @dateEnd");
+                }
 
-        public void DateEnd(string codeProject, DateTime dateEnd)
-        {
-            using (var connection = _dbConnection.GetConnection())
-            {
-                string query = @"UPDATE RequestProjectClient SET 
-                                dateEnd = @dateEnd
-                                WHERE codeProject = @codeProject";
+                string query = $@"UPDATE RequestProjectClient SET
+                                 {string.Join(", ", updates)}
+                                  WHERE codeProject = @codeProject";
 
-                connection.Query<Projects>(query, new { codeProject, dateEnd });
+                connection.Query<Projects>(query, new { codeProject, dateInit, dateEnd });
             }
         }
 
@@ -168,13 +155,18 @@ namespace DataAccessLayer.Repositories
             }
         }
 
-        public IEnumerable<TaskEmployees> GetByIdTaskEmployee(int idEmployee)
+        public IEnumerable<TaskEmployees> GetByIdTaskEmployee(int idEmployee, int? idStatusTask = null)
         {
             using (var connection = _dbConnection.GetConnection())
             {
                 string query = @"SELECT tk.idTask, tk.codeProject, tk.nameTask, tk.descriptionTask, tk.idStatusTask, tk.fileTask FROM taskProjects tk 
                                 WHERE tk.idEmployee = @idEmployee";
-                return connection.Query<TaskEmployees>(query, new { idEmployee });
+
+                if (idStatusTask.HasValue)
+                {
+                    query += " AND tk.idStatusTask = @idStatusTask";
+                }
+                return connection.Query<TaskEmployees>(query, new { idEmployee, idStatusTask });
             }
         }
 
@@ -190,15 +182,25 @@ namespace DataAccessLayer.Repositories
             }
         }
 
-        public byte[] getProjectInDB(string codeProject)
+        public byte[] getFileProjectsRefusedInDB(int idProject)
         {
             using (var connection = _dbConnection.GetConnection())
             {
-                string query = @"SELECT [file] FROM RequestProjectClient WHERE codeProject = @codeProject";
+                string query = @"SELECT fileRefused FROM RefusedProject WHERE idProject = @idProject";
 
-                return connection.QueryFirstOrDefault<byte[]>(query, new { codeProject });
+                return connection.QueryFirstOrDefault<byte[]>(query, new { idProject });
             }
         }
+
+        //public byte[] getProjectInDB(string codeProject)
+        //{
+        //    using (var connection = _dbConnection.GetConnection())
+        //    {
+        //        string query = @"SELECT [file] FROM RequestProjectClient WHERE codeProject = @codeProject";
+
+        //        return connection.QueryFirstOrDefault<byte[]>(query, new { codeProject });
+        //    }
+        //}
 
     }
 }

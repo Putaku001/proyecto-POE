@@ -24,7 +24,7 @@ namespace PresentationLayer.Forms
     {
         private IUsersServices _usuersservices;
         private IRolServices rolServices;
-        private readonly IProyectsServices _proyectsServices;
+        private readonly IProjectsServices _proyectsServices;
         private readonly IProjectsClientServices _projectsClientServices;
         private UsersForm _formularioPrincipal;
         bool IsEditing = false;
@@ -32,7 +32,7 @@ namespace PresentationLayer.Forms
         int idUser = CaptureData.idUser;
         private User _usuario;
 
-        public AddUsersForm(IUsersServices _usuersServices, IRolServices _rolServices, IProyectsServices proyectsServices, IProjectsClientServices projectsClientServices, User usuario = null)
+        public AddUsersForm(IUsersServices _usuersServices, IRolServices _rolServices, IProjectsServices proyectsServices, IProjectsClientServices projectsClientServices, User usuario = null)
         {
             InitializeComponent();
             _usuario = usuario;

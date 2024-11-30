@@ -20,10 +20,10 @@ namespace PresentationLayer.Forms.Cliente
         public string nameProject { get; set; }
 
         private readonly IServiceProvider _servicesProvider;
-        private readonly IProyectsServices _proyectsServices;
+        private readonly IProjectsServices _proyectsServices;
         private readonly IProjectsClientServices _projectsClientServices;
         private byte[] fileByte;
-        public AnswerProjectClient(IServiceProvider serviceProvider, IProyectsServices _proyectServices)
+        public AnswerProjectClient(IServiceProvider serviceProvider, IProjectsServices _proyectServices)
         {
             InitializeComponent();
             _servicesProvider = serviceProvider;

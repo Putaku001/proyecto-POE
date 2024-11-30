@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Services.InterfacesServices
 {
-    public interface IProyectsServices
+    public interface IProjectsServices
     {
         IEnumerable<Projects> GetRequestProjectsByStatus(string statusproject);
         IEnumerable<TaskEmployees> GetTaskEmployees();
@@ -17,9 +17,10 @@ namespace BusinessLayer.Services.InterfacesServices
 
         void UpdateTaskEmployee(int idTask, byte[] file, int idStatusTask);
         void StatusProject(string codeProject, int idStatusProject);
-        void DateInit(string codeProject, DateTime DateInit);
-        void DateEnd(string codeProject, DateTime DateEnd);
+        void UpdateDates(string codeProject, DateTime? dateInit = null, DateTime? dateEnd = null);
         void SendProjects(string codeProject, byte[] file);
+        byte[] GetFileProjectsRefusedInDB(int idProject);
+
 
 
 
@@ -29,8 +30,6 @@ namespace BusinessLayer.Services.InterfacesServices
         void AddTasksEmployees(TaskEmployees employees);
         IEnumerable<TaskEmployees> GetTasksByCode(string codeProject);
         byte[] DownloadTask(int idTask);
-        IEnumerable<TaskEmployees> GetByIdTaskEmployee(int idEmployee);
-
-
+        IEnumerable<TaskEmployees> GetByIdTaskEmployee(int idEmployee, int? idStatusTask = null);
     }
 }

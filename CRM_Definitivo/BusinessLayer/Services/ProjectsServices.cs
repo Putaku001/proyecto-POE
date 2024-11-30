@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Services
 {
-    public class ProyectsServices : IProyectsServices
+    public class ProjectsServices : IProjectsServices
     {
-        private readonly IProyectsRepositories _listaProyectosRepositories;
+        private readonly IProjectsRepositories _listaProyectosRepositories;
 
-        public ProyectsServices(IProyectsRepositories listaProyectosRepositories)
+        public ProjectsServices(IProjectsRepositories listaProyectosRepositories)
         {
             _listaProyectosRepositories = listaProyectosRepositories;
         }
@@ -27,22 +27,19 @@ namespace BusinessLayer.Services
         public void UpdateTaskEmployee(int idTask, byte[] file, int idStatusTask) => _listaProyectosRepositories.UpdateTaskEmployee(idTask, file, idStatusTask);
 
         //METODOS PARA PROYECTOS
-
         public IEnumerable<Projects> GetRequestProjectsByStatus(string statusproject) => _listaProyectosRepositories.GetRequestProjectsByStatus(statusproject);
-
-
         public IEnumerable<TaskEmployees> GetTaskEmployees() => _listaProyectosRepositories.GetTaskEmployees();
         public void StatusProject(string codeProject, int idStatusProject) => _listaProyectosRepositories.StatusProject(codeProject, idStatusProject);
-        public void DateInit(string codeProject, DateTime DateInit) => _listaProyectosRepositories.DateInit(codeProject, DateInit); 
-        public void DateEnd(string codeProject, DateTime DateEnd) => _listaProyectosRepositories.DateEnd(codeProject, DateEnd);
+        public void UpdateDates(string codeProject, DateTime? dateInit = null, DateTime? dateEnd = null) => _listaProyectosRepositories.UpdateDates(codeProject, dateInit, dateEnd);
         public void SendProjects(string codeProject, byte[] file) => _listaProyectosRepositories.SendProjects( codeProject ,file);
-        
-        
+        public byte[] GetFileProjectsRefusedInDB(int idProject) => _listaProyectosRepositories.getFileProjectsRefusedInDB(idProject);
+
+
         //metodos crud para tareas
         public void AddTasksEmployees(TaskEmployees taskEmployees) => _listaProyectosRepositories.AddTasksEmployees(taskEmployees);
         public IEnumerable<TaskEmployees> GetTasksByCode(string codeProject) => _listaProyectosRepositories.GetTasksByCode(codeProject);
         public byte[] DownloadTask(int idTask) => _listaProyectosRepositories.DownloadTask(idTask);
-        public IEnumerable<TaskEmployees> GetByIdTaskEmployee(int idEmployee) => _listaProyectosRepositories.GetByIdTaskEmployee(idEmployee);
+        public IEnumerable<TaskEmployees> GetByIdTaskEmployee(int idEmployee, int? idStatusTask = null) => _listaProyectosRepositories.GetByIdTaskEmployee(idEmployee, idStatusTask);
 
     }
 }

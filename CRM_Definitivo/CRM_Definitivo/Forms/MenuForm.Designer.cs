@@ -51,6 +51,11 @@
             panelUsersView = new Panel();
             ageTextlabel = new Label();
             informationPanel = new Panel();
+            commentEmployeeLabel = new Label();
+            professionEmployeeLabel = new Label();
+            puestoLabel = new Label();
+            professionLabel = new Label();
+            infoEmployeelabel = new Label();
             registrationLabel = new Label();
             numberPhoneLabel = new Label();
             emailIdUserLabel = new Label();
@@ -65,12 +70,12 @@
             selectedUserPictureBox = new PictureBox();
             idUserLabel = new Label();
             welcomeLabel = new Label();
-            projectPanel = new Panel();
+            infoUserPanel = new Panel();
+            informationUserPanel = new Panel();
             requestProjectPanel = new Panel();
             projectRequestedPictureBox = new PictureBox();
             requestProjectListBox = new ListBox();
             projectRequestedLabel = new Label();
-            informationUserPanel = new Panel();
             userDataGridView = new DataGridView();
             viewUser = new DataGridViewButtonColumn();
             assignedProjectPanel = new Panel();
@@ -93,10 +98,9 @@
             panelUsersView.SuspendLayout();
             informationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)selectedUserPictureBox).BeginInit();
-            projectPanel.SuspendLayout();
+            informationUserPanel.SuspendLayout();
             requestProjectPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)projectRequestedPictureBox).BeginInit();
-            informationUserPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)userDataGridView).BeginInit();
             assignedProjectPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)assignedProjectPictureBox).BeginInit();
@@ -337,7 +341,7 @@
             menuGroupBox.Controls.Add(timeUserLabel);
             menuGroupBox.Controls.Add(panelUsersView);
             menuGroupBox.Controls.Add(welcomeLabel);
-            menuGroupBox.Controls.Add(projectPanel);
+            menuGroupBox.Controls.Add(infoUserPanel);
             menuGroupBox.Controls.Add(informationUserPanel);
             menuGroupBox.Location = new Point(22, 15);
             menuGroupBox.Name = "menuGroupBox";
@@ -392,6 +396,11 @@
             informationPanel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             informationPanel.BackColor = Color.SteelBlue;
             informationPanel.BorderStyle = BorderStyle.Fixed3D;
+            informationPanel.Controls.Add(commentEmployeeLabel);
+            informationPanel.Controls.Add(professionEmployeeLabel);
+            informationPanel.Controls.Add(puestoLabel);
+            informationPanel.Controls.Add(professionLabel);
+            informationPanel.Controls.Add(infoEmployeelabel);
             informationPanel.Controls.Add(registrationLabel);
             informationPanel.Controls.Add(numberPhoneLabel);
             informationPanel.Controls.Add(emailIdUserLabel);
@@ -403,6 +412,66 @@
             informationPanel.Name = "informationPanel";
             informationPanel.Size = new Size(437, 497);
             informationPanel.TabIndex = 5;
+            // 
+            // commentEmployeeLabel
+            // 
+            commentEmployeeLabel.AutoSize = true;
+            commentEmployeeLabel.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            commentEmployeeLabel.ForeColor = Color.White;
+            commentEmployeeLabel.Location = new Point(40, 438);
+            commentEmployeeLabel.Name = "commentEmployeeLabel";
+            commentEmployeeLabel.Size = new Size(88, 19);
+            commentEmployeeLabel.TabIndex = 30;
+            commentEmployeeLabel.Text = "comment";
+            commentEmployeeLabel.Visible = false;
+            // 
+            // professionEmployeeLabel
+            // 
+            professionEmployeeLabel.AutoSize = true;
+            professionEmployeeLabel.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            professionEmployeeLabel.ForeColor = Color.White;
+            professionEmployeeLabel.Location = new Point(31, 365);
+            professionEmployeeLabel.Name = "professionEmployeeLabel";
+            professionEmployeeLabel.Size = new Size(93, 19);
+            professionEmployeeLabel.TabIndex = 29;
+            professionEmployeeLabel.Text = "profession";
+            professionEmployeeLabel.Visible = false;
+            // 
+            // puestoLabel
+            // 
+            puestoLabel.AutoSize = true;
+            puestoLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            puestoLabel.ForeColor = Color.White;
+            puestoLabel.Location = new Point(25, 342);
+            puestoLabel.Name = "puestoLabel";
+            puestoLabel.Size = new Size(80, 23);
+            puestoLabel.TabIndex = 28;
+            puestoLabel.Text = "Puesto:";
+            puestoLabel.Visible = false;
+            // 
+            // professionLabel
+            // 
+            professionLabel.AutoSize = true;
+            professionLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            professionLabel.ForeColor = Color.White;
+            professionLabel.Location = new Point(31, 415);
+            professionLabel.Name = "professionLabel";
+            professionLabel.Size = new Size(104, 23);
+            professionLabel.TabIndex = 27;
+            professionLabel.Text = "Profesion:";
+            professionLabel.Visible = false;
+            // 
+            // infoEmployeelabel
+            // 
+            infoEmployeelabel.AutoSize = true;
+            infoEmployeelabel.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold);
+            infoEmployeelabel.ForeColor = Color.White;
+            infoEmployeelabel.Location = new Point(170, 296);
+            infoEmployeelabel.Name = "infoEmployeelabel";
+            infoEmployeelabel.Size = new Size(101, 27);
+            infoEmployeelabel.TabIndex = 26;
+            infoEmployeelabel.Text = "Trabajo:";
+            infoEmployeelabel.Visible = false;
             // 
             // registrationLabel
             // 
@@ -473,11 +542,11 @@
             // userInformationIdLabel
             // 
             userInformationIdLabel.AutoSize = true;
-            userInformationIdLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            userInformationIdLabel.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold);
             userInformationIdLabel.ForeColor = Color.White;
-            userInformationIdLabel.Location = new Point(60, 19);
+            userInformationIdLabel.Location = new Point(76, 21);
             userInformationIdLabel.Name = "userInformationIdLabel";
-            userInformationIdLabel.Size = new Size(241, 23);
+            userInformationIdLabel.Size = new Size(276, 27);
             userInformationIdLabel.TabIndex = 20;
             userInformationIdLabel.Text = "Informacion del usuario";
             // 
@@ -562,14 +631,28 @@
             welcomeLabel.TabIndex = 0;
             welcomeLabel.Text = "Bienvenido de nuevo ";
             // 
-            // projectPanel
+            // infoUserPanel
             // 
-            projectPanel.BorderStyle = BorderStyle.Fixed3D;
-            projectPanel.Controls.Add(requestProjectPanel);
-            projectPanel.Location = new Point(8, 462);
-            projectPanel.Name = "projectPanel";
-            projectPanel.Size = new Size(1112, 406);
-            projectPanel.TabIndex = 3;
+            infoUserPanel.BorderStyle = BorderStyle.Fixed3D;
+            infoUserPanel.Location = new Point(8, 462);
+            infoUserPanel.Name = "infoUserPanel";
+            infoUserPanel.Size = new Size(1112, 406);
+            infoUserPanel.TabIndex = 3;
+            // 
+            // informationUserPanel
+            // 
+            informationUserPanel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            informationUserPanel.BorderStyle = BorderStyle.Fixed3D;
+            informationUserPanel.Controls.Add(requestProjectPanel);
+            informationUserPanel.Controls.Add(userDataGridView);
+            informationUserPanel.Controls.Add(assignedProjectPanel);
+            informationUserPanel.Controls.Add(clientUserButton);
+            informationUserPanel.Controls.Add(administratorUserButton);
+            informationUserPanel.Controls.Add(employeeUserButton);
+            informationUserPanel.Location = new Point(14, 80);
+            informationUserPanel.Name = "informationUserPanel";
+            informationUserPanel.Size = new Size(1106, 352);
+            informationUserPanel.TabIndex = 3;
             // 
             // requestProjectPanel
             // 
@@ -578,9 +661,9 @@
             requestProjectPanel.Controls.Add(projectRequestedPictureBox);
             requestProjectPanel.Controls.Add(requestProjectListBox);
             requestProjectPanel.Controls.Add(projectRequestedLabel);
-            requestProjectPanel.Location = new Point(22, 22);
+            requestProjectPanel.Location = new Point(643, 0);
             requestProjectPanel.Name = "requestProjectPanel";
-            requestProjectPanel.Size = new Size(534, 342);
+            requestProjectPanel.Size = new Size(456, 342);
             requestProjectPanel.TabIndex = 4;
             requestProjectPanel.Visible = false;
             // 
@@ -603,7 +686,7 @@
             requestProjectListBox.ItemHeight = 18;
             requestProjectListBox.Location = new Point(109, 45);
             requestProjectListBox.Name = "requestProjectListBox";
-            requestProjectListBox.Size = new Size(406, 252);
+            requestProjectListBox.Size = new Size(328, 252);
             requestProjectListBox.TabIndex = 21;
             // 
             // projectRequestedLabel
@@ -616,20 +699,6 @@
             projectRequestedLabel.Size = new Size(216, 23);
             projectRequestedLabel.TabIndex = 20;
             projectRequestedLabel.Text = "Proyectos solicitados";
-            // 
-            // informationUserPanel
-            // 
-            informationUserPanel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            informationUserPanel.BorderStyle = BorderStyle.Fixed3D;
-            informationUserPanel.Controls.Add(userDataGridView);
-            informationUserPanel.Controls.Add(assignedProjectPanel);
-            informationUserPanel.Controls.Add(clientUserButton);
-            informationUserPanel.Controls.Add(administratorUserButton);
-            informationUserPanel.Controls.Add(employeeUserButton);
-            informationUserPanel.Location = new Point(14, 80);
-            informationUserPanel.Name = "informationUserPanel";
-            informationUserPanel.Size = new Size(1106, 352);
-            informationUserPanel.TabIndex = 3;
             // 
             // userDataGridView
             // 
@@ -835,11 +904,10 @@
             informationPanel.ResumeLayout(false);
             informationPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)selectedUserPictureBox).EndInit();
-            projectPanel.ResumeLayout(false);
+            informationUserPanel.ResumeLayout(false);
             requestProjectPanel.ResumeLayout(false);
             requestProjectPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)projectRequestedPictureBox).EndInit();
-            informationUserPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)userDataGridView).EndInit();
             assignedProjectPanel.ResumeLayout(false);
             assignedProjectPanel.PerformLayout();
@@ -868,7 +936,7 @@
         private Label welcomeLabel;
         private Label userAccountLabel;
         private FontAwesome.Sharp.IconMenuItem IconMenuItemHome;
-        private Panel projectPanel;
+        private Panel infoUserPanel;
         private Panel informationUserPanel;
         private Panel panelUsersView;
         private FontAwesome.Sharp.IconButton administratorUserButton;
@@ -908,5 +976,10 @@
         private Panel nameUserPanel;
         private ToolStripSeparator toolStripSeparator1;
         private Label ageTextlabel;
+        private Label commentEmployeeLabel;
+        private Label professionEmployeeLabel;
+        private Label puestoLabel;
+        private Label professionLabel;
+        private Label infoEmployeelabel;
     }
 }

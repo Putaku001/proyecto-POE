@@ -26,10 +26,10 @@ namespace PresentationLayer.Forms
         private IRolServices _rolservices;
         private IUsersServices _usuersservices;
         private readonly IUserReports _userReports;
-        private readonly IProyectsServices _proyects;
+        private readonly IProjectsServices _proyects;
         private readonly IProjectsClientServices _projectsClient;
 
-        public UsersForm(IUsersServices usuarioServices, IRolServices rolServices, IProyectsServices proyectsServices, IProjectsClientServices projectsClientServices, IUserReports userReports)
+        public UsersForm(IUsersServices usuarioServices, IRolServices rolServices, IProjectsServices proyectsServices, IProjectsClientServices projectsClientServices, IUserReports userReports)
         {
             InitializeComponent();
             _usuersservices = usuarioServices;

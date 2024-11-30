@@ -70,7 +70,7 @@ namespace CRM_Definitivo
                         services.AddScoped<IUsersServices, UsersServices>();
                         services.AddScoped<IPermisoServices, PermissionServices>();
                         services.AddScoped<IRolServices, RolServices>();
-                        services.AddScoped<IProyectsServices, ProyectsServices>();
+                        services.AddScoped<IProjectsServices, ProjectsServices>();
                         services.AddScoped<IProjectsEmnployeesServices, ProjectsEmnployeesServices>();
                         services.AddScoped<IProjectsClientServices, ProjectsClientServices>();
 
@@ -78,7 +78,7 @@ namespace CRM_Definitivo
                         services.AddScoped<IUsersRepositories, UsersRepositories>();
                         services.AddScoped<IPermissionRepositories, PermissionRepositories>();
                         services.AddScoped<IRolRepositories,  RolRepositories>();
-                        services.AddScoped<IProyectsRepositories, ProyectsRepositories>();
+                        services.AddScoped<IProjectsRepositories, ProjectsRepositories>();
                         services.AddScoped<IProjectsEmployeesRepositories, ProjectsEmployeesRepositories>();
                         services.AddScoped<IProjectsClientsRepositories, ProjectsClientsRepositories>();
 
