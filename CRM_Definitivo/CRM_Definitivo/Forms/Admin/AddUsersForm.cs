@@ -482,9 +482,9 @@ namespace PresentationLayer.Forms
             else if (_usuario.idRol == 4)
             {
                 var idClient = GetIdClient();
-                var getProjects = _projectsClientServices.GetOnlyProjectsByIdClient(idClient).ToList();
+                var getProjects = _projectsClientServices.GetsProjectsByIdClient(idClient).ToList();
 
-                bool projectsPending = getProjects.Any(status => status.statusproyect == "Terminado");
+                bool projectsPending = getProjects.Any(status => status.statusProject == "Terminado");
 
                 if (projectsPending)
                 {

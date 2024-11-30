@@ -42,7 +42,7 @@ namespace PresentationLayer.Forms.Cliente
         {
             int idUser = CaptureData.idUser;
             var idClientByID = Convert.ToInt32(_usersServices.GetClients().Where(u => u.idUser == idUser).Select(e => e.idCliente).FirstOrDefault());
-            requestProjectDataGridView.DataSource = _projectsClientServices.GetProjectsByIdClient(idClientByID);
+            requestProjectDataGridView.DataSource = _projectsClientServices.GetsProjectsByIdClient(idClientByID);
 
             requestProjectDataGridView.Columns["idClient"].Visible = false;
             requestProjectDataGridView.Columns["UserAccount"].Visible = false;
@@ -178,7 +178,7 @@ namespace PresentationLayer.Forms.Cliente
 
                 _proyectsServices.StatusProject(newProject.codeProject, status.idStatusProyect);
 
-                requestProjectDataGridView.DataSource = _projectsClientServices.GetProjectsByIdClient(
+                requestProjectDataGridView.DataSource = _projectsClientServices.GetsProjectsByIdClient(
                     Convert.ToInt32(_usersServices.GetClients()
                         .Where(u => u.idUser == idUser)
                         .Select(e => e.idCliente)

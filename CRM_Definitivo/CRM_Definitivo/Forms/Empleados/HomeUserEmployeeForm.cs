@@ -38,7 +38,7 @@ namespace PresentationLayer.Forms.Empleados
             timeLabel.Text = DateTime.Now.ToString("g");
 
             var getidClient = _usersServices.GetClients().Where(id => id.idUser == idUser).Select(select => select.idCliente).FirstOrDefault();
-            var projectsCount = _projectsClientServices.GetProjectsByIdClient(getidClient).Count();
+            var projectsCount = _projectsClientServices.GetsProjectsByIdClient(getidClient).Count();
             projectsPendingsLabel.Text = projectsCount.ToString();
         }
 

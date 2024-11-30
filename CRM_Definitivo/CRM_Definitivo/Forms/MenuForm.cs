@@ -16,7 +16,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CommonLayer.Enums;
 using Microsoft.Extensions.DependencyInjection;
 using PresentationLayer.Forms.Admin;
 using Microsoft.VisualBasic.ApplicationServices;
@@ -259,6 +258,7 @@ namespace PresentationLayer.Forms
         private void employeeUserButton_Click(object sender, EventArgs e)
         {
             userDataGridView.DataSource = usuarioServices.GetEmployees();
+            userDataGridView.Columns["workStation"].Visible = false;
             userDataGridView.Columns["idUser"].Visible = false;
             requestProjectPanel.Visible = false;
             assignedProjectPanel.Visible = true;

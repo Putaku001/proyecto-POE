@@ -14,7 +14,7 @@ namespace CommonLayer.Entities
         public string nameProject { get; set; }
         public string descriptionProject { get; set; }
         public byte[] file {  get; set; }
-        public string statusproyect {  get; set; }
+        public string statusProject {  get; set; }
         public DateTime dateRegistration { get; set; }
     }
 
@@ -25,7 +25,7 @@ namespace CommonLayer.Entities
         public string nameProject { get; set; }
         public string descriptionProject { get; set; }
         public byte[] file { get; set; }
-        public string statusproyect { get; set; }
+        public string statusProject { get; set; }
         public DateTime dateInit { get; set; }
         public DateTime dateEnd { get; set; }
         public DateTime dateRegistration { get; set; }

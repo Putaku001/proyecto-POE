@@ -63,11 +63,11 @@ namespace DataAccessLayer.Repositories
         {
             using (var connection = _dbConnection.GetConnection())
             {
-                string query = @"SELECT r.codeProject ,u.UserAccount, r.nameProject, r.descriptionProject, st.statusproyect, r.dateInit, r.dateEnd, r.dateRegistration FROM RequestProjectClient r
+                string query = @"SELECT r.codeProject ,u.UserAccount, r.nameProject, r.descriptionProject, st.statusproject, r.dateInit, r.dateEnd, r.dateRegistration FROM RequestProjectClient r
                                 LEFT JOIN Clients c on c.idCliente = r.idClient
                                 LEFT JOIN Users u on u.idUser = c.idUser
-                                LEFT JOIN statusProyect st on st.idStatusProyect = r.idStatusProject
-                                WHERE st.statusproyect = @statusProject";
+                                LEFT JOIN statusProject st on st.idStatusProject = r.idStatusProject
+                                WHERE st.statusProject = @statusProject";
 
                 return connection.Query<Projects>(query, new { statusProject });
             }

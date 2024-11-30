@@ -77,7 +77,8 @@ namespace PresentationLayer.Forms.Empleados
         //Completar
         private void LoadProjectsForClient(int idClient)
         {
-            recordsProjectdataGridView.DataSource = _projectsClientServices.GetOnlyProjectsByIdClient(idClient).ToList();
+            int idStatusProject = 9;
+            recordsProjectdataGridView.DataSource = _projectsClientServices.GetsProjectsByIdClient(idClient, idStatusProject).ToList();
             HideColumns("idClient", "file");
         }
         //--

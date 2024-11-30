@@ -19,33 +19,28 @@ namespace DataAccessLayer.Repositories
             _dbConnection = dbConnection;
         }
 
-        public IEnumerable<RequestProjects> GetOnlyProjectsByIdClient(int idUser)
+        public IEnumerable<RequestProjects> GetsProjectsByIdClient(int idUser, int? idStatusProject = null, int? idClient = null)
         {
             using (var connection = _dbConnection.GetConnection())
             {
-                string query = @"SELECT r.codeProject, u.UserAccount, r.nameProject, r.descriptionProject, r.[file], st.statusproyect, r.dateInit, r.dateEnd, r.dateRegistration FROM RequestProjectClient r
+                string query = @"SELECT r.codeProject, u.UserAccount, r.nameProject, r.descriptionProject, r.[file], st.statusProject, r.dateInit, r.dateEnd, r.dateRegistration FROM RequestProjectClient r
                                  LEFT JOIN RefusedProject rf on rf.idRefused = r.idRefused
                                  LEFT JOIN Clients c on c.idCliente = r.idClient
                                  LEFT JOIN Users u on u.idUser = c.idUser
-                                 LEFT JOIN statusProyect st on st.idStatusProyect = r.idStatusProject
+                                 LEFT JOIN statusProject st on st.idStatusProject = r.idStatusProject
                                  WHERE idClient = @idUser";
 
-                return connection.Query<RequestProjects>(query, new { idUser });
-            }
-        }
-        //Este metodo podes borrarlo y reutilizar el otro metodo de GetProjectsByIdStatus cuando a ese le metas el id, y le estarias pasando los aprametros del id mas el estado y este metodo borrarlo
-        public IEnumerable<RequestProjects> GetProjectsByIdClient(int idUser)
-        {
-            using (var connection = _dbConnection.GetConnection())
-            {
-                string query = @"SELECT r.codeProject, u.UserAccount, r.nameProject, r.descriptionProject, r.[file], st.statusproyect, r.dateInit, r.dateEnd, r.dateRegistration FROM RequestProjectClient r
-                                 LEFT JOIN RefusedProject rf on rf.idRefused = r.idRefused
-                                 LEFT JOIN Clients c on c.idCliente = r.idClient
-                                 LEFT JOIN Users u on u.idUser = c.idUser
-                                 LEFT JOIN statusProyect st on st.idStatusProyect = r.idStatusProject
-                                 WHERE idClient = @idUser AND st.statusproyect = 'Pendiente'";
+                if (idStatusProject.HasValue)
+                {
+                    query += " AND r.idStatusProject = @idStatusProject";
+                }
 
-                return connection.Query<RequestProjects>(query, new { idUser });
+                if (idClient.HasValue)
+                {
+                    query += " AND r.idClient = @idClient";
+                }
+
+                return connection.Query<RequestProjects>(query, new { idUser, idStatusProject, idClient });
             }
         }
 
@@ -86,13 +81,13 @@ namespace DataAccessLayer.Repositories
                 r.nameProject, 
                 r.descriptionProject, 
                 r.[file], 
-                st.statusproyect,  
+                st.statusProject,  
                 r.dateEnd, 
                 r.dateRegistration
             FROM 
                 RequestProjectClient r
             LEFT JOIN 
-                statusProyect st ON st.idStatusProyect = r.idStatusProject
+                statusProject st ON st.idStatusProject = r.idStatusProject
             WHERE 
                 r.idClient = @idClient AND
                 r.idStatusProject IN @idStatus";
