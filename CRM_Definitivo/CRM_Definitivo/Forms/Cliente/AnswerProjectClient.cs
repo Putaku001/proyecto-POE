@@ -1,4 +1,5 @@
-﻿using BusinessLayer.Services.InterfacesServices;
+﻿using BusinessLayer.Services;
+using BusinessLayer.Services.InterfacesServices;
 using CommonLayer.Entities;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -24,12 +25,12 @@ namespace PresentationLayer.Forms.Cliente
         private readonly IProjectsServices _proyectsServices;
         private readonly IProjectsClientServices _projectsClientServices;
         private byte[] fileByte;
-        public AnswerProjectClient(IServiceProvider serviceProvider, IProjectsServices _proyectServices)
+        public AnswerProjectClient(IServiceProvider serviceProvider, IProjectsServices projectServices, IProjectsClientServices projectsClientServices)
         {
             InitializeComponent();
             _servicesProvider = serviceProvider;
-            _proyectsServices = _proyectServices;
-
+            _proyectsServices = projectServices;
+            _projectsClientServices = projectsClientServices ?? throw new ArgumentNullException(nameof(projectsClientServices));
         }
         private void AnswerProyectClient_Load(object sender, EventArgs e)
         {
@@ -47,28 +48,42 @@ namespace PresentationLayer.Forms.Cliente
 
         private void iconRefusedProjectButton_Click(object sender, EventArgs e)
         {
-            if (fileByte == null || fileByte.Length == 0)
+            try
             {
-                MessageBox.Show("Por favor, seleccione un archivo antes de rechazar el proyecto.", "Archivo requerido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                if (fileByte == null || fileByte.Length == 0)
+                {
+                    MessageBox.Show("Por favor, seleccione un archivo antes de rechazar el proyecto.", "Archivo requerido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (_projectsClientServices == null)
+                {
+                    MessageBox.Show("El servicio de proyectos de cliente no está inicializado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                reasonForRejection refused = new reasonForRejection
+                {
+                    idProject = idProject,
+                    fileRefused = fileByte
+                };
+
+                _projectsClientServices.InsertReasonForRejection(refused);
+
+                int idStatusProject = 8;
+                _proyectsServices.StatusProject(codeProyect, idStatusProject);
+
+                MessageBox.Show($"El Proyecto '{nameProject}' ha sido rechazado correctamente.", "Rechazado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                this.Close();
             }
-
-            reasonForRejection refused = new reasonForRejection
+            catch (Exception ex)
             {
-                idProject = idProject,
-                fileRefused = fileByte
-            };
-            
-            _projectsClientServices.InsertReasonForRejection(refused);
-
-            StatusProjects statusProjects = new StatusProjects();
-            int idStatusProject = statusProjects.idStatusProyect = 8;
-            _proyectsServices.StatusProject(codeProyect, idStatusProject);
-
-            MessageBox.Show($"El Proyecto '{nameProject}' ha sido rechazado correctamente.", "Rechazado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            this.Close();
+                MessageBox.Show($"Ocurrió un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+
 
         private void refusedProjectLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {

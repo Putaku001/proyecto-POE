@@ -111,12 +111,20 @@ namespace DataAccessLayer.Repositories
         {
             using (var connection = _dbConnection.GetConnection())
             {
-                string query = @"UPDATE RefusedProject SET 
-                                    fileRefused= @fileRefused
-                                WHERE idProject = @idProject";
+                string query = @"
+        IF EXISTS (SELECT 1 FROM RefusedProject WHERE idProject = @idProject)
+        BEGIN
+            UPDATE RefusedProject 
+            SET fileRefused = @fileRefused
+            WHERE idProject = @idProject;
+        END
+        ELSE
+        BEGIN
+            INSERT INTO RefusedProject (idProject, fileRefused)
+            VALUES (@idProject, @fileRefused);
+        END";
 
-
-                connection.Query<reasonForRejection>(query, reason);
+                connection.Execute(query, reason);
             }
         }
     }

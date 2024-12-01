@@ -215,23 +215,21 @@ namespace PresentationLayer.Forms
             {
                 try
                 {
-                    int selectIdProject = Convert.ToInt32(projectsRefusedDataGridView.Rows[e.RowIndex].Cells["idProject"].Value);
-                    string codeProject = projectsRefusedDataGridView.Rows[e.RowIndex].Cells["codeProject"].Value.ToString();
-                    byte[] content = _proyectoServices.GetFileProjectsRefusedInDB(selectIdProject);
+                    int idProject = Convert.ToInt32(projectsRefusedDataGridView.Rows[e.RowIndex].Cells["idProject"].Value);
+                    byte[] content = _proyectoServices.GetFileProjectsRefusedInDB(idProject);
 
-                    SaveFileDialog saveFileDialog = new SaveFileDialog
-                    {
-                        FileName = "Motivo de rechazo",
-                        Filter = "Todos los archivos|*.*"
-                    };
+                    SaveFileDialog saveFileDialog = new SaveFileDialog();
+                    saveFileDialog.FileName = "Motivo del rechazo";
+                    saveFileDialog.Filter = "Todos los archivos|*.*";
 
-                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                    if(saveFileDialog.ShowDialog() == DialogResult.OK)
                     {
                         string filePath = saveFileDialog.FileName;
                         File.WriteAllBytes(filePath, content);
 
-                        MessageBox.Show("Proyecto descargada correctamente");
+                        MessageBox.Show("La descarga se logro de forma exitosa", "Completada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
+
                 }
                 catch (Exception ex)
                 {
