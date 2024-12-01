@@ -1,7 +1,8 @@
 ﻿using BusinessLayer.Services;
-using BusinessLayer.Services.Interfaces;
 using BusinessLayer.Services.InterfacesServices;
-using CommonLayer.Entities;
+using BusinessLayer.Services.InterfacesServices.InterfacesUser;
+using CommonLayer.Entities.Users;
+using CommonLayer.Entities.ViewModel;
 using FluentValidation.Results;
 using Microsoft.Extensions.DependencyInjection;
 using PresentationLayer.Forms.Admin;
@@ -22,7 +23,9 @@ namespace PresentationLayer.Forms
 {
     public partial class AddUsersForm : Form
     {
-        private IUsersServices _usuersservices;
+        private readonly IEmployeeServices _employeeSservices;
+        private readonly IAdminsServices _adminsServices;
+        private readonly IClientsServices _clientsServices;
         private IRolServices rolServices;
         private readonly IProjectsServices _proyectsServices;
         private readonly IProjectsClientServices _projectsClientServices;
@@ -32,12 +35,15 @@ namespace PresentationLayer.Forms
         int idUser = CaptureData.idUser;
         private User _usuario;
 
-        public AddUsersForm(IUsersServices _usuersServices, IRolServices _rolServices, IProjectsServices proyectsServices, IProjectsClientServices projectsClientServices, User usuario = null)
+        public AddUsersForm(IEmployeeServices employeeSservices, IAdminsServices adminsServices, IClientsServices clientsServices, IRolServices _rolServices, IProjectsServices proyectsServices, IProjectsClientServices projectsClientServices, User usuario = null)
         {
             InitializeComponent();
             _usuario = usuario;
+            _employeeSservices = employeeSservices;
+            _adminsServices = adminsServices;
+            _clientsServices = clientsServices;
             IsEditing = usuario != null;
-            _usuersservices = _usuersServices;
+            //_usuersservices = _usuersServices;
             rolServices = _rolServices;
             _proyectsServices = proyectsServices;
             _projectsClientServices = projectsClientServices;
@@ -198,19 +204,19 @@ namespace PresentationLayer.Forms
                     return;
                 }
 
-                _usuersservices.AddUsers(newAccount);
+                _adminsServices.AddUsers(newAccount);
 
                 MessageBox.Show("La cuenta se ha creado con éxito.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadProvincias();
                 AddUsuario?.Invoke(this, EventArgs.Empty);
 
-                var UpdateWorkstation = new Employee
+                var UpdateWorkstation = new Employees
                 {
                     workStation = workStationTextBox.Text,
                     comment = professionsTextBox.Text,
                 };
 
-                _usuersservices.UpdateWorkstation(UpdateWorkstation);
+                _employeeSservices.UpdateWorkstation(UpdateWorkstation);
 
                 AddUsuario?.Invoke(this, EventArgs.Empty);
                 this.Close();
@@ -262,21 +268,11 @@ namespace PresentationLayer.Forms
                     return;
                 }
 
-                _usuersservices.EditUsers(_usuario);
+                _adminsServices.EditUsers(_usuario);
 
                 MessageBox.Show("Usuario editado correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 EditUsuariosHandler?.Invoke(this, EventArgs.Empty);
-
-                //var UpdateWorkstation = new Employee
-                //{
-                //    workStation = workStationTextBox.Text,
-                //    comment = professionsTextBox.Text,
-                //};
-
-                //_usuersservices.UpdateWorkstation(UpdateWorkstation);
-
-                //EditUsuariosHandler?.Invoke(this, EventArgs.Empty);
 
                 ClearFields();
                 this.Close();
@@ -299,15 +295,17 @@ namespace PresentationLayer.Forms
                     workStationTextBox.Visible = true;
                     professionLabel.Visible = true;
                     workStationLabel.Visible = true;
-                    iconSaveInformationButton.Visible = true;
 
                     errorProfessionLabel.Visible = true;
                     errorWorkStationLabel.Visible = true;
 
-                    var infoEmployee = _usuersservices.GetEmployees().Where(id => id.idUser == _usuario.IdUser).FirstOrDefault();
+                    var infoEmployee = _employeeSservices.GetEmployees().Where(id => id.idUser == _usuario.IdUser).FirstOrDefault();
 
-                    professionsTextBox.Text = infoEmployee.comment;
-                    workStationTextBox.Text = infoEmployee.workStation;
+                    if(infoEmployee != null)
+                    {
+                        professionsTextBox.Text = infoEmployee.comment;
+                        workStationTextBox.Text = infoEmployee.workStation;
+                    }                  
                 }
                 else
                 {
@@ -315,7 +313,6 @@ namespace PresentationLayer.Forms
                     workStationTextBox.Visible = false;
                     professionLabel.Visible = false;
                     workStationLabel.Visible = false;
-                    iconSaveInformationButton.Visible = false;
 
                     errorProfessionLabel.Visible = false;
                     errorWorkStationLabel.Visible = false;
@@ -329,7 +326,6 @@ namespace PresentationLayer.Forms
                     workStationTextBox.Visible = true;
                     professionLabel.Visible = true;
                     workStationLabel.Visible = true;
-                    iconSaveInformationButton.Visible = true;
 
                     errorProfessionLabel.Visible = true;
                     errorWorkStationLabel.Visible = true;
@@ -340,7 +336,6 @@ namespace PresentationLayer.Forms
                     workStationTextBox.Visible = false;
                     professionLabel.Visible = false;
                     workStationLabel.Visible = false;
-                    iconSaveInformationButton.Visible = false;
 
                     errorProfessionLabel.Visible = false;
                     errorWorkStationLabel.Visible = false;
@@ -349,10 +344,6 @@ namespace PresentationLayer.Forms
 
         }
 
-        private void iconSaveInformationButton_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void DisplayValidationErrors(ValidationResult result)
         {
@@ -447,12 +438,12 @@ namespace PresentationLayer.Forms
 
         public int GetidEmployee()
         {
-            return Convert.ToInt32(_usuersservices.GetByIdEmployees(_usuario.IdUser).Select(employee => employee.idEmployee).FirstOrDefault());
+            return Convert.ToInt32(_employeeSservices.GetByIdEmployees(_usuario.IdUser).Select(employee => employee.idEmployee).FirstOrDefault());
         }
 
         public int GetIdClient()
         {
-            return Convert.ToInt32(_usuersservices.GetClients().Where(id => id.idUser == _usuario.IdUser).Select(client => client.idCliente).FirstOrDefault());
+            return Convert.ToInt32(_clientsServices.GetClients().Where(id => id.idUser == _usuario.IdUser).Select(client => client.idCliente).FirstOrDefault());
         }
 
         private void DesactiveEmpleoyeeiconButton_Click(object sender, EventArgs e)
@@ -475,7 +466,7 @@ namespace PresentationLayer.Forms
                     {
                         int idUser = _usuario.IdUser;
                         string status = "Desactivado";
-                        _usuersservices.UpdateStatusUser(idUser, status);
+                        _adminsServices.UpdateStatusUser(idUser, status);
                     }
                 }
             }
@@ -493,7 +484,7 @@ namespace PresentationLayer.Forms
                     if (Messageconfirm == DialogResult.OK)
                     {
                         string status = "Desactivado";
-                        _usuersservices.UpdateStatusUser(idUser, status);
+                        _adminsServices.UpdateStatusUser(idUser, status);
                     }
                 }
                 else

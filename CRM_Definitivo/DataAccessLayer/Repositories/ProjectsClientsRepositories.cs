@@ -1,5 +1,4 @@
-﻿using CommonLayer.Entities;
-using DataAccessLayer.DbConnection;
+﻿using DataAccessLayer.DbConnection;
 using Dapper;
 using System;
 using System.Collections.Generic;
@@ -7,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataAccessLayer.Repositories.InterfacesRepositories;
+using CommonLayer.Entities.Projects;
 
 namespace DataAccessLayer.Repositories
 {

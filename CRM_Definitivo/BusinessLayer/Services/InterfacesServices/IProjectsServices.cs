@@ -1,4 +1,4 @@
-﻿using CommonLayer.Entities;
+﻿using CommonLayer.Entities.Projects;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -12,19 +12,11 @@ namespace BusinessLayer.Services.InterfacesServices
     {
         IEnumerable<Projects> GetRequestProjectsByStatus(string statusproject);
         IEnumerable<TaskEmployees> GetTaskEmployees();
-
-        IEnumerable<ListProyects> GetLisProyect();
-
         void UpdateTaskEmployee(int idTask, byte[] file, int idStatusTask);
         void StatusProject(string codeProject, int idStatusProject);
         void UpdateDates(string codeProject, DateTime? dateInit = null, DateTime? dateEnd = null);
         void SendProjects(string codeProject, byte[] file);
         byte[] GetFileProjectsRefusedInDB(int idProject);
-
-
-
-
-
 
         //METODOS PARA TAREAS
         void AddTasksEmployees(TaskEmployees employees);

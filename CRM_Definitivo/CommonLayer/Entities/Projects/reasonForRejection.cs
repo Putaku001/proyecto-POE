@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CommonLayer.Entities
+namespace CommonLayer.Entities.Projects
 {
     public class reasonForRejection
     {

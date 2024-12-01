@@ -1,6 +1,4 @@
-﻿using BusinessLayer.Services.Interfaces;
-using CommonLayer.Entities;
-using PresentationLayer.Forms;
+﻿using PresentationLayer.Forms;
 using QuestPDF.Infrastructure;
 using System;
 using System.Collections.Generic;
@@ -12,12 +10,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using Twilio.TwiML.Voice;
-//using System.Windows.Controls;
 using FluentValidation.Results;
 using System.Drawing;
-//using System.ComponentModel.DataAnnotations;
 using PresentationLayer.Validations;
 using Microsoft.Extensions.DependencyInjection;
+using CommonLayer.Entities.Users;
+using BusinessLayer.Services.InterfacesServices.InterfacesUser;
 
 
 
@@ -25,14 +23,16 @@ namespace PresentationLayer
 {
     public partial class NewAccountForm : Form
     {
-        private readonly IUsersServices _usersServices;
+        private readonly IEmployeeServices _usersServices;
+        private readonly IAdminsServices _adminsServices;
         byte[] imageBytes;
 
 
-        public NewAccountForm(IUsersServices usersServices)
+        public NewAccountForm(IEmployeeServices usersServices, IAdminsServices adminsServices)
         {
             InitializeComponent();
             _usersServices = usersServices;
+            _adminsServices = adminsServices;
             LoadProvincias();
 
         }
@@ -103,7 +103,7 @@ namespace PresentationLayer
                 string userAccount = userNameTextBox.Text;
 
                 // Verifica si el nombre de usuario ya existe
-                if (_usersServices.UserExists(userAccount))
+                if (_adminsServices.UserExists(userAccount))
                 {
                     MessageBox.Show("El nombre de usuario ya está en uso. Por favor, elija otro.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -136,7 +136,7 @@ namespace PresentationLayer
                 }
                 else
                 {
-                    _usersServices.AddUsers(newAccount);
+                    _adminsServices.AddUsers(newAccount);
                     CleanFields();
                     ShowSuccessNotification(newAccount.UserAccount);
                     MessageBox.Show("La cuenta se ha creado con éxito.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);

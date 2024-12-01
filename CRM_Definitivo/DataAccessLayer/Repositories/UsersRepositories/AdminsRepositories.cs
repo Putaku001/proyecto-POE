@@ -1,19 +1,20 @@
-﻿using CommonLayer.Entities;
+﻿using CommonLayer.Entities.Users;
 using Dapper;
 using DataAccessLayer.DbConnection;
-using DataAccessLayer.DbSqlDataAccess;
-using DataAccessLayer.Repositories.InterfacesRepositories;
-using Microsoft.Data.SqlClient;
+using DataAccessLayer.Repositories.InterfacesRepositories.InterfacesUser;
 using System;
-using System.Data;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace DataAccessLayer.Repositories
+namespace DataAccessLayer.Repositories.UsersRepositories
 {
-    public class UsersRepositories : IUsersRepositories
+    public class AdminsRepositories : IAdminsRepositories
     {
         private readonly ISqlDataAccess _dbConnection;
 
-        public UsersRepositories(ISqlDataAccess dbConnection)
+        public AdminsRepositories(ISqlDataAccess dbConnection)
         {
             _dbConnection = dbConnection;
         }
@@ -30,6 +31,7 @@ namespace DataAccessLayer.Repositories
                 return connection.QueryFirstOrDefault<User>(query, new { UserAccount, passworduser });
             }
         }
+
         public bool UserExists(string userAccount)
         {
             string query = "SELECT COUNT(1) FROM Users WHERE UserAccount = @UserAccount";
@@ -41,7 +43,15 @@ namespace DataAccessLayer.Repositories
             }
         }
 
+        public IEnumerable<Admins> GetAdmins()
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = "select a.idAdmin, a.idUser, u.userAccount from Admins a LEFT JOIN Users u on a.idUser = u.idUser";
 
+                return connection.Query<Admins>(query);
+            }
+        }
 
         public IEnumerable<User> GetAllUser()
         {
@@ -58,7 +68,7 @@ namespace DataAccessLayer.Repositories
 
         public IEnumerable<User> GetByIdUsers(int idUser)
         {
-            using(var connection = _dbConnection.GetConnection())
+            using (var connection = _dbConnection.GetConnection())
             {
                 string query = @"SELECT idUser, idRol, UserAccount,nameuser,lastName, email, birthdate, 
                                         numberPhone, passworduser, country, city, statususer, DateRegistration, Image 
@@ -146,7 +156,7 @@ namespace DataAccessLayer.Repositories
 
         public void UpdateStatusUser(int idUser, string statususer)
         {
-            using(var connection = _dbConnection.GetConnection())
+            using (var connection = _dbConnection.GetConnection())
             {
                 string query = @"UPDATE Users SET
                                  statususer = @statususer
@@ -167,7 +177,7 @@ namespace DataAccessLayer.Repositories
 
         public void ChangePassword(User user)
         {
-            using(var connection = _dbConnection.GetConnection())
+            using (var connection = _dbConnection.GetConnection())
             {
                 string query = @"UPDATE Users
                                  SET passworduser = @passworduser
@@ -187,7 +197,7 @@ namespace DataAccessLayer.Repositories
             }
         }
 
-        IEnumerable<User> IUsersRepositories.UserSearch(string search)
+        IEnumerable<User> IAdminsRepositories.UserSearch(string search)
         {
             using (var connection = _dbConnection.GetConnection())
             {
@@ -195,76 +205,8 @@ namespace DataAccessLayer.Repositories
                                         numberPhone, passworduser, country, city, statususer, DateRegistration
                                  FROM Users WHERE UserAccount LIKE '%' + @search + '%'";
 
-                return connection.Query<User>(query, new {search});
+                return connection.Query<User>(query, new { search });
             }
         }
-
-        //METODOS DEL INICIO PARA USERS
-
-        public IEnumerable<Admins> GetAdmins()
-        {
-            using (var connection = _dbConnection.GetConnection())
-            {
-                string query = "select a.idAdmin, a.idUser, u.userAccount from Admins a LEFT JOIN Users u on a.idUser = u.idUser";
-
-                return connection.Query<Admins>(query);
-            }
-        }
-
-
-        //EMPLEADOS
-        public IEnumerable<Employees> GetEmployee()
-        {
-            using (var connection = _dbConnection.GetConnection())
-            {
-                string query = "select e.idEmployee, e.idUser, e.comment, e.workStation, u.UserAccount from employee e LEFT JOIN Users u on e.idUser = u.idUser";
-
-                return connection.Query<Employees>(query);
-            }
-        }
-
-        public IEnumerable<Employees> GetByIdEmployee(int idEmployee)
-        {
-            using(var connection = _dbConnection.GetConnection())
-            {
-                string query = "SELECT e.idEmployee, e.idUser FROM Employee e LEFT JOIN Users u on e.idUser = u.idUser WHERE e.idUser = @idEmployee";
-
-                return connection.Query<Employees>(query, new { idEmployee });
-            }
-        }
-
-        public IEnumerable<Employees> GetInfoEmployee(int idUser)
-        {
-            using (var connection = _dbConnection.GetConnection())
-            {
-                string query = "SELECT e.idEmployee, e.idUser, e.comment, e.workStattion FROM Employee e LEFT JOIN Users u on e.idUser = u.idUser WHERE e.idUser = @idUser";
-
-                return connection.Query<Employees>(query, new { idUser });
-            }
-        }
-
-        public void UpdateWorkstation(Employee employee)
-        {
-            using(var connection = _dbConnection.GetConnection())
-            {
-                string query = @"UPDATE employee SET
-                                     comment = @comment,
-                                     workStation = @workStation
-                                 WHERE idEmployee = (SELECT MAX(idEmployee) FROM employee)";
-                connection.Query<Employee>(query, employee);
-            }
-        }
-
-        //CLIENTES
-        public IEnumerable<Clients> GetClients()
-        {
-            using (var connection = _dbConnection.GetConnection())
-            {
-                string query = "select c.idCliente, c.idUser, u.userAccount from Clients c LEFT JOIN Users u on c.idUser = u.idUser";
-
-                return connection.Query<Clients>(query);
-            }
-        }
-
     }
 }

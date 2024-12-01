@@ -1,4 +1,4 @@
-﻿using CommonLayer.Entities;
+﻿using CommonLayer.Entities.Projects;
 
 namespace DataAccessLayer.Repositories.InterfacesRepositories
 {

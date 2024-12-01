@@ -1,6 +1,7 @@
-﻿using BusinessLayer.Services.Interfaces;
-using BusinessLayer.Services.InterfacesServices;
+﻿using BusinessLayer.Services.InterfacesServices;
+using BusinessLayer.Services.InterfacesServices.InterfacesUser;
 using CommonLayer.Entities;
+using CommonLayer.Entities.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
@@ -17,27 +18,29 @@ namespace PresentationLayer.Forms.Cliente
     public partial class HomeUserClientForm : Form
     {
         private readonly IProjectsClientServices _projectsClientServices;
-        private readonly IUsersServices _usersServices;
+        private readonly IEmployeeServices _usersServices;
+        private readonly IClientsServices _clientsServices;
         int idUser;
-        public HomeUserClientForm(IProjectsClientServices projectsClientServices, IUsersServices usersServices)
+        public HomeUserClientForm(IProjectsClientServices projectsClientServices, IEmployeeServices usersServices, IClientsServices clientsServices)
         {
             InitializeComponent();
             _projectsClientServices = projectsClientServices;
             _usersServices = usersServices;
             idUser = CaptureData.idUser;
             LoadData();
+            _clientsServices = clientsServices;
         }
 
         private void LoadData()
         {
-            userAccountLabel.Text = AuthUser.UserAccount;
+            userAccountLabel.Text = CaptureData.UserAccount;
             timeLabel.Text = DateTime.Now.ToString("g");
             ShowStatusProject();
         }
 
         private void ShowStatusProject()
         {
-            int idClient = _usersServices.GetClients().Where(id => id.idUser == idUser).Select(client => client.idCliente).FirstOrDefault();
+            int idClient = _clientsServices.GetClients().Where(id => id.idUser == idUser).Select(client => client.idCliente).FirstOrDefault();
             var allProjects = _projectsClientServices.GetsProjectsByIdClient(idClient).OrderByDescending(date => date.dateRegistration).ToList();
 
             if(allProjects.Any())

@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CommonLayer.Entities
+namespace CommonLayer.Entities.Projects
 {
     public class StatusProjects
     {
-        public int idStatusProyect {  get; set; }
-        public string statusproyect { get; set;}
+        public int idStatusProyect { get; set; }
+        public string statusproyect { get; set; }
     }
 }

@@ -1,5 +1,4 @@
-﻿using BusinessLayer.Services.Interfaces;
-using CommonLayer.Entities;
+﻿using CommonLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,18 +10,23 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FluentValidation.Results;
 using PresentationLayer.Validations;
+using CommonLayer.Entities.Users;
+using CommonLayer.Entities.ViewModel;
+using BusinessLayer.Services.InterfacesServices.InterfacesUser;
 
 namespace PresentationLayer.Forms
 {
     public partial class ChangePasswordProfileForm : Form
     {
-        private readonly IUsersServices _services;
+        private readonly IEmployeeServices _services;
+        private readonly IAdminsServices _adminsServices;
         private readonly User _user;
-        public ChangePasswordProfileForm(User user, IUsersServices services)
+        public ChangePasswordProfileForm(User user, IEmployeeServices services, IAdminsServices adminsServices)
         {
             InitializeComponent();
             _services = services;
             _user = user;
+            _adminsServices = adminsServices;
         }
 
         private void changePasswordButton_Click(object sender, EventArgs e)
@@ -31,7 +35,7 @@ namespace PresentationLayer.Forms
             {
                 if (newPasswordTextBox.Text == confirmPasswordTextBox.Text)
                 {
-                    _user.IdUser = AuthUser.idUser;
+                    _user.IdUser = CaptureData.idUser;
                     _user.passworduser = newPasswordTextBox.Text;
 
 
@@ -43,7 +47,7 @@ namespace PresentationLayer.Forms
                         return;
                     }
 
-                    _services.ChangePassword(_user);
+                    _adminsServices.ChangePassword(_user);
 
                     MessageBox.Show("La contraseña se ha cambiado correctamente.");
                     this.Close();

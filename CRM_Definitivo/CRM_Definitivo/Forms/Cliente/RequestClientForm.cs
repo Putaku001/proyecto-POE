@@ -1,11 +1,11 @@
 ﻿using BusinessLayer.Services;
-using BusinessLayer.Services.Interfaces;
 using BusinessLayer.Services.InterfacesServices;
-using CommonLayer.Entities;
+using CommonLayer.Entities.ViewModel;
 using FluentValidation;
 using FluentValidation.Results;
 using Microsoft.Extensions.DependencyInjection;
 using PresentationLayer.Validations;
+using CommonLayer.Entities.Projects;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,23 +15,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BusinessLayer.Services.InterfacesServices.InterfacesUser;
 
 namespace PresentationLayer.Forms.Cliente
 {
     public partial class RequestClientForm : Form
     {
-        private readonly IUsersServices _usersServices;
+        private readonly IEmployeeServices _usersServices;
+        private readonly IClientsServices _clientsServices;
         private readonly IProjectsServices _proyectsServices;
         private readonly IProjectsClientServices _projectsClientServices;
         private readonly IServiceProvider _serviceProvider;
         int idClienById;
-        public RequestClientForm(IUsersServices usersServices, IProjectsServices listProyectsServices, IProjectsClientServices projectsClientServices, IServiceProvider serviceProvider)
+
+        private EntitieViewModel _entitieViewModel;
+        public RequestClientForm(IEmployeeServices usersServices, IClientsServices clientsServices, IProjectsServices listProyectsServices, IProjectsClientServices projectsClientServices, IServiceProvider serviceProvider, EntitieViewModel entitieViewModel)
         {
             InitializeComponent();
             _usersServices = usersServices;
             _proyectsServices = listProyectsServices;
             _projectsClientServices = projectsClientServices;
+            _clientsServices = clientsServices;
             _serviceProvider = serviceProvider;
+            _entitieViewModel = entitieViewModel;
         }
 
         private void RequestClientForm_Load(object sender, EventArgs e)
@@ -41,10 +47,11 @@ namespace PresentationLayer.Forms.Cliente
         public void loadData()
         {
             int idUser = CaptureData.idUser;
-            var idClientByID = Convert.ToInt32(_usersServices.GetClients().Where(u => u.idUser == idUser).Select(e => e.idCliente).FirstOrDefault());
-            requestProjectDataGridView.DataSource = _projectsClientServices.GetsProjectsByIdClient(idClientByID, 1);
+            var idClientByID = Convert.ToInt32(_clientsServices.GetClients().Where(u => u.idUser == idUser).Select(e => e.idCliente).FirstOrDefault());
+            requestProjectDataGridView.DataSource = _projectsClientServices.GetsProjectsByIdClient(idClientByID, 4);
 
             requestProjectDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            requestProjectDataGridView.Columns["idProject"].Visible = false;
             requestProjectDataGridView.Columns["idClient"].Visible = false;
             requestProjectDataGridView.Columns["UserAccount"].Visible = false;
             requestProjectDataGridView.Columns["file"].Visible = false;
@@ -88,10 +95,16 @@ namespace PresentationLayer.Forms.Cliente
                 else
                 {
                     var openInfoProjects = _serviceProvider.GetRequiredService<AnswerProjectClient>();
-                    openInfoProjects.idProject = idProject;
-                    openInfoProjects.codeProyect = codeProject;
-                    openInfoProjects.nameProject = nameProject;
-                    openInfoProjects.Description = Description;
+
+                    SharedData answerValues = new SharedData
+                    {
+                        codeProyect = codeProject,
+                        idProject = idProject,
+                        nameProject = nameProject,
+                        Description = Description
+                    };
+
+                    _entitieViewModel.UpdateEntities(answerValues);
 
 
                     openInfoProjects.ShowDialog();
@@ -141,10 +154,9 @@ namespace PresentationLayer.Forms.Cliente
         {
             try
             {
-
                 int idUser = CaptureData.idUser;
 
-                int idClient = _usersServices.GetClients()
+                int idClient = _clientsServices.GetClients()
                     .Where(U => U.idUser == idUser)
                     .Select(c => c.idCliente)
                     .FirstOrDefault();
@@ -183,7 +195,7 @@ namespace PresentationLayer.Forms.Cliente
                 _proyectsServices.StatusProject(newProject.codeProject, status.idStatusProyect);
 
                 requestProjectDataGridView.DataSource = _projectsClientServices.GetsProjectsByIdClient(
-                    Convert.ToInt32(_usersServices.GetClients()
+                    Convert.ToInt32(_clientsServices.GetClients()
                         .Where(u => u.idUser == idUser)
                         .Select(e => e.idCliente)
                         .FirstOrDefault())

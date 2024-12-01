@@ -1,5 +1,5 @@
 ﻿using BusinessLayer.Services.InterfacesServices;
-using CommonLayer.Entities;
+using CommonLayer.Entities.Projects;
 using DataAccessLayer.Repositories.InterfacesRepositories;
 using System;
 using System.Collections.Generic;

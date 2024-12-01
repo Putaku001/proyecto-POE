@@ -1,11 +1,16 @@
 using BusinessLayer.Services;
-using BusinessLayer.Services.Interfaces;
 using BusinessLayer.Services.InterfacesServices;
+using BusinessLayer.Services.InterfacesServices.InterfacesUser;
+using BusinessLayer.Services.Users;
 using CommonLayer.Entities;
+using CommonLayer.Entities.Users;
+using CommonLayer.Entities.ViewModel;
 using DataAccessLayer.DbConnection;
 using DataAccessLayer.DbSqlDataAccess;
 using DataAccessLayer.Repositories;
 using DataAccessLayer.Repositories.InterfacesRepositories;
+using DataAccessLayer.Repositories.InterfacesRepositories.InterfacesUser;
+using DataAccessLayer.Repositories.UsersRepositories;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -67,7 +72,10 @@ namespace CRM_Definitivo
 
 
                         //BUSISNESSLAYER
-                        services.AddScoped<IUsersServices, UsersServices>();
+                        services.AddScoped<IEmployeeServices, EmployeeServices>();
+                        services.AddScoped<IAdminsServices, AdminsServices>();
+                        services.AddScoped<IClientsServices, ClientsServices>();
+                        services.AddScoped<IProjectsClientServices, ProjectsClientServices>();
                         services.AddScoped<IPermisoServices, PermissionServices>();
                         services.AddScoped<IRolServices, RolServices>();
                         services.AddScoped<IProjectsServices, ProjectsServices>();
@@ -75,7 +83,9 @@ namespace CRM_Definitivo
                         services.AddScoped<IProjectsClientServices, ProjectsClientServices>();
 
                         //REPOSITORIES
-                        services.AddScoped<IUsersRepositories, UsersRepositories>();
+                        services.AddScoped<IEmployeeRepositories, EmployeeRepositories>();
+                        services.AddScoped<IAdminsRepositories, AdminsRepositories>();
+                        services.AddScoped<IClientsRepositories, ClientsRepositories>();
                         services.AddScoped<IPermissionRepositories, PermissionRepositories>();
                         services.AddScoped<IRolRepositories,  RolRepositories>();
                         services.AddScoped<IProjectsRepositories, ProjectsRepositories>();
@@ -87,6 +97,8 @@ namespace CRM_Definitivo
 
                         //SQLDATA
                         services.AddSingleton<ISqlDataAccess, SqlDataAccess>();
+                        //services.AddSingleton<AnswerValues>();
+                        services.AddSingleton<EntitieViewModel>();
                         services.AddSingleton<User>();
                         services.AddSingleton<EmailSettings>();
 

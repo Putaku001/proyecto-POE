@@ -1,4 +1,4 @@
-﻿using BusinessLayer.Services.Interfaces;
+﻿using BusinessLayer.Services.InterfacesServices.InterfacesUser;
 using QuestPDF.Fluent;
 using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;
@@ -12,11 +12,13 @@ namespace PresentationLayer.Reports
 {
     public class UserReports : IUserReports
     {
-        private IUsersServices _userServices;
+        private readonly IEmployeeServices _userServices;
+        private readonly IAdminsServices _adminsServices;
 
-        public UserReports(IUsersServices userServices)
+        public UserReports(IEmployeeServices userServices, IAdminsServices adminsServices)
         {
             _userServices = userServices;
+            _adminsServices = adminsServices;
         }
         public void GenerateReports()
         {
@@ -65,7 +67,6 @@ namespace PresentationLayer.Reports
         {
             container.Table(table =>
             {
-                // step 1
                 table.ColumnsDefinition(columns =>
                 {
                     columns.RelativeColumn(); 
@@ -75,22 +76,16 @@ namespace PresentationLayer.Reports
                     columns.RelativeColumn();
                     columns.RelativeColumn(); 
                     columns.RelativeColumn();
-                    //columns.RelativeColumn();
-                    //columns.RelativeColumn();
                 });
 
-                // step 2
                 table.Header(header =>
                 {
-                    //esto es para el estilo el cellstyle
                     header.Cell().Element(CellStyle).Background(Colors.Grey.Lighten1).Text("idUser").Bold().FontColor(Colors.White);
                     header.Cell().Element(CellStyle).Background(Colors.Grey.Lighten1).Text("UserAccount").Bold().FontColor(Colors.White);
                     header.Cell().Element(CellStyle).Background(Colors.Grey.Lighten1).Text("birthdate").Bold().FontColor(Colors.White);
                     header.Cell().Element(CellStyle).Background(Colors.Grey.Lighten1).Text("numberPhone").Bold().FontColor(Colors.White);
-                    //header.Cell().Element(CellStyle).Background(Colors.Grey.Lighten1).Text("passworduser").Bold().FontColor(Colors.White);
                     header.Cell().Element(CellStyle).Background(Colors.Grey.Lighten1).Text("country").Bold().FontColor(Colors.White);
                     header.Cell().Element(CellStyle).Background(Colors.Grey.Lighten1).Text("city").Bold().FontColor(Colors.White);
-                    //header.Cell().Element(CellStyle).Background(Colors.Grey.Lighten1).Text("statususer").Bold().FontColor(Colors.White);
                     header.Cell().Element(CellStyle).Background(Colors.Grey.Lighten1).Text("DateRegistration").Bold().FontColor(Colors.White);
 
                     static IContainer CellStyle(IContainer container)
@@ -99,7 +94,7 @@ namespace PresentationLayer.Reports
                     }
                 });
 
-                var users = _userServices.GetUsers();
+                var users = _adminsServices.GetUsers();
                 // step 3
                 foreach (var item in users)
                 {
@@ -107,10 +102,8 @@ namespace PresentationLayer.Reports
                     table.Cell().Element(CellStyle).Text($"{item.UserAccount}");
                     table.Cell().Element(CellStyle).Text($"{item.Birthdate}");
                     table.Cell().Element(CellStyle).Text($"{item.NumberPhone}");
-                    //table.Cell().Element(CellStyle).Text($"{item.passworduser}");
                     table.Cell().Element(CellStyle).Text($"{item.Country}");
                     table.Cell().Element(CellStyle).Text($"{item.City}");
-                    //table.Cell().Element(CellStyle).Text($"{item.Statususer}");
                     table.Cell().Element(CellStyle).Text($"{item.DateRegistration}");
 
                     static IContainer CellStyle(IContainer container)
@@ -123,15 +116,5 @@ namespace PresentationLayer.Reports
 
         }
 
-
-        //private static IContainer CellStyle(IContainer container)
-        //{
-        //    return container
-        //        .Border(1) // Borde de 1 unidad
-        //        .BorderColor(Colors.Black) // Color del borde
-        //        .PaddingVertical(5) // Espaciado vertical
-        //        .PaddingHorizontal(5) // Espaciado horizontal
-        //        .DefaultTextStyle(x => x.SemiBold()); // Estilo de texto
-        //}
     }
 }

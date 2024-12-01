@@ -1,6 +1,6 @@
 ﻿using BusinessLayer.Services;
 using BusinessLayer.Services.InterfacesServices;
-using CommonLayer.Entities;
+using CommonLayer.Entities.Projects;
 using Microsoft.Extensions.DependencyInjection;
 using PresentationLayer.Forms.Admin;
 using PresentationLayer.Resources;

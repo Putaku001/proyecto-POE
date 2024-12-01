@@ -1,6 +1,6 @@
-﻿using BusinessLayer.Services.Interfaces;
-using BusinessLayer.Services.InterfacesServices;
-using CommonLayer.Entities;
+﻿using BusinessLayer.Services.InterfacesServices;
+using BusinessLayer.Services.InterfacesServices.InterfacesUser;
+using CommonLayer.Entities.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,13 +18,15 @@ namespace PresentationLayer.Forms.Empleados
         private readonly IProjectsServices _proyectsServices;
         private readonly IProjectsClientServices _projectsClientServices;
         private readonly IProjectsEmnployeesServices _projectsEmnployeesServices;
-        private readonly IUsersServices _usersServices;
+        private readonly IEmployeeServices _employeesServices;
+        private readonly IClientsServices _clientsServices;
         int idUser;
-        public RecordProjectsForm(IProjectsServices proyectsServices, IUsersServices usersServices, IProjectsClientServices projectsClientServices, IProjectsEmnployeesServices projectsEmnployeesServices)
+        public RecordProjectsForm(IProjectsServices proyectsServices, IEmployeeServices employeesServices, IClientsServices clientsServices, IProjectsClientServices projectsClientServices, IProjectsEmnployeesServices projectsEmnployeesServices)
         {
             InitializeComponent();
             _proyectsServices = proyectsServices;
-            _usersServices = usersServices;
+            _employeesServices = employeesServices;
+            _clientsServices = clientsServices;
             _projectsClientServices = projectsClientServices;
             _projectsEmnployeesServices = projectsEmnployeesServices;
             idUser = CaptureData.idUser;
@@ -34,8 +36,8 @@ namespace PresentationLayer.Forms.Empleados
         {
             //En proceso de trabajo
             ConfigureDataGridView(); 
-            int idEmployee = Convert.ToInt32(_usersServices.GetByIdEmployees(idUser).Select(id => id.idEmployee).FirstOrDefault());
-            int idClient = Convert.ToInt32(_usersServices.GetClients().Where(id => id.idUser == idUser).Select(client => client.idCliente).FirstOrDefault());
+            int idEmployee = Convert.ToInt32(_employeesServices.GetByIdEmployees(idUser).Select(id => id.idEmployee).FirstOrDefault());
+            int idClient = Convert.ToInt32(_clientsServices.GetClients().Where(id => id.idUser == idUser).Select(client => client.idCliente).FirstOrDefault());
 
             recordsProjectdataGridView.DataSource = recordsProjectdataGridView.DataSource = _proyectsServices.GetByIdTaskEmployee(idEmployee).ToList();
             switch (CaptureData.IdRol)

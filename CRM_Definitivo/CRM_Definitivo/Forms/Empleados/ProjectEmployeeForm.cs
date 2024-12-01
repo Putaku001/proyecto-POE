@@ -1,7 +1,7 @@
 ﻿using BusinessLayer.Services;
-using BusinessLayer.Services.Interfaces;
 using BusinessLayer.Services.InterfacesServices;
-using CommonLayer.Entities;
+using BusinessLayer.Services.InterfacesServices.InterfacesUser;
+using CommonLayer.Entities.ViewModel;
 using FluentValidation;
 using PresentationLayer.Validations;
 using System;
@@ -18,12 +18,12 @@ namespace PresentationLayer.Forms.Empleados
 {
     public partial class ProjectEmployeeForm : Form
     {
-        private readonly IUsersServices _usersService;
+        private readonly IEmployeeServices _usersService;
         private readonly IProjectsServices _listProyectsServices;
         private readonly IProjectsEmnployeesServices _projectsEmnployeesServices;
         byte[] fileByte;
 
-        public ProjectEmployeeForm(IUsersServices usersServices, IProjectsServices listProyectsServices, IProjectsEmnployeesServices projects)
+        public ProjectEmployeeForm(IEmployeeServices usersServices, IProjectsServices listProyectsServices, IProjectsEmnployeesServices projects)
         {
             InitializeComponent();
             _usersService = usersServices;

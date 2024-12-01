@@ -1,10 +1,8 @@
 using System.Data;
 using BusinessLayer;
 using BusinessLayer.Services;
-using BusinessLayer.Services.Interfaces;
 using BusinessLayer.Services.InterfacesServices;
 using CommonLayer.Entities;
-using DataAccessLayer.Repositories.InterfacesRepositories;
 using PresentationLayer.Forms;
 using PresentationLayer;
 using PresentationLayer.Reports;
@@ -14,6 +12,9 @@ using Twilio.Types;
 using Twilio;
 using Twilio.Rest.Api.V2010.Account;
 using System.Net.Mail;
+using CommonLayer.Entities.ViewModel;
+using DataAccessLayer.Repositories.InterfacesRepositories.InterfacesUser;
+using BusinessLayer.Services.InterfacesServices.InterfacesUser;
 
 
 namespace CRM_Definitivo
@@ -21,19 +22,21 @@ namespace CRM_Definitivo
     public partial class LoginForm : Form
     {
         private readonly IProjectsServices proyectoServices;
-        private readonly IUsersRepositories usuarioRepositories;
-        private readonly IUsersServices usuarioServices;
+        private readonly IEmployeeRepositories usuarioRepositories;
+        private readonly IEmployeeServices usuarioServices;
+        private readonly IAdminsServices _adminsServices;
         private readonly IUserReports _userReports;
         private readonly IRolServices _rolServices;
         private readonly IServiceProvider _serviceProvider;
 
         private readonly EmailSettings _emailSettings;
 
-        public LoginForm(IServiceProvider serviceProvider, IUsersRepositories _usuarioRepositories, IUsersServices _usuarioServices, IRolServices rolServices, IProjectsServices _proyectoServices, IUserReports userReports, EmailSettings emailSettings)
+        public LoginForm(IServiceProvider serviceProvider, IEmployeeRepositories _usuarioRepositories, IAdminsServices adminsServices, IEmployeeServices _usuarioServices, IRolServices rolServices, IProjectsServices _proyectoServices, IUserReports userReports, EmailSettings emailSettings)
         {
             InitializeComponent();
             usuarioRepositories = _usuarioRepositories;
             usuarioServices = _usuarioServices;
+            _adminsServices = adminsServices;
             _rolServices = rolServices;
             proyectoServices = _proyectoServices;
             _userReports = userReports;
@@ -91,7 +94,7 @@ namespace CRM_Definitivo
         }
         private void createAccountLabel_Click(object sender, EventArgs e)
         {
-            NewAccountForm createAccount = new NewAccountForm(usuarioServices);
+            NewAccountForm createAccount = new NewAccountForm(usuarioServices, _adminsServices);
             createAccount.FormClosing += createAccount_FormClosing;
             createAccount.ShowDialog();
         }
@@ -102,15 +105,10 @@ namespace CRM_Definitivo
         }
         private void loginButton_Click(object sender, EventArgs e)
         {
-            var user = usuarioServices.Login(userTextBox.Text, passwordTextBox.Text);
+            var user = _adminsServices.Login(userTextBox.Text, passwordTextBox.Text);
 
             if (user != null)
             {
-
-                AuthUser.idUser = user.IdUser;
-                AuthUser.UserAccount = user.UserAccount;
-                AuthUser.idRol = user.idRol;
-
                 CaptureData.idUser = user.IdUser;
                 CaptureData.IdRol = user.idRol;
                 CaptureData.UserAccount = user.UserAccount;
@@ -143,7 +141,7 @@ namespace CRM_Definitivo
         private void fortgotPasswordLabel_Click(object sender, EventArgs e)
         {
             // Obtener el usuario desde la base de datos
-            var user = usuarioServices.UserSearch(userTextBox.Text).FirstOrDefault();
+            var user = _adminsServices.UserSearch(userTextBox.Text).FirstOrDefault();
 
             string idUserVerification = userTextBox.Text;
             if (user != null)
@@ -159,7 +157,7 @@ namespace CRM_Definitivo
                 user.VerificationCode = verificationCode;
 
                 // Redirigir al formulario de verificación
-                VerificationForm verificationForm = new VerificationForm(user, _emailSettings, usuarioServices, idUserVerification);
+                VerificationForm verificationForm = new VerificationForm(user, _emailSettings, usuarioServices, _adminsServices,  idUserVerification);
                 verificationForm.ShowDialog();
             }
             else

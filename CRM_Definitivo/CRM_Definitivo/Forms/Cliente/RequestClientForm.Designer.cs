@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             newProjectGroupBox = new GroupBox();
             errorDescriptionLabel = new Label();
             errorNameProjectLabel = new Label();
@@ -57,7 +57,6 @@
             // 
             // newProjectGroupBox
             // 
-            newProjectGroupBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             newProjectGroupBox.BackColor = Color.DodgerBlue;
             newProjectGroupBox.Controls.Add(errorDescriptionLabel);
             newProjectGroupBox.Controls.Add(errorNameProjectLabel);
@@ -66,13 +65,14 @@
             newProjectGroupBox.Controls.Add(saveProjectButton);
             newProjectGroupBox.Controls.Add(nameProjectLabel);
             newProjectGroupBox.Controls.Add(nameNewProyectTextBox);
+            newProjectGroupBox.Dock = DockStyle.Left;
             newProjectGroupBox.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             newProjectGroupBox.ForeColor = Color.White;
-            newProjectGroupBox.Location = new Point(0, 10);
+            newProjectGroupBox.Location = new Point(0, 0);
             newProjectGroupBox.Margin = new Padding(3, 2, 3, 2);
             newProjectGroupBox.Name = "newProjectGroupBox";
             newProjectGroupBox.Padding = new Padding(3, 2, 3, 2);
-            newProjectGroupBox.Size = new Size(466, 657);
+            newProjectGroupBox.Size = new Size(460, 672);
             newProjectGroupBox.TabIndex = 8;
             newProjectGroupBox.TabStop = false;
             newProjectGroupBox.Text = "Añadir nuevos proyectos:";
@@ -116,7 +116,7 @@
             descriptionProjectTextBox.Margin = new Padding(3, 2, 3, 2);
             descriptionProjectTextBox.Multiline = true;
             descriptionProjectTextBox.Name = "descriptionProjectTextBox";
-            descriptionProjectTextBox.Size = new Size(356, 182);
+            descriptionProjectTextBox.Size = new Size(368, 182);
             descriptionProjectTextBox.TabIndex = 27;
             // 
             // saveProjectButton
@@ -157,19 +157,19 @@
             nameNewProyectTextBox.Margin = new Padding(3, 2, 3, 2);
             nameNewProyectTextBox.Multiline = true;
             nameNewProyectTextBox.Name = "nameNewProyectTextBox";
-            nameNewProyectTextBox.Size = new Size(356, 26);
+            nameNewProyectTextBox.Size = new Size(368, 26);
             nameNewProyectTextBox.TabIndex = 1;
             // 
             // projectTabControl
             // 
+            projectTabControl.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             projectTabControl.Controls.Add(tabPageRequestProject);
             projectTabControl.Controls.Add(tabPage2);
-            projectTabControl.Dock = DockStyle.Right;
-            projectTabControl.Location = new Point(473, 0);
+            projectTabControl.Location = new Point(466, 0);
             projectTabControl.Margin = new Padding(3, 2, 3, 2);
             projectTabControl.Name = "projectTabControl";
             projectTabControl.SelectedIndex = 0;
-            projectTabControl.Size = new Size(711, 672);
+            projectTabControl.Size = new Size(718, 672);
             projectTabControl.TabIndex = 9;
             // 
             // tabPageRequestProject
@@ -179,7 +179,7 @@
             tabPageRequestProject.Margin = new Padding(3, 2, 3, 2);
             tabPageRequestProject.Name = "tabPageRequestProject";
             tabPageRequestProject.Padding = new Padding(3, 2, 3, 2);
-            tabPageRequestProject.Size = new Size(703, 639);
+            tabPageRequestProject.Size = new Size(710, 639);
             tabPageRequestProject.TabIndex = 0;
             tabPageRequestProject.Text = "Solicitar proyectos";
             tabPageRequestProject.UseVisualStyleBackColor = true;
@@ -196,7 +196,7 @@
             requestProjectDataGridView.Name = "requestProjectDataGridView";
             requestProjectDataGridView.ReadOnly = true;
             requestProjectDataGridView.RowHeadersWidth = 51;
-            requestProjectDataGridView.Size = new Size(697, 635);
+            requestProjectDataGridView.Size = new Size(704, 635);
             requestProjectDataGridView.TabIndex = 8;
             // 
             // tabPage2
@@ -206,7 +206,7 @@
             tabPage2.Margin = new Padding(3, 2, 3, 2);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3, 2, 3, 2);
-            tabPage2.Size = new Size(703, 639);
+            tabPage2.Size = new Size(710, 639);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Proyectos en curso";
             tabPage2.UseVisualStyleBackColor = true;
@@ -220,7 +220,7 @@
             listProjectDataGridView.Margin = new Padding(3, 2, 3, 2);
             listProjectDataGridView.Name = "listProjectDataGridView";
             listProjectDataGridView.RowHeadersWidth = 51;
-            listProjectDataGridView.Size = new Size(697, 635);
+            listProjectDataGridView.Size = new Size(704, 635);
             listProjectDataGridView.TabIndex = 0;
             listProjectDataGridView.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -236,13 +236,13 @@
             // 
             downloadProject.ActiveLinkColor = Color.Transparent;
             downloadProject.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = Color.Transparent;
-            dataGridViewCellStyle2.SelectionForeColor = Color.Black;
-            downloadProject.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = Color.Transparent;
+            dataGridViewCellStyle1.SelectionForeColor = Color.Black;
+            downloadProject.DefaultCellStyle = dataGridViewCellStyle1;
             downloadProject.HeaderText = "Descargar";
             downloadProject.MinimumWidth = 8;
             downloadProject.Name = "downloadProject";

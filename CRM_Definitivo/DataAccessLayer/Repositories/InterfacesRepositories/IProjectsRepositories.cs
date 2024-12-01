@@ -1,4 +1,4 @@
-﻿using CommonLayer.Entities;
+﻿using CommonLayer.Entities.Projects;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -11,7 +11,6 @@ namespace DataAccessLayer.Repositories.InterfacesRepositories
     public interface IProjectsRepositories
     {
 
-        IEnumerable<ListProyects> GetLisProyect();
         void UpdateTaskEmployee(int idTask, byte[] file, int idStatusTask);
 
         //proyectos
@@ -20,10 +19,6 @@ namespace DataAccessLayer.Repositories.InterfacesRepositories
         void StatusProject(string codeProject, int idStatusProject);
         void UpdateDates(string codeProject, DateTime? dateInit = null, DateTime? dateEnd = null);
         void SendProjects(string codeProject, byte[] file);
-
-
-
-
 
         //metodos para tareas
         void AddTasksEmployees(TaskEmployees taskEmployees);

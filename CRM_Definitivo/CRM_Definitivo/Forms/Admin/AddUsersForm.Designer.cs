@@ -62,7 +62,6 @@
             countryGroupBox = new GroupBox();
             errorWorkStationLabel = new Label();
             errorProfessionLabel = new Label();
-            iconSaveInformationButton = new FontAwesome.Sharp.IconButton();
             workStationLabel = new Label();
             workStationTextBox = new TextBox();
             professionLabel = new Label();
@@ -95,10 +94,10 @@
             addUserLabel.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             addUserLabel.Location = new Point(0, 0);
             addUserLabel.Name = "addUserLabel";
-            addUserLabel.Size = new Size(1293, 59);
+            addUserLabel.Size = new Size(1293, 64);
             addUserLabel.TabIndex = 0;
             addUserLabel.Text = "Añadir";
-            addUserLabel.TextAlign = ContentAlignment.TopCenter;
+            addUserLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // nameLabel
             // 
@@ -169,7 +168,7 @@
             detailsUserGroupBox.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             detailsUserGroupBox.Location = new Point(0, 0);
             detailsUserGroupBox.Name = "detailsUserGroupBox";
-            detailsUserGroupBox.Size = new Size(642, 735);
+            detailsUserGroupBox.Size = new Size(642, 730);
             detailsUserGroupBox.TabIndex = 15;
             detailsUserGroupBox.TabStop = false;
             detailsUserGroupBox.Text = "Datos Del Usuario";
@@ -397,7 +396,6 @@
             // 
             countryGroupBox.Controls.Add(errorWorkStationLabel);
             countryGroupBox.Controls.Add(errorProfessionLabel);
-            countryGroupBox.Controls.Add(iconSaveInformationButton);
             countryGroupBox.Controls.Add(workStationLabel);
             countryGroupBox.Controls.Add(workStationTextBox);
             countryGroupBox.Controls.Add(professionLabel);
@@ -418,7 +416,7 @@
             countryGroupBox.ForeColor = Color.Black;
             countryGroupBox.Location = new Point(665, 0);
             countryGroupBox.Name = "countryGroupBox";
-            countryGroupBox.Size = new Size(628, 735);
+            countryGroupBox.Size = new Size(628, 730);
             countryGroupBox.TabIndex = 16;
             countryGroupBox.TabStop = false;
             countryGroupBox.Text = "Provinencia";
@@ -446,24 +444,6 @@
             errorProfessionLabel.TabIndex = 43;
             errorProfessionLabel.Text = "label1";
             errorProfessionLabel.Visible = false;
-            // 
-            // iconSaveInformationButton
-            // 
-            iconSaveInformationButton.BackColor = Color.DodgerBlue;
-            iconSaveInformationButton.Cursor = Cursors.Hand;
-            iconSaveInformationButton.FlatStyle = FlatStyle.Popup;
-            iconSaveInformationButton.ForeColor = Color.White;
-            iconSaveInformationButton.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconSaveInformationButton.IconColor = Color.DarkTurquoise;
-            iconSaveInformationButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconSaveInformationButton.Location = new Point(223, 464);
-            iconSaveInformationButton.Name = "iconSaveInformationButton";
-            iconSaveInformationButton.Size = new Size(262, 46);
-            iconSaveInformationButton.TabIndex = 38;
-            iconSaveInformationButton.Text = "Guardar puesto de trabajo";
-            iconSaveInformationButton.UseVisualStyleBackColor = false;
-            iconSaveInformationButton.Visible = false;
-            iconSaveInformationButton.Click += iconSaveInformationButton_Click;
             // 
             // workStationLabel
             // 
@@ -517,7 +497,7 @@
             DesactiveEmpleoyeeiconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             DesactiveEmpleoyeeiconButton.IconSize = 28;
             DesactiveEmpleoyeeiconButton.ImageAlign = ContentAlignment.MiddleLeft;
-            DesactiveEmpleoyeeiconButton.Location = new Point(264, 661);
+            DesactiveEmpleoyeeiconButton.Location = new Point(358, 546);
             DesactiveEmpleoyeeiconButton.Name = "DesactiveEmpleoyeeiconButton";
             DesactiveEmpleoyeeiconButton.Size = new Size(215, 46);
             DesactiveEmpleoyeeiconButton.TabIndex = 37;
@@ -578,7 +558,7 @@
             editButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             editButton.IconSize = 28;
             editButton.ImageAlign = ContentAlignment.MiddleLeft;
-            editButton.Location = new Point(264, 613);
+            editButton.Location = new Point(125, 546);
             editButton.Name = "editButton";
             editButton.Size = new Size(215, 46);
             editButton.TabIndex = 18;
@@ -614,7 +594,7 @@
             saveButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             saveButton.IconSize = 28;
             saveButton.ImageAlign = ContentAlignment.MiddleLeft;
-            saveButton.Location = new Point(264, 570);
+            saveButton.Location = new Point(125, 546);
             saveButton.Name = "saveButton";
             saveButton.Size = new Size(215, 46);
             saveButton.TabIndex = 17;
@@ -641,9 +621,9 @@
             // 
             // profilePictureBox
             // 
-            profilePictureBox.Location = new Point(12, 0);
+            profilePictureBox.Location = new Point(12, 12);
             profilePictureBox.Name = "profilePictureBox";
-            profilePictureBox.Size = new Size(61, 53);
+            profilePictureBox.Size = new Size(55, 41);
             profilePictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             profilePictureBox.TabIndex = 38;
             profilePictureBox.TabStop = false;
@@ -654,9 +634,9 @@
             informationPanel.Controls.Add(detailsUserGroupBox);
             informationPanel.Controls.Add(countryGroupBox);
             informationPanel.Dock = DockStyle.Fill;
-            informationPanel.Location = new Point(0, 59);
+            informationPanel.Location = new Point(0, 64);
             informationPanel.Name = "informationPanel";
-            informationPanel.Size = new Size(1293, 735);
+            informationPanel.Size = new Size(1293, 730);
             informationPanel.TabIndex = 19;
             // 
             // errorValidation
@@ -739,7 +719,6 @@
         private PictureBox profilePictureBox;
         private Label errorWorkStationLabel;
         private Label errorProfessionLabel;
-        private FontAwesome.Sharp.IconButton iconSaveInformationButton;
         private Label workStationLabel;
         private TextBox workStationTextBox;
         private Label professionLabel;

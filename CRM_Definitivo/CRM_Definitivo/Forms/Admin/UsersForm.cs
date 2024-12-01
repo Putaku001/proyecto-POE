@@ -1,7 +1,8 @@
 ﻿using BusinessLayer.Services;
-using BusinessLayer.Services.Interfaces;
 using BusinessLayer.Services.InterfacesServices;
-using CommonLayer.Entities;
+using BusinessLayer.Services.InterfacesServices.InterfacesUser;
+using BusinessLayer.Services.Users;
+using CommonLayer.Entities.Users;
 using DataAccessLayer.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
@@ -23,19 +24,23 @@ namespace PresentationLayer.Forms
 {
     public partial class UsersForm : Form
     {
-        private IRolServices _rolservices;
-        private IUsersServices _usuersservices;
+        private readonly IRolServices _rolservices;
+        private readonly IEmployeeServices _employeesServices;
+        private readonly IAdminsServices _adminsServices;
+        private readonly IClientsServices _clientsServices;
         private readonly IUserReports _userReports;
         private readonly IProjectsServices _proyects;
         private readonly IProjectsClientServices _projectsClient;
 
-        public UsersForm(IUsersServices usuarioServices, IRolServices rolServices, IProjectsServices proyectsServices, IProjectsClientServices projectsClientServices, IUserReports userReports)
+        public UsersForm(IEmployeeServices employeeServices, IAdminsServices adminsServices, IClientsServices clientsServices, IRolServices rolServices, IProjectsServices proyectsServices, IProjectsClientServices projectsClientServices, IUserReports userReports)
         {
             InitializeComponent();
-            _usuersservices = usuarioServices;
+            _employeesServices = employeeServices;
+            _adminsServices = adminsServices;
+            _clientsServices = clientsServices;
             _rolservices = rolServices;
             _proyects = proyectsServices;
-            _projectsClient = projectsClientServices;
+            _projectsClient = projectsClientServices;           
             _userReports = userReports;
             LoadData();
 
@@ -43,7 +48,7 @@ namespace PresentationLayer.Forms
 
         private void LoadData()
         {
-            userDataGridView.DataSource = _usuersservices.GetUsers();
+            userDataGridView.DataSource = _adminsServices.GetUsers();
             ConfigureDataGridView();
             userDataGridView.DefaultCellStyle.BackColor = Color.WhiteSmoke;
             userDataGridView.DefaultCellStyle.ForeColor = Color.Black;
@@ -113,7 +118,7 @@ namespace PresentationLayer.Forms
 
         private void addUserPictureBox_Click(object sender, EventArgs e)
         {
-            AddUsersForm formularioAñadir = new AddUsersForm(_usuersservices, _rolservices, _proyects, _projectsClient);
+            AddUsersForm formularioAñadir = new AddUsersForm(_employeesServices, _adminsServices, _clientsServices, _rolservices, _proyects, _projectsClient);
             //var formularioAñadir = _serviceProvider.GetRequiredService<AddUsersForm>();
 
             formularioAñadir.AddUsuario += (s, args) =>
@@ -149,7 +154,7 @@ namespace PresentationLayer.Forms
                 Email = filaSeleccionada.Cells["Email"].Value.ToString()
             };
 
-            AddUsersForm editarUsuarioForm = new AddUsersForm(_usuersservices, _rolservices, _proyects, _projectsClient , usuarioSeleccionado);
+            AddUsersForm editarUsuarioForm = new AddUsersForm(_employeesServices, _adminsServices, _clientsServices, _rolservices, _proyects, _projectsClient , usuarioSeleccionado);
             //var editarUsuarioForm = _serviceProvider.GetRequiredService<AddUsersForm>();
 
             editarUsuarioForm.EditUsuariosHandler += (s, args) => LoadData();
@@ -173,7 +178,7 @@ namespace PresentationLayer.Forms
             if (eliminarConfirmar == DialogResult.Yes)
             {
                 int idUser = Convert.ToInt32(userDataGridView.CurrentRow.Cells["idUser"].Value);
-                _usuersservices.DeleteUsers(idUser);
+                _adminsServices.DeleteUsers(idUser);
                 LoadData();
             }
         }

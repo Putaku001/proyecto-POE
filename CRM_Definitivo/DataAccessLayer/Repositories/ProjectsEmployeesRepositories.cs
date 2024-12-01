@@ -1,4 +1,4 @@
-﻿using CommonLayer.Entities;
+﻿using CommonLayer.Entities.Projects;
 using Dapper;
 using DataAccessLayer.DbConnection;
 using DataAccessLayer.Repositories.InterfacesRepositories;

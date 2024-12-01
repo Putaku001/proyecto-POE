@@ -1,6 +1,6 @@
-﻿using BusinessLayer.Services.Interfaces;
-using BusinessLayer.Services.InterfacesServices;
-using CommonLayer.Entities;
+﻿using BusinessLayer.Services.InterfacesServices;
+using BusinessLayer.Services.InterfacesServices.InterfacesUser;
+using CommonLayer.Entities.Projects;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,9 +23,9 @@ namespace PresentationLayer.Forms.Admin
         byte[] fileByte;
 
         private readonly IProjectsServices _proyectsServices;
-        private readonly IUsersServices _usersServices;
+        private readonly IEmployeeServices _usersServices;
 
-        public SendProjectForm(IProjectsServices proyectsServices, IUsersServices usersServices)
+        public SendProjectForm(IProjectsServices proyectsServices, IEmployeeServices usersServices)
         {
             _proyectsServices = proyectsServices;
             _usersServices = usersServices;

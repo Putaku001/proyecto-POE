@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CommonLayer.Entities;
+using CommonLayer.Entities.Users;
 using FluentValidation;
 
 namespace PresentationLayer.Validations

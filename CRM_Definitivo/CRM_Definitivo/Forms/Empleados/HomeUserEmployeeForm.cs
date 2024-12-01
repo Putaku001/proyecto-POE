@@ -1,6 +1,7 @@
-﻿using BusinessLayer.Services.Interfaces;
-using BusinessLayer.Services.InterfacesServices;
+﻿using BusinessLayer.Services.InterfacesServices;
+using BusinessLayer.Services.InterfacesServices.InterfacesUser;
 using CommonLayer.Entities;
+using CommonLayer.Entities.ViewModel;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -17,11 +18,11 @@ namespace PresentationLayer.Forms.Empleados
     public partial class HomeUserEmployeeForm : Form
     {
         private readonly IProjectsServices _proyectsServices;
-        private readonly IUsersServices _usersServices;
+        private readonly IEmployeeServices _usersServices;
         private readonly IProjectsClientServices _projectsClientServices;
         private readonly IServiceProvider _serviceProvider;
         int idUser;
-        public HomeUserEmployeeForm(IProjectsServices proyectsServices, IUsersServices usersServices, IProjectsClientServices projectsClientServices , IServiceProvider serviceProvider)
+        public HomeUserEmployeeForm(IProjectsServices proyectsServices, IEmployeeServices usersServices, IProjectsClientServices projectsClientServices , IServiceProvider serviceProvider)
         {
             InitializeComponent();
             _proyectsServices = proyectsServices;
@@ -34,7 +35,7 @@ namespace PresentationLayer.Forms.Empleados
 
         private void LoadData()
         {
-            userAccountLabel.Text = AuthUser.UserAccount;
+            userAccountLabel.Text = CaptureData.UserAccount;
             timeLabel.Text = DateTime.Now.ToString("g");
 
             var getIdEmployee = _usersServices.GetEmployees().Where(id => id.idUser == idUser).Select(select => select.idEmployee).FirstOrDefault();

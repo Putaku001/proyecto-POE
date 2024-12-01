@@ -1,4 +1,4 @@
-﻿using CommonLayer.Entities;
+﻿using CommonLayer.Entities.Projects;
 using Dapper;
 using DataAccessLayer.DbConnection;
 using DataAccessLayer.Repositories.InterfacesRepositories;
@@ -20,16 +20,6 @@ namespace DataAccessLayer.Repositories
         public ProjectsRepositories(ISqlDataAccess dbConnection)
         {
             _dbConnection = dbConnection;
-        }
-
-        public IEnumerable<ListProyects> GetLisProyect()
-        {
-            using(var connection = _dbConnection.GetConnection())
-            {
-                string query = @"SELECT idProyect, titleName, description, idClient, idEmployee, idStatusProyect, dateInit, dateEnd FROM proyect";
-
-                return connection.Query<ListProyects>(query);
-            }
         }
 
         public void UpdateTaskEmployee(int idTask, byte[] file, int idStatusTask)

@@ -1,5 +1,4 @@
-﻿using BusinessLayer.Services.Interfaces;
-using CommonLayer.Entities;
+﻿using CommonLayer.Entities;
 using DataAccessLayer.DbConnection;
 using DataAccessLayer.Repositories;
 using Microsoft.Extensions.DependencyInjection;
@@ -15,23 +14,28 @@ using System.Windows.Forms;
 using FluentValidation.Results;
 using PresentationLayer.Validations;
 using FluentValidation;
+using CommonLayer.Entities.Users;
+using CommonLayer.Entities.ViewModel;
+using BusinessLayer.Services.InterfacesServices.InterfacesUser;
 
 namespace PresentationLayer.Forms.Cliente
 {
     public partial class ProfileUserAccountForm : Form
     {
         private readonly ISqlDataAccess _dbConnection;
-        private readonly IUsersServices _usersServices;
+        private readonly IEmployeeServices _usersServices;
+        private readonly IAdminsServices _adminsServices;
         private readonly IServiceProvider _serviceProvider;
-        public ProfileUserAccountForm(ISqlDataAccess dbConnection, IServiceProvider serviceProvider, IUsersServices usersServices)
+        public ProfileUserAccountForm(ISqlDataAccess dbConnection, IServiceProvider serviceProvider, IEmployeeServices usersServices, IAdminsServices adminsServices)
         {
             InitializeComponent();
             _dbConnection = dbConnection;
             _serviceProvider = serviceProvider;
             LoadProvincias();
             _usersServices = usersServices;
+            _adminsServices = adminsServices;
             LoadData();
-            LoadImageInPictureBox(AuthUser.idUser);
+            LoadImageInPictureBox(CaptureData.idUser);
 
             System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
             path.AddEllipse(0, 0, pictureBoxProfileUser.Width, pictureBoxProfileUser.Height);
@@ -74,8 +78,8 @@ namespace PresentationLayer.Forms.Cliente
 
         private void LoadData()
         {
-            int idUser = AuthUser.idUser;
-            var capture = _usersServices.GetByIdUser(idUser).Where(u => u.IdUser == idUser).ToList();
+            int idUser = CaptureData.idUser;
+            var capture = _adminsServices.GetByIdUser(idUser).Where(u => u.IdUser == idUser).ToList();
 
             foreach (var user in capture)
             {
@@ -94,7 +98,7 @@ namespace PresentationLayer.Forms.Cliente
 
         private void LoadImageInPictureBox(int idUser)
         {
-            var repo = _usersServices.GetProfileImage(idUser);
+            var repo = _adminsServices.GetProfileImage(idUser);
             byte[] imageBytes = repo;
 
             if (imageBytes != null && imageBytes.Length > 0)
@@ -130,7 +134,7 @@ namespace PresentationLayer.Forms.Cliente
                 var imageProfile = new User
                 {
                     UserAccount = userNameTextBox.Text,
-                    IdUser = AuthUser.idUser,
+                    IdUser = CaptureData.idUser,
                     NameUser = nameTextBox.Text,
                     LastName = lastNameTextBox.Text,
                     NumberPhone = phoneNumberTextBox.Text,
@@ -143,7 +147,7 @@ namespace PresentationLayer.Forms.Cliente
                     Image = imageBytes
                 };
 
-                _usersServices.EditAccountUser(imageProfile);
+                _adminsServices.EditAccountUser(imageProfile);
                 LoadData();
 
             }
@@ -161,7 +165,7 @@ namespace PresentationLayer.Forms.Cliente
             var saveProfile = new User()
             {
                 UserAccount = userNameTextBox.Text,
-                IdUser = AuthUser.idUser,
+                IdUser = CaptureData.idUser,
                 NameUser = nameTextBox.Text,
                 LastName = lastNameTextBox.Text,
                 NumberPhone = phoneNumberTextBox.Text,
@@ -183,7 +187,7 @@ namespace PresentationLayer.Forms.Cliente
                 return; 
             }
 
-            _usersServices.EditAccountUser(saveProfile);
+            _adminsServices.EditAccountUser(saveProfile);
 
             MessageBox.Show("Perfil actualizado correctamente!");
 

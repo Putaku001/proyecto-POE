@@ -1,5 +1,7 @@
-﻿using BusinessLayer.Services.Interfaces;
+﻿using BusinessLayer.Services.InterfacesServices.InterfacesUser;
+using BusinessLayer.Services.Users;
 using CommonLayer.Entities;
+using CommonLayer.Entities.Users;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,16 +20,18 @@ namespace PresentationLayer.Forms
         private string userAccount;
         private readonly User _user;
         private readonly EmailSettings _emailSettings;
-        private readonly IUsersServices _usuarioServices;
+        private readonly IEmployeeServices _usuarioServices;
+        private readonly IAdminsServices _adminsServices;
         private DateTime _codeTime;
 
-        public VerificationForm(User user, EmailSettings email, IUsersServices usuarioServices, string _userAccount)
+        public VerificationForm(User user, EmailSettings email, IEmployeeServices usuarioServices, IAdminsServices adminsServices, string _userAccount )
         {
             InitializeComponent();
             userAccount = _userAccount;
             _user = user;
             _emailSettings = email;
             _usuarioServices = usuarioServices;
+            _adminsServices = adminsServices;
             _codeTime = DateTime.Now;
 
         }
@@ -63,7 +67,7 @@ namespace PresentationLayer.Forms
             else
             {
                 MessageBox.Show("Código correcto. Formulario de cambio de contraseña habilitado.");
-                ChangePasswordForm changePasswordForm = new ChangePasswordForm(_user, _usuarioServices);
+                ChangePasswordForm changePasswordForm = new ChangePasswordForm(_user, _usuarioServices, _adminsServices);
                 changePasswordForm.ShowDialog();
                 this.Close();
                 return true;
@@ -87,7 +91,7 @@ namespace PresentationLayer.Forms
                 }
                 else if (verificationCodeTexBox.Text == _user.VerificationCode.ToString())
                 {
-                    ChangePasswordForm changePasswordForm = new ChangePasswordForm(_user, _usuarioServices);
+                    ChangePasswordForm changePasswordForm = new ChangePasswordForm(_user, _usuarioServices, _adminsServices);
                     changePasswordForm.ShowDialog();
                     this.Close();
                 }
@@ -104,7 +108,7 @@ namespace PresentationLayer.Forms
 
             _emailSettings.codigoVerificacion = GenerateCodeVerification();
 
-            var user = _usuarioServices.GetUsers();
+            var user = _adminsServices.GetUsers();
 
             var users = user.Where(u => u.UserAccount == userAccount).ToList();
 

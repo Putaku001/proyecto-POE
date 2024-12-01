@@ -1,6 +1,6 @@
-﻿using BusinessLayer.Services.Interfaces;
-using BusinessLayer.Services.InterfacesServices;
-using CommonLayer.Entities;
+﻿using BusinessLayer.Services.InterfacesServices;
+using BusinessLayer.Services.InterfacesServices.InterfacesUser;
+using CommonLayer.Entities.Projects;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,8 +21,8 @@ namespace PresentationLayer.Forms.Admin
         public string DescriptionProject { get; set; }
         public string Client { get; set; }
         private readonly IProjectsServices _proyectsServices;
-        private readonly IUsersServices _usersServices;
-        public AssignamentTaskEmployeeForm(IProjectsServices proyectsServices, IUsersServices usersServices)
+        private readonly IEmployeeServices _usersServices;
+        public AssignamentTaskEmployeeForm(IProjectsServices proyectsServices, IEmployeeServices usersServices)
         {
             InitializeComponent();
             _proyectsServices = proyectsServices;

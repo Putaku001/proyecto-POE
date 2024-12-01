@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BusinessLayer.Services.Interfaces;
-using CommonLayer.Entities;
+using BusinessLayer.Services.InterfacesServices;
+using CommonLayer.Entities.Users;
 using FluentValidation;
 using FluentValidation.Results;
 using PresentationLayer.Validations;
@@ -27,7 +27,7 @@ namespace PresentationLayer.Forms.Admin
             try
             {
 
-                var informationEmployee = new Employee
+                var informationEmployee = new Employees
                 {
                     comment = professionsTextBox.Text,
                     workStation = workStationTextBox.Text
@@ -67,11 +67,11 @@ namespace PresentationLayer.Forms.Admin
             {
                 switch (error.PropertyName)
                 {
-                    case nameof(Employee.comment):
+                    case nameof(Employees.comment):
                         errorValidation.SetError(professionsTextBox, error.ErrorMessage);
                         errorProfessionLabel.Text = error.ErrorMessage;
                         break;
-                    case nameof(Employee.workStation):
+                    case nameof(Employees.workStation):
                         errorValidation.SetError(workStationTextBox, error.ErrorMessage);
                         errorWorkStationLabel.Text = error.ErrorMessage;
                         break;

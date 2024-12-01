@@ -1,5 +1,5 @@
 ﻿using BusinessLayer.Services.InterfacesServices;
-using CommonLayer.Entities;
+using CommonLayer.Entities.Projects;
 using DataAccessLayer.Repositories.InterfacesRepositories;
 using System;
 using System.Collections.Generic;
@@ -18,12 +18,6 @@ namespace BusinessLayer.Services
         {
             _listaProyectosRepositories = listaProyectosRepositories;
         }
-
-        public IEnumerable<ListProyects> GetLisProyect()
-        {
-            return _listaProyectosRepositories.GetLisProyect();
-        }
- 
         public void UpdateTaskEmployee(int idTask, byte[] file, int idStatusTask) => _listaProyectosRepositories.UpdateTaskEmployee(idTask, file, idStatusTask);
 
         //METODOS PARA PROYECTOS

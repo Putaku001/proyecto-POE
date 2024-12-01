@@ -1,6 +1,7 @@
 ﻿using BusinessLayer.Services;
 using BusinessLayer.Services.InterfacesServices;
-using CommonLayer.Entities;
+using CommonLayer.Entities.Projects;
+using CommonLayer.Entities.ViewModel;
 using FluentValidation.Results;
 using Microsoft.Extensions.DependencyInjection;
 using PresentationLayer.Validations;
@@ -18,27 +19,25 @@ namespace PresentationLayer.Forms.Cliente
 {
     public partial class AnswerProjectClient : Form
     {
-        public int idProject {  get; set; }
-        public string codeProyect { get; set; }
-        public string Description { get; set; }
-        public string nameProject { get; set; }
-
         private readonly IServiceProvider _servicesProvider;
         private readonly IProjectsServices _proyectsServices;
         private readonly IProjectsClientServices _projectsClientServices;
         private byte[] fileByte;
-        public AnswerProjectClient(IServiceProvider serviceProvider, IProjectsServices projectServices, IProjectsClientServices projectsClientServices)
+
+        private EntitieViewModel _entitieViewModel;
+        public AnswerProjectClient(IServiceProvider serviceProvider, IProjectsServices projectServices, IProjectsClientServices projectsClientServices, EntitieViewModel entitieViewModel)
         {
             InitializeComponent();
             _servicesProvider = serviceProvider;
             _proyectsServices = projectServices;
             _projectsClientServices = projectsClientServices ?? throw new ArgumentNullException(nameof(projectsClientServices));
+            _entitieViewModel = entitieViewModel;
         }
         private void AnswerProyectClient_Load(object sender, EventArgs e)
         {
-            descriptionProjectTextBox.Text = Description;
-            codeProjectLabel.Text = codeProyect;
-            nameProjectLabel.Text = nameProject;
+            descriptionProjectTextBox.Text = _entitieViewModel.EntitieNow.Description;
+            codeProjectLabel.Text = _entitieViewModel.EntitieNow.codeProyect;
+            nameProjectLabel.Text = _entitieViewModel.EntitieNow.nameProject;
         }
 
 
@@ -46,34 +45,34 @@ namespace PresentationLayer.Forms.Cliente
         {
             try
             {
-                if (string.IsNullOrEmpty(codeProyect))
+                if (string.IsNullOrEmpty(_entitieViewModel.EntitieNow.codeProyect))
                 {
                     MessageBox.Show("El código del proyecto es obligatorio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                if (codeProyect.Length < 5 || codeProyect.Length > 20)
+                if (_entitieViewModel.EntitieNow.codeProyect.Length < 5 || _entitieViewModel.EntitieNow.codeProyect.Length > 20)
                 {
                     MessageBox.Show("El código del proyecto debe tener entre 5 y 20 caracteres.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return; 
                 }
 
-                if (string.IsNullOrEmpty(nameProject))
+                if (string.IsNullOrEmpty(_entitieViewModel.EntitieNow.nameProject))
                 {
                     MessageBox.Show("El nombre del proyecto es obligatorio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return; 
                 }
 
-                if (nameProject.Length > 100)
+                if (_entitieViewModel.EntitieNow.nameProject.Length > 100)
                 {
                     MessageBox.Show("El nombre del proyecto no debe exceder los 100 caracteres.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return; 
                 }
 
 
-                _proyectsServices.StatusProject(codeProyect, 9);
+                _proyectsServices.StatusProject(_entitieViewModel.EntitieNow.codeProyect, 9);
 
-                MessageBox.Show($"El Proyecto '{nameProject}' ha sido Aceptado.", "Aprobado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"El Proyecto '{_entitieViewModel.EntitieNow.nameProject}' ha sido Aceptado.", "Aprobado", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 this.Close();
             }
@@ -101,7 +100,7 @@ namespace PresentationLayer.Forms.Cliente
                     return;
                 }
 
-                if (idProject <= 0)
+                if (_entitieViewModel.EntitieNow.idProject <= 0)
                 {
                     MessageBox.Show("El ID del proyecto no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -115,16 +114,16 @@ namespace PresentationLayer.Forms.Cliente
 
                 reasonForRejection refused = new reasonForRejection
                 {
-                    idProject = idProject,
+                    idProject = _entitieViewModel.EntitieNow.idProject,
                     fileRefused = fileByte
                 };
 
                 _projectsClientServices.InsertReasonForRejection(refused);
 
                 int idStatusProject = 8;
-                _proyectsServices.StatusProject(codeProyect, idStatusProject);
+                _proyectsServices.StatusProject(_entitieViewModel.EntitieNow.codeProyect, idStatusProject);
 
-                MessageBox.Show($"El Proyecto '{nameProject}' ha sido rechazado correctamente.", "Rechazado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"El Proyecto '{_entitieViewModel.EntitieNow.nameProject}' ha sido rechazado correctamente.", "Rechazado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
             catch (Exception ex)

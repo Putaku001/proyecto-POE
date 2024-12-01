@@ -1,5 +1,4 @@
-﻿using BusinessLayer.Services.Interfaces;
-using BusinessLayer.Services.InterfacesServices;
+﻿using BusinessLayer.Services.InterfacesServices;
 using CommonLayer.Entities;
 using FontAwesome.Sharp;
 using PresentationLayer.Forms.Cliente;
@@ -23,6 +22,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Diagnostics.Metrics;
 using CRM_Definitivo;
 using BusinessLayer.Services;
+using CommonLayer.Entities.ViewModel;
+using BusinessLayer.Services.InterfacesServices.InterfacesUser;
+using BusinessLayer.Services.Users;
 
 namespace PresentationLayer.Forms
 {
@@ -32,7 +34,9 @@ namespace PresentationLayer.Forms
         private static Form FormularioActivo = null;
         private readonly IPermisoServices _permisosServices;
         private readonly IProjectsServices proyectoServices;
-        private readonly IUsersServices usuarioServices;
+        private readonly IEmployeeServices _employeesServices;
+        private readonly IAdminsServices _adminsServices;
+        private readonly IClientsServices _clientsServices;
         private readonly IRolServices _rolServices;
         private readonly IServiceProvider _provider;
         private readonly IUserReports _userReports;
@@ -40,20 +44,22 @@ namespace PresentationLayer.Forms
         private readonly IProjectsClientServices _projectsClientServices;
         private System.Windows.Forms.Timer timer;
 
-        public MenuForm(IPermisoServices services, IServiceProvider serviceProvider, IUsersServices _usuarioServices, IRolServices rolServices, IProjectsServices _proyectoServices, IProjectsEmnployeesServices projects , IProjectsClientServices projectsClientServices , IUserReports userReports)
+        public MenuForm(IPermisoServices services, IServiceProvider serviceProvider, IEmployeeServices employessServices, IAdminsServices adminsServices , IClientsServices clientsServices, IRolServices rolServices, IProjectsServices _proyectoServices, IProjectsEmnployeesServices projects , IProjectsClientServices projectsClientServices , IUserReports userReports)
         {
 
             InitializeComponent();
             LoadData();
             _permisosServices = services;
             _provider = serviceProvider;
-            usuarioServices = _usuarioServices;
+            _employeesServices = employessServices;
+            _adminsServices = adminsServices;
+            _clientsServices = clientsServices;
             _rolServices = rolServices;
             proyectoServices = _proyectoServices;
             _projectsEmployeesServices = projects;
             _projectsClientServices = projectsClientServices;
             _userReports = userReports;
-            LoadImageProfileUser(AuthUser.idUser);
+            LoadImageProfileUser(CaptureData.idUser);
             loadPermission();
             timer = new System.Windows.Forms.Timer();
             timer.Interval = 1000;
@@ -98,7 +104,7 @@ namespace PresentationLayer.Forms
 
         private void LoadImageProfileUser(int idUser)
         {
-            var servicesUser = usuarioServices.GetProfileImage(idUser);
+            var servicesUser = _adminsServices.GetProfileImage(idUser);
             byte[] imagebyte = servicesUser;
 
             if (imagebyte != null)
@@ -126,7 +132,7 @@ namespace PresentationLayer.Forms
         private void Dateandtime()
         {
             timeUserLabel.Text = DateTime.Now.ToString("dd/mm/yyyy hh:mm:ss");
-            userAccountLabel.Text = AuthUser.UserAccount;
+            userAccountLabel.Text = CaptureData.UserAccount;
         }
 
         private void Timer_tick(object sender, EventArgs e)
@@ -139,7 +145,7 @@ namespace PresentationLayer.Forms
         private void MenuForm_Load(object sender, EventArgs e)
         {
 
-            nameUserIdLabel.Text = AuthUser.UserAccount;
+            nameUserIdLabel.Text = CaptureData.UserAccount;
 
             controlesIniciales = new List<Control>();
             foreach (Control control in containerPanel.Controls)
@@ -147,7 +153,7 @@ namespace PresentationLayer.Forms
                 controlesIniciales.Add(control);
             }
 
-            var permisions = _permisosServices.GetPermisos(AuthUser.idUser);
+            var permisions = _permisosServices.GetPermisos(CaptureData.idUser);
 
             foreach (IconMenuItem iconMenu in menu.Items)
             {
@@ -250,7 +256,7 @@ namespace PresentationLayer.Forms
 
         private void administratorUserButton_Click(object sender, EventArgs e)
         {
-            userDataGridView.DataSource = usuarioServices.GetAdmins();
+            userDataGridView.DataSource = _adminsServices.GetAdmins();
             ConfigureDataGridView();
             userDataGridView.Columns["idUser"].Visible = false;
             assignedProjectPanel.Visible = false;
@@ -258,7 +264,7 @@ namespace PresentationLayer.Forms
         }
         private void employeeUserButton_Click(object sender, EventArgs e)
         {
-            userDataGridView.DataSource = usuarioServices.GetEmployees();
+            userDataGridView.DataSource = _employeesServices.GetEmployees();
             ConfigureDataGridView();
             userDataGridView.Columns["idUser"].Visible = false;
             requestProjectPanel.Visible = false;
@@ -267,7 +273,7 @@ namespace PresentationLayer.Forms
 
         private void clientUserButton_Click(object sender, EventArgs e)
         {
-            userDataGridView.DataSource = usuarioServices.GetClients();
+            userDataGridView.DataSource = _clientsServices.GetClients();
             ConfigureDataGridView();
             userDataGridView.Columns["idUser"].Visible = false;
             assignedProjectPanel.Visible = false;
@@ -350,8 +356,8 @@ namespace PresentationLayer.Forms
 
                 HideInfoEmployees();
                 panelUsersView.Visible = true;
-                var users = usuarioServices.GetByIdUser(idUser);
-                var image = usuarioServices.GetProfileImage(idUser);
+                var users = _adminsServices.GetByIdUser(idUser);
+                var image = _adminsServices.GetProfileImage(idUser);
 
                 byte[] imageBytes = image;
 
@@ -389,7 +395,7 @@ namespace PresentationLayer.Forms
                             var comment = userDataGridView.Rows[e.RowIndex].Cells["comment"].Value?.ToString();
                             commentEmployeeLabel.Text = comment ?? "No tiene profesion";
 
-                            var GetidEmployee = usuarioServices.GetEmployees().Where(id => id.idUser == idUser).Select(e => e.idEmployee).FirstOrDefault();
+                            var GetidEmployee = _employeesServices.GetEmployees().Where(id => id.idUser == idUser).Select(e => e.idEmployee).FirstOrDefault();
                             var tasks = assignedProjectListBox.DataSource = _projectsEmployeesServices.GetTasksByEmployees(GetidEmployee).ToList();
 
                             assignedProjectListBox.DataSource = tasks;
@@ -399,7 +405,7 @@ namespace PresentationLayer.Forms
                         else if (requestProjectPanel.Visible == true)
                         {
                             HideInfoEmployees();
-                            var GetIdClient = Convert.ToInt32(usuarioServices.GetClients().Where(id => id.idUser == idUser).Select(id => id.idCliente).FirstOrDefault());
+                            var GetIdClient = Convert.ToInt32(_clientsServices.GetClients().Where(id => id.idUser == idUser).Select(id => id.idCliente).FirstOrDefault());
                             requestProjectListBox.DataSource = _projectsClientServices.GetRequestProyectsByIdClient(GetIdClient).ToList();
                         }
 

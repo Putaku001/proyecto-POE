@@ -1,6 +1,4 @@
-﻿using BusinessLayer.Services.Interfaces;
-using CommonLayer.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,19 +11,23 @@ using FluentValidation.Results;
 using BusinessLayer.Services;
 using PresentationLayer.Validations;
 using System.Security.Principal;
+using CommonLayer.Entities.Users;
+using BusinessLayer.Services.InterfacesServices.InterfacesUser;
 
 namespace PresentationLayer.Forms
 {
     public partial class ChangePasswordForm : Form
     {
         private readonly User _user;
-        private readonly IUsersServices _usuarioServices;
+        private readonly IEmployeeServices _usuarioServices;
+        private readonly IAdminsServices _adminsServices;
 
-        public ChangePasswordForm(User user, IUsersServices usuarioServices)
+        public ChangePasswordForm(User user, IEmployeeServices usuarioServices, IAdminsServices adminsServices)
         {
             InitializeComponent();
             _user = user;
             _usuarioServices = usuarioServices;
+            _adminsServices = adminsServices;
         }
 
         private void changePasswordButton_Click(object sender, EventArgs e)
@@ -43,7 +45,7 @@ namespace PresentationLayer.Forms
                     return;
                 }
 
-                _usuarioServices.EditAccountUser(_user);
+                _adminsServices.EditAccountUser(_user);
 
                 MessageBox.Show("Contraseña cambiada con éxito.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
