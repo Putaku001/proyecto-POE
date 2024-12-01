@@ -8,9 +8,9 @@ using FluentValidation;
 
 namespace PresentationLayer.Validations
 {
-    public class NewAccountValidation : AbstractValidator<User>
+    public class UserValidation : AbstractValidator<User>
     {
-        public NewAccountValidation()
+        public UserValidation() 
         {
             RuleLevelCascadeMode = CascadeMode.Stop;
             RuleFor(user => user.UserAccount)
@@ -62,8 +62,7 @@ namespace PresentationLayer.Validations
             RuleFor(user => user.Image)
                 .NotEmpty().WithMessage("Debe cargar una imagen de perfil.")
                 .Must(image => image.Length > 0).WithMessage("La imagen no puede estar vacía.");
+
         }
-
-
     }
 }

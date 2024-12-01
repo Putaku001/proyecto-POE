@@ -39,7 +39,7 @@ namespace PresentationLayer.Forms
                     _user.passworduser = newPasswordTextBox.Text;
 
 
-                    ChangePasswordProfileValidation changePasswordValidation = new ChangePasswordProfileValidation();
+                    UserValidation changePasswordValidation = new UserValidation();
                     ValidationResult result = changePasswordValidation.Validate(_user);
                     if (!result.IsValid)
                     {

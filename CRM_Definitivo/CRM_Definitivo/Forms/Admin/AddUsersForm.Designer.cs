@@ -105,7 +105,7 @@
             nameLabel.ForeColor = Color.Black;
             nameLabel.Location = new Point(133, 241);
             nameLabel.Name = "nameLabel";
-            nameLabel.Size = new Size(82, 21);
+            nameLabel.Size = new Size(95, 23);
             nameLabel.TabIndex = 1;
             nameLabel.Text = "Nombre:";
             // 
@@ -113,7 +113,7 @@
             // 
             nameTextBox.Location = new Point(264, 238);
             nameTextBox.Name = "nameTextBox";
-            nameTextBox.Size = new Size(346, 28);
+            nameTextBox.Size = new Size(346, 32);
             nameTextBox.TabIndex = 2;
             // 
             // rolComboBox
@@ -121,7 +121,7 @@
             rolComboBox.FormattingEnabled = true;
             rolComboBox.Location = new Point(266, 172);
             rolComboBox.Name = "rolComboBox";
-            rolComboBox.Size = new Size(344, 29);
+            rolComboBox.Size = new Size(344, 31);
             rolComboBox.TabIndex = 7;
             rolComboBox.SelectedIndexChanged += rolComboBox_SelectedIndexChanged;
             // 
@@ -131,7 +131,7 @@
             rolLabel.ForeColor = Color.Black;
             rolLabel.Location = new Point(183, 180);
             rolLabel.Name = "rolLabel";
-            rolLabel.Size = new Size(39, 21);
+            rolLabel.Size = new Size(45, 23);
             rolLabel.TabIndex = 8;
             rolLabel.Text = "Rol:";
             // 
@@ -181,7 +181,7 @@
             errorStatusLabel.ForeColor = Color.Red;
             errorStatusLabel.Location = new Point(144, 643);
             errorStatusLabel.Name = "errorStatusLabel";
-            errorStatusLabel.Size = new Size(0, 18);
+            errorStatusLabel.Size = new Size(0, 21);
             errorStatusLabel.TabIndex = 32;
             // 
             // errorPasswordLabel
@@ -192,7 +192,7 @@
             errorPasswordLabel.ForeColor = Color.Red;
             errorPasswordLabel.Location = new Point(144, 564);
             errorPasswordLabel.Name = "errorPasswordLabel";
-            errorPasswordLabel.Size = new Size(0, 18);
+            errorPasswordLabel.Size = new Size(0, 21);
             errorPasswordLabel.TabIndex = 31;
             // 
             // errorPhoneNumberLabel
@@ -203,7 +203,7 @@
             errorPhoneNumberLabel.ForeColor = Color.Red;
             errorPhoneNumberLabel.Location = new Point(140, 495);
             errorPhoneNumberLabel.Name = "errorPhoneNumberLabel";
-            errorPhoneNumberLabel.Size = new Size(0, 18);
+            errorPhoneNumberLabel.Size = new Size(0, 21);
             errorPhoneNumberLabel.TabIndex = 30;
             // 
             // errorBirthdayLabel
@@ -214,7 +214,7 @@
             errorBirthdayLabel.ForeColor = Color.Red;
             errorBirthdayLabel.Location = new Point(144, 425);
             errorBirthdayLabel.Name = "errorBirthdayLabel";
-            errorBirthdayLabel.Size = new Size(0, 18);
+            errorBirthdayLabel.Size = new Size(0, 21);
             errorBirthdayLabel.TabIndex = 29;
             // 
             // errorLastNameLabel
@@ -225,7 +225,7 @@
             errorLastNameLabel.ForeColor = Color.Red;
             errorLastNameLabel.Location = new Point(144, 358);
             errorLastNameLabel.Name = "errorLastNameLabel";
-            errorLastNameLabel.Size = new Size(0, 18);
+            errorLastNameLabel.Size = new Size(0, 21);
             errorLastNameLabel.TabIndex = 28;
             // 
             // errorNameLabel
@@ -236,7 +236,7 @@
             errorNameLabel.ForeColor = Color.Red;
             errorNameLabel.Location = new Point(144, 287);
             errorNameLabel.Name = "errorNameLabel";
-            errorNameLabel.Size = new Size(0, 18);
+            errorNameLabel.Size = new Size(0, 21);
             errorNameLabel.TabIndex = 27;
             // 
             // errorRolLabel
@@ -247,7 +247,7 @@
             errorRolLabel.ForeColor = Color.Red;
             errorRolLabel.Location = new Point(140, 210);
             errorRolLabel.Name = "errorRolLabel";
-            errorRolLabel.Size = new Size(0, 18);
+            errorRolLabel.Size = new Size(0, 21);
             errorRolLabel.TabIndex = 26;
             // 
             // errorEmailLabel
@@ -258,7 +258,7 @@
             errorEmailLabel.ForeColor = Color.Red;
             errorEmailLabel.Location = new Point(140, 141);
             errorEmailLabel.Name = "errorEmailLabel";
-            errorEmailLabel.Size = new Size(0, 18);
+            errorEmailLabel.Size = new Size(0, 21);
             errorEmailLabel.TabIndex = 25;
             // 
             // errorUserNameLabel
@@ -269,7 +269,7 @@
             errorUserNameLabel.ForeColor = Color.Red;
             errorUserNameLabel.Location = new Point(140, 74);
             errorUserNameLabel.Name = "errorUserNameLabel";
-            errorUserNameLabel.Size = new Size(0, 18);
+            errorUserNameLabel.Size = new Size(0, 21);
             errorUserNameLabel.TabIndex = 24;
             // 
             // emailLabel
@@ -278,7 +278,7 @@
             emailLabel.ForeColor = Color.Black;
             emailLabel.Location = new Point(31, 101);
             emailLabel.Name = "emailLabel";
-            emailLabel.Size = new Size(169, 21);
+            emailLabel.Size = new Size(197, 23);
             emailLabel.TabIndex = 22;
             emailLabel.Text = "Correo Electronico:";
             // 
@@ -286,7 +286,7 @@
             // 
             emailTextBox.Location = new Point(266, 98);
             emailTextBox.Name = "emailTextBox";
-            emailTextBox.Size = new Size(344, 28);
+            emailTextBox.Size = new Size(344, 32);
             emailTextBox.TabIndex = 23;
             // 
             // nameUserLabel
@@ -295,7 +295,7 @@
             nameUserLabel.ForeColor = Color.Black;
             nameUserLabel.Location = new Point(144, 43);
             nameUserLabel.Name = "nameUserLabel";
-            nameUserLabel.Size = new Size(75, 21);
+            nameUserLabel.Size = new Size(84, 23);
             nameUserLabel.TabIndex = 20;
             nameUserLabel.Text = "Usuario:";
             // 
@@ -303,14 +303,14 @@
             // 
             nameUserTextBox.Location = new Point(266, 43);
             nameUserTextBox.Name = "nameUserTextBox";
-            nameUserTextBox.Size = new Size(346, 28);
+            nameUserTextBox.Size = new Size(346, 32);
             nameUserTextBox.TabIndex = 21;
             // 
             // birthdateDateTimePicker
             // 
             birthdateDateTimePicker.Location = new Point(262, 380);
             birthdateDateTimePicker.Name = "birthdateDateTimePicker";
-            birthdateDateTimePicker.Size = new Size(346, 28);
+            birthdateDateTimePicker.Size = new Size(346, 32);
             birthdateDateTimePicker.TabIndex = 19;
             // 
             // numberPhoneLabel
@@ -319,7 +319,7 @@
             numberPhoneLabel.ForeColor = Color.Black;
             numberPhoneLabel.Location = new Point(130, 458);
             numberPhoneLabel.Name = "numberPhoneLabel";
-            numberPhoneLabel.Size = new Size(85, 21);
+            numberPhoneLabel.Size = new Size(98, 23);
             numberPhoneLabel.TabIndex = 17;
             numberPhoneLabel.Text = "Telefono:";
             // 
@@ -327,7 +327,7 @@
             // 
             numberPhoneTextBox.Location = new Point(262, 449);
             numberPhoneTextBox.Name = "numberPhoneTextBox";
-            numberPhoneTextBox.Size = new Size(346, 28);
+            numberPhoneTextBox.Size = new Size(346, 32);
             numberPhoneTextBox.TabIndex = 18;
             // 
             // statusComboBox
@@ -335,7 +335,7 @@
             statusComboBox.FormattingEnabled = true;
             statusComboBox.Location = new Point(262, 592);
             statusComboBox.Name = "statusComboBox";
-            statusComboBox.Size = new Size(346, 29);
+            statusComboBox.Size = new Size(346, 31);
             statusComboBox.TabIndex = 15;
             // 
             // statusLabel
@@ -344,7 +344,7 @@
             statusLabel.ForeColor = Color.Black;
             statusLabel.Location = new Point(133, 595);
             statusLabel.Name = "statusLabel";
-            statusLabel.Size = new Size(73, 21);
+            statusLabel.Size = new Size(82, 23);
             statusLabel.TabIndex = 16;
             statusLabel.Text = "Estado:";
             // 
@@ -354,7 +354,7 @@
             passwordLabel.ForeColor = Color.Black;
             passwordLabel.Location = new Point(98, 522);
             passwordLabel.Name = "passwordLabel";
-            passwordLabel.Size = new Size(114, 21);
+            passwordLabel.Size = new Size(130, 23);
             passwordLabel.TabIndex = 7;
             passwordLabel.Text = "Contraseña:";
             // 
@@ -362,7 +362,7 @@
             // 
             passwordTextBox.Location = new Point(262, 519);
             passwordTextBox.Name = "passwordTextBox";
-            passwordTextBox.Size = new Size(346, 28);
+            passwordTextBox.Size = new Size(346, 32);
             passwordTextBox.TabIndex = 8;
             // 
             // dateLabel
@@ -371,7 +371,7 @@
             dateLabel.ForeColor = Color.Black;
             dateLabel.Location = new Point(0, 389);
             dateLabel.Name = "dateLabel";
-            dateLabel.Size = new Size(196, 21);
+            dateLabel.Size = new Size(228, 23);
             dateLabel.TabIndex = 3;
             dateLabel.Text = "Fecha de Nacimiento:";
             // 
@@ -381,7 +381,7 @@
             lastNameLabel.ForeColor = Color.Black;
             lastNameLabel.Location = new Point(131, 321);
             lastNameLabel.Name = "lastNameLabel";
-            lastNameLabel.Size = new Size(83, 21);
+            lastNameLabel.Size = new Size(97, 23);
             lastNameLabel.TabIndex = 5;
             lastNameLabel.Text = "Apellido:";
             // 
@@ -389,7 +389,7 @@
             // 
             lastNameTextBox.Location = new Point(264, 318);
             lastNameTextBox.Name = "lastNameTextBox";
-            lastNameTextBox.Size = new Size(344, 28);
+            lastNameTextBox.Size = new Size(344, 32);
             lastNameTextBox.TabIndex = 6;
             // 
             // countryGroupBox
@@ -426,9 +426,9 @@
             errorWorkStationLabel.AutoSize = true;
             errorWorkStationLabel.Font = new Font("Century Gothic", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
             errorWorkStationLabel.ForeColor = Color.Red;
-            errorWorkStationLabel.Location = new Point(151, 439);
+            errorWorkStationLabel.Location = new Point(151, 460);
             errorWorkStationLabel.Name = "errorWorkStationLabel";
-            errorWorkStationLabel.Size = new Size(54, 18);
+            errorWorkStationLabel.Size = new Size(64, 21);
             errorWorkStationLabel.TabIndex = 44;
             errorWorkStationLabel.Text = "label2";
             errorWorkStationLabel.Visible = false;
@@ -438,9 +438,9 @@
             errorProfessionLabel.AutoSize = true;
             errorProfessionLabel.Font = new Font("Century Gothic", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
             errorProfessionLabel.ForeColor = Color.Red;
-            errorProfessionLabel.Location = new Point(151, 334);
+            errorProfessionLabel.Location = new Point(151, 346);
             errorProfessionLabel.Name = "errorProfessionLabel";
-            errorProfessionLabel.Size = new Size(54, 18);
+            errorProfessionLabel.Size = new Size(64, 21);
             errorProfessionLabel.TabIndex = 43;
             errorProfessionLabel.Text = "label1";
             errorProfessionLabel.Visible = false;
@@ -450,9 +450,9 @@
             workStationLabel.AutoSize = true;
             workStationLabel.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             workStationLabel.ForeColor = Color.White;
-            workStationLabel.Location = new Point(273, 380);
+            workStationLabel.Location = new Point(241, 375);
             workStationLabel.Name = "workStationLabel";
-            workStationLabel.Size = new Size(190, 23);
+            workStationLabel.Size = new Size(229, 30);
             workStationLabel.TabIndex = 41;
             workStationLabel.Text = "Puesto de trabajo:";
             workStationLabel.Visible = false;
@@ -461,7 +461,7 @@
             // 
             workStationTextBox.Location = new Point(151, 408);
             workStationTextBox.Name = "workStationTextBox";
-            workStationTextBox.Size = new Size(409, 28);
+            workStationTextBox.Size = new Size(409, 32);
             workStationTextBox.TabIndex = 42;
             workStationTextBox.Visible = false;
             // 
@@ -470,9 +470,9 @@
             professionLabel.AutoSize = true;
             professionLabel.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             professionLabel.ForeColor = Color.White;
-            professionLabel.Location = new Point(308, 229);
+            professionLabel.Location = new Point(273, 222);
             professionLabel.Name = "professionLabel";
-            professionLabel.Size = new Size(101, 23);
+            professionLabel.Size = new Size(128, 30);
             professionLabel.TabIndex = 39;
             professionLabel.Text = "Profesión:";
             professionLabel.Visible = false;
@@ -513,7 +513,7 @@
             errorSelectImagenLabel.ForeColor = Color.Red;
             errorSelectImagenLabel.Location = new Point(60, 509);
             errorSelectImagenLabel.Name = "errorSelectImagenLabel";
-            errorSelectImagenLabel.Size = new Size(0, 18);
+            errorSelectImagenLabel.Size = new Size(0, 21);
             errorSelectImagenLabel.TabIndex = 36;
             // 
             // errorCityLabel
@@ -524,7 +524,7 @@
             errorCityLabel.ForeColor = Color.Red;
             errorCityLabel.Location = new Point(60, 172);
             errorCityLabel.Name = "errorCityLabel";
-            errorCityLabel.Size = new Size(0, 18);
+            errorCityLabel.Size = new Size(0, 21);
             errorCityLabel.TabIndex = 33;
             // 
             // errorCountryLabel
@@ -535,7 +535,7 @@
             errorCountryLabel.ForeColor = Color.Red;
             errorCountryLabel.Location = new Point(60, 86);
             errorCountryLabel.Name = "errorCountryLabel";
-            errorCountryLabel.Size = new Size(0, 18);
+            errorCountryLabel.Size = new Size(0, 21);
             errorCountryLabel.TabIndex = 32;
             // 
             // dateRegistreDateTimePicker
@@ -543,7 +543,7 @@
             dateRegistreDateTimePicker.Enabled = false;
             dateRegistreDateTimePicker.Location = new Point(160, 155);
             dateRegistreDateTimePicker.Name = "dateRegistreDateTimePicker";
-            dateRegistreDateTimePicker.Size = new Size(380, 28);
+            dateRegistreDateTimePicker.Size = new Size(380, 32);
             dateRegistreDateTimePicker.TabIndex = 15;
             dateRegistreDateTimePicker.Visible = false;
             // 
@@ -571,7 +571,7 @@
             cityLabel.AutoSize = true;
             cityLabel.Location = new Point(25, 128);
             cityLabel.Name = "cityLabel";
-            cityLabel.Size = new Size(78, 21);
+            cityLabel.Size = new Size(88, 23);
             cityLabel.TabIndex = 14;
             cityLabel.Text = "Ciudad:";
             // 
@@ -580,7 +580,7 @@
             cityListComboBox.FormattingEnabled = true;
             cityListComboBox.Location = new Point(160, 120);
             cityListComboBox.Name = "cityListComboBox";
-            cityListComboBox.Size = new Size(383, 29);
+            cityListComboBox.Size = new Size(383, 31);
             cityListComboBox.TabIndex = 13;
             // 
             // saveButton
@@ -607,7 +607,7 @@
             countrysComboBox.FormattingEnabled = true;
             countrysComboBox.Location = new Point(160, 43);
             countrysComboBox.Name = "countrysComboBox";
-            countrysComboBox.Size = new Size(383, 29);
+            countrysComboBox.Size = new Size(383, 31);
             countrysComboBox.TabIndex = 9;
             // 
             // countryUserLabel
@@ -615,7 +615,7 @@
             countryUserLabel.AutoSize = true;
             countryUserLabel.Location = new Point(61, 45);
             countryUserLabel.Name = "countryUserLabel";
-            countryUserLabel.Size = new Size(47, 21);
+            countryUserLabel.Size = new Size(52, 23);
             countryUserLabel.TabIndex = 10;
             countryUserLabel.Text = "Pais:";
             // 
@@ -645,7 +645,7 @@
             // 
             // AddUsersForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 19F);
+            AutoScaleDimensions = new SizeF(12F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1293, 794);

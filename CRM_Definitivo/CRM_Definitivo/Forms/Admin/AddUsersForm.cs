@@ -195,7 +195,7 @@ namespace PresentationLayer.Forms
                     DateRegistration = DateTime.Now
                 };
 
-                AddUserValidation newAccountValidation = new AddUserValidation();
+                UserValidation newAccountValidation = new UserValidation();
                 ValidationResult result = newAccountValidation.Validate(newAccount);
 
                 if (!result.IsValid)
@@ -259,7 +259,7 @@ namespace PresentationLayer.Forms
 
                 _usuario.DateRegistration = DateTime.Now;
 
-                AddUserValidation newAccountValidation = new AddUserValidation();
+                UserValidation newAccountValidation = new UserValidation();
                 ValidationResult result = newAccountValidation.Validate(_usuario);
 
                 if (!result.IsValid)

@@ -2,6 +2,8 @@
 using BusinessLayer.Services.InterfacesServices.InterfacesUser;
 using CommonLayer.Entities.Projects;
 using CommonLayer.Entities.ViewModel;
+using FluentValidation.Results;
+using PresentationLayer.Validations;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,7 +52,7 @@ namespace PresentationLayer.Forms.Admin
 
         private void SetNamesColumns(DataGridView dataGridView, Dictionary<String, string> columNames)
         {
-            foreach(DataGridViewColumn column in dataGridView.Columns)
+            foreach (DataGridViewColumn column in dataGridView.Columns)
             {
                 if (columNames.ContainsKey(column.Name))
                 {
@@ -75,22 +77,94 @@ namespace PresentationLayer.Forms.Admin
             SetNamesColumns(assignamentTasksDataGridView, setNamesDGV);
         }
 
+
+        private bool isTaskAssigned = false;
         private void iconAssignamentTaskButton_Click(object sender, EventArgs e)
         {
-            TaskEmployees AssignamentTaskEmployees = new TaskEmployees();
-            AssignamentTaskEmployees.codeProject = codeProjectLabel.Text;
-            AssignamentTaskEmployees.nameTask = taskTextBox.Text;
-            AssignamentTaskEmployees.descriptionTask = descriptionTextBox.Text;
-            AssignamentTaskEmployees.idEmployee = Convert.ToInt32(employeeComboBox.SelectedValue);
-            AssignamentTaskEmployees.idStatusTask = 1;
-            AssignamentTaskEmployees.dateEnd = timeEndDateTimePicker.Value;
+            TaskEmployees AssignamentTaskEmployees = new TaskEmployees
+            {
+                codeProject = codeProjectLabel.Text,
+                nameTask = taskTextBox.Text,
+                descriptionTask = descriptionTextBox.Text,
+                idEmployee = Convert.ToInt32(employeeComboBox.SelectedValue),
+                idStatusTask = 1,
+                dateEnd = timeEndDateTimePicker.Value
+            };
+
+            var validator = new AssignamentTaskEmployeeValidation();
+            var result = validator.Validate(AssignamentTaskEmployees);
+
+            if (!result.IsValid)
+            {
+                DisplayValidationErrors(result);
+                return;
+            }
 
             var dateEnd = timeEndDateTimePicker.Value;
-            _proyectsServices.UpdateDates(_employeeViewModel.EntitieNow.codeProyect, dateEnd);
+            _proyectsServices.UpdateDates(codeProjectLabel.Text, dateEnd);
 
             _proyectsServices.AddTasksEmployees(AssignamentTaskEmployees);
-            MessageBox.Show("La tarea se ha agregado exitosamente!");
-            LoadEmployee();
+
+
+            isTaskAssigned = true;
+
+            MessageBox.Show("La tarea se ha agregado exitosamente!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void AssignamentTaskEmployeeForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!isTaskAssigned)
+            {
+                MessageBox.Show("La tarea no se ha asignado. El estado no se actualizará.");
+            }
+        }
+
+
+        private void DisplayValidationErrors(ValidationResult result)
+        {
+            errorValidation.Clear();
+
+            ResetErrorLabels();
+
+            foreach (var error in result.Errors)
+            {
+                switch (error.PropertyName)
+                {
+                    case nameof(TaskEmployees.dateEnd):
+                        errorValidation.SetError(assignamentTasksDataGridView, error.ErrorMessage);
+                        errorDateLabel.Text = error.ErrorMessage;
+                        break;
+                    case nameof(TaskEmployees.descriptionTask):
+                        errorValidation.SetError(descriptionTextBox, error.ErrorMessage);
+                        errorDescripcionLabel.Text = error.ErrorMessage;
+                        break;
+                    case nameof(TaskEmployees.nameTask):
+                        errorValidation.SetError(taskTextBox, error.ErrorMessage);
+                        errorTaskLabel.Text = error.ErrorMessage;
+                        break;
+                    case nameof(TaskEmployees.idEmployee):
+                        errorValidation.SetError(employeeComboBox, error.ErrorMessage);
+                        errorEmployeeLabel.Text = error.ErrorMessage;
+                        break;
+                    default:
+                        Console.WriteLine($"Error en un campo no reconocido: {error.PropertyName}");
+                        break;
+                }
+            }
+        }
+
+        private void ResetErrorLabels()
+        {
+            errorDateLabel.Text = string.Empty;
+            errorDescripcionLabel.Text = string.Empty;
+            errorTaskLabel.Text = string.Empty;
+            errorEmployeeLabel.Text = string.Empty;
+
+            errorValidation.SetError(assignamentTasksDataGridView, string.Empty);
+            errorValidation.SetError(descriptionTextBox, string.Empty);
+            errorValidation.SetError(taskTextBox, string.Empty);
+            errorValidation.SetError(employeeComboBox, string.Empty);
+
         }
     }
 }

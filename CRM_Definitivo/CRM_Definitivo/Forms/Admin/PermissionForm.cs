@@ -2,6 +2,8 @@
 using BusinessLayer.Services.InterfacesServices;
 //using BusinessLayer.Services.InterfacesServices;
 using CommonLayer.Entities;
+using FluentValidation.Results;
+using PresentationLayer.Validations;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,10 +33,10 @@ namespace PresentationLayer.Forms.Admin
         {
             DataSources();
             menuDataGridView.Columns["idMenu"].Visible = false;
-           
+
             permissionDataGridView.Columns["idMenu"].Visible = false;
             permissionDataGridView.Columns["idPermission"].Visible = false;
-            
+
             rolPermissionDataGridView.Columns["idRolPermission"].Visible = false;
             rolPermissionDataGridView.Columns["idPermission"].Visible = false;
 
@@ -77,7 +79,7 @@ namespace PresentationLayer.Forms.Admin
             rolPermissionDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             rolPermissionDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
-            
+
         }
 
         private void DataSources()
@@ -139,32 +141,57 @@ namespace PresentationLayer.Forms.Admin
             SetNamesColumns(permissionDataGridView, columnsNewNameMenuAccess);
         }
 
+
         private void iconSaveMenusButton_Click(object sender, EventArgs e)
         {
-            var menu = new Menu();
-
-            if (isEditing)
+            try
             {
-                menu.idMenu = int.Parse(menuDataGridView.CurrentRow.Cells[0].Value.ToString());
-                menu.name = nameMenuTextBox.Text;
-                menu.NameForm = nameObjectTextBox.Text;
+                var menu = new Menu
+                {
+                    name = nameMenuTextBox.Text,
+                    NameForm = nameObjectTextBox.Text
+                };
 
-                _permissionServices.EditMenu(menu);
+                var PermissionFormValidation = new PermissionFormValidation();
+                var validationResult = PermissionFormValidation.Validate(menu);
 
-                MessageBox.Show("El menu se ha actualizado de forma exitosa!");
+                if (!validationResult.IsValid)
+                {
+                    DisplayValidationErrors(validationResult);
+                    return; 
+                }
+
+                if (isEditing)
+                {
+                    menu.idMenu = int.Parse(menuDataGridView.CurrentRow.Cells[0].Value.ToString());
+                    _permissionServices.EditMenu(menu);
+                    MessageBox.Show("El menú se ha actualizado de forma exitosa!");
+                }
+                else
+                {
+                    _permissionServices.AddMenu(menu);
+                    MessageBox.Show("El nuevo menú se ha agregado correctamente!");
+                }
+
                 LoadData();
-
                 isEditing = false;
-            }
-            else
-            {
-                menu.name = nameMenuTextBox.Text;
-                menu.NameForm = nameObjectTextBox.Text;
 
-                _permissionServices.AddMenu(menu);
-                MessageBox.Show("El nuevo menu se ha agregado correctamente!");
-                LoadData();
+                ClearFields();
             }
+            catch (FormatException ex)
+            {
+                MessageBox.Show($"Error en el formato de los datos: {ex.Message}", "Error de formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error inesperado: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ClearFields()
+        {
+            nameMenuTextBox.Clear();
+            nameObjectTextBox.Clear();
         }
 
         private void iconEditMenusButton_Click(object sender, EventArgs e)
@@ -177,7 +204,7 @@ namespace PresentationLayer.Forms.Admin
             }
         }
 
-        private void iconSaveMenuButton_Click(object sender, EventArgs e)
+        private void iconSaveMenuPermissonButton_Click(object sender, EventArgs e)
         {
             var permission = new Permissions();
 
@@ -197,6 +224,7 @@ namespace PresentationLayer.Forms.Admin
                 MessageBox.Show("Se ha agregado correctamente!");
             }
         }
+ 
 
         private void iconEditMenuButton_Click(object sender, EventArgs e)
         {
@@ -276,6 +304,39 @@ namespace PresentationLayer.Forms.Admin
             }
         }
 
+        private void DisplayValidationErrors(ValidationResult result)
+        {
+            errorValidation.Clear();
+            ResetErrorLabels();
 
+            foreach (var error in result.Errors)
+            {
+                switch (error.PropertyName)
+                {
+                    case nameof(Menu.name):
+                        errorValidation.SetError(nameMenuTextBox, error.ErrorMessage);
+                        errorNameMenuLabel.Text = error.ErrorMessage;
+                        break;
+                    case nameof(Menu.NameForm):
+                        errorValidation.SetError(nameObjectTextBox, error.ErrorMessage);
+                        errorDescripionMenuLabel.Text = error.ErrorMessage;
+                        break;
+                    default:
+                        Console.WriteLine($"Error en un campo no reconocido: {error.PropertyName}");
+                        break;
+                }
+            }
+        }
+
+        private void ResetErrorLabels()
+        {
+            errorNameMenuLabel.Text = string.Empty;
+            errorDescripionMenuLabel.Text = string.Empty;
+
+            errorValidation.SetError(nameMenuTextBox, string.Empty);
+            errorValidation.SetError(nameObjectTextBox, string.Empty);
+        }
+
+        
     }
 }

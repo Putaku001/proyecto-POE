@@ -36,7 +36,7 @@ namespace PresentationLayer.Forms
             {
                 _user.passworduser = newPasswordTexBox.Text;
 
-                ChangePasswordValidation changePasswordValidation = new ChangePasswordValidation();
+                UserValidation changePasswordValidation = new UserValidation();
                 ValidationResult result = changePasswordValidation.Validate(_user);
 
                 if (!result.IsValid)

@@ -178,7 +178,7 @@ namespace PresentationLayer.Forms.Cliente
                 City = listCityComboBox.SelectedValue?.ToString(),
             };
 
-            ProfileUserAccountValidation editProfileValidation = new ProfileUserAccountValidation();
+            UserValidation editProfileValidation = new UserValidation();
             ValidationResult result = editProfileValidation.Validate(saveProfile);
 
             if (!result.IsValid)

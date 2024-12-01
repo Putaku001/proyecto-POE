@@ -102,7 +102,6 @@ namespace PresentationLayer
             {
                 string userAccount = userNameTextBox.Text;
 
-                // Verifica si el nombre de usuario ya existe
                 if (_adminsServices.UserExists(userAccount))
                 {
                     MessageBox.Show("El nombre de usuario ya está en uso. Por favor, elija otro.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -126,7 +125,7 @@ namespace PresentationLayer
                     DateRegistration = DateTime.Now,
                 };
 
-                NewAccountValidation newAccountValidation = new NewAccountValidation();
+                UserValidation newAccountValidation = new UserValidation();
                 ValidationResult result = newAccountValidation.Validate(newAccount);
 
                 if (!result.IsValid)

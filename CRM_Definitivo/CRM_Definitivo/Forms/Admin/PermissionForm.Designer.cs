@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             menuTabPage = new TabPage();
             menuDataGridView = new DataGridView();
             controlMenuGroupBox = new GroupBox();
+            errorDescripionMenuLabel = new Label();
+            errorNameMenuLabel = new Label();
             nameObjectTextBox = new TextBox();
             nameMenuLabel = new Label();
             nameMenuTextBox = new TextBox();
@@ -51,9 +54,10 @@
             permissionGroupBox = new GroupBox();
             selectMenuComboBox = new ComboBox();
             iconEditMenuButton = new FontAwesome.Sharp.IconButton();
-            iconSaveMenuButton = new FontAwesome.Sharp.IconButton();
+            iconSaveMenuPermissonButton = new FontAwesome.Sharp.IconButton();
             selectMenuLabel = new Label();
             permissionDataGridView = new DataGridView();
+            errorValidation = new ErrorProvider(components);
             menuTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)menuDataGridView).BeginInit();
             controlMenuGroupBox.SuspendLayout();
@@ -63,6 +67,7 @@
             ((System.ComponentModel.ISupportInitialize)rolPermissionDataGridView).BeginInit();
             permissionGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)permissionDataGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorValidation).BeginInit();
             SuspendLayout();
             // 
             // menuTabPage
@@ -85,13 +90,15 @@
             menuDataGridView.Location = new Point(3, 294);
             menuDataGridView.Name = "menuDataGridView";
             menuDataGridView.RowHeadersWidth = 51;
-            menuDataGridView.Size = new Size(1411, 443);
+            menuDataGridView.Size = new Size(1411, 467);
             menuDataGridView.TabIndex = 0;
             // 
             // controlMenuGroupBox
             // 
             controlMenuGroupBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             controlMenuGroupBox.BackColor = SystemColors.Control;
+            controlMenuGroupBox.Controls.Add(errorDescripionMenuLabel);
+            controlMenuGroupBox.Controls.Add(errorNameMenuLabel);
             controlMenuGroupBox.Controls.Add(nameObjectTextBox);
             controlMenuGroupBox.Controls.Add(nameMenuLabel);
             controlMenuGroupBox.Controls.Add(nameMenuTextBox);
@@ -106,9 +113,29 @@
             controlMenuGroupBox.TabStop = false;
             controlMenuGroupBox.Text = "Agregar nuevos menus";
             // 
+            // errorDescripionMenuLabel
+            // 
+            errorDescripionMenuLabel.AutoSize = true;
+            errorDescripionMenuLabel.Font = new Font("Century Gothic", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            errorDescripionMenuLabel.ForeColor = Color.Red;
+            errorDescripionMenuLabel.Location = new Point(40, 181);
+            errorDescripionMenuLabel.Name = "errorDescripionMenuLabel";
+            errorDescripionMenuLabel.Size = new Size(0, 21);
+            errorDescripionMenuLabel.TabIndex = 9;
+            // 
+            // errorNameMenuLabel
+            // 
+            errorNameMenuLabel.AutoSize = true;
+            errorNameMenuLabel.Font = new Font("Century Gothic", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            errorNameMenuLabel.ForeColor = Color.Red;
+            errorNameMenuLabel.Location = new Point(40, 91);
+            errorNameMenuLabel.Name = "errorNameMenuLabel";
+            errorNameMenuLabel.Size = new Size(0, 21);
+            errorNameMenuLabel.TabIndex = 8;
+            // 
             // nameObjectTextBox
             // 
-            nameObjectTextBox.Location = new Point(40, 148);
+            nameObjectTextBox.Location = new Point(40, 147);
             nameObjectTextBox.Name = "nameObjectTextBox";
             nameObjectTextBox.Size = new Size(436, 30);
             nameObjectTextBox.TabIndex = 7;
@@ -132,7 +159,7 @@
             // nameObjectLabel
             // 
             nameObjectLabel.AutoSize = true;
-            nameObjectLabel.Location = new Point(40, 124);
+            nameObjectLabel.Location = new Point(40, 122);
             nameObjectLabel.Name = "nameObjectLabel";
             nameObjectLabel.Size = new Size(288, 21);
             nameObjectLabel.TabIndex = 1;
@@ -308,7 +335,7 @@
             // 
             permissionGroupBox.Controls.Add(selectMenuComboBox);
             permissionGroupBox.Controls.Add(iconEditMenuButton);
-            permissionGroupBox.Controls.Add(iconSaveMenuButton);
+            permissionGroupBox.Controls.Add(iconSaveMenuPermissonButton);
             permissionGroupBox.Controls.Add(selectMenuLabel);
             permissionGroupBox.Location = new Point(10, 22);
             permissionGroupBox.Name = "permissionGroupBox";
@@ -341,21 +368,21 @@
             iconEditMenuButton.UseVisualStyleBackColor = false;
             iconEditMenuButton.Click += iconEditMenuButton_Click;
             // 
-            // iconSaveMenuButton
+            // iconSaveMenuPermissonButton
             // 
-            iconSaveMenuButton.BackColor = Color.FromArgb(0, 192, 0);
-            iconSaveMenuButton.FlatStyle = FlatStyle.Popup;
-            iconSaveMenuButton.ForeColor = Color.White;
-            iconSaveMenuButton.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconSaveMenuButton.IconColor = Color.Black;
-            iconSaveMenuButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconSaveMenuButton.Location = new Point(455, 52);
-            iconSaveMenuButton.Name = "iconSaveMenuButton";
-            iconSaveMenuButton.Size = new Size(160, 35);
-            iconSaveMenuButton.TabIndex = 4;
-            iconSaveMenuButton.Text = "Agregar";
-            iconSaveMenuButton.UseVisualStyleBackColor = false;
-            iconSaveMenuButton.Click += iconSaveMenuButton_Click;
+            iconSaveMenuPermissonButton.BackColor = Color.FromArgb(0, 192, 0);
+            iconSaveMenuPermissonButton.FlatStyle = FlatStyle.Popup;
+            iconSaveMenuPermissonButton.ForeColor = Color.White;
+            iconSaveMenuPermissonButton.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconSaveMenuPermissonButton.IconColor = Color.Black;
+            iconSaveMenuPermissonButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconSaveMenuPermissonButton.Location = new Point(455, 52);
+            iconSaveMenuPermissonButton.Name = "iconSaveMenuPermissonButton";
+            iconSaveMenuPermissonButton.Size = new Size(160, 35);
+            iconSaveMenuPermissonButton.TabIndex = 4;
+            iconSaveMenuPermissonButton.Text = "Agregar";
+            iconSaveMenuPermissonButton.UseVisualStyleBackColor = false;
+            iconSaveMenuPermissonButton.Click += iconSaveMenuPermissonButton_Click;
             // 
             // selectMenuLabel
             // 
@@ -376,6 +403,10 @@
             permissionDataGridView.RowHeadersWidth = 51;
             permissionDataGridView.Size = new Size(699, 468);
             permissionDataGridView.TabIndex = 2;
+            // 
+            // errorValidation
+            // 
+            errorValidation.ContainerControl = this;
             // 
             // PermissionForm
             // 
@@ -398,6 +429,7 @@
             permissionGroupBox.ResumeLayout(false);
             permissionGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)permissionDataGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorValidation).EndInit();
             ResumeLayout(false);
         }
 
@@ -421,7 +453,7 @@
         private Label selectMenuLabel;
         private DataGridView permissionDataGridView;
         private FontAwesome.Sharp.IconButton iconEditMenuButton;
-        private FontAwesome.Sharp.IconButton iconSaveMenuButton;
+        private FontAwesome.Sharp.IconButton iconSaveMenuPermissonButton;
         private GroupBox accessGroupBox;
         private FontAwesome.Sharp.IconButton iconEditRolPermissionButton;
         private FontAwesome.Sharp.IconButton iconSaveRolPermissionButton;
@@ -432,5 +464,8 @@
         private ComboBox selectMenuComboBox;
         private ComboBox rolUserComboBox;
         private ComboBox permissionIdComboBox;
+        private Label errorDescripionMenuLabel;
+        private Label errorNameMenuLabel;
+        private ErrorProvider errorValidation;
     }
 }

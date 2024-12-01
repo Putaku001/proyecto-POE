@@ -147,41 +147,69 @@ namespace PresentationLayer.Forms
 
         private void requestProjectsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
             if (e.ColumnIndex == requestProjectsDataGridView.Columns["SelectPr"].Index)
-            {                
-                string CodeProject = requestProjectsDataGridView.Rows[e.RowIndex].Cells["codeProject"].Value.ToString();
-                string NameProject = requestProjectsDataGridView.Rows[e.RowIndex].Cells["nameProject"].Value.ToString();
-                string Client = requestProjectsDataGridView.Rows[e.RowIndex].Cells["userAccount"].Value.ToString();
-                string DescriptionProject = requestProjectsDataGridView.Rows[e.RowIndex].Cells["descriptionProject"].Value.ToString();
-
-                var assignamentTaskEmployeeForm = _serviceProvider.GetRequiredService<AssignamentTaskEmployeeForm>();
-
-                SharedData sharedData = new SharedData
+            {
+                try
                 {
-                    Client = Client,
-                    codeProyect = CodeProject,
-                    nameProject = NameProject,
-                    DescriptionProject = DescriptionProject
-                };
+                    // Obtener datos del DataGridView
+                    string CodeProject = requestProjectsDataGridView.Rows[e.RowIndex].Cells["codeProject"].Value?.ToString();
+                    string NameProject = requestProjectsDataGridView.Rows[e.RowIndex].Cells["nameProject"].Value?.ToString();
+                    string Client = requestProjectsDataGridView.Rows[e.RowIndex].Cells["userAccount"].Value?.ToString();
+                    string DescriptionProject = requestProjectsDataGridView.Rows[e.RowIndex].Cells["descriptionProject"].Value?.ToString();
 
-                _entitieViewModel.UpdateEntities(sharedData);
-                assignamentTaskEmployeeForm.ShowDialog();
+                    if (string.IsNullOrWhiteSpace(CodeProject) || string.IsNullOrWhiteSpace(NameProject))
+                    {
+                        MessageBox.Show("Faltan datos necesarios del proyecto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    var assignamentTaskEmployeeForm = _serviceProvider.GetRequiredService<AssignamentTaskEmployeeForm>();
 
 
+                    SharedData sharedData = new SharedData
+                    {
+                        Client = Client,
+                        codeProyect = CodeProject,
+                        nameProject = NameProject,
+                        DescriptionProject = DescriptionProject
+                    };
+                    _entitieViewModel.UpdateEntities(sharedData);
 
-                Projects dateInit = new Projects();
-                var dateInitial = dateInit.dateInit = DateTime.Now;
+                    var dialogResult = assignamentTaskEmployeeForm.ShowDialog();
 
-                _proyectoServices.UpdateDates(CodeProject, dateInitial);
+                    if (dialogResult != DialogResult.OK)
+                    {
+                        MessageBox.Show("La operación fue cancelada. No se realizaron cambios.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
 
-                StatusProjects statusProjects = new StatusProjects();
-                int status = statusProjects.idStatusProyect = 6;
+                    if (!int.TryParse(CodeProject, out int codeProjectInt))
+                    {
+                        MessageBox.Show("El código del proyecto no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    Projects dateInit = new Projects
+                    {
+                        dateInit = DateTime.Now
+                    };
+                    _proyectoServices.UpdateDates(CodeProject, dateInit.dateInit);
 
-                _proyectoServices.StatusProject(CodeProject, status);
-                LoadProyecto();
+                    StatusProjects statusProjects = new StatusProjects
+                    {
+                        idStatusProyect = 6
+                    };
+                    _proyectoServices.StatusProject(CodeProject, statusProjects.idStatusProyect);
+
+                    LoadProyecto();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ocurrió un error al procesar la operación: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
+
+
         private void projectProgressDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)

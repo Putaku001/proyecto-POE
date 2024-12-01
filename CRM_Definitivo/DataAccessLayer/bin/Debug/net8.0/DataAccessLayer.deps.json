@@ -404,10 +404,7 @@
       "System.Threading.Tasks.Extensions/4.5.4": {},
       "CommonLayer/1.0.0": {
         "runtime": {
-          "CommonLayer.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "CommonLayer.dll": {}
         }
       }
     }
