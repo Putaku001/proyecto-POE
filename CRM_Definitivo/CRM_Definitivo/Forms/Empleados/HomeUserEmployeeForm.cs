@@ -22,7 +22,7 @@ namespace PresentationLayer.Forms.Empleados
         private readonly IProjectsClientServices _projectsClientServices;
         private readonly IServiceProvider _serviceProvider;
         int idUser;
-        public HomeUserEmployeeForm(IProjectsServices proyectsServices, IEmployeeServices usersServices, IProjectsClientServices projectsClientServices , IServiceProvider serviceProvider)
+        public HomeUserEmployeeForm(IProjectsServices proyectsServices, IEmployeeServices usersServices, IProjectsClientServices projectsClientServices, IServiceProvider serviceProvider)
         {
             InitializeComponent();
             _proyectsServices = proyectsServices;
@@ -41,13 +41,6 @@ namespace PresentationLayer.Forms.Empleados
             var getIdEmployee = _usersServices.GetEmployees().Where(id => id.idUser == idUser).Select(select => select.idEmployee).FirstOrDefault();
             var projectsCount = _proyectsServices.GetByIdTaskEmployee(getIdEmployee, 1).Count();
             projectsPendingsLabel.Text = projectsCount.ToString();
-        }
-
-        private void iconUserEmployeeButton_Click_1(object sender, EventArgs e)
-        {
-            var openForm = _serviceProvider.GetRequiredService<RecordProjectsForm>();
-            openForm.ShowDialog();
-
         }
     }
 }

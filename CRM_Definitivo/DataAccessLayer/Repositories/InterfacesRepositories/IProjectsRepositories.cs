@@ -26,5 +26,6 @@ namespace DataAccessLayer.Repositories.InterfacesRepositories
         byte[] DownloadTask(int idTask);
         IEnumerable<TaskEmployees> GetByIdTaskEmployee(int idEmployee, int? idStatusTask = null);
         byte[] getFileProjectsRefusedInDB(int idProject);
+        void UpdateTasks(List<TaskEmployees> tasks);
     }
 }

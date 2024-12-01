@@ -63,7 +63,6 @@ namespace CRM_Definitivo
                         services.AddTransient<HomeUserEmployeeForm>();
                         services.AddTransient<ProjectEmployeeForm>();
                         services.AddTransient<RequestClientForm>();
-                        services.AddTransient<InfoEmployeeForm>();
                         services.AddTransient<AssignamentTaskEmployeeForm>();
                         services.AddTransient<SendProjectForm>();
                         services.AddTransient<infoProjects>();
@@ -97,7 +96,8 @@ namespace CRM_Definitivo
 
                         //SQLDATA
                         services.AddSingleton<ISqlDataAccess, SqlDataAccess>();
-                        //services.AddSingleton<AnswerValues>();
+
+                        //ENTITIES
                         services.AddSingleton<EntitieViewModel>();
                         services.AddSingleton<User>();
                         services.AddSingleton<EmailSettings>();

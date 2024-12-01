@@ -4,9 +4,6 @@
     <Compile Update="Forms\Admin\AssignamentTaskEmployeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\Admin\InfoEmployeeForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Forms\Admin\InfoProjects.cs">
       <SubType>Form</SubType>
     </Compile>

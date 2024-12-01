@@ -37,8 +37,6 @@
             logoPictureBox = new PictureBox();
             nameGroupLabel = new Label();
             informationUsersPanel = new Panel();
-            iconUserClientsButton = new FontAwesome.Sharp.IconButton();
-            iconUserEmployeeButton = new FontAwesome.Sharp.IconButton();
             projectsAssignamentPanel = new Panel();
             taskPictureBox = new PictureBox();
             motivationLabel = new Label();
@@ -47,7 +45,6 @@
             introductionGroupBox.SuspendLayout();
             usersViewPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)logoPictureBox).BeginInit();
-            informationUsersPanel.SuspendLayout();
             projectsAssignamentPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)taskPictureBox).BeginInit();
             SuspendLayout();
@@ -139,49 +136,10 @@
             // 
             informationUsersPanel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             informationUsersPanel.BorderStyle = BorderStyle.Fixed3D;
-            informationUsersPanel.Controls.Add(iconUserClientsButton);
-            informationUsersPanel.Controls.Add(iconUserEmployeeButton);
             informationUsersPanel.Location = new Point(19, 228);
             informationUsersPanel.Name = "informationUsersPanel";
             informationUsersPanel.Size = new Size(751, 350);
             informationUsersPanel.TabIndex = 3;
-            // 
-            // iconUserClientsButton
-            // 
-            iconUserClientsButton.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            iconUserClientsButton.BackColor = Color.DodgerBlue;
-            iconUserClientsButton.Cursor = Cursors.Hand;
-            iconUserClientsButton.FlatStyle = FlatStyle.Flat;
-            iconUserClientsButton.ForeColor = Color.White;
-            iconUserClientsButton.IconChar = FontAwesome.Sharp.IconChar.Uber;
-            iconUserClientsButton.IconColor = Color.White;
-            iconUserClientsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconUserClientsButton.ImageAlign = ContentAlignment.MiddleLeft;
-            iconUserClientsButton.Location = new Point(227, 207);
-            iconUserClientsButton.Name = "iconUserClientsButton";
-            iconUserClientsButton.Size = new Size(295, 48);
-            iconUserClientsButton.TabIndex = 6;
-            iconUserClientsButton.Text = "Mis proyectos finalizados";
-            iconUserClientsButton.UseVisualStyleBackColor = false;
-            // 
-            // iconUserEmployeeButton
-            // 
-            iconUserEmployeeButton.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            iconUserEmployeeButton.BackColor = Color.DodgerBlue;
-            iconUserEmployeeButton.Cursor = Cursors.Hand;
-            iconUserEmployeeButton.FlatStyle = FlatStyle.Flat;
-            iconUserEmployeeButton.ForeColor = Color.White;
-            iconUserEmployeeButton.IconChar = FontAwesome.Sharp.IconChar.Uber;
-            iconUserEmployeeButton.IconColor = Color.White;
-            iconUserEmployeeButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconUserEmployeeButton.ImageAlign = ContentAlignment.MiddleLeft;
-            iconUserEmployeeButton.Location = new Point(227, 96);
-            iconUserEmployeeButton.Name = "iconUserEmployeeButton";
-            iconUserEmployeeButton.Size = new Size(295, 48);
-            iconUserEmployeeButton.TabIndex = 4;
-            iconUserEmployeeButton.Text = "Mis proyectos pendientes";
-            iconUserEmployeeButton.UseVisualStyleBackColor = false;
-            iconUserEmployeeButton.Click += iconUserEmployeeButton_Click_1;
             // 
             // projectsAssignamentPanel
             // 
@@ -253,7 +211,6 @@
             usersViewPanel.ResumeLayout(false);
             usersViewPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)logoPictureBox).EndInit();
-            informationUsersPanel.ResumeLayout(false);
             projectsAssignamentPanel.ResumeLayout(false);
             projectsAssignamentPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)taskPictureBox).EndInit();
@@ -268,8 +225,6 @@
         private Label label7;
         private Label welcomeLabel;
         private Panel informationUsersPanel;
-        private FontAwesome.Sharp.IconButton iconUserClientsButton;
-        private FontAwesome.Sharp.IconButton iconUserEmployeeButton;
         private Label userAccountLabel;
         private Panel projectsAssignamentPanel;
         private Label completedTaskLabel;

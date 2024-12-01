@@ -131,7 +131,7 @@ namespace PresentationLayer.Forms
 
         private void Dateandtime()
         {
-            timeUserLabel.Text = DateTime.Now.ToString("dd/mm/yyyy hh:mm:ss");
+            timeUserLabel.Text = DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss");
             userAccountLabel.Text = CaptureData.UserAccount;
         }
 
@@ -418,7 +418,7 @@ namespace PresentationLayer.Forms
                         }
                         else
                         {
-                            MessageBox.Show("No se pudo moestrar la imagen");
+                            selectedUserPictureBox.Image = Properties.Resources.user_icon_icons_com_57997;
                         }
                     }
                 }

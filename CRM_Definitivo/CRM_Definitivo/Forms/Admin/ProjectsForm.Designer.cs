@@ -29,18 +29,8 @@
         private void InitializeComponent()
         {
             waitClientTabPage = new TabPage();
-            searchWaitPanel = new Panel();
-            iconClearSearchWaitButtn = new FontAwesome.Sharp.IconButton();
-            iconSearchWaitButton = new FontAwesome.Sharp.IconButton();
-            searchWaitLabel = new Label();
-            searchWaitComboBox = new ComboBox();
             projectsWaitingResponseDataGridView = new DataGridView();
             projectsRefusedTabPage = new TabPage();
-            searchDismissedPanel = new Panel();
-            iconClearDismissedButton = new FontAwesome.Sharp.IconButton();
-            iconSearchDismissedButton = new FontAwesome.Sharp.IconButton();
-            searchDismissedLabel = new Label();
-            searchDismissedComboBox = new ComboBox();
             projectsRefusedDataGridView = new DataGridView();
             processProjectTabPage = new TabPage();
             searchPipPanel = new Panel();
@@ -58,10 +48,8 @@
             SelectRp = new DataGridViewButtonColumn();
             Rechazo = new DataGridViewLinkColumn();
             waitClientTabPage.SuspendLayout();
-            searchWaitPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)projectsWaitingResponseDataGridView).BeginInit();
             projectsRefusedTabPage.SuspendLayout();
-            searchDismissedPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)projectsRefusedDataGridView).BeginInit();
             processProjectTabPage.SuspendLayout();
             searchPipPanel.SuspendLayout();
@@ -73,7 +61,6 @@
             // 
             // waitClientTabPage
             // 
-            waitClientTabPage.Controls.Add(searchWaitPanel);
             waitClientTabPage.Controls.Add(projectsWaitingResponseDataGridView);
             waitClientTabPage.Location = new Point(4, 29);
             waitClientTabPage.Name = "waitClientTabPage";
@@ -83,70 +70,18 @@
             waitClientTabPage.Text = "Esperando respuesta del cliente";
             waitClientTabPage.UseVisualStyleBackColor = true;
             // 
-            // searchWaitPanel
-            // 
-            searchWaitPanel.Controls.Add(iconClearSearchWaitButtn);
-            searchWaitPanel.Controls.Add(iconSearchWaitButton);
-            searchWaitPanel.Controls.Add(searchWaitLabel);
-            searchWaitPanel.Controls.Add(searchWaitComboBox);
-            searchWaitPanel.Dock = DockStyle.Top;
-            searchWaitPanel.Location = new Point(3, 3);
-            searchWaitPanel.Name = "searchWaitPanel";
-            searchWaitPanel.Size = new Size(1116, 69);
-            searchWaitPanel.TabIndex = 7;
-            // 
-            // iconClearSearchWaitButtn
-            // 
-            iconClearSearchWaitButtn.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconClearSearchWaitButtn.IconColor = Color.Black;
-            iconClearSearchWaitButtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconClearSearchWaitButtn.Location = new Point(324, 18);
-            iconClearSearchWaitButtn.Name = "iconClearSearchWaitButtn";
-            iconClearSearchWaitButtn.Size = new Size(32, 29);
-            iconClearSearchWaitButtn.TabIndex = 3;
-            iconClearSearchWaitButtn.UseVisualStyleBackColor = true;
-            // 
-            // iconSearchWaitButton
-            // 
-            iconSearchWaitButton.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconSearchWaitButton.IconColor = Color.Black;
-            iconSearchWaitButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconSearchWaitButton.Location = new Point(286, 18);
-            iconSearchWaitButton.Name = "iconSearchWaitButton";
-            iconSearchWaitButton.Size = new Size(32, 29);
-            iconSearchWaitButton.TabIndex = 2;
-            iconSearchWaitButton.UseVisualStyleBackColor = true;
-            // 
-            // searchWaitLabel
-            // 
-            searchWaitLabel.AutoSize = true;
-            searchWaitLabel.Location = new Point(6, 22);
-            searchWaitLabel.Name = "searchWaitLabel";
-            searchWaitLabel.Size = new Size(52, 20);
-            searchWaitLabel.TabIndex = 1;
-            searchWaitLabel.Text = "Buscar";
-            // 
-            // searchWaitComboBox
-            // 
-            searchWaitComboBox.FormattingEnabled = true;
-            searchWaitComboBox.Location = new Point(64, 19);
-            searchWaitComboBox.Name = "searchWaitComboBox";
-            searchWaitComboBox.Size = new Size(216, 28);
-            searchWaitComboBox.TabIndex = 0;
-            // 
             // projectsWaitingResponseDataGridView
             // 
-            projectsWaitingResponseDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             projectsWaitingResponseDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            projectsWaitingResponseDataGridView.Location = new Point(3, 78);
+            projectsWaitingResponseDataGridView.Dock = DockStyle.Fill;
+            projectsWaitingResponseDataGridView.Location = new Point(3, 3);
             projectsWaitingResponseDataGridView.Name = "projectsWaitingResponseDataGridView";
             projectsWaitingResponseDataGridView.RowHeadersWidth = 51;
-            projectsWaitingResponseDataGridView.Size = new Size(1116, 480);
+            projectsWaitingResponseDataGridView.Size = new Size(1116, 555);
             projectsWaitingResponseDataGridView.TabIndex = 6;
             // 
             // projectsRefusedTabPage
             // 
-            projectsRefusedTabPage.Controls.Add(searchDismissedPanel);
             projectsRefusedTabPage.Controls.Add(projectsRefusedDataGridView);
             projectsRefusedTabPage.Location = new Point(4, 29);
             projectsRefusedTabPage.Name = "projectsRefusedTabPage";
@@ -156,68 +91,18 @@
             projectsRefusedTabPage.Text = "Proyectos rechazados";
             projectsRefusedTabPage.UseVisualStyleBackColor = true;
             // 
-            // searchDismissedPanel
-            // 
-            searchDismissedPanel.Controls.Add(iconClearDismissedButton);
-            searchDismissedPanel.Controls.Add(iconSearchDismissedButton);
-            searchDismissedPanel.Controls.Add(searchDismissedLabel);
-            searchDismissedPanel.Controls.Add(searchDismissedComboBox);
-            searchDismissedPanel.Dock = DockStyle.Top;
-            searchDismissedPanel.Location = new Point(3, 3);
-            searchDismissedPanel.Name = "searchDismissedPanel";
-            searchDismissedPanel.Size = new Size(1116, 69);
-            searchDismissedPanel.TabIndex = 5;
-            // 
-            // iconClearDismissedButton
-            // 
-            iconClearDismissedButton.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconClearDismissedButton.IconColor = Color.Black;
-            iconClearDismissedButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconClearDismissedButton.Location = new Point(324, 18);
-            iconClearDismissedButton.Name = "iconClearDismissedButton";
-            iconClearDismissedButton.Size = new Size(32, 29);
-            iconClearDismissedButton.TabIndex = 3;
-            iconClearDismissedButton.UseVisualStyleBackColor = true;
-            // 
-            // iconSearchDismissedButton
-            // 
-            iconSearchDismissedButton.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconSearchDismissedButton.IconColor = Color.Black;
-            iconSearchDismissedButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconSearchDismissedButton.Location = new Point(286, 18);
-            iconSearchDismissedButton.Name = "iconSearchDismissedButton";
-            iconSearchDismissedButton.Size = new Size(32, 29);
-            iconSearchDismissedButton.TabIndex = 2;
-            iconSearchDismissedButton.UseVisualStyleBackColor = true;
-            // 
-            // searchDismissedLabel
-            // 
-            searchDismissedLabel.AutoSize = true;
-            searchDismissedLabel.Location = new Point(6, 22);
-            searchDismissedLabel.Name = "searchDismissedLabel";
-            searchDismissedLabel.Size = new Size(52, 20);
-            searchDismissedLabel.TabIndex = 1;
-            searchDismissedLabel.Text = "Buscar";
-            // 
-            // searchDismissedComboBox
-            // 
-            searchDismissedComboBox.FormattingEnabled = true;
-            searchDismissedComboBox.Location = new Point(64, 19);
-            searchDismissedComboBox.Name = "searchDismissedComboBox";
-            searchDismissedComboBox.Size = new Size(216, 28);
-            searchDismissedComboBox.TabIndex = 0;
-            // 
             // projectsRefusedDataGridView
             // 
+            projectsRefusedDataGridView.AllowUserToAddRows = false;
             projectsRefusedDataGridView.AllowUserToDeleteRows = false;
-            projectsRefusedDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             projectsRefusedDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             projectsRefusedDataGridView.Columns.AddRange(new DataGridViewColumn[] { SelectRp, Rechazo });
-            projectsRefusedDataGridView.Location = new Point(3, 78);
+            projectsRefusedDataGridView.Dock = DockStyle.Fill;
+            projectsRefusedDataGridView.Location = new Point(3, 3);
             projectsRefusedDataGridView.Name = "projectsRefusedDataGridView";
             projectsRefusedDataGridView.ReadOnly = true;
             projectsRefusedDataGridView.RowHeadersWidth = 51;
-            projectsRefusedDataGridView.Size = new Size(1116, 480);
+            projectsRefusedDataGridView.Size = new Size(1116, 555);
             projectsRefusedDataGridView.TabIndex = 4;
             projectsRefusedDataGridView.CellContentClick += projectsRefusedDataGridView_CellContentClick;
             // 
@@ -367,13 +252,13 @@
             // 
             // SelectRp
             // 
-            SelectRp.HeaderText = "Select";
+            SelectRp.HeaderText = "Rehacer";
             SelectRp.MinimumWidth = 6;
             SelectRp.Name = "SelectRp";
             SelectRp.ReadOnly = true;
             SelectRp.Resizable = DataGridViewTriState.True;
             SelectRp.SortMode = DataGridViewColumnSortMode.Automatic;
-            SelectRp.Width = 70;
+            SelectRp.Width = 75;
             // 
             // Rechazo
             // 
@@ -394,12 +279,8 @@
             Name = "ProjectsForm";
             Text = "ProyectosForm";
             waitClientTabPage.ResumeLayout(false);
-            searchWaitPanel.ResumeLayout(false);
-            searchWaitPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)projectsWaitingResponseDataGridView).EndInit();
             projectsRefusedTabPage.ResumeLayout(false);
-            searchDismissedPanel.ResumeLayout(false);
-            searchDismissedPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)projectsRefusedDataGridView).EndInit();
             processProjectTabPage.ResumeLayout(false);
             searchPipPanel.ResumeLayout(false);
@@ -414,18 +295,8 @@
         #endregion
         private DateTimePicker dateTimePicker2;
         private TabPage waitClientTabPage;
-        private Panel searchWaitPanel;
-        private FontAwesome.Sharp.IconButton iconClearSearchWaitButtn;
-        private FontAwesome.Sharp.IconButton iconSearchWaitButton;
-        private Label searchWaitLabel;
-        private ComboBox searchWaitComboBox;
         private DataGridView projectsWaitingResponseDataGridView;
         private TabPage projectsRefusedTabPage;
-        private Panel searchDismissedPanel;
-        private FontAwesome.Sharp.IconButton iconClearDismissedButton;
-        private FontAwesome.Sharp.IconButton iconSearchDismissedButton;
-        private Label searchDismissedLabel;
-        private ComboBox searchDismissedComboBox;
         private DataGridView projectsRefusedDataGridView;
         private TabPage processProjectTabPage;
         private Panel searchPipPanel;

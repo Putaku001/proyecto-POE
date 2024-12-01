@@ -151,7 +151,6 @@ namespace PresentationLayer.Forms
             {
                 try
                 {
-                    // Obtener datos del DataGridView
                     string CodeProject = requestProjectsDataGridView.Rows[e.RowIndex].Cells["codeProject"].Value?.ToString();
                     string NameProject = requestProjectsDataGridView.Rows[e.RowIndex].Cells["nameProject"].Value?.ToString();
                     string Client = requestProjectsDataGridView.Rows[e.RowIndex].Cells["userAccount"].Value?.ToString();
@@ -245,14 +244,29 @@ namespace PresentationLayer.Forms
             if (e.RowIndex >= 0 && e.ColumnIndex == projectsRefusedDataGridView.Columns["selectRp"].Index)
             {
                 var mensaje = MessageBox.Show("Desea reahacer el proyecto?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                var ConfirmMessage = MessageBox.Show("Esta seguro?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                if (ConfirmMessage == DialogResult.Yes)
+                if (mensaje == DialogResult.Yes)
                 {
-                    string CodeProject = projectsRefusedDataGridView.Rows[e.RowIndex].Cells["codeProject"].Value.ToString();
 
-                    _proyectoServices.StatusProject(CodeProject, 4);
-                    LoadProyecto();
+                    var ConfirmMessage = MessageBox.Show("Esta seguro?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if(ConfirmMessage == DialogResult.Yes)
+                    {
+                        string CodeProject = projectsRefusedDataGridView.Rows[e.RowIndex].Cells["codeProject"].Value.ToString();
+
+                        _proyectoServices.StatusProject(CodeProject, 4);
+
+
+                        var RestartTasksEmployees = _proyectoServices.GetTasksByCode(CodeProject).ToList();
+
+                        foreach (var task in RestartTasksEmployees)
+                        {
+                            task.idStatusTask = 1;
+                        }
+
+                        _proyectoServices.UpdateTasks(RestartTasksEmployees);
+                        LoadProyecto();
+                    }                   
                 }
                 
             }

@@ -75,7 +75,7 @@
             requestProjectPanel = new Panel();
             projectRequestedPictureBox = new PictureBox();
             requestProjectListBox = new ListBox();
-            projectRequestedLabel = new Label();
+            projectsRequestedLabel = new Label();
             userDataGridView = new DataGridView();
             viewUser = new DataGridViewButtonColumn();
             assignedProjectPanel = new Panel();
@@ -660,7 +660,7 @@
             requestProjectPanel.BorderStyle = BorderStyle.Fixed3D;
             requestProjectPanel.Controls.Add(projectRequestedPictureBox);
             requestProjectPanel.Controls.Add(requestProjectListBox);
-            requestProjectPanel.Controls.Add(projectRequestedLabel);
+            requestProjectPanel.Controls.Add(projectsRequestedLabel);
             requestProjectPanel.Location = new Point(643, 0);
             requestProjectPanel.Name = "requestProjectPanel";
             requestProjectPanel.Size = new Size(456, 342);
@@ -689,16 +689,16 @@
             requestProjectListBox.Size = new Size(328, 252);
             requestProjectListBox.TabIndex = 21;
             // 
-            // projectRequestedLabel
+            // projectsRequestedLabel
             // 
-            projectRequestedLabel.AutoSize = true;
-            projectRequestedLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            projectRequestedLabel.ForeColor = Color.White;
-            projectRequestedLabel.Location = new Point(109, 12);
-            projectRequestedLabel.Name = "projectRequestedLabel";
-            projectRequestedLabel.Size = new Size(216, 23);
-            projectRequestedLabel.TabIndex = 20;
-            projectRequestedLabel.Text = "Proyectos solicitados";
+            projectsRequestedLabel.AutoSize = true;
+            projectsRequestedLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            projectsRequestedLabel.ForeColor = Color.White;
+            projectsRequestedLabel.Location = new Point(109, 12);
+            projectsRequestedLabel.Name = "projectsRequestedLabel";
+            projectsRequestedLabel.Size = new Size(216, 23);
+            projectsRequestedLabel.TabIndex = 20;
+            projectsRequestedLabel.Text = "Proyectos solicitados";
             // 
             // userDataGridView
             // 
@@ -766,9 +766,9 @@
             assignedProjectLabel.ForeColor = Color.White;
             assignedProjectLabel.Location = new Point(104, 6);
             assignedProjectLabel.Name = "assignedProjectLabel";
-            assignedProjectLabel.Size = new Size(212, 23);
+            assignedProjectLabel.Size = new Size(178, 23);
             assignedProjectLabel.TabIndex = 19;
-            assignedProjectLabel.Text = "Proyectos asignados";
+            assignedProjectLabel.Text = "Tareas asignadas";
             // 
             // clientUserButton
             // 
@@ -964,7 +964,7 @@
         private Panel requestProjectPanel;
         private PictureBox projectRequestedPictureBox;
         private ListBox requestProjectListBox;
-        private Label projectRequestedLabel;
+        private Label projectsRequestedLabel;
         private Panel assignedProjectPanel;
         private PictureBox assignedProjectPictureBox;
         private ListBox assignedProjectListBox;

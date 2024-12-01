@@ -31,6 +31,7 @@ namespace BusinessLayer.Services
 
         //metodos crud para tareas
         public void AddTasksEmployees(TaskEmployees taskEmployees) => _listaProyectosRepositories.AddTasksEmployees(taskEmployees);
+        public void UpdateTasks(List<TaskEmployees> tasksEmployees) => _listaProyectosRepositories.UpdateTasks(tasksEmployees);
         public IEnumerable<TaskEmployees> GetTasksByCode(string codeProject) => _listaProyectosRepositories.GetTasksByCode(codeProject);
         public byte[] DownloadTask(int idTask) => _listaProyectosRepositories.DownloadTask(idTask);
         public IEnumerable<TaskEmployees> GetByIdTaskEmployee(int idEmployee, int? idStatusTask = null) => _listaProyectosRepositories.GetByIdTaskEmployee(idEmployee, idStatusTask);

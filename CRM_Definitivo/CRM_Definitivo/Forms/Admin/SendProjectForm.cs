@@ -36,7 +36,7 @@ namespace PresentationLayer.Forms.Admin
             descriptionTextBox.Text = _EntitieViewModel.EntitieNow.DescriptionProject;
             nameUserLabel.Text = _EntitieViewModel.EntitieNow.Client;
             nameProjectLabel.Text = _EntitieViewModel.EntitieNow.nameProject;
-            dateLabel.Text = _EntitieViewModel.EntitieNow.dateEnd.ToString();
+            dateLabel.Text = _EntitieViewModel.EntitieNow.dateEnd.ToString("dd/MM/yy");
 
         }
 
@@ -64,6 +64,7 @@ namespace PresentationLayer.Forms.Admin
 
         private void iconButtonSendProject_Click(object sender, EventArgs e)
         {
+            var taskPending = _proyectsServices.GetTaskEmployees().Where(code => code.codeProject == _EntitieViewModel.EntitieNow.codeProyect && code.statusTask == "Pendiente").ToList();
             try
             {
                 if (fileByte == null || fileByte.Length == 0)
@@ -78,17 +79,24 @@ namespace PresentationLayer.Forms.Admin
                     return; 
                 }
 
-                Projects projects = new Projects();
-                projects.file = fileByte;
+                if(taskPending.Count >= 0)
+                {
+                    MessageBox.Show("Se requiere que todas las tareas esten completadas para subir el proyecto final", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    Projects projects = new Projects();
+                    projects.file = fileByte;
 
-                _proyectsServices.SendProjects(_EntitieViewModel.EntitieNow.codeProyect, projects.file);
+                    _proyectsServices.SendProjects(_EntitieViewModel.EntitieNow.codeProyect, projects.file);
 
-                StatusProjects statusProjects = new StatusProjects();
-                statusProjects.idStatusProyect = 7;
+                    StatusProjects statusProjects = new StatusProjects();
+                    statusProjects.idStatusProyect = 7;
 
-                _proyectsServices.StatusProject(_EntitieViewModel.EntitieNow.codeProyect, statusProjects.idStatusProyect);
+                    _proyectsServices.StatusProject(_EntitieViewModel.EntitieNow.codeProyect, statusProjects.idStatusProyect);
 
-                MessageBox.Show("El proyecto ha sido enviado correctamente, estamos en espera de la respuesta del cliente!", "Enviado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("El proyecto ha sido enviado correctamente, estamos en espera de la respuesta del cliente!", "Enviado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                } 
             }
             catch (Exception ex)
             {

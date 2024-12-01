@@ -23,5 +23,6 @@ namespace BusinessLayer.Services.InterfacesServices
         IEnumerable<TaskEmployees> GetTasksByCode(string codeProject);
         byte[] DownloadTask(int idTask);
         IEnumerable<TaskEmployees> GetByIdTaskEmployee(int idEmployee, int? idStatusTask = null);
+        void UpdateTasks(List<TaskEmployees> tasksEmployees);
     }
 }

@@ -3,88 +3,6 @@ CREATE DATABASE SistemaProyectosDB;
 USE SistemaProyectosDB
 GO
 
-SELECT tp.codeProject FROM taskProjects tp WHERE idEmployee = 6 AND idStatusTask = 3
-
-
-
-
-SELECT * FROM users				
-
-
-SELECT r.idRol, m.nameForm , p.idPermission 
-FROM rolPermission rp
-JOIN roles r ON rp.idRoles = r.idRol
-JOIN permission p ON rp.idPermission = p.idPermission
-JOIN menu m ON p.idMenu = m.idMenu
-JOIN users u on u.idRol = r.idRol
-WHERE u.idUser = @idUser;
-
-
-SELECT t.idTask, t.idProyect, p.titleName, t.nameTask, t.descriptionTask, t.idEmployee from task t 
-                                left join proyect p on t.idProyect = p.idProyect
-                                LEFT JOIN employee e on e.idEmployee = e.idUser
-                                WHERE t.idTask = 3
-
-UPDATE Users
-SET email ='default@gmail.com'
-WHERE idUser = 15;
-
-
-*/* Metodo para proyecto*/*
-SELECT idProyect, titleName, description, idClient, idEmployee, idStatusProyect, dateInit, dateEnd FROM proyect
-
-
-SELECT 
-                                P.idProyect,
-                                P.titleName,
-                                P.description,   
-                                CU.UserAccount AS Client,
-								p.idEmployee,
-                                EU.UserAccount AS Employee,
-	                            E.workStation,
-	                            P.dateInit,
-                                P.dateEnd,
-                                S.statusproyect
-
-                            FROM 
-                                Proyect P
-                            LEFT JOIN StatusProyect S ON P.idStatusProyect = S.idStatusProyect
-                            LEFT JOIN Clients CL ON P.idClient = CL.idCliente
-                            LEFT JOIN Users CU ON CL.idUser = CU.idUser
-                            LEFT JOIN Employee E ON P.idEmployee = E.idEmployee
-                            LEFT JOIN Users EU ON E.idUser = EU.idUser
-							WHERE p.idEmployee = 1
-
-							select a.idAdmin, u.userAccount from Admins a
-							LEFT JOIN Users u on a.idUser = u.idUser
-
-							select e.idEmployee, u.UserAccount from employee e LEFT JOIN Users u on e.idUser = u.idUser
-
-							select c.idCliente, u.userAccount from Clients c LEFT JOIN Users u on c.idUser = u.idUser 
-
-							/*SELECT DE PERMISOS*/
-							SELECT p.idPermission, p.idMenu, m.nameForm FROM permission p
-							LEFT JOIN menu m on p.idMenu = m.idMenu
-
-							SELECT rp.idRolPermission, rp.idPermission, rp.idRoles, m.nameForm FROM rolPermission rp
-							LEFT JOIN permission p on rp.idPermission = p.idPermission
-							LEFT JOIN menu m on p.idMenu = m.idMenu 
-
-
-
-
-
-SELECT p.idProyect, p.titleName, p.description, p.idClient, p.idEmployee, p.idStatusProyect, p.dateInit, p.dateEnd, u.UserAccount FROM proyect p
-INNER JOIN  Users u on p.idEmployee = u.idUser 
-
-
-update Users
-set idRol = 'Sijilo75'
-WHERE idUser = 5
-
-ALTER TABLE Users
-ADD CONSTRAINT Fk_Roles FOREIGN KEY(idRol) REFERENCES roles(idRol)
-
 CREATE TABLE Users 
 (
     idUser INT PRIMARY KEY identity(1,1),
@@ -122,43 +40,10 @@ CREATE TABLE employee (
 	FOREIGN KEY (idUser) REFERENCES Users(idUser) ON DELETE SET NULL
 );
 
-CREATE TABLE statusProyect (
+CREATE TABLE statusProject (
     idStatusProyect INT PRIMARY KEY identity(1,1),
     statusproyect VARCHAR(50)
 );
-
-CREATE TABLE proyect (
-    idProyect INT PRIMARY KEY identity(1,1),
-    dateInit DATE,
-    dateEnd DATE,
-    description VARCHAR(255),
-    titleName VARCHAR(100),
-    idStatusProyect INT,
-    idClient INT null,
-    idEmployee INT,
-	idTask INT,
-	[file] varbinary(MAX)
-    FOREIGN KEY (idStatusProyect) REFERENCES statusProyect(idStatusProyect),
-    FOREIGN KEY (idClient) REFERENCES Clients(idCliente)ON DELETE SET NULL,
-    FOREIGN KEY (idEmployee) REFERENCES employee(idEmployee) ON DELETE SET NULL
-);
-
-
-
-
-
-
-
-
-select * from RequestProjectClient
-
-INSERT INTO statusProyect(statusproyect)
-VALUES('Pendiente'),('Abierto'),('En progreso'),('esperando aprobacion del cliente'),('Rechazado'),('Terminado')
-	
-INSERT INTO RequestProjectClient(idClient, codeProject, nameProject, descriptionProject, idStatusProject)
-VALUES(12, 'U24947', 'proyecto prueba2', 'descripcion proyeto prueba2', 4 )
-
-
 
 
 /* NUEVAS TABLAS */
@@ -205,17 +90,6 @@ CREATE TABLE taskProjects (
 	FOREIGN KEY (idStatusTask) REFERENCES taskEmployeesStatus(idStatusTask)
 );
 
-ALTER TABLE taskProjects
-ADD fileTask VARBINARY(MAX)
-
-CREATE TABLE taskEmployeesStatus
-(
-	idStatusTask INT PRIMARY KEY IDENTITY(1,1),
-	statusTask NVARCHAR(50)
-)
-
-INSERT INTO taskEmployeesStatus(statusTask)
-VALUES('Pendiente'),('En proceso'),('Terminado')
 
 /* Consulta para proyecto de cliente */
 SELECT r.codeProject, u.UserAccount, r.nameProject, r.descriptionProject, r.[file], st.statusproyect, r.dateInit, r.dateEnd, rf.reason, rf.reasonForRejection, r.dateRegistration FROM RequestProjectClient r
@@ -244,79 +118,6 @@ WHERE t.codeProject = 'U24590'
 
 
 
-SELECT tp.codeProject FROM taskProjects tp WHERE idEmployee = 3 AND idStatusTask = 3
-
-SELECT rp.nameProject FROM RequestProjectClient rp WHERE idClient = @idClient AND idStatusProject = 9
-
-
-
-
-
-
-
-SELECT r.codeProject, u.UserAccount, r.nameProject, r.descriptionProject, r.[file], st.statusproyect, r.dateInit, r.dateEnd, rf.reason, rf.reasonForRejection, r.dateRegistration FROM RequestProjectClient r
-                                 LEFT JOIN RefusedProject rf on rf.idRefused = r.idRefused
-                                 LEFT JOIN Clients c on c.idCliente = r.idClient
-                                 LEFT JOIN Users u on u.idUser = c.idUser
-                                 LEFT JOIN statusProyect st on st.idStatusProyect = r.idStatusProject
-                                 WHERE idClient = 11 AND st.statusproyect = 'Pendiente'
-
-
-
-
-
-
-
-
-
-
-
-
-
-alter tabLE Proyect
-ADD task INT
-
-alter table Proyect
-ADD CONSTRAINT Fk_task FOREIGN KEY(task) REFERENCES task(idTask)
-
-
-select * from task
-
-
-CREATE TABLE task (
-    idTask INT PRIMARY KEY identity(1,1),
-    nameTask VARCHAR(100),
-    descriptionTask VARCHAR(255),
-    idEmployee INT,
-    idProyect INT,
-    FOREIGN KEY (idEmployee) REFERENCES employee(idEmployee),
-    FOREIGN KEY (idProyect) REFERENCES proyect(idProyect)
-);
-
-
-SELECT t.idProyect, p.titleName, t.nameTask, t.descriptionTask, t.idEmployee from task t 
-left join proyect p on t.idProyect = p.idProyect
-LEFT JOIN employee e on e.idEmployee = e.idUser
-WHERE t.idProyect = 1
-
-
-SELECT 
-                                P.idProyect,
-                                P.titleName,
-								p.idClient,
-								p.idEmployee,
-								t.nameTask,
-	                            P.dateInit,
-                                P.dateEnd,
-                                p.idStatusProyect
-
-                            FROM 
-                                Proyect P
-								left join task t on t.idTask = p.task
-
-
-EXEC sp_rename 'roles.idRoles', 'idRol', 'COLUMN';
-
 
 CREATE TABLE roles (
     idRol INT PRIMARY KEY identity(1,1),
@@ -343,40 +144,6 @@ CREATE TABLE menu (
     nameForm VARCHAR(50)
 );
 
-INSERT INTO Clients(idUser) 
-VALUES (1); 
-
-INSERT INTO Admins (idUser) 
-VALUES (2);
-
-INSERT INTO employee (idUser, comment, workStation) 
-VALUES (3, 'Desarrollador Full Stack', 'Oficina 101');
-
-INSERT INTO statusProyect (statusproyect) 
-VALUES 
-('En Proceso'),
-('Finalizando'),
-('Finalizado');
-
-INSERT INTO proyect (dateInit, dateEnd, description, titleName, idStatusProyect, idClient, idEmployee) 
-VALUES 
-('2024-01-01', '2024-06-01', 'Proyecto de migración a la nube', 'Migración Nube', 1, 1, 1);
-
-INSERT INTO task (nameTask, descriptionTask, idEmployee, idProyect) 
-VALUES 
-('Desarrollo Backend', 'Implementación del API REST', 1, 1);
-
-INSERT INTO roles (Rol) 
-VALUES 
-('Admin'),
-('Empleado');
-
-
-SELECT idRol FROM roles WHERE Rol = 'Admin';
-
-DELETE FROM roles WHERE Rol = 'ADMIN';
-
-DROP TRIGGER InsertRoleInSpecificTable
 
 
 CREATE TRIGGER InsertRoleInSpecificTable
@@ -482,17 +249,6 @@ BEGIN
     DEALLOCATE user_cursor;
 END;
 
-*/*EN PROCESO DE PRUEBA */*
-CREATE TRIGGER trg_DeleteMenu ON menu
-AFTER DELETE
-AS
-BEGIN
-    DELETE FROM rolPermission
-    WHERE idPermission IN (SELECT idPermission FROM permission WHERE idMenu IN (SELECT idMenu FROM DELETED));
-
-    DELETE FROM permission
-    WHERE idMenu IN (SELECT idMenu FROM DELETED);
-END;
 
 	
 

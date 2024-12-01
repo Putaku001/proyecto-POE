@@ -35,8 +35,6 @@ namespace DataAccessLayer.Repositories
             }
         }
 
-        //METODOS PARA PROYECTOS
-
         public IEnumerable<Projects> GetRequestProjectsByStatus(string statusProject)
         {
             using (var connection = _dbConnection.GetConnection())
@@ -112,7 +110,37 @@ namespace DataAccessLayer.Repositories
             }
         }
 
-        //metodos para asignar tareas
+
+
+
+        public void UpdateTasks(List<TaskEmployees> tasks)
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (var transaction = connection.BeginTransaction())
+                {
+                    try
+                    {
+                        var query = "UPDATE taskProjects SET idStatusTask = @idStatusTask WHERE idTask = @idTask";
+
+                        foreach (var task in tasks)
+                        {
+                            connection.Execute(query, new { idStatusTask = task.idStatusTask, idTask = task.idTask }, transaction);
+                        }
+
+                        transaction.Commit();
+                    }
+                    catch (Exception)
+                    {
+                        transaction.Rollback();
+                        throw;
+                    }
+                }
+            }
+        }
+
         public void AddTasksEmployees(TaskEmployees taskEmployees)
         {
             using(var connection = _dbConnection.GetConnection())
@@ -181,16 +209,6 @@ namespace DataAccessLayer.Repositories
                 return connection.QueryFirstOrDefault<byte[]>(query, new { idProject });
             }
         }
-
-        //public byte[] getProjectInDB(string codeProject)
-        //{
-        //    using (var connection = _dbConnection.GetConnection())
-        //    {
-        //        string query = @"SELECT [file] FROM RequestProjectClient WHERE codeProject = @codeProject";
-
-        //        return connection.QueryFirstOrDefault<byte[]>(query, new { codeProject });
-        //    }
-        //}
 
     }
 }
