@@ -1,6 +1,7 @@
 ﻿using BusinessLayer.Services.InterfacesServices;
 using BusinessLayer.Services.InterfacesServices.InterfacesUser;
 using CommonLayer.Entities.Projects;
+using CommonLayer.Entities.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,18 +16,15 @@ namespace PresentationLayer.Forms.Admin
 {
     public partial class AssignamentTaskEmployeeForm : Form
     {
-
-        public string CodeProject { get; set; }
-        public string NameProject { get; set; }
-        public string DescriptionProject { get; set; }
-        public string Client { get; set; }
         private readonly IProjectsServices _proyectsServices;
         private readonly IEmployeeServices _usersServices;
-        public AssignamentTaskEmployeeForm(IProjectsServices proyectsServices, IEmployeeServices usersServices)
+        private readonly EntitieViewModel _employeeViewModel;
+        public AssignamentTaskEmployeeForm(IProjectsServices proyectsServices, IEmployeeServices usersServices, EntitieViewModel entitieViewModel)
         {
             InitializeComponent();
             _proyectsServices = proyectsServices;
             _usersServices = usersServices;
+            _employeeViewModel = entitieViewModel;
             LoadEmployee();
         }
 
@@ -44,10 +42,10 @@ namespace PresentationLayer.Forms.Admin
             assignamentTasksDataGridView.Columns["idStatusTask"].Visible = false;
             assignamentTasksDataGridView.Columns["fileTask"].Visible = false;
 
-            clientUserLabel.Text = Client;
-            codeProjectLabel.Text = CodeProject;
-            nameProjectLabel.Text = NameProject;
-            descriptionTextBox.Text = DescriptionProject;
+            clientUserLabel.Text = _employeeViewModel.EntitieNow.Client;
+            codeProjectLabel.Text = _employeeViewModel.EntitieNow.codeProyect;
+            nameProjectLabel.Text = _employeeViewModel.EntitieNow.nameProject;
+            descriptionTextBox.Text = _employeeViewModel.EntitieNow.DescriptionProject;
         }
 
         private void SetNamesColumns(DataGridView dataGridView, Dictionary<String, string> columNames)
@@ -88,7 +86,7 @@ namespace PresentationLayer.Forms.Admin
             AssignamentTaskEmployees.dateEnd = timeEndDateTimePicker.Value;
 
             var dateEnd = timeEndDateTimePicker.Value;
-            _proyectsServices.UpdateDates(CodeProject, dateEnd);
+            _proyectsServices.UpdateDates(_employeeViewModel.EntitieNow.codeProyect, dateEnd);
 
             _proyectsServices.AddTasksEmployees(AssignamentTaskEmployees);
             MessageBox.Show("La tarea se ha agregado exitosamente!");

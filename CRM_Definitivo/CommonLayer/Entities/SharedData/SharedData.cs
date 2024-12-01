@@ -13,5 +13,10 @@ namespace CommonLayer.Entities.ViewModel
         public string codeProyect { get; set; }
         public string Description { get; set; }
         public string nameProject { get; set; }
+
+        //Datos para AssignamentTaskEmployee
+        public string DescriptionProject { get; set; }
+        public string Client { get; set; }
+        public DateTime dateEnd { get; set; }
     }
 }

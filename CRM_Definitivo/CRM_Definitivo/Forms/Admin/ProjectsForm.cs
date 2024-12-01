@@ -1,7 +1,9 @@
 ﻿using BusinessLayer.Services;
 using BusinessLayer.Services.InterfacesServices;
 using CommonLayer.Entities.Projects;
+using CommonLayer.Entities.ViewModel;
 using Microsoft.Extensions.DependencyInjection;
+using MimeKit;
 using PresentationLayer.Forms.Admin;
 using PresentationLayer.Resources;
 using System;
@@ -20,11 +22,13 @@ namespace PresentationLayer.Forms
     {
         private readonly IProjectsServices _proyectoServices;
         private readonly IServiceProvider _serviceProvider;
-        public ProjectsForm(IProjectsServices proyectoServices, IServiceProvider serviceProvider)
+        private readonly EntitieViewModel _entitieViewModel;
+        public ProjectsForm(IProjectsServices proyectoServices, IServiceProvider serviceProvider, EntitieViewModel entitieViewModel)
         {
             InitializeComponent();
             _proyectoServices = proyectoServices;
             _serviceProvider = serviceProvider;
+            _entitieViewModel = entitieViewModel;
             LoadProyecto();
         }
 
@@ -152,10 +156,16 @@ namespace PresentationLayer.Forms
                 string DescriptionProject = requestProjectsDataGridView.Rows[e.RowIndex].Cells["descriptionProject"].Value.ToString();
 
                 var assignamentTaskEmployeeForm = _serviceProvider.GetRequiredService<AssignamentTaskEmployeeForm>();
-                assignamentTaskEmployeeForm.Client = Client;
-                assignamentTaskEmployeeForm.CodeProject = CodeProject;
-                assignamentTaskEmployeeForm.NameProject = NameProject;
-                assignamentTaskEmployeeForm.DescriptionProject = DescriptionProject;
+
+                SharedData sharedData = new SharedData
+                {
+                    Client = Client,
+                    codeProyect = CodeProject,
+                    nameProject = NameProject,
+                    DescriptionProject = DescriptionProject
+                };
+
+                _entitieViewModel.UpdateEntities(sharedData);
                 assignamentTaskEmployeeForm.ShowDialog();
 
 
@@ -183,11 +193,22 @@ namespace PresentationLayer.Forms
                 DateTime dateEnd = Convert.ToDateTime(projectProgressDataGridView.Rows[e.RowIndex].Cells["dateEnd"].Value.ToString());
 
                 var SendProjectForm = _serviceProvider.GetRequiredService<SendProjectForm>();
-                SendProjectForm.CodeProject = CodeProject;
-                SendProjectForm.NameProject = NameProject;
-                SendProjectForm.Client = Client;
-                SendProjectForm.DescriptionProject = DescriptionProject;
-                SendProjectForm.DateEnd = dateEnd;
+                //SendProjectForm.CodeProject = CodeProject;
+                //SendProjectForm.NameProject = NameProject;
+                //SendProjectForm.Client = Client;
+                //SendProjectForm.DescriptionProject = DescriptionProject;
+                //SendProjectForm.DateEnd = dateEnd;
+
+                SharedData sharedData = new SharedData()
+                {
+                    codeProyect = CodeProject,
+                    nameProject = NameProject,
+                    Client = Client,
+                    DescriptionProject = DescriptionProject,
+                    dateEnd = dateEnd,
+                };
+
+                _entitieViewModel.UpdateEntities(sharedData);
                 SendProjectForm.ShowDialog();
 
                 LoadProyecto();
