@@ -1,6 +1,7 @@
 ﻿using BusinessLayer.Services.InterfacesServices;
 using BusinessLayer.Services.InterfacesServices.InterfacesUser;
 using CommonLayer.Entities.Projects;
+using CommonLayer.Entities.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,18 +16,15 @@ namespace PresentationLayer.Forms.Admin
 {
     public partial class SendProjectForm : Form
     {
-        public string CodeProject { get; set; }
-        public string NameProject { get; set; }
-        public string DescriptionProject { get; set; }
-        public string Client { get; set; }
-        public DateTime DateEnd { get; set; }
         byte[] fileByte;
 
+        private EntitieViewModel _EntitieViewModel;
         private readonly IProjectsServices _proyectsServices;
         private readonly IEmployeeServices _usersServices;
 
-        public SendProjectForm(IProjectsServices proyectsServices, IEmployeeServices usersServices)
+        public SendProjectForm(EntitieViewModel entitieViewModel, IProjectsServices proyectsServices, IEmployeeServices usersServices)
         {
+            _EntitieViewModel = entitieViewModel;
             _proyectsServices = proyectsServices;
             _usersServices = usersServices;
             InitializeComponent();
@@ -34,11 +32,11 @@ namespace PresentationLayer.Forms.Admin
 
         private void SendProjectForm_Load(object sender, EventArgs e)
         {
-            codeProjectLabel.Text = CodeProject;
-            descriptionTextBox.Text = DescriptionProject;
-            nameUserLabel.Text = Client;
-            nameProjectLabel.Text = NameProject;
-            dateLabel.Text = DateEnd.ToString();
+            codeProjectLabel.Text = _EntitieViewModel.EntitieNow.codeProyect;
+            descriptionTextBox.Text = _EntitieViewModel.EntitieNow.DescriptionProject;
+            nameUserLabel.Text = _EntitieViewModel.EntitieNow.Client;
+            nameProjectLabel.Text = _EntitieViewModel.EntitieNow.nameProject;
+            dateLabel.Text = _EntitieViewModel.EntitieNow.dateEnd.ToString();
 
         }
 
@@ -83,12 +81,12 @@ namespace PresentationLayer.Forms.Admin
                 Projects projects = new Projects();
                 projects.file = fileByte;
 
-                _proyectsServices.SendProjects(CodeProject, projects.file);
+                _proyectsServices.SendProjects(_EntitieViewModel.EntitieNow.codeProyect, projects.file);
 
                 StatusProjects statusProjects = new StatusProjects();
                 statusProjects.idStatusProyect = 7;
 
-                _proyectsServices.StatusProject(CodeProject, statusProjects.idStatusProyect);
+                _proyectsServices.StatusProject(_EntitieViewModel.EntitieNow.codeProyect, statusProjects.idStatusProyect);
 
                 MessageBox.Show("El proyecto ha sido enviado correctamente, estamos en espera de la respuesta del cliente!", "Enviado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

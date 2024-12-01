@@ -221,11 +221,7 @@ namespace PresentationLayer.Forms
                 DateTime dateEnd = Convert.ToDateTime(projectProgressDataGridView.Rows[e.RowIndex].Cells["dateEnd"].Value.ToString());
 
                 var SendProjectForm = _serviceProvider.GetRequiredService<SendProjectForm>();
-                //SendProjectForm.CodeProject = CodeProject;
-                //SendProjectForm.NameProject = NameProject;
-                //SendProjectForm.Client = Client;
-                //SendProjectForm.DescriptionProject = DescriptionProject;
-                //SendProjectForm.DateEnd = dateEnd;
+
 
                 SharedData sharedData = new SharedData()
                 {
