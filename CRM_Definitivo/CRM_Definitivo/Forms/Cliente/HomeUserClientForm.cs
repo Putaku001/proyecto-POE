@@ -18,17 +18,16 @@ namespace PresentationLayer.Forms.Cliente
     public partial class HomeUserClientForm : Form
     {
         private readonly IProjectsClientServices _projectsClientServices;
-        private readonly IEmployeeServices _usersServices;
         private readonly IClientsServices _clientsServices;
         int idUser;
-        public HomeUserClientForm(IProjectsClientServices projectsClientServices, IEmployeeServices usersServices, IClientsServices clientsServices)
+        public HomeUserClientForm(IProjectsClientServices projectsClientServices, IClientsServices clientsServices)
         {
             InitializeComponent();
             _projectsClientServices = projectsClientServices;
-            _usersServices = usersServices;
+            _clientsServices = clientsServices;
             idUser = CaptureData.idUser;
             LoadData();
-            _clientsServices = clientsServices;
+            
         }
 
         private void LoadData()
@@ -40,7 +39,8 @@ namespace PresentationLayer.Forms.Cliente
 
         private void ShowStatusProject()
         {
-            int idClient = _clientsServices.GetClients().Where(id => id.idUser == idUser).Select(client => client.idCliente).FirstOrDefault();
+            int idClient = _clientsServices.GetByIdClients(idUser).Select(client => client.idCliente).FirstOrDefault();
+
             var allProjects = _projectsClientServices.GetsProjectsByIdClient(idClient).OrderByDescending(date => date.dateRegistration).ToList();
 
             if(allProjects.Any())

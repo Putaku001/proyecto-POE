@@ -28,5 +28,17 @@ namespace DataAccessLayer.Repositories.UsersRepositories
                 return connection.Query<Clients>(query);
             }
         }
+
+        public IEnumerable<Clients> GetByIdClients(int idUser)
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = @"select c.idCliente, c.idUser, u.userAccount from Clients c 
+                                 LEFT JOIN Users u on c.idUser = u.idUser
+                                 WHERE c.idUser = @idUser";
+
+                return connection.Query<Clients>(query, new { idUser });
+            }
+        }
     }
 }

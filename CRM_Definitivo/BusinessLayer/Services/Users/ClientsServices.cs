@@ -19,5 +19,6 @@ namespace BusinessLayer.Services.Users
         }
 
         public IEnumerable<Clients> GetClients() => _clientsRepositories.GetClients();
+        public IEnumerable<Clients> GetByIdClients(int idUser) => _clientsRepositories.GetByIdClients(idUser);
     }
 }
