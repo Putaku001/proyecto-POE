@@ -29,5 +29,7 @@ namespace BusinessLayer.Services.Interfaces
         void UpdateStatusUser(int idUser, string statususer);
         void UpdateWorkstation(Employee employee);
         IEnumerable<Employees> GetInfoEmployee(int idUser);
+
+        bool UserExists(string userAccount);
     }
 }

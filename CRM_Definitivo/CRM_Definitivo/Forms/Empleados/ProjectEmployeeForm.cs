@@ -2,6 +2,8 @@
 using BusinessLayer.Services.Interfaces;
 using BusinessLayer.Services.InterfacesServices;
 using CommonLayer.Entities;
+using FluentValidation;
+using PresentationLayer.Validations;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -112,17 +114,66 @@ namespace PresentationLayer.Forms.Empleados
         }
 
 
+
         private void submitButton_Click(object sender, EventArgs e)
         {
-            int idTask = int.Parse(projectsEmployeeDataGridView.CurrentRow.Cells[1].Value.ToString());
-            int updateStatus = Convert.ToInt32(taskStatusComboBox.SelectedValue);
+            int idTask;
+            int updateStatus;
             byte[] updateFile = fileByte;
 
-            _listProyectsServices.UpdateTaskEmployee(idTask, updateFile, updateStatus);
+            var idTaskValidator = new InlineValidator<int>();
+            idTaskValidator.RuleFor(id => id)
+                           .GreaterThan(0).WithMessage("El ID de la tarea debe ser mayor a 0.");
 
+            if (!int.TryParse(projectsEmployeeDataGridView.CurrentRow.Cells[1].Value.ToString(), out idTask))
+            {
+                MessageBox.Show("El ID de la tarea debe ser un número válido.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-            MessageBox.Show("Se ha enviado correctamente", "Enviado correctamente", MessageBoxButtons.OK);
-            LoadData();
+            var idValidationResult = idTaskValidator.Validate(idTask);
+            if (!idValidationResult.IsValid)
+            {
+                MessageBox.Show(string.Join(Environment.NewLine, idValidationResult.Errors.Select(e => e.ErrorMessage)), "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            var statusValidator = new InlineValidator<int>();
+            statusValidator.RuleFor(status => status)
+                           .InclusiveBetween(1, 3).WithMessage("El estado de la tarea debe estar entre 1 y 3.");
+
+            if (!int.TryParse(taskStatusComboBox.SelectedValue?.ToString(), out updateStatus))
+            {
+                MessageBox.Show("El estado de la tarea debe ser un número válido.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            var statusValidationResult = statusValidator.Validate(updateStatus);
+            if (!statusValidationResult.IsValid)
+            {
+                MessageBox.Show(string.Join(Environment.NewLine, statusValidationResult.Errors.Select(e => e.ErrorMessage)), "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (updateFile == null || updateFile.Length == 0)
+            {
+                MessageBox.Show("El archivo no puede estar vacío.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            try
+            {
+                _listProyectsServices.UpdateTaskEmployee(idTask, updateFile, updateStatus);
+
+                MessageBox.Show("Se ha enviado correctamente", "Enviado correctamente", MessageBoxButtons.OK);
+                LoadData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error al intentar actualizar la tarea: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+
     }
 }

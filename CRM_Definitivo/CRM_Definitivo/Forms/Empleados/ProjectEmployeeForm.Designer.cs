@@ -35,6 +35,7 @@
             taskStatusComboBox = new ComboBox();
             flowLayoutLinkFilePanel = new FlowLayoutPanel();
             labelLinkFile = new Label();
+            label1 = new Label();
             submitButton = new FontAwesome.Sharp.IconButton();
             descriptionTaskTextBox = new TextBox();
             projectNameLabel = new Label();
@@ -110,16 +111,17 @@
             // taskStatusComboBox
             // 
             taskStatusComboBox.FormattingEnabled = true;
-            taskStatusComboBox.Location = new Point(92, 375);
+            taskStatusComboBox.Location = new Point(90, 416);
             taskStatusComboBox.Name = "taskStatusComboBox";
-            taskStatusComboBox.Size = new Size(349, 31);
+            taskStatusComboBox.Size = new Size(349, 38);
             taskStatusComboBox.TabIndex = 14;
             // 
             // flowLayoutLinkFilePanel
             // 
             flowLayoutLinkFilePanel.BackColor = Color.White;
             flowLayoutLinkFilePanel.Controls.Add(labelLinkFile);
-            flowLayoutLinkFilePanel.Location = new Point(17, 451);
+            flowLayoutLinkFilePanel.Controls.Add(label1);
+            flowLayoutLinkFilePanel.Location = new Point(17, 511);
             flowLayoutLinkFilePanel.Name = "flowLayoutLinkFilePanel";
             flowLayoutLinkFilePanel.Size = new Size(526, 135);
             flowLayoutLinkFilePanel.TabIndex = 12;
@@ -132,9 +134,18 @@
             labelLinkFile.ForeColor = SystemColors.ControlDarkDark;
             labelLinkFile.Location = new Point(3, 0);
             labelLinkFile.Name = "labelLinkFile";
-            labelLinkFile.Size = new Size(54, 18);
+            labelLinkFile.Size = new Size(64, 21);
             labelLinkFile.TabIndex = 11;
             labelLinkFile.Text = "label3";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(73, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(86, 30);
+            label1.TabIndex = 12;
+            label1.Text = "label1";
             // 
             // submitButton
             // 
@@ -143,7 +154,7 @@
             submitButton.IconChar = FontAwesome.Sharp.IconChar.None;
             submitButton.IconColor = Color.Black;
             submitButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            submitButton.Location = new Point(187, 629);
+            submitButton.Location = new Point(187, 684);
             submitButton.Name = "submitButton";
             submitButton.Size = new Size(166, 57);
             submitButton.TabIndex = 2;
@@ -167,7 +178,7 @@
             projectNameLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             projectNameLabel.Location = new Point(13, 29);
             projectNameLabel.Name = "projectNameLabel";
-            projectNameLabel.Size = new Size(219, 23);
+            projectNameLabel.Size = new Size(260, 28);
             projectNameLabel.TabIndex = 0;
             projectNameLabel.Text = "Nombre del Proyecto";
             // 
@@ -176,9 +187,9 @@
             linkFileLabel.AutoSize = true;
             linkFileLabel.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             linkFileLabel.LinkColor = Color.White;
-            linkFileLabel.Location = new Point(110, 320);
+            linkFileLabel.Location = new Point(108, 338);
             linkFileLabel.Name = "linkFileLabel";
-            linkFileLabel.Size = new Size(286, 21);
+            linkFileLabel.Size = new Size(331, 23);
             linkFileLabel.TabIndex = 3;
             linkFileLabel.TabStop = true;
             linkFileLabel.Text = "En este apartado subira su tarea";
@@ -190,7 +201,7 @@
             descriptionLabel.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             descriptionLabel.Location = new Point(17, 68);
             descriptionLabel.Name = "descriptionLabel";
-            descriptionLabel.Size = new Size(107, 21);
+            descriptionLabel.Size = new Size(123, 23);
             descriptionLabel.TabIndex = 5;
             descriptionLabel.Text = "Descripcion";
             // 
@@ -201,7 +212,7 @@
             nameTaskLabel.ForeColor = Color.White;
             nameTaskLabel.Location = new Point(313, 3);
             nameTaskLabel.Name = "nameTaskLabel";
-            nameTaskLabel.Size = new Size(63, 23);
+            nameTaskLabel.Size = new Size(77, 28);
             nameTaskLabel.TabIndex = 7;
             nameTaskLabel.Text = "Tarea";
             // 
@@ -223,7 +234,7 @@
             projectsAssignamentLabel.ForeColor = Color.White;
             projectsAssignamentLabel.Location = new Point(572, 0);
             projectsAssignamentLabel.Name = "projectsAssignamentLabel";
-            projectsAssignamentLabel.Size = new Size(331, 44);
+            projectsAssignamentLabel.Size = new Size(395, 51);
             projectsAssignamentLabel.TabIndex = 13;
             projectsAssignamentLabel.Text = "Tareas Asignadas";
             // 
@@ -239,7 +250,7 @@
             // 
             // ProjectEmployeeForm
             // 
-            AutoScaleDimensions = new SizeF(9F, 20F);
+            AutoScaleDimensions = new SizeF(11F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1416, 895);
@@ -282,5 +293,6 @@
         private Label projectsAssignamentLabel;
         private ComboBox taskStatusComboBox;
         private Panel admistrationTaskPanel;
+        private Label label1;
     }
 }

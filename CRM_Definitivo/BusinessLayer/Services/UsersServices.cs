@@ -47,5 +47,10 @@ namespace BusinessLayer.Services
         public IEnumerable<Employees> GetInfoEmployee(int idUser) => _usuariosrepositoriess.GetInfoEmployee(idUser);
         public void UpdateWorkstation(Employee employee) => _usuariosrepositoriess.UpdateWorkstation(employee);
 
+        public bool UserExists(string userAccount)
+        {
+            return _usuariosrepositoriess.UserExists(userAccount);  
+        }
+
     }
 }

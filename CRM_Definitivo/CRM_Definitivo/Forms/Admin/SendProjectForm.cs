@@ -66,21 +66,37 @@ namespace PresentationLayer.Forms.Admin
 
         private void iconButtonSendProject_Click(object sender, EventArgs e)
         {
-            if (fileByte == null || fileByte.Length == 0)
+            try
             {
-                MessageBox.Show("Por favor, seleccione un archivo antes de enviar el proyecto.", "Archivo requerido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                if (fileByte == null || fileByte.Length == 0)
+                {
+                    MessageBox.Show("Por favor, seleccione un archivo antes de enviar el proyecto.", "Archivo requerido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return; 
+                }
+
+                if (_proyectsServices == null)
+                {
+                    MessageBox.Show("El servicio de proyectos no está inicializado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return; 
+                }
+
+                Projects projects = new Projects();
+                projects.file = fileByte;
+
+                _proyectsServices.SendProjects(CodeProject, projects.file);
+
+                StatusProjects statusProjects = new StatusProjects();
+                statusProjects.idStatusProyect = 7;
+
+                _proyectsServices.StatusProject(CodeProject, statusProjects.idStatusProyect);
+
+                MessageBox.Show("El proyecto ha sido enviado correctamente, estamos en espera de la respuesta del cliente!", "Enviado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
-            Projects projects = new Projects();
-            var file = projects.file = fileByte;
-            _proyectsServices.SendProjects(CodeProject, file);
-
-            StatusProjects statusProjects = new StatusProjects();
-            int idStatusProject = statusProjects.idStatusProyect = 7;
-            _proyectsServices.StatusProject(CodeProject, idStatusProject);
-
-            MessageBox.Show("El proyecto ha sido enviado correctamente, estamos en espera de la respuesta del cliente!", "Enviado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
     }
 }

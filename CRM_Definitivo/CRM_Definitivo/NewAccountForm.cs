@@ -100,9 +100,18 @@ namespace PresentationLayer
         {
             try
             {
+                string userAccount = userNameTextBox.Text;
+
+                // Verifica si el nombre de usuario ya existe
+                if (_usersServices.UserExists(userAccount))
+                {
+                    MessageBox.Show("El nombre de usuario ya está en uso. Por favor, elija otro.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 User newAccount = new User
                 {
-                    UserAccount = userNameTextBox.Text,
+                    UserAccount = userAccount,
                     idRol = 4,
                     NameUser = nameTexBox.Text,
                     LastName = lastNameTexBox.Text,
@@ -139,6 +148,8 @@ namespace PresentationLayer
                 MessageBox.Show($"Error al crear la cuenta: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
 
         private void ShowSuccessNotification(string userName)
         {

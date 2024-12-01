@@ -30,6 +30,18 @@ namespace DataAccessLayer.Repositories
                 return connection.QueryFirstOrDefault<User>(query, new { UserAccount, passworduser });
             }
         }
+        public bool UserExists(string userAccount)
+        {
+            string query = "SELECT COUNT(1) FROM Users WHERE UserAccount = @UserAccount";
+
+            using (var connection = _dbConnection.GetConnection())
+            {
+                int count = connection.ExecuteScalar<int>(query, new { UserAccount = userAccount });
+                return count > 0;
+            }
+        }
+
+
 
         public IEnumerable<User> GetAllUser()
         {
