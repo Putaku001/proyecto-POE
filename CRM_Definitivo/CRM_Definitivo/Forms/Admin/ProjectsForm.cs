@@ -145,25 +145,27 @@ namespace PresentationLayer.Forms
             SetCustomColumnNames(projectsWaitingResponseDataGridView, columnNamesProjects);
         }
 
+
         private void requestProjectsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == requestProjectsDataGridView.Columns["SelectPr"].Index)
             {
                 try
                 {
+
                     string CodeProject = requestProjectsDataGridView.Rows[e.RowIndex].Cells["codeProject"].Value?.ToString();
                     string NameProject = requestProjectsDataGridView.Rows[e.RowIndex].Cells["nameProject"].Value?.ToString();
                     string Client = requestProjectsDataGridView.Rows[e.RowIndex].Cells["userAccount"].Value?.ToString();
                     string DescriptionProject = requestProjectsDataGridView.Rows[e.RowIndex].Cells["descriptionProject"].Value?.ToString();
 
-                    if (string.IsNullOrWhiteSpace(CodeProject) || string.IsNullOrWhiteSpace(NameProject))
+                    if (string.IsNullOrWhiteSpace(CodeProject) || string.IsNullOrWhiteSpace(NameProject) ||
+                        string.IsNullOrWhiteSpace(Client) || string.IsNullOrWhiteSpace(DescriptionProject))
                     {
-                        MessageBox.Show("Faltan datos necesarios del proyecto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Faltan datos necesarios del proyecto. Por favor, verifique los campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
 
                     var assignamentTaskEmployeeForm = _serviceProvider.GetRequiredService<AssignamentTaskEmployeeForm>();
-
 
                     SharedData sharedData = new SharedData
                     {
@@ -178,26 +180,19 @@ namespace PresentationLayer.Forms
 
                     if (dialogResult != DialogResult.OK)
                     {
-                        MessageBox.Show("La operación fue cancelada. No se realizaron cambios.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("La asignación de tareas fue cancelada.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
                     }
 
-                    if (!int.TryParse(CodeProject, out int codeProjectInt))
-                    {
-                        MessageBox.Show("El código del proyecto no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                    }
-                    Projects dateInit = new Projects
-                    {
-                        dateInit = DateTime.Now
-                    };
-                    _proyectoServices.UpdateDates(CodeProject, dateInit.dateInit);
+                    Projects dateInit = new Projects();
+                    var dateInitial = dateInit.dateInit = DateTime.Now;
+                    _proyectoServices.UpdateDates(CodeProject, dateInitial);
 
-                    StatusProjects statusProjects = new StatusProjects
-                    {
-                        idStatusProyect = 6
-                    };
-                    _proyectoServices.StatusProject(CodeProject, statusProjects.idStatusProyect);
+
+                    StatusProjects statusProjects = new StatusProjects();
+                    int status = statusProjects.idStatusProyect = 6;
+                    _proyectoServices.StatusProject(CodeProject, status);
+
 
                     LoadProyecto();
                 }

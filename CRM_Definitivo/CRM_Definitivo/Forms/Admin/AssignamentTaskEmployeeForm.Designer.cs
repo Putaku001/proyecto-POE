@@ -50,6 +50,7 @@
             iconAssignamentTaskButton = new FontAwesome.Sharp.IconButton();
             codeProjectLabel = new Label();
             controlPanel = new Panel();
+            cancelIconButton = new FontAwesome.Sharp.IconButton();
             errorValidation = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)assignamentTasksDataGridView).BeginInit();
             dateGroupBox.SuspendLayout();
@@ -241,13 +242,13 @@
             // 
             // iconAssignamentTaskButton
             // 
-            iconAssignamentTaskButton.BackColor = Color.FromArgb(255, 128, 0);
+            iconAssignamentTaskButton.BackColor = Color.FromArgb(0, 192, 0);
             iconAssignamentTaskButton.FlatStyle = FlatStyle.Popup;
             iconAssignamentTaskButton.ForeColor = Color.White;
             iconAssignamentTaskButton.IconChar = FontAwesome.Sharp.IconChar.None;
             iconAssignamentTaskButton.IconColor = Color.Black;
             iconAssignamentTaskButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconAssignamentTaskButton.Location = new Point(429, 541);
+            iconAssignamentTaskButton.Location = new Point(562, 541);
             iconAssignamentTaskButton.Name = "iconAssignamentTaskButton";
             iconAssignamentTaskButton.Size = new Size(209, 31);
             iconAssignamentTaskButton.TabIndex = 17;
@@ -270,6 +271,7 @@
             // controlPanel
             // 
             controlPanel.BackColor = Color.White;
+            controlPanel.Controls.Add(cancelIconButton);
             controlPanel.Controls.Add(iconAssignamentTaskButton);
             controlPanel.Controls.Add(assignamentTaskGroupBox);
             controlPanel.Controls.Add(dateGroupBox);
@@ -280,6 +282,22 @@
             controlPanel.Name = "controlPanel";
             controlPanel.Size = new Size(1120, 597);
             controlPanel.TabIndex = 19;
+            // 
+            // cancelIconButton
+            // 
+            cancelIconButton.BackColor = Color.FromArgb(255, 128, 0);
+            cancelIconButton.FlatStyle = FlatStyle.Popup;
+            cancelIconButton.ForeColor = Color.White;
+            cancelIconButton.IconChar = FontAwesome.Sharp.IconChar.None;
+            cancelIconButton.IconColor = Color.Black;
+            cancelIconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            cancelIconButton.Location = new Point(205, 541);
+            cancelIconButton.Name = "cancelIconButton";
+            cancelIconButton.Size = new Size(209, 31);
+            cancelIconButton.TabIndex = 18;
+            cancelIconButton.Text = "Cancelar";
+            cancelIconButton.UseVisualStyleBackColor = false;
+            cancelIconButton.Click += cancelIconButton_Click;
             // 
             // errorValidation
             // 
@@ -335,5 +353,6 @@
         private Label errorTaskLabel;
         private Label errorDescripcionLabel;
         private ErrorProvider errorValidation;
+        private FontAwesome.Sharp.IconButton cancelIconButton;
     }
 }

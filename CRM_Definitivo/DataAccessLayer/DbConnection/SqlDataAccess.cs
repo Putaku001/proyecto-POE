@@ -16,7 +16,7 @@ namespace DataAccessLayer.DbSqlDataAccess
 
         public SqlDataAccess()
         {
-            _connectionString = "Data Source=192.168.0.4\\SQLEXPRESS;Initial Catalog=SistemaProyectosDB;Persist Security Info=True;User ID=Admin;Password=Sijilo75;Encrypt=True;Trust Server Certificate=True";
+            _connectionString = "Data Source=DESKTOP-JDM7JV2\\MSSQLSERVER01;Initial Catalog=SistemaProyectosDB;Integrated Security=True;Encrypt=False";
         }
 
         public SqlConnection GetConnection()

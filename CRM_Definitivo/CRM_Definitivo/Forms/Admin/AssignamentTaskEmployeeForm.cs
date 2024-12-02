@@ -105,19 +105,16 @@ namespace PresentationLayer.Forms.Admin
 
             _proyectsServices.AddTasksEmployees(AssignamentTaskEmployees);
 
-
             isTaskAssigned = true;
 
+
             MessageBox.Show("La tarea se ha agregado exitosamente!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.DialogResult = DialogResult.OK;
+
+            this.Close();
         }
 
-        private void AssignamentTaskEmployeeForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (!isTaskAssigned)
-            {
-                MessageBox.Show("La tarea no se ha asignado. El estado no se actualizará.");
-            }
-        }
+
 
 
         private void DisplayValidationErrors(ValidationResult result)
@@ -164,6 +161,13 @@ namespace PresentationLayer.Forms.Admin
             errorValidation.SetError(descriptionTextBox, string.Empty);
             errorValidation.SetError(taskTextBox, string.Empty);
             errorValidation.SetError(employeeComboBox, string.Empty);
+
+        }
+
+        private void cancelIconButton_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
 
         }
     }

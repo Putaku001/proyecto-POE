@@ -194,15 +194,9 @@ namespace PresentationLayer.Forms.Cliente
 
                 _proyectsServices.StatusProject(newProject.codeProject, status.idStatusProyect);
 
-                requestProjectDataGridView.DataSource = _projectsClientServices.GetsProjectsByIdClient(
-                    Convert.ToInt32(_clientsServices.GetClients()
-                        .Where(u => u.idUser == idUser)
-                        .Select(e => e.idCliente)
-                        .FirstOrDefault())
-                );
 
                 MessageBox.Show("Se ha añadido el proyecto!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                loadData();
                 nameNewProyectTextBox.Clear();
                 descriptionProjectTextBox.Clear();
             }
