@@ -10,6 +10,8 @@ namespace BusinessLayer.Services.InterfacesServices
 {
     public interface IProjectsServices
     {
+        IEnumerable<Projects> GetAllProjects();
+        IEnumerable<StatusProjects> GetStatusProject();
         IEnumerable<Projects> GetRequestProjectsByStatus(string statusproject);
         IEnumerable<TaskEmployees> GetTaskEmployees();
         void UpdateTaskEmployee(int idTask, byte[] file, int idStatusTask);

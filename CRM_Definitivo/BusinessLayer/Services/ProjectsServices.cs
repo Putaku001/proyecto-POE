@@ -18,6 +18,8 @@ namespace BusinessLayer.Services
         {
             _listaProyectosRepositories = listaProyectosRepositories;
         }
+        public IEnumerable<Projects> GetAllProjects() => _listaProyectosRepositories.GetAllProjects();
+        public IEnumerable<StatusProjects> GetStatusProject() => _listaProyectosRepositories.GetStatusProject();
         public void UpdateTaskEmployee(int idTask, byte[] file, int idStatusTask) => _listaProyectosRepositories.UpdateTaskEmployee(idTask, file, idStatusTask);
 
         //METODOS PARA PROYECTOS

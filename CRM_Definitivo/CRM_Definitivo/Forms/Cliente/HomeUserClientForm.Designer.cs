@@ -114,14 +114,14 @@
             // nameProjectLabel
             // 
             nameProjectLabel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            nameProjectLabel.AutoSize = true;
             nameProjectLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             nameProjectLabel.ForeColor = Color.DodgerBlue;
-            nameProjectLabel.Location = new Point(471, 65);
+            nameProjectLabel.Location = new Point(471, 39);
             nameProjectLabel.Name = "nameProjectLabel";
-            nameProjectLabel.Size = new Size(134, 23);
+            nameProjectLabel.Size = new Size(134, 49);
             nameProjectLabel.TabIndex = 5;
             nameProjectLabel.Text = "nameProject";
+            nameProjectLabel.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // pictureBox1
             // 

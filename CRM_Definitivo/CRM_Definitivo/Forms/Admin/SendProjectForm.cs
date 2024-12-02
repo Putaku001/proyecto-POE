@@ -91,9 +91,9 @@ namespace PresentationLayer.Forms.Admin
                     _proyectsServices.SendProjects(_EntitieViewModel.EntitieNow.codeProyect, projects.file);
 
                     StatusProjects statusProjects = new StatusProjects();
-                    statusProjects.idStatusProyect = 7;
+                    statusProjects.idStatusProject = 7;
 
-                    _proyectsServices.StatusProject(_EntitieViewModel.EntitieNow.codeProyect, statusProjects.idStatusProyect);
+                    _proyectsServices.StatusProject(_EntitieViewModel.EntitieNow.codeProyect, statusProjects.idStatusProject);
 
                     MessageBox.Show("El proyecto ha sido enviado correctamente, estamos en espera de la respuesta del cliente!", "Enviado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 } 

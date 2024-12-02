@@ -18,5 +18,7 @@ namespace CommonLayer.Entities.ViewModel
         public string DescriptionProject { get; set; }
         public string Client { get; set; }
         public DateTime dateEnd { get; set; }
+
+        public string StatusPDF { get; set; }
     }
 }

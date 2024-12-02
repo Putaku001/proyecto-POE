@@ -22,6 +22,29 @@ namespace DataAccessLayer.Repositories
             _dbConnection = dbConnection;
         }
 
+        public IEnumerable<Projects> GetAllProjects()
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = @"SELECT r.idProject, r.codeProject ,u.UserAccount, r.nameProject, r.descriptionProject, st.statusproject, r.dateInit, r.dateEnd, r.dateRegistration FROM RequestProjectClient r
+                                LEFT JOIN Clients c on c.idCliente = r.idClient
+                                LEFT JOIN Users u on u.idUser = c.idUser
+                                LEFT JOIN statusProject st on st.idStatusProject = r.idStatusProject";
+
+                return connection.Query<Projects>(query);
+            }
+        }
+
+        public IEnumerable<StatusProjects> GetStatusProject()
+        {
+            using( var connection = _dbConnection.GetConnection())
+            {
+                string query = @"SELECT * FROM statusProject";
+
+                return connection.Query<StatusProjects>(query);
+            }
+        }
+
         public void UpdateTaskEmployee(int idTask, byte[] file, int idStatusTask)
         {
             using(var connection = _dbConnection.GetConnection())

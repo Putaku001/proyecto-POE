@@ -186,13 +186,13 @@ namespace PresentationLayer.Forms.Cliente
 
                 var status = new StatusProjects
                 {
-                    idStatusProyect = 4
+                    idStatusProject = 4
                 };
 
 
                 _projectsClientServices.AddNewProject(newProject.codeProject, newProject.idClient, newProject.nameProject, newProject.descriptionProject);
 
-                _proyectsServices.StatusProject(newProject.codeProject, status.idStatusProyect);
+                _proyectsServices.StatusProject(newProject.codeProject, status.idStatusProject);
 
 
                 MessageBox.Show("Se ha añadido el proyecto!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);

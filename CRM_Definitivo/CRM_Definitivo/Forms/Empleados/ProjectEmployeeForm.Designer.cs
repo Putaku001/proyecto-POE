@@ -113,7 +113,7 @@
             taskStatusComboBox.FormattingEnabled = true;
             taskStatusComboBox.Location = new Point(90, 416);
             taskStatusComboBox.Name = "taskStatusComboBox";
-            taskStatusComboBox.Size = new Size(349, 38);
+            taskStatusComboBox.Size = new Size(349, 31);
             taskStatusComboBox.TabIndex = 14;
             // 
             // flowLayoutLinkFilePanel
@@ -134,16 +134,16 @@
             labelLinkFile.ForeColor = SystemColors.ControlDarkDark;
             labelLinkFile.Location = new Point(3, 0);
             labelLinkFile.Name = "labelLinkFile";
-            labelLinkFile.Size = new Size(64, 21);
+            labelLinkFile.Size = new Size(54, 18);
             labelLinkFile.TabIndex = 11;
             labelLinkFile.Text = "label3";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(73, 0);
+            label1.Location = new Point(63, 0);
             label1.Name = "label1";
-            label1.Size = new Size(86, 30);
+            label1.Size = new Size(72, 23);
             label1.TabIndex = 12;
             label1.Text = "label1";
             // 
@@ -178,7 +178,7 @@
             projectNameLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             projectNameLabel.Location = new Point(13, 29);
             projectNameLabel.Name = "projectNameLabel";
-            projectNameLabel.Size = new Size(260, 28);
+            projectNameLabel.Size = new Size(219, 23);
             projectNameLabel.TabIndex = 0;
             projectNameLabel.Text = "Nombre del Proyecto";
             // 
@@ -189,7 +189,7 @@
             linkFileLabel.LinkColor = Color.White;
             linkFileLabel.Location = new Point(108, 338);
             linkFileLabel.Name = "linkFileLabel";
-            linkFileLabel.Size = new Size(331, 23);
+            linkFileLabel.Size = new Size(286, 21);
             linkFileLabel.TabIndex = 3;
             linkFileLabel.TabStop = true;
             linkFileLabel.Text = "En este apartado subira su tarea";
@@ -201,20 +201,20 @@
             descriptionLabel.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             descriptionLabel.Location = new Point(17, 68);
             descriptionLabel.Name = "descriptionLabel";
-            descriptionLabel.Size = new Size(123, 23);
+            descriptionLabel.Size = new Size(107, 21);
             descriptionLabel.TabIndex = 5;
             descriptionLabel.Text = "Descripcion";
             // 
             // nameTaskLabel
             // 
-            nameTaskLabel.AutoSize = true;
             nameTaskLabel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             nameTaskLabel.ForeColor = Color.White;
-            nameTaskLabel.Location = new Point(313, 3);
+            nameTaskLabel.Location = new Point(3, 3);
             nameTaskLabel.Name = "nameTaskLabel";
-            nameTaskLabel.Size = new Size(77, 28);
+            nameTaskLabel.Size = new Size(621, 28);
             nameTaskLabel.TabIndex = 7;
             nameTaskLabel.Text = "Tarea";
+            nameTaskLabel.TextAlign = ContentAlignment.TopCenter;
             // 
             // projectPanel
             // 
@@ -234,7 +234,7 @@
             projectsAssignamentLabel.ForeColor = Color.White;
             projectsAssignamentLabel.Location = new Point(572, 0);
             projectsAssignamentLabel.Name = "projectsAssignamentLabel";
-            projectsAssignamentLabel.Size = new Size(395, 51);
+            projectsAssignamentLabel.Size = new Size(331, 44);
             projectsAssignamentLabel.TabIndex = 13;
             projectsAssignamentLabel.Text = "Tareas Asignadas";
             // 
@@ -250,7 +250,7 @@
             // 
             // ProjectEmployeeForm
             // 
-            AutoScaleDimensions = new SizeF(11F, 21F);
+            AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1416, 895);
@@ -263,7 +263,6 @@
             Text = "Tareas Asignadas";
             ((System.ComponentModel.ISupportInitialize)projectsEmployeeDataGridView).EndInit();
             informationProjectPanel.ResumeLayout(false);
-            informationProjectPanel.PerformLayout();
             projectInformationGroupBox.ResumeLayout(false);
             projectInformationGroupBox.PerformLayout();
             flowLayoutLinkFilePanel.ResumeLayout(false);

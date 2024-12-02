@@ -5,6 +5,7 @@ using CommonLayer.Entities.ViewModel;
 using Microsoft.Extensions.DependencyInjection;
 using MimeKit;
 using PresentationLayer.Forms.Admin;
+using PresentationLayer.Reports;
 using PresentationLayer.Resources;
 using System;
 using System.Collections.Generic;
@@ -23,12 +24,14 @@ namespace PresentationLayer.Forms
         private readonly IProjectsServices _proyectoServices;
         private readonly IServiceProvider _serviceProvider;
         private readonly EntitieViewModel _entitieViewModel;
-        public ProjectsForm(IProjectsServices proyectoServices, IServiceProvider serviceProvider, EntitieViewModel entitieViewModel)
+        private readonly IProjectsReports _projectsReports;
+        public ProjectsForm(IProjectsServices proyectoServices, IServiceProvider serviceProvider, EntitieViewModel entitieViewModel, IProjectsReports projectsReports)
         {
             InitializeComponent();
             _proyectoServices = proyectoServices;
             _serviceProvider = serviceProvider;
             _entitieViewModel = entitieViewModel;
+            _projectsReports = projectsReports;
             LoadProyecto();
         }
 
@@ -47,13 +50,17 @@ namespace PresentationLayer.Forms
                 }
             }
 
+            statusProjectcomboBox.DataSource = _proyectoServices.GetStatusProject();
+            statusProjectcomboBox.DisplayMember = "statusProject";
+            statusProjectcomboBox.ValueMember = "idStatusProject";
+
             searchProcessComboBox.DisplayMember = "Texto";
             searchProcessComboBox.ValueMember = "Valor";
             searchProcessComboBox.SelectedIndex = 0;
         }
 
         private void LoadDataRequestProject()
-        {           
+        {
             requestProjectsDataGridView.DataSource = _proyectoServices.GetRequestProjectsByStatus("Pendiente");
             ConfigureDataGridView();
             ConfigureAutoSize(requestProjectsDataGridView);
@@ -186,11 +193,11 @@ namespace PresentationLayer.Forms
 
                     Projects dateInit = new Projects();
                     var dateInitial = dateInit.dateInit = DateTime.Now;
-                    _proyectoServices.UpdateDates(CodeProject, dateInitial);
+                    _proyectoServices.UpdateDates(CodeProject, dateInitial, _entitieViewModel.EntitieNow.dateEnd);
 
 
                     StatusProjects statusProjects = new StatusProjects();
-                    int status = statusProjects.idStatusProyect = 6;
+                    int status = statusProjects.idStatusProject = 6;
                     _proyectoServices.StatusProject(CodeProject, status);
 
 
@@ -245,7 +252,7 @@ namespace PresentationLayer.Forms
 
                     var ConfirmMessage = MessageBox.Show("Esta seguro?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                    if(ConfirmMessage == DialogResult.Yes)
+                    if (ConfirmMessage == DialogResult.Yes)
                     {
                         string CodeProject = projectsRefusedDataGridView.Rows[e.RowIndex].Cells["codeProject"].Value.ToString();
 
@@ -261,9 +268,9 @@ namespace PresentationLayer.Forms
 
                         _proyectoServices.UpdateTasks(RestartTasksEmployees);
                         LoadProyecto();
-                    }                   
+                    }
                 }
-                
+
             }
             else if (e.RowIndex >= 0 && projectsRefusedDataGridView.Columns[e.ColumnIndex].Name == "Rechazo")
             {
@@ -276,7 +283,7 @@ namespace PresentationLayer.Forms
                     saveFileDialog.FileName = "Motivo del rechazo";
                     saveFileDialog.Filter = "Todos los archivos|*.*";
 
-                    if(saveFileDialog.ShowDialog() == DialogResult.OK)
+                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
                     {
                         string filePath = saveFileDialog.FileName;
                         File.WriteAllBytes(filePath, content);
@@ -345,6 +352,59 @@ namespace PresentationLayer.Forms
             {
                 row.Visible = true;
             }
+        }
+
+        private void pdfProjectspictureBox_Click(object sender, EventArgs e)
+        {
+            _projectsReports.GenerateReports();
+        }
+
+        private void statusProjectcomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //SharedData sharedData = new SharedData()
+            //{
+            //    StatusPDF = statusProjectcomboBox.Text
+            //};
+
+            //if (statusProjectcomboBox.SelectedItem == null)
+            //    return;
+
+            switch (statusProjectcomboBox.Text)
+            {
+                case "En progreso":
+                    SharedData sharedDataProgress = new SharedData()
+                    {
+                        StatusPDF = statusProjectcomboBox.Text
+                    };
+                    _entitieViewModel.UpdateEntities(sharedDataProgress);
+                    break;
+                case "Pendiente":
+                    SharedData sharedDataPending = new SharedData()
+                    {
+                        StatusPDF = statusProjectcomboBox.Text
+                    };
+                    _entitieViewModel.UpdateEntities(sharedDataPending);
+                    break;
+                case "Terminado":
+                    _entitieViewModel.EntitieNow.StatusPDF = "Terminado";
+                    break;
+                case "esperando aprobacion del cliente":
+                    SharedData sharedDataFinish = new SharedData()
+                    {
+                        StatusPDF = statusProjectcomboBox.Text
+                    };
+                    _entitieViewModel.UpdateEntities(sharedDataFinish);
+                    break;
+            }
+        }
+
+        private void allIconButton_Click(object sender, EventArgs e)
+        {
+            SharedData sharedDataProgress = new SharedData()
+            {
+                StatusPDF = "Todo"
+            };
+            _entitieViewModel.UpdateEntities(sharedDataProgress);
         }
     }
 }

@@ -64,7 +64,7 @@
             descriptionLabel.AutoSize = true;
             descriptionLabel.Location = new Point(194, 54);
             descriptionLabel.Name = "descriptionLabel";
-            descriptionLabel.Size = new Size(117, 21);
+            descriptionLabel.Size = new Size(100, 20);
             descriptionLabel.TabIndex = 0;
             descriptionLabel.Text = "Descripcion:";
             // 
@@ -81,7 +81,7 @@
             employeeLabel.AutoSize = true;
             employeeLabel.Location = new Point(166, 309);
             employeeLabel.Name = "employeeLabel";
-            employeeLabel.Size = new Size(210, 21);
+            employeeLabel.Size = new Size(176, 20);
             employeeLabel.TabIndex = 2;
             employeeLabel.Text = "Seleccionar empleado";
             // 
@@ -89,7 +89,7 @@
             // 
             taskTextBox.Location = new Point(79, 242);
             taskTextBox.Name = "taskTextBox";
-            taskTextBox.Size = new Size(361, 30);
+            taskTextBox.Size = new Size(361, 26);
             taskTextBox.TabIndex = 5;
             // 
             // taskLabel
@@ -97,7 +97,7 @@
             taskLabel.AutoSize = true;
             taskLabel.Location = new Point(223, 206);
             taskLabel.Name = "taskLabel";
-            taskLabel.Size = new Size(59, 21);
+            taskLabel.Size = new Size(49, 20);
             taskLabel.TabIndex = 4;
             taskLabel.Text = "Tarea";
             // 
@@ -119,7 +119,7 @@
             clientLabel.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             clientLabel.Location = new Point(28, 19);
             clientLabel.Name = "clientLabel";
-            clientLabel.Size = new Size(95, 25);
+            clientLabel.Size = new Size(78, 21);
             clientLabel.TabIndex = 9;
             clientLabel.Text = "Cliente:";
             // 
@@ -127,9 +127,9 @@
             // 
             clientUserLabel.AutoSize = true;
             clientUserLabel.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            clientUserLabel.Location = new Point(100, 19);
+            clientUserLabel.Location = new Point(112, 19);
             clientUserLabel.Name = "clientUserLabel";
-            clientUserLabel.Size = new Size(224, 25);
+            clientUserLabel.Size = new Size(181, 21);
             clientUserLabel.TabIndex = 10;
             clientUserLabel.Text = "Nombre del Cliente";
             // 
@@ -138,7 +138,7 @@
             employeeComboBox.FormattingEnabled = true;
             employeeComboBox.Location = new Point(82, 359);
             employeeComboBox.Name = "employeeComboBox";
-            employeeComboBox.Size = new Size(360, 29);
+            employeeComboBox.Size = new Size(360, 28);
             employeeComboBox.TabIndex = 11;
             // 
             // assignamentTasksDataGridView
@@ -158,7 +158,7 @@
             // 
             timeEndDateTimePicker.Location = new Point(31, 109);
             timeEndDateTimePicker.Name = "timeEndDateTimePicker";
-            timeEndDateTimePicker.Size = new Size(409, 30);
+            timeEndDateTimePicker.Size = new Size(409, 26);
             timeEndDateTimePicker.TabIndex = 13;
             // 
             // dateEndLabel
@@ -166,7 +166,7 @@
             dateEndLabel.AutoSize = true;
             dateEndLabel.Location = new Point(31, 54);
             dateEndLabel.Name = "dateEndLabel";
-            dateEndLabel.Size = new Size(176, 21);
+            dateEndLabel.Size = new Size(146, 20);
             dateEndLabel.TabIndex = 14;
             dateEndLabel.Text = "Fecha de entrega:";
             // 
@@ -177,7 +177,7 @@
             dateGroupBox.Controls.Add(timeEndDateTimePicker);
             dateGroupBox.Location = new Point(28, 79);
             dateGroupBox.Name = "dateGroupBox";
-            dateGroupBox.Size = new Size(486, 425);
+            dateGroupBox.Size = new Size(486, 436);
             dateGroupBox.TabIndex = 15;
             dateGroupBox.TabStop = false;
             dateGroupBox.Text = "Fecha";
@@ -189,7 +189,7 @@
             errorDateLabel.ForeColor = Color.Red;
             errorDateLabel.Location = new Point(31, 155);
             errorDateLabel.Name = "errorDateLabel";
-            errorDateLabel.Size = new Size(0, 21);
+            errorDateLabel.Size = new Size(0, 18);
             errorDateLabel.TabIndex = 15;
             // 
             // assignamentTaskGroupBox
@@ -217,7 +217,7 @@
             errorEmployeeLabel.ForeColor = Color.Red;
             errorEmployeeLabel.Location = new Point(33, 391);
             errorEmployeeLabel.Name = "errorEmployeeLabel";
-            errorEmployeeLabel.Size = new Size(0, 21);
+            errorEmployeeLabel.Size = new Size(0, 18);
             errorEmployeeLabel.TabIndex = 18;
             // 
             // errorTaskLabel
@@ -227,7 +227,7 @@
             errorTaskLabel.ForeColor = Color.Red;
             errorTaskLabel.Location = new Point(33, 275);
             errorTaskLabel.Name = "errorTaskLabel";
-            errorTaskLabel.Size = new Size(0, 21);
+            errorTaskLabel.Size = new Size(0, 18);
             errorTaskLabel.TabIndex = 17;
             // 
             // errorDescripcionLabel
@@ -237,7 +237,7 @@
             errorDescripcionLabel.ForeColor = Color.Red;
             errorDescripcionLabel.Location = new Point(29, 177);
             errorDescripcionLabel.Name = "errorDescripcionLabel";
-            errorDescripcionLabel.Size = new Size(0, 21);
+            errorDescripcionLabel.Size = new Size(0, 18);
             errorDescripcionLabel.TabIndex = 16;
             // 
             // iconAssignamentTaskButton
@@ -248,7 +248,7 @@
             iconAssignamentTaskButton.IconChar = FontAwesome.Sharp.IconChar.None;
             iconAssignamentTaskButton.IconColor = Color.Black;
             iconAssignamentTaskButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconAssignamentTaskButton.Location = new Point(562, 541);
+            iconAssignamentTaskButton.Location = new Point(305, 538);
             iconAssignamentTaskButton.Name = "iconAssignamentTaskButton";
             iconAssignamentTaskButton.Size = new Size(209, 31);
             iconAssignamentTaskButton.TabIndex = 17;
@@ -264,7 +264,7 @@
             codeProjectLabel.ForeColor = Color.White;
             codeProjectLabel.Location = new Point(1023, 9);
             codeProjectLabel.Name = "codeProjectLabel";
-            codeProjectLabel.Size = new Size(85, 27);
+            codeProjectLabel.Size = new Size(70, 22);
             codeProjectLabel.TabIndex = 18;
             codeProjectLabel.Text = "u24123";
             // 
@@ -291,7 +291,7 @@
             cancelIconButton.IconChar = FontAwesome.Sharp.IconChar.None;
             cancelIconButton.IconColor = Color.Black;
             cancelIconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            cancelIconButton.Location = new Point(205, 541);
+            cancelIconButton.Location = new Point(525, 538);
             cancelIconButton.Name = "cancelIconButton";
             cancelIconButton.Size = new Size(209, 31);
             cancelIconButton.TabIndex = 18;
@@ -305,7 +305,7 @@
             // 
             // AssignamentTaskEmployeeForm
             // 
-            AutoScaleDimensions = new SizeF(11F, 21F);
+            AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1120, 892);

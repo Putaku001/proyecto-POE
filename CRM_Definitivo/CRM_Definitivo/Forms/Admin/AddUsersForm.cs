@@ -43,7 +43,6 @@ namespace PresentationLayer.Forms
             _adminsServices = adminsServices;
             _clientsServices = clientsServices;
             IsEditing = usuario != null;
-            //_usuersservices = _usuersServices;
             rolServices = _rolServices;
             _proyectsServices = proyectsServices;
             _projectsClientServices = projectsClientServices;

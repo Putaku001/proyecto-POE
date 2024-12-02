@@ -8,7 +8,7 @@ namespace CommonLayer.Entities.Projects
 {
     public class StatusProjects
     {
-        public int idStatusProyect { get; set; }
-        public string statusproyect { get; set; }
+        public int idStatusProject { get; set; }
+        public string statusProject { get; set; }
     }
 }

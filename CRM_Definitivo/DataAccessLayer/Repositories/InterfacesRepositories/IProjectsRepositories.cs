@@ -10,7 +10,8 @@ namespace DataAccessLayer.Repositories.InterfacesRepositories
 {
     public interface IProjectsRepositories
     {
-
+        IEnumerable<Projects> GetAllProjects();
+        IEnumerable<StatusProjects> GetStatusProject();
         void UpdateTaskEmployee(int idTask, byte[] file, int idStatusTask);
 
         //proyectos
@@ -27,5 +28,6 @@ namespace DataAccessLayer.Repositories.InterfacesRepositories
         IEnumerable<TaskEmployees> GetByIdTaskEmployee(int idEmployee, int? idStatusTask = null);
         byte[] getFileProjectsRefusedInDB(int idProject);
         void UpdateTasks(List<TaskEmployees> tasks);
+        
     }
 }

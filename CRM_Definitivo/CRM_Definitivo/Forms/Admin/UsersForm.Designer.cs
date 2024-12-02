@@ -36,14 +36,12 @@
             searchUserIconButton = new FontAwesome.Sharp.IconButton();
             searchUserLabel = new Label();
             searchUserTextBox = new TextBox();
-            printPictureBox = new PictureBox();
             PdfUserPictureBox = new PictureBox();
             deleteUserPictureBox = new PictureBox();
             editUserPictureBox = new PictureBox();
             addUserPictureBox = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)userDataGridView).BeginInit();
             userPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)printPictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PdfUserPictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)deleteUserPictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)editUserPictureBox).BeginInit();
@@ -72,7 +70,6 @@
             userPanel.Controls.Add(searchUserIconButton);
             userPanel.Controls.Add(searchUserLabel);
             userPanel.Controls.Add(searchUserTextBox);
-            userPanel.Controls.Add(printPictureBox);
             userPanel.Controls.Add(PdfUserPictureBox);
             userPanel.Controls.Add(deleteUserPictureBox);
             userPanel.Controls.Add(editUserPictureBox);
@@ -139,24 +136,14 @@
             searchUserTextBox.Size = new Size(230, 27);
             searchUserTextBox.TabIndex = 7;
             // 
-            // printPictureBox
-            // 
-            printPictureBox.Cursor = Cursors.Hand;
-            printPictureBox.Image = Properties.Resources.imprimir;
-            printPictureBox.Location = new Point(1185, 7);
-            printPictureBox.Name = "printPictureBox";
-            printPictureBox.Size = new Size(42, 38);
-            printPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
-            printPictureBox.TabIndex = 5;
-            printPictureBox.TabStop = false;
-            // 
             // PdfUserPictureBox
             // 
+            PdfUserPictureBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             PdfUserPictureBox.Cursor = Cursors.Hand;
             PdfUserPictureBox.Image = (Image)resources.GetObject("PdfUserPictureBox.Image");
-            PdfUserPictureBox.Location = new Point(1132, 7);
+            PdfUserPictureBox.Location = new Point(843, 22);
             PdfUserPictureBox.Name = "PdfUserPictureBox";
-            PdfUserPictureBox.Size = new Size(33, 38);
+            PdfUserPictureBox.Size = new Size(33, 28);
             PdfUserPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             PdfUserPictureBox.TabIndex = 4;
             PdfUserPictureBox.TabStop = false;
@@ -213,7 +200,6 @@
             ((System.ComponentModel.ISupportInitialize)userDataGridView).EndInit();
             userPanel.ResumeLayout(false);
             userPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)printPictureBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)PdfUserPictureBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)deleteUserPictureBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)editUserPictureBox).EndInit();

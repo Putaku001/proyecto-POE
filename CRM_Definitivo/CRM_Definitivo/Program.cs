@@ -93,6 +93,7 @@ namespace CRM_Definitivo
 
                         //REPORTS
                         services.AddScoped<IUserReports, UserReports>();
+                        services.AddScoped<IProjectsReports, ProjectsReports>();
 
                         //SQLDATA
                         services.AddSingleton<ISqlDataAccess, SqlDataAccess>();

@@ -81,6 +81,7 @@ namespace PresentationLayer.Forms.Admin
         private bool isTaskAssigned = false;
         private void iconAssignamentTaskButton_Click(object sender, EventArgs e)
         {
+            _employeeViewModel.EntitieNow.dateEnd = timeEndDateTimePicker.Value;
             TaskEmployees AssignamentTaskEmployees = new TaskEmployees
             {
                 codeProject = codeProjectLabel.Text,
@@ -99,9 +100,6 @@ namespace PresentationLayer.Forms.Admin
                 DisplayValidationErrors(result);
                 return;
             }
-
-            var dateEnd = timeEndDateTimePicker.Value;
-            _proyectsServices.UpdateDates(codeProjectLabel.Text, dateEnd);
 
             _proyectsServices.AddTasksEmployees(AssignamentTaskEmployees);
 
