@@ -25,6 +25,7 @@ namespace PresentationLayer.Forms
         private readonly IServiceProvider _serviceProvider;
         private readonly EntitieViewModel _entitieViewModel;
         private readonly IProjectsReports _projectsReports;
+        private bool buttonClicked = false;
         public ProjectsForm(IProjectsServices proyectoServices, IServiceProvider serviceProvider, EntitieViewModel entitieViewModel, IProjectsReports projectsReports)
         {
             InitializeComponent();
@@ -173,6 +174,7 @@ namespace PresentationLayer.Forms
                     }
 
                     var assignamentTaskEmployeeForm = _serviceProvider.GetRequiredService<AssignamentTaskEmployeeForm>();
+                    assignamentTaskEmployeeForm.Owner = this;
 
                     SharedData sharedData = new SharedData
                     {
@@ -185,29 +187,36 @@ namespace PresentationLayer.Forms
 
                     var dialogResult = assignamentTaskEmployeeForm.ShowDialog();
 
-                    if (dialogResult != DialogResult.OK)
+                    if (!buttonClicked)
                     {
-                        MessageBox.Show("La asignación de tareas fue cancelada.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
+                        Projects dateInit = new Projects();
+                        var dateInitial = dateInit.dateInit = DateTime.Now;
+                        var dateEnd = _entitieViewModel.EntitieNow.dateEnd;
+
+                        _proyectoServices.UpdateDates(CodeProject, dateInitial, _entitieViewModel.EntitieNow.dateEnd);
+
+                        StatusProjects statusProjects = new StatusProjects();
+                        int status = statusProjects.idStatusProject = 6;
+
+                        _proyectoServices.StatusProject(CodeProject, status);
+                        LoadProyecto();
                     }
-
-                    Projects dateInit = new Projects();
-                    var dateInitial = dateInit.dateInit = DateTime.Now;
-                    _proyectoServices.UpdateDates(CodeProject, dateInitial, _entitieViewModel.EntitieNow.dateEnd);
-
-
-                    StatusProjects statusProjects = new StatusProjects();
-                    int status = statusProjects.idStatusProject = 6;
-                    _proyectoServices.StatusProject(CodeProject, status);
-
-
-                    LoadProyecto();
+                    else
+                    {
+                        buttonClicked = false;
+                        MessageBox.Show("La operación fue cancelada. No se realizaron cambios.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show($"Ocurrió un error al procesar la operación: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        public void SetButtonClicked()
+        {
+            buttonClicked = true;
         }
 
 

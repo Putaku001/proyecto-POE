@@ -77,20 +77,16 @@ namespace PresentationLayer.Forms.Admin
             SetNamesColumns(assignamentTasksDataGridView, setNamesDGV);
         }
 
-
-        private bool isTaskAssigned = false;
         private void iconAssignamentTaskButton_Click(object sender, EventArgs e)
         {
             _employeeViewModel.EntitieNow.dateEnd = timeEndDateTimePicker.Value;
-            TaskEmployees AssignamentTaskEmployees = new TaskEmployees
-            {
-                codeProject = codeProjectLabel.Text,
-                nameTask = taskTextBox.Text,
-                descriptionTask = descriptionTextBox.Text,
-                idEmployee = Convert.ToInt32(employeeComboBox.SelectedValue),
-                idStatusTask = 1,
-                dateEnd = timeEndDateTimePicker.Value
-            };
+            TaskEmployees AssignamentTaskEmployees = new TaskEmployees();
+            AssignamentTaskEmployees.codeProject = codeProjectLabel.Text;
+            AssignamentTaskEmployees.nameTask = taskTextBox.Text;
+            AssignamentTaskEmployees.descriptionTask = descriptionTextBox.Text;
+            AssignamentTaskEmployees.idEmployee = Convert.ToInt32(employeeComboBox.SelectedValue);
+            AssignamentTaskEmployees.idStatusTask = 1;
+            AssignamentTaskEmployees.dateEnd = timeEndDateTimePicker.Value;
 
             var validator = new AssignamentTaskEmployeeValidation();
             var result = validator.Validate(AssignamentTaskEmployees);
@@ -102,14 +98,9 @@ namespace PresentationLayer.Forms.Admin
             }
 
             _proyectsServices.AddTasksEmployees(AssignamentTaskEmployees);
-
-            isTaskAssigned = true;
-
-
             MessageBox.Show("La tarea se ha agregado exitosamente!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.DialogResult = DialogResult.OK;
+            LoadEmployee();
 
-            this.Close();
         }
 
 
@@ -164,9 +155,8 @@ namespace PresentationLayer.Forms.Admin
 
         private void cancelIconButton_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Cancel;
+            ((ProjectsForm)Owner).SetButtonClicked();
             this.Close();
-
         }
     }
 }
